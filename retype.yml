@@ -1,0 +1,23 @@
+input: .
+output: .retype
+url: docs.sillytavern.app
+meta:
+  title: " | SillyTavern傻酒馆中文文档"
+branding:
+  logo: static/logo.png
+  title: SillyTavern中文文档
+  label:
+edit:
+  repo: "https://github.com/intellecat/SillyTavern-Docs-ZH/edit"
+integrations:
+  googleAnalytics:
+    id: G-0NTJMWH0TW1
+links:
+- text: GitHub
+  link: https://github.com/SillyTavern/SillyTavern
+- text: Discord
+  link: https://discord.gg/sillytavern
+- text: Reddit
+  link: https://www.reddit.com/r/SillyTavernAI/
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
