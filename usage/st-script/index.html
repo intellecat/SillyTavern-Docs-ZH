@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0NTJMWH0TW1"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0NTJMWH0TW1');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794740945311">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>STscript 语言参考 | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/st-script/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/st-script/">
+    <meta property="og:title" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/scripts/hello-world.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/st-script/">
+    <meta property="twitter:title" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
+    <meta property="twitter:description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/scripts/hello-world.png">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.794740945311" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794740945311" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794740945311" data-turbo-eval="false" defer></script>
+
+    <style>
+        a {
+            color: brown !important;
+        }
+
+        .dark a {
+            color: rgb(223, 151, 18) !important;
+        }
+
+        body {
+            font-family: Noto Sans, sans-serif;
+        }
+
+        .callout {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
+        }
+
+        .callout p {
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .callout .fa-fw {
+            margin: 1rem 0.5rem 1rem 0;
+            color: slategrey;
+        }
+
+        .docs-markdown .codeblock code,
+        .docs-markdown .codeblock pre {
+            white-space: pre-wrap;
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet" />
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/static/css/solid.min.css" rel="stylesheet" />
+    <link href="/static/css/brands.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="stscript-语言参考" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stscript-语言参考">#</doc-anchor-trigger>
+        <span>STscript 语言参考</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="什么是-stscript">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#什么是-stscript">#</doc-anchor-trigger>
+        <span>什么是 STscript？</span>
+    </h2>
+</doc-anchor-target>
+<p>这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：</p>
+<ul>
+<li>创建迷你游戏或速通挑战</li>
+<li>构建 AI 驱动的聊天洞察</li>
+<li>释放您的创造力并与他人分享</li>
+</ul>
+<p>STscript 是基于斜杠命令引擎构建的，利用命令批处理、数据管道、宏和变量。
+这些概念将在以下文档中详细描述。</p>
+<doc-anchor-target id="安全注意事项">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#安全注意事项">#</doc-anchor-trigger>
+        <span>安全注意事项</span>
+    </h3>
+</doc-anchor-target>
+<p>能力越大，责任越大。在执行脚本之前，请务必仔细检查。</p>
+<doc-anchor-target id="hello-world">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hello-world">#</doc-anchor-trigger>
+        <span>Hello, World!</span>
+    </h2>
+</doc-anchor-target>
+<p>要运行您的第一个脚本，打开任何 SillyTavern 聊天并在聊天输入栏中输入以下内容：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img src="../../static/scripts/hello-world.png" alt="Hello World" /></th>
+</tr>
+</thead>
+</table>
+</div>
+<p>您应该会在屏幕顶部看到一条提示消息。现在让我们逐步分析。</p>
+<p>脚本是一批命令，每个命令都以斜杠开头，可以带有或不带有命名和未命名参数，并以命令分隔符结束：<code v-pre>|</code>。</p>
+<p>命令按顺序依次执行，并在彼此之间传输数据。</p>
+<ol>
+<li><code v-pre>/pass</code> 命令接受一个常量值 &quot;Hello, World!&quot; 作为未命名参数并将其写入管道。</li>
+<li><code v-pre>/echo</code> 命令通过管道从前一个命令接收值并将其显示为提示通知。</li>
+</ol>
+<blockquote>
+<p><strong>提示：</strong> 要查看所有可用命令的列表，请在聊天中输入 <code v-pre>/help slash</code>。</p>
+</blockquote>
+<p>由于常量未命名参数和管道是可互换的，我们可以简单地将这个脚本重写为：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="用户输入">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#用户输入">#</doc-anchor-trigger>
+        <span>用户输入</span>
+    </h2>
+</doc-anchor-target>
+<p>现在让我们为脚本添加一些交互性。我们将接受用户的输入值并在通知中显示它。</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/input Enter your name |
+/echo Hello, my name is {{pipe}}</code></pre>
+</doc-codeblock></div>
+<ol>
+<li><code v-pre>/input</code> 命令用于显示一个输入框，其中包含未命名参数中指定的提示，然后将输出写入管道。</li>
+<li>因为 <code v-pre>/echo</code> 已经有一个设置输出模板的未命名参数，我们使用 <code v-pre>{{pipe}}</code> 宏来指定管道值将被渲染的位置。</li>
+</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img src="../../static/scripts/slim-input.png" alt="Slim Shady Input" /></th>
+<th><img src="../../static/scripts/slim-output.png" alt="Slim Shady Output" /></th>
+</tr>
+</thead>
+</table>
+</div>
+<doc-anchor-target id="其他输入输出命令">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#其他输入输出命令">#</doc-anchor-trigger>
+        <span>其他输入/输出命令</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/popup (text)</code> — 显示一个阻塞弹出窗口，支持简单的 HTML 格式，例如：<code v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>。</li>
+<li><code v-pre>/setinput (text)</code> — 用提供的文本替换用户输入栏的内容。</li>
+<li><code v-pre>/speak voice=&quot;name&quot; (text)</code> — 使用选定的 TTS 引擎和语音映射中的角色名称朗读文本，例如 <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>。</li>
+<li><code v-pre>/buttons labels=[&quot;a&quot;,&quot;b&quot;] (text)</code> — 显示一个带有指定文本和按钮标签的阻塞弹出窗口。<code v-pre>labels</code> 必须是 JSON 序列化的字符串数组或包含此类数组的变量名。将点击的按钮标签返回到管道中，如果取消则返回空字符串。文本支持简单的 HTML 格式。</li>
+</ul>
+<doc-anchor-target id="popup-和-input-的参数">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#popup-和-input-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/popup</code> 和 <code v-pre>/input</code> 的参数</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>/popup</code> 和 <code v-pre>/input</code> 支持以下附加命名参数：</p>
+<ul>
+<li><code v-pre>large=on/off</code> - 增加弹出窗口的垂直大小。默认：<code v-pre>off</code>。</li>
+<li><code v-pre>wide=on/off</code> - 增加弹出窗口的水平大小。默认：<code v-pre>off</code>。</li>
+<li><code v-pre>okButton=string</code> - 添加自定义&quot;确定&quot;按钮文本的功能。默认：<code v-pre>Ok</code>。</li>
+<li><code v-pre>rows=number</code> - (仅用于 <code v-pre>/input</code>) 增加输入控件的大小。默认：1。</li>
+</ul>
+<p>示例：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="echo-的参数">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#echo-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/echo</code> 的参数</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>/echo</code> 支持以下 <code v-pre>severity</code> 附加参数值，用于设置显示消息的样式。</p>
+<ul>
+<li><code v-pre>warning</code></li>
+<li><code v-pre>error</code></li>
+<li><code v-pre>info</code> (默认)</li>
+<li><code v-pre>success</code></li>
+</ul>
+<p>示例：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="变量">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#变量">#</doc-anchor-trigger>
+        <span>变量</span>
+    </h2>
+</doc-anchor-target>
+<p>变量用于在脚本中存储和操作数据，可以使用命令或宏。变量可以是以下类型之一：</p>
+<ul>
+<li>本地变量 — 保存到当前聊天的元数据中，对其唯一。</li>
+<li>全局变量 — 保存到 settings.json 中，在整个应用程序中都存在。</li>
+</ul>
+<ol>
+<li><code v-pre>/getvar name</code> 或 <code v-pre>{{getvar::name}}</code> — 获取本地变量的值。</li>
+<li><code v-pre>/setvar key=name value</code> 或 <code v-pre>{{setvar::name::value}}</code> — 设置本地变量的值。</li>
+<li><code v-pre>/addvar key=name increment</code> 或 <code v-pre>{{addvar::name::increment}}</code> — 将 <code v-pre>increment</code> 添加到本地变量的值中。</li>
+<li><code v-pre>/incvar name</code> 或 <code v-pre>{{incvar::name}}</code> — 将本地变量的值增加 1。</li>
+<li><code v-pre>/decvar name</code> 或 <code v-pre>{{decvar::name}}</code> — 将本地变量的值减少 1。</li>
+<li><code v-pre>/getglobalvar name</code> 或 <code v-pre>{{getglobalvar::name}}</code> — 获取全局变量的值。</li>
+<li><code v-pre>/setglobalvar key=name</code> 或 <code v-pre>{{setglobalvar::name::value}}</code> — 设置全局变量的值。</li>
+<li><code v-pre>/addglobalvar key=name</code> 或 <code v-pre>{{addglobalvar::name:increment}}</code> — 将 <code v-pre>increment</code> 添加到全局变量的值中。</li>
+<li><code v-pre>/incglobalvar name</code> 或 <code v-pre>{{incglobalvar::name}}</code> — 将全局变量的值增加 1。</li>
+<li><code v-pre>/decglobalvar name</code> 或 <code v-pre>{{decglobalvar::name}}</code> — 将全局变量的值减少 1。</li>
+<li><code v-pre>/flushvar name</code> — 删除本地变量的值。</li>
+<li><code v-pre>/flushglobalvar name</code> — 删除全局变量的值。</li>
+</ol>
+<ul>
+<li>之前未定义的变量的默认值是空字符串，或者如果首次在 <code v-pre>/addvar</code>、<code v-pre>/incvar</code>、<code v-pre>/decvar</code> 命令中使用，则为零。</li>
+<li><code v-pre>/addvar</code> 命令中的增量如果增量和变量值都可以转换为数字，则执行加法或减法，否则执行字符串连接。</li>
+<li>如果命令参数接受变量名，并且同名的本地和全局变量都存在，则<em>本地变量</em>优先。</li>
+<li>所有用于变量操作的<em>斜杠命令</em>都将结果值写入管道供下一个命令使用。</li>
+<li>对于<em>宏</em>，只有 &quot;get&quot;、&quot;inc&quot; 和 &quot;dec&quot; 类型的宏返回值，&quot;add&quot; 和 &quot;set&quot; 则替换为空字符串。</li>
+</ul>
+<p>现在，让我们考虑以下示例：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
+/setvar key=SDinput |
+/echo Requesting an image of {{getvar::SDinput}} |
+/getvar SDinput |
+/imagine</code></pre>
+</doc-codeblock></div>
+<ol>
+<li>用户输入的值保存在名为 <code v-pre>SDinput</code> 的本地变量中。</li>
+<li><code v-pre>getvar</code> 宏用于在 <code v-pre>/echo</code> 命令中显示值。</li>
+<li><code v-pre>getvar</code> 命令用于检索变量的值并通过管道传递。</li>
+<li>该值传递给 <code v-pre>/imagine</code> 命令（由图像生成插件提供）作为其输入提示。</li>
+</ol>
+<p>由于变量在脚本执行之间保存且不会被清除，您可以在其他脚本中和通过宏引用该变量，它将解析为与示例脚本执行期间相同的值。要确保值被丢弃，请在脚本中添加 <code v-pre>/flushvar</code> 命令。</p>
+<doc-anchor-target id="数组和对象">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#数组和对象">#</doc-anchor-trigger>
+        <span>数组和对象</span>
+    </h3>
+</doc-anchor-target>
+<p>变量值可以包含 JSON 序列化的数组或键值对（对象）。</p>
+<p>示例：</p>
+<ul>
+<li>数组：<code v-pre>[&quot;apple&quot;,&quot;banana&quot;,&quot;orange&quot;]</code></li>
+<li>对象：<code v-pre>{&quot;fruits&quot;:[&quot;apple&quot;,&quot;banana&quot;,&quot;orange&quot;]}</code></li>
+</ul>
+<p>以下修改可以应用于命令以处理这些变量：</p>
+<ul>
+<li><code v-pre>/len</code> 命令获取数组中的项目数。</li>
+<li><code v-pre>index=number/string</code> 命名参数可以添加到 <code v-pre>/getvar</code> 或 <code v-pre>/setvar</code> 及其全局对应项，以通过数组的从零开始的索引或对象的字符串键获取或设置子值。
+<ul>
+<li>如果在不存在的变量上使用数字索引，该变量将被创建为空数组 <code v-pre>[]</code>。</li>
+<li>如果在不存在的变量上使用字符串索引，该变量将被创建为空对象 <code v-pre>{}</code>。</li>
+</ul>
+</li>
+<li><code v-pre>/addvar</code> 和 <code v-pre>/addglobalvar</code> 命令支持将新值推送到数组类型的变量。</li>
+</ul>
+<doc-anchor-target id="流程控制---条件语句">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#流程控制---条件语句">#</doc-anchor-trigger>
+        <span>流程控制 - 条件语句</span>
+    </h2>
+</doc-anchor-target>
+<p>您可以使用 <code v-pre>/if</code> 命令创建基于定义规则分支执行的条件表达式。</p>
+<p><code v-pre>/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></p>
+<p>让我们看看以下示例：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
+/if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
+</doc-codeblock></div>
+<p>这个脚本根据用户输入评估所需值，并根据输入值显示不同的消息。</p>
+<doc-anchor-target id="if-的参数">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#if-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/if</code> 的参数</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><code v-pre>left</code> 是第一个操作数。让我们称之为 A。</li>
+<li><code v-pre>right</code> 是第二个操作数。让我们称之为 B。</li>
+<li><code v-pre>rule</code> 是要应用于操作数的操作。</li>
+<li><code v-pre>else</code> 是可选的子命令字符串，如果布尔比较结果为 false 则执行。</li>
+<li>未命名参数是如果布尔比较结果为 true 则执行的子命令。</li>
+</ol>
+<p>操作数值按以下顺序评估：</p>
+<ol>
+<li>数字字面量</li>
+<li>本地变量名</li>
+<li>全局变量名</li>
+<li>字符串字面量</li>
+</ol>
+<p>命名参数的字符串值可以用引号转义以允许多词字符串。然后丢弃引号。</p>
+<doc-anchor-target id="布尔运算">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#布尔运算">#</doc-anchor-trigger>
+        <span>布尔运算</span>
+    </h3>
+</doc-anchor-target>
+<p>支持以下布尔比较规则。应用于操作数的操作结果为 true 或 false 值。</p>
+<ol>
+<li><code v-pre>eq</code>（等于）=&gt; A = B</li>
+<li><code v-pre>neq</code>（不等于）=&gt; A != B</li>
+<li><code v-pre>lt</code>（小于）=&gt; A &lt; B</li>
+<li><code v-pre>gt</code>（大于）=&gt; A &gt; B</li>
+<li><code v-pre>lte</code>（小于或等于）=&gt; A &lt;= B</li>
+<li><code v-pre>gte</code>（大于或等于）=&gt; A &gt;= B</li>
+<li><code v-pre>not</code>（一元否定）=&gt; !A</li>
+<li><code v-pre>in</code>（包含子字符串）=&gt; A 包含 B，不区分大小写</li>
+<li><code v-pre>nin</code>（不包含子字符串）=&gt; A 不包含 B，不区分大小写</li>
+</ol>
+<doc-anchor-target id="子命令">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#子命令">#</doc-anchor-trigger>
+        <span>子命令</span>
+    </h3>
+</doc-anchor-target>
+<p>子命令是包含要执行的斜杠命令列表的字符串。</p>
+<ol>
+<li>要在子命令中使用命令批处理，命令分隔符字符应该被转义（见下文）。</li>
+<li>由于宏值在进入条件时执行，而不是在执行子命令时执行，因此可以额外转义宏以延迟其评估到子命令执行时间。</li>
+<li>子命令执行的结果通过管道传递给 <code v-pre>/if</code> 之后的命令。</li>
+<li>遇到 <code v-pre>/abort</code> 命令时中断脚本执行。</li>
+</ol>
+<p><code v-pre>/if</code> 命令可以用作三元运算符。
+以下示例将在变量 <code v-pre>a</code> 等于 5 时将 &quot;true&quot; 字符串传递给下一个命令，否则传递 &quot;false&quot; 字符串。</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
+/echo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="转义序列">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#转义序列">#</doc-anchor-trigger>
+        <span>转义序列</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="宏">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#宏">#</doc-anchor-trigger>
+        <span>宏</span>
+    </h3>
+</doc-anchor-target>
+<p>宏的转义工作方式与以前一样。但是，使用闭包时，您需要转义宏的频率会大大降低。可以转义两个开始的大括号，或者同时转义开始和结束的大括号对。</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
+/echo \{\{char\}\}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="管道">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#管道">#</doc-anchor-trigger>
+        <span>管道</span>
+    </h3>
+</doc-anchor-target>
+<p>在闭包中不需要转义管道（当用作命令分隔符时）。在任何想要使用字面管道字符而不是命令分隔符的地方，都需要转义它。</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
+/echo title=a\|b c\|d |</code></pre>
+</doc-codeblock></div>
+<p>使用解析器标志 <code v-pre>STRICT_ESCAPING</code> 时，不需要在引用值中转义管道。</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
+/echo title=&quot;a|b&quot; c\|d |
+/echo title=a\|b c\|d |</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="quotes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quotes">#</doc-anchor-trigger>
+        <span>Quotes</span>
+    </h3>
+</doc-anchor-target>
+<p>To use a literal quote-character inside a quoted value, the character must be escaped.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="spaces">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#spaces">#</doc-anchor-trigger>
+        <span>Spaces</span>
+    </h3>
+</doc-anchor-target>
+<p>To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
+/echo title=a\ b c d</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closure-delimiters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closure-delimiters">#</doc-anchor-trigger>
+        <span>Closure Delimiters</span>
+    </h3>
+</doc-anchor-target>
+<p>If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo \{: |
+/echo \:}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="pipe-breakers">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipe-breakers">#</doc-anchor-trigger>
+        <span>Pipe Breakers</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">||</code></pre>
+</doc-codeblock></div>
+<p>To prevent the previous command&#x27;s output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
+/world</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closures">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closures">#</doc-anchor-trigger>
+        <span>Closures</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
+</doc-codeblock></div>
+<p>Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between <code v-pre>{:</code> and <code v-pre>:}</code>, that are only evaluated once that part of the code is executed.</p>
+<doc-anchor-target id="sub-commands">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sub-commands">#</doc-anchor-trigger>
+        <span>Sub-Commands</span>
+    </h3>
+</doc-anchor-target>
+<p>Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// if without closures |
+/if left=1 rule=eq right=1
+    else=&quot;
+        /echo not equal \|
+        /return 0
+    &quot;
+    /echo equal \|
+    /return \{\{pipe}}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// if with closures |
+/if left=1 rule=eq right=1
+    else={:
+        /echo not equal |
+        /return 0
+    :}
+    {:
+        /echo equal |
+        /return {{pipe}}
+    :}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="scopes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scopes">#</doc-anchor-trigger>
+        <span>Scopes</span>
+    </h3>
+</doc-anchor-target>
+<p>Closures have their own scope and support scoped variables. Scoped variables are declared with <code v-pre>/let</code>, their values set and retrieved with <code v-pre>/var</code>. Another way to get a scoped variable is the <code v-pre>{{var::}}</code> macro.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x |
+/let y 2 |
+/var x 1 |
+/var y |
+/echo x is {{var::x}} and y is {{pipe}}.</code></pre>
+</doc-codeblock></div>
+<p>Within a closure, you have access to all variables declared within that same closure or in one of its ancestors. You don&#x27;t have access to variables declared in a closure&#x27;s descendants.<br />
+If a variable is declared with the same name as a variable that was declared in one of the closure&#x27;s ancestors, you don&#x27;t have access to the ancestor variable in this closure and its descendants.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x this is root x |
+/let y this is root y |
+/return {:
+    /echo called from level-1: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+    /delay 500 |
+    /let x this is level-1 x |
+    /echo called from level-1: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+    /delay 500 |
+    /return {:
+        /echo called from level-2: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+        /let x this is level-2 x |
+        /echo called from level-2: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+        /delay 500
+    :}()
+:}() |
+/echo called from root: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="named-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#named-closures">#</doc-anchor-trigger>
+        <span>Named Closures</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
+</doc-codeblock></div>
+<p>Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+    /echo this is my closure
+:} |
+/:myClosure</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+    /echo this is my closure |
+    /delay 500
+:} |
+/times 3 {{var::myClosure}}</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>/:</code> can also be used to execute Quick Replies, as it is just a shorthand for <code v-pre>/run</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
+/run QrSetName.QrButtonLabel</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closure-arguments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closure-arguments">#</doc-anchor-trigger>
+        <span>Closure Arguments</span>
+    </h3>
+</doc-anchor-target>
+<p>Named closures can take named arguments, just like slash commands. The arguments can have default values.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
+    /echo a is {{var::a}} and b is {{var::b}}
+:} |
+/:myClosure b=10</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closures-and-piped-arguments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closures-and-piped-arguments">#</doc-anchor-trigger>
+        <span>Closures and Piped Arguments</span>
+    </h3>
+</doc-anchor-target>
+<p>The piped value from a parent closure will not be automatically injected into the first command of a child closure.<br />
+You can still explicitly reference the parent&#x27;s piped value with <code v-pre>{{pipe}}</code>, but if you leave the unnamed argument of the first command inside a closure blank, the value will <em>not</em> be automatically injected.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/* This used to attempt to change the model to &quot;foo&quot;
+   because the value &quot;foo&quot; from the /echo outside of
+   the loop was injected into the /model command
+   inside of the loop.
+   Now it will simply echo the current model without 
+   attempting to change it.
+*|
+/echo foo |
+/times 2 {:
+	/model |
+	/echo |
+:} |</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/* You can still recreate the old behavior by
+   explicitly using the {{pipe}} macro.
+*|
+/echo foo |
+/times 2 {:
+	/model {{pipe}} |
+	/echo |
+:} |</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="immediately-executed-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#immediately-executed-closures">#</doc-anchor-trigger>
+        <span>Immediately Executed Closures</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
+</doc-codeblock></div>
+<p>Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
+/len foo |
+/var lenOfFoo {{pipe}} |
+/len bar |
+/var lenOfBar {{pipe}} |
+/if left={{var::lenOfFoo}} rule=eq right={{var:lenOfBar}} /echo yay!</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
+/if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!</code></pre>
+</doc-codeblock></div>
+<p>In addition to running named closures saved inside scoped variables, the <code v-pre>/run</code> command can also be used to execute closures immediately.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run {:
+	/add 1 2 3 4 |
+:} |
+/echo |</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="comments">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comments">#</doc-anchor-trigger>
+        <span>Comments</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
+</doc-codeblock></div>
+<p>A comment is a human-readable explanation or annotation in the script code. Comments don&#x27;t break pipes.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// this is a comment |
+/echo foo |
+/# this is also a comment</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="block-comments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#block-comments">#</doc-anchor-trigger>
+        <span>Block Comments</span>
+    </h3>
+</doc-anchor-target>
+<p>Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo foo |
+/*
+/echo bar |
+/echo foobar |
+*|
+/echo foo again |</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="flow-control">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control">#</doc-anchor-trigger>
+        <span>Flow Control</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="loops-while-and-times">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#loops-while-and-times">#</doc-anchor-trigger>
+        <span>Loops: <code v-pre>/while</code> and <code v-pre>/times</code></span>
+    </h3>
+</doc-anchor-target>
+<p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
+</doc-codeblock></div>
+<p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
+<doc-anchor-target id="arguments-for-while">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-while">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/while</code></span>
+    </h4>
+</doc-anchor-target>
+<p><strong>The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the <code v-pre>/if</code> command.</strong></p>
+<p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
+To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
+<p>This example adds 1 to the value of <code v-pre>i</code> until it reaches 10, then outputs the resulting value (10 in this case).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
+/while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
+/echo {{getvar::i}} |
+/flushvar i</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="arguments-for-times">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-times">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/times</code></span>
+    </h4>
+</doc-anchor-target>
+<p>Runs a subcommand a specified number of times.</p>
+<p><code v-pre>/times (repeats) &quot;(command)&quot;</code> – any valid slash command enclosed in quotes repeats a number of times, e.g. <code v-pre>/setvar key=i 1 | /times 5 &quot;/addvar key=i 1&quot;</code> adds 1 to the value of &quot;i&quot; 5 times.</p>
+<ul>
+<li>{{timesIndex}} is replaced with the iteration number (zero-based), e.g. <code v-pre>/times 4 &quot;/echo {{timesIndex}}&quot;</code> echoes the numbers 0 through 4.</li>
+<li>Loops are limited to 100 iterations by default, pass <code v-pre>guard=off</code> to disable.</li>
+</ul>
+<doc-anchor-target id="breaking-out-of-loops-and-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#breaking-out-of-loops-and-closures">#</doc-anchor-trigger>
+        <span>Breaking out of Loops and Closures</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/break |</code></pre>
+</doc-codeblock></div>
+<p>The <code v-pre>/break</code> command can be used to break out of a loop (<code v-pre>/while</code> or <code v-pre>/times</code>) or a closure early. The unnamed argument of <code v-pre>/break</code> can be used to pass a value different from the current pipe along.<br />
+<code v-pre>/break</code> is currently implemented in the following commands:</p>
+<ul>
+<li><code v-pre>/while</code> - exits the loop early</li>
+<li><code v-pre>/times</code> - exits the loop early</li>
+<li><code v-pre>/run</code> (with a closure or closure via variable) - exits the closure early</li>
+<li><code v-pre>/:</code> (with a closure) - exits the closure early</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/times 10 {:
+	/echo {{timesIndex}}
+	/delay 500 |
+	/if left={{timesIndex}} rule=gt right=3 {:
+		/break
+	:} |
+:} |</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x {: iterations=2
+	/if left={{var::iterations}} rule=gt right=10 {:
+		/break too many iterations! |
+	:} |
+	/times {{var::iterations}} {:
+		/delay 500 |
+		/echo {{timesIndex}} |
+	:} |
+:} |
+/:x iterations=30 |
+/echo the final result is: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run {:
+	/break 1 |
+	/pass 2 |
+:} |
+/echo pipe will be one: {{pipe}} |</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x {:
+	/break 1 |
+	/pass 2 |
+:} |
+/:x |
+/echo pipe will be one: {{pipe}} |</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="math-operations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#math-operations">#</doc-anchor-trigger>
+        <span>Math operations</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All of the following operations accept a series of numbers or variable names and output the result to the pipe.</li>
+<li>Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.</li>
+<li>Multiplication, addition, minimum and maximum accept an unlimited number of arguments separated by spaces.</li>
+<li>Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.</li>
+<li>Sine, cosine, natural logarithm, square root, absolute value, and rounding accept one argument.</li>
+</ul>
+<p><strong>List of operations:</strong></p>
+<ol>
+<li><code v-pre>/add (a b c d)</code> – performs an addition of the set of values, e.g. <code v-pre>/add 10 i 30 j</code></li>
+<li><code v-pre>/mul (a b c d)</code> – performs a multiplication of the set of values, e.g. <code v-pre>/mul 10 i 30 j</code></li>
+<li><code v-pre>/max (a b c d)</code> – returns a maximum from the set of values, e.g. <code v-pre>/max 1 0 4 k</code></li>
+<li><code v-pre>/min (a b c d)</code> – return a minimum from the set of values, e.g. <code v-pre>/min 5 4 i 2</code></li>
+<li><code v-pre>/sub (a b)</code> – performs a subtraction of two values, e.g. <code v-pre>/sub i 5</code></li>
+<li><code v-pre>/div (a b)</code> – performs a division of two values, e.g. <code v-pre>/div 10 i</code></li>
+<li><code v-pre>/mod (a b)</code> – performs a modulo operation of two values, e.g. <code v-pre>/mod i 2</code></li>
+<li><code v-pre>/pow (a b)</code> – performs a power operation of two values, e.g. <code v-pre>/pow i 2</code></li>
+<li><code v-pre>/sin (a)</code> – performs a sine operation of a value, e.g. <code v-pre>/sin i</code></li>
+<li><code v-pre>/cos (a)</code> – performs a cosine operation of a value, e.g. <code v-pre>/cos i</code></li>
+<li><code v-pre>/log (a)</code> – performs a natural logarithm operation of a value, e.g. <code v-pre>/log i</code></li>
+<li><code v-pre>/abs (a)</code> – performs an absolute value operation of a value, e.g. <code v-pre>/abs -10</code></li>
+<li><code v-pre>/sqrt (a)</code>– performs a square root operation of a value, e.g. <code v-pre>/sqrt 9</code></li>
+<li><code v-pre>/round (a)</code> – performs a rounding to the nearest integer operation of a value, e.g. <code v-pre>/round 3.14</code></li>
+<li><code v-pre>/rand (round=round|ceil|floor from=number=0 to=number=1)</code> – returns a random number between from and to, e.g. <code v-pre>/rand</code> or <code v-pre>/rand 10</code> or <code v-pre>/rand from=5 to=10</code>. Ranges are inclusive. The returned value will contain a fractional part. Use <code v-pre>round</code> named argument to get an integral value, e.g. <code v-pre>/rand round=ceil</code> to round up, <code v-pre>round=floor</code> to round down, and <code v-pre>round=round</code> to round to nearest.</li>
+</ol>
+<doc-anchor-target id="example-1-get-an-area-of-a-circle-with-a-radius-of-50">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-get-an-area-of-a-circle-with-a-radius-of-50">#</doc-anchor-trigger>
+        <span>Example 1: get an area of a circle with a radius of 50.</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
+/setvar key=r 50 |
+/mul r r PI |
+/round |
+/echo Circle area: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-2-calculate-a-factorial-of-5">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-calculate-a-factorial-of-5">#</doc-anchor-trigger>
+        <span>Example 2: calculate a factorial of 5.</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
+/setvar key=i 1 |
+/setvar key=product 1 |
+/while left=i right=input rule=lte &quot;/mul product i \| /setvar key=product \| /addvar key=i 1&quot; |
+/getvar product |
+/echo Factorial of {{getvar::input}}: {{pipe}} |
+/flushvar input |
+/flushvar i |
+/flushvar product</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="using-the-llm">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-llm">#</doc-anchor-trigger>
+        <span>Using the LLM</span>
+    </h2>
+</doc-anchor-target>
+<p>Scripts can make requests to your currently connected LLM API using the following commands:</p>
+<ul>
+<li><code v-pre>/gen (prompt)</code> — generates text using the provided prompt for the selected character and including chat messages.</li>
+<li><code v-pre>/genraw (prompt)</code> — generates text using just the provided prompt, ignoring the current character and chat.</li>
+<li><code v-pre>/trigger</code> — triggers a normal generation (equivalent to clicking a &quot;Send&quot; button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.</li>
+</ul>
+<doc-anchor-target id="arguments-for-gen-and-genraw">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-gen-and-genraw">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/gen</code> and <code v-pre>/genraw</code></span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
+<li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
+<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) — can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
+<li><code v-pre>as</code> (for Text Completion APIs) — can be <code v-pre>system</code> (default) or <code v-pre>char</code>. Defines how the last prompt line will be formatted. <code v-pre>char</code> will use a character name, <code v-pre>system</code> will use no or neutral name.</li>
+</ul>
+<p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
+/popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img src="../../static/scripts/cthulhu-says.png" alt="Cthulhu Says" /></th>
+</tr>
+</thead>
+</table>
+</div>
+<p>or to insert the generated message as a response from your character:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
+/sendas name={{char}} {{pipe}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="prompt-injections">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-injections">#</doc-anchor-trigger>
+        <span>Prompt injections</span>
+    </h2>
+</doc-anchor-target>
+<p>Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author&#x27;s Notes.</p>
+<ul>
+<li><code v-pre>/inject (text)</code> — inserts any text into the normal LLM prompt for the current chat, and requires a unique identifier. Saved to chat metadata.</li>
+<li><code v-pre>/listinjects</code> — shows a list of all prompt injections added by scripts for the current chat in a system message.</li>
+<li><code v-pre>/flushinjects</code> — deletes all prompt injections added by scripts for the current chat.</li>
+<li><code v-pre>/note (text)</code> — sets the Author&#x27;s Note value for the current chat. Saved to chat metadata.</li>
+<li><code v-pre>/interval</code> — sets the Author&#x27;s Note insertion interval for the current chat.</li>
+<li><code v-pre>/depth</code> — sets the Author&#x27;s Note insertion depth for the in-chat position.</li>
+<li><code v-pre>/position</code>  — sets the Author&#x27;s Note position for the current chat.</li>
+</ul>
+<doc-anchor-target id="arguments-for-inject">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-inject">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/inject</code></span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>id</code> — an identifier string or a reference to a variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite the previous text injection. <strong>Required argument.</strong></li>
+<li><code v-pre>position</code> — sets a position for the injection. Default: <code v-pre>after</code>. Possible values:
+<ul>
+<li><code v-pre>after</code>: after the main prompt.</li>
+<li><code v-pre>before</code>: before main prompt.</li>
+<li><code v-pre>chat</code>: in-chat.</li>
+</ul>
+</li>
+<li><code v-pre>depth</code> — sets an injection depth for the in-chat position. 0 means insertion after the last message, 1 - before the last message, etc. Default: 4.</li>
+<li>Unnamed argument is a text to be injected. An empty string will unset the previous value for the provided identifier.</li>
+</ul>
+<doc-anchor-target id="access-chat-messages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#access-chat-messages">#</doc-anchor-trigger>
+        <span>Access chat messages</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="read-messages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#read-messages">#</doc-anchor-trigger>
+        <span>Read messages</span>
+    </h3>
+</doc-anchor-target>
+<p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</li>
+<li>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</li>
+<li>If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.</li>
+<li>Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.</li>
+<li>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</li>
+</ul>
+<p>To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
+This example will get you 3 last messages in the chat:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
+/addvar key=start -2 |
+/messages names=off {{getvar::start}}-{{lastMessageId}} |
+/setinput</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="send-messages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#send-messages">#</doc-anchor-trigger>
+        <span>Send messages</span>
+    </h3>
+</doc-anchor-target>
+<p>A script can send messages as either a user, character, persona, neutral narrator, or add comments.</p>
+<ol>
+<li><code v-pre>/send (text)</code> — adds a message as the currently selected persona.</li>
+<li><code v-pre>/sendas name=charname (text)</code> — adds a message as any character, matching by their name. <code v-pre>name</code> argument is required. Use the <code v-pre>{{char}}</code> macro to send as the current character.</li>
+<li><code v-pre>/sys (text)</code> — adds a message from the neutral narrator that doesn&#x27;t belong to the user or character. The displayed name is purely cosmetic and can be customized with the <code v-pre>/sysname</code> command.</li>
+<li><code v-pre>/comment (text)</code> — adds a hidden comment that is displayed in the chat but is not visible to the prompt.</li>
+<li><code v-pre>/addswipe (text)</code> — adds a swipe to the last character message. Can&#x27;t add a swipe to the user or hidden messages.</li>
+<li><code v-pre>/hide (message id or range)</code> — hides one or several messages from the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+<li><code v-pre>/unhide (message id or range)</code> — returns one or several messages to the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+</ol>
+<p><code v-pre>/send</code>, <code v-pre>/sendas</code>, <code v-pre>/sys</code>, and <code v-pre>/comment</code> commands optionally accept a named argument <code v-pre>at</code> with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.</p>
+<p>This will insert a user message at the beginning of the conversation history:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="delete-messages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#delete-messages">#</doc-anchor-trigger>
+        <span>Delete messages</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>These commands are potentially destructive and have no &quot;undo&quot; function. Check the /backups/ folder if you accidentally deleted something important.</strong></p>
+<ol>
+<li><code v-pre>/cut (message id or range)</code> — cuts one or several messages from the chat based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+<li><code v-pre>/del (number)</code> — deletes last N messages from the chat.</li>
+<li><code v-pre>/delswipe (1-based swipe id)</code> — deletes a swipe from the last character message based on the provided 1-based swipe ID.</li>
+<li><code v-pre>/delname (character name)</code> — deletes all messages in the current chat that belong to a character with the specified name.</li>
+<li><code v-pre>/delchat</code> — deletes the current chat.</li>
+</ol>
+<doc-anchor-target id="world-info-commands">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-commands">#</doc-anchor-trigger>
+        <span>World Info commands</span>
+    </h2>
+</doc-anchor-target>
+<p>World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: <a href="../core-concepts/worldinfo/">World Info</a>.</p>
+<ol>
+<li><code v-pre>/getchatbook</code> – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.</li>
+<li><code v-pre>/findentry file=bookName field=fieldName [text]</code> – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: <code v-pre>key</code>) and passes the UID down the pipe, e.g. <code v-pre>/findentry file=chatLore field=key Shadowfang</code>.</li>
+<li><code v-pre>/getentryfield file=bookName field=field [UID]</code> – gets a field value (default field: <code v-pre>content</code>) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. <code v-pre>/getentryfield file=chatLore field=content 123</code>.</li>
+<li><code v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> – sets a field value (default field: <code v-pre>content</code>) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. <code v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>.</li>
+<li><code v-pre>/createentry file=bookName key=keyValue [content text]</code> – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are <em>optional</em>) and passes the UID down the pipe, e.g. <code v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>.</li>
+</ol>
+<doc-anchor-target id="valid-entry-fields">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#valid-entry-fields">#</doc-anchor-trigger>
+        <span>Valid entry fields</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">UI element</th>
+<th style="text-align: left;">Value type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code v-pre>content</code></td>
+<td style="text-align: left;">Content</td>
+<td style="text-align: left;">String</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>comment</code></td>
+<td style="text-align: left;">Title / Memo</td>
+<td style="text-align: left;">String</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>key</code></td>
+<td style="text-align: left;">Primary Keywords</td>
+<td style="text-align: left;">List of strings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>keysecondary</code></td>
+<td style="text-align: left;">Optional Filter</td>
+<td style="text-align: left;">List of strings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>constant</code></td>
+<td style="text-align: left;">Constant Status</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>disable</code></td>
+<td style="text-align: left;">Disabled Status</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>order</code></td>
+<td style="text-align: left;">Order</td>
+<td style="text-align: left;">Number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>selectiveLogic</code></td>
+<td style="text-align: left;">Logic</td>
+<td style="text-align: left;">(see below)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>excludeRecursion</code></td>
+<td style="text-align: left;">Non-recursable</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>probability</code></td>
+<td style="text-align: left;">Trigger%</td>
+<td style="text-align: left;">Number (0-100)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>depth</code></td>
+<td style="text-align: left;">Depth</td>
+<td style="text-align: left;">Number (0-999)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>position</code></td>
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">(see below)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>role</code></td>
+<td style="text-align: left;">Depth Role</td>
+<td style="text-align: left;">(see below)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>scanDepth</code></td>
+<td style="text-align: left;">Scan Depth</td>
+<td style="text-align: left;">Number (0-100)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>caseSensitive</code></td>
+<td style="text-align: left;">Case-Sensitive</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>matchWholeWords</code></td>
+<td style="text-align: left;">Match Whole Words</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Logic values</strong></p>
+<ul>
+<li>0 = AND ANY</li>
+<li>1 = NOT ALL</li>
+<li>2 = NOT ANY</li>
+<li>3 = AND ALL</li>
+</ul>
+<p><strong>Position values</strong></p>
+<ul>
+<li>0 = before main prompt</li>
+<li>1 = after main prompt</li>
+<li>2 = top of Author&#x27;s Note</li>
+<li>3 = bottom of Author&#x27;s Note</li>
+<li>4 = in-chat at depth</li>
+<li>5 = top of example messages</li>
+<li>6 = bottom of example messages</li>
+</ul>
+<p><strong>Role values</strong> (Position = 4 only)</p>
+<ul>
+<li>0 = System</li>
+<li>1 = User</li>
+<li>2 = Assistant</li>
+</ul>
+<doc-anchor-target id="example-1-read-a-content-from-the-chat-lorebook-by-key">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-read-a-content-from-the-chat-lorebook-by-key">#</doc-anchor-trigger>
+        <span>Example 1: Read a content from the chat lorebook by key</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+/findentry file={{getvar::chatLore}} field=key Shadowfang |
+/getentryfield file={{getvar::chatLore}} field=key |
+/echo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-2-create-a-chat-lorebook-entry-with-key-and-content">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-create-a-chat-lorebook-entry-with-key-and-content">#</doc-anchor-trigger>
+        <span>Example 2: Create a chat lorebook entry with key and content</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+/createentry file={{getvar::chatLore}} key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
+/echo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">#</doc-anchor-trigger>
+        <span>Example 3: Expand an existing lorebook entry with new information from the chat</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+/findentry file={{getvar::chatLore}} field=key Milla |
+/setvar key=millaUid |
+/getentryfield file={{getvar::chatLore}} field=content |
+/setvar key=millaContent |
+/gen lock=on Tell me more about Milla Basset based on the provided conversation history. Incorporate existing information into your reply: {{getvar::millaContent}} |
+/setvar key=millaContent |
+/echo New content: {{pipe}} |
+/setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="text-manipulation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#text-manipulation">#</doc-anchor-trigger>
+        <span>Text manipulation</span>
+    </h2>
+</doc-anchor-target>
+<p>There&#x27;s a variety of useful text manipulation utility commands to be used in various script scenarios.</p>
+<ol>
+<li><code v-pre>/trimtokens</code> — trims the input to the specified number of text tokens from the start or from the end and outputs the result to the pipe.</li>
+<li><code v-pre>/trimstart</code> — trims the input to the start of the first complete sentence and outputs the result to the pipe.</li>
+<li><code v-pre>/trimend</code> — trims the input to the end of the last complete sentence and outputs the result to the pipe.</li>
+<li><code v-pre>/fuzzy</code> — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.</li>
+<li><code v-pre>/regex name=scriptName [text]</code> — executes a regex script from the Regex extension for the specified text. The script must be enabled.</li>
+</ol>
+<doc-anchor-target id="arguments-for-trimtokens">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-trimtokens">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/trimtokens</code></span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/trimtokens limit=number direction=start/end (input)</code></pre>
+</doc-codeblock></div>
+<ol>
+<li><code v-pre>direction</code> sets the direction for trimming, which can be either <code v-pre>start</code> or <code v-pre>end</code>. Default: <code v-pre>end</code>.</li>
+<li><code v-pre>limit</code> sets the amount of tokens to left in the output. Can also specify a variable name containing the number. <strong>Required argument.</strong></li>
+<li>Unnamed argument is the input text to be trimmed.</li>
+</ol>
+<doc-anchor-target id="arguments-for-fuzzy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-fuzzy">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/fuzzy</code></span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
+</doc-codeblock></div>
+<ol>
+<li><code v-pre>list</code> is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. <strong>Required argument.</strong></li>
+<li>Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.</li>
+</ol>
+<doc-anchor-target id="autocomplete">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#autocomplete">#</doc-anchor-trigger>
+        <span>Autocomplete</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Autocomplete is enabled both on the chat input, and the large Quick Reply editor.</li>
+<li>Autocomplete works anywhere in your input. Even with multiple piped commands and nested closures.</li>
+<li>Autocomplete supports three ways of looking up matching commands (<em>User Settings</em> -&gt; <em>STscript Matching</em>).</li>
+</ul>
+<ol>
+<li><strong>Starts with</strong> The &quot;old&quot; way. Only commands that begin exactly with the typed value will show up.</li>
+<li><strong>Includes</strong>  All commands that <em>include</em> the type value will show up. Example: When entering <code v-pre>/delete</code>, the commands <code v-pre>/qr-delete</code> and <code v-pre>/qr-set-delete</code> will show up in the autocomplete list (/qr-<strong>delete</strong>, /qr-set-<strong>delete</strong>).</li>
+<li><strong>Fuzzy</strong>  All commands that can be fuzzy-matched against the typed value will show up. Example: When entering <code v-pre>/seas</code>, the command <code v-pre>/sendas</code> will show up in the autocomplete list (/<strong>se</strong>nd<strong>as</strong>).</li>
+</ol>
+<ul>
+<li>Command arguments are supported by autocomplete as well. The list will show up for required arguments automatically. For optional arguments, press <em>Ctrl</em>+<em>Space</em> to open the list of available options.</li>
+<li>When entering <code v-pre>/:</code> to execute a closure or QR, autocomplete will show a list of scoped variables and QRs.</li>
+<li>Autocomplete has limited support for macros (in slash commands). Type <code v-pre>{{</code> to get a list of available macros.</li>
+<li>Use the <em>up</em> and <em>down</em> <em>arrow keys</em> to select an option from the list of autocomplete options.</li>
+<li>Press <em>Enter</em> or <em>Tab</em> or <em>click</em> on an option to place the option at the cursor.</li>
+<li>Press <em>Escape</em> to close the autocomplete list.</li>
+<li>Press <em>Ctrl</em>+<em>Space</em> to open the autocomplete list or toggle the selected option&#x27;s details.</li>
+</ul>
+<doc-anchor-target id="parser-flags">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parser-flags">#</doc-anchor-trigger>
+        <span>Parser Flags</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
+</doc-codeblock></div>
+<p>The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.<br />
+You can set your default flags in user settings.</p>
+<doc-anchor-target id="strict-escaping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#strict-escaping">#</doc-anchor-trigger>
+        <span>Strict Escaping</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
+</doc-codeblock></div>
+<p>Changes with <code v-pre>STRICT_ESCAPING</code> enabled are as follows.</p>
+<doc-anchor-target id="pipes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipes">#</doc-anchor-trigger>
+        <span>Pipes</span>
+    </h4>
+</doc-anchor-target>
+<p>Pipes don&#x27;t need to be escaped in quoted values.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="backslashes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#backslashes">#</doc-anchor-trigger>
+        <span>Backslashes</span>
+    </h4>
+</doc-anchor-target>
+<p>A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
+/echo foo \\|
+/echo bar</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo \\|
+/echo \\\|</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="replace-variable-macros">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-variable-macros">#</doc-anchor-trigger>
+        <span>Replace Variable Macros</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
+</doc-codeblock></div>
+<p>This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The <code v-pre>{{var::}}</code> macros get substituted last and no further substitutions happen on the resulting text / variable value.</p>
+<p>Replaces all <code v-pre>{{getvar::}}</code> and <code v-pre>{{getglobalvar::}}</code> macros with <code v-pre>{{var::}}</code>.
+Behind the scenes, the parser will insert a series of command executors before the command with the replaced macros:</p>
+<ul>
+<li>call <code v-pre>/let</code> to save the current <code v-pre>{{pipe}}</code> to a scoped variable</li>
+<li>call <code v-pre>/getvar</code> or <code v-pre>/getglobalvar</code> to get the variable used in the macro</li>
+<li>call <code v-pre>/let</code> to save the retrieved variable to a scoped variable</li>
+<li>call <code v-pre>/return</code> with the saved <code v-pre>{{pipe}}</code> value to restore the correct piped value for the next command</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
+/setvar key=x \{\{lastMessageId}} |
+/echo {{getvar::x}}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
+/parser-flag REPLACE_GETVAR |
+/setvar key=x \{\{lastMessageId}} |
+/echo {{getvar::x}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="quick-replies-script-library-and-auto-execution">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-script-library-and-auto-execution">#</doc-anchor-trigger>
+        <span>Quick Replies: script library and auto-execution</span>
+    </h2>
+</doc-anchor-target>
+<p>Quick Replies is a built-in SillyTavern extension that provides an easy way to store and execute your scripts.</p>
+<doc-anchor-target id="configuring-quick-replies">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-quick-replies">#</doc-anchor-trigger>
+        <span>Configuring Quick Replies</span>
+    </h3>
+</doc-anchor-target>
+<p>In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.</p>
+<div style="display:flex;justify-content:center">
+<p><figure class="content-center">
+    <img src="../../static/scripts/quick-reply.png" alt="Quick Reply">
+    <figcaption class="caption">Quick Reply</figcaption>
+</figure>
+</p>
+</div>
+<p><strong>Quick Replies are disabled by default, you need to enable them first.</strong> Then you will see a bar appearing above your chat input bar.</p>
+<p>You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.</p>
+<p>The number of buttons is controlled by the <strong>Number of slots</strong> settings (max = 100), adjust it according to your needs and click &quot;Apply&quot; when done.</p>
+<p><strong>Inject user input automatically</strong> recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use the <code v-pre>{{input}}</code> macro to get the current value of the input bar in scripts instead.</p>
+<p><strong>Quick Reply presets</strong> allow to have multiple sets of predefined Quick Replies and switch between manually or by using the <code v-pre>/qrset (name of set)</code> command.
+Don&#x27;t forget to click &quot;Update&quot; before switching to a different set to write your changes to the currently used preset!</p>
+<doc-anchor-target id="manual-execution">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-execution">#</doc-anchor-trigger>
+        <span>Manual execution</span>
+    </h3>
+</doc-anchor-target>
+<p>Now you can add your first script to the library. Pick any free slot (or create one), type &quot;Click me&quot; into the left box to set the label, then paste this into the right box:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
+/if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
+</doc-codeblock></div>
+<p>Then click 5 times on the button that appeared above the chat bar.
+Every click increments the variable <code v-pre>clicks</code> by one and displays a different message when the value equals 5 and resets the variable.</p>
+<doc-anchor-target id="automatic-execution">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-execution">#</doc-anchor-trigger>
+        <span>Automatic execution</span>
+    </h3>
+</doc-anchor-target>
+<p>Open the modal menu by clicking the <code v-pre>⋮</code> button for the created command.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img src="../../static/scripts/autoexecute.png" alt="Automatic execution" /></th>
+</tr>
+</thead>
+</table>
+</div>
+<p>In this menu you can do the following:</p>
+<ul>
+<li>Edit the script in a convenient full-screen editor</li>
+<li>Hide the button from the chat bar, making it accessible only for auto-execution.</li>
+<li>Enable automatic execution on one or more of the following conditions:
+<ul>
+<li>App startup</li>
+<li>Sending a user message to the chat</li>
+<li>Receiving an AI message in the chat</li>
+<li>Opening a character or group chat</li>
+<li>Triggering a reply from a group member</li>
+<li>Activating a World Info entry using the same Automation ID</li>
+</ul>
+</li>
+<li>Provide a custom tool tip for the quick reply (text displayed when hovering over the quick reply in your UI)</li>
+<li>Execute the script for test purposes</li>
+</ul>
+<p>Commands are executed automatically only if the Quick Replies extension is enabled.</p>
+<p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
+/echo You've sent {{pipe}} messages. |
+/if left=usercounter right=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="debugger">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debugger">#</doc-anchor-trigger>
+        <span>Debugger</span>
+    </h3>
+</doc-anchor-target>
+<p>A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints with <code v-pre>/breakpoint |</code> anywhere in your script. When executing the script from the QR editor, the execution will be interrupted at that point, allowing you to examine the currently available variables, pipe, command arguments, and more, and to step through the rest of the code one by one.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x {: n=1
+	/echo n is {{var::n}} |
+	/mul n n |
+:} |
+/breakpoint |
+/:x n=3 |
+/echo result is {{pipe}} |</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img src="../../static/scripts/st-debugger.png" alt="QR Editor Debugger" /></th>
+</tr>
+</thead>
+</table>
+</div>
+<doc-anchor-target id="calling-procedures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#calling-procedures">#</doc-anchor-trigger>
+        <span>Calling procedures</span>
+    </h3>
+</doc-anchor-target>
+<p>A <code v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
+</doc-codeblock></div>
+<p>Let&#x27;s create two Quick Replies:</p>
+<hr>
+<p><strong>Label:</strong></p>
+<p><code v-pre>GetRandom</code></p>
+<p><strong>Command:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
+</doc-codeblock></div>
+<hr>
+<p><strong>Label:</strong></p>
+<p><code v-pre>GetMessage</code></p>
+<p><strong>Command:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<hr>
+<p>Clicking on the <code v-pre>GetMessage</code> button will call the <code v-pre>GetRandom</code> procedure which will resolve the <code v-pre>{{roll}}</code> macro and pass the number to the caller, displaying it to the user.</p>
+<ul>
+<li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
+<li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
+</ul>
+<doc-anchor-target id="calling-procedures-from-a-different-quick-reply-preset">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#calling-procedures-from-a-different-quick-reply-preset">#</doc-anchor-trigger>
+        <span>Calling procedures from a different Quick Reply preset</span>
+    </h4>
+</doc-anchor-target>
+<p>You can call a procedure from a different quick reply preset using the <code v-pre>a.b</code> syntax, where a = QR preset name and b = QR label name</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
+</doc-codeblock></div>
+<p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labeled &quot;QRlabel1&quot;.</p>
+<doc-anchor-target id="quick-replies-management-commands">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-management-commands">#</doc-anchor-trigger>
+        <span>Quick Replies management commands</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="create-quick-reply">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#create-quick-reply">#</doc-anchor-trigger>
+        <span>Create Quick Reply</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-create (arguments, [message])</code> – creates a new Quick Reply, example: <code v-pre>/qr-create set=MyPreset label=MyButton /echo 123</code></li>
+</ul>
+<p>Arguments:</p>
+<ul>
+<li><code v-pre>label</code>    - string - text on the button, e.g., <code v-pre>label=MyButton</code></li>
+<li><code v-pre>set</code>      - string - name of the QR set, e.g., <code v-pre>set=PresetName1</code></li>
+<li><code v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code v-pre>hidden=true</code></li>
+<li><code v-pre>startup</code>  - bool   - auto execute on app startup, e.g., <code v-pre>startup=true</code></li>
+<li><code v-pre>user</code>     - bool   - auto execute on user message, e.g., <code v-pre>user=true</code></li>
+<li><code v-pre>bot</code>      - bool   - auto execute on AI message, e.g., <code v-pre>bot=true</code></li>
+<li><code v-pre>load</code>     - bool   - auto execute on chat load, e.g., <code v-pre>load=true</code></li>
+<li><code v-pre>title</code>    - bool   - title / tooltip to be shown on button, e.g., <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
+</ul>
+<doc-anchor-target id="delete-quick-reply">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#delete-quick-reply">#</doc-anchor-trigger>
+        <span>Delete Quick Reply</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-delete (set=string [label])</code> – deletes Quick Reply</li>
+</ul>
+<doc-anchor-target id="update-quick-reply">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#update-quick-reply">#</doc-anchor-trigger>
+        <span>Update Quick Reply</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-update (arguments, [message])</code> – updates Quick Reply, example: <code v-pre>/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123</code></li>
+</ul>
+<p>Arguments:</p>
+<ul>
+<li><code v-pre>newlabel</code> - string - new text fort the button, e.g. <code v-pre>newlabel=MyRenamedButton</code></li>
+<li><code v-pre>label</code>    - string - text on the button, e.g., <code v-pre>label=MyButton</code></li>
+<li><code v-pre>set</code>      - string - name of the QR set, e.g., <code v-pre>set=PresetName1</code></li>
+<li><code v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code v-pre>hidden=true</code></li>
+<li><code v-pre>startup</code>  - bool   - auto execute on app startup, e.g., <code v-pre>startup=true</code></li>
+<li><code v-pre>user</code>     - bool   - auto execute on user message, e.g., <code v-pre>user=true</code></li>
+<li><code v-pre>bot</code>      - bool   - auto execute on AI message, e.g., <code v-pre>bot=true</code></li>
+<li><code v-pre>load</code>     - bool   - auto execute on chat load, e.g., <code v-pre>load=true</code></li>
+<li><code v-pre>title</code>    - bool   - title / tooltip to be shown on button, e.g., <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
+</ul>
+<doc-anchor-target id="section">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#section">#</doc-anchor-trigger>
+        <span></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>qr-get</code> - retrieves all of a Quick Reply&#x27;s properties, eample: <code v-pre>/qr-get set=myQrSet id=42</code></li>
+</ul>
+<doc-anchor-target id="create-or-update-qr-preset">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#create-or-update-qr-preset">#</doc-anchor-trigger>
+        <span>Create or update QR preset</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-presetupdate (arguments [label])</code> or <code v-pre>/qr-presetadd (arguments [label])</code></li>
+</ul>
+<p>Arguments:</p>
+<ul>
+<li><code v-pre>enabled</code> - bool - enable or disable the preset</li>
+<li><code v-pre>nosend</code>  - bool - disable send / insert in user input (invalid for slash commands)</li>
+<li><code v-pre>before</code>  - bool - place QR before user input</li>
+<li><code v-pre>slots</code>   - int  - number of slots</li>
+<li><code v-pre>inject</code>  - bool - inject user input automatically (if disabled use <code v-pre>{{input}}</code>)</li>
+</ul>
+<p>Create a new preset (overrides existing ones), example: <code v-pre>/qr-presetadd slots=3 MyNewPreset</code></p>
+<doc-anchor-target id="add-qr-context-menu">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add-qr-context-menu">#</doc-anchor-trigger>
+        <span>Add QR context menu</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-contextadd (set=string label=string chain=bool [preset name])</code> – add context menu preset to a QR, example: <code v-pre>/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset</code></li>
+</ul>
+<doc-anchor-target id="remove-all-context-menus">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-all-context-menus">#</doc-anchor-trigger>
+        <span>Remove all context menus</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-contextclear (set=string [label])</code> – remove all context menu presets from a QR, example: <code v-pre>/qr-contextclear set=MyPreset MyButton</code></li>
+</ul>
+<doc-anchor-target id="remove-one-context-menu">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-one-context-menu">#</doc-anchor-trigger>
+        <span>Remove one context menu</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-contextdel (set=string label=string [preset name])</code> – remove context menu preset from a QR, example: <code v-pre>/qr-contextdel set=MyPreset label=MyButton MyOtherPreset</code></li>
+</ul>
+<doc-anchor-target id="quick-reply-value-escaping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-reply-value-escaping">#</doc-anchor-trigger>
+        <span>Quick Reply value escaping</span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>|{}</code> can be escaped with backslash in the QR message / command.</p>
+<p>For example, use <code v-pre>/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}</code> to create a QR that calls <code v-pre>/getvar myvar | /echo {{pipe}}</code>.</p>
+<doc-anchor-target id="extension-commands">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-commands">#</doc-anchor-trigger>
+        <span>Extension commands</span>
+    </h2>
+</doc-anchor-target>
+<p>SillyTavern extensions (both built-in, downloadable and third-party) can add their own slash command. Below is just an example of the capabilities in the official extensions. The list may be incomplete, make sure to check <code v-pre>/help slash</code> for the most complete list of available commands.</p>
+<ol>
+<li><code v-pre>/websearch (query)</code> — searches snippets of the web pages online for the specified query and returns the result into the pipe. Provided by the Web Search extension.</li>
+<li><code v-pre>/imagine (prompt)</code> — generates an image using the provided prompt. Provided by the Image Generation extension.</li>
+<li><code v-pre>/emote (sprite)</code> — sets a sprite for the active character by fuzzy matching its name. Provided by the Character Expressions extension.</li>
+<li><code v-pre>/costume (subfolder)</code> — sets a sprite set override for the active character. Provided by the Character Expressions extension.</li>
+<li><code v-pre>/music (name)</code> — force changes a played background music file by its name. Provided by the Dynamic Audio extension.</li>
+<li><code v-pre>/ambient (name)</code> — force changes a played ambient sound file by its name. Provided by the Dynamic Audio extension.</li>
+<li><code v-pre>/roll (dice formula)</code> — adds a hidden message to the chat with the result of a dice roll. Provided by the D&amp;D Dice extension.</li>
+</ol>
+<doc-anchor-target id="ui-interaction">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-interaction">#</doc-anchor-trigger>
+        <span>UI interaction</span>
+    </h2>
+</doc-anchor-target>
+<p>Scripts can also interact with SillyTavern&#x27;s UI: navigate through the chats or change styling parameters.</p>
+<doc-anchor-target id="character-navigation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-navigation">#</doc-anchor-trigger>
+        <span>Character navigation</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><code v-pre>/random</code> — opens a chat with the random character.</li>
+<li><code v-pre>/go (name)</code> — opens a chat with the character of the specified name. First, searches for the exact name match, then by a prefix, then by a substring.</li>
+</ol>
+<doc-anchor-target id="ui-styling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-styling">#</doc-anchor-trigger>
+        <span>UI styling</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><code v-pre>/bubble</code> — sets the message style to the &quot;bubble chat&quot; style.</li>
+<li><code v-pre>/flat</code> — sets the message style to the &quot;flat chat&quot; style.</li>
+<li><code v-pre>/single</code> — sets the message style to the &quot;single document&quot; style.</li>
+<li><code v-pre>/movingui (name)</code> — activates a MovingUI preset by name.</li>
+<li><code v-pre>/resetui</code> — resets the MovingUI panels state to their original positions.</li>
+<li><code v-pre>/panels</code> — toggles the UI panels visibility: top bar, left and right drawers.</li>
+<li><code v-pre>/bg (name)</code> — finds and sets a background using fuzzy names matching. Respect the chat background lock state.</li>
+<li><code v-pre>/lockbg</code> — locks the background image for the current chat.</li>
+<li><code v-pre>/unlockbg</code> — unlocks the background image for the current chat.</li>
+</ol>
+<doc-anchor-target id="more-examples">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#more-examples">#</doc-anchor-trigger>
+        <span>More examples</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="generate-chat-summary-by-ikaridevgit">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generate-chat-summary-by-ikaridevgit">#</doc-anchor-trigger>
+        <span>Generate chat summary (by @IkariDevGIT)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
+/setvar key=tmp |
+/messages 0-{{lastMessageId}} |
+/trimtokens limit=3000 direction=end |
+/setvar key=s1 |
+/echo Generating, please wait... |
+/genraw lock=on instruct=off {{instructInput}}{{newline}}{{getglobalvar::summaryPrompt}}{{newline}}{{newline}}{{instructInput}}{{newline}}{{getvar::s1}}{{newline}}{{newline}}{{instructOutput}}{{newline}}The chat summary:{{newline}} |
+/setvar key=tmp |
+/echo Done! |
+/setinput {{getvar::tmp}} |
+/flushvar tmp |
+/flushvar s1</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="buttons-popup-usage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#buttons-popup-usage">#</doc-anchor-trigger>
+        <span>Buttons popup usage</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
+/buttons labels=genders Who are you? |
+/echo You picked: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="get-nth-fibonaccis-number-using-binets-formula">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get-nth-fibonaccis-number-using-binets-formula">#</doc-anchor-trigger>
+        <span>Get Nth Fibonacci&#x27;s number (using Binet&#x27;s formula)</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p><strong>Hint</strong>: Set value of <code v-pre>fib_no</code> to the desired number</p>
+</blockquote>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
+/pow 5 0.5 | /setglobalvar key=SQRT5 |
+/setglobalvar key=PHI 1.618033 |
+/pow PHI fib_no | /div {{pipe}} SQRT5 |
+/round |
+/echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="recursive-factorial-using-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-factorial-using-closures">#</doc-anchor-trigger>
+        <span>Recursive Factorial (using closures)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let fact {: n=
+    /if left={{var::n}} rule=gt right=1
+        else={:
+            /return 1
+        :}
+        {:
+            /sub {{var::n}} 1 |
+            /:fact n={{pipe}} |
+            /mul {{var::n}} {{pipe}}
+        :}
+:} |
+
+/input Calculate factorial of: |
+/let n {{pipe}} |
+/:fact n={{var::n}} |
+/echo factorial of {{var::n}} is {{pipe}}</code></pre>
+</doc-codeblock></div>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/For_Contributors/st-script.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">开发和自动化</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/function-calling/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">函数调用</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "STscript 语言参考", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

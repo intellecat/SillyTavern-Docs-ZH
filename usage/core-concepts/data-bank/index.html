@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0NTJMWH0TW1"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0NTJMWH0TW1');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794740945311">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>数据库（RAG） | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="数据库（RAG） | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/data-bank/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/data-bank/">
+    <meta property="og:title" content="数据库（RAG） | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/data-bank/">
+    <meta property="twitter:title" content="数据库（RAG） | SillyTavern傻酒馆中文文档">
+    <meta property="twitter:description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.6.0.794740945311" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794740945311" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794740945311" data-turbo-eval="false" defer></script>
+
+    <style>
+        a {
+            color: brown !important;
+        }
+
+        .dark a {
+            color: rgb(223, 151, 18) !important;
+        }
+
+        body {
+            font-family: Noto Sans, sans-serif;
+        }
+
+        .callout {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
+        }
+
+        .callout p {
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .callout .fa-fw {
+            margin: 1rem 0.5rem 1rem 0;
+            color: slategrey;
+        }
+
+        .docs-markdown .codeblock code,
+        .docs-markdown .codeblock pre {
+            white-space: pre-wrap;
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet" />
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/static/css/solid.min.css" rel="stylesheet" />
+    <link href="/static/css/brands.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="数据库rag" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#数据库rag">#</doc-anchor-trigger>
+        <span>数据库（RAG）</span>
+    </h1>
+</doc-anchor-target>
+<p>检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。</p>
+<p>SillyTavern 提供了一套工具，用于从多种来源构建多用途知识库，以及在 LLM 提示词中使用收集的数据。</p>
+<doc-anchor-target id="访问数据库">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#访问数据库">#</doc-anchor-trigger>
+        <span>访问数据库</span>
+    </h2>
+</doc-anchor-target>
+<p>内置的聊天附件扩展（在 1.12.0 及更高版本中默认包含）在&quot;魔法棒&quot;菜单中添加了一个新选项 - 数据库。这是您管理 SillyTavern 中用于 RAG 的文档的中心。</p>
+<doc-anchor-target id="关于文档">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#关于文档">#</doc-anchor-trigger>
+        <span>关于文档</span>
+    </h2>
+</doc-anchor-target>
+<p>数据库存储文件附件，也称为文档。文档分为三个可用范围。</p>
+<ol>
+<li>全局附件 - 在每个聊天中都可用，无论是单人还是群组。</li>
+<li>角色附件 - 仅对当前选择的角色可用，包括他们在群组中回复时。<em>附件保存在本地，不会随角色卡片导出！</em></li>
+<li>聊天附件 - 仅在当前打开的聊天中可用。聊天中的每个角色都可以从中获取信息。</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>虽然不是数据库的正式组成部分，但您甚至可以将文件附加到单个消息。使用&quot;魔法棒&quot;菜单中的附加文件选项，或消息操作行中的回形针图标。</p>
+        </div>
+    </div>
+</div>
+<p>什么可以成为文档？实际上任何可以用纯文本形式表示的内容！</p>
+<p>示例包括但不限于：</p>
+<ul>
+<li>本地文件（书籍、科学论文等）</li>
+<li>网页（维基百科、文章、新闻）</li>
+<li>视频转录</li>
+</ul>
+<p>各种扩展和插件也可以提供新的方式来收集和处理数据，下面会详细介绍。</p>
+<doc-anchor-target id="数据来源">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#数据来源">#</doc-anchor-trigger>
+        <span>数据来源</span>
+    </h2>
+</doc-anchor-target>
+<p>要将文档添加到任何范围，点击&quot;添加&quot;并选择一个可用的来源。</p>
+<doc-anchor-target id="记事本">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#记事本">#</doc-anchor-trigger>
+        <span>记事本</span>
+    </h3>
+</doc-anchor-target>
+<p>从头创建文本文件，或编辑现有附件。</p>
+<doc-anchor-target id="文件">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#文件">#</doc-anchor-trigger>
+        <span>文件</span>
+    </h3>
+</doc-anchor-target>
+<p>从您的计算机硬盘上传文件。SillyTavern 为常见文件格式提供内置转换器：</p>
+<ul>
+<li>PDF（仅文本）</li>
+<li>HTML</li>
+<li>Markdown</li>
+<li>ePUB</li>
+<li>TXT</li>
+</ul>
+<p>您也可以附加任何带有非标准扩展名的文本文件，如 JSON、YAML、源代码等。如果所选文件类型没有已知的转换方式，并且文件无法解析为纯文本文档，文件上传将被拒绝，这意味着不允许原始二进制文件。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>导入 Microsoft Office（DOCX、PPTX、XLSX）和 LibreOffice 文档（ODT、ODP、ODS）需要安装并加载<a href="https://github.com/SillyTavern/SillyTavern-Office-Parser">服务器插件</a>。有关安装说明，请参阅插件的 README 页面。</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="网页">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#网页">#</doc-anchor-trigger>
+        <span>网页</span>
+    </h3>
+</doc-anchor-target>
+<p>通过 URL 从网页抓取文本。然后通过 <a href="https://github.com/mozilla/readability">Readability</a> 库处理 HTML 文档以提取可用文本。</p>
+<p>某些 Web 服务器可能会拒绝获取请求，受 Cloudflare 保护，或严重依赖 JavaScript 来运行。如果您遇到任何特定网站的问题，请通过网络浏览器手动下载页面并使用文件上传器附加它。</p>
+<doc-anchor-target id="youtube">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#youtube">#</doc-anchor-trigger>
+        <span>YouTube</span>
+    </h3>
+</doc-anchor-target>
+<p>通过 ID 或 URL 下载 YouTube 视频的转录文本，可以是创作者上传的或由 Google 自动生成的。某些视频可能已禁用转录，同时由于需要登录，无法解析年龄限制视频。</p>
+<p>脚本以视频的默认语言加载。您也可以选择指定两个字母的语言代码，尝试获取特定语言的转录。此功能并非总是可用，可能会失败，因此请谨慎使用。</p>
+<doc-anchor-target id="网页搜索">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#网页搜索">#</doc-anchor-trigger>
+        <span>网页搜索</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>此来源需要安装并正确配置<a href="../../../extensions/websearch/">网页搜索</a>扩展。有关详细信息，请参阅链接页面。</p>
+        </div>
+    </div>
+</div>
+<p>执行网页搜索并从搜索结果页面下载文本。这类似于网页来源但完全自动化。将从扩展设置中继承所选搜索引擎，因此请提前设置。</p>
+<p>首先，指定搜索查询、要访问的最大链接数，以及输出类型：一个组合文件（根据扩展规则格式化）或每个页面一个单独的文件。您也可以选择保存页面摘要。</p>
+<doc-anchor-target id="fandom">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fandom">#</doc-anchor-trigger>
+        <span>Fandom</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>此来源需要安装并加载<a href="https://github.com/SillyTavern/SillyTavern-Fandom-Scraper">服务器插件</a>。有关安装说明，请参阅插件的 README 页面。</p>
+        </div>
+    </div>
+</div>
+<p>通过 ID 或 URL 从 <a href="https://www.fandom.com/">Fandom</a> wiki 抓取文章。由于某些 wiki 非常大，使用过滤正则表达式限制范围可能会有帮助，它将针对文章标题进行测试。如果没有提供过滤器，则所有页面都将被导出。您可以将它们保存为每个页面的单独文件，或合并为一个文档。</p>
+<doc-anchor-target id="bronie-解析器扩展第三方">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bronie-解析器扩展第三方">#</doc-anchor-trigger>
+        <span>Bronie 解析器扩展（第三方）</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>此来源来自第三方，与 SillyTavern 团队<strong>无关</strong>。此来源需要您安装 Bronya Rand 的 <a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension">Bronie 解析器扩展</a>以及需要解析器工作的服务器插件。</p>
+        </div>
+    </div>
+</div>
+<p>Bronya Rand 的 Bronie 解析器扩展允许使用第三方抓取器，如米哈游/HoYoverse 的 <a href="https://wiki.hoyolab.com">HoYoLab</a> 到 SillyTavern，类似于其他数据来源。</p>
+<p>目前，Bronya Rand 的 Bronie 解析器扩展支持以下内容：</p>
+<ul>
+<li>米哈游/HoYoverse 的 HoYoLab（用于原神/崩坏：星穹铁道）通过 <a href="https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS">HoYoWiki-Scraper-TS</a></li>
+</ul>
+<p>首先，按照其<a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation">安装指南</a>安装 Bronya Rand 的 Bronie 解析器扩展，并在 SillyTavern 中安装支持的服务器插件。重启 SillyTavern 并进入_数据库_菜单。点击<code v-pre>+ 添加</code>，您应该会看到您最近安装的抓取器已添加到可能的信息来源列表中。</p>
+<doc-anchor-target id="向量存储">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#向量存储">#</doc-anchor-trigger>
+        <span>向量存储</span>
+    </h2>
+</doc-anchor-target>
+<p>好的，您已经为您的特定主题建立了一个不错且全面的信息库。接下来呢？</p>
+<p>要将文档用于 RAG，您需要使用兼容的扩展，它将相关数据插入到 LLM 提示词中。</p>
+<p>向量存储，它与 SillyTavern 捆绑在一起，是这种扩展的参考实现。它使用嵌入（也称为向量）来搜索与您正在进行的聊天相关的文档。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>有趣的事实</h5>
+<ol>
+<li>嵌入是抽象表示一段文本的数字数组，由专门的语言模型生成。更相似的文本在它们各自的向量之间有更短的距离。</li>
+<li>向量存储扩展使用 <a href="https://github.com/Stevenic/vectra">Vectra</a> 库来跟踪文件嵌入。它们存储在用户数据目录的 <code v-pre>/vectors</code> 文件夹中的 JSON 文件中。每个文档在内部由其自己的索引/集合文件表示。</li>
+</ol>
+        </div>
+    </div>
+</div>
+<p>由于向量功能默认是禁用的，您需要打开扩展面板（顶部栏上的&quot;堆叠立方体&quot;图标），然后导航到&quot;向量存储&quot;部分，并在&quot;文件向量化设置&quot;下勾选&quot;为文件启用&quot;复选框。</p>
+<p>向量存储本身不生成任何向量，您需要使用兼容的嵌入提供者。</p>
+<doc-anchor-target id="向量提供者">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#向量提供者">#</doc-anchor-trigger>
+        <span>向量提供者</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="本地">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#本地">#</doc-anchor-trigger>
+        <span>本地</span>
+    </h3>
+</doc-anchor-target>
+<p>这些来源是免费且无限制的，使用您的 CPU/GPU 计算嵌入。</p>
+<ol>
+<li>本地（Transformers）- 在 Node 服务器上运行。SillyTavern 将自动从 HuggingFace 下载兼容的 ONNX 格式模型。默认模型：<a href="https://huggingface.co/Cohee/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a>。</li>
+<li>Extras - 使用 SentenceTransformers 加载器在 <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras API</a> 下运行。默认模型：<a href="https://huggingface.co/sentence-transformers/all-mpnet-base-v2">all-mpnet-base-v2</a>。</li>
+<li>Ollama - 从 <a href="https://ollama.com/">https://ollama.com/</a> 获取。在 API 连接菜单中设置 API URL（在文本补全下，默认：<code v-pre>http://localhost:11434</code>）。必须先下载兼容的模型，然后在扩展设置中设置其名称。示例模型：<a href="https://ollama.com/library/mxbai-embed-large">mxbai-embed-large</a>。可选择勾选选项以将模型保持在内存中。</li>
+<li>llama.cpp 服务器 - 从 <a href="https://github.com/ggerganov/llama.cpp">ggerganov/llama.cpp</a> 获取并使用 <code v-pre>--embedding</code> 标志运行服务器可执行文件。从 HuggingFace 加载兼容的 GGUF 嵌入模型，例如 <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF">nomic-ai/nomic-embed-text-v1.5-GGUF</a>。</li>
+<li>vLLM - 从 <a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a> 获取。首先在 API 连接菜单中设置 API URL 和 API 密钥。</li>
+</ol>
+<doc-anchor-target id="api-来源">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-来源">#</doc-anchor-trigger>
+        <span>API 来源</span>
+    </h3>
+</doc-anchor-target>
+<p>所有这些来源都需要相应服务的 API 密钥，通常有使用成本，但一般来说计算嵌入的成本相当低。</p>
+<ol>
+<li>OpenAI</li>
+<li>Cohere</li>
+<li>Google MakerSuite</li>
+<li>TogetherAI</li>
+<li>MistralAI</li>
+<li>NomicAI</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>警告</h5>
+<p>嵌入只有在使用生成它们的相同模型检索时才可用。更改嵌入模型或来源时，建议清除并重新计算文件向量。</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="向量化设置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#向量化设置">#</doc-anchor-trigger>
+        <span>向量化设置</span>
+    </h2>
+</doc-anchor-target>
+<p>在选择了嵌入提供者之后，不要忘记配置其他设置，这些设置将定义处理和检索文档的规则。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>附件的分割、向量化和信息检索需要一些时间。虽然文件的初始摄取可能需要一段时间，但 RAG 搜索查询通常足够快，不会造成明显的延迟。</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="消息附件">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#消息附件">#</doc-anchor-trigger>
+        <span>消息附件</span>
+    </h3>
+</doc-anchor-target>
+<p>这些设置控制直接附加到消息的文件。</p>
+<p>适用以下规则：</p>
+<ol>
+<li>只有适合 LLM 上下文窗口的消息才能检索其附件。</li>
+<li>当向量存储扩展被禁用时，文件附件及其附带的消息将完全插入到提示词中。</li>
+<li>当启用文件向量化时，文件将被分割成块，只有最相关的部分会被插入，节省上下文空间并让模型保持专注。</li>
+</ol>
+<ul>
+<li>大小阈值（KB）- 设置分块分割阈值。只有大于指定大小的文件才会被分割。</li>
+<li>块大小（字符）- 设置单个块的目标大小（以文本字符为单位，而不是模型 token！）。</li>
+<li>块重叠（%）- 设置相邻块之间共享的块大小百分比。这允许块之间更平滑的过渡，但也可能引入一些冗余。</li>
+<li>检索块数 - 设置要检索的最相关文件块的最大数量。它们将按原始顺序插入。</li>
+</ul>
+<doc-anchor-target id="数据库文件">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#数据库文件">#</doc-anchor-trigger>
+        <span>数据库文件</span>
+    </h3>
+</doc-anchor-target>
+<p>这些设置控制数据库文档的处理方式。</p>
+<p>适用以下规则：</p>
+<ol>
+<li>当文件向量化被禁用时，数据库不会被使用。</li>
+<li>否则，当前范围内的所有可用文档（见上文）都会被考虑用于查询。只有所有文件中最相关的块会被检索。同一文件的多个块按原始顺序插入。</li>
+<li>插入的块将在适应聊天消息之前保留部分上下文。</li>
+</ol>
+<ul>
+<li>大小阈值（KB）- 设置分块分割阈值。只有大于指定大小的文件才会被分割。</li>
+<li>块大小（字符）- 设置单个块的目标大小（以文本字符为单位，而不是模型 token！）。</li>
+<li>块重叠（%）- 设置相邻块之间共享的块大小百分比。这允许块之间更平滑的过渡，但也可能引入一些冗余。</li>
+<li>检索块数 - 设置要检索的文件块的最大数量。这个限额在所有文件之间共享。</li>
+<li>注入模板 - 定义如何将检索到的信息插入到提示词中。您可以使用特殊的 {{text}} 宏来指定检索文本的位置，以及任何其他宏。</li>
+<li>注入位置 - 设置在哪里插入提示词注入。适用与作者注释和世界信息相同的规则。</li>
+</ul>
+<doc-anchor-target id="共享设置">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#共享设置">#</doc-anchor-trigger>
+        <span>共享设置</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>查询消息 - 用于查询文档块的最新聊天消息数量。</li>
+<li>分数阈值 - 调整以允许根据块的相关性分数（0 - 完全不匹配，1 - 完全匹配）筛选块的检索。较高的值允许更准确的检索并防止完全随机的信息进入上下文。合理的值范围在 0.2（更宽松）到 0.5（更专注）之间。</li>
+<li>包含在世界信息扫描中 - 如果您希望注入的内容激活知识库条目，请勾选。</li>
+<li>向量化全部 - 强制摄取所有未处理文件的嵌入。</li>
+<li>清除向量 - 清除文件嵌入，允许重新计算它们的向量。</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>注意</h5>
+<p>有关&quot;聊天向量化&quot;设置，请参阅<a href="../../../extensions/chat-vectorization/">聊天向量化</a>。</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="结论">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#结论">#</doc-anchor-trigger>
+        <span>结论</span>
+    </h2>
+</doc-anchor-target>
+<p>恭喜！借助 RAG 技术，您的聊天体验已得到显著提升。其潜力无限，全凭您的创意发挥。大胆尝试，勇于探索，让您的聊天体验更上一层楼！</p>
+
+                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../../tags/vector-storage/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>vector storage</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../tags/rag/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>rag</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../tags/retrieval-augmented-generation/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>retrieval-augmented generation</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../tags/vectors/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>vectors</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../tags/documents/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>documents</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../tags/files/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>files</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../../tags/attachments/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-transparent dark:hover:border-blue-200 dark:hover:text-blue-200 transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>attachments</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/Usage/Characters/data-bank.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/authors-note/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">作者注释</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Extensions</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "数据库（RAG）", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0NTJMWH0TW1"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0NTJMWH0TW1');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794740945311">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>远程连接 | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="远程连接 | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="最常见的情况是人们想在同一个 WiFi 网络内通过手机使用 SillyTavern，而 PC 运行着 ST 服务器。">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/remoteconnections/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/remoteconnections/">
+    <meta property="og:title" content="远程连接 | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="最常见的情况是人们想在同一个 WiFi 网络内通过手机使用 SillyTavern，而 PC 运行着 ST 服务器。">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/remoteconnections/">
+    <meta property="twitter:title" content="远程连接 | SillyTavern傻酒馆中文文档">
+    <meta property="twitter:description" content="最常见的情况是人们想在同一个 WiFi 网络内通过手机使用 SillyTavern，而 PC 运行着 ST 服务器。">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.794740945311" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794740945311" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794740945311" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.794740945311" defer></script>
+
+    <style>
+        a {
+            color: brown !important;
+        }
+
+        .dark a {
+            color: rgb(223, 151, 18) !important;
+        }
+
+        body {
+            font-family: Noto Sans, sans-serif;
+        }
+
+        .callout {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
+        }
+
+        .callout p {
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .callout .fa-fw {
+            margin: 1rem 0.5rem 1rem 0;
+            color: slategrey;
+        }
+
+        .docs-markdown .codeblock code,
+        .docs-markdown .codeblock pre {
+            white-space: pre-wrap;
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet" />
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/static/css/solid.min.css" rel="stylesheet" />
+    <link href="/static/css/brands.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="远程连接" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#远程连接">#</doc-anchor-trigger>
+        <span>远程连接</span>
+    </h1>
+</doc-anchor-target>
+<p>最常见的情况是人们想在同一个 WiFi 网络内通过手机使用 SillyTavern，而 PC 运行着 ST 服务器。</p>
+<p>这也是允许从本地网络外部进行远程连接的第一步。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>您不应该使用端口转发来将 ST 服务器暴露给互联网。相反，应该使用 VPN 或隧道服务，如 Cloudflare Zero Trust、ngrok 或 Tailscale。更多信息请参见 <a href="../../administration/tunneling/">VPN 和隧道</a> 指南。</p>
+        </div>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>免责声明</h5>
+<p><strong>在确保采取适当的安全措施之前，切勿将任何实例托管到开放的互联网上。</strong></p>
+<p><strong>对于因安全实施不当或不充分而导致未经授权访问造成的任何损害或损失，我们概不负责。</strong></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="允许远程连接">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#允许远程连接">#</doc-anchor-trigger>
+        <span>允许远程连接</span>
+    </h2>
+</doc-anchor-target>
+<p>默认情况下，ST 服务器只接受来自运行它的机器（localhost）的连接。要允许它监听来自其他设备的连接，请在 <code v-pre>config.yaml</code> 中将 <code v-pre>listen</code> 选项设置为 <code v-pre>true</code>。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>如果您直接在 SillyTavern 文件夹中搜索 <code v-pre>config.yaml</code>，您可能会找到两个文件。</h5>
+<p>本文档中对 <code v-pre>config.yaml</code> 的所有修改都指的是 SillyTavern 根目录中的那个（/SillyTavern/config.yaml），而不是 <code v-pre>/SillyTavern/default/config.yaml</code>。</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml"># 监听传入连接
+listen: true</code></pre>
+</doc-codeblock></div>
+<p>当 ST 正在监听远程连接时，您应该在控制台中看到这条消息：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 0.0.0.0:8000</code></pre>
+</doc-codeblock></div>
+<p>以及一些关于这意味着什么的解释。</p>
+<p>当 ST <strong>没有</strong>监听远程连接时，您应该在控制台中看到这条消息：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 127.0.0.1:8000</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="访问控制配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#访问控制配置">#</doc-anchor-trigger>
+        <span>访问控制配置</span>
+    </h2>
+</doc-anchor-target>
+<p>启用远程连接监听后，您必须至少配置一种访问控制方法。否则，服务器将无法启动。</p>
+<doc-anchor-target id="基于白名单的访问控制">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#基于白名单的访问控制">#</doc-anchor-trigger>
+        <span>基于白名单的访问控制</span>
+    </h3>
+</doc-anchor-target>
+<p>要通过白名单启用访问控制，请编辑 SillyTavern 根目录中的 <code v-pre>config.yaml</code> 文件（<code v-pre>/SillyTavern/config.yaml</code>）：</p>
+<ol>
+<li>至少启动一次 SillyTavern 以生成必要的配置文件。</li>
+<li>在文本编辑器中打开 <code v-pre>/SillyTavern/config.yaml</code>。</li>
+<li>找到 <code v-pre>whitelist</code> 部分并添加您希望允许的 IP 地址：
+<ul>
+<li>分别列出每个 IP 地址。</li>
+<li>确保包含 <code v-pre>127.0.0.1</code>，否则您将无法从主机连接。</li>
+<li>支持单个 IP、CIDR 掩码（如 <code v-pre>10.0.0.0/24</code>）和通配符（<code v-pre>*</code>）范围。</li>
+</ul>
+</li>
+<li>保存 <code v-pre>config.yaml</code> 文件。</li>
+<li><strong>重启您的 SillyTavern 服务器。</strong></li>
+</ol>
+<doc-anchor-target id="configyaml-白名单配置示例">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configyaml-白名单配置示例">#</doc-anchor-trigger>
+        <span><code v-pre>config.yaml</code> 白名单配置示例</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p>允许本地网络上的任何设备：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
+  - ::1
+  - 127.0.0.1
+  - 10.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16</code></pre>
+</doc-codeblock></div>
+<p>如果不确定您的本地网络地址范围，请使用上面的白名单。</p>
+</li>
+<li><p>允许两个特定设备连接：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
+  - ::1
+  - 127.0.0.1
+  - 192.168.0.2
+  - 192.168.0.5</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>允许 <code v-pre>192.168.0.*</code> 子网上的任何设备连接：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
+  - ::1
+  - 127.0.0.1
+  - 192.168.0.*</code></pre>
+</doc-codeblock></div>
+</li>
+</ol>
+<doc-anchor-target id="禁用基于白名单的访问控制">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#禁用基于白名单的访问控制">#</doc-anchor-trigger>
+        <span>禁用基于白名单的访问控制</span>
+    </h3>
+</doc-anchor-target>
+<p>要禁用通过白名单的访问控制：</p>
+<ul>
+<li>在 <code v-pre>/SillyTavern/config.yaml</code> 中将 <code v-pre>whitelistMode</code> 设置为 <code v-pre>false</code>。</li>
+<li>删除或重命名 SillyTavern 基本安装文件夹中的 <code v-pre>whitelist.txt</code>（如果存在）。</li>
+<li>重启您的 SillyTavern 服务器。</li>
+</ul>
+<doc-anchor-target id="不推荐使用-whitelisttxt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#不推荐使用-whitelisttxt">#</doc-anchor-trigger>
+        <span>不推荐：使用 <code v-pre>whitelist.txt</code></span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>如果 <code v-pre>whitelist.txt</code> 存在，它会优先于 <code v-pre>config.yaml</code> 中的白名单设置。</h5>
+<p>然而，由于所有其他配置都在 <code v-pre>config.yaml</code> 中管理，而 <code v-pre>whitelist.txt</code> 可能会遇到权限问题或被锁定，系统可能会悄悄地恢复使用 <code v-pre>config.yaml</code> 白名单。</p>
+<p><strong>直接编辑 config.yaml 既简单又可靠。</strong></p>
+        </div>
+    </div>
+</div>
+<p>如果您仍然更喜欢使用 whitelist.txt：</p>
+<ol>
+<li>在 SillyTavern 基本安装文件夹中创建一个名为 <code v-pre>whitelist.txt</code> 的新文本文件。</li>
+<li>在文本编辑器中打开它并添加允许的 IP 地址。</li>
+<li>保存文件并重启您的 SillyTavern 服务器。</li>
+</ol>
+<doc-anchor-target id="whitelisttxt-配置示例">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whitelisttxt-配置示例">#</doc-anchor-trigger>
+        <span><code v-pre>whitelist.txt</code> 配置示例</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16
+127.0.0.1
+::1</code></pre>
+</doc-codeblock></div>
+<p>这允许本地网络上的任何设备连接。</p>
+<doc-anchor-target id="通过-http-基本认证进行访问控制">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#通过-http-基本认证进行访问控制">#</doc-anchor-trigger>
+        <span>通过 HTTP 基本认证进行访问控制</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>HTTP 基本认证不提供强大的安全性。</p>
+<p>没有速率限制来防止暴力攻击。如果这是一个问题，建议使用具有 TLS 和速率限制的反向代理，以及专用的<a href="../../administration/sso/">认证服务</a>。</p>
+        </div>
+    </div>
+</div>
+<p>当客户端通过 HTTP 连接时，服务器将要求用户名和密码。<strong>这仅在启用远程连接（listen: true）时有效。</strong></p>
+<p>要启用 HTTP BA，在 SillyTavern 基本目录中打开 <code v-pre>config.yaml</code> 并搜索 <code v-pre>basicAuthMode</code>。将 basicAuthMode 设置为 true 并设置用户名和密码。注意：只有在 ST 至少执行过一次后，<code v-pre>config.yaml</code> 才会存在。</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">basicAuthMode: true
+basicAuthUser:
+  username: &quot;MyUsername&quot;
+  password: &quot;MyPassword&quot;</code></pre>
+</doc-codeblock></div>
+<p>或者，您可以按如下方式启用基本认证：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">basicAuthMode: true
+enableUserAccounts: true
+perUserBasicAuth: true</code></pre>
+</doc-codeblock></div>
+<p>在这种 <code v-pre>perUserBasicAuth</code> 模式下，基本认证的用户名和密码将与任何有密码的有效多用户账户相同。此外，SillyTavern 将直接登录到该账户。<strong>在启用 <code v-pre>perUserBasicAuth</code> 之前，请确保您有一个带密码的账户。</strong></p>
+<p>保存文件，如果 SillyTavern 已经在运行，请重启它。连接到您的 ST 时，系统应该会提示您输入用户名和密码。用户名和密码都以明文传输。如果您担心这一点，可以通过 HTTPS 提供 ST 服务。</p>
+<doc-anchor-target id="连接到您的-sillytavern-实例">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#连接到您的-sillytavern-实例">#</doc-anchor-trigger>
+        <span>连接到您的 SillyTavern 实例</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="获取-st-主机的-ip-地址">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#获取-st-主机的-ip-地址">#</doc-anchor-trigger>
+        <span>获取 ST 主机的 IP 地址</span>
+    </h3>
+</doc-anchor-target>
+<p>设置白名单后，您需要 ST 主机设备的 IP。</p>
+<p>如果 ST 主机设备在同一个 wifi 网络上，您将使用 ST 主机的内部 wifi IP：</p>
+<ul>
+<li>对于 Windows：Windows 按钮 &gt; 在搜索栏中输入 <code v-pre>cmd.exe</code> &gt; 在控制台中输入 <code v-pre>ipconfig</code>，按 Enter &gt; 查找 <code v-pre>IPv4</code> 列表。</li>
+</ul>
+<p>如果您（或其他人）想在不在同一网络上时连接到您托管的 ST，您需要 ST 主机设备的公共 IP。</p>
+<ul>
+<li>使用 ST 主机设备时，访问<a href="https://whatismyipaddress.com/">此页面</a>并查找 <code v-pre>IPv4</code>。这就是您从远程设备连接时要使用的地址。</li>
+</ul>
+<doc-anchor-target id="连接到-st-服务器">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#连接到-st-服务器">#</doc-anchor-trigger>
+        <span>连接到 ST 服务器</span>
+    </h3>
+</doc-anchor-target>
+<p>无论您在您的情况下得到了什么 IP，您都将在远程设备的网络浏览器中输入该 IP 地址和端口号。</p>
+<p>同一 wifi 网络上的 ST 主机的典型地址看起来像：</p>
+<p><code v-pre>http://192.168.0.5:8000</code></p>
+<p>使用 http:// 而不是 https://</p>
+<doc-anchor-target id="连接日志">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#连接日志">#</doc-anchor-trigger>
+        <span>连接日志</span>
+    </h3>
+</doc-anchor-target>
+<p>新的服务器连接会显示在控制台窗口中，并记录在 SillyTavern 基本目录的 <code v-pre>access.log</code> 文件中。</p>
+<p>来自服务器所在机器上的浏览器的控制台消息看起来像：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">New connection from 127.0.0.1; User Agent: ...</code></pre>
+</doc-codeblock></div>
+<p>来自与服务器在同一网络上的不同机器上的浏览器的控制台消息可能看起来像：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">New connection from 192.168.116.187; User Agent: ...</code></pre>
+</doc-codeblock></div>
+<p>如果连接被拒绝，控制台消息将看起来像：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">New connection from 192.168.116.211; User Agent: ...
+
+Forbidden: Connection attempt from 192.168.116.211. If you are attempting to connect, 
+please add your IP address in whitelist or disable whitelist mode in config.yaml in 
+root of SillyTavern folder.</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>access.log</code> 将包含带有时间戳的连接信息，但不包含连接是否被接受或拒绝的信息。</p>
+<doc-anchor-target id="故障排除">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#故障排除">#</doc-anchor-trigger>
+        <span>故障排除</span>
+    </h3>
+</doc-anchor-target>
+<p>仍然无法连接？</p>
+<ul>
+<li>如果连接尝试<doc-anchor-trigger to="#%E8%BF%9E%E6%8E%A5%E6%97%A5%E5%BF%97">出现在控制台中</doc-anchor-trigger>，但被禁止，这是一个<doc-anchor-trigger to="#%E5%9F%BA%E4%BA%8E%E7%99%BD%E5%90%8D%E5%8D%95%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6">白名单问题</doc-anchor-trigger>。</li>
+<li>如果 ST 正在监听远程连接但连接尝试没有出现在控制台中，这是一个<doc-anchor-trigger to="#%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98">网络问题</doc-anchor-trigger>。</li>
+<li>如果 ST 没有监听远程连接，这是一个<doc-anchor-trigger to="#%E5%85%81%E8%AE%B8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5">读取问题</doc-anchor-trigger>。</li>
+</ul>
+<doc-anchor-target id="网络问题">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#网络问题">#</doc-anchor-trigger>
+        <span>网络问题</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>在 Windows 上，应用程序可能被应用程序防火墙阻止。最快的解决方法是卸载并重新安装 node.js，当防火墙提示时，允许它访问网络。否则，您需要手动允许 node.js 应用程序通过 Windows 应用程序防火墙。</li>
+<li>在 Windows 11 上，在设置 &gt; 网络和 Internet &gt; 以太网中启用私有网络配置文件类型。这对 Windows 11 来说非常重要，否则，即使有上述防火墙规则，您也无法连接。</li>
+<li>在 Linux 上，您可能需要允许端口通过防火墙。执行此操作的命令是 <code v-pre>sudo ufw allow 8000</code>。这将允许端口 8000 上的流量。</li>
+</ul>
+<p>不要修改路由器上的端口转发设置。这对于在本地网络内访问 ST 不是必需的，而且可能会将您的服务器暴露给互联网。</p>
+<p>如果您正在尝试从<a href="">本地网络外部</a>访问您的 ST 服务器，并且它不工作，请确定问题是出在远程设备和隧道/VPN 端点之间，还是在服务器上的隧道端点和 ST 服务之间。否则，您将花费大量时间排除错误的问题。</p>
+<doc-anchor-target id="https">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#https">#</doc-anchor-trigger>
+        <span>HTTPS</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="使用-tlsssl-启动-sillytavern">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#使用-tlsssl-启动-sillytavern">#</doc-anchor-trigger>
+        <span>使用 TLS/SSL 启动 SillyTavern</span>
+    </h3>
+</doc-anchor-target>
+<p>要加密与您的 ST 实例之间的流量，请使用 <code v-pre>--ssl</code> 标志启动服务器。</p>
+<p>示例：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">node server.js --ssl</code></pre>
+</doc-codeblock></div>
+<p>默认情况下，ST 将在 <code v-pre>certs</code> 文件夹中搜索您的证书。如果您的文件位于其他位置，您可以使用 <code v-pre>--keyPath</code> 和 <code v-pre>--certPath</code> 参数。</p>
+<p>示例：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">node server.js --ssl --keyPath /home/user/certificates/privkey.pem --certPath /home/user/certificates/cert.pem</code></pre>
+</doc-codeblock></div>
+<p>The user you&#x27;re running SillyTavern with requires read permissions on the certificate files.</p>
+<doc-anchor-target id="how-to-get-a-certificate">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-get-a-certificate">#</doc-anchor-trigger>
+        <span>How to get a certificate</span>
+    </h3>
+</doc-anchor-target>
+<p>The simplest, quickest way to get a certificate is by using <a href="https://letsencrypt.org/getting-started/">certbot</a>.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/Administration/remote-connections.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../administration/sso/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">单点登录 (SSO)</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../administration/tunneling/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">VPN 和隧道</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "远程连接", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
