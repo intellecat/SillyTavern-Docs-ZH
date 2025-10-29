@@ -1,6 +1,6 @@
 ---
 label: Android (Termux)
-route: /installation/android-(termux)/
+route: /installation/android-(termux)/pkg install esbuild
 ---
 
 # Android (Termux) 安装指南
