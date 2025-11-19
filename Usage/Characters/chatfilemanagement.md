@@ -3,61 +3,62 @@ order: 80
 route: /usage/core-concepts/chatfilemanagement/
 ---
 
+
 # 聊天文件管理
 
-本页描述了管理 AI 聊天文件的方法。
+本页描述了管理 AI 聊天文件的各种方法。
 
-!!!info 注意
-其中一些选项可在从左下角 options 菜单打开的 "Manage chat files" 对话框中找到。
+!!! info 注意
+这些选项中的一些可以在底部左侧选项菜单中的"管理聊天文件"对话框中找到。
 !!!
 
-## 单人聊天与群聊
+## 单人聊天与群组聊天
 
-使用 character card 的最简单方法是 Solo chat；只需点击他们的 card 即可开始聊天。
+使用角色卡片最简单的方式是单人聊天；只需点击他们的卡片并开始聊天。
 
-拥有几个 character cards 后，您还可以使用 "Create New Chat Group" 按钮创建包含多个角色的 [group chat](/Usage/Characters/groupchats.md)，然后这些角色将相互交互并与您交互。
+一旦您有了几个角色卡片，您也可以使用"创建新聊天群组"按钮来创建包含多个角色的[群组聊天](/Usage/Characters/groupchats.md)，这些角色将相互交流并与您互动。
 
 ## 聊天导入
 
-**将 Character.AI 的聊天导入 SillyTavern。**
+**将 Character.AI 的聊天导入到 SillyTavern。**
 
-要导入 Character.AI 聊天和 bots，请使用 CAI Tools browser extension：[https://github.com/irsat000/CAI-Tools](https://github.com/irsat000/CAI-Tools)。
+要导入 Character.AI 的聊天和机器人，请使用 CAI Tools 浏览器扩展：[https://github.com/irsat000/CAI-Tools](https://github.com/irsat000/CAI-Tools)。
 
-您可以从中导入聊天的其他程序和工具包括：
+其他可以导入聊天的程序和工具包括：
 
-* TavernAI (original): <https://github.com/TavernAI/TavernAI>
-* Text Generation WebUI (oobabooga): <https://github.com/oobabooga/text-generation-webui>
-* Agnai: <https://github.com/agnaistic/agnai>
-* KoboldAI Lite: <https://github.com/LostRuins/lite.koboldai.net>
-* RisuAI: <https://github.com/kwaroran/RisuAI>
+* TavernAI（原版）：<https://github.com/TavernAI/TavernAI>
+* Text Generation WebUI (oobabooga)：<https://github.com/oobabooga/text-generation-webui>
+* Agnai：<https://github.com/agnaistic/agnai>
+* KoboldAI Lite：<https://github.com/LostRuins/lite.koboldai.net>
+* RisuAI：<https://github.com/kwaroran/RisuAI>
 
-## Export as .jsonl
+## 导出为 .jsonl
 
-点击 "Manage chat files" 时，聊天文件列表中的每个条目都会有一个按钮，可以将其导出为可以按原样重新导入的格式。使用此功能共享或迁移聊天，包括所有元数据（但不包括图像和文件附件）。
+点击"管理聊天文件"时，聊天文件列表中的每个条目都有一个按钮，可以将其导出为可以原样重新导入的格式。使用此功能来共享或迁移聊天，包括所有元数据（但不包括图像和文件附件）。
 
-如果您关注隐私，请务必检查导出的 JSONL 文件并清除任何您不想共享的内容。
+如果您注重隐私，请务必检查导出的 JSONL 文件并删除任何您不想共享的内容。
 
-## Export as .txt
+## 导出为 .txt
 
-您还可以使用 "Download chat as plain text document" 按钮导出简化的纯文本版本。它不能重新导入，因为它会丢失重要的元数据！
+您也可以使用"将聊天下载为纯文本文档"按钮导出简化的纯文本版本。由于失去了重要的元数据，它不能再次导入！
 
-## Checkpoints
+## 检查点
 
-"Checkpoints" 是当前聊天的克隆，它们将给定聊天中的所有消息复制到某个点，并存储指向源的链接（通过聊天文件名）。
+"检查点"是当前聊天的克隆，它们会复制给定聊天中直到某个点的所有消息，并存储到源的链接（通过聊天文件名）。
 
-从每条聊天消息右侧的三个点按钮，您有两种方法创建 checkpoints：
+从每条聊天消息右侧的三个点按钮，您有两种创建检查点的方式：
 
-* "Create Branch" 将克隆当前聊天直到该消息并切换到它
-* "Create Checkpoint" 将克隆当前聊天直到该消息，要求输入名称并创建它，但不会切换到它
+* "创建分支"将克隆当前聊天直到该消息并切换到它
+* "创建检查点"将克隆当前聊天直到该消息，询问名称并创建它，但不会切换到它
 
-您可以将它们大致理解为浏览器中的"在新标签页中打开链接"和"在后台的新标签页中打开链接"。
+您可以将它们大致理解为浏览器中的"在新标签页中打开链接"和"在后台新标签页中打开链接"。
 
-您可以通过进入消息文本框左侧的 burger menu 按钮，然后点击 "Back to parent chat"，从 checkpoint 返回到父聊天。
+您可以通过点击消息文本框左侧的汉堡菜单按钮，然后点击"返回父聊天"从检查点返回到父聊天。
 
-## Rename Chat
+## 重命名聊天
 
-默认情况下，聊天文件的名称是它们开始的日期和时间。
+默认情况下，聊天文件会以它们开始的日期和时间命名。
 
-您可以通过点击铅笔图标并输入新名称来更改此设置。
+您可以通过点击铅笔图标并输入新名称来更改这个。
 
-请注意，这将破坏从 checkpoints 到该聊天的链接（因为它们通过聊天文件名链接）。
+请注意，这将破坏检查点到该聊天的链接（因为它们是通过聊天文件名链接的）。
