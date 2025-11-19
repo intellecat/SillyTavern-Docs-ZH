@@ -4,9 +4,9 @@ route: /usage/api-connections/dreamgen/
 
 # DreamGen
 
-DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐,以及付费订阅,允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:<https://dreamgen.com/>。
+DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐，以及付费订阅，允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:<https://dreamgen.com/>。
 
-(免费)信用额度在每个日历月初重置。请参阅[定价](https://dreamgen.com/pricing)查看每个模型的信用成本,以及[用量](https://dreamgen.com/account/usage)查看您的剩余信用额度。
+(免费)信用额度在每个日历月初重置。请参阅[定价](https://dreamgen.com/pricing)查看每个模型的信用成本，以及[用量](https://dreamgen.com/account/usage)查看您的剩余信用额度。
 
 ## 连接到 DreamGen
 
@@ -34,7 +34,7 @@ DreamGen API 提供多个不同大小的模型。
 - Lucid Max (在 API 中称为 `lucid-v1-max` 或 `lucid-v1-extra-large`)
 - Lucid Base (在 API 中称为 `lucid-v1-base` 或 `lucid-v1-medium`) -- 对应于权重可用的 [Lucid V1 Nemo](https://dreamgen.com/docs/models/lucid-v1/huggingface)。
 
-Lucid Base 使用更少的信用额度且速度更快,而 Lucid Max 更具创造力,能够处理更复杂的指令和叙事。
+Lucid Base 使用更少的信用额度且速度更快，而 Lucid Max 更具创造力，能够处理更复杂的指令和叙事。
 
 ## 设置
 
@@ -46,7 +46,7 @@ Lucid V1 DreamGen 模型使用针对角色扮演和写作优化的 Llama 3 chat 
 - [DreamGen Lucid V1 Role-Play preset](https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/role-play)
 - [DreamGen Lucid V1 Story preset](https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/story)
 
-这些 presets 内置了对 `/sys` 的支持,用于向模型发送指令。您可以使用它们来引导情节或控制角色的行动。
+这些 presets 内置了对 `/sys` 的支持，用于向模型发送指令。您可以使用它们来引导情节或控制角色的行动。
 
 ![DreamGen preset selected](/static/dreamgen/dreamgen_st_preset.png)
 
@@ -82,11 +82,11 @@ The next message is from {{char}} and is at most 50 words long<|eot_id|><|start_
 
 ```
 
-确保保留所有换行符,包括末尾的两个换行符。
+确保保留所有换行符，包括末尾的两个换行符。
 
 ![Long Message Prefix](/static/dreamgen/dreamgen_st_long_response_prefix.png)
 
-您还可以在您的 card 或 system prompt 中包含写作风格描述,例如:
+您还可以在您的 card 或 system prompt 中包含写作风格描述，例如:
 
 ```txt
 ## Style
@@ -102,6 +102,6 @@ The next message is from {{char}} and is at most 50 words long<|eot_id|><|start_
 
 > The inkeeper offers Daria and the others a pint of ale.
 
-> The next message is from Draco and should be at least 200 words, focusing on his inner conflict about the decision.
+> The next message is from Draco and should be at least 200 words， focusing on his inner conflict about the decision.
 
 [查看实际效果。](https://imgur.com/a/dreamgen-lucid-sillytavern-roleplay-demo-bhzQpto)
