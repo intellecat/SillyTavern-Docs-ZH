@@ -2,7 +2,7 @@
 route: /extensions/expression-images/
 ---
 
-# Character Expressions
+# 角色表情
 
 ## 这是什么?
 

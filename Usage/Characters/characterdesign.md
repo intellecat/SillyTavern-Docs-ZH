@@ -4,7 +4,7 @@ route: /usage/core-concepts/characterdesign/
 templating: false
 ---
 
-# Character 设计
+# 角色设计
 
 !!!tip
 Character Name 是唯一必填字段。您可以将其余部分留空，仍然可以在聊天中使用该 character。

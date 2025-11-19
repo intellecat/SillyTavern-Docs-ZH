@@ -8,7 +8,7 @@ route: /usage/common-settings/
 
 这些设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的后端都是通用的。
 
-## Context Settings
+## Context 设置
 
 ### Response (tokens)
 
@@ -26,7 +26,7 @@ SillyTavern 将作为 prompt 发送给 API 的最大 token 数量,减去响应�
 - 消息之间的虚线表示聊天的 context 范围。该线以上的消息不会发送给 AI。
 - 要在生成消息后查看 context 的组成,点击 `Prompt Itemization` 消息选项(展开 `...` 菜单并点击带线条的方形图标)。
 
-## Sampler Parameters
+## 采样参数
 
 ### Temperature
 

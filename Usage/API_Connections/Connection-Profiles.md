@@ -4,7 +4,7 @@ route: /usage/core-concepts/connection-profiles/
 order: 100
 ---
 
-# Connection Profiles
+# 连接配置
 
 保存 Connection Profiles 以快速切换不同的 API、模型和格式化模板。当您主动使用多个 API 连接或需要在不同配置之间切换而不必浏览菜单时,这非常有用。
 

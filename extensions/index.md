@@ -1,5 +1,5 @@
 ---
-label: Extensions
+label: 扩展
 icon: plug
 expanded: true
 order: 35

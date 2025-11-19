@@ -3,7 +3,7 @@ order: 100
 route: /usage/core-concepts/advancedformatting/
 ---
 
-# Advanced Formatting
+# 高级格式化
 
 本节提供的设置允许对 [prompt-building](index.md) 策略进行更精细的控制,主要用于 Text Completion API。
 

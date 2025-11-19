@@ -3,7 +3,7 @@ order: 80
 route: /usage/core-concepts/instructmode/
 ---
 
-# Instruct Mode
+# Instruct 模式
 
 Instruct Mode 允许你为训练于各种 prompt 格式的指令遵循模型调整 prompting,如 Alpaca、ChatML、Llama2 等。
 

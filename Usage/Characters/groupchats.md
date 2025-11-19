@@ -3,7 +3,7 @@ order: 70
 route: /usage/core-concepts/groupchats/
 ---
 
-# Group Chats
+# 群聊
 
 ## 回复顺序策略
 

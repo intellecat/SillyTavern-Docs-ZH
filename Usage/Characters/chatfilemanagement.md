@@ -3,7 +3,7 @@ order: 80
 route: /usage/core-concepts/chatfilemanagement/
 ---
 
-# Chat File Management
+# 聊天文件管理
 
 本页描述了管理 AI 聊天文件的方法。
 
@@ -11,13 +11,13 @@ route: /usage/core-concepts/chatfilemanagement/
 其中一些选项可在从左下角 options 菜单打开的 "Manage chat files" 对话框中找到。
 !!!
 
-## Solo Chats vs Group Chats
+## 单人聊天与群聊
 
 使用 character card 的最简单方法是 Solo chat；只需点击他们的 card 即可开始聊天。
 
 拥有几个 character cards 后，您还可以使用 "Create New Chat Group" 按钮创建包含多个角色的 [group chat](/Usage/Characters/groupchats.md)，然后这些角色将相互交互并与您交互。
 
-## Chat import
+## 聊天导入
 
 **将 Character.AI 的聊天导入 SillyTavern。**
 

@@ -4,7 +4,7 @@ templating: false
 route: /usage/prompts/prompt-manager/
 ---
 
-# Prompt Manager
+# Prompt 管理器
 
 Prompt Manager 是一个为 Chat Completion API 提供对 [prompt-building](index.md) 策略更多控制的系统。
 

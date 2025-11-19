@@ -3,7 +3,7 @@ icon: rel-file-path
 route: /usage/core-concepts/slashcommands/
 ---
 
-# Slash commands
+# Slash 命令
 
 !!!warning
 **这不是一个详尽的列表,因为它很少更新。**

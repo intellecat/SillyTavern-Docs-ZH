@@ -1,11 +1,11 @@
 ---
-label: Single Sign-On (SSO)
+label: 单点登录 (SSO)
 icon: key
 order: -20
 route: /administration/sso/
 ---
 
-# Single Sign-On (SSO)
+# 单点登录 (SSO)
 
 SSO 允许您创建用户并使用登录门户保护许多不同的页面，该门户显示在您想要保护的站点上。虽然设置起来很复杂，但这是学习 SSO 并更安全地在互联网上保护您的 ST 实例的好方法。
 

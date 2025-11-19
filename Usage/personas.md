@@ -31,7 +31,7 @@ Personas 也可以通过转换任何现有角色来创建。只需打开角色,�
 由于 `{{user}}` 和 `{{char}}` 宏在 Persona 和 Character 描述中使用时具有相反的含义,如果转换的描述包含其中任何一个,系统会提示你交换它们。
 !!!
 
-## Persona Description
+## Persona 描述
 
 每个 persona 可以存储自定义文本描述——心理和身体特征、年龄、职业或任何个人详细信息。这些也可以包括模板宏,如 `{{char}}` 或 `{{user}}`(参见 [Macros](/Usage/Characters/macros.md))。
 
@@ -44,13 +44,13 @@ Personas 也可以通过转换任何现有角色来创建。只需打开角色,�
 
 位置是**按 persona** 保存的。
 
-## Persona Title
+## Persona 标题
 
 标题是一个可选的文本字段,可用于存储关于 persona 的附加信息,不用于 prompt 中,但显示在 Persona Management 面板中。
 
 要设置标题,点击 Persona Management 面板中的 **<i class="fa-solid fa-pencil"></i> Rename Persona** 按钮,并在"Persona Title"字段中输入标题,或在创建 persona 时指定。当标题已存在时设置空值将删除它。
 
-## Persona Connections / Locking
+## Persona 连接 / 锁定
 
 Persona connections 确保在特定情况下自动选择给定的 persona。如果没有连接 persona,当前选择的 persona 将保持选中状态。
 

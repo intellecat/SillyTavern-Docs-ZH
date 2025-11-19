@@ -4,7 +4,7 @@ templating: false
 route: /usage/prompts/context-template/
 ---
 
-# Context Template
+# Context 模板
 
 !!! Applies to: Text Completion APIs
 对于 Chat Completion API 中的等效设置,请使用 [Prompt Manager](prompt-manager.md)。

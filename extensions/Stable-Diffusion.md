@@ -25,7 +25,7 @@ templating: false
 - 选项可以[在生成前编辑 prompts](#edit-prompts-before-generation) 和[扩展 free-mode prompts](#extend-free-mode-prompts)
 - 与 AI [function calling](#use-function-tool) 集成以自动检测图像生成意图
 
-## Supported sources
+## 支持的来源
 
 | Source                                                                                            | 备注                                                                                         |
 |:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
@@ -49,7 +49,7 @@ templating: false
 | [TogetherAI](https://docs.together.ai/docs/serverless-models#image-models)                        | 云端                                                                           |
 | [x.AI](https://x.ai/)                                                                             | 云端,付费                                                                                     |
 
-## Generation modes
+## 生成模式
 
 | Wand 菜单项     | Slash command 参数 | 描述                                    | 备注                               |
 |:-------------------|:-----------------------|:-----------------------------------------------|:--------------------------------------|
@@ -61,7 +61,7 @@ templating: false
 | "Raw Last Message" | `raw_last`             | 直接使用最后一条消息作为 prompt。        | -                                     |
 | "Background"       | `background`           | 基于故事背景的聊天背景。      | 强制使用宽景观纵横比。 |
 
-## How to generate an image
+## 如何生成图像
 
 1. 使用 extensions context menu (wand) 中的 "Image Generation" 项。
 2. 输入带有 Generation modes 表中参数的 `/sd (argument)` slash command。其他任何内容都会触发 "free mode" 让 SD 生成您提示的任何内容。例如:`/sd apple tree` 会生成一棵苹果树的图片。
@@ -110,7 +110,7 @@ Images swipes 允许在保持相同 prompt 的同时重新生成图像。如果�
 
 *'Swipes' 只是一个名称,不要尝试实际的滑动手势,因为这会重新生成消息本身,而不是附加的图像。*
 
-## Options
+## 选项
 
 ### Edit prompts before generation
 
@@ -164,7 +164,7 @@ Images swipes 允许在保持相同 prompt 的同时重新生成图像。如果�
 
 **推荐用于 SDXL 模型**。
 
-## Common prompt prefix
+## 通用 prompt 前缀
 
 !!!tip Pro Tip
 使用 `{prompt}` macro 来指定生成的 prompt 将插入的确切位置。
@@ -180,7 +180,7 @@ Images swipes 允许在保持相同 prompt 的同时重新生成图像。如果�
 
 示例:`bad quality, watermark`。
 
-## Character-specific prompt prefix
+## 角色特定 prompt 前缀
 
 !!!tip Pro Tip
 如果生成 source 支持,您也可以在这里使用 LoRAs/embeddings,例如:`<lora:DonaldDuck:1>`。
@@ -202,7 +202,7 @@ Images swipes 允许在保持相同 prompt 的同时重新生成图像。如果�
 
 如果您想与他人分享前缀,请勾选 "Shareable" 复选框。这会将它们与角色数据一起保存,而不是您的本地设置。
 
-## Styles
+## 风格
 
 使用此功能快速保存和恢复您最喜欢的风格/质量预设,以便稍后使用或在模型之间切换时使用。Style preset 中包含以下内容:
 
@@ -211,13 +211,13 @@ Images swipes 允许在保持相同 prompt 的同时重新生成图像。如果�
 
 您还可以使用 `/imagine-style` 命令(或 `/sd-style` 或 `/img-style`)在 styles 之间切换。
 
-## Chat Message Visibility
+## 聊天消息可见性
 
 插入聊天中的生成图像在主 API prompts 中默认隐藏,但可以根据每个生成启动器("Magic wand" 图标、slash command、interactive mode)单独覆盖。这可以用于通过让角色"确认"图像来使体验更加身临其境。如果启用了 "Send inline images",Chat Completions API 中的多模态模型也可能"看到"图像。
 
 可以通过更改 Image Prompt Templates 下的 "Chat Message Template" 来自定义文本消息。所有常规 macros 都可以在此模板中使用,还有一个特殊的 `{{prompt}}` macro 来指定图像 prompt 将添加的位置。
 
-## ComfyUI Configuration
+## ComfyUI 配置
 
 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 是一个快速且非常灵活的图像生成选项。
 

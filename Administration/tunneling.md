@@ -1,5 +1,5 @@
 ---
-label: VPNs and Tunneling
+label: VPN 与隧道
 order: -40
 icon: lock
 route: /administration/tunneling/

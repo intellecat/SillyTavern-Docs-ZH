@@ -2,7 +2,7 @@
 route: /extensions/websearch/
 ---
 
-# Web Search
+# 网络搜索
 
 将网络搜索结果添加到 LLM prompts 中。
 
@@ -10,7 +10,7 @@ route: /extensions/websearch/
 一些 [Chat Completion](/Usage/API_Connections/openai.md) 来源提供内置的网络搜索功能。在这种情况下,此扩展将基本上是多余的。检查 **<i class="fa-solid fa-sliders"></i> AI Response Configuration** 面板中的 "Enable web search" 开关。例如,Claude、Google AI Studio / Vertex AI、xAI 和 OpenRouter 后端都可用此功能。
 !!!
 
-## Available sources
+## 可用来源
 
 ### Selenium Plugin
 
@@ -58,7 +58,7 @@ SearXNG preferences string:从 SearXNG - preferences - COOKIES - Copy preference
 
 在此处获取 key:<https://serper.dev/>
 
-## How to use
+## 如何使用
 
 1. 确保您使用最新版本的 SillyTavern。
 2. 通过 SillyTavern 中的 "Download Extensions & Assets" 菜单安装扩展。
@@ -67,21 +67,21 @@ SearXNG preferences string:从 SearXNG - preferences - COOKIES - Copy preference
 5. 要更自然地包含搜索结果,请用单反引号包裹搜索查询:```Tell me about the `latest Ryan Gosling movie`.``` 将产生搜索查询 `latest Ryan Gosling movie`。
 6. 可选地,根据您的喜好配置设置。
 
-## Settings
+## 设置
 
-### General
+### 常规
 
 1. Enabled - 打开和关闭扩展。
 2. Sources - 设置搜索结果源。
 3. Cache Lifetime - 搜索结果为您的 prompt 缓存的时间(以秒为单位)。默认 = 一周。
 
-### Prompt Settings
+### Prompt 设置
 
 1. Prompt Budget - 设置插入文本的最大容量(以文本字符为单位,而不是 tokens)。经验法则:1 token ~ 3-4 个字符,根据您的模型上下文限制进行调整。默认 = 1500 个字符。
 2. Insertion Template - 结果如何插入到 prompt 中。支持常用 macro + 特殊 macro:\{\{query\}\} 用于搜索查询,\{\{text\}\} 用于搜索结果。
 3. Injection Position - 结果在 prompt 中的位置。与 Author's Note 相同的选项:作为 in-chat injection 或在 system prompt 之前/之后。
 
-### Search Activation
+### 搜索激活
 
 1. Use function tool - 使用 [function calling](/For_Contributors/Function-Calling.md) 激活搜索或抓取网页。必须使用支持的 Chat Completion API,并在 AI Response settings 中启用。**启用时禁用所有其他激活方法。**
 2. Use Backticks - 启用使用单反引号包裹的单词进行搜索激活。
@@ -90,7 +90,7 @@ SearXNG preferences string:从 SearXNG - preferences - COOKIES - Copy preference
 5. Trigger Phrases - 逐个添加将触发搜索的短语。它可以在消息的任何位置,查询从触发词开始,总共跨越到 "Max Words"。要从处理中排除特定消息,它必须以句点开头,例如 `.What do you think?`。触发器优先级:首先按文本框中的顺序,然后是用户消息中的第一个。
 6. Max Words - 搜索查询中包含多少个单词(包括触发短语)。Google 每个 prompt 的限制约为 32 个单词。默认 = 10 个单词。
 
-### Page Scraping
+### 页面抓取
 
 1. Visit Links - 将从访问的搜索结果页面提取文本并保存到文件附件中。
 2. Visit Count - 将访问和解析多少个链接的文本。
@@ -100,7 +100,7 @@ SearXNG preferences string:从 SearXNG - preferences - COOKIES - Copy preference
 6. Save Target - 保存抓取结果的位置。可能的选项:触发消息附件、Data Bank 的聊天附件,或仅图像(如果源支持)。
 7. Include Images - 将相关图像附加到聊天。需要支持图像的源(见下文)。
 
-## More info
+## 更多信息
 
 最新查询的搜索结果将保留在 prompt 中,直到找到下一个有效查询。
 如果您想问额外的问题而不意外触发搜索,请以句点开始您的消息。
@@ -125,7 +125,7 @@ SearXNG preferences string:从 SearXNG - preferences - COOKIES - Copy preference
 示例:/websearch links=off snippets=on how to make a sandwich
 ```
 
-### What can be included in the search result?
+### 搜索结果中可以包含什么?
 
 **Thesaurus:**
 
