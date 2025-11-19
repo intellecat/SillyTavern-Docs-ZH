@@ -28,7 +28,7 @@ SillyTavern 引擎会激活并无缝地将适当的 lore 整合到 prompt 中,�
 
 * [World Info Encyclopedia](https://rentry.co/world-info-encyclopedia): 由 kingbri、Alicat、Trappu 编写的 World Info 和 Lorebooks 深入指南。
 
-## 角色背景
+## 角色设定
 
 可选地,World Info 文件可以分配给角色,作为该角色在所有聊天(包括群组)中的专用 lore 来源。
 
@@ -36,29 +36,29 @@ SillyTavern 引擎会激活并无缝地将适当的 lore 整合到 prompt 中,�
 
 要解除绑定、更改或分配额外的 World Info 文件作为角色 lore,shift-点击地球按钮或点击"More..."然后"Link World Info"。请注意,只有主要的 World Info 文件会随角色导出。
 
-### 角色背景 Insertion Strategy
+### 角色设定插入策略
 
 在生成 AI 回复时,来自角色 World Info 的条目将与来自全局 World Info 选择器的条目使用以下策略之一进行组合:
 
-#### Sorted Evenly (默认)
+#### 均匀排序（默认）
 
 所有条目将根据它们的 Insertion Order 进行排序,就像它们是一个大文件的一部分一样,忽略来源。
 
-#### 角色背景 First
+#### 角色设定优先
 
 来自 Character World Info 的条目将根据它们的 Insertion Order 首先包含,然后是来自 Global World Info 的条目。
 
-#### Global Lore First
+#### 全局设定优先
 
 来自 Global World Info 的条目将根据它们的 Insertion Order 首先包含,然后是来自 Character World Info 的条目。
 
-### World Info Entry
+### World Info 条目
 
-#### Key
+#### 关键词
 
 触发 World Info 条目激活的关键词列表。默认情况下,Keys 不区分大小写(这是[可配置的](#case-sensitive-keys))。
 
-##### Regular Expression (Regex) as Keys
+##### 正则表达式（Regex）作为关键词
 
 Keys 通过支持 regex 提供了更灵活的匹配方法。这使得可以匹配更多动态内容,包括可选的词或字符、间距以及 regex 提供的所有其他实用工具。
 如果定义的 key 是有效的 regex(Javascript regex 风格,使用 `/` 作为分隔符。允许所有标志),在检查条目是否应该被触发时,它将被视为 regex。多个 regexes 可以作为单独的 keys 输入,并且可以相互配合工作。在 regex 内部,可以使用逗号。Plaintext keys 不支持逗号,因为它们被视为 key 分隔符。
@@ -72,7 +72,7 @@ Keys 通过支持 regex 提供了更灵活的匹配方法。这使得可以匹�
 
 有关 Regex 语法和可能性的更多信息: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
-###### Advanced Regex Per-Message Matching
+###### 高级 Regex 每条消息匹配
 
 ST 在 WI 扫描缓冲区中的每条聊天消息前加上 `character name:`,在 v1.12.6 之后,使用字符值 1 (`\x01`) 进行连接。
 这意味着你可以使用与该分隔字符相关的 regex 来匹配特定角色的输入或输出。
@@ -83,11 +83,11 @@ ST 在 WI 扫描缓冲区中的每条聊天消息前加上 `character name:`,在
 /\x01{{user}}:[^\x01]*?hello/
 ```
 
-##### Key Input
+##### 关键词输入
 
 有两种输入关键词的模式,每种模式的 UI 略有不同。在 ⌨️ *plaintext mode*(默认)中,keys 可以在单个文本字段中以逗号分隔的列表形式输入。也可以包含 Regexes,但它们没有任何特殊高亮显示。在 ✨ *fancy mode* 中,keys 显示为单独的元素,regexes 将被高亮显示。该控件支持编辑和删除 keys。可以通过输入控件内的内联按钮切换模式。
 
-#### Optional Filter
+#### 可选过滤器
 
 与主 key 一起使用的补充关键词的逗号分隔列表。
 如果未提供参数,则忽略此标志。
@@ -100,15 +100,15 @@ ST 在 WI 扫描缓冲区中的每条聊天消息前加上 `character name:`,在
 
 这些 keys 也支持 [regex](#regular-expression-regex-as-keys)。
 
-#### Entry Content
+#### 条目内容
 
 条目激活时插入到 prompt 中的文本。
 
-#### Insertion Order
+#### 插入顺序
 
 数值。定义当多个条目同时激活时的优先级。具有更大 order 数字的条目将被插入到 context 末尾附近,因为它们对输出的影响更大。例如,Order 数字为 100 的条目将出现在 Order 数字为 250 的条目之前。
 
-#### Insertion Position
+#### 插入位置
 
 * **Before Char Defs:** World Info 条目插入在角色描述和场景之前。对对话有中等影响。
 * **After Char Defs:** World Info 条目插入在角色描述和场景之后。对对话有更大影响。
@@ -126,7 +126,7 @@ Example Message 条目将根据 prompt 构建设置进行格式化:Instruct Mode
 
 如果你的 Author's Note 被禁用(Insertion Frequency = 0),位于 A/N 位置的 World Info 条目将被忽略!
 
-#### Outlet Name
+#### 出口名称
 
 当选择 **Outlet** 插入位置时,条目会显示一个额外的 **Outlet Name** 字段。你在这里提供的名称将条目分组在一起,并定义你将用来手动将它们拉入 prompt 的 token。
 
@@ -144,13 +144,13 @@ Example Message 条目将根据 prompt 构建设置进行格式化:Instruct Mode
 * Outlet name 中的前导或尾随空格在调用 macro 时会被忽略,因此保存了额外空格的名称将不匹配。避免填充名称以便正确解析。
 * 没有分配内容的 Outlet macros 将被替换为空字符串。
 
-#### Entry Title / Memo
+#### 条目标题/备注
 
 一个方便你标记条目的文本字段,不会被 AI 或任何触发逻辑使用。
 
 如果为空,可以通过点击"Fill empty memos"按钮使用条目的第一个 key 进行回填。
 
-#### Strategy
+#### 策略
 
 1. 🔵 (Blue Circle) = 条目将始终存在于 prompt 中。
 2. 🟢 (Green Circle) = 条目仅在存在关键词时触发。
@@ -158,7 +158,7 @@ Example Message 条目将根据 prompt 构建设置进行格式化:Instruct Mode
 
 每个 Entry 还有一个切换开关,允许你启用或禁用该条目。
 
-#### Probability (Trigger %)
+#### 触发概率 (%)
 
 此值充当额外的过滤器,为条目在通过任何方式激活时(constant、primary key、recursion)添加不被插入的机会。
 
@@ -168,7 +168,7 @@ Example Message 条目将根据 prompt 构建设置进行格式化:Instruct Mode
 
 使用此功能在你的聊天中创建随机事件。例如,如果在消息中提到上古神的名字,每条消息都有 1% 的机会唤醒它。
 
-#### Inclusion Group
+#### 包含组
 
 Inclusion groups 控制当多个具有相同组标签的条目同时触发时如何选择条目。如果激活了多个具有相同组标签的条目,只有一个会被插入到 prompt 中。
 
@@ -176,13 +176,13 @@ Inclusion groups 控制当多个具有相同组标签的条目同时触发时如
 
 如果将多个组定义为逗号分隔的列表,单个条目可以是多个 inclusion groups 的一部分。上述相同的逻辑将适用。如果该条目被触发,它将*禁用*属于其任何组的所有其他条目。因此,如果激活了任何组,该条目将不会被激活。
 
-#### Prioritize Inclusion
+#### 优先包含
 
-为了对通过 [Inclusion Group](/Usage/worldinfo.md#inclusion-group) 激活的条目提供更多控制,你可以使用'Prioritize Inclusion'设置。此选项允许你确定性地指定要选择的条目,而不是随机掷 Group Weight 机会。
+为了对通过 [包含组](/Usage/worldinfo.md#inclusion-group) 激活的条目提供更多控制,你可以使用'优先包含'设置。此选项允许你确定性地指定要选择的条目,而不是随机掷 Group Weight 机会。
 
 如果激活了多个具有相同组标签且启用此设置的条目,将选择具有最高'Order'值的条目。这对于通过 inclusion groups 创建回退序列很有用。例如,优先考虑低深度条目以获得更多强调,或者在两者都有效时选择特定的场景设置指令而不是另一个。
 
-#### Use Group Scoring
+#### 使用组评分
 
 当此设置全局启用或按条目启用时,激活的条目 keys 数量决定组胜者选择。只有具有最高 key 匹配数的组子集将被留下以通过 Group Weight 或 Inclusion Priority 激活——其余的将被停用并从组中移除。
 
@@ -203,21 +203,21 @@ Inclusion groups 控制当多个具有相同组标签的条目同时触发时如
 
 输入 `sing me a song` 可以激活任一条目(都激活了 2 个 keys),但 `sing me a song about Ghosts` 将只激活 Entry 2(激活了 3 个 keys)。
 
-#### Automation ID
+#### 自动化 ID
 
-允许将 World Info 条目与 Quick Replies extension 中的 [STscripts](/For_Contributors/st-script.md) 集成。如果 quick reply 命令和 WI 条目具有相同的 Automation ID,当具有匹配 ID 的条目被激活时,该命令将自动执行。
+允许将 World Info 条目与 Quick Replies extension 中的 [STscripts](/For_Contributors/st-script.md) 集成。如果 quick reply 命令和 WI 条目具有相同的 自动化 ID,当具有匹配 ID 的条目被激活时,该命令将自动执行。
 
 Automations 按照它们被触发的顺序执行,遵循你指定的排序策略,将 [Character Lore Insertion Strategy](#character-lore-insertion-strategy) 与'Priority'排序相结合。这导致 [Blue Circle](#strategy) 条目首先处理,然后是其他按照指定的'Order'处理。递归触发的条目将按照相同的顺序在之后处理。
 
-如果激活了多个具有相同 Automation ID 的条目,脚本命令将只运行一次。
+如果激活了多个具有相同 自动化 ID 的条目,脚本命令将只运行一次。
 
-#### Character Filter
+#### 角色过滤器
 
 此条目可以激活的角色名称列表。如果此列表不为空,则条目仅对名称在列表中的角色激活。当选择标签时,条目仅对具有该特定标签的角色激活。
 
 "Exclude"模式反转过滤器,这意味着条目将对除了添加到列表或具有所选标签的角色之外的所有角色激活。
 
-#### Triggers
+#### 触发器
 
 此 World Info 条目可以激活的生成类型。如果未选择任何内容,条目可以对所有生成类型激活。如果选择了一个或多个,条目将仅对这些特定生成类型激活:
 
@@ -232,7 +232,7 @@ Automations 按照它们被触发的顺序执行,遵循你指定的排序策略,
 "Regenerate"触发器在群聊中不可用,因为它使用不同的重新生成逻辑:删除最后一次回复的所有消息,并根据所选的 [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies) 使用"Normal"生成类型排队消息。
 !!!
 
-#### Additional matching sources
+#### 额外匹配源
 
 默认情况下,World Info Entries 仅与当前对话的内容匹配。这些选项允许你将条目与聊天中未显示的不同角色信息,甚至 persona 信息进行匹配。当你想要在多个角色之间使用广泛的条目但不想管理大型标签列表,或者每次创建新角色时都不想更新角色过滤器列表时,这很有用。这还允许你基于你激活的 persona 匹配条目。
 
@@ -259,7 +259,7 @@ Vector Storage 匹配遵循以下规则:
 
 * 可以通过"Max Entries"设置调整允许通过 Vector Storage 匹配的最大条目数。这个数字只设置限制,不影响 World Info 激活设置中设置的 token 预算。所有预算规则仍然适用。
 * 此功能仅替换关键词检查。所有额外检查都必须满足才能插入条目:trigger%、character filters、inclusion groups 等。
-* 不使用 Activation Settings 或条目覆盖中的"Scan Depth"设置。而是使用 Vector Storage 的"Query messages"值来获取要匹配的文本。这允许像"Scan Depth"设置为 0 这样的配置,因此不会进行常规关键词匹配,但条目仍然可以通过 vectors 激活。
+* 不使用 Activation Settings 或条目覆盖中的"扫描深度"设置。而是使用 Vector Storage 的"Query messages"值来获取要匹配的文本。这允许像"扫描深度"设置为 0 这样的配置,因此不会进行常规关键词匹配,但条目仍然可以通过 vectors 激活。
 * "Vectorized"状态只是一个额外的标记。如果设置了 keywords,条目仍然会像正常的、启用的、非 constant 记录一样,通过 keywords 激活。如果你希望它们只通过 vectors 激活,请删除 keywords。
 
 !!!info 注意
@@ -270,7 +270,7 @@ Vector Storage 匹配遵循以下规则:
 
 通常,World Info 评估是无状态的,这意味着评估的结果是相同的,只取决于当前的聊天 context。但是,通过引入 Timed Effects,你可以创建具有激活延迟、在触发后保持活动或在激活后无法触发的条目。
 
-### 定时效果 Rules
+### 定时效果规则
 
 1. 效果的时间框架以消息为单位测量(不是消息对/交换),0 表示没有效果。
 2. 效果仅适用于激活条目的聊天。Branches 继承父聊天的状态。
@@ -278,7 +278,7 @@ Vector Storage 匹配遵循以下规则:
 4. 对当前处于 timed effect 的条目进行任何更改都会导致效果被强制删除。
 5. 如果效果已经处于活动状态,后续触发 keywords 不会刷新效果持续时间。
 
-### Types of Timed Effects
+### 定时效果类型
 
 1. Sticky - 条目在激活后保持活动 N 条消息。Stickied 条目在到期之前的后续扫描中忽略概率检查。
 2. Cooldown - 条目在激活后的 N 条消息内无法激活。可以与 sticky 一起使用:当 sticky 持续时间结束时,条目进入 cooldown。
@@ -287,7 +287,7 @@ Vector Storage 匹配遵循以下规则:
     * Delay = 1 -> 条目不能在聊天为空时激活(无问候语)。
     * Delay = 2 -> 条目不能在聊天中有零条或只有一条消息时激活,以此类推。
 
-### 定时效果 Example
+### 定时效果示例
 
 条目配置: sticky = 3, cooldown = 2, delay = 2。
 
@@ -306,7 +306,7 @@ Message 7: entry can be activated again
 
 位于 World Info 屏幕顶部的可折叠菜单。
 
-### Scan Depth
+### 扫描深度
 
 > 可以在条目级别上覆盖。
 
@@ -316,7 +316,7 @@ Message 7: entry can be activated again
 * 如果设置为 1,则 SillyTavern 只扫描最后一条消息。
 * 2 = 最后两条消息,以此类推。
 
-### Include Names
+### 包含名称
 
 定义聊天参与者的名称是否应该作为消息前缀包含在扫描的文本缓冲区中。这允许激活使用名称作为 keywords 的条目,而无需在消息中直接提到名称。
 
@@ -336,7 +336,7 @@ Hello! Good to see you.
 How is the weather today?
 ```
 
-### Context % / Budget
+### 上下文 % / 预算
 
 **定义 World Info 条目一次可以使用多少 tokens。**
 你可以相对于 API 的 max-context 设置定义阈值(Context %)或定义一个客观的 token 阈值(Budget)。
@@ -347,21 +347,21 @@ Constant 条目将首先插入。然后是具有更大 order 数字的条目。
 
 通过直接提到 keys 插入的条目比那些在其他条目内容中提到的条目具有更高的优先级。
 
-### Min Activations
+### 最小激活数
 
-**此设置与 Max Recursion Steps 互斥。**
+**此设置与 最大递归步骤 互斥。**
 
 Minimum Activations: 如果设置为非零值,这将忽略"scan-depth"的限制,从最新消息向后搜索整个聊天记录中的 keywords,直到触发了指定数量的条目。这仍然会受到 Max Depth 设置或总 Budget 上限的限制。
 
-*由 Min Activations 触发的额外扫描不会检查在前面步骤中由 recursion 添加的条目。只有聊天消息和扩展 prompts 可以触发这些额外激活。但是,由 Min Activations 激活的条目可以像往常一样触发其他条目。*
+*由 最小激活数 触发的额外扫描不会检查在前面步骤中由 recursion 添加的条目。只有聊天消息和扩展 prompts 可以触发这些额外激活。但是,由 最小激活数 激活的条目可以像往常一样触发其他条目。*
 
-### Max Depth
+### 最大深度
 
-使用 Min Activations 设置时要扫描的最大深度。
+使用 最小激活数 设置时要扫描的最大深度。
 
-### Recursive scanning
+### 递归扫描
 
-Recursive scanning 允许条目激活其他条目或被其他条目激活,从而实现不同 World Info 条目之间的复杂交互和依赖关系。此功能可以显著增强你创意场景的动态性。
+递归扫描 允许条目激活其他条目或被其他条目激活,从而实现不同 World Info 条目之间的复杂交互和依赖关系。此功能可以显著增强你创意场景的动态性。
 是否启用 recursive scanning 可以通过全局设置 **Recursive Scan** 来控制。
 每个条目有三个选项可以控制 recursion:
 
@@ -389,9 +389,9 @@ Content: Rufus is a dog.
 
 如果消息文本仅提到 **Bessie**,**两个**条目都会被拉入 context 中。
 
-### Max Recursion Steps
+### 最大递归步骤
 
-**此设置与 Min Activations 互斥。**
+**此设置与 最小激活数 互斥。**
 
 当设置为零时,recursion 嵌套仅受你的 prompt 预算限制。当设置为非零值时,将总扫描次数限制为所需的最大"嵌套级别"。
 
@@ -401,7 +401,7 @@ Content: Rufus is a dog.
 * 2 只能激活一次 recursive 条目。
 * 3 可以触发两次 recursion...
 
-### Case-sensitive keys
+### 区分大小写关键词
 
 > 可以在条目级别上覆盖。
 
@@ -411,7 +411,7 @@ Content: Rufus is a dog.
 
 例如,当此设置激活时,keys 'rose' 和 'Rose' 将根据输入被区别对待。
 
-### Match whole words
+### 匹配整词
 
 > 可以在条目级别上覆盖。
 
@@ -421,6 +421,6 @@ Content: Rufus is a dog.
 
 **重要:** 此设置在用于不使用空格分隔词的语言(如日语或中文)时可能会产生不利影响。如果你用这些语言编写条目,建议保持关闭。
 
-### Alert on overflow
+### 溢出警告
 
 如果激活的 World Info 超过分配的 token 预算,则显示警告。
