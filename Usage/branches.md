@@ -1,8 +1,8 @@
 ---
-redirect: /installation
+redirect: /installation/
 visibility: hidden
 ---
 
-# 分支
+# Branches
 
-此页面已移至[安装](/Installation/index.md)。您将很快被重定向到那里。如果没有被重定向，请点击[这里](/Installation)。
+此页面已移至 [Installation](/Installation/index.md)。你将很快被重定向到那里。如果没有被重定向,请点击 [这里](/installation/)。
