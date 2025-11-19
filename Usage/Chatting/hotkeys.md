@@ -4,7 +4,7 @@ icon: key-asterisk
 route: /usage/hotkeys/
 ---
 
-# HotKeys
+# 快捷键
 
 **要获取在你的 SillyTavern 实例中有效的最新 HotKeys 列表,请在任何聊天中使用 `/help hotkeys` slash command。**
 

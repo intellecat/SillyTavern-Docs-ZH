@@ -5,7 +5,7 @@ route: /usage/core-concepts/personas/
 templating: false
 ---
 
-# Personas
+# 人格
 
 ## 什么是 Persona?
 

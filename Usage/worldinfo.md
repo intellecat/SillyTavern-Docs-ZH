@@ -5,7 +5,7 @@ route: /usage/core-concepts/worldinfo/
 templating: false
 ---
 
-# World Info
+# 世界信息
 
 **World Info(也称为 Lorebooks 或 Memory Books)是 ST 中的一个强大工具,可以动态地将 prompts 插入到你的聊天中,以帮助引导 AI 回复。**
 

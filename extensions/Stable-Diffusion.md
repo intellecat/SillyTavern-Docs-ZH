@@ -3,7 +3,7 @@ route: /extensions/stable-diffusion/
 templating: false
 ---
 
-# Image Generation
+# 图像生成
 
 使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。
 

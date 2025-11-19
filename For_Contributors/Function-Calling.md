@@ -4,7 +4,7 @@ icon: code-review
 route: /for-contributors/function-calling/
 ---
 
-# Function Calling
+# 函数调用
 
 Function Calling 允许通过让 LLM 使用结构化数据来为扩展添加动态功能,然后您可以使用这些数据来触发扩展的特定功能。
 

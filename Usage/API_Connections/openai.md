@@ -3,7 +3,7 @@ order: 20
 route: /usage/api-connections/openai/
 ---
 
-# Chat Completions
+# 聊天补全
 
 ## 特定来源的说明
 

@@ -2,7 +2,7 @@
 route: /extensions/objective/
 ---
 
-# Objective
+# 目标
 
 ### 这是什么?
 

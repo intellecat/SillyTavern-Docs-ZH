@@ -5,7 +5,7 @@ expanded: false
 route: /usage/api-connections/
 ---
 
-# API Connections
+# API 连接
 
 SillyTavern 可以连接到各种 LLM API。
 以下是它们各自的优势、劣势和使用场景的描述。

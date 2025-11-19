@@ -6,7 +6,7 @@ order: 35
 route: /extensions/
 ---
 
-# Extensions
+# 扩展
 
 SillyTavern 自带许多扩展,可以在 Extensions 面板中启用或禁用。Extensions 可以添加新功能、更改现有功能的行为,或为您的 AI 提供额外的内容。更多扩展可以从 Extensions 面板中的 "Download Extensions & Assets" 菜单安装。
 

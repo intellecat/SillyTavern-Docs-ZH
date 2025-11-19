@@ -4,7 +4,7 @@ icon: person-fill
 route: /usage/characters/
 ---
 
-# Characters
+# 角色
 
 Characters 是您可以创建和管理的 AI 身份，用于塑造 AI 在对话中的角色。每个 character 都有名字、性格和对话历史。您可以创建任意数量的 characters，并随时在它们之间切换。
 

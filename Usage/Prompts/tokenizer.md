@@ -3,7 +3,7 @@ order: 70
 route: /usage/prompts/tokenizer/
 ---
 
-# Tokenizer
+# 分词器
 
 Tokenizer 是将一段文本分解为称为 token 的较小单元的工具。这些 token 可以是单个单词,甚至是单词的一部分,如前缀、后缀或标点符号。一个经验法则是,一个 token 通常对应于 3~4 个文本字符。
 

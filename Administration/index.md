@@ -5,7 +5,7 @@ expanded: true
 route: /administration/
 ---
 
-# Administration
+# 管理
 
 !!!warning
 尽管遵循了许多安全最佳实践，SillyTavern 服务器的安全性仍不足以暴露在公共互联网上。

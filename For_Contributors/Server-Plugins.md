@@ -4,7 +4,7 @@ icon: server
 route: /for-contributors/server-plugins/
 ---
 
-# Server Plugins
+# 服务器插件
 
 这些插件允许添加仅使用 UI 扩展无法实现的功能,例如创建新的 API 端点或使用浏览器环境中不可用的 Node.JS 包。
 

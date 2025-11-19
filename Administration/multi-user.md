@@ -1,5 +1,5 @@
 ---
-title: Multi-user mode
+title: 多用户模式
 icon: people
 order: -10
 route: /administration/multi-user/
