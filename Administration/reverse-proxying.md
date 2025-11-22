@@ -1,5 +1,5 @@
 ---
-label: Reverse proxying
+label: 反向代理
 order: -50
 icon: server
 route: /usage/st-reverse-proxy-guide/
