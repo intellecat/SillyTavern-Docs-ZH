@@ -1,6 +1,7 @@
 ---
 order: 90
 route: /usage/core-concepts/macros/
+templating: false
 ---
 
 

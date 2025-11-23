@@ -1,7 +1,8 @@
 ---
 order: 0
 icon: file-symlink-file
-route: /usage/st-script
+route: /usage/st-script/
+templating: false
 ---
 
 # STscript 语言参考
