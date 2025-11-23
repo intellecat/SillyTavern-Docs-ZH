@@ -3,8 +3,9 @@ order: 30
 label: 开发和自动化
 icon: command-palette
 expanded: true
-route: /for-contributors
+route: /for-contributors/
 ---
+
 
 # 开发和自动化
 

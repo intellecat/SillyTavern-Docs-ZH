@@ -1,7 +1,8 @@
 ---
-order: prompts-10
+order: 100
 route: /usage/core-concepts/advancedformatting/
 ---
+
 
 # 高级格式设置
 

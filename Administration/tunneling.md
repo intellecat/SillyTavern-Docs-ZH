@@ -2,6 +2,7 @@
 label: VPN 和隧道
 order: -40
 icon: lock
+route: /administration/tunneling/
 ---
 
 VPN 和隧道是一种从世界任何地方安全访问您的家庭网络的方式。本指南将向您展示如何使用 VPN 或隧道从任何地方访问您的 SillyTavern 实例。

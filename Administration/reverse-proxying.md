@@ -2,8 +2,9 @@
 label: 反向代理
 order: -50
 icon: server
-route: /usage/st-reverse-proxy-guide
+route: /usage/st-reverse-proxy-guide/
 ---
+
 
 !!! danger 注意
 本节**不**涉及 OpenAI/Claude 反向代理。这仅涉及 **HTTP/HTTPS 反向代理**。

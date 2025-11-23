@@ -1,6 +1,7 @@
 ---
 order: -10
 icon: code-review
+route: /for-contributors/function-calling/
 ---
 
 # 函数调用

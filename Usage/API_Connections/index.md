@@ -2,7 +2,7 @@
 order: 150
 icon: repo-forked
 expanded: false
-route: /usage/api-connections
+route: /usage/api-connections/
 ---
 
 # API 连接
@@ -38,7 +38,54 @@ SillyTavern 可以连接到多种 LLM API。
 - 需要从 [HuggingFace](https://huggingface.co/models?other=LLM) 单独下载 LLM 模型，每个模型可能有 5-50GB。
 - 大多数模型不如云端 LLM API 强大。
 
-### KoboldAI
+### KoboldCpp
+
+- 易于使用的 API，支持 CPU 卸载（对低 VRAM 用户有帮助）和流式传输
+- 在 Windows、Mac 和 Linux 上可以从单个二进制文件运行
+- 支持 GGUF 模型
+- 比仅 GPU 加载器（如 AutoGPTQ 和 Exllama/v2）慢
+- [GitHub](https://github.com/LostRuins/koboldcpp)，[设置说明](/Usage/API_Connections/koboldcpp.md)
+
+### llama.cpp
+
+- KoboldCpp 和 Ollama 的原始源代码
+- 提供预编译二进制文件和从源代码编译的选项
+- 支持 GGUF 模型
+- 轻量级 CLI 接口 llama-server
+- [GitHub](https://github.com/ggml-org/llama.cpp)
+
+### Ollama
+
+- 所有基于 llama.cpp 的 API 中最容易设置和使用的
+- 一个精巧的模型[目录](https://ollama.com/library)，可一键下载
+- 支持以 Ollama 自己的格式包装的 GGUF 模型
+- [GitHub](https://github.com/ollama/ollama)，[网站](https://ollama.com/)
+
+### Oobabooga TextGeneration WebUI
+
+- 带有流式传输的一体化 Gradio UI
+- 对量化模型（AWQ、Exl2、GGML、GGUF、GPTQ）和 FP16 模型的最广泛支持
+- 提供一键安装程序
+- 定期更新，有时可能会破坏与 SillyTavern 的兼容性
+- [GitHub](https://github.com/oobabooga/text-generation-webui#one-click-installers)
+
+**正确连接 SillyTavern 到 Ooba 新 OpenAI API 的方法：**
+
+1. 确保您使用的是 Oobabooga's TextGen 的最新更新（截至 2023 年 11 月 14 日）。
+2. 编辑 CMD_FLAGS.txt 文件，在其中添加 `--api` 标志。然后重启 Ooba 的服务器。
+3. 将 ST 连接到 `http://localhost:5000/`（默认），不要勾选"Legacy API"框。您可以删除 Ooba 控制台提供的 URL 中的 `/v1` 后缀。
+
+*您可以使用 `--api-port 5001` 标志更改 API 托管端口，其中 5001 是您的自定义端口。*
+
+### TabbyAPI
+
+- 基于 [Exllamav2](https://github.com/turboderp/exllamav2) 的轻量级 API，支持流式传输
+- 支持 Exl2、GPTQ 和 FP16 模型
+- [官方扩展](https://github.com/theroyallab/ST-tabbyAPI-loader) 允许直接从 SillyTavern 加载/卸载模型
+- 不推荐给低 VRAM 用户（无 CPU 卸载）
+- [GitHub](https://github.com/theroyallab/tabbyAPI)，[设置说明](/Usage/API_Connections/tabbyapi.md)
+
+### KoboldAI Classic（已弃用，已放弃）
 
 - 在您的电脑上运行，100% 私密，可使用多种模型
 - 提供对 AI 生成设置的最直接控制
@@ -49,43 +96,18 @@ SillyTavern 可以连接到多种 LLM API。
   - [Henky's United](https://github.com/henk717/KoboldAI)
   - [0cc4m's 4bit-supporting United](https://github.com/0cc4m/KoboldAI)
 
-### KoboldCpp
-
-- 易于使用的 API，支持 CPU 卸载（对低 VRAM 用户有帮助）和流式传输
-- 在 Windows 上可以从单个 .exe 文件运行（在 MacOS 和 Linux 上必须从源代码编译）
-- 支持 GGUF/GGML 模型
-- 比仅 GPU 加载器（如 AutoGPTQ 和 Exllama/v2）慢
-- [GitHub](https://github.com/LostRuins/koboldcpp)
-
-### Oobabooga TextGeneration WebUI
-
-- 带有流式传输的一体化 Gradio UI
-- 对量化模型（AWQ、Exl2、GGML、GGUF、GPTQ）和 FP16 模型的最广泛支持
-- 提供一键安装程序
-- 定期更新，有时可能会破坏与 SillyTavern 的兼容性
-- [GitHub](https://github.com/oobabooga/text-generation-webui#one-click-installers)
-
-**正确连接 SillyTavern 到 Ooba 新 OpenAI API 的方法**
-
-1. 确保您使用的是 Oobabooga's TextGen 的最新更新（截至 2023 年 11 月 14 日）。
-2. 编辑 CMD_FLAGS.txt 文件，在其中添加 `--api` 标志。然后重启 Ooba 的服务器。
-3. 将 ST 连接到 <http://localhost:5000/>（默认），不要勾选"Legacy API"框。您可以删除 Ooba 控制台提供的 URL 中的 `/v1` 后缀。
-
-*您可以使用 `--api-port 5001` 标志更改 API 托管端口，其中 5001 是您的自定义端口。*
-
-### TabbyAPI
-
-- 基于 [Exllamav2](https://github.com/turboderp/exllamav2) 的轻量级 API，支持流式传输
-- 支持 Exl2、GPTQ 和 FP16 模型
-- [官方扩展](https://github.com/theroyallab/ST-tabbyAPI-loader) 允许直接从 SillyTavern 加载/卸载模型
-- 不推荐给低 VRAM 用户（无 CPU 卸载）
-- [GitHub](https://github.com/theroyallab/tabbyAPI)
-
 ## 云端 LLM API
 
 - 这些 LLM API 作为云服务运行，不需要您电脑的资源
 - 它们比大多数本地 LLM 更强大/更智能
 - 但它们都有不同程度的内容过滤，大多数需要付费
+
+### AI Horde
+
+- SillyTavern 可以开箱即用地访问此 API，无需额外设置
+- 使用个人志愿者（Horde Workers）的 GPU 来处理您的聊天输入的回应
+- 在生成等待时间、AI 设置和可用模型方面受制于 Worker
+- [网站](https://aihorde.net/)，[设置说明](./horde.md)
 
 ### OpenAI (ChatGPT)
 
@@ -93,7 +115,7 @@ SillyTavern 可以连接到多种 LLM API。
 - 需要预付费购买积分，按提示词收费
 - 非常逻辑化。创意风格可能重复和可预测
 - 大多数较新的模型（gpt-4-turbo、gpt-4o）支持多模态
-- [网站](https://platform.openai.com/)，[设置说明](/Usage/API_Connections/openai.md)
+- [网站](https://platform.openai.com/)，[设置说明](/Usage/API_Connections/openai.md#openai)
 
 ### Claude (by Anthropic)
 
@@ -101,7 +123,14 @@ SillyTavern 可以连接到多种 LLM API。
 - 需要预付费购买积分，按提示词收费
 - 最新的模型（Claude 3）支持多模态
 - 需要特定的提示词风格和使用 [prefills](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response) 进行回复引导
-- [网站](https://console.anthropic.com/)
+- [网站](https://console.anthropic.com/)，[设置说明](/Usage/API_Connections/openai.md#claude)
+
+### Google AI Studio 和 Vertex AI
+
+- 有带速率限制的免费层（Gemini Flash），可能需要账单信息
+- [AI Studio](https://aistudio.google.com/) 通常拥有最新的模型和功能
+- [Vertex AI](https://console.cloud.google.com/vertex-ai/studio) 设置起来比较棘手，但更稳定
+- [设置说明](/Usage/API_Connections/google.md)
 
 ### Mistral (by Mistral AI)
 
@@ -109,13 +138,47 @@ SillyTavern 可以连接到多种 LLM API。
 - 一般用途的上下文大小从 32k 到 128k，编码用途的上下文大小从 32k 到 256k。
 - 有限制的免费层级。
 - 合理的审核，Mistral 的主要原则是保持中立并赋能用户，更多信息[在此](https://mistral.ai/terms/)。
+- [网站](https://console.mistral.ai/)，[设置说明](/Usage/API_Connections/openai.md#mistral-ai)
 
 ### OpenRouter
 
-- WindowAI 浏览器扩展允许您使用自己的 API 密钥连接到上述云端 LLM
-- 使用 OpenRouter 付费使用他们的 API 密钥
-- 如果您不想在每个服务上创建单独的账户，这很有用
-- [WindowAI 网站](https://windowai.io) 和 [OpenRouter 网站](https://openrouter.ai)
+- 提供统一的 API 来访问市场上所有主要的 LLM
+- 按 token 付费的积分系统，以及每日请求有限的免费模型
+- 没有强制审核，除非 LLM 供应商要求
+- [网站](https://openrouter.ai)，[设置说明](/Usage/API_Connections/OpenRouter.md)
+
+### DeepSeek
+
+- 提供对非常流行的 DeepSeek V3（`deepseek-chat`）和 DeepSeek R1（`deepseek-reasoner`）模型的最新版本的访问
+- 需要付费购买积分（最低 $2），但模型的质量相对价格来说相当便宜
+- API 上没有审核，但模型可能会拒绝某些提示词
+- [网站](https://platform.deepseek.com/)，[设置说明](/Usage/API_Connections/openai.md#deepseek)
+
+### AI21
+
+- 提供对 Jamba Family 开放模型的访问
+- 有免费试用（三个月 $10），然后需要按 token 每月付费
+- [网站](https://ai21.com/)，[设置说明](/Usage/API_Connections/openai.md#ai21)
+
+### Cohere
+
+- 提供对 Cohere 最新模型（command-r、command-a、c4ai-aya 等）的访问
+- 有免费层（Trial Keys），对于休闲使用有足够的速率限制
+- [网站](https://cohere.com/)，[设置说明](/Usage/API_Connections/openai.md#cohere)
+
+### Perplexity
+
+- 通过其 API 提供对独特的 Perplexity Sonar 在线启用模型的访问
+- 需要配置账单并购买积分
+- [网站](https://perplexity.ai/)，[设置说明](/Usage/API_Connections/openai.md#perplexity)
+
+### Mancer AI
+
+- 托管各种系列的无约束模型的服务
+- 使用"积分"为各种模型的 token 付费
+- 默认不记录提示词，但您可以启用它以获得 token 积分折扣
+- 使用类似于 `Oobabooga TextGeneration WebUI` 的 API，详情请参见 [Mancer 文档](https://mancer.tech/docs/clients/#sampling-parameters)
+- [网站](https://mancer.tech/)，[设置说明](/Usage/API_Connections/mancer.md)
 
 ### DreamGen
 
@@ -124,23 +187,26 @@ SillyTavern 可以连接到多种 LLM API。
 - 模型范围从 7B 到 70B
 - [设置说明](DreamGen.md)
 
-### AI Horde
+### Pollinations
 
-- SillyTavern 可以开箱即用地访问此 API，无需额外设置
-- 使用个人志愿者（Horde Workers）的 GPU 来处理您的聊天输入的回应
-- 在生成等待时间、AI 设置和可用模型方面受制于 Worker
-- [网站](https://aihorde.net/)
-
-### Mancer AI
-
-- 托管各种系列的无限制模型的服务
-- 使用"积分"为各种模型的 token 付费
-- 默认不记录提示词，但您可以启用它以获得 token 积分折扣
-- 使用类似于 `Oobabooga TextGeneration WebUI` 的 API，详情请参见 [Mancer 文档](https://mancer.tech/docs/clients/#sampling-parameters)
-- [网站](https://mancer.tech/)，[设置说明](/Usage/API_Connections/mancer.md)
+- 无需设置，可以开箱即用
+- 免费提供对各种模型的访问
+- 输出可能偶尔包含带有第三方服务链接的广告
 
 ### NovelAI
 
-- 无内容过滤
-- 需要付费订阅
+- 无内容过滤，最新模型基于 Llama 3
+- 需要付费订阅，tier 决定最大上下文长度
 - [网站](https://novelai.net/)，[设置说明](/Usage/API_Connections/novelai.md)
+
+### Electron Hub
+
+- 一个 API 密钥解锁来自多个供应商（OpenAI、Anthropic、DeepSeek 等）的模型，用于文本和图像生成
+- 每天 $0.25 的免费积分，提供付费计划
+- [网站](https://www.electronhub.ai/)，[设置说明](/Usage/API_Connections/openai.md#electron-hub)
+
+### AI/ML API
+
+- 统一的 API，支持 300 多个模型，包括 Claude、GPT-4o、Gemini、LLaMA 3、Mistral 等
+- 有带速率限制的免费层、订阅计划和按需付费选项
+- [网站](https://aimlapi.com)，[文档](https://docs.aimlapi.com)，[模型](https://aimlapi.com/models)

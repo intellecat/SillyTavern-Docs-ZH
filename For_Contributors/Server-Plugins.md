@@ -1,7 +1,9 @@
 ---
-order: -20
+order: -30
 icon: server
+route: /for-contributors/server-plugins/
 ---
+
 
 # 服务器插件
 

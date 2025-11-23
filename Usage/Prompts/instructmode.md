@@ -1,7 +1,8 @@
 ---
-order: prompts-30
+order: 80
 route: /usage/core-concepts/instructmode/
 ---
+
 
 # 指令模式
 

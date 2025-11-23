@@ -1,3 +1,7 @@
+---
+route: /usage/api-connections/horde/
+---
+
 # AI Horde
 
 ## 免责声明

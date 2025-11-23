@@ -1,7 +1,8 @@
 ---
-order: character-14
-route: /usage/core-concepts/macros
+order: 90
+route: /usage/core-concepts/macros/
 ---
+
 
 # 宏（替换标签）
 

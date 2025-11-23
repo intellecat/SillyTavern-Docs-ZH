@@ -1,5 +1,6 @@
 ---
 order: prompts-40
+route: /usage/prompts/tokenizer/
 ---
 
 # 分词器
