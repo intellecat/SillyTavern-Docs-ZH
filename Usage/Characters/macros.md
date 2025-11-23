@@ -46,7 +46,7 @@ route: /usage/core-concepts/macros/
 | `{{original}}` | 可以在提示词覆盖字段中使用，以包含系统设置中的默认提示词。仅适用于聊天补全 API 和指令模式。 |
 | `{{time}}` | 当前系统时间。 |
 | `{{time_UTC+X}}` 或 `{{time_UTC-X}}` | 指定 UTC 偏移（时区）的当前时间，例如对于 UTC+02:00 使用 `{{time_UTC+2}}`。 |
-| `{{timeDiff::(time1)::(time2)}}` | time1 和 time2 之间的时间差。接受时间和日期宏。 |
+| <code>{{timeDiff::(time1)::(time2)}}</code> | time1 和 time2 之间的时间差。接受时间和日期宏。 |
 | `{{date}}` | 当前系统日期。 |
 | `{{input}}` | 用户输入栏的内容。 |
 | `{{weekday}}` | 当前星期几。 |

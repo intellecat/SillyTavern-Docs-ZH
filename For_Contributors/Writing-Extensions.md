@@ -5,7 +5,7 @@ templating: false
 route: /for-contributors/writing-extensions/
 ---
 
-# UI Extensions
+# UI 扩展
 
 UI 扩展通过挂钩到 SillyTavern 的事件和 API 来扩展其功能。它们在浏览器环境中运行，几乎可以无限制地访问 DOM、JavaScript API 和 SillyTavern 上下文。扩展可以修改 UI、调用内部 API 并与聊天数据交互。本指南介绍如何创建您自己的扩展(需要 JavaScript 知识)。
 

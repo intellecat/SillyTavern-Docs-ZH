@@ -1,5 +1,5 @@
 ---
-label: Updating
+label: 如何更新 SillyTavern
 icon: repo-pull
 order: -1
 expanded: false
