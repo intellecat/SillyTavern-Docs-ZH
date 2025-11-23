@@ -1,7 +1,7 @@
 ---
 icon: gear
 label: 本地安装
-route: /extensions/Extras/Installation/
+route: /extensions/extras/installation/
 ---
 
 # Extras 安装
