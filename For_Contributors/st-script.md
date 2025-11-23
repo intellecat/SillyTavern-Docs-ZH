@@ -749,56 +749,56 @@ STscript 是基于斜杠命令引擎构建的，利用命令批处理、数据�
 
 World Info（也称为 Lorebook）是一个高度实用的工具，用于动态地将数据插入提示词中。有关更详细的说明，请参阅专用页面：[World Info](/Usage/worldinfo.md)。
 
-1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.
-2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
-3. `/getentryfield file=bookName field=field [UID]` – gets a field value (default field: `content`) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. `/getentryfield file=chatLore field=content 123`.
-4. `/setentryfield file=bookName uid=UID field=field [text]` – sets a field value (default field: `content`) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`.
-5. `/createentry file=bookName key=keyValue [content text]` – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are *optional*) and passes the UID down the pipe, e.g. `/createentry file=chatLore key=Shadowfang The sword of the king`.
+1. `/getchatbook` — 获取聊天绑定的 World Info 文件的名称，如果未绑定则创建一个新文件，并将其传递到管道。
+2. `/findentry file=bookName field=fieldName [text]` — 使用字段值与提供的文本的模糊匹配从指定文件（或指向文件名的变量）中查找记录的 UID（默认字段：`key`），并将 UID 传递到管道，例如 `/findentry file=chatLore field=key Shadowfang`。
+3. `/getentryfield file=bookName field=field [UID]` — 从指定的 World Info 文件（或指向文件名的变量）中获取具有 UID 的记录的字段值（默认字段：`content`），并将值传递到管道，例如 `/getentryfield file=chatLore field=content 123`。
+4. `/setentryfield file=bookName uid=UID field=field [text]` — 从指定的 World Info 文件（或指向文件名的变量）中设置具有 UID（或指向 UID 的变量）的记录的字段值（默认字段：`content`）。要为关键字字段设置多个值，请使用逗号分隔的列表作为文本值，例如 `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`。
+5. `/createentry file=bookName key=keyValue [content text]` — 在指定文件（或指向文件名的变量）中创建具有关键字和内容（这两个参数都是*可选的*）的新记录，并将 UID 传递到管道，例如 `/createentry file=chatLore key=Shadowfang The sword of the king`。
 
-### Valid entry fields
+### 有效的条目字段
 
-| Field              | UI element        | Value type      |
+| 字段               | UI 元素           | 值类型          |
 |:-------------------|:------------------|:----------------|
-| `content`          | Content           | String          |
-| `comment`          | Title / Memo      | String          |
-| `key`              | Primary Keywords  | List of strings |
-| `keysecondary`     | Optional Filter   | List of strings |
-| `constant`         | Constant Status   | Boolean (1/0)   |
-| `disable`          | Disabled Status   | Boolean (1/0)   |
-| `order`            | Order             | Number          |
-| `selectiveLogic`   | Logic             | (see below)     |
-| `excludeRecursion` | Non-recursable    | Boolean (1/0)   |
-| `probability`      | Trigger%          | Number (0-100)  |
-| `depth`            | Depth             | Number (0-999)  |
-| `position`         | Position          | (see below)     |
-| `role`             | Depth Role        | (see below)     |
-| `scanDepth`        | Scan Depth        | Number (0-100)  |
-| `caseSensitive`    | Case-Sensitive    | Boolean (1/0)   |
-| `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
+| `content`          | 内容              | 字符串          |
+| `comment`          | 标题 / 备注       | 字符串          |
+| `key`              | 主要关键字        | 字符串列表      |
+| `keysecondary`     | 可选过滤器        | 字符串列表      |
+| `constant`         | 常量状态          | 布尔值 (1/0)    |
+| `disable`          | 禁用状态          | 布尔值 (1/0)    |
+| `order`            | 顺序              | 数字            |
+| `selectiveLogic`   | 逻辑              | (见下文)        |
+| `excludeRecursion` | 非递归            | 布尔值 (1/0)    |
+| `probability`      | 触发%             | 数字 (0-100)    |
+| `depth`            | 深度              | 数字 (0-999)    |
+| `position`         | 位置              | (见下文)        |
+| `role`             | 深度角色          | (见下文)        |
+| `scanDepth`        | 扫描深度          | 数字 (0-100)    |
+| `caseSensitive`    | 区分大小写        | 布尔值 (1/0)    |
+| `matchWholeWords`  | 匹配整个单词      | 布尔值 (1/0)    |
 
-**Logic values**
+**逻辑值**
 
-- 0 = AND ANY
-- 1 = NOT ALL
-- 2 = NOT ANY
-- 3 = AND ALL
+- 0 = AND ANY（任一）
+- 1 = NOT ALL（非全部）
+- 2 = NOT ANY（非任一）
+- 3 = AND ALL（全部）
 
-**Position values**
+**位置值**
 
-- 0 = before main prompt
-- 1 = after main prompt
-- 2 = top of Author's Note
-- 3 = bottom of Author's Note
-- 4 = in-chat at depth
-- 5 = top of example messages
-- 6 = bottom of example messages
+- 0 = 在主提示词之前
+- 1 = 在主提示词之后
+- 2 = 作者注释顶部
+- 3 = 作者注释底部
+- 4 = 聊天内指定深度
+- 5 = 示例消息顶部
+- 6 = 示例消息底部
 
-**Role values** (Position = 4 only)
-- 0 = System
-- 1 = User
-- 2 = Assistant
+**角色值**（仅位置 = 4）
+- 0 = 系统
+- 1 = 用户
+- 2 = 助手
 
-### Example 1: Read a content from the chat lorebook by key
+### 示例 1：通过关键字从聊天 lorebook 中读取内容
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
@@ -807,7 +807,7 @@ World Info（也称为 Lorebook）是一个高度实用的工具，用于动态�
 /echo
 ```
 
-### Example 2: Create a chat lorebook entry with key and content
+### 示例 2：创建带有关键字和内容的聊天 lorebook 条目
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
@@ -815,7 +815,7 @@ World Info（也称为 Lorebook）是一个高度实用的工具，用于动态�
 /echo
 ```
 
-### Example 3: Expand an existing lorebook entry with new information from the chat
+### 示例 3：使用聊天中的新信息扩展现有 lorebook 条目
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
@@ -829,81 +829,81 @@ World Info（也称为 Lorebook）是一个高度实用的工具，用于动态�
 /setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}
 ```
 
-## Text manipulation
+## 文本操作
 
-There's a variety of useful text manipulation utility commands to be used in various script scenarios.
+有多种有用的文本操作实用命令可在各种脚本场景中使用。
 
-1. `/trimtokens` — trims the input to the specified number of text tokens from the start or from the end and outputs the result to the pipe.
-2. `/trimstart` — trims the input to the start of the first complete sentence and outputs the result to the pipe.
-3. `/trimend` — trims the input to the end of the last complete sentence and outputs the result to the pipe.
-4. `/fuzzy` — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.
-5. `/regex name=scriptName [text]` — executes a regex script from the Regex extension for the specified text. The script must be enabled.
+1. `/trimtokens` — 从开始或结束处将输入修剪为指定数量的文本 token，并将结果输出到管道。
+2. `/trimstart` — 将输入修剪到第一个完整句子的开始，并将结果输出到管道。
+3. `/trimend` — 将输入修剪到最后一个完整句子的结束，并将结果输出到管道。
+4. `/fuzzy` — 对输入文本与字符串列表执行模糊匹配，将最佳字符串匹配输出到管道。
+5. `/regex name=scriptName [text]` — 为指定文本执行 Regex 扩展中的正则表达式脚本。脚本必须启用。
 
-### Arguments for `/trimtokens`
+### `/trimtokens` 的参数
 
 ```stscript
 /trimtokens limit=number direction=start/end (input)
 ```
 
-1. `direction` sets the direction for trimming, which can be either `start` or `end`. Default: `end`.
-2. `limit` sets the amount of tokens to left in the output. Can also specify a variable name containing the number. **Required argument.**
-3. Unnamed argument is the input text to be trimmed.
+1. `direction` 设置修剪方向，可以是 `start` 或 `end`。默认值：`end`。
+2. `limit` 设置输出中剩余的 token 数量。也可以指定包含数字的变量名。**必需参数。**
+3. 未命名参数是要修剪的输入文本。
 
-### Arguments for `/fuzzy`
+### `/fuzzy` 的参数
 
 ```stscript
 /fuzzy list=["candidate1","candidate2"] (input)
 ```
 
-1. `list` is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
-2. Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.
+1. `list` 是包含候选项的 JSON 序列化字符串数组。也可以指定包含列表的变量名。**必需参数。**
+2. 未命名参数是要匹配的输入文本。输出是与输入最匹配的候选项之一。
 
-## Autocomplete
+## 自动完成
 
-- Autocomplete is enabled both on the chat input, and the large Quick Reply editor.
-- Autocomplete works anywhere in your input. Even with multiple piped commands and nested closures.
-- Autocomplete supports three ways of looking up matching commands (*User Settings* -> *STscript Matching*).
+- 自动完成在聊天输入和大型快速回复编辑器中都已启用。
+- 自动完成在您输入的任何地方都有效。即使使用多个管道命令和嵌套闭包也是如此。
+- 自动完成支持三种查找匹配命令的方式（*用户设置* -> *STscript 匹配*）。
 
-1. **Starts with** The "old" way. Only commands that begin exactly with the typed value will show up.
-2. **Includes**  All commands that *include* the type value will show up. Example: When entering `/delete`, the commands `/qr-delete` and `/qr-set-delete` will show up in the autocomplete list (/qr-**delete**, /qr-set-**delete**).
-3. **Fuzzy**  All commands that can be fuzzy-matched against the typed value will show up. Example: When entering `/seas`, the command `/sendas` will show up in the autocomplete list (/**se**nd**as**).
+1. **开头匹配** "旧"方式。只有精确以键入值开头的命令才会显示。
+2. **包含匹配** 所有*包含*键入值的命令都会显示。示例：输入 `/delete` 时，命令 `/qr-delete` 和 `/qr-set-delete` 将显示在自动完成列表中（/qr-**delete**，/qr-set-**delete**）。
+3. **模糊匹配** 所有可以与键入值进行模糊匹配的命令都会显示。示例：输入 `/seas` 时，命令 `/sendas` 将显示在自动完成列表中（/**se**nd**as**）。
 
-- Command arguments are supported by autocomplete as well. The list will show up for required arguments automatically. For optional arguments, press *Ctrl*+*Space* to open the list of available options.
-- When entering `/:` to execute a closure or QR, autocomplete will show a list of scoped variables and QRs.
-- Autocomplete has limited support for macros (in slash commands). Type `{{` to get a list of available macros.
-- Use the *up* and *down* *arrow keys* to select an option from the list of autocomplete options.
-- Press *Enter* or *Tab* or *click* on an option to place the option at the cursor.
-- Press *Escape* to close the autocomplete list.
-- Press *Ctrl*+*Space* to open the autocomplete list or toggle the selected option's details.
+- 自动完成也支持命令参数。列表将自动显示必需参数。对于可选参数，按 *Ctrl*+*Space* 打开可用选项列表。
+- 输入 `/:` 以执行闭包或 QR 时，自动完成将显示作用域变量和 QR 的列表。
+- 自动完成对宏（在斜杠命令中）的支持有限。输入 `{{` 以获取可用宏的列表。
+- 使用*向上*和*向下*箭头键从自动完成选项列表中选择选项。
+- 按 *Enter* 或 *Tab* 或*单击*选项以将选项放置在光标处。
+- 按 *Escape* 关闭自动完成列表。
+- 按 *Ctrl*+*Space* 打开自动完成列表或切换所选选项的详细信息。
 
-## Parser Flags
+## 解析器标志
 
 ```stscript
 /parser-flag
 ```
 
-The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.  
-You can set your default flags in user settings.
+解析器接受标志以修改其行为。这些标志可以在脚本中的任何时候打开和关闭，所有后续输入都将相应地进行评估。
+您可以在用户设置中设置默认标志。
 
-### Strict Escaping
+### 严格转义
 
 ```stscript
 /parser-flag STRICT_ESCAPING on |
 ```
 
-Changes with `STRICT_ESCAPING` enabled are as follows.
+启用 `STRICT_ESCAPING` 后的更改如下。
 
-#### Pipes
+#### 管道符
 
-Pipes don't need to be escaped in quoted values.
+引号值中的管道符不需要转义。
 
 ```stscript
 /echo title="a|b" c\|d
 ```
 
-#### Backslashes
+#### 反斜杠
 
-A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.
+符号前面的反斜杠可以被转义，以提供后跟功能符号的字面反斜杠。
 
 ```stscript
 // this will echo "foo \", then echo "bar" |
@@ -916,21 +916,21 @@ A backslash in front of a symbol can be escaped to provide the literal backslash
 /echo \\\|
 ```
 
-### Replace Variable Macros
+### 替换变量宏
 
 ```stscript
 /parser-flag REPLACE_GETVAR on |
 ```
 
-This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The `{{var::}}` macros get substituted last and no further substitutions happen on the resulting text / variable value.
+此标志有助于避免当变量值包含可以解释为宏的文本时的双重替换。`{{var::}}` 宏最后被替换，并且不会对生成的文本/变量值进行进一步的替换。
 
-Replaces all `{{getvar::}}` and `{{getglobalvar::}}` macros with `{{var::}}`.
-Behind the scenes, the parser will insert a series of command executors before the command with the replaced macros:
+将所有 `{{getvar::}}` 和 `{{getglobalvar::}}` 宏替换为 `{{var::}}`。
+在幕后，解析器将在带有替换宏的命令之前插入一系列命令执行器：
 
-- call `/let` to save the current `{{pipe}}` to a scoped variable
-- call `/getvar` or `/getglobalvar` to get the variable used in the macro
-- call `/let` to save the retrieved variable to a scoped variable
-- call `/return` with the saved `{{pipe}}` value to restore the correct piped value for the next command
+- 调用 `/let` 将当前 `{{pipe}}` 保存到作用域变量
+- 调用 `/getvar` 或 `/getglobalvar` 获取宏中使用的变量
+- 调用 `/let` 将检索到的变量保存到作用域变量
+- 使用保存的 `{{pipe}}` 值调用 `/return` 以恢复下一个命令的正确管道值
 
 ```stscript
 // the following will echo the last message's id / number |
