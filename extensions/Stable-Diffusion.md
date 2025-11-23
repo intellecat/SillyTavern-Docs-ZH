@@ -1,6 +1,8 @@
 ---
+route: /extensions/stable-diffusion/
 templating: false
 ---
+
 
 # Image Generatio (图像生成)
 

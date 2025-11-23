@@ -1,6 +1,7 @@
 ---
 label: MacOS & Linux
 order: 5
+route: /installation/linuxmacos/
 ---
 
 # Linux/MacOS 安装指南

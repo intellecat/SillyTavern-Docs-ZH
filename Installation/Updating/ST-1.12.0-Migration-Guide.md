@@ -3,6 +3,7 @@ order: 112
 route: /installation/st-1.12.0-migration-guide/
 ---
 
+
 # 1.12.0 迁移指南
 
 SillyTavern 1.12.0（代号 "Neo Server" 更新）包含几个可能影响您使用 SillyTavern 方式的关键更改。

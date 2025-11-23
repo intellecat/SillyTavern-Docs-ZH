@@ -5,6 +5,7 @@ tags:
         visual novel,
         vn,
     ]
+route: /usage/user-settings/visual-novel/
 ---
 
 # 视觉小说（VN）模式

@@ -105,7 +105,7 @@ STscript 是基于斜杠命令引擎构建的，利用命令批处理、数据�
 - 本地变量 — 保存到当前聊天的元数据中，对其唯一。
 - 全局变量 — 保存到 settings.json 中，在整个应用程序中都存在。
 
-1. `/getvar name` 或 `{{getvar::name}}` — 获取本地变量的值。
+1. `/getvar name` 或 `{{getvar\:\:name}}` — 获取本地变量的值。
 2. `/setvar key=name value` 或 `{{setvar::name::value}}` — 设置本地变量的值。
 3. `/addvar key=name increment` 或 `{{addvar::name::increment}}` — 将 `increment` 添加到本地变量的值中。
 4. `/incvar name` 或 `{{incvar::name}}` — 将本地变量的值增加 1。
@@ -248,56 +248,56 @@ STscript 是基于斜杠命令引擎构建的，利用命令批处理、数据�
 /echo title=a\|b c\|d |
 ```
 
-### Quotes
+### 引号
 
-To use a literal quote-character inside a quoted value, the character must be escaped.
+要在引号值内使用字面引号字符，必须转义该字符。
 
 ```stscript
 /echo title="a \"b\" c" d "e" f
 ```
 
-### Spaces
+### 空格
 
-To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.
+要在命名参数的值中使用空格，您必须用引号括起该值，或者转义空格字符。
 
 ```stscript
 /echo title="a b" c d |
 /echo title=a\ b c d
 ```
 
-### Closure Delimiters
+### 闭包分隔符
 
-If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.
+如果要使用用于标记闭包开始或结束的字符组合，必须使用单个反斜杠转义该序列。
 
 ```stscript
 /echo \{: |
 /echo \:}
 ```
 
-## Pipe Breakers
+## 管道中断符
 
 ```stscript
 ||
 ```
 
-To prevent the previous command's output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.
+要防止前一个命令的输出自动注入到下一个命令的未命名参数中，请在两个命令之间放置双管道符。
 
 ```stscript
 /echo we don't want to pass this on ||
 /world
 ```
 
-## Closures
+## 闭包
 
 ```stscript
 {: ... :}
 ```
 
-Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between `{:` and `:}`, that are only evaluated once that part of the code is executed.
+闭包（块语句、lambda、匿名函数，随你怎么称呼）是包装在 `{:` 和 `:}` 之间的一系列命令，只有在执行到代码的该部分时才会被评估。
 
-### Sub-Commands
+### 子命令
 
-Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.
+闭包使子命令的使用变得更加容易，并且不再需要转义管道符和宏。
 
 ```stscript
 // if without closures |
@@ -323,9 +323,9 @@ Closures make using sub-commands a lot easier and get rid of the need to escape 
     :}
 ```
 
-### Scopes
+### 作用域
 
-Closures have their own scope and support scoped variables. Scoped variables are declared with `/let`, their values set and retrieved with `/var`. Another way to get a scoped variable is the `{{var::}}` macro.
+闭包有自己的作用域并支持作用域变量。作用域变量使用 `/let` 声明，使用 `/var` 设置和检索其值。获取作用域变量的另一种方法是使用 `{{var::}}` 宏。
 
 ```stscript
 /let x |
@@ -335,8 +335,8 @@ Closures have their own scope and support scoped variables. Scoped variables are
 /echo x is {{var::x}} and y is {{pipe}}.
 ```
 
-Within a closure, you have access to all variables declared within that same closure or in one of its ancestors. You don't have access to variables declared in a closure's descendants.  
-If a variable is declared with the same name as a variable that was declared in one of the closure's ancestors, you don't have access to the ancestor variable in this closure and its descendants.
+在闭包内，您可以访问在同一闭包或其祖先之一中声明的所有变量。您无法访问在闭包的后代中声明的变量。
+如果声明了与在闭包的祖先之一中声明的变量同名的变量，则在此闭包及其后代中无法访问祖先变量。
 
 ```stscript
 /let x this is root x |
@@ -357,13 +357,13 @@ If a variable is declared with the same name as a variable that was declared in 
 /echo called from root: x is "{{var::x}}" and y is "{{var::y}}"
 ```
 
-### Named Closures
+### 命名闭包
 
 ```stscript
 /let x {: ... :} | /:x
 ```
 
-Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.
+闭包可以分配给变量（仅作用域变量），以便稍后调用或用作子命令。
 
 ```stscript
 /let myClosure {:
@@ -380,16 +380,16 @@ Closures can be assigned to variables (only scoped variables) to be called at a 
 /times 3 {{var::myClosure}}
 ```
 
-`/:` can also be used to execute Quick Replies, as it is just a shorthand for `/run`.
+`/:` 也可用于执行快速回复，因为它只是 `/run` 的简写。
 
 ```stscript
 /:QrSetName.QrButtonLabel |
 /run QrSetName.QrButtonLabel
 ```
 
-### Closure Arguments
+### 闭包参数
 
-Named closures can take named arguments, just like slash commands. The arguments can have default values.
+命名闭包可以接受命名参数，就像斜杠命令一样。参数可以有默认值。
 
 ```stscript
 /let myClosure {: a=1 b=
@@ -398,10 +398,10 @@ Named closures can take named arguments, just like slash commands. The arguments
 /:myClosure b=10
 ```
 
-### Closures and Piped Arguments
+### 闭包和管道参数
 
-The piped value from a parent closure will not be automatically injected into the first command of a child closure.  
-You can still explicitly reference the parent's piped value with `{{pipe}}`, but if you leave the unnamed argument of the first command inside a closure blank, the value will *not* be automatically injected.
+父闭包的管道值不会自动注入到子闭包的第一个命令中。
+您仍然可以使用 `{{pipe}}` 显式引用父闭包的管道值，但如果将闭包内第一个命令的未命名参数留空，该值将*不会*被自动注入。
 
 ```stscript
 /* This used to attempt to change the model to "foo"
@@ -428,13 +428,13 @@ You can still explicitly reference the parent's piped value with `{{pipe}}`, but
 :} |
 ```
 
-### Immediately Executed Closures
+### 立即执行的闭包
 
 ```stscript
 {: ... :}()
 ```
 
-Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.
+闭包可以立即执行，这意味着它们将被替换为其返回值。这在没有明确支持闭包的地方很有用，并且可以缩短一些否则需要大量中间变量的命令。
 
 ```stscript
 // a simple length comparison of two strings without closures |
@@ -450,7 +450,7 @@ Closures can be immediately executed, meaning they will be replaced with their r
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!
 ```
 
-In addition to running named closures saved inside scoped variables, the `/run` command can also be used to execute closures immediately.
+除了运行保存在作用域变量中的命名闭包外，`/run` 命令还可用于立即执行闭包。
 
 ```stscript
 /run {:
@@ -459,13 +459,13 @@ In addition to running named closures saved inside scoped variables, the `/run` 
 /echo |
 ```
 
-## Comments
+## 注释
 
 ```stscript
 // ... | /# ...
 ```
 
-A comment is a human-readable explanation or annotation in the script code. Comments don't break pipes.
+注释是脚本代码中人类可读的解释或标注。注释不会中断管道。
 
 ```stscript
 // this is a comment |
@@ -473,9 +473,9 @@ A comment is a human-readable explanation or annotation in the script code. Comm
 /# this is also a comment
 ```
 
-### Block Comments
+### 块注释
 
-Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.
+块注释可用于快速注释掉多个命令。它们不会在管道符处终止。
 
 ```stscript
 /echo foo |
@@ -487,26 +487,26 @@ Block comments can be used to quickly comment out multiple commands at once. The
 ```
 
 
-## Flow Control
+## 流程控制
 
-### Loops: `/while` and `/times`
+### 循环：`/while` 和 `/times`
 
-If you need to run some command in a loop until a certain condition is met, use the `/while` command.
+如果需要在循环中运行某些命令直到满足特定条件，请使用 `/while` 命令。
 
 ```stscript
 /while left=valueA right=valueB rule=operation guard=on "commands"
 ```
 
-On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
+在循环的每一步中，它会将变量 A 的值与变量 B 的值进行比较，如果条件为真，则执行引号中的任何有效斜杠命令，否则退出循环。此命令不会向输出管道写入任何内容。
 
-#### Arguments for `/while`
+#### `/while` 的参数
 
-**The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the `/if` command.**
+**可用的布尔比较集、变量处理、字面值和子命令与 `/if` 命令相同。**
 
-The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
-To disable and allow endless loops, set `guard=off`.
+可选的 `guard` 命名参数（默认为 `on`）用于防止无限循环，将迭代次数限制为 100 次。
+要禁用并允许无限循环，请设置 `guard=off`。
 
-This example adds 1 to the value of `i` until it reaches 10, then outputs the resulting value (10 in this case).
+此示例将 `i` 的值加 1 直到达到 10，然后输出结果值（在这种情况下为 10）。
 
 ```stscript
 /setvar key=i 0 |
@@ -515,26 +515,26 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 /flushvar i
 ```
 
-#### Arguments for `/times`
+#### `/times` 的参数
 
-Runs a subcommand a specified number of times.
+运行子命令指定的次数。
 
-`/times (repeats) "(command)"` – any valid slash command enclosed in quotes repeats a number of times, e.g. `/setvar key=i 1 | /times 5 "/addvar key=i 1"` adds 1 to the value of "i" 5 times.
-- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 "/echo {{timesIndex}}"` echoes the numbers 0 through 4.
-- Loops are limited to 100 iterations by default, pass `guard=off` to disable.
+`/times (repeats) "(command)"` — 引号中的任何有效斜杠命令重复多次，例如 `/setvar key=i 1 | /times 5 "/addvar key=i 1"` 将 "i" 的值加 1 共 5 次。
+- {{timesIndex}} 被替换为迭代编号（从零开始），例如 `/times 4 "/echo {{timesIndex}}"` 回显数字 0 到 4。
+- 循环默认限制为 100 次迭代，传递 `guard=off` 以禁用。
 
-### Breaking out of Loops and Closures
+### 跳出循环和闭包
 
 ```stscript
 /break |
 ```
 
-The `/break` command can be used to break out of a loop (`/while` or `/times`) or a closure early. The unnamed argument of `/break` can be used to pass a value different from the current pipe along.  
-`/break` is currently implemented in the following commands:
-- `/while` - exits the loop early
-- `/times` - exits the loop early
-- `/run` (with a closure or closure via variable) - exits the closure early
-- `/:` (with a closure) - exits the closure early
+`/break` 命令可用于提前跳出循环（`/while` 或 `/times`）或闭包。`/break` 的未命名参数可用于传递与当前管道不同的值。
+`/break` 目前在以下命令中实现：
+- `/while` - 提前退出循环
+- `/times` - 提前退出循环
+- `/run`（带闭包或通过变量的闭包）- 提前退出闭包
+- `/:`（带闭包）- 提前退出闭包
 
 ```stscript
 /times 10 {:
@@ -577,33 +577,33 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 /echo pipe will be one: {{pipe}} |
 ```
 
-## Math operations
+## 数学运算
 
-- All of the following operations accept a series of numbers or variable names and output the result to the pipe.
-- Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.
-- Multiplication, addition, minimum and maximum accept an unlimited number of arguments separated by spaces.
-- Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.
-- Sine, cosine, natural logarithm, square root, absolute value, and rounding accept one argument.
+- 以下所有运算都接受一系列数字或变量名，并将结果输出到管道。
+- 无效运算（例如除以零）以及导致 NaN 值或无穷大的运算返回零。
+- 乘法、加法、最小值和最大值接受无限数量的参数，用空格分隔。
+- 减法、除法、指数运算和模运算接受用空格分隔的两个参数。
+- 正弦、余弦、自然对数、平方根、绝对值和四舍五入接受一个参数。
 
-**List of operations:**
+**运算列表：**
 
-1. `/add (a b c d)` – performs an addition of the set of values, e.g. `/add 10 i 30 j`
-2. `/mul (a b c d)` – performs a multiplication of the set of values, e.g. `/mul 10 i 30 j`
-3. `/max (a b c d)` – returns a maximum from the set of values, e.g. `/max 1 0 4 k`
-4. `/min (a b c d)` – return a minimum from the set of values, e.g. `/min 5 4 i 2`
-5. `/sub (a b)` – performs a subtraction of two values, e.g. `/sub i 5`
-6. `/div (a b)` – performs a division of two values, e.g. `/div 10 i`
-7. `/mod (a b)` – performs a modulo operation of two values, e.g. `/mod i 2`
-8. `/pow (a b)` – performs a power operation of two values, e.g. `/pow i 2`
-9. `/sin (a)` – performs a sine operation of a value, e.g. `/sin i`
-10. `/cos (a)` – performs a cosine operation of a value, e.g. `/cos i`
-11. `/log (a)` – performs a natural logarithm operation of a value, e.g. `/log i`
-12. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
-13. `/sqrt (a)`– performs a square root operation of a value, e.g. `/sqrt 9`
-14. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
-15. `/rand (round=round|ceil|floor from=number=0 to=number=1)` – returns a random number between from and to, e.g. `/rand` or `/rand 10` or `/rand from=5 to=10`. Ranges are inclusive. The returned value will contain a fractional part. Use `round` named argument to get an integral value, e.g. `/rand round=ceil` to round up, `round=floor` to round down, and `round=round` to round to nearest.
+1. `/add (a b c d)` — 对值集进行加法运算，例如 `/add 10 i 30 j`
+2. `/mul (a b c d)` — 对值集进行乘法运算，例如 `/mul 10 i 30 j`
+3. `/max (a b c d)` — 从值集中返回最大值，例如 `/max 1 0 4 k`
+4. `/min (a b c d)` — 从值集中返回最小值，例如 `/min 5 4 i 2`
+5. `/sub (a b)` — 对两个值进行减法运算，例如 `/sub i 5`
+6. `/div (a b)` — 对两个值进行除法运算，例如 `/div 10 i`
+7. `/mod (a b)` — 对两个值进行模运算，例如 `/mod i 2`
+8. `/pow (a b)` — 对两个值进行幂运算，例如 `/pow i 2`
+9. `/sin (a)` — 对值进行正弦运算，例如 `/sin i`
+10. `/cos (a)` — 对值进行余弦运算，例如 `/cos i`
+11. `/log (a)` — 对值进行自然对数运算，例如 `/log i`
+12. `/abs (a)` — 对值进行绝对值运算，例如 `/abs -10`
+13. `/sqrt (a)` — 对值进行平方根运算，例如 `/sqrt 9`
+14. `/round (a)` — 对值进行四舍五入到最接近整数的运算，例如 `/round 3.14`
+15. `/rand (round=round|ceil|floor from=number=0 to=number=1)` — 返回介于 from 和 to 之间的随机数，例如 `/rand` 或 `/rand 10` 或 `/rand from=5 to=10`。范围是包含的。返回的值将包含小数部分。使用 `round` 命名参数获取整数值，例如 `/rand round=ceil` 向上舍入，`round=floor` 向下舍入，`round=round` 舍入到最接近的值。
 
-### Example 1: get an area of a circle with a radius of 50.
+### 示例 1：获取半径为 50 的圆的面积。
 
 ```stscript
 /setglobalvar key=PI 3.1415 |
@@ -613,7 +613,7 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 /echo Circle area: {{pipe}}
 ```
 
-### Example 2: calculate a factorial of 5.
+### 示例 2：计算 5 的阶乘。
 
 ```stscript
 /setvar key=input 5 |
@@ -627,26 +627,26 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 /flushvar product
 ```
 
-## Using the LLM
+## 使用 LLM
 
-Scripts can make requests to your currently connected LLM API using the following commands:
+脚本可以使用以下命令向当前连接的 LLM API 发出请求：
 
-- `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
-- `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
-- `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.
+- `/gen (prompt)` — 使用提供的提示词为所选角色生成文本，并包含聊天消息。
+- `/genraw (prompt)` — 仅使用提供的提示词生成文本，忽略当前角色和聊天。
+- `/trigger` — 触发正常生成（相当于单击"发送"按钮）。如果在群组聊天中，您可以选择提供基于 1 的群组成员索引或角色名称让他们回复，否则根据群组设置触发群组回合。
 
-### Arguments for `/gen` and `/genraw`
+### `/gen` 和 `/genraw` 的参数
 
 ```stscript
 /genraw lock=on/off stop=[] instruct=on/off (prompt)
 ```
 
-- `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
-- `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
-- `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to `off` to force pure prompts. Default: `on`.
-- `as` (for Text Completion APIs) — can be `system` (default) or `char`. Defines how the last prompt line will be formatted. `char` will use a character name, `system` will use no or neutral name.
+- `lock` — 可以是 `on` 或 `off`。指定在生成进行时是否应阻止用户输入。默认值：`off`。
+- `stop` — JSON 序列化的字符串数组。仅为此生成添加自定义停止字符串（如果 API 支持）。默认值：无。
+- `instruct`（仅 `/genraw`）— 可以是 `on` 或 `off`。允许在输入提示词上使用指令格式（如果启用了指令模式并且 API 支持）。设置为 `off` 以强制纯提示词。默认值：`on`。
+- `as`（用于文本补全 API）— 可以是 `system`（默认）或 `char`。定义最后一行提示词的格式。`char` 将使用角色名称，`system` 将不使用或使用中性名称。
 
-The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
+然后，生成的文本通过管道传递到下一个命令，并可以保存到变量或使用 I/O 功能显示：
 
 ```stscript
 /genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
@@ -656,57 +656,57 @@ The generated text is then passed through the pipe to the next command and can b
 | ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
 |---------------------------------------------------|
 
-or to insert the generated message as a response from your character:
+或将生成的消息作为角色的回应插入：
 
 ```stscript
 /genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
 /sendas name={{char}} {{pipe}}
 ```
 
-## Prompt injections
+## 提示词注入
 
-Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
+脚本可以添加自定义 LLM 提示词注入，使其本质上相当于无限的作者注释。
 
-- `/inject (text)` — inserts any text into the normal LLM prompt for the current chat, and requires a unique identifier. Saved to chat metadata.
-- `/listinjects` — shows a list of all prompt injections added by scripts for the current chat in a system message.
-- `/flushinjects` — deletes all prompt injections added by scripts for the current chat.
-- `/note (text)` — sets the Author's Note value for the current chat. Saved to chat metadata.
-- `/interval` — sets the Author's Note insertion interval for the current chat.
-- `/depth` — sets the Author's Note insertion depth for the in-chat position.
-- `/position`  — sets the Author's Note position for the current chat.
+- `/inject (text)` — 将任何文本插入到当前聊天的正常 LLM 提示词中，并需要唯一标识符。保存到聊天元数据。
+- `/listinjects` — 在系统消息中显示脚本为当前聊天添加的所有提示词注入的列表。
+- `/flushinjects` — 删除脚本为当前聊天添加的所有提示词注入。
+- `/note (text)` — 设置当前聊天的作者注释值。保存到聊天元数据。
+- `/interval` — 设置当前聊天的作者注释插入间隔。
+- `/depth` — 设置聊天内位置的作者注释插入深度。
+- `/position` — 设置当前聊天的作者注释位置。
 
-### Arguments for `/inject`
+### `/inject` 的参数
 
 ```stscript
 /inject id=IdGoesHere position=chat depth=4 My prompt injection
 ```
 
-- `id` — an identifier string or a reference to a variable. Consequent calls of `/inject` with the same ID will overwrite the previous text injection. **Required argument.**
-- `position` — sets a position for the injection. Default: `after`. Possible values:
-  - `after`: after the main prompt.
-  - `before`: before main prompt.
-  - `chat`: in-chat.
-- `depth` — sets an injection depth for the in-chat position. 0 means insertion after the last message, 1 - before the last message, etc. Default: 4.
-- Unnamed argument is a text to be injected. An empty string will unset the previous value for the provided identifier.
+- `id` — 标识符字符串或对变量的引用。使用相同 ID 的 `/inject` 的后续调用将覆盖以前的文本注入。**必需参数。**
+- `position` — 设置注入的位置。默认值：`after`。可能的值：
+  - `after`：在主提示词之后。
+  - `before`：在主提示词之前。
+  - `chat`：聊天内。
+- `depth` — 设置聊天内位置的注入深度。0 表示在最后一条消息之后插入，1 - 在最后一条消息之前，等等。默认值：4。
+- 未命名参数是要注入的文本。空字符串将取消设置所提供标识符的先前值。
 
-## Access chat messages
+## 访问聊天消息
 
-### Read messages
+### 读取消息
 
-You can access messages in the currently selected chat using the `/messages` command.
+您可以使用 `/messages` 命令访问当前选定聊天中的消息。
 
 ```stscript
 /messages names=on/off start-finish
 ```
 
-- The `names` argument is used to specify whether you want to include character names or not, default: `on`.
-- In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
-- If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.
-- Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.
-- If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
+- `names` 参数用于指定是否要包含角色名称，默认值：`on`。
+- 在未命名参数中，它接受 `start-finish` 格式的消息索引或范围。范围是包含的！
+- 如果范围无法满足，即请求的索引无效或消息数量超过存在的消息数量，则返回空字符串。
+- 从提示词中隐藏的消息（由幽灵图标表示）将从输出中排除。
+- 如果您想知道最新消息的索引，请使用 `{{lastMessageId}}` 宏，`{{lastMessage}}` 将为您获取消息本身。
 
-To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
-This example will get you 3 last messages in the chat:
+要计算范围的起始索引，例如，当您需要获取最后 N 条消息时，请使用变量减法。
+此示例将为您获取聊天中的最后 3 条消息：
 
 ```stscript
 /setvar key=start {{lastMessageId}} |
@@ -715,90 +715,90 @@ This example will get you 3 last messages in the chat:
 /setinput
 ```
 
-### Send messages
+### 发送消息
 
-A script can send messages as either a user, character, persona, neutral narrator, or add comments.
+脚本可以以用户、角色、人设、中立叙述者的身份发送消息，或添加注释。
 
-1. `/send (text)` — adds a message as the currently selected persona.
-2. `/sendas name=charname (text)` — adds a message as any character, matching by their name. `name` argument is required. Use the `{{char}}` macro to send as the current character.
-3. `/sys (text)` — adds a message from the neutral narrator that doesn't belong to the user or character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
-4. `/comment (text)` — adds a hidden comment that is displayed in the chat but is not visible to the prompt.
-5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to the user or hidden messages.
-6. `/hide (message id or range)` — hides one or several messages from the prompt based on the provided message index or inclusive range in the `start-finish` format.
-7. `/unhide (message id or range)` — returns one or several messages to the prompt based on the provided message index or inclusive range in the `start-finish` format.
+1. `/send (text)` — 以当前选定的人设添加消息。
+2. `/sendas name=charname (text)` — 以任何角色添加消息，按其名称匹配。`name` 参数是必需的。使用 `{{char}}` 宏以当前角色发送。
+3. `/sys (text)` — 添加来自中立叙述者的消息，该消息不属于用户或角色。显示的名称纯粹是装饰性的，可以使用 `/sysname` 命令自定义。
+4. `/comment (text)` — 添加在聊天中显示但对提示词不可见的隐藏注释。
+5. `/addswipe (text)` — 向最后一条角色消息添加滑动。无法向用户或隐藏消息添加滑动。
+6. `/hide (message id or range)` — 根据提供的消息索引或 `start-finish` 格式的包含范围从提示词中隐藏一条或多条消息。
+7. `/unhide (message id or range)` — 根据提供的消息索引或 `start-finish` 格式的包含范围将一条或多条消息返回到提示词。
 
-`/send`, `/sendas`, `/sys`, and `/comment` commands optionally accept a named argument `at` with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.
+`/send`、`/sendas`、`/sys` 和 `/comment` 命令可选择接受命名参数 `at`，其值为从零开始的数值（或包含此类值的变量名），用于指定消息插入的确切位置。默认情况下，新消息插入到聊天日志的末尾。
 
-This will insert a user message at the beginning of the conversation history:
+这将在对话历史的开头插入一条用户消息：
 
 ```stscript
 /send at=0 Hi, I use Linux.
 ```
 
-### Delete messages
+### 删除消息
 
-**These commands are potentially destructive and have no "undo" function. Check the /backups/ folder if you accidentally deleted something important.**
+**这些命令具有潜在破坏性，并且没有"撤消"功能。如果您不小心删除了重要内容，请检查 /backups/ 文件夹。**
 
-1. `/cut (message id or range)` — cuts one or several messages from the chat based on the provided message index or inclusive range in the `start-finish` format.
-2. `/del (number)` — deletes last N messages from the chat.
-3. `/delswipe (1-based swipe id)` — deletes a swipe from the last character message based on the provided 1-based swipe ID.
-4. `/delname (character name)` — deletes all messages in the current chat that belong to a character with the specified name.
-5. `/delchat` — deletes the current chat.
+1. `/cut (message id or range)` — 根据提供的消息索引或 `start-finish` 格式的包含范围从聊天中剪切一条或多条消息。
+2. `/del (number)` — 从聊天中删除最后 N 条消息。
+3. `/delswipe (1-based swipe id)` — 根据提供的基于 1 的滑动 ID 从最后一条角色消息中删除滑动。
+4. `/delname (character name)` — 删除当前聊天中属于具有指定名称的角色的所有消息。
+5. `/delchat` — 删除当前聊天。
 
-## World Info commands
+## World Info 命令
 
-World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: [World Info](/Usage/worldinfo.md).
+World Info（也称为 Lorebook）是一个高度实用的工具，用于动态地将数据插入提示词中。有关更详细的说明，请参阅专用页面：[World Info](/Usage/worldinfo.md)。
 
-1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.
-2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
-3. `/getentryfield file=bookName field=field [UID]` – gets a field value (default field: `content`) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. `/getentryfield file=chatLore field=content 123`.
-4. `/setentryfield file=bookName uid=UID field=field [text]` – sets a field value (default field: `content`) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`.
-5. `/createentry file=bookName key=keyValue [content text]` – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are *optional*) and passes the UID down the pipe, e.g. `/createentry file=chatLore key=Shadowfang The sword of the king`.
+1. `/getchatbook` — 获取聊天绑定的 World Info 文件的名称，如果未绑定则创建一个新文件，并将其传递到管道。
+2. `/findentry file=bookName field=fieldName [text]` — 使用字段值与提供的文本的模糊匹配从指定文件（或指向文件名的变量）中查找记录的 UID（默认字段：`key`），并将 UID 传递到管道，例如 `/findentry file=chatLore field=key Shadowfang`。
+3. `/getentryfield file=bookName field=field [UID]` — 从指定的 World Info 文件（或指向文件名的变量）中获取具有 UID 的记录的字段值（默认字段：`content`），并将值传递到管道，例如 `/getentryfield file=chatLore field=content 123`。
+4. `/setentryfield file=bookName uid=UID field=field [text]` — 从指定的 World Info 文件（或指向文件名的变量）中设置具有 UID（或指向 UID 的变量）的记录的字段值（默认字段：`content`）。要为关键字字段设置多个值，请使用逗号分隔的列表作为文本值，例如 `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`。
+5. `/createentry file=bookName key=keyValue [content text]` — 在指定文件（或指向文件名的变量）中创建具有关键字和内容（这两个参数都是*可选的*）的新记录，并将 UID 传递到管道，例如 `/createentry file=chatLore key=Shadowfang The sword of the king`。
 
-### Valid entry fields
+### 有效的条目字段
 
-| Field              | UI element        | Value type      |
+| 字段               | UI 元素           | 值类型          |
 |:-------------------|:------------------|:----------------|
-| `content`          | Content           | String          |
-| `comment`          | Title / Memo      | String          |
-| `key`              | Primary Keywords  | List of strings |
-| `keysecondary`     | Optional Filter   | List of strings |
-| `constant`         | Constant Status   | Boolean (1/0)   |
-| `disable`          | Disabled Status   | Boolean (1/0)   |
-| `order`            | Order             | Number          |
-| `selectiveLogic`   | Logic             | (see below)     |
-| `excludeRecursion` | Non-recursable    | Boolean (1/0)   |
-| `probability`      | Trigger%          | Number (0-100)  |
-| `depth`            | Depth             | Number (0-999)  |
-| `position`         | Position          | (see below)     |
-| `role`             | Depth Role        | (see below)     |
-| `scanDepth`        | Scan Depth        | Number (0-100)  |
-| `caseSensitive`    | Case-Sensitive    | Boolean (1/0)   |
-| `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
+| `content`          | 内容              | 字符串          |
+| `comment`          | 标题 / 备注       | 字符串          |
+| `key`              | 主要关键字        | 字符串列表      |
+| `keysecondary`     | 可选过滤器        | 字符串列表      |
+| `constant`         | 常量状态          | 布尔值 (1/0)    |
+| `disable`          | 禁用状态          | 布尔值 (1/0)    |
+| `order`            | 顺序              | 数字            |
+| `selectiveLogic`   | 逻辑              | (见下文)        |
+| `excludeRecursion` | 非递归            | 布尔值 (1/0)    |
+| `probability`      | 触发%             | 数字 (0-100)    |
+| `depth`            | 深度              | 数字 (0-999)    |
+| `position`         | 位置              | (见下文)        |
+| `role`             | 深度角色          | (见下文)        |
+| `scanDepth`        | 扫描深度          | 数字 (0-100)    |
+| `caseSensitive`    | 区分大小写        | 布尔值 (1/0)    |
+| `matchWholeWords`  | 匹配整个单词      | 布尔值 (1/0)    |
 
-**Logic values**
+**逻辑值**
 
-- 0 = AND ANY
-- 1 = NOT ALL
-- 2 = NOT ANY
-- 3 = AND ALL
+- 0 = AND ANY（任一）
+- 1 = NOT ALL（非全部）
+- 2 = NOT ANY（非任一）
+- 3 = AND ALL（全部）
 
-**Position values**
+**位置值**
 
-- 0 = before main prompt
-- 1 = after main prompt
-- 2 = top of Author's Note
-- 3 = bottom of Author's Note
-- 4 = in-chat at depth
-- 5 = top of example messages
-- 6 = bottom of example messages
+- 0 = 在主提示词之前
+- 1 = 在主提示词之后
+- 2 = 作者注释顶部
+- 3 = 作者注释底部
+- 4 = 聊天内指定深度
+- 5 = 示例消息顶部
+- 6 = 示例消息底部
 
-**Role values** (Position = 4 only)
-- 0 = System
-- 1 = User
-- 2 = Assistant
+**角色值**（仅位置 = 4）
+- 0 = 系统
+- 1 = 用户
+- 2 = 助手
 
-### Example 1: Read a content from the chat lorebook by key
+### 示例 1：通过关键字从聊天 lorebook 中读取内容
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
@@ -807,7 +807,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 /echo
 ```
 
-### Example 2: Create a chat lorebook entry with key and content
+### 示例 2：创建带有关键字和内容的聊天 lorebook 条目
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
@@ -815,7 +815,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 /echo
 ```
 
-### Example 3: Expand an existing lorebook entry with new information from the chat
+### 示例 3：使用聊天中的新信息扩展现有 lorebook 条目
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
@@ -829,81 +829,81 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 /setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}
 ```
 
-## Text manipulation
+## 文本操作
 
-There's a variety of useful text manipulation utility commands to be used in various script scenarios.
+有多种有用的文本操作实用命令可在各种脚本场景中使用。
 
-1. `/trimtokens` — trims the input to the specified number of text tokens from the start or from the end and outputs the result to the pipe.
-2. `/trimstart` — trims the input to the start of the first complete sentence and outputs the result to the pipe.
-3. `/trimend` — trims the input to the end of the last complete sentence and outputs the result to the pipe.
-4. `/fuzzy` — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.
-5. `/regex name=scriptName [text]` — executes a regex script from the Regex extension for the specified text. The script must be enabled.
+1. `/trimtokens` — 从开始或结束处将输入修剪为指定数量的文本 token，并将结果输出到管道。
+2. `/trimstart` — 将输入修剪到第一个完整句子的开始，并将结果输出到管道。
+3. `/trimend` — 将输入修剪到最后一个完整句子的结束，并将结果输出到管道。
+4. `/fuzzy` — 对输入文本与字符串列表执行模糊匹配，将最佳字符串匹配输出到管道。
+5. `/regex name=scriptName [text]` — 为指定文本执行 Regex 扩展中的正则表达式脚本。脚本必须启用。
 
-### Arguments for `/trimtokens`
+### `/trimtokens` 的参数
 
 ```stscript
 /trimtokens limit=number direction=start/end (input)
 ```
 
-1. `direction` sets the direction for trimming, which can be either `start` or `end`. Default: `end`.
-2. `limit` sets the amount of tokens to left in the output. Can also specify a variable name containing the number. **Required argument.**
-3. Unnamed argument is the input text to be trimmed.
+1. `direction` 设置修剪方向，可以是 `start` 或 `end`。默认值：`end`。
+2. `limit` 设置输出中剩余的 token 数量。也可以指定包含数字的变量名。**必需参数。**
+3. 未命名参数是要修剪的输入文本。
 
-### Arguments for `/fuzzy`
+### `/fuzzy` 的参数
 
 ```stscript
 /fuzzy list=["candidate1","candidate2"] (input)
 ```
 
-1. `list` is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
-2. Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.
+1. `list` 是包含候选项的 JSON 序列化字符串数组。也可以指定包含列表的变量名。**必需参数。**
+2. 未命名参数是要匹配的输入文本。输出是与输入最匹配的候选项之一。
 
-## Autocomplete
+## 自动完成
 
-- Autocomplete is enabled both on the chat input, and the large Quick Reply editor.
-- Autocomplete works anywhere in your input. Even with multiple piped commands and nested closures.
-- Autocomplete supports three ways of looking up matching commands (*User Settings* -> *STscript Matching*).
+- 自动完成在聊天输入和大型快速回复编辑器中都已启用。
+- 自动完成在您输入的任何地方都有效。即使使用多个管道命令和嵌套闭包也是如此。
+- 自动完成支持三种查找匹配命令的方式（*用户设置* -> *STscript 匹配*）。
 
-1. **Starts with** The "old" way. Only commands that begin exactly with the typed value will show up.
-2. **Includes**  All commands that *include* the type value will show up. Example: When entering `/delete`, the commands `/qr-delete` and `/qr-set-delete` will show up in the autocomplete list (/qr-**delete**, /qr-set-**delete**).
-3. **Fuzzy**  All commands that can be fuzzy-matched against the typed value will show up. Example: When entering `/seas`, the command `/sendas` will show up in the autocomplete list (/**se**nd**as**).
+1. **开头匹配** "旧"方式。只有精确以键入值开头的命令才会显示。
+2. **包含匹配** 所有*包含*键入值的命令都会显示。示例：输入 `/delete` 时，命令 `/qr-delete` 和 `/qr-set-delete` 将显示在自动完成列表中（/qr-**delete**，/qr-set-**delete**）。
+3. **模糊匹配** 所有可以与键入值进行模糊匹配的命令都会显示。示例：输入 `/seas` 时，命令 `/sendas` 将显示在自动完成列表中（/**se**nd**as**）。
 
-- Command arguments are supported by autocomplete as well. The list will show up for required arguments automatically. For optional arguments, press *Ctrl*+*Space* to open the list of available options.
-- When entering `/:` to execute a closure or QR, autocomplete will show a list of scoped variables and QRs.
-- Autocomplete has limited support for macros (in slash commands). Type `{{` to get a list of available macros.
-- Use the *up* and *down* *arrow keys* to select an option from the list of autocomplete options.
-- Press *Enter* or *Tab* or *click* on an option to place the option at the cursor.
-- Press *Escape* to close the autocomplete list.
-- Press *Ctrl*+*Space* to open the autocomplete list or toggle the selected option's details.
+- 自动完成也支持命令参数。列表将自动显示必需参数。对于可选参数，按 *Ctrl*+*Space* 打开可用选项列表。
+- 输入 `/:` 以执行闭包或 QR 时，自动完成将显示作用域变量和 QR 的列表。
+- 自动完成对宏（在斜杠命令中）的支持有限。输入 `{{` 以获取可用宏的列表。
+- 使用*向上*和*向下*箭头键从自动完成选项列表中选择选项。
+- 按 *Enter* 或 *Tab* 或*单击*选项以将选项放置在光标处。
+- 按 *Escape* 关闭自动完成列表。
+- 按 *Ctrl*+*Space* 打开自动完成列表或切换所选选项的详细信息。
 
-## Parser Flags
+## 解析器标志
 
 ```stscript
 /parser-flag
 ```
 
-The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.  
-You can set your default flags in user settings.
+解析器接受标志以修改其行为。这些标志可以在脚本中的任何时候打开和关闭，所有后续输入都将相应地进行评估。
+您可以在用户设置中设置默认标志。
 
-### Strict Escaping
+### 严格转义
 
 ```stscript
 /parser-flag STRICT_ESCAPING on |
 ```
 
-Changes with `STRICT_ESCAPING` enabled are as follows.
+启用 `STRICT_ESCAPING` 后的更改如下。
 
-#### Pipes
+#### 管道符
 
-Pipes don't need to be escaped in quoted values.
+引号值中的管道符不需要转义。
 
 ```stscript
 /echo title="a|b" c\|d
 ```
 
-#### Backslashes
+#### 反斜杠
 
-A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.
+符号前面的反斜杠可以被转义，以提供后跟功能符号的字面反斜杠。
 
 ```stscript
 // this will echo "foo \", then echo "bar" |
@@ -916,21 +916,21 @@ A backslash in front of a symbol can be escaped to provide the literal backslash
 /echo \\\|
 ```
 
-### Replace Variable Macros
+### 替换变量宏
 
 ```stscript
 /parser-flag REPLACE_GETVAR on |
 ```
 
-This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The `{{var::}}` macros get substituted last and no further substitutions happen on the resulting text / variable value.
+此标志有助于避免当变量值包含可以解释为宏的文本时的双重替换。`{{var::}}` 宏最后被替换，并且不会对生成的文本/变量值进行进一步的替换。
 
-Replaces all `{{getvar::}}` and `{{getglobalvar::}}` macros with `{{var::}}`.
-Behind the scenes, the parser will insert a series of command executors before the command with the replaced macros:
+将所有 `{{getvar::}}` 和 `{{getglobalvar::}}` 宏替换为 `{{var::}}`。
+在幕后，解析器将在带有替换宏的命令之前插入一系列命令执行器：
 
-- call `/let` to save the current `{{pipe}}` to a scoped variable
-- call `/getvar` or `/getglobalvar` to get the variable used in the macro
-- call `/let` to save the retrieved variable to a scoped variable
-- call `/return` with the saved `{{pipe}}` value to restore the correct piped value for the next command
+- 调用 `/let` 将当前 `{{pipe}}` 保存到作用域变量
+- 调用 `/getvar` 或 `/getglobalvar` 获取宏中使用的变量
+- 调用 `/let` 将检索到的变量保存到作用域变量
+- 使用保存的 `{{pipe}}` 值调用 `/return` 以恢复下一个命令的正确管道值
 
 ```stscript
 // the following will echo the last message's id / number |
@@ -945,13 +945,13 @@ Behind the scenes, the parser will insert a series of command executors before t
 /echo {{getvar::x}}
 ```
 
-## Quick Replies: script library and auto-execution
+## Quick Replies：脚本库和自动执行
 
-Quick Replies is a built-in SillyTavern extension that provides an easy way to store and execute your scripts.
+Quick Replies 是 SillyTavern 的内置扩展，提供了一种简单的方法来存储和执行您的脚本。
 
-### Configuring Quick Replies
+### 配置 Quick Replies
 
-In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.
+要开始使用，请打开扩展面板（堆叠方块图标），然后展开 Quick Replies 菜单。
 
 <div style="display:flex;justify-content:center">
 
@@ -959,53 +959,53 @@ In order to get started, enable open the extensions panel (stacked blocks icon),
 
 </div>
 
-**Quick Replies are disabled by default, you need to enable them first.** Then you will see a bar appearing above your chat input bar.
+**Quick Replies 默认是禁用的，您需要先启用它们。** 然后您会看到聊天输入栏上方出现一个栏。
 
-You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.
+您可以设置显示的按钮文本标签（我们建议使用表情符号以保持简洁）以及单击按钮时将执行的脚本。
 
-The number of buttons is controlled by the **Number of slots** settings (max = 100), adjust it according to your needs and click "Apply" when done.
+按钮数量由**插槽数量**设置控制（最大 = 100），根据您的需要进行调整，完成后单击"应用"。
 
-**Inject user input automatically** recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use the `{{input}}` macro to get the current value of the input bar in scripts instead.
+**自动注入用户输入**在使用 STscript 时建议禁用，否则可能会干扰您的输入，请改用 `{{input}}` 宏在脚本中获取输入栏的当前值。
 
-**Quick Reply presets** allow to have multiple sets of predefined Quick Replies and switch between manually or by using the `/qrset (name of set)` command.
-Don't forget to click "Update" before switching to a different set to write your changes to the currently used preset!
+**Quick Reply 预设**允许多组预定义的 Quick Replies，并可以手动切换或使用 `/qrset (预设名称)` 命令切换。
+在切换到不同的预设之前，不要忘记单击"更新"以将您的更改写入当前使用的预设！
 
-### Manual execution
+### 手动执行
 
-Now you can add your first script to the library. Pick any free slot (or create one), type "Click me" into the left box to set the label, then paste this into the right box:
+现在您可以将第一个脚本添加到库中。选择任何空闲插槽（或创建一个），在左侧框中输入"Click me"以设置标签，然后将以下内容粘贴到右侧框中：
 
 ```stscript
 /addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else="/echo Keep going..." "/echo You did it!  \| /flushvar clicks"
 ```
 
-Then click 5 times on the button that appeared above the chat bar.
-Every click increments the variable `clicks` by one and displays a different message when the value equals 5 and resets the variable.
+然后在聊天栏上方出现的按钮上单击 5 次。
+每次单击都会将变量 `clicks` 加 1，当值等于 5 时显示不同的消息并重置变量。
 
-### Automatic execution
+### 自动执行
 
-Open the modal menu by clicking the `⋮` button for the created command.
+通过单击已创建命令的 `⋮` 按钮打开模态菜单。
 
 | ![Automatic execution](/static/scripts/autoexecute.png) |
 |---------------------------------------------------------|
 
-In this menu you can do the following:
+在此菜单中，您可以执行以下操作：
 
-- Edit the script in a convenient full-screen editor
-- Hide the button from the chat bar, making it accessible only for auto-execution.
-- Enable automatic execution on one or more of the following conditions:
-  * App startup
-  * Sending a user message to the chat
-  * Receiving an AI message in the chat
-  * Opening a character or group chat
-  * Triggering a reply from a group member
-  * Activating a World Info entry using the same Automation ID
-- Provide a custom tool tip for the quick reply (text displayed when hovering over the quick reply in your UI)
-- Execute the script for test purposes
+- 在方便的全屏编辑器中编辑脚本
+- 从聊天栏隐藏按钮，使其仅可用于自动执行。
+- 在以下一个或多个条件下启用自动执行：
+  * 应用启动
+  * 向聊天发送用户消息
+  * 在聊天中接收 AI 消息
+  * 打开角色或群组聊天
+  * 触发群组成员的回复
+  * 使用相同的自动化 ID 激活 World Info 条目
+- 为快速回复提供自定义工具提示（在 UI 中将鼠标悬停在快速回复上时显示的文本）
+- 为测试目的执行脚本
 
-Commands are executed automatically only if the Quick Replies extension is enabled.
+只有在启用 Quick Replies 扩展时，命令才会自动执行。
 
-For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.
+例如，您可以通过添加以下脚本并将其设置为在用户消息上自动执行，在发送五条用户消息后显示一条消息。
 
 ```stscript
 /addvar key=usercounter 1 |
@@ -1013,9 +1013,9 @@ For example, you can display a message after sending five user messages by addin
 /if left=usercounter right=5 rule=gte "/echo Game over! \| /flushvar usercounter"
 ```
 
-### Debugger
+### 调试器
 
-A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints with `/breakpoint |` anywhere in your script. When executing the script from the QR editor, the execution will be interrupted at that point, allowing you to examine the currently available variables, pipe, command arguments, and more, and to step through the rest of the code one by one.
+扩展的 Quick Reply 编辑器中存在一个基本调试器。在脚本中的任何位置使用 `/breakpoint |` 设置断点。从 QR 编辑器执行脚本时，执行将在该点中断，允许您检查当前可用的变量、管道、命令参数等，并逐步执行其余代码。
 
 ```stscript
 /let x {: n=1
@@ -1030,158 +1030,158 @@ A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints 
 | ![QR Editor Debugger](/static/scripts/st-debugger.png) |
 |--------------------------------------------------------|
 
-### Calling procedures
+### 调用过程
 
-A `/run` command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure's pipe is passed to the next command after it.
+`/run` 命令可以通过标签调用在 Quick Replies 中定义的脚本，基本上提供了定义过程并从中返回结果的能力。这允许拥有可重用的脚本块，其他脚本可以引用这些脚本块。过程的最后一个管道结果会传递给其后的下一个命令。
 
 ```stscript
 /run ScriptLabel
 ```
 
-Let's create two Quick Replies:
+让我们创建两个 Quick Replies：
 
 ***
-**Label:**
+**标签：**
 
 `GetRandom`
 
-**Command:**
+**命令：**
 
 ```stscript
 /pass {{roll:d100}}
 ```
 ***
-**Label:**
+**标签：**
 
 `GetMessage`
 
-**Command:**
+**命令：**
 ```stscript
 /run GetRandom | /echo Your lucky number is: {{pipe}}
 ```
 ***
 
-Clicking on the `GetMessage` button will call the `GetRandom` procedure which will resolve the `{{roll}}` macro and pass the number to the caller, displaying it to the user.
+单击 `GetMessage` 按钮将调用 `GetRandom` 过程，该过程将解析 `{{roll}}` 宏并将数字传递给调用者，向用户显示。
 
-- Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
-- Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
+- 过程不接受命名或未命名参数，但可以引用与调用者相同的变量。
+- 调用过程时避免递归，因为如果处理不当，可能会产生"调用堆栈超出"错误。
 
-#### Calling procedures from a different Quick Reply preset
+#### 从不同的 Quick Reply 预设调用过程
 
-You can call a procedure from a different quick reply preset using the `a.b` syntax, where a = QR preset name and b = QR label name
+您可以使用 `a.b` 语法从不同的快速回复预设调用过程，其中 a = QR 预设名称，b = QR 标签名称
 
 ```stscript
 /run QRpreset1.QRlabel1
 ```
 
-By default, the system will first look for a quick reply label `a.b`, so if one of your labels is literally "QRpreset1.QRlabel1" it will try to run that. If no such label is found, it will search for a QR preset name "QRpreset1" with a QR labeled "QRlabel1".
+默认情况下，系统将首先查找快速回复标签 `a.b`，因此如果您的标签之一是字面上的 "QRpreset1.QRlabel1"，它将尝试运行该标签。如果未找到此类标签，它将搜索名为 "QRpreset1" 的 QR 预设，其中包含标记为 "QRlabel1" 的 QR。
 
-### Quick Replies management commands
+### Quick Replies 管理命令
 
-#### Create Quick Reply
+#### 创建 Quick Reply
 
-* `/qr-create (arguments, [message])` – creates a new Quick Reply, example: `/qr-create set=MyPreset label=MyButton /echo 123`
+* `/qr-create (arguments, [message])` – 创建新的 Quick Reply，示例：`/qr-create set=MyPreset label=MyButton /echo 123`
 
-Arguments:
-- `label`    - string - text on the button, e.g., `label=MyButton`
-- `set`      - string - name of the QR set, e.g., `set=PresetName1`
-- `hidden`   - bool   - whether the button should be hidden, e.g., `hidden=true`
-- `startup`  - bool   - auto execute on app startup, e.g., `startup=true`
-- `user`     - bool   - auto execute on user message, e.g., `user=true`
-- `bot`      - bool   - auto execute on AI message, e.g., `bot=true`
-- `load`     - bool   - auto execute on chat load, e.g., `load=true`
-- `title`    - bool   - title / tooltip to be shown on button, e.g., `title="My Fancy Button"`
+参数：
+- `label`    - string - 按钮上的文本，例如 `label=MyButton`
+- `set`      - string - QR 集的名称，例如 `set=PresetName1`
+- `hidden`   - bool   - 按钮是否应隐藏，例如 `hidden=true`
+- `startup`  - bool   - 在应用启动时自动执行，例如 `startup=true`
+- `user`     - bool   - 在用户消息时自动执行，例如 `user=true`
+- `bot`      - bool   - 在 AI 消息时自动执行，例如 `bot=true`
+- `load`     - bool   - 在聊天加载时自动执行，例如 `load=true`
+- `title`    - bool   - 要在按钮上显示的标题/工具提示，例如 `title="My Fancy Button"`
 
-#### Delete Quick Reply
+#### 删除 Quick Reply
 
-* `/qr-delete (set=string [label])` – deletes Quick Reply
+* `/qr-delete (set=string [label])` – 删除 Quick Reply
 
-#### Update Quick Reply
+#### 更新 Quick Reply
 
-* `/qr-update (arguments, [message])` – updates Quick Reply, example: `/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123`
+* `/qr-update (arguments, [message])` – 更新 Quick Reply，示例：`/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123`
 
-Arguments:
-- `newlabel` - string - new text fort the button, e.g. `newlabel=MyRenamedButton`
-- `label`    - string - text on the button, e.g., `label=MyButton`
-- `set`      - string - name of the QR set, e.g., `set=PresetName1`
-- `hidden`   - bool   - whether the button should be hidden, e.g., `hidden=true`
-- `startup`  - bool   - auto execute on app startup, e.g., `startup=true`
-- `user`     - bool   - auto execute on user message, e.g., `user=true`
-- `bot`      - bool   - auto execute on AI message, e.g., `bot=true`
-- `load`     - bool   - auto execute on chat load, e.g., `load=true`
-- `title`    - bool   - title / tooltip to be shown on button, e.g., `title="My Fancy Button"`
+参数：
+- `newlabel` - string - 按钮的新文本，例如 `newlabel=MyRenamedButton`
+- `label`    - string - 按钮上的文本，例如 `label=MyButton`
+- `set`      - string - QR 集的名称，例如 `set=PresetName1`
+- `hidden`   - bool   - 按钮是否应隐藏，例如 `hidden=true`
+- `startup`  - bool   - 在应用启动时自动执行，例如 `startup=true`
+- `user`     - bool   - 在用户消息时自动执行，例如 `user=true`
+- `bot`      - bool   - 在 AI 消息时自动执行，例如 `bot=true`
+- `load`     - bool   - 在聊天加载时自动执行，例如 `load=true`
+- `title`    - bool   - 要在按钮上显示的标题/工具提示，例如 `title="My Fancy Button"`
 
-####
+#### 获取 Quick Reply
 
-* `qr-get` - retrieves all of a Quick Reply's properties, eample: `/qr-get set=myQrSet id=42`
+* `/qr-get` - 检索 Quick Reply 的所有属性，示例：`/qr-get set=myQrSet id=42`
 
-#### Create or update QR preset
+#### 创建或更新 QR 预设
 
-* `/qr-presetupdate (arguments [label])` or `/qr-presetadd (arguments [label])`
+* `/qr-presetupdate (arguments [label])` 或 `/qr-presetadd (arguments [label])`
 
-Arguments:
-- `enabled` - bool - enable or disable the preset
-- `nosend`  - bool - disable send / insert in user input (invalid for slash commands)
-- `before`  - bool - place QR before user input
-- `slots`   - int  - number of slots
-- `inject`  - bool - inject user input automatically (if disabled use `{{input}}`)
+参数：
+- `enabled` - bool - 启用或禁用预设
+- `nosend`  - bool - 禁用发送/插入到用户输入（对斜杠命令无效）
+- `before`  - bool - 将 QR 放置在用户输入之前
+- `slots`   - int  - 插槽数量
+- `inject`  - bool - 自动注入用户输入（如果禁用，请使用 `{{input}}`）
 
-Create a new preset (overrides existing ones), example: `/qr-presetadd slots=3 MyNewPreset`
+创建新预设（覆盖现有预设），示例：`/qr-presetadd slots=3 MyNewPreset`
 
-#### Add QR context menu
+#### 添加 QR 上下文菜单
 
-* `/qr-contextadd (set=string label=string chain=bool [preset name])` – add context menu preset to a QR, example: `/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset`
+* `/qr-contextadd (set=string label=string chain=bool [preset name])` – 向 QR 添加上下文菜单预设，示例：`/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset`
 
-#### Remove all context menus
+#### 删除所有上下文菜单
 
-* `/qr-contextclear (set=string [label])` – remove all context menu presets from a QR, example: `/qr-contextclear set=MyPreset MyButton`
+* `/qr-contextclear (set=string [label])` – 从 QR 中删除所有上下文菜单预设，示例：`/qr-contextclear set=MyPreset MyButton`
 
-#### Remove one context menu
+#### 删除一个上下文菜单
 
-* `/qr-contextdel (set=string label=string [preset name])` – remove context menu preset from a QR, example: `/qr-contextdel set=MyPreset label=MyButton MyOtherPreset`
+* `/qr-contextdel (set=string label=string [preset name])` – 从 QR 中删除上下文菜单预设，示例：`/qr-contextdel set=MyPreset label=MyButton MyOtherPreset`
 
-### Quick Reply value escaping
+### Quick Reply 值转义
 
-`|{}` can be escaped with backslash in the QR message / command.
+在 QR 消息/命令中，`|{}` 可以用反斜杠转义。
 
-For example, use `/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}` to create a QR that calls `/getvar myvar | /echo {{pipe}}`.
+例如，使用 `/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}` 创建一个调用 `/getvar myvar | /echo {{pipe}}` 的 QR。
 
-## Extension commands
+## 扩展命令
 
-SillyTavern extensions (both built-in, downloadable and third-party) can add their own slash command. Below is just an example of the capabilities in the official extensions. The list may be incomplete, make sure to check `/help slash` for the most complete list of available commands.
+SillyTavern 扩展（内置、可下载和第三方）可以添加自己的斜杠命令。下面只是官方扩展功能的示例。该列表可能不完整，请确保检查 `/help slash` 以获取最完整的可用命令列表。
 
-1. `/websearch (query)` — searches snippets of the web pages online for the specified query and returns the result into the pipe. Provided by the Web Search extension.
-2. `/imagine (prompt)` — generates an image using the provided prompt. Provided by the Image Generation extension.
-3. `/emote (sprite)` — sets a sprite for the active character by fuzzy matching its name. Provided by the Character Expressions extension.
-4. `/costume (subfolder)` — sets a sprite set override for the active character. Provided by the Character Expressions extension.
-5. `/music (name)` — force changes a played background music file by its name. Provided by the Dynamic Audio extension.
-6. `/ambient (name)` — force changes a played ambient sound file by its name. Provided by the Dynamic Audio extension.
-7. `/roll (dice formula)` — adds a hidden message to the chat with the result of a dice roll. Provided by the D&D Dice extension.
+1. `/websearch (query)` — 在线搜索网页片段以查找指定查询，并将结果返回到管道中。由 Web Search 扩展提供。
+2. `/imagine (prompt)` — 使用提供的提示词生成图像。由 Image Generation 扩展提供。
+3. `/emote (sprite)` — 通过模糊匹配名称为活动角色设置精灵。由 Character Expressions 扩展提供。
+4. `/costume (subfolder)` — 为活动角色设置精灵集覆盖。由 Character Expressions 扩展提供。
+5. `/music (name)` — 按名称强制更改正在播放的背景音乐文件。由 Dynamic Audio 扩展提供。
+6. `/ambient (name)` — 按名称强制更改正在播放的环境声音文件。由 Dynamic Audio 扩展提供。
+7. `/roll (dice formula)` — 向聊天添加一条隐藏消息，其中包含骰子掷骰的结果。由 D&D Dice 扩展提供。
 
-## UI interaction
+## UI 交互
 
-Scripts can also interact with SillyTavern's UI: navigate through the chats or change styling parameters.
+脚本还可以与 SillyTavern 的 UI 交互：在聊天之间导航或更改样式参数。
 
-### Character navigation
+### 角色导航
 
-1. `/random` — opens a chat with the random character.
-2. `/go (name)` — opens a chat with the character of the specified name. First, searches for the exact name match, then by a prefix, then by a substring.
+1. `/random` — 打开与随机角色的聊天。
+2. `/go (name)` — 打开与指定名称角色的聊天。首先搜索精确名称匹配，然后按前缀，然后按子字符串。
 
-### UI styling
+### UI 样式
 
-1. `/bubble` — sets the message style to the "bubble chat" style.
-2. `/flat` — sets the message style to the "flat chat" style.
-3. `/single` — sets the message style to the "single document" style.
-4. `/movingui (name)` — activates a MovingUI preset by name.
-5. `/resetui` — resets the MovingUI panels state to their original positions.
-6. `/panels` — toggles the UI panels visibility: top bar, left and right drawers.
-7. `/bg (name)` — finds and sets a background using fuzzy names matching. Respect the chat background lock state.
-8. `/lockbg` — locks the background image for the current chat.
-9. `/unlockbg` — unlocks the background image for the current chat.
+1. `/bubble` — 将消息样式设置为"气泡聊天"样式。
+2. `/flat` — 将消息样式设置为"扁平聊天"样式。
+3. `/single` — 将消息样式设置为"单个文档"样式。
+4. `/movingui (name)` — 按名称激活 MovingUI 预设。
+5. `/resetui` — 将 MovingUI 面板状态重置为其原始位置。
+6. `/panels` — 切换 UI 面板的可见性：顶部栏、左侧和右侧抽屉。
+7. `/bg (name)` — 使用模糊名称匹配查找并设置背景。尊重聊天背景锁定状态。
+8. `/lockbg` — 锁定当前聊天的背景图像。
+9. `/unlockbg` — 解锁当前聊天的背景图像。
 
-## More examples
+## 更多示例
 
-### Generate chat summary (by @IkariDevGIT)
+### 生成聊天摘要（由 @IkariDevGIT 提供）
 
 ```stscript
 /setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
@@ -1198,7 +1198,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 /flushvar s1
 ```
 
-### Buttons popup usage
+### 按钮弹出窗口用法
 
 ```stscript
 /setglobalvar key=genders ["boy", "girl", "other"] |
@@ -1206,9 +1206,9 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 /echo You picked: {{pipe}}
 ```
 
-### Get Nth Fibonacci's number (using Binet's formula)
+### 获取第 N 个斐波那契数（使用 Binet 公式）
 
-> **Hint**: Set value of `fib_no` to the desired number
+> **提示**：将 `fib_no` 的值设置为所需的数字
 
 ```stscript
 /setvar key=fib_no 5 |
@@ -1219,7 +1219,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 /echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}
 ```
 
-### Recursive Factorial (using closures)
+### 递归阶乘（使用闭包）
 
 ```stscript
 /let fact {: n=

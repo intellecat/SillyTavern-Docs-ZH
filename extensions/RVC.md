@@ -135,7 +135,7 @@ pip install -r requirements-rvc.txt`
 启动启用了 RVC 模块的 SillyTavern-extras。此示例调用假设您使用了预装在 SillyTavern-extras 中的 Edge TTS：
 
 ```shell
-python server.py --enable-modules=rvc,edge-tts
+python server.py --enable-modules=rvc，edge-tts
 ```
 
 如果您有一个性能足够的 GPU，您可以选择在 GPU 上运行 RVC，方法是在启动命令中添加 ```--cuda```。根据快速测试，朗读 50 个标记（约 36 个单词）的 VRAM 使用量为 3.4GB，200 个标记（约 150 个单词）为 7.6GB。
@@ -154,7 +154,7 @@ python server.py --enable-modules=rvc,edge-tts
 如果出于测试或故障排除目的，您希望保存生成的 RVC 音频，请在启动命令中添加 ```--rvc-save-file```。这将在 `SillyTavern-extras/data/tmp/rvc_output.wav` 下保存最后一次生成的内容：
 
 ```shell
-python server.py --enable-modules=rvc,edge-tts --rvc-save-file
+python server.py --enable-modules=rvc，edge-tts --rvc-save-file
 ```
 
 #### 基于表情的动态语音
@@ -168,7 +168,7 @@ python server.py --enable-modules=rvc,edge-tts --rvc-save-file
 启用 RVC 和 classify 模块：
 
 ```shell
-python server.py --enable-modules=rvc,classify
+python server.py --enable-modules=rvc，classify
 ```
 
 ##### 3. 使用 RVC 模块

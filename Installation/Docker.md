@@ -1,7 +1,9 @@
 ---
 # icon: container
 label: Docker
+route: /installation/docker/
 ---
+
 
 # Docker 安装指南
 

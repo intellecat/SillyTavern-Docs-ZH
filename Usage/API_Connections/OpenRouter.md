@@ -1,6 +1,8 @@
 ---
 order: 10
+route: /usage/api-connections/openrouter/
 ---
+
 # OpenRouter
 
 由于地理限制或等待列表而无法访问 OpenAI / Claude API？使用 OpenRouter。

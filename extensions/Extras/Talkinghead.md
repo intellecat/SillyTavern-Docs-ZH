@@ -1,6 +1,8 @@
 ---
-route: /extensions/talkinghead
+route: /extensions/talkinghead/
+tags: ['obsolete']
 ---
+
 
 # 会说话的头像
 

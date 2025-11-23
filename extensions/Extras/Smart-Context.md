@@ -1,6 +1,7 @@
 ---
-route: /extensions/smart-context
+route: /extensions/smart-context/
 ---
+
 
 # 智能上下文
 

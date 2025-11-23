@@ -1,82 +1,162 @@
 ---
 order: 20
+route: /usage/api-connections/openai/
 ---
+
 # 聊天补全
 
-## OpenAI
+## 特定来源的说明
 
-### API 密钥
+!!!warning **重要！**
+大多数 API 平台只允许你在创建时查看一次生成的 API key。如果你丢失了它，你需要生成一个新的 key。确保妥善保管！
+!!!
 
-**如何获取：**
+### OpenAI
+
+使用 OpenAI 的开发者平台访问各种 OpenAI 模型，包括 gpt-4o、gpt-4.1、o3 等。
+
+**如何获取 API key：**
 
 1. 前往 [OpenAI](https://platform.openai.com/) 并登录。
-2. 使用"[查看 API 密钥](https://platform.openai.com/account/api-keys)"选项创建新的 API 密钥。
+2. 使用 "[View API keys](https://platform.openai.com/account/api-keys)" 选项创建一个新的 API key。
 
-**重要提示！**
+### Claude
 
-*丢失的 API 密钥无法恢复！请确保将其安全保存！*
+Claude 是由 Anthropic 开发的 AI 模型系列。你可以通过 Anthropic 控制台访问 Claude 模型。
 
-## Claude
+**如何获取 API key：**
 
-如果您有访问 Anthropic 的 Claude API 的权限：
+1. 前往 [Anthropic Console](https://console.anthropic.com/) 并登录。
+2. 使用 "[Get API Key](https://console.anthropic.com/settings/keys)" 部分创建一个新的 API key。
 
-- 在"聊天补全来源"中选择"Claude"。
-- 输入您的 API 密钥。
-- 点击连接。
+### Mistral AI
 
-## Mistral AI
+Mistral AI 是一个团队，以高科学标准和对开放性的关注开发开放和专有模型。你可以在本地运行他们的模型，或通过他们的 API 服务 La Plateforme 访问。
 
-Mistral AI 是一个开发开源和专有模型的团队，具有高科学标准和开放性重点。您可以通过本地或通过他们的 API 服务 La Plateforme 运行他们的模型。
+**如何获取 API key：**
 
-### API
+1. 第一步是在 [La Plateforme](https://console.mistral.ai/) 上创建账户。
+2. 完成后，你可以选择一个[计划](https://console.mistral.ai/billing/plans)并设置付款信息，或选择免费层。
+3. 接下来，你可以创建你的 [API key](https://console.mistral.ai/api-keys/)。你可能需要等待几分钟，key 才会生效！
 
-- 第一步是在 [La Plateforme](https://console.mistral.ai/) 创建账户。
-- 完成后，您可以选择一个[计划](https://console.mistral.ai/billing/plans)并设置您的支付信息，或选择免费层级。
-- 接下来，您可以创建您的 [API 密钥](https://console.mistral.ai/api-keys/)。密钥可能需要几分钟才能生效！
+### DeepSeek
 
-**重要提示！**  
-*丢失的 API 密钥无法恢复！您需要创建一个新的。请确保将其安全保存！*
+DeepSeek Platform 通过 API 提供对最新 DeepSeek 模型的访问。它们提供一系列模型，包括 DeepSeek V3 和 DeepSeek R1。
 
-## 代理
+**如何获取 API key：**
+
+1. 在 [DeepSeek Platform](https://platform.deepseek.com/) 上注册。
+2. 注册并充值账户后，你可以在 "[API keys](https://platform.deepseek.com/api_keys)" 部分创建 API key。
+
+### AI21
+
+AI21 Labs 提供一系列 AI 模型，包括他们的旗舰 Jamba 系列。你可以通过 AI21 Studio API 访问他们的模型。
+
+**如何获取 API key：**
+
+1. 前往 [AI21 Studio](https://studio.ai21.com/) 并登录。
+2. 导航到 "Settings => API Keys" 部分创建一个新的 API key。
+
+### Cohere
+
+Cohere 为各种任务提供一套 AI 模型，包括文本生成和 embeddings。你可以通过 Cohere API 访问他们的模型。
+
+**如何获取 API key：**
+
+1. 前往 [Cohere](https://cohere.com/) 并登录。
+2. 在账户设置中导航到 "[API Keys](https://dashboard.cohere.com/api-keys)" 部分创建一个新的 API key。
+
+### Perplexity
+
+Perplexity AI 通过其 API 提供对在线启用的 Sonar 模型的访问，用于实时研究和信息检索。
+
+官方入门指南：[Perplexity Quickstart](https://docs.perplexity.ai/getting-started/quickstart)
+
+**如何获取 API key：**
+
+1. 前往 [Perplexity](https://perplexity.ai/) 并登录。
+2. 前往 "[API billing](https://www.perplexity.ai/account/api/billing)" 部分购买 API 使用的 credits。
+3. 在设置中导航到 "[API keys](https://www.perplexity.ai/account/api/keys)" 部分创建一个新的 API key。
+
+### Fireworks AI
+
+Fireworks AI 是一个高性能平台，提供对最先进的开源语言模型的快速、经济高效的访问。该平台提供具有 OpenAI 兼容 API 的无服务器部署，并支持高达 256,000 tokens 的 context 窗口。
+
+**如何获取 API key：**
+
+1. 前往 [Fireworks AI](https://fireworks.ai/) 并创建账户或登录。
+2. 在账户设置中导航到 [API Keys 页面](https://app.fireworks.ai/settings/users/api-keys)。
+3. 点击 "Create API key" 并提供一个描述性名称（例如，"SillyTavern"）。
+
+## Electron Hub
+
+Electron Hub 是一个统一的 OpenAI 兼容平台，通过单个 API key 提供对来自多个供应商的模型的访问。
+
+**如何获取 API key：**
+
+1. 在 [Electron Hub](https://playground.electronhub.ai/console) 创建账户。
+2. 从 **Console → API Keys** 页面生成 API key。
+
+## 自定义 OpenAI 兼容 endpoint
 
 !!!warning
-请注意，我们不为您可能遇到的问题提供支持！
-我们不保证与每个可能的 API 端点的兼容性！
+重要的是要注意，我们不为你可能遇到的问题提供支持！
+我们不保证与每个可能的 API endpoint 的兼容性！
 !!!
 
 !!!
-如果您打算使用此代理功能来使用本地端点，如 TabbyAPI、Oobabooga、Aphrodite 或类似的服务，您可能需要查看[这些服务的内置兼容性](/Usage/API_Connections/index.md)。此代理功能主要用于其他暴露 OpenAI 兼容的 API 聊天补全端点的服务和程序。
+如果你打算使用此功能来使用本地 endpoint，如 TabbyAPI、Oobabooga、Aphrodite 或任何类似的，你可能想要查看[内置兼容性](/Usage/API_Connections/index.md)。自定义 endpoint 功能主要用于与公开 OpenAI 兼容的 API Chat Completion endpoint 的其他服务和程序一起使用。
 
-大多数文本补全 API 支持比 OpenAI 标准允许的更多的自定义选项。这些更大的自定义选项，如 Min-P 采样器，对 SillyTavern 用户来说可能值得一试，这可以大大提高生成质量。
+大多数 Text Completion API 支持比 OpenAI 标准允许的更多自定义选项。这些更多的自定义选项，如 Min-P sampler，对于 SillyTavern 用户来说可能值得查看，这可以大大提高生成的质量。
 !!!
 
-可以为 OpenAI 的后端配置代理/替代端点。这个自定义端点可以连接到支持通用 OpenAI API 架构的替代聊天补全 API。
+你可以为 Chat Completions 后端配置替代 endpoint。此自定义 endpoint 可以连接到任何支持通用 OpenAI API schema 的服务器。
 
-实现此 API 的后端示例包括：
+兼容后端的示例包括：
 
 * [LM Studio](https://lmstudio.ai/)
 * [LiteLLM](https://www.litellm.ai/)
 * [LocalAI](https://localai.io/)
 
-访问此功能的方法是：
+### 连接
 
-- 切换到"聊天补全" API 类型。
-- 在"聊天补全来源"中选择"OpenAI"。
-- 将 API 密钥等详细信息留空。
-- 打开"AI 响应配置"标签，滚动到"OpenAI / Claude 反向代理"部分。
+要访问此功能：
 
-在那里，您可以输入代理/自定义端点，如果需要，还可以在"代理密码"下输入 API 密钥。
-例如，TabbyAPI 会提供您必须使用的 API 密钥。
+1. 切换到 'Chat Completion' API 类型
+2. 为 'Chat Completion Source' 选择 'Custom (OpenAI-compatible)'
 
-在"AI 连接"标签中，您可以找到两个可选的复选框：
+输入自定义 endpoint URL 和 API key（如果需要）。例如，TabbyAPI 需要 API key 进行身份验证。
 
-- 绕过 API 状态检查。
-- 显示"外部"模型（由 API 提供）。
+!!!tip
+**提示：** 如果你遇到连接问题，尝试在 endpoint URL 末尾添加 `/v1`。不要添加 `/chat/completions` 后缀。
+!!!
 
-勾选"绕过 API 状态检查"告诉 SillyTavern 停止提醒您关于不工作的 API 端点。如果您的 API 端点正常工作，但 SillyTavern 仍然发出警告，请勾选此项。
+### 选择模型
 
-> **提示：** 如果不工作，请尝试在端点 URL 末尾添加 `/v1`！
+如果自定义 API 实现了 `/v1/models` endpoint 以提供可用模型列表，你可以从下拉列表中选择。否则，使用文本字段手动输入模型 ID。
 
-勾选"显示'外部'模型（由 API 提供）"将在下拉列表中显示您的自定义 API 端点报告的可用外部模型（滚动到 OpenAI 模型之后）。这允许您直接从 SillyTavern 选择不同的 API 模型，而无需进入您的自定义应用程序更改模型。
+勾选 'Bypass API status check' 以防止 SillyTavern 提醒你 API endpoint 无法正常工作。如果你的 API endpoint 工作正常但 SillyTavern 继续显示警告，请启用此选项。
 
-**此功能不是自定义 API 端点工作所必需的**，并且可能不是在每个后端都可用。
+点击 "Test Message" 通过向模型发送一个简单的提示来验证连接性。
+
+## Prompt 后处理
+
+!!!warning
+**注意：** 当使用带 "no tools" 的后处理选项时，不支持 Tool Calling！
+!!!
+
+某些 endpoint 可能对传入提示的格式施加特定限制，例如只需要一条系统消息或严格交替角色。
+
+SillyTavern 提供内置提示转换器来帮助满足这些要求（从最少到最多限制）：
+
+1. None - 除非 API 严格要求，否则不应用显式处理
+2. Merge consecutive messages from the same role
+3. Semi-strict - 合并角色并只允许一条可选系统消息
+4. Strict - 合并角色，只允许一条可选系统消息，并要求用户消息优先
+5. Single user message - 将所有角色的所有消息合并为单个用户消息
+
+Merge、semi-strict 和 strict 还会从提示中删除任何 tool calls，除非选择了 "with tools" 变体。这对于不支持 tool calling 且你现有的提示包含 tool calls 的 API 很有用。
+
+除了"Custom OpenAI-compatible"之外，更少限制的选项对 SillyTavern 中实现的更多限制 endpoint 没有影响；Custom 可能会在无效请求时出错。
+
+在 strict 模式下，如果在第一条助手消息之前不存在用户消息，则将插入 `config.yaml` 中的 `promptPlaceholder`，默认为"\[Start a new chat]"。

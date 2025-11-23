@@ -1,3 +1,7 @@
+---
+route: /usage/api-connections/tabbyapi/
+---
+
 # TabbyAPI
 一个基于 FastAPI 的应用程序，使用 Exllamav2 后端生成文本，支持 Exl2、GPTQ 和 FP16 模型。
 

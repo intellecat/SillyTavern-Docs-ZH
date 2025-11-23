@@ -140,64 +140,64 @@ VRM 扩展提供了各种设置来自定义您的动画模型的行为。以下�
     - 示例："/vrmlightintensity 0" 或 "/vrmlightintensity 100"
 3. **/vrmmodel**
     - 为角色分配 vrm 模型
-    - 参数：character, model
+    - 参数：character， model
     - 示例：在单人聊天中 "/vrmmodel Seraphina.vrm" 或在群组聊天中 "/vrmmodel character=Seraphina model=Seraphina.vrm"
 4. **/vrmexpression**
     - 更改模型的表情
-    - 参数：character, expression
+    - 参数：character， expression
     - 示例：在单人聊天中 "/vrmexpression happy" 或在群组聊天中 "/vrmexpression character=Seraphina expression=happy"
 
 5. **/vrmmotion**
     - 更改模型的动画
-    - 参数：character, motion, loop, random
+    - 参数：character， motion， loop， random
     - "/vrmmotion idle" 或 "/vrmmotion character=Seraphina motion=idle loop=true random=false"
 
 ## 动画默认映射
 如果您的动画文件按以下方式命名，它们将在重置模型设置时自动映射。例如，名为 "assets/vrm/animation/neutral.bvh" 和 "assets/vrm/animation/neutral1.fbx" 的文件将自动映射为默认和中性分类动画的组。碰撞箱也是如此。
 
     // 回退
-    "default": "assets/vrm/animation/neutral",
+    "default": "assets/vrm/animation/neutral"，
 
     // 分类类别
-    "admiration": "assets/vrm/animation/admiration",
-    "amusement": "assets/vrm/animation/amusement",
-    "anger": "assets/vrm/animation/anger",
-    "annoyance": "assets/vrm/animation/annoyance",
-    "approval": "assets/vrm/animation/approval",
-    "caring": "assets/vrm/animation/caring",
-    "confusion": "assets/vrm/animation/confusion",
-    "curiosity": "assets/vrm/animation/curiosity",
-    "desire": "assets/vrm/animation/desire",
-    "disappointment": "assets/vrm/animation/disappointment",
-    "disapproval": "assets/vrm/animation/disapproval",
-    "disgust": "assets/vrm/animation/disgust",
-    "embarrassment": "assets/vrm/animation/embarrassment",
-    "excitement": "assets/vrm/animation/excitement",
-    "fear": "assets/vrm/animation/fear",
-    "gratitude": "assets/vrm/animation/gratitude",
-    "grief": "assets/vrm/animation/grief",
-    "joy": "assets/vrm/animation/joy",
-    "love": "assets/vrm/animation/love",
-    "nervousness": "assets/vrm/animation/nervousness",
-    "neutral": "assets/vrm/animation/neutral",
-    "optimism": "assets/vrm/animation/optimism",
-    "pride": "assets/vrm/animation/pride",
-    "realization": "assets/vrm/animation/realization",
-    "relief": "assets/vrm/animation/relief",
-    "remorse": "assets/vrm/animation/remorse",
-    "sadness": "assets/vrm/animation/sadness",
-    "surprise": "assets/vrm/animation/surprise",
+    "admiration": "assets/vrm/animation/admiration"，
+    "amusement": "assets/vrm/animation/amusement"，
+    "anger": "assets/vrm/animation/anger"，
+    "annoyance": "assets/vrm/animation/annoyance"，
+    "approval": "assets/vrm/animation/approval"，
+    "caring": "assets/vrm/animation/caring"，
+    "confusion": "assets/vrm/animation/confusion"，
+    "curiosity": "assets/vrm/animation/curiosity"，
+    "desire": "assets/vrm/animation/desire"，
+    "disappointment": "assets/vrm/animation/disappointment"，
+    "disapproval": "assets/vrm/animation/disapproval"，
+    "disgust": "assets/vrm/animation/disgust"，
+    "embarrassment": "assets/vrm/animation/embarrassment"，
+    "excitement": "assets/vrm/animation/excitement"，
+    "fear": "assets/vrm/animation/fear"，
+    "gratitude": "assets/vrm/animation/gratitude"，
+    "grief": "assets/vrm/animation/grief"，
+    "joy": "assets/vrm/animation/joy"，
+    "love": "assets/vrm/animation/love"，
+    "nervousness": "assets/vrm/animation/nervousness"，
+    "neutral": "assets/vrm/animation/neutral"，
+    "optimism": "assets/vrm/animation/optimism"，
+    "pride": "assets/vrm/animation/pride"，
+    "realization": "assets/vrm/animation/realization"，
+    "relief": "assets/vrm/animation/relief"，
+    "remorse": "assets/vrm/animation/remorse"，
+    "sadness": "assets/vrm/animation/sadness"，
+    "surprise": "assets/vrm/animation/surprise"，
 
     // 碰撞箱
-    "head": "assets/vrm/animation/hitarea_head",
-    "chest": "assets/vrm/animation/hitarea_chest",
-    "groin": "assets/vrm/animation/hitarea_groin",
-    "butt": "assets/vrm/animation/hitarea_butt",
-    "leftHand": "assets/vrm/animation/hitarea_hands",
-    "rightHand": "assets/vrm/animation/hitarea_hands",
-    "leftLeg": "assets/vrm/animation/hitarea_leg",
-    "rightLeg": "assets/vrm/animation/hitarea_leg",
-    "rightFoot": "assets/vrm/animation/hitarea_foot",
+    "head": "assets/vrm/animation/hitarea_head"，
+    "chest": "assets/vrm/animation/hitarea_chest"，
+    "groin": "assets/vrm/animation/hitarea_groin"，
+    "butt": "assets/vrm/animation/hitarea_butt"，
+    "leftHand": "assets/vrm/animation/hitarea_hands"，
+    "rightHand": "assets/vrm/animation/hitarea_hands"，
+    "leftLeg": "assets/vrm/animation/hitarea_leg"，
+    "rightLeg": "assets/vrm/animation/hitarea_leg"，
+    "rightFoot": "assets/vrm/animation/hitarea_foot"，
     "leftFoot": "assets/vrm/animation/hitarea_foot"
 
 感谢您阅读本指南！您的 SillyTavern 体验现在已通过动画和互动的 3D 模型得到增强。

@@ -1,6 +1,8 @@
 ---
+route: /extensions/translation/
 templating: false
 ---
+
 
 # Chat Translation (聊天翻译)
 
