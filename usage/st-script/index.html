@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794745262959">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817210997328">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
     <title>STscript 语言参考 | SillyTavern傻酒馆中文文档</title>
@@ -33,13 +33,13 @@
     <meta property="twitter:description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/scripts/hello-world.png">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.794745262959" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.817210997328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -87,42 +87,42 @@
 
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                         </a>
                     </div>
         
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
                 </div>
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                             </li>
         
                         </ul>
@@ -136,7 +136,7 @@
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
                         <!-- Mobile search button -->
@@ -154,7 +154,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -164,26 +164,26 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+    
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
                 </div>
             
                 <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                 </div>
             
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
@@ -193,26 +193,26 @@
             <!-- Sidebar component -->
             <doc-sidebar v-cloak>
                 <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
             
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                                     </li>
             
                                 </ul>
                             </nav>
                         </div>
             
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                             <span class="text-xs whitespace-nowrap">Powered by</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                         </a>
@@ -220,14 +220,14 @@
                 </template>
             </doc-sidebar>
     
-            <div class="grow min-w-0 dark:bg-dark-850">
+            <div class="grow min-w-0 bg-body-bg">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="stscript-语言参考" class="break-words">
     <h1>
@@ -265,7 +265,7 @@
 <p>要运行您的第一个脚本，打开任何 SillyTavern 聊天并在聊天输入栏中输入以下内容：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
 </doc-codeblock></div>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -289,7 +289,7 @@
 <p>由于常量未命名参数和管道是可互换的，我们可以简单地将这个脚本重写为：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="用户输入">
     <h2>
@@ -300,7 +300,7 @@
 <p>现在让我们为脚本添加一些交互性。我们将接受用户的输入值并在通知中显示它。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/input Enter your name |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/input Enter your name |
 /echo Hello, my name is {{pipe}}</code></pre>
 </doc-codeblock></div>
 <ol>
@@ -345,7 +345,7 @@
 <p>示例：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="echo-的参数">
     <h4>
@@ -363,7 +363,7 @@
 <p>示例：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="变量">
     <h2>
@@ -377,7 +377,7 @@
 <li>全局变量 — 保存到 settings.json 中，在整个应用程序中都存在。</li>
 </ul>
 <ol>
-<li><code v-pre>/getvar name</code> 或 <code v-pre>{{getvar::name}}</code> — 获取本地变量的值。</li>
+<li><code v-pre>/getvar name</code> 或 <code v-pre>{{getvar\:\:name}}</code> — 获取本地变量的值。</li>
 <li><code v-pre>/setvar key=name value</code> 或 <code v-pre>{{setvar::name::value}}</code> — 设置本地变量的值。</li>
 <li><code v-pre>/addvar key=name increment</code> 或 <code v-pre>{{addvar::name::increment}}</code> — 将 <code v-pre>increment</code> 添加到本地变量的值中。</li>
 <li><code v-pre>/incvar name</code> 或 <code v-pre>{{incvar::name}}</code> — 将本地变量的值增加 1。</li>
@@ -400,7 +400,7 @@
 <p>现在，让我们考虑以下示例：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
 /setvar key=SDinput |
 /echo Requesting an image of {{getvar::SDinput}} |
 /getvar SDinput |
@@ -447,7 +447,7 @@
 <p>让我们看看以下示例：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
 /if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
 </doc-codeblock></div>
 <p>这个脚本根据用户输入评估所需值，并根据输入值显示不同的消息。</p>
@@ -507,7 +507,7 @@
 以下示例将在变量 <code v-pre>a</code> 等于 5 时将 &quot;true&quot; 字符串传递给下一个命令，否则传递 &quot;false&quot; 字符串。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
 /echo</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="转义序列">
@@ -525,7 +525,7 @@
 <p>宏的转义工作方式与以前一样。但是，使用闭包时，您需要转义宏的频率会大大降低。可以转义两个开始的大括号，或者同时转义开始和结束的大括号对。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
 /echo \{\{char\}\}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="管道">
@@ -537,88 +537,88 @@
 <p>在闭包中不需要转义管道（当用作命令分隔符时）。在任何想要使用字面管道字符而不是命令分隔符的地方，都需要转义它。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
 /echo title=a\|b c\|d |</code></pre>
 </doc-codeblock></div>
 <p>使用解析器标志 <code v-pre>STRICT_ESCAPING</code> 时，不需要在引用值中转义管道。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
 /echo title=&quot;a|b&quot; c\|d |
 /echo title=a\|b c\|d |</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="quotes">
+<doc-anchor-target id="引号">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quotes">#</doc-anchor-trigger>
-        <span>Quotes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#引号">#</doc-anchor-trigger>
+        <span>引号</span>
     </h3>
 </doc-anchor-target>
-<p>To use a literal quote-character inside a quoted value, the character must be escaped.</p>
+<p>要在引号值内使用字面引号字符，必须转义该字符。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="spaces">
+<doc-anchor-target id="空格">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#spaces">#</doc-anchor-trigger>
-        <span>Spaces</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#空格">#</doc-anchor-trigger>
+        <span>空格</span>
     </h3>
 </doc-anchor-target>
-<p>To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.</p>
+<p>要在命名参数的值中使用空格，您必须用引号括起该值，或者转义空格字符。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
 /echo title=a\ b c d</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="closure-delimiters">
+<doc-anchor-target id="闭包分隔符">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closure-delimiters">#</doc-anchor-trigger>
-        <span>Closure Delimiters</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#闭包分隔符">#</doc-anchor-trigger>
+        <span>闭包分隔符</span>
     </h3>
 </doc-anchor-target>
-<p>If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.</p>
+<p>如果要使用用于标记闭包开始或结束的字符组合，必须使用单个反斜杠转义该序列。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo \{: |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo \{: |
 /echo \:}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="pipe-breakers">
+<doc-anchor-target id="管道中断符">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pipe-breakers">#</doc-anchor-trigger>
-        <span>Pipe Breakers</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#管道中断符">#</doc-anchor-trigger>
+        <span>管道中断符</span>
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">||</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">||</code></pre>
 </doc-codeblock></div>
-<p>To prevent the previous command&#x27;s output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.</p>
+<p>要防止前一个命令的输出自动注入到下一个命令的未命名参数中，请在两个命令之间放置双管道符。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
 /world</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="closures">
+<doc-anchor-target id="闭包">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closures">#</doc-anchor-trigger>
-        <span>Closures</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#闭包">#</doc-anchor-trigger>
+        <span>闭包</span>
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
 </doc-codeblock></div>
-<p>Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between <code v-pre>{:</code> and <code v-pre>:}</code>, that are only evaluated once that part of the code is executed.</p>
-<doc-anchor-target id="sub-commands">
+<p>闭包（块语句、lambda、匿名函数，随你怎么称呼）是包装在 <code v-pre>{:</code> 和 <code v-pre>:}</code> 之间的一系列命令，只有在执行到代码的该部分时才会被评估。</p>
+<doc-anchor-target id="子命令-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sub-commands">#</doc-anchor-trigger>
-        <span>Sub-Commands</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#子命令-1">#</doc-anchor-trigger>
+        <span>子命令</span>
     </h3>
 </doc-anchor-target>
-<p>Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.</p>
+<p>闭包使子命令的使用变得更加容易，并且不再需要转义管道符和宏。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// if without closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// if without closures |
 /if left=1 rule=eq right=1
     else=&quot;
         /echo not equal \|
@@ -629,7 +629,7 @@
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// if with closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// if with closures |
 /if left=1 rule=eq right=1
     else={:
         /echo not equal |
@@ -640,26 +640,26 @@
         /return {{pipe}}
     :}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="scopes">
+<doc-anchor-target id="作用域">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scopes">#</doc-anchor-trigger>
-        <span>Scopes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#作用域">#</doc-anchor-trigger>
+        <span>作用域</span>
     </h3>
 </doc-anchor-target>
-<p>Closures have their own scope and support scoped variables. Scoped variables are declared with <code v-pre>/let</code>, their values set and retrieved with <code v-pre>/var</code>. Another way to get a scoped variable is the <code v-pre>{{var::}}</code> macro.</p>
+<p>闭包有自己的作用域并支持作用域变量。作用域变量使用 <code v-pre>/let</code> 声明，使用 <code v-pre>/var</code> 设置和检索其值。获取作用域变量的另一种方法是使用 <code v-pre>{{var::}}</code> 宏。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x |
 /let y 2 |
 /var x 1 |
 /var y |
 /echo x is {{var::x}} and y is {{pipe}}.</code></pre>
 </doc-codeblock></div>
-<p>Within a closure, you have access to all variables declared within that same closure or in one of its ancestors. You don&#x27;t have access to variables declared in a closure&#x27;s descendants.<br />
-If a variable is declared with the same name as a variable that was declared in one of the closure&#x27;s ancestors, you don&#x27;t have access to the ancestor variable in this closure and its descendants.</p>
+<p>在闭包内，您可以访问在同一闭包或其祖先之一中声明的所有变量。您无法访问在闭包的后代中声明的变量。
+如果声明了与在闭包的祖先之一中声明的变量同名的变量，则在此闭包及其后代中无法访问祖先变量。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x this is root x |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x this is root x |
 /let y this is root y |
 /return {:
     /echo called from level-1: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
@@ -676,63 +676,63 @@ If a variable is declared with the same name as a variable that was declared in 
 :}() |
 /echo called from root: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot;</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="named-closures">
+<doc-anchor-target id="命名闭包">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#named-closures">#</doc-anchor-trigger>
-        <span>Named Closures</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#命名闭包">#</doc-anchor-trigger>
+        <span>命名闭包</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
 </doc-codeblock></div>
-<p>Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.</p>
+<p>闭包可以分配给变量（仅作用域变量），以便稍后调用或用作子命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {:
     /echo this is my closure
 :} |
 /:myClosure</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {:
     /echo this is my closure |
     /delay 500
 :} |
 /times 3 {{var::myClosure}}</code></pre>
 </doc-codeblock></div>
-<p><code v-pre>/:</code> can also be used to execute Quick Replies, as it is just a shorthand for <code v-pre>/run</code>.</p>
+<p><code v-pre>/:</code> 也可用于执行快速回复，因为它只是 <code v-pre>/run</code> 的简写。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
 /run QrSetName.QrButtonLabel</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="closure-arguments">
+<doc-anchor-target id="闭包参数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closure-arguments">#</doc-anchor-trigger>
-        <span>Closure Arguments</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#闭包参数">#</doc-anchor-trigger>
+        <span>闭包参数</span>
     </h3>
 </doc-anchor-target>
-<p>Named closures can take named arguments, just like slash commands. The arguments can have default values.</p>
+<p>命名闭包可以接受命名参数，就像斜杠命令一样。参数可以有默认值。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
     /echo a is {{var::a}} and b is {{var::b}}
 :} |
 /:myClosure b=10</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="closures-and-piped-arguments">
+<doc-anchor-target id="闭包和管道参数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#closures-and-piped-arguments">#</doc-anchor-trigger>
-        <span>Closures and Piped Arguments</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#闭包和管道参数">#</doc-anchor-trigger>
+        <span>闭包和管道参数</span>
     </h3>
 </doc-anchor-target>
-<p>The piped value from a parent closure will not be automatically injected into the first command of a child closure.<br />
-You can still explicitly reference the parent&#x27;s piped value with <code v-pre>{{pipe}}</code>, but if you leave the unnamed argument of the first command inside a closure blank, the value will <em>not</em> be automatically injected.</p>
+<p>父闭包的管道值不会自动注入到子闭包的第一个命令中。
+您仍然可以使用 <code v-pre>{{pipe}}</code> 显式引用父闭包的管道值，但如果将闭包内第一个命令的未命名参数留空，该值将<em>不会</em>被自动注入。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/* This used to attempt to change the model to &quot;foo&quot;
+<pre translate="no" class="language-none"><code v-pre class="language-none">/* This used to attempt to change the model to &quot;foo&quot;
    because the value &quot;foo&quot; from the /echo outside of
    the loop was injected into the /model command
    inside of the loop.
@@ -747,7 +747,7 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/* You can still recreate the old behavior by
+<pre translate="no" class="language-none"><code v-pre class="language-none">/* You can still recreate the old behavior by
    explicitly using the {{pipe}} macro.
 *|
 /echo foo |
@@ -756,20 +756,20 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 	/echo |
 :} |</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="immediately-executed-closures">
+<doc-anchor-target id="立即执行的闭包">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#immediately-executed-closures">#</doc-anchor-trigger>
-        <span>Immediately Executed Closures</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#立即执行的闭包">#</doc-anchor-trigger>
+        <span>立即执行的闭包</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
 </doc-codeblock></div>
-<p>Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.</p>
+<p>闭包可以立即执行，这意味着它们将被替换为其返回值。这在没有明确支持闭包的地方很有用，并且可以缩短一些否则需要大量中间变量的命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
 /len foo |
 /var lenOfFoo {{pipe}} |
 /len bar |
@@ -778,118 +778,118 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!</code></pre>
 </doc-codeblock></div>
-<p>In addition to running named closures saved inside scoped variables, the <code v-pre>/run</code> command can also be used to execute closures immediately.</p>
+<p>除了运行保存在作用域变量中的命名闭包外，<code v-pre>/run</code> 命令还可用于立即执行闭包。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run {:
 	/add 1 2 3 4 |
 :} |
 /echo |</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="comments">
+<doc-anchor-target id="注释">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comments">#</doc-anchor-trigger>
-        <span>Comments</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#注释">#</doc-anchor-trigger>
+        <span>注释</span>
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
 </doc-codeblock></div>
-<p>A comment is a human-readable explanation or annotation in the script code. Comments don&#x27;t break pipes.</p>
+<p>注释是脚本代码中人类可读的解释或标注。注释不会中断管道。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// this is a comment |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// this is a comment |
 /echo foo |
 /# this is also a comment</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="block-comments">
+<doc-anchor-target id="块注释">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#block-comments">#</doc-anchor-trigger>
-        <span>Block Comments</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#块注释">#</doc-anchor-trigger>
+        <span>块注释</span>
     </h3>
 </doc-anchor-target>
-<p>Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.</p>
+<p>块注释可用于快速注释掉多个命令。它们不会在管道符处终止。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo foo |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo foo |
 /*
 /echo bar |
 /echo foobar |
 *|
 /echo foo again |</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="flow-control">
+<doc-anchor-target id="流程控制">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control">#</doc-anchor-trigger>
-        <span>Flow Control</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#流程控制">#</doc-anchor-trigger>
+        <span>流程控制</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="loops-while-and-times">
+<doc-anchor-target id="循环while-和-times">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#loops-while-and-times">#</doc-anchor-trigger>
-        <span>Loops: <code v-pre>/while</code> and <code v-pre>/times</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#循环while-和-times">#</doc-anchor-trigger>
+        <span>循环：<code v-pre>/while</code> 和 <code v-pre>/times</code></span>
     </h3>
 </doc-anchor-target>
-<p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
+<p>如果需要在循环中运行某些命令直到满足特定条件，请使用 <code v-pre>/while</code> 命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
 </doc-codeblock></div>
-<p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
-<doc-anchor-target id="arguments-for-while">
+<p>在循环的每一步中，它会将变量 A 的值与变量 B 的值进行比较，如果条件为真，则执行引号中的任何有效斜杠命令，否则退出循环。此命令不会向输出管道写入任何内容。</p>
+<doc-anchor-target id="while-的参数">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-while">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/while</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#while-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/while</code> 的参数</span>
     </h4>
 </doc-anchor-target>
-<p><strong>The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the <code v-pre>/if</code> command.</strong></p>
-<p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
-To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
-<p>This example adds 1 to the value of <code v-pre>i</code> until it reaches 10, then outputs the resulting value (10 in this case).</p>
+<p><strong>可用的布尔比较集、变量处理、字面值和子命令与 <code v-pre>/if</code> 命令相同。</strong></p>
+<p>可选的 <code v-pre>guard</code> 命名参数（默认为 <code v-pre>on</code>）用于防止无限循环，将迭代次数限制为 100 次。
+要禁用并允许无限循环，请设置 <code v-pre>guard=off</code>。</p>
+<p>此示例将 <code v-pre>i</code> 的值加 1 直到达到 10，然后输出结果值（在这种情况下为 10）。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
 /while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
 /echo {{getvar::i}} |
 /flushvar i</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="arguments-for-times">
+<doc-anchor-target id="times-的参数">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-times">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/times</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#times-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/times</code> 的参数</span>
     </h4>
 </doc-anchor-target>
-<p>Runs a subcommand a specified number of times.</p>
-<p><code v-pre>/times (repeats) &quot;(command)&quot;</code> – any valid slash command enclosed in quotes repeats a number of times, e.g. <code v-pre>/setvar key=i 1 | /times 5 &quot;/addvar key=i 1&quot;</code> adds 1 to the value of &quot;i&quot; 5 times.</p>
+<p>运行子命令指定的次数。</p>
+<p><code v-pre>/times (repeats) &quot;(command)&quot;</code> — 引号中的任何有效斜杠命令重复多次，例如 <code v-pre>/setvar key=i 1 | /times 5 &quot;/addvar key=i 1&quot;</code> 将 &quot;i&quot; 的值加 1 共 5 次。</p>
 <ul>
-<li>{{timesIndex}} is replaced with the iteration number (zero-based), e.g. <code v-pre>/times 4 &quot;/echo {{timesIndex}}&quot;</code> echoes the numbers 0 through 4.</li>
-<li>Loops are limited to 100 iterations by default, pass <code v-pre>guard=off</code> to disable.</li>
+<li>{{timesIndex}} 被替换为迭代编号（从零开始），例如 <code v-pre>/times 4 &quot;/echo {{timesIndex}}&quot;</code> 回显数字 0 到 4。</li>
+<li>循环默认限制为 100 次迭代，传递 <code v-pre>guard=off</code> 以禁用。</li>
 </ul>
-<doc-anchor-target id="breaking-out-of-loops-and-closures">
+<doc-anchor-target id="跳出循环和闭包">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#breaking-out-of-loops-and-closures">#</doc-anchor-trigger>
-        <span>Breaking out of Loops and Closures</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#跳出循环和闭包">#</doc-anchor-trigger>
+        <span>跳出循环和闭包</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/break |</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/break |</code></pre>
 </doc-codeblock></div>
-<p>The <code v-pre>/break</code> command can be used to break out of a loop (<code v-pre>/while</code> or <code v-pre>/times</code>) or a closure early. The unnamed argument of <code v-pre>/break</code> can be used to pass a value different from the current pipe along.<br />
-<code v-pre>/break</code> is currently implemented in the following commands:</p>
+<p><code v-pre>/break</code> 命令可用于提前跳出循环（<code v-pre>/while</code> 或 <code v-pre>/times</code>）或闭包。<code v-pre>/break</code> 的未命名参数可用于传递与当前管道不同的值。
+<code v-pre>/break</code> 目前在以下命令中实现：</p>
 <ul>
-<li><code v-pre>/while</code> - exits the loop early</li>
-<li><code v-pre>/times</code> - exits the loop early</li>
-<li><code v-pre>/run</code> (with a closure or closure via variable) - exits the closure early</li>
-<li><code v-pre>/:</code> (with a closure) - exits the closure early</li>
+<li><code v-pre>/while</code> - 提前退出循环</li>
+<li><code v-pre>/times</code> - 提前退出循环</li>
+<li><code v-pre>/run</code>（带闭包或通过变量的闭包）- 提前退出闭包</li>
+<li><code v-pre>/:</code>（带闭包）- 提前退出闭包</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/times 10 {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/times 10 {:
 	/echo {{timesIndex}}
 	/delay 500 |
 	/if left={{timesIndex}} rule=gt right=3 {:
@@ -899,7 +899,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {: iterations=2
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: iterations=2
 	/if left={{var::iterations}} rule=gt right=10 {:
 		/break too many iterations! |
 	:} |
@@ -913,7 +913,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run {:
 	/break 1 |
 	/pass 2 |
 :} |
@@ -921,67 +921,67 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {:
 	/break 1 |
 	/pass 2 |
 :} |
 /:x |
 /echo pipe will be one: {{pipe}} |</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="math-operations">
+<doc-anchor-target id="数学运算">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#math-operations">#</doc-anchor-trigger>
-        <span>Math operations</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#数学运算">#</doc-anchor-trigger>
+        <span>数学运算</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>All of the following operations accept a series of numbers or variable names and output the result to the pipe.</li>
-<li>Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.</li>
-<li>Multiplication, addition, minimum and maximum accept an unlimited number of arguments separated by spaces.</li>
-<li>Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.</li>
-<li>Sine, cosine, natural logarithm, square root, absolute value, and rounding accept one argument.</li>
+<li>以下所有运算都接受一系列数字或变量名，并将结果输出到管道。</li>
+<li>无效运算（例如除以零）以及导致 NaN 值或无穷大的运算返回零。</li>
+<li>乘法、加法、最小值和最大值接受无限数量的参数，用空格分隔。</li>
+<li>减法、除法、指数运算和模运算接受用空格分隔的两个参数。</li>
+<li>正弦、余弦、自然对数、平方根、绝对值和四舍五入接受一个参数。</li>
 </ul>
-<p><strong>List of operations:</strong></p>
+<p><strong>运算列表：</strong></p>
 <ol>
-<li><code v-pre>/add (a b c d)</code> – performs an addition of the set of values, e.g. <code v-pre>/add 10 i 30 j</code></li>
-<li><code v-pre>/mul (a b c d)</code> – performs a multiplication of the set of values, e.g. <code v-pre>/mul 10 i 30 j</code></li>
-<li><code v-pre>/max (a b c d)</code> – returns a maximum from the set of values, e.g. <code v-pre>/max 1 0 4 k</code></li>
-<li><code v-pre>/min (a b c d)</code> – return a minimum from the set of values, e.g. <code v-pre>/min 5 4 i 2</code></li>
-<li><code v-pre>/sub (a b)</code> – performs a subtraction of two values, e.g. <code v-pre>/sub i 5</code></li>
-<li><code v-pre>/div (a b)</code> – performs a division of two values, e.g. <code v-pre>/div 10 i</code></li>
-<li><code v-pre>/mod (a b)</code> – performs a modulo operation of two values, e.g. <code v-pre>/mod i 2</code></li>
-<li><code v-pre>/pow (a b)</code> – performs a power operation of two values, e.g. <code v-pre>/pow i 2</code></li>
-<li><code v-pre>/sin (a)</code> – performs a sine operation of a value, e.g. <code v-pre>/sin i</code></li>
-<li><code v-pre>/cos (a)</code> – performs a cosine operation of a value, e.g. <code v-pre>/cos i</code></li>
-<li><code v-pre>/log (a)</code> – performs a natural logarithm operation of a value, e.g. <code v-pre>/log i</code></li>
-<li><code v-pre>/abs (a)</code> – performs an absolute value operation of a value, e.g. <code v-pre>/abs -10</code></li>
-<li><code v-pre>/sqrt (a)</code>– performs a square root operation of a value, e.g. <code v-pre>/sqrt 9</code></li>
-<li><code v-pre>/round (a)</code> – performs a rounding to the nearest integer operation of a value, e.g. <code v-pre>/round 3.14</code></li>
-<li><code v-pre>/rand (round=round|ceil|floor from=number=0 to=number=1)</code> – returns a random number between from and to, e.g. <code v-pre>/rand</code> or <code v-pre>/rand 10</code> or <code v-pre>/rand from=5 to=10</code>. Ranges are inclusive. The returned value will contain a fractional part. Use <code v-pre>round</code> named argument to get an integral value, e.g. <code v-pre>/rand round=ceil</code> to round up, <code v-pre>round=floor</code> to round down, and <code v-pre>round=round</code> to round to nearest.</li>
+<li><code v-pre>/add (a b c d)</code> — 对值集进行加法运算，例如 <code v-pre>/add 10 i 30 j</code></li>
+<li><code v-pre>/mul (a b c d)</code> — 对值集进行乘法运算，例如 <code v-pre>/mul 10 i 30 j</code></li>
+<li><code v-pre>/max (a b c d)</code> — 从值集中返回最大值，例如 <code v-pre>/max 1 0 4 k</code></li>
+<li><code v-pre>/min (a b c d)</code> — 从值集中返回最小值，例如 <code v-pre>/min 5 4 i 2</code></li>
+<li><code v-pre>/sub (a b)</code> — 对两个值进行减法运算，例如 <code v-pre>/sub i 5</code></li>
+<li><code v-pre>/div (a b)</code> — 对两个值进行除法运算，例如 <code v-pre>/div 10 i</code></li>
+<li><code v-pre>/mod (a b)</code> — 对两个值进行模运算，例如 <code v-pre>/mod i 2</code></li>
+<li><code v-pre>/pow (a b)</code> — 对两个值进行幂运算，例如 <code v-pre>/pow i 2</code></li>
+<li><code v-pre>/sin (a)</code> — 对值进行正弦运算，例如 <code v-pre>/sin i</code></li>
+<li><code v-pre>/cos (a)</code> — 对值进行余弦运算，例如 <code v-pre>/cos i</code></li>
+<li><code v-pre>/log (a)</code> — 对值进行自然对数运算，例如 <code v-pre>/log i</code></li>
+<li><code v-pre>/abs (a)</code> — 对值进行绝对值运算，例如 <code v-pre>/abs -10</code></li>
+<li><code v-pre>/sqrt (a)</code> — 对值进行平方根运算，例如 <code v-pre>/sqrt 9</code></li>
+<li><code v-pre>/round (a)</code> — 对值进行四舍五入到最接近整数的运算，例如 <code v-pre>/round 3.14</code></li>
+<li><code v-pre>/rand (round=round|ceil|floor from=number=0 to=number=1)</code> — 返回介于 from 和 to 之间的随机数，例如 <code v-pre>/rand</code> 或 <code v-pre>/rand 10</code> 或 <code v-pre>/rand from=5 to=10</code>。范围是包含的。返回的值将包含小数部分。使用 <code v-pre>round</code> 命名参数获取整数值，例如 <code v-pre>/rand round=ceil</code> 向上舍入，<code v-pre>round=floor</code> 向下舍入，<code v-pre>round=round</code> 舍入到最接近的值。</li>
 </ol>
-<doc-anchor-target id="example-1-get-an-area-of-a-circle-with-a-radius-of-50">
+<doc-anchor-target id="示例-1获取半径为-50-的圆的面积">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-get-an-area-of-a-circle-with-a-radius-of-50">#</doc-anchor-trigger>
-        <span>Example 1: get an area of a circle with a radius of 50.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例-1获取半径为-50-的圆的面积">#</doc-anchor-trigger>
+        <span>示例 1：获取半径为 50 的圆的面积。</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
 /setvar key=r 50 |
 /mul r r PI |
 /round |
 /echo Circle area: {{pipe}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="example-2-calculate-a-factorial-of-5">
+<doc-anchor-target id="示例-2计算-5-的阶乘">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-calculate-a-factorial-of-5">#</doc-anchor-trigger>
-        <span>Example 2: calculate a factorial of 5.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例-2计算-5-的阶乘">#</doc-anchor-trigger>
+        <span>示例 2：计算 5 的阶乘。</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
 /setvar key=i 1 |
 /setvar key=product 1 |
 /while left=i right=input rule=lte &quot;/mul product i \| /setvar key=product \| /addvar key=i 1&quot; |
@@ -991,38 +991,38 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 /flushvar i |
 /flushvar product</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="using-the-llm">
+<doc-anchor-target id="使用-llm">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-llm">#</doc-anchor-trigger>
-        <span>Using the LLM</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#使用-llm">#</doc-anchor-trigger>
+        <span>使用 LLM</span>
     </h2>
 </doc-anchor-target>
-<p>Scripts can make requests to your currently connected LLM API using the following commands:</p>
+<p>脚本可以使用以下命令向当前连接的 LLM API 发出请求：</p>
 <ul>
-<li><code v-pre>/gen (prompt)</code> — generates text using the provided prompt for the selected character and including chat messages.</li>
-<li><code v-pre>/genraw (prompt)</code> — generates text using just the provided prompt, ignoring the current character and chat.</li>
-<li><code v-pre>/trigger</code> — triggers a normal generation (equivalent to clicking a &quot;Send&quot; button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.</li>
+<li><code v-pre>/gen (prompt)</code> — 使用提供的提示词为所选角色生成文本，并包含聊天消息。</li>
+<li><code v-pre>/genraw (prompt)</code> — 仅使用提供的提示词生成文本，忽略当前角色和聊天。</li>
+<li><code v-pre>/trigger</code> — 触发正常生成（相当于单击&quot;发送&quot;按钮）。如果在群组聊天中，您可以选择提供基于 1 的群组成员索引或角色名称让他们回复，否则根据群组设置触发群组回合。</li>
 </ul>
-<doc-anchor-target id="arguments-for-gen-and-genraw">
+<doc-anchor-target id="gen-和-genraw-的参数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-gen-and-genraw">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/gen</code> and <code v-pre>/genraw</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gen-和-genraw-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/gen</code> 和 <code v-pre>/genraw</code> 的参数</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
-<li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
-<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) — can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
-<li><code v-pre>as</code> (for Text Completion APIs) — can be <code v-pre>system</code> (default) or <code v-pre>char</code>. Defines how the last prompt line will be formatted. <code v-pre>char</code> will use a character name, <code v-pre>system</code> will use no or neutral name.</li>
+<li><code v-pre>lock</code> — 可以是 <code v-pre>on</code> 或 <code v-pre>off</code>。指定在生成进行时是否应阻止用户输入。默认值：<code v-pre>off</code>。</li>
+<li><code v-pre>stop</code> — JSON 序列化的字符串数组。仅为此生成添加自定义停止字符串（如果 API 支持）。默认值：无。</li>
+<li><code v-pre>instruct</code>（仅 <code v-pre>/genraw</code>）— 可以是 <code v-pre>on</code> 或 <code v-pre>off</code>。允许在输入提示词上使用指令格式（如果启用了指令模式并且 API 支持）。设置为 <code v-pre>off</code> 以强制纯提示词。默认值：<code v-pre>on</code>。</li>
+<li><code v-pre>as</code>（用于文本补全 API）— 可以是 <code v-pre>system</code>（默认）或 <code v-pre>char</code>。定义最后一行提示词的格式。<code v-pre>char</code> 将使用角色名称，<code v-pre>system</code> 将不使用或使用中性名称。</li>
 </ul>
-<p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
+<p>然后，生成的文本通过管道传递到下一个命令，并可以保存到变量或使用 I/O 功能显示：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
 </doc-codeblock></div>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -1034,289 +1034,289 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </thead>
 </table>
 </div>
-<p>or to insert the generated message as a response from your character:</p>
+<p>或将生成的消息作为角色的回应插入：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
 /sendas name={{char}} {{pipe}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="prompt-injections">
+<doc-anchor-target id="提示词注入">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-injections">#</doc-anchor-trigger>
-        <span>Prompt injections</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#提示词注入">#</doc-anchor-trigger>
+        <span>提示词注入</span>
     </h2>
 </doc-anchor-target>
-<p>Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author&#x27;s Notes.</p>
+<p>脚本可以添加自定义 LLM 提示词注入，使其本质上相当于无限的作者注释。</p>
 <ul>
-<li><code v-pre>/inject (text)</code> — inserts any text into the normal LLM prompt for the current chat, and requires a unique identifier. Saved to chat metadata.</li>
-<li><code v-pre>/listinjects</code> — shows a list of all prompt injections added by scripts for the current chat in a system message.</li>
-<li><code v-pre>/flushinjects</code> — deletes all prompt injections added by scripts for the current chat.</li>
-<li><code v-pre>/note (text)</code> — sets the Author&#x27;s Note value for the current chat. Saved to chat metadata.</li>
-<li><code v-pre>/interval</code> — sets the Author&#x27;s Note insertion interval for the current chat.</li>
-<li><code v-pre>/depth</code> — sets the Author&#x27;s Note insertion depth for the in-chat position.</li>
-<li><code v-pre>/position</code>  — sets the Author&#x27;s Note position for the current chat.</li>
+<li><code v-pre>/inject (text)</code> — 将任何文本插入到当前聊天的正常 LLM 提示词中，并需要唯一标识符。保存到聊天元数据。</li>
+<li><code v-pre>/listinjects</code> — 在系统消息中显示脚本为当前聊天添加的所有提示词注入的列表。</li>
+<li><code v-pre>/flushinjects</code> — 删除脚本为当前聊天添加的所有提示词注入。</li>
+<li><code v-pre>/note (text)</code> — 设置当前聊天的作者注释值。保存到聊天元数据。</li>
+<li><code v-pre>/interval</code> — 设置当前聊天的作者注释插入间隔。</li>
+<li><code v-pre>/depth</code> — 设置聊天内位置的作者注释插入深度。</li>
+<li><code v-pre>/position</code> — 设置当前聊天的作者注释位置。</li>
 </ul>
-<doc-anchor-target id="arguments-for-inject">
+<doc-anchor-target id="inject-的参数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-inject">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/inject</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inject-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/inject</code> 的参数</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><code v-pre>id</code> — an identifier string or a reference to a variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite the previous text injection. <strong>Required argument.</strong></li>
-<li><code v-pre>position</code> — sets a position for the injection. Default: <code v-pre>after</code>. Possible values:
+<li><code v-pre>id</code> — 标识符字符串或对变量的引用。使用相同 ID 的 <code v-pre>/inject</code> 的后续调用将覆盖以前的文本注入。<strong>必需参数。</strong></li>
+<li><code v-pre>position</code> — 设置注入的位置。默认值：<code v-pre>after</code>。可能的值：
 <ul>
-<li><code v-pre>after</code>: after the main prompt.</li>
-<li><code v-pre>before</code>: before main prompt.</li>
-<li><code v-pre>chat</code>: in-chat.</li>
+<li><code v-pre>after</code>：在主提示词之后。</li>
+<li><code v-pre>before</code>：在主提示词之前。</li>
+<li><code v-pre>chat</code>：聊天内。</li>
 </ul>
 </li>
-<li><code v-pre>depth</code> — sets an injection depth for the in-chat position. 0 means insertion after the last message, 1 - before the last message, etc. Default: 4.</li>
-<li>Unnamed argument is a text to be injected. An empty string will unset the previous value for the provided identifier.</li>
+<li><code v-pre>depth</code> — 设置聊天内位置的注入深度。0 表示在最后一条消息之后插入，1 - 在最后一条消息之前，等等。默认值：4。</li>
+<li>未命名参数是要注入的文本。空字符串将取消设置所提供标识符的先前值。</li>
 </ul>
-<doc-anchor-target id="access-chat-messages">
+<doc-anchor-target id="访问聊天消息">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#access-chat-messages">#</doc-anchor-trigger>
-        <span>Access chat messages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#访问聊天消息">#</doc-anchor-trigger>
+        <span>访问聊天消息</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="read-messages">
+<doc-anchor-target id="读取消息">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#read-messages">#</doc-anchor-trigger>
-        <span>Read messages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#读取消息">#</doc-anchor-trigger>
+        <span>读取消息</span>
     </h3>
 </doc-anchor-target>
-<p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
+<p>您可以使用 <code v-pre>/messages</code> 命令访问当前选定聊天中的消息。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
 </doc-codeblock></div>
 <ul>
-<li>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</li>
-<li>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</li>
-<li>If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.</li>
-<li>Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.</li>
-<li>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</li>
+<li><code v-pre>names</code> 参数用于指定是否要包含角色名称，默认值：<code v-pre>on</code>。</li>
+<li>在未命名参数中，它接受 <code v-pre>start-finish</code> 格式的消息索引或范围。范围是包含的！</li>
+<li>如果范围无法满足，即请求的索引无效或消息数量超过存在的消息数量，则返回空字符串。</li>
+<li>从提示词中隐藏的消息（由幽灵图标表示）将从输出中排除。</li>
+<li>如果您想知道最新消息的索引，请使用 <code v-pre>{{lastMessageId}}</code> 宏，<code v-pre>{{lastMessage}}</code> 将为您获取消息本身。</li>
 </ul>
-<p>To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
-This example will get you 3 last messages in the chat:</p>
+<p>要计算范围的起始索引，例如，当您需要获取最后 N 条消息时，请使用变量减法。
+此示例将为您获取聊天中的最后 3 条消息：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
 /addvar key=start -2 |
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
 /setinput</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="send-messages">
+<doc-anchor-target id="发送消息">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#send-messages">#</doc-anchor-trigger>
-        <span>Send messages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#发送消息">#</doc-anchor-trigger>
+        <span>发送消息</span>
     </h3>
 </doc-anchor-target>
-<p>A script can send messages as either a user, character, persona, neutral narrator, or add comments.</p>
+<p>脚本可以以用户、角色、人设、中立叙述者的身份发送消息，或添加注释。</p>
 <ol>
-<li><code v-pre>/send (text)</code> — adds a message as the currently selected persona.</li>
-<li><code v-pre>/sendas name=charname (text)</code> — adds a message as any character, matching by their name. <code v-pre>name</code> argument is required. Use the <code v-pre>{{char}}</code> macro to send as the current character.</li>
-<li><code v-pre>/sys (text)</code> — adds a message from the neutral narrator that doesn&#x27;t belong to the user or character. The displayed name is purely cosmetic and can be customized with the <code v-pre>/sysname</code> command.</li>
-<li><code v-pre>/comment (text)</code> — adds a hidden comment that is displayed in the chat but is not visible to the prompt.</li>
-<li><code v-pre>/addswipe (text)</code> — adds a swipe to the last character message. Can&#x27;t add a swipe to the user or hidden messages.</li>
-<li><code v-pre>/hide (message id or range)</code> — hides one or several messages from the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
-<li><code v-pre>/unhide (message id or range)</code> — returns one or several messages to the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+<li><code v-pre>/send (text)</code> — 以当前选定的人设添加消息。</li>
+<li><code v-pre>/sendas name=charname (text)</code> — 以任何角色添加消息，按其名称匹配。<code v-pre>name</code> 参数是必需的。使用 <code v-pre>{{char}}</code> 宏以当前角色发送。</li>
+<li><code v-pre>/sys (text)</code> — 添加来自中立叙述者的消息，该消息不属于用户或角色。显示的名称纯粹是装饰性的，可以使用 <code v-pre>/sysname</code> 命令自定义。</li>
+<li><code v-pre>/comment (text)</code> — 添加在聊天中显示但对提示词不可见的隐藏注释。</li>
+<li><code v-pre>/addswipe (text)</code> — 向最后一条角色消息添加滑动。无法向用户或隐藏消息添加滑动。</li>
+<li><code v-pre>/hide (message id or range)</code> — 根据提供的消息索引或 <code v-pre>start-finish</code> 格式的包含范围从提示词中隐藏一条或多条消息。</li>
+<li><code v-pre>/unhide (message id or range)</code> — 根据提供的消息索引或 <code v-pre>start-finish</code> 格式的包含范围将一条或多条消息返回到提示词。</li>
 </ol>
-<p><code v-pre>/send</code>, <code v-pre>/sendas</code>, <code v-pre>/sys</code>, and <code v-pre>/comment</code> commands optionally accept a named argument <code v-pre>at</code> with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.</p>
-<p>This will insert a user message at the beginning of the conversation history:</p>
+<p><code v-pre>/send</code>、<code v-pre>/sendas</code>、<code v-pre>/sys</code> 和 <code v-pre>/comment</code> 命令可选择接受命名参数 <code v-pre>at</code>，其值为从零开始的数值（或包含此类值的变量名），用于指定消息插入的确切位置。默认情况下，新消息插入到聊天日志的末尾。</p>
+<p>这将在对话历史的开头插入一条用户消息：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="delete-messages">
+<doc-anchor-target id="删除消息">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#delete-messages">#</doc-anchor-trigger>
-        <span>Delete messages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#删除消息">#</doc-anchor-trigger>
+        <span>删除消息</span>
     </h3>
 </doc-anchor-target>
-<p><strong>These commands are potentially destructive and have no &quot;undo&quot; function. Check the /backups/ folder if you accidentally deleted something important.</strong></p>
+<p><strong>这些命令具有潜在破坏性，并且没有&quot;撤消&quot;功能。如果您不小心删除了重要内容，请检查 /backups/ 文件夹。</strong></p>
 <ol>
-<li><code v-pre>/cut (message id or range)</code> — cuts one or several messages from the chat based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
-<li><code v-pre>/del (number)</code> — deletes last N messages from the chat.</li>
-<li><code v-pre>/delswipe (1-based swipe id)</code> — deletes a swipe from the last character message based on the provided 1-based swipe ID.</li>
-<li><code v-pre>/delname (character name)</code> — deletes all messages in the current chat that belong to a character with the specified name.</li>
-<li><code v-pre>/delchat</code> — deletes the current chat.</li>
+<li><code v-pre>/cut (message id or range)</code> — 根据提供的消息索引或 <code v-pre>start-finish</code> 格式的包含范围从聊天中剪切一条或多条消息。</li>
+<li><code v-pre>/del (number)</code> — 从聊天中删除最后 N 条消息。</li>
+<li><code v-pre>/delswipe (1-based swipe id)</code> — 根据提供的基于 1 的滑动 ID 从最后一条角色消息中删除滑动。</li>
+<li><code v-pre>/delname (character name)</code> — 删除当前聊天中属于具有指定名称的角色的所有消息。</li>
+<li><code v-pre>/delchat</code> — 删除当前聊天。</li>
 </ol>
-<doc-anchor-target id="world-info-commands">
+<doc-anchor-target id="world-info-命令">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-commands">#</doc-anchor-trigger>
-        <span>World Info commands</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-命令">#</doc-anchor-trigger>
+        <span>World Info 命令</span>
     </h2>
 </doc-anchor-target>
-<p>World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: <a href="../core-concepts/worldinfo/">World Info</a>.</p>
+<p>World Info（也称为 Lorebook）是一个高度实用的工具，用于动态地将数据插入提示词中。有关更详细的说明，请参阅专用页面：<a href="../core-concepts/worldinfo/">World Info</a>。</p>
 <ol>
-<li><code v-pre>/getchatbook</code> – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.</li>
-<li><code v-pre>/findentry file=bookName field=fieldName [text]</code> – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: <code v-pre>key</code>) and passes the UID down the pipe, e.g. <code v-pre>/findentry file=chatLore field=key Shadowfang</code>.</li>
-<li><code v-pre>/getentryfield file=bookName field=field [UID]</code> – gets a field value (default field: <code v-pre>content</code>) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. <code v-pre>/getentryfield file=chatLore field=content 123</code>.</li>
-<li><code v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> – sets a field value (default field: <code v-pre>content</code>) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. <code v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>.</li>
-<li><code v-pre>/createentry file=bookName key=keyValue [content text]</code> – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are <em>optional</em>) and passes the UID down the pipe, e.g. <code v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>.</li>
+<li><code v-pre>/getchatbook</code> — 获取聊天绑定的 World Info 文件的名称，如果未绑定则创建一个新文件，并将其传递到管道。</li>
+<li><code v-pre>/findentry file=bookName field=fieldName [text]</code> — 使用字段值与提供的文本的模糊匹配从指定文件（或指向文件名的变量）中查找记录的 UID（默认字段：<code v-pre>key</code>），并将 UID 传递到管道，例如 <code v-pre>/findentry file=chatLore field=key Shadowfang</code>。</li>
+<li><code v-pre>/getentryfield file=bookName field=field [UID]</code> — 从指定的 World Info 文件（或指向文件名的变量）中获取具有 UID 的记录的字段值（默认字段：<code v-pre>content</code>），并将值传递到管道，例如 <code v-pre>/getentryfield file=chatLore field=content 123</code>。</li>
+<li><code v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> — 从指定的 World Info 文件（或指向文件名的变量）中设置具有 UID（或指向 UID 的变量）的记录的字段值（默认字段：<code v-pre>content</code>）。要为关键字字段设置多个值，请使用逗号分隔的列表作为文本值，例如 <code v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>。</li>
+<li><code v-pre>/createentry file=bookName key=keyValue [content text]</code> — 在指定文件（或指向文件名的变量）中创建具有关键字和内容（这两个参数都是<em>可选的</em>）的新记录，并将 UID 传递到管道，例如 <code v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>。</li>
 </ol>
-<doc-anchor-target id="valid-entry-fields">
+<doc-anchor-target id="有效的条目字段">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#valid-entry-fields">#</doc-anchor-trigger>
-        <span>Valid entry fields</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#有效的条目字段">#</doc-anchor-trigger>
+        <span>有效的条目字段</span>
     </h3>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th style="text-align: left;">Field</th>
-<th style="text-align: left;">UI element</th>
-<th style="text-align: left;">Value type</th>
+<th style="text-align: left;">字段</th>
+<th style="text-align: left;">UI 元素</th>
+<th style="text-align: left;">值类型</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><code v-pre>content</code></td>
-<td style="text-align: left;">Content</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">内容</td>
+<td style="text-align: left;">字符串</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>comment</code></td>
-<td style="text-align: left;">Title / Memo</td>
-<td style="text-align: left;">String</td>
+<td style="text-align: left;">标题 / 备注</td>
+<td style="text-align: left;">字符串</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>key</code></td>
-<td style="text-align: left;">Primary Keywords</td>
-<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">主要关键字</td>
+<td style="text-align: left;">字符串列表</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>keysecondary</code></td>
-<td style="text-align: left;">Optional Filter</td>
-<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">可选过滤器</td>
+<td style="text-align: left;">字符串列表</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>constant</code></td>
-<td style="text-align: left;">Constant Status</td>
-<td style="text-align: left;">Boolean (1/0)</td>
+<td style="text-align: left;">常量状态</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>disable</code></td>
-<td style="text-align: left;">Disabled Status</td>
-<td style="text-align: left;">Boolean (1/0)</td>
+<td style="text-align: left;">禁用状态</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>order</code></td>
-<td style="text-align: left;">Order</td>
-<td style="text-align: left;">Number</td>
+<td style="text-align: left;">顺序</td>
+<td style="text-align: left;">数字</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>selectiveLogic</code></td>
-<td style="text-align: left;">Logic</td>
-<td style="text-align: left;">(see below)</td>
+<td style="text-align: left;">逻辑</td>
+<td style="text-align: left;">(见下文)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>excludeRecursion</code></td>
-<td style="text-align: left;">Non-recursable</td>
-<td style="text-align: left;">Boolean (1/0)</td>
+<td style="text-align: left;">非递归</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>probability</code></td>
-<td style="text-align: left;">Trigger%</td>
-<td style="text-align: left;">Number (0-100)</td>
+<td style="text-align: left;">触发%</td>
+<td style="text-align: left;">数字 (0-100)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>depth</code></td>
-<td style="text-align: left;">Depth</td>
-<td style="text-align: left;">Number (0-999)</td>
+<td style="text-align: left;">深度</td>
+<td style="text-align: left;">数字 (0-999)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>position</code></td>
-<td style="text-align: left;">Position</td>
-<td style="text-align: left;">(see below)</td>
+<td style="text-align: left;">位置</td>
+<td style="text-align: left;">(见下文)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>role</code></td>
-<td style="text-align: left;">Depth Role</td>
-<td style="text-align: left;">(see below)</td>
+<td style="text-align: left;">深度角色</td>
+<td style="text-align: left;">(见下文)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>scanDepth</code></td>
-<td style="text-align: left;">Scan Depth</td>
-<td style="text-align: left;">Number (0-100)</td>
+<td style="text-align: left;">扫描深度</td>
+<td style="text-align: left;">数字 (0-100)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>caseSensitive</code></td>
-<td style="text-align: left;">Case-Sensitive</td>
-<td style="text-align: left;">Boolean (1/0)</td>
+<td style="text-align: left;">区分大小写</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>matchWholeWords</code></td>
-<td style="text-align: left;">Match Whole Words</td>
-<td style="text-align: left;">Boolean (1/0)</td>
+<td style="text-align: left;">匹配整个单词</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>Logic values</strong></p>
+<p><strong>逻辑值</strong></p>
 <ul>
-<li>0 = AND ANY</li>
-<li>1 = NOT ALL</li>
-<li>2 = NOT ANY</li>
-<li>3 = AND ALL</li>
+<li>0 = AND ANY（任一）</li>
+<li>1 = NOT ALL（非全部）</li>
+<li>2 = NOT ANY（非任一）</li>
+<li>3 = AND ALL（全部）</li>
 </ul>
-<p><strong>Position values</strong></p>
+<p><strong>位置值</strong></p>
 <ul>
-<li>0 = before main prompt</li>
-<li>1 = after main prompt</li>
-<li>2 = top of Author&#x27;s Note</li>
-<li>3 = bottom of Author&#x27;s Note</li>
-<li>4 = in-chat at depth</li>
-<li>5 = top of example messages</li>
-<li>6 = bottom of example messages</li>
+<li>0 = 在主提示词之前</li>
+<li>1 = 在主提示词之后</li>
+<li>2 = 作者注释顶部</li>
+<li>3 = 作者注释底部</li>
+<li>4 = 聊天内指定深度</li>
+<li>5 = 示例消息顶部</li>
+<li>6 = 示例消息底部</li>
 </ul>
-<p><strong>Role values</strong> (Position = 4 only)</p>
+<p><strong>角色值</strong>（仅位置 = 4）</p>
 <ul>
-<li>0 = System</li>
-<li>1 = User</li>
-<li>2 = Assistant</li>
+<li>0 = 系统</li>
+<li>1 = 用户</li>
+<li>2 = 助手</li>
 </ul>
-<doc-anchor-target id="example-1-read-a-content-from-the-chat-lorebook-by-key">
+<doc-anchor-target id="示例-1通过关键字从聊天-lorebook-中读取内容">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-read-a-content-from-the-chat-lorebook-by-key">#</doc-anchor-trigger>
-        <span>Example 1: Read a content from the chat lorebook by key</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例-1通过关键字从聊天-lorebook-中读取内容">#</doc-anchor-trigger>
+        <span>示例 1：通过关键字从聊天 lorebook 中读取内容</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file={{getvar::chatLore}} field=key Shadowfang |
 /getentryfield file={{getvar::chatLore}} field=key |
 /echo</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="example-2-create-a-chat-lorebook-entry-with-key-and-content">
+<doc-anchor-target id="示例-2创建带有关键字和内容的聊天-lorebook-条目">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-create-a-chat-lorebook-entry-with-key-and-content">#</doc-anchor-trigger>
-        <span>Example 2: Create a chat lorebook entry with key and content</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例-2创建带有关键字和内容的聊天-lorebook-条目">#</doc-anchor-trigger>
+        <span>示例 2：创建带有关键字和内容的聊天 lorebook 条目</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /createentry file={{getvar::chatLore}} key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">
+<doc-anchor-target id="示例-3使用聊天中的新信息扩展现有-lorebook-条目">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">#</doc-anchor-trigger>
-        <span>Example 3: Expand an existing lorebook entry with new information from the chat</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例-3使用聊天中的新信息扩展现有-lorebook-条目">#</doc-anchor-trigger>
+        <span>示例 3：使用聊天中的新信息扩展现有 lorebook 条目</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file={{getvar::chatLore}} field=key Milla |
 /setvar key=millaUid |
 /getentryfield file={{getvar::chatLore}} field=content |
@@ -1326,206 +1326,206 @@ This example will get you 3 last messages in the chat:</p>
 /echo New content: {{pipe}} |
 /setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="text-manipulation">
+<doc-anchor-target id="文本操作">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#text-manipulation">#</doc-anchor-trigger>
-        <span>Text manipulation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#文本操作">#</doc-anchor-trigger>
+        <span>文本操作</span>
     </h2>
 </doc-anchor-target>
-<p>There&#x27;s a variety of useful text manipulation utility commands to be used in various script scenarios.</p>
+<p>有多种有用的文本操作实用命令可在各种脚本场景中使用。</p>
 <ol>
-<li><code v-pre>/trimtokens</code> — trims the input to the specified number of text tokens from the start or from the end and outputs the result to the pipe.</li>
-<li><code v-pre>/trimstart</code> — trims the input to the start of the first complete sentence and outputs the result to the pipe.</li>
-<li><code v-pre>/trimend</code> — trims the input to the end of the last complete sentence and outputs the result to the pipe.</li>
-<li><code v-pre>/fuzzy</code> — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.</li>
-<li><code v-pre>/regex name=scriptName [text]</code> — executes a regex script from the Regex extension for the specified text. The script must be enabled.</li>
+<li><code v-pre>/trimtokens</code> — 从开始或结束处将输入修剪为指定数量的文本 token，并将结果输出到管道。</li>
+<li><code v-pre>/trimstart</code> — 将输入修剪到第一个完整句子的开始，并将结果输出到管道。</li>
+<li><code v-pre>/trimend</code> — 将输入修剪到最后一个完整句子的结束，并将结果输出到管道。</li>
+<li><code v-pre>/fuzzy</code> — 对输入文本与字符串列表执行模糊匹配，将最佳字符串匹配输出到管道。</li>
+<li><code v-pre>/regex name=scriptName [text]</code> — 为指定文本执行 Regex 扩展中的正则表达式脚本。脚本必须启用。</li>
 </ol>
-<doc-anchor-target id="arguments-for-trimtokens">
+<doc-anchor-target id="trimtokens-的参数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-trimtokens">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/trimtokens</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trimtokens-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/trimtokens</code> 的参数</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/trimtokens limit=number direction=start/end (input)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/trimtokens limit=number direction=start/end (input)</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><code v-pre>direction</code> sets the direction for trimming, which can be either <code v-pre>start</code> or <code v-pre>end</code>. Default: <code v-pre>end</code>.</li>
-<li><code v-pre>limit</code> sets the amount of tokens to left in the output. Can also specify a variable name containing the number. <strong>Required argument.</strong></li>
-<li>Unnamed argument is the input text to be trimmed.</li>
+<li><code v-pre>direction</code> 设置修剪方向，可以是 <code v-pre>start</code> 或 <code v-pre>end</code>。默认值：<code v-pre>end</code>。</li>
+<li><code v-pre>limit</code> 设置输出中剩余的 token 数量。也可以指定包含数字的变量名。<strong>必需参数。</strong></li>
+<li>未命名参数是要修剪的输入文本。</li>
 </ol>
-<doc-anchor-target id="arguments-for-fuzzy">
+<doc-anchor-target id="fuzzy-的参数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-fuzzy">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/fuzzy</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fuzzy-的参数">#</doc-anchor-trigger>
+        <span><code v-pre>/fuzzy</code> 的参数</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><code v-pre>list</code> is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. <strong>Required argument.</strong></li>
-<li>Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.</li>
+<li><code v-pre>list</code> 是包含候选项的 JSON 序列化字符串数组。也可以指定包含列表的变量名。<strong>必需参数。</strong></li>
+<li>未命名参数是要匹配的输入文本。输出是与输入最匹配的候选项之一。</li>
 </ol>
-<doc-anchor-target id="autocomplete">
+<doc-anchor-target id="自动完成">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#autocomplete">#</doc-anchor-trigger>
-        <span>Autocomplete</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#自动完成">#</doc-anchor-trigger>
+        <span>自动完成</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>Autocomplete is enabled both on the chat input, and the large Quick Reply editor.</li>
-<li>Autocomplete works anywhere in your input. Even with multiple piped commands and nested closures.</li>
-<li>Autocomplete supports three ways of looking up matching commands (<em>User Settings</em> -&gt; <em>STscript Matching</em>).</li>
+<li>自动完成在聊天输入和大型快速回复编辑器中都已启用。</li>
+<li>自动完成在您输入的任何地方都有效。即使使用多个管道命令和嵌套闭包也是如此。</li>
+<li>自动完成支持三种查找匹配命令的方式（<em>用户设置</em> -&gt; <em>STscript 匹配</em>）。</li>
 </ul>
 <ol>
-<li><strong>Starts with</strong> The &quot;old&quot; way. Only commands that begin exactly with the typed value will show up.</li>
-<li><strong>Includes</strong>  All commands that <em>include</em> the type value will show up. Example: When entering <code v-pre>/delete</code>, the commands <code v-pre>/qr-delete</code> and <code v-pre>/qr-set-delete</code> will show up in the autocomplete list (/qr-<strong>delete</strong>, /qr-set-<strong>delete</strong>).</li>
-<li><strong>Fuzzy</strong>  All commands that can be fuzzy-matched against the typed value will show up. Example: When entering <code v-pre>/seas</code>, the command <code v-pre>/sendas</code> will show up in the autocomplete list (/<strong>se</strong>nd<strong>as</strong>).</li>
+<li><strong>开头匹配</strong> &quot;旧&quot;方式。只有精确以键入值开头的命令才会显示。</li>
+<li><strong>包含匹配</strong> 所有<em>包含</em>键入值的命令都会显示。示例：输入 <code v-pre>/delete</code> 时，命令 <code v-pre>/qr-delete</code> 和 <code v-pre>/qr-set-delete</code> 将显示在自动完成列表中（/qr-<strong>delete</strong>，/qr-set-<strong>delete</strong>）。</li>
+<li><strong>模糊匹配</strong> 所有可以与键入值进行模糊匹配的命令都会显示。示例：输入 <code v-pre>/seas</code> 时，命令 <code v-pre>/sendas</code> 将显示在自动完成列表中（/<strong>se</strong>nd<strong>as</strong>）。</li>
 </ol>
 <ul>
-<li>Command arguments are supported by autocomplete as well. The list will show up for required arguments automatically. For optional arguments, press <em>Ctrl</em>+<em>Space</em> to open the list of available options.</li>
-<li>When entering <code v-pre>/:</code> to execute a closure or QR, autocomplete will show a list of scoped variables and QRs.</li>
-<li>Autocomplete has limited support for macros (in slash commands). Type <code v-pre>{{</code> to get a list of available macros.</li>
-<li>Use the <em>up</em> and <em>down</em> <em>arrow keys</em> to select an option from the list of autocomplete options.</li>
-<li>Press <em>Enter</em> or <em>Tab</em> or <em>click</em> on an option to place the option at the cursor.</li>
-<li>Press <em>Escape</em> to close the autocomplete list.</li>
-<li>Press <em>Ctrl</em>+<em>Space</em> to open the autocomplete list or toggle the selected option&#x27;s details.</li>
+<li>自动完成也支持命令参数。列表将自动显示必需参数。对于可选参数，按 <em>Ctrl</em>+<em>Space</em> 打开可用选项列表。</li>
+<li>输入 <code v-pre>/:</code> 以执行闭包或 QR 时，自动完成将显示作用域变量和 QR 的列表。</li>
+<li>自动完成对宏（在斜杠命令中）的支持有限。输入 <code v-pre>{{</code> 以获取可用宏的列表。</li>
+<li>使用<em>向上</em>和<em>向下</em>箭头键从自动完成选项列表中选择选项。</li>
+<li>按 <em>Enter</em> 或 <em>Tab</em> 或<em>单击</em>选项以将选项放置在光标处。</li>
+<li>按 <em>Escape</em> 关闭自动完成列表。</li>
+<li>按 <em>Ctrl</em>+<em>Space</em> 打开自动完成列表或切换所选选项的详细信息。</li>
 </ul>
-<doc-anchor-target id="parser-flags">
+<doc-anchor-target id="解析器标志">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parser-flags">#</doc-anchor-trigger>
-        <span>Parser Flags</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#解析器标志">#</doc-anchor-trigger>
+        <span>解析器标志</span>
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
 </doc-codeblock></div>
-<p>The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.<br />
-You can set your default flags in user settings.</p>
-<doc-anchor-target id="strict-escaping">
+<p>解析器接受标志以修改其行为。这些标志可以在脚本中的任何时候打开和关闭，所有后续输入都将相应地进行评估。
+您可以在用户设置中设置默认标志。</p>
+<doc-anchor-target id="严格转义">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#strict-escaping">#</doc-anchor-trigger>
-        <span>Strict Escaping</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#严格转义">#</doc-anchor-trigger>
+        <span>严格转义</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
 </doc-codeblock></div>
-<p>Changes with <code v-pre>STRICT_ESCAPING</code> enabled are as follows.</p>
-<doc-anchor-target id="pipes">
+<p>启用 <code v-pre>STRICT_ESCAPING</code> 后的更改如下。</p>
+<doc-anchor-target id="管道符">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pipes">#</doc-anchor-trigger>
-        <span>Pipes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#管道符">#</doc-anchor-trigger>
+        <span>管道符</span>
     </h4>
 </doc-anchor-target>
-<p>Pipes don&#x27;t need to be escaped in quoted values.</p>
+<p>引号值中的管道符不需要转义。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="backslashes">
+<doc-anchor-target id="反斜杠">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#backslashes">#</doc-anchor-trigger>
-        <span>Backslashes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#反斜杠">#</doc-anchor-trigger>
+        <span>反斜杠</span>
     </h4>
 </doc-anchor-target>
-<p>A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.</p>
+<p>符号前面的反斜杠可以被转义，以提供后跟功能符号的字面反斜杠。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
 /echo foo \\|
 /echo bar</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo \\|
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo \\|
 /echo \\\|</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="replace-variable-macros">
+<doc-anchor-target id="替换变量宏">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-variable-macros">#</doc-anchor-trigger>
-        <span>Replace Variable Macros</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#替换变量宏">#</doc-anchor-trigger>
+        <span>替换变量宏</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
 </doc-codeblock></div>
-<p>This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The <code v-pre>{{var::}}</code> macros get substituted last and no further substitutions happen on the resulting text / variable value.</p>
-<p>Replaces all <code v-pre>{{getvar::}}</code> and <code v-pre>{{getglobalvar::}}</code> macros with <code v-pre>{{var::}}</code>.
-Behind the scenes, the parser will insert a series of command executors before the command with the replaced macros:</p>
+<p>此标志有助于避免当变量值包含可以解释为宏的文本时的双重替换。<code v-pre>{{var::}}</code> 宏最后被替换，并且不会对生成的文本/变量值进行进一步的替换。</p>
+<p>将所有 <code v-pre>{{getvar::}}</code> 和 <code v-pre>{{getglobalvar::}}</code> 宏替换为 <code v-pre>{{var::}}</code>。
+在幕后，解析器将在带有替换宏的命令之前插入一系列命令执行器：</p>
 <ul>
-<li>call <code v-pre>/let</code> to save the current <code v-pre>{{pipe}}</code> to a scoped variable</li>
-<li>call <code v-pre>/getvar</code> or <code v-pre>/getglobalvar</code> to get the variable used in the macro</li>
-<li>call <code v-pre>/let</code> to save the retrieved variable to a scoped variable</li>
-<li>call <code v-pre>/return</code> with the saved <code v-pre>{{pipe}}</code> value to restore the correct piped value for the next command</li>
+<li>调用 <code v-pre>/let</code> 将当前 <code v-pre>{{pipe}}</code> 保存到作用域变量</li>
+<li>调用 <code v-pre>/getvar</code> 或 <code v-pre>/getglobalvar</code> 获取宏中使用的变量</li>
+<li>调用 <code v-pre>/let</code> 将检索到的变量保存到作用域变量</li>
+<li>使用保存的 <code v-pre>{{pipe}}</code> 值调用 <code v-pre>/return</code> 以恢复下一个命令的正确管道值</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
 /setvar key=x \{\{lastMessageId}} |
 /echo {{getvar::x}}</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
 /parser-flag REPLACE_GETVAR |
 /setvar key=x \{\{lastMessageId}} |
 /echo {{getvar::x}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="quick-replies-script-library-and-auto-execution">
+<doc-anchor-target id="quick-replies脚本库和自动执行">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-script-library-and-auto-execution">#</doc-anchor-trigger>
-        <span>Quick Replies: script library and auto-execution</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies脚本库和自动执行">#</doc-anchor-trigger>
+        <span>Quick Replies：脚本库和自动执行</span>
     </h2>
 </doc-anchor-target>
-<p>Quick Replies is a built-in SillyTavern extension that provides an easy way to store and execute your scripts.</p>
-<doc-anchor-target id="configuring-quick-replies">
+<p>Quick Replies 是 SillyTavern 的内置扩展，提供了一种简单的方法来存储和执行您的脚本。</p>
+<doc-anchor-target id="配置-quick-replies">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-quick-replies">#</doc-anchor-trigger>
-        <span>Configuring Quick Replies</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#配置-quick-replies">#</doc-anchor-trigger>
+        <span>配置 Quick Replies</span>
     </h3>
 </doc-anchor-target>
-<p>In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.</p>
+<p>要开始使用，请打开扩展面板（堆叠方块图标），然后展开 Quick Replies 菜单。</p>
 <div style="display:flex;justify-content:center">
 <p><figure class="content-center">
-    <img src="../../static/scripts/quick-reply.png" alt="Quick Reply">
+    <img src="../../static/scripts/quick-reply.png" alt="Quick Reply" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">Quick Reply</figcaption>
 </figure>
 </p>
 </div>
-<p><strong>Quick Replies are disabled by default, you need to enable them first.</strong> Then you will see a bar appearing above your chat input bar.</p>
-<p>You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.</p>
-<p>The number of buttons is controlled by the <strong>Number of slots</strong> settings (max = 100), adjust it according to your needs and click &quot;Apply&quot; when done.</p>
-<p><strong>Inject user input automatically</strong> recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use the <code v-pre>{{input}}</code> macro to get the current value of the input bar in scripts instead.</p>
-<p><strong>Quick Reply presets</strong> allow to have multiple sets of predefined Quick Replies and switch between manually or by using the <code v-pre>/qrset (name of set)</code> command.
-Don&#x27;t forget to click &quot;Update&quot; before switching to a different set to write your changes to the currently used preset!</p>
-<doc-anchor-target id="manual-execution">
+<p><strong>Quick Replies 默认是禁用的，您需要先启用它们。</strong> 然后您会看到聊天输入栏上方出现一个栏。</p>
+<p>您可以设置显示的按钮文本标签（我们建议使用表情符号以保持简洁）以及单击按钮时将执行的脚本。</p>
+<p>按钮数量由<strong>插槽数量</strong>设置控制（最大 = 100），根据您的需要进行调整，完成后单击&quot;应用&quot;。</p>
+<p><strong>自动注入用户输入</strong>在使用 STscript 时建议禁用，否则可能会干扰您的输入，请改用 <code v-pre>{{input}}</code> 宏在脚本中获取输入栏的当前值。</p>
+<p><strong>Quick Reply 预设</strong>允许多组预定义的 Quick Replies，并可以手动切换或使用 <code v-pre>/qrset (预设名称)</code> 命令切换。
+在切换到不同的预设之前，不要忘记单击&quot;更新&quot;以将您的更改写入当前使用的预设！</p>
+<doc-anchor-target id="手动执行">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-execution">#</doc-anchor-trigger>
-        <span>Manual execution</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#手动执行">#</doc-anchor-trigger>
+        <span>手动执行</span>
     </h3>
 </doc-anchor-target>
-<p>Now you can add your first script to the library. Pick any free slot (or create one), type &quot;Click me&quot; into the left box to set the label, then paste this into the right box:</p>
+<p>现在您可以将第一个脚本添加到库中。选择任何空闲插槽（或创建一个），在左侧框中输入&quot;Click me&quot;以设置标签，然后将以下内容粘贴到右侧框中：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
 </doc-codeblock></div>
-<p>Then click 5 times on the button that appeared above the chat bar.
-Every click increments the variable <code v-pre>clicks</code> by one and displays a different message when the value equals 5 and resets the variable.</p>
-<doc-anchor-target id="automatic-execution">
+<p>然后在聊天栏上方出现的按钮上单击 5 次。
+每次单击都会将变量 <code v-pre>clicks</code> 加 1，当值等于 5 时显示不同的消息并重置变量。</p>
+<doc-anchor-target id="自动执行">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-execution">#</doc-anchor-trigger>
-        <span>Automatic execution</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#自动执行">#</doc-anchor-trigger>
+        <span>自动执行</span>
     </h3>
 </doc-anchor-target>
-<p>Open the modal menu by clicking the <code v-pre>⋮</code> button for the created command.</p>
+<p>通过单击已创建命令的 <code v-pre>⋮</code> 按钮打开模态菜单。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1535,41 +1535,41 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </thead>
 </table>
 </div>
-<p>In this menu you can do the following:</p>
+<p>在此菜单中，您可以执行以下操作：</p>
 <ul>
-<li>Edit the script in a convenient full-screen editor</li>
-<li>Hide the button from the chat bar, making it accessible only for auto-execution.</li>
-<li>Enable automatic execution on one or more of the following conditions:
+<li>在方便的全屏编辑器中编辑脚本</li>
+<li>从聊天栏隐藏按钮，使其仅可用于自动执行。</li>
+<li>在以下一个或多个条件下启用自动执行：
 <ul>
-<li>App startup</li>
-<li>Sending a user message to the chat</li>
-<li>Receiving an AI message in the chat</li>
-<li>Opening a character or group chat</li>
-<li>Triggering a reply from a group member</li>
-<li>Activating a World Info entry using the same Automation ID</li>
+<li>应用启动</li>
+<li>向聊天发送用户消息</li>
+<li>在聊天中接收 AI 消息</li>
+<li>打开角色或群组聊天</li>
+<li>触发群组成员的回复</li>
+<li>使用相同的自动化 ID 激活 World Info 条目</li>
 </ul>
 </li>
-<li>Provide a custom tool tip for the quick reply (text displayed when hovering over the quick reply in your UI)</li>
-<li>Execute the script for test purposes</li>
+<li>为快速回复提供自定义工具提示（在 UI 中将鼠标悬停在快速回复上时显示的文本）</li>
+<li>为测试目的执行脚本</li>
 </ul>
-<p>Commands are executed automatically only if the Quick Replies extension is enabled.</p>
-<p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.</p>
+<p>只有在启用 Quick Replies 扩展时，命令才会自动执行。</p>
+<p>例如，您可以通过添加以下脚本并将其设置为在用户消息上自动执行，在发送五条用户消息后显示一条消息。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
 /if left=usercounter right=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="debugger">
+<doc-anchor-target id="调试器">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debugger">#</doc-anchor-trigger>
-        <span>Debugger</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#调试器">#</doc-anchor-trigger>
+        <span>调试器</span>
     </h3>
 </doc-anchor-target>
-<p>A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints with <code v-pre>/breakpoint |</code> anywhere in your script. When executing the script from the QR editor, the execution will be interrupted at that point, allowing you to examine the currently available variables, pipe, command arguments, and more, and to step through the rest of the code one by one.</p>
+<p>扩展的 Quick Reply 编辑器中存在一个基本调试器。在脚本中的任何位置使用 <code v-pre>/breakpoint |</code> 设置断点。从 QR 编辑器执行脚本时，执行将在该点中断，允许您检查当前可用的变量、管道、命令参数等，并逐步执行其余代码。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {: n=1
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: n=1
 	/echo n is {{var::n}} |
 	/mul n n |
 :} |
@@ -1586,235 +1586,235 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </thead>
 </table>
 </div>
-<doc-anchor-target id="calling-procedures">
+<doc-anchor-target id="调用过程">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#calling-procedures">#</doc-anchor-trigger>
-        <span>Calling procedures</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#调用过程">#</doc-anchor-trigger>
+        <span>调用过程</span>
     </h3>
 </doc-anchor-target>
-<p>A <code v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
+<p><code v-pre>/run</code> 命令可以通过标签调用在 Quick Replies 中定义的脚本，基本上提供了定义过程并从中返回结果的能力。这允许拥有可重用的脚本块，其他脚本可以引用这些脚本块。过程的最后一个管道结果会传递给其后的下一个命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
 </doc-codeblock></div>
-<p>Let&#x27;s create two Quick Replies:</p>
+<p>让我们创建两个 Quick Replies：</p>
 <hr>
-<p><strong>Label:</strong></p>
+<p><strong>标签：</strong></p>
 <p><code v-pre>GetRandom</code></p>
-<p><strong>Command:</strong></p>
+<p><strong>命令：</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
 </doc-codeblock></div>
 <hr>
-<p><strong>Label:</strong></p>
+<p><strong>标签：</strong></p>
 <p><code v-pre>GetMessage</code></p>
-<p><strong>Command:</strong></p>
+<p><strong>命令：</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
 </doc-codeblock></div>
 <hr>
-<p>Clicking on the <code v-pre>GetMessage</code> button will call the <code v-pre>GetRandom</code> procedure which will resolve the <code v-pre>{{roll}}</code> macro and pass the number to the caller, displaying it to the user.</p>
+<p>单击 <code v-pre>GetMessage</code> 按钮将调用 <code v-pre>GetRandom</code> 过程，该过程将解析 <code v-pre>{{roll}}</code> 宏并将数字传递给调用者，向用户显示。</p>
 <ul>
-<li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
-<li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
+<li>过程不接受命名或未命名参数，但可以引用与调用者相同的变量。</li>
+<li>调用过程时避免递归，因为如果处理不当，可能会产生&quot;调用堆栈超出&quot;错误。</li>
 </ul>
-<doc-anchor-target id="calling-procedures-from-a-different-quick-reply-preset">
+<doc-anchor-target id="从不同的-quick-reply-预设调用过程">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#calling-procedures-from-a-different-quick-reply-preset">#</doc-anchor-trigger>
-        <span>Calling procedures from a different Quick Reply preset</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#从不同的-quick-reply-预设调用过程">#</doc-anchor-trigger>
+        <span>从不同的 Quick Reply 预设调用过程</span>
     </h4>
 </doc-anchor-target>
-<p>You can call a procedure from a different quick reply preset using the <code v-pre>a.b</code> syntax, where a = QR preset name and b = QR label name</p>
+<p>您可以使用 <code v-pre>a.b</code> 语法从不同的快速回复预设调用过程，其中 a = QR 预设名称，b = QR 标签名称</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
 </doc-codeblock></div>
-<p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labeled &quot;QRlabel1&quot;.</p>
-<doc-anchor-target id="quick-replies-management-commands">
+<p>默认情况下，系统将首先查找快速回复标签 <code v-pre>a.b</code>，因此如果您的标签之一是字面上的 &quot;QRpreset1.QRlabel1&quot;，它将尝试运行该标签。如果未找到此类标签，它将搜索名为 &quot;QRpreset1&quot; 的 QR 预设，其中包含标记为 &quot;QRlabel1&quot; 的 QR。</p>
+<doc-anchor-target id="quick-replies-管理命令">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-management-commands">#</doc-anchor-trigger>
-        <span>Quick Replies management commands</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-管理命令">#</doc-anchor-trigger>
+        <span>Quick Replies 管理命令</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="create-quick-reply">
+<doc-anchor-target id="创建-quick-reply">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#create-quick-reply">#</doc-anchor-trigger>
-        <span>Create Quick Reply</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#创建-quick-reply">#</doc-anchor-trigger>
+        <span>创建 Quick Reply</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-create (arguments, [message])</code> – creates a new Quick Reply, example: <code v-pre>/qr-create set=MyPreset label=MyButton /echo 123</code></li>
+<li><code v-pre>/qr-create (arguments, [message])</code> – 创建新的 Quick Reply，示例：<code v-pre>/qr-create set=MyPreset label=MyButton /echo 123</code></li>
 </ul>
-<p>Arguments:</p>
+<p>参数：</p>
 <ul>
-<li><code v-pre>label</code>    - string - text on the button, e.g., <code v-pre>label=MyButton</code></li>
-<li><code v-pre>set</code>      - string - name of the QR set, e.g., <code v-pre>set=PresetName1</code></li>
-<li><code v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code v-pre>hidden=true</code></li>
-<li><code v-pre>startup</code>  - bool   - auto execute on app startup, e.g., <code v-pre>startup=true</code></li>
-<li><code v-pre>user</code>     - bool   - auto execute on user message, e.g., <code v-pre>user=true</code></li>
-<li><code v-pre>bot</code>      - bool   - auto execute on AI message, e.g., <code v-pre>bot=true</code></li>
-<li><code v-pre>load</code>     - bool   - auto execute on chat load, e.g., <code v-pre>load=true</code></li>
-<li><code v-pre>title</code>    - bool   - title / tooltip to be shown on button, e.g., <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
+<li><code v-pre>label</code>    - string - 按钮上的文本，例如 <code v-pre>label=MyButton</code></li>
+<li><code v-pre>set</code>      - string - QR 集的名称，例如 <code v-pre>set=PresetName1</code></li>
+<li><code v-pre>hidden</code>   - bool   - 按钮是否应隐藏，例如 <code v-pre>hidden=true</code></li>
+<li><code v-pre>startup</code>  - bool   - 在应用启动时自动执行，例如 <code v-pre>startup=true</code></li>
+<li><code v-pre>user</code>     - bool   - 在用户消息时自动执行，例如 <code v-pre>user=true</code></li>
+<li><code v-pre>bot</code>      - bool   - 在 AI 消息时自动执行，例如 <code v-pre>bot=true</code></li>
+<li><code v-pre>load</code>     - bool   - 在聊天加载时自动执行，例如 <code v-pre>load=true</code></li>
+<li><code v-pre>title</code>    - bool   - 要在按钮上显示的标题/工具提示，例如 <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
 </ul>
-<doc-anchor-target id="delete-quick-reply">
+<doc-anchor-target id="删除-quick-reply">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#delete-quick-reply">#</doc-anchor-trigger>
-        <span>Delete Quick Reply</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#删除-quick-reply">#</doc-anchor-trigger>
+        <span>删除 Quick Reply</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-delete (set=string [label])</code> – deletes Quick Reply</li>
+<li><code v-pre>/qr-delete (set=string [label])</code> – 删除 Quick Reply</li>
 </ul>
-<doc-anchor-target id="update-quick-reply">
+<doc-anchor-target id="更新-quick-reply">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#update-quick-reply">#</doc-anchor-trigger>
-        <span>Update Quick Reply</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#更新-quick-reply">#</doc-anchor-trigger>
+        <span>更新 Quick Reply</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-update (arguments, [message])</code> – updates Quick Reply, example: <code v-pre>/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123</code></li>
+<li><code v-pre>/qr-update (arguments, [message])</code> – 更新 Quick Reply，示例：<code v-pre>/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123</code></li>
 </ul>
-<p>Arguments:</p>
+<p>参数：</p>
 <ul>
-<li><code v-pre>newlabel</code> - string - new text fort the button, e.g. <code v-pre>newlabel=MyRenamedButton</code></li>
-<li><code v-pre>label</code>    - string - text on the button, e.g., <code v-pre>label=MyButton</code></li>
-<li><code v-pre>set</code>      - string - name of the QR set, e.g., <code v-pre>set=PresetName1</code></li>
-<li><code v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code v-pre>hidden=true</code></li>
-<li><code v-pre>startup</code>  - bool   - auto execute on app startup, e.g., <code v-pre>startup=true</code></li>
-<li><code v-pre>user</code>     - bool   - auto execute on user message, e.g., <code v-pre>user=true</code></li>
-<li><code v-pre>bot</code>      - bool   - auto execute on AI message, e.g., <code v-pre>bot=true</code></li>
-<li><code v-pre>load</code>     - bool   - auto execute on chat load, e.g., <code v-pre>load=true</code></li>
-<li><code v-pre>title</code>    - bool   - title / tooltip to be shown on button, e.g., <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
+<li><code v-pre>newlabel</code> - string - 按钮的新文本，例如 <code v-pre>newlabel=MyRenamedButton</code></li>
+<li><code v-pre>label</code>    - string - 按钮上的文本，例如 <code v-pre>label=MyButton</code></li>
+<li><code v-pre>set</code>      - string - QR 集的名称，例如 <code v-pre>set=PresetName1</code></li>
+<li><code v-pre>hidden</code>   - bool   - 按钮是否应隐藏，例如 <code v-pre>hidden=true</code></li>
+<li><code v-pre>startup</code>  - bool   - 在应用启动时自动执行，例如 <code v-pre>startup=true</code></li>
+<li><code v-pre>user</code>     - bool   - 在用户消息时自动执行，例如 <code v-pre>user=true</code></li>
+<li><code v-pre>bot</code>      - bool   - 在 AI 消息时自动执行，例如 <code v-pre>bot=true</code></li>
+<li><code v-pre>load</code>     - bool   - 在聊天加载时自动执行，例如 <code v-pre>load=true</code></li>
+<li><code v-pre>title</code>    - bool   - 要在按钮上显示的标题/工具提示，例如 <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
 </ul>
-<doc-anchor-target id="section">
+<doc-anchor-target id="获取-quick-reply">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#section">#</doc-anchor-trigger>
-        <span></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#获取-quick-reply">#</doc-anchor-trigger>
+        <span>获取 Quick Reply</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>qr-get</code> - retrieves all of a Quick Reply&#x27;s properties, eample: <code v-pre>/qr-get set=myQrSet id=42</code></li>
+<li><code v-pre>/qr-get</code> - 检索 Quick Reply 的所有属性，示例：<code v-pre>/qr-get set=myQrSet id=42</code></li>
 </ul>
-<doc-anchor-target id="create-or-update-qr-preset">
+<doc-anchor-target id="创建或更新-qr-预设">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#create-or-update-qr-preset">#</doc-anchor-trigger>
-        <span>Create or update QR preset</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#创建或更新-qr-预设">#</doc-anchor-trigger>
+        <span>创建或更新 QR 预设</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-presetupdate (arguments [label])</code> or <code v-pre>/qr-presetadd (arguments [label])</code></li>
+<li><code v-pre>/qr-presetupdate (arguments [label])</code> 或 <code v-pre>/qr-presetadd (arguments [label])</code></li>
 </ul>
-<p>Arguments:</p>
+<p>参数：</p>
 <ul>
-<li><code v-pre>enabled</code> - bool - enable or disable the preset</li>
-<li><code v-pre>nosend</code>  - bool - disable send / insert in user input (invalid for slash commands)</li>
-<li><code v-pre>before</code>  - bool - place QR before user input</li>
-<li><code v-pre>slots</code>   - int  - number of slots</li>
-<li><code v-pre>inject</code>  - bool - inject user input automatically (if disabled use <code v-pre>{{input}}</code>)</li>
+<li><code v-pre>enabled</code> - bool - 启用或禁用预设</li>
+<li><code v-pre>nosend</code>  - bool - 禁用发送/插入到用户输入（对斜杠命令无效）</li>
+<li><code v-pre>before</code>  - bool - 将 QR 放置在用户输入之前</li>
+<li><code v-pre>slots</code>   - int  - 插槽数量</li>
+<li><code v-pre>inject</code>  - bool - 自动注入用户输入（如果禁用，请使用 <code v-pre>{{input}}</code>）</li>
 </ul>
-<p>Create a new preset (overrides existing ones), example: <code v-pre>/qr-presetadd slots=3 MyNewPreset</code></p>
-<doc-anchor-target id="add-qr-context-menu">
+<p>创建新预设（覆盖现有预设），示例：<code v-pre>/qr-presetadd slots=3 MyNewPreset</code></p>
+<doc-anchor-target id="添加-qr-上下文菜单">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#add-qr-context-menu">#</doc-anchor-trigger>
-        <span>Add QR context menu</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#添加-qr-上下文菜单">#</doc-anchor-trigger>
+        <span>添加 QR 上下文菜单</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-contextadd (set=string label=string chain=bool [preset name])</code> – add context menu preset to a QR, example: <code v-pre>/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset</code></li>
+<li><code v-pre>/qr-contextadd (set=string label=string chain=bool [preset name])</code> – 向 QR 添加上下文菜单预设，示例：<code v-pre>/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset</code></li>
 </ul>
-<doc-anchor-target id="remove-all-context-menus">
+<doc-anchor-target id="删除所有上下文菜单">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-all-context-menus">#</doc-anchor-trigger>
-        <span>Remove all context menus</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#删除所有上下文菜单">#</doc-anchor-trigger>
+        <span>删除所有上下文菜单</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-contextclear (set=string [label])</code> – remove all context menu presets from a QR, example: <code v-pre>/qr-contextclear set=MyPreset MyButton</code></li>
+<li><code v-pre>/qr-contextclear (set=string [label])</code> – 从 QR 中删除所有上下文菜单预设，示例：<code v-pre>/qr-contextclear set=MyPreset MyButton</code></li>
 </ul>
-<doc-anchor-target id="remove-one-context-menu">
+<doc-anchor-target id="删除一个上下文菜单">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-one-context-menu">#</doc-anchor-trigger>
-        <span>Remove one context menu</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#删除一个上下文菜单">#</doc-anchor-trigger>
+        <span>删除一个上下文菜单</span>
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/qr-contextdel (set=string label=string [preset name])</code> – remove context menu preset from a QR, example: <code v-pre>/qr-contextdel set=MyPreset label=MyButton MyOtherPreset</code></li>
+<li><code v-pre>/qr-contextdel (set=string label=string [preset name])</code> – 从 QR 中删除上下文菜单预设，示例：<code v-pre>/qr-contextdel set=MyPreset label=MyButton MyOtherPreset</code></li>
 </ul>
-<doc-anchor-target id="quick-reply-value-escaping">
+<doc-anchor-target id="quick-reply-值转义">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-reply-value-escaping">#</doc-anchor-trigger>
-        <span>Quick Reply value escaping</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-reply-值转义">#</doc-anchor-trigger>
+        <span>Quick Reply 值转义</span>
     </h3>
 </doc-anchor-target>
-<p><code v-pre>|{}</code> can be escaped with backslash in the QR message / command.</p>
-<p>For example, use <code v-pre>/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}</code> to create a QR that calls <code v-pre>/getvar myvar | /echo {{pipe}}</code>.</p>
-<doc-anchor-target id="extension-commands">
+<p>在 QR 消息/命令中，<code v-pre>|{}</code> 可以用反斜杠转义。</p>
+<p>例如，使用 <code v-pre>/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}</code> 创建一个调用 <code v-pre>/getvar myvar | /echo {{pipe}}</code> 的 QR。</p>
+<doc-anchor-target id="扩展命令">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-commands">#</doc-anchor-trigger>
-        <span>Extension commands</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#扩展命令">#</doc-anchor-trigger>
+        <span>扩展命令</span>
     </h2>
 </doc-anchor-target>
-<p>SillyTavern extensions (both built-in, downloadable and third-party) can add their own slash command. Below is just an example of the capabilities in the official extensions. The list may be incomplete, make sure to check <code v-pre>/help slash</code> for the most complete list of available commands.</p>
+<p>SillyTavern 扩展（内置、可下载和第三方）可以添加自己的斜杠命令。下面只是官方扩展功能的示例。该列表可能不完整，请确保检查 <code v-pre>/help slash</code> 以获取最完整的可用命令列表。</p>
 <ol>
-<li><code v-pre>/websearch (query)</code> — searches snippets of the web pages online for the specified query and returns the result into the pipe. Provided by the Web Search extension.</li>
-<li><code v-pre>/imagine (prompt)</code> — generates an image using the provided prompt. Provided by the Image Generation extension.</li>
-<li><code v-pre>/emote (sprite)</code> — sets a sprite for the active character by fuzzy matching its name. Provided by the Character Expressions extension.</li>
-<li><code v-pre>/costume (subfolder)</code> — sets a sprite set override for the active character. Provided by the Character Expressions extension.</li>
-<li><code v-pre>/music (name)</code> — force changes a played background music file by its name. Provided by the Dynamic Audio extension.</li>
-<li><code v-pre>/ambient (name)</code> — force changes a played ambient sound file by its name. Provided by the Dynamic Audio extension.</li>
-<li><code v-pre>/roll (dice formula)</code> — adds a hidden message to the chat with the result of a dice roll. Provided by the D&amp;D Dice extension.</li>
+<li><code v-pre>/websearch (query)</code> — 在线搜索网页片段以查找指定查询，并将结果返回到管道中。由 Web Search 扩展提供。</li>
+<li><code v-pre>/imagine (prompt)</code> — 使用提供的提示词生成图像。由 Image Generation 扩展提供。</li>
+<li><code v-pre>/emote (sprite)</code> — 通过模糊匹配名称为活动角色设置精灵。由 Character Expressions 扩展提供。</li>
+<li><code v-pre>/costume (subfolder)</code> — 为活动角色设置精灵集覆盖。由 Character Expressions 扩展提供。</li>
+<li><code v-pre>/music (name)</code> — 按名称强制更改正在播放的背景音乐文件。由 Dynamic Audio 扩展提供。</li>
+<li><code v-pre>/ambient (name)</code> — 按名称强制更改正在播放的环境声音文件。由 Dynamic Audio 扩展提供。</li>
+<li><code v-pre>/roll (dice formula)</code> — 向聊天添加一条隐藏消息，其中包含骰子掷骰的结果。由 D&amp;D Dice 扩展提供。</li>
 </ol>
-<doc-anchor-target id="ui-interaction">
+<doc-anchor-target id="ui-交互">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-interaction">#</doc-anchor-trigger>
-        <span>UI interaction</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-交互">#</doc-anchor-trigger>
+        <span>UI 交互</span>
     </h2>
 </doc-anchor-target>
-<p>Scripts can also interact with SillyTavern&#x27;s UI: navigate through the chats or change styling parameters.</p>
-<doc-anchor-target id="character-navigation">
+<p>脚本还可以与 SillyTavern 的 UI 交互：在聊天之间导航或更改样式参数。</p>
+<doc-anchor-target id="角色导航">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-navigation">#</doc-anchor-trigger>
-        <span>Character navigation</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li><code v-pre>/random</code> — opens a chat with the random character.</li>
-<li><code v-pre>/go (name)</code> — opens a chat with the character of the specified name. First, searches for the exact name match, then by a prefix, then by a substring.</li>
-</ol>
-<doc-anchor-target id="ui-styling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-styling">#</doc-anchor-trigger>
-        <span>UI styling</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#角色导航">#</doc-anchor-trigger>
+        <span>角色导航</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li><code v-pre>/bubble</code> — sets the message style to the &quot;bubble chat&quot; style.</li>
-<li><code v-pre>/flat</code> — sets the message style to the &quot;flat chat&quot; style.</li>
-<li><code v-pre>/single</code> — sets the message style to the &quot;single document&quot; style.</li>
-<li><code v-pre>/movingui (name)</code> — activates a MovingUI preset by name.</li>
-<li><code v-pre>/resetui</code> — resets the MovingUI panels state to their original positions.</li>
-<li><code v-pre>/panels</code> — toggles the UI panels visibility: top bar, left and right drawers.</li>
-<li><code v-pre>/bg (name)</code> — finds and sets a background using fuzzy names matching. Respect the chat background lock state.</li>
-<li><code v-pre>/lockbg</code> — locks the background image for the current chat.</li>
-<li><code v-pre>/unlockbg</code> — unlocks the background image for the current chat.</li>
+<li><code v-pre>/random</code> — 打开与随机角色的聊天。</li>
+<li><code v-pre>/go (name)</code> — 打开与指定名称角色的聊天。首先搜索精确名称匹配，然后按前缀，然后按子字符串。</li>
 </ol>
-<doc-anchor-target id="more-examples">
+<doc-anchor-target id="ui-样式">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-样式">#</doc-anchor-trigger>
+        <span>UI 样式</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><code v-pre>/bubble</code> — 将消息样式设置为&quot;气泡聊天&quot;样式。</li>
+<li><code v-pre>/flat</code> — 将消息样式设置为&quot;扁平聊天&quot;样式。</li>
+<li><code v-pre>/single</code> — 将消息样式设置为&quot;单个文档&quot;样式。</li>
+<li><code v-pre>/movingui (name)</code> — 按名称激活 MovingUI 预设。</li>
+<li><code v-pre>/resetui</code> — 将 MovingUI 面板状态重置为其原始位置。</li>
+<li><code v-pre>/panels</code> — 切换 UI 面板的可见性：顶部栏、左侧和右侧抽屉。</li>
+<li><code v-pre>/bg (name)</code> — 使用模糊名称匹配查找并设置背景。尊重聊天背景锁定状态。</li>
+<li><code v-pre>/lockbg</code> — 锁定当前聊天的背景图像。</li>
+<li><code v-pre>/unlockbg</code> — 解锁当前聊天的背景图像。</li>
+</ol>
+<doc-anchor-target id="更多示例">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#more-examples">#</doc-anchor-trigger>
-        <span>More examples</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#更多示例">#</doc-anchor-trigger>
+        <span>更多示例</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="generate-chat-summary-by-ikaridevgit">
+<doc-anchor-target id="生成聊天摘要由-ikaridevgit-提供">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generate-chat-summary-by-ikaridevgit">#</doc-anchor-trigger>
-        <span>Generate chat summary (by @IkariDevGIT)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#生成聊天摘要由-ikaridevgit-提供">#</doc-anchor-trigger>
+        <span>生成聊天摘要（由 @IkariDevGIT 提供）</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
 /setvar key=tmp |
 /messages 0-{{lastMessageId}} |
 /trimtokens limit=3000 direction=end |
@@ -1827,45 +1827,45 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 /flushvar tmp |
 /flushvar s1</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="buttons-popup-usage">
+<doc-anchor-target id="按钮弹出窗口用法">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#buttons-popup-usage">#</doc-anchor-trigger>
-        <span>Buttons popup usage</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#按钮弹出窗口用法">#</doc-anchor-trigger>
+        <span>按钮弹出窗口用法</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="get-nth-fibonaccis-number-using-binets-formula">
+<doc-anchor-target id="获取第-n-个斐波那契数使用-binet-公式">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#get-nth-fibonaccis-number-using-binets-formula">#</doc-anchor-trigger>
-        <span>Get Nth Fibonacci&#x27;s number (using Binet&#x27;s formula)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#获取第-n-个斐波那契数使用-binet-公式">#</doc-anchor-trigger>
+        <span>获取第 N 个斐波那契数（使用 Binet 公式）</span>
     </h3>
 </doc-anchor-target>
 <blockquote>
-<p><strong>Hint</strong>: Set value of <code v-pre>fib_no</code> to the desired number</p>
+<p><strong>提示</strong>：将 <code v-pre>fib_no</code> 的值设置为所需的数字</p>
 </blockquote>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
 /pow 5 0.5 | /setglobalvar key=SQRT5 |
 /setglobalvar key=PHI 1.618033 |
 /pow PHI fib_no | /div {{pipe}} SQRT5 |
 /round |
 /echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="recursive-factorial-using-closures">
+<doc-anchor-target id="递归阶乘使用闭包">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-factorial-using-closures">#</doc-anchor-trigger>
-        <span>Recursive Factorial (using closures)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#递归阶乘使用闭包">#</doc-anchor-trigger>
+        <span>递归阶乘（使用闭包）</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let fact {: n=
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let fact {: n=
     /if left={{var::n}} rule=gt right=1
         else={:
             /return 1
@@ -1887,29 +1887,29 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/For_Contributors/st-script.md" target="_blank" rel="noopener">
+                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link-weight hover:text-body-link-hover hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/For_Contributors/st-script.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
                                                 <span class="block mt-1">开发和自动化</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/function-calling/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/function-calling/">
                                             <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
                                                 <span class="block mt-1">函数调用</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -1919,24 +1919,24 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
                 
                     <!-- Rendered if sidebar right is enabled -->
                     <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
                         <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                         </div>
                     </div>
                 
@@ -1952,7 +1952,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "STscript 语言参考", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>

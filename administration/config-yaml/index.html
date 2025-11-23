@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794745262959">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817210997328">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
     <title>配置文件 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="配置文件 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本文档可能已过时、不完整或不准确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
+    <meta name="description" content="此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/administration/config-yaml/">
@@ -23,22 +23,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/administration/config-yaml/">
     <meta property="og:title" content="配置文件 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本文档可能已过时、不完整或不准确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
+    <meta property="og:description" content="此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/administration/config-yaml/">
     <meta property="twitter:title" content="配置文件 | SillyTavern傻酒馆中文文档">
-    <meta property="twitter:description" content="本文档可能已过时、不完整或不准确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
+    <meta property="twitter:description" content="此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.794745262959" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.817210997328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.794745262959" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.817210997328" defer></script>
 
     <style>
         a {
@@ -86,42 +86,42 @@
 
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                         </a>
                     </div>
         
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
                 </div>
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                             </li>
         
                         </ul>
@@ -135,7 +135,7 @@
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
                         <!-- Mobile search button -->
@@ -153,7 +153,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -163,26 +163,26 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+    
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
                 </div>
             
                 <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                 </div>
             
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
@@ -192,26 +192,26 @@
             <!-- Sidebar component -->
             <doc-sidebar v-cloak>
                 <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
             
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                                     </li>
             
                                 </ul>
                             </nav>
                         </div>
             
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                             <span class="text-xs whitespace-nowrap">Powered by</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                         </a>
@@ -219,14 +219,14 @@
                 </template>
             </doc-sidebar>
     
-            <div class="grow min-w-0 dark:bg-dark-850">
+            <div class="grow min-w-0 bg-body-bg">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="配置文件" class="break-words">
     <h1>
@@ -235,10 +235,10 @@
     </h1>
 </doc-anchor-target>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -247,17 +247,231 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>免责声明</h5>
-<p>本文档可能已过时、不完整或不准确。请参考您安装中的 <a href="https://github.com/SillyTavern/SillyTavern/blob/release/default/config.yaml">默认 config.yaml</a> 以获取最新的设置列表。</p>
+<p>此文档可能已过时、不完整或不正确。请参考您安装中的 <a href="https://github.com/SillyTavern/SillyTavern/blob/release/default/config.yaml">默认 config.yaml</a> 以获取最新的设置列表。</p>
+<p><strong>警告：不要直接编辑默认配置。这不会产生任何积极效果。请编辑存储库根目录中的副本。</strong></p>
         </div>
     </div>
 </div>
-<p><code v-pre>config.yaml</code> 是 SillyTavern 服务器的主要配置文件，在<a href="../../installation/">完成安装</a>后可以在仓库根目录中找到。它是一个 YAML 文件，包含各种设置，如网络设置、安全设置和后端特定选项。<strong>对此文件的更改将在重启服务器后生效。</strong></p>
-<p>在<a href="../../installation/updating/">更新仓库</a>后运行 <code v-pre>npm install</code>（或具体来说，<code v-pre>post-install.js</code> 脚本）时，上游版本中添加的新设置将自动填充默认值。然后您可以根据需要修改这些设置。</p>
-<p>对于嵌套设置，使用点表示法来表示层次结构。例如，<code v-pre>protocol.ipv6: false</code> 指的是 <code v-pre>protocol</code> 部分下的 <code v-pre>ipv6</code> 设置，其值为 <code v-pre>false</code>。</p>
+<p><code v-pre>config.yaml</code> 是 SillyTavern 服务器的主配置文件，您可以在<a href="../../installation/">完成安装</a>后在存储库根目录中找到它。它是一个 YAML 文件，包含各种设置，例如网络、安全和后端特定选项。<strong>对此文件所做的更改将在重新启动服务器后生效。</strong></p>
+<p>在<a href="../../installation/updating/">更新存储库</a>后运行 <code v-pre>npm install</code>（具体来说是 <code v-pre>post-install.js</code> 脚本）时，上游添加的新设置会自动填充默认值。然后您可以根据需要修改这些设置。</p>
+<p>对于嵌套设置，使用点表示法来指示层次结构。例如，<code v-pre>protocol.ipv6: false</code> 指的是 <code v-pre>protocol</code> 部分下的 <code v-pre>ipv6</code> 设置，值为 <code v-pre>false</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">protocol:
+<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">protocol:
   ipv6: false</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="命令行参数">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#命令行参数">#</doc-anchor-trigger>
+        <span>命令行参数</span>
+    </h2>
+</doc-anchor-target>
+<p>启动 SillyTavern 服务器时，您可以传递命令行参数来覆盖 <a href="">config.yaml</a> 中的某些设置。</p>
+<doc-anchor-target id="示例">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例">#</doc-anchor-trigger>
+        <span>示例</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">node server.js --port 8000 --listen false
+# 或
+npm run start -- --port 8000 --listen false
+# 或（仅限 Windows）
+Start.bat --port 8000 --listen false</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="支持的参数">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#支持的参数">#</doc-anchor-trigger>
+        <span>支持的参数</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>所有参数都不是必需的。如果您不提供它们，SillyTavern 将使用 <code v-pre>config.yaml</code> 中的设置。</p>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>--version</code></td>
+<td>显示版本号</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--global</code></td>
+<td>强制使用系统范围的应用程序数据路径</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--configPath</code></td>
+<td>覆盖 config.yaml 文件的路径（仅限独立模式）</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--dataRoot</code></td>
+<td>设置数据存储的根目录（仅限独立模式）</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--port</code></td>
+<td>设置 SillyTavern 运行的端口</td>
+<td>number</td>
+</tr>
+<tr>
+<td><code v-pre>--listen</code></td>
+<td>使 SillyTavern 在所有网络接口上侦听</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--whitelist</code></td>
+<td>启用白名单模式</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--basicAuthMode</code></td>
+<td>启用基本身份验证</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--enableIPv4</code></td>
+<td>启用 IPv4 协议</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--enableIPv6</code></td>
+<td>启用 IPv6 协议</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--listenAddressIPv4</code></td>
+<td>指定要侦听的 IPv4 地址</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--listenAddressIPv6</code></td>
+<td>指定要侦听的 IPv6 地址</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--dnsPreferIPv6</code></td>
+<td>DNS 首选 IPv6</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--ssl</code></td>
+<td>启用 SSL</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--certPath</code></td>
+<td>设置证书文件的路径</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--keyPath</code></td>
+<td>设置私钥文件的路径</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--browserLaunchEnabled</code></td>
+<td>在浏览器中自动启动 SillyTavern</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--browserLaunchHostname</code></td>
+<td>设置浏览器启动主机名</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--browserLaunchPort</code></td>
+<td>覆盖浏览器启动的端口</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--browserLaunchAvoidLocalhost</code></td>
+<td>在自动模式下避免使用 &#x27;localhost&#x27; 进行浏览器启动</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--corsProxy</code></td>
+<td>启用 CORS 代理</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--requestProxyEnabled</code></td>
+<td>为传出请求启用代理</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code v-pre>--requestProxyUrl</code></td>
+<td>设置请求代理 URL（HTTP 或 SOCKS 协议）</td>
+<td>string</td>
+</tr>
+<tr>
+<td><code v-pre>--requestProxyBypass</code></td>
+<td>设置请求代理绕过列表（空格分隔的主机列表）</td>
+<td>array</td>
+</tr>
+<tr>
+<td><code v-pre>--disableCsrf</code></td>
+<td>禁用 CSRF 保护（不推荐）</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="环境变量">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#环境变量">#</doc-anchor-trigger>
+        <span>环境变量</span>
+    </h2>
+</doc-anchor-target>
+<p>配置也可以通过环境变量设置，这将覆盖 <code v-pre>config.yaml</code> 文件中的值。</p>
+<p>环境变量应以 <code v-pre>SILLYTAVERN_</code> 为前缀，并对设置名称使用大写字母。例如，<code v-pre>dataRoot</code> 设置可以使用 <code v-pre>SILLYTAVERN_DATAROOT</code> 环境变量覆盖。</p>
+<p>嵌套设置应使用下划线分隔。例如，<code v-pre>protocol.ipv6</code> 可以使用 <code v-pre>SILLYTAVERN_PROTOCOL_IPV6</code> 环境变量覆盖。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>期望数组或对象的配置应进行 JSON 字符串化。例如，要使用 <code v-pre>SILLYTAVERN_WHITELIST</code> 环境变量覆盖 <code v-pre>whitelist</code> 设置，您应将其设置为 JSON 字符串：<code v-pre>SILLYTAVERN_WHITELIST='[&quot;127.0.0.1&quot;, &quot;::1&quot;]'</code>。</p>
+        </div>
+    </div>
+</div>
+<p>如果您使用的是 Node.js v20 或更高版本，您还可以在 <code v-pre>.env</code> 文件中存储环境变量，并使用 <code v-pre>--env-file</code> 标志将其传递给服务器。例如，要使用位于存储库根目录中的 <code v-pre>.env</code> 文件，您可以使用以下命令启动服务器：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">node --env-file=.env server.js</code></pre>
+</doc-codeblock></div>
+<p>或者，直接通过命令行传递环境变量：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">SILLYTAVERN_LISTEN=true SILLYTAVERN_PORT=8000 node server.js</code></pre>
+</doc-codeblock></div>
+<p>有关使用环境变量的更多信息，请参见 <a href="https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs">Node.js 文档</a>。</p>
 <doc-anchor-target id="数据配置">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#数据配置">#</doc-anchor-trigger>
@@ -277,20 +491,52 @@
 <tbody>
 <tr>
 <td><code v-pre>dataRoot</code></td>
-<td>用户数据存储的根目录</td>
+<td>用户数据存储的根目录（仅限独立模式）</td>
 <td><code v-pre>./data</code></td>
 <td>任何有效的目录路径</td>
 </tr>
 <tr>
-<td><code v-pre>cardsCacheCapacity</code></td>
-<td>已解析角色卡可以使用的最大内存量（MB）</td>
-<td>100</td>
-<td>任何正整数</td>
+<td><code v-pre>skipContentCheck</code></td>
+<td>跳过新默认内容的检查</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>skipContentCheck</code></td>
-<td>跳过新的默认内容检查</td>
-<td><code v-pre>false</code></td>
+<td><code v-pre>enableDownloadableTokenizers</code></td>
+<td>启用按需下载 tokenizer</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="日志配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#日志配置">#</doc-anchor-trigger>
+        <span>日志配置</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>logging.minLogLevel</code></td>
+<td>在终端中显示的最小日志级别</td>
+<td><code v-pre>0</code> (DEBUG)</td>
+<td>(DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3)</td>
+</tr>
+<tr>
+<td><code v-pre>logging.enableAccessLog</code></td>
+<td>将服务器访问日志写入文件和控制台</td>
+<td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 </tbody>
@@ -315,33 +561,89 @@
 <tbody>
 <tr>
 <td><code v-pre>listen</code></td>
-<td>启用监听传入连接</td>
+<td>启用侦听传入连接</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
 <td><code v-pre>port</code></td>
-<td>服务器监听端口</td>
+<td>服务器侦听端口</td>
 <td><code v-pre>8000</code></td>
-<td>任何有效的端口号（1-65535）</td>
+<td>任何有效的端口号 (1-65535)</td>
 </tr>
 <tr>
 <td><code v-pre>protocol.ipv4</code></td>
-<td>启用在 IPv4 协议上监听</td>
+<td>在 IPv4 协议上启用侦听</td>
 <td><code v-pre>true</code></td>
-<td><code v-pre>true</code>, <code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code>, <code v-pre>auto</code></td>
 </tr>
 <tr>
 <td><code v-pre>protocol.ipv6</code></td>
-<td>启用在 IPv6 协议上监听</td>
+<td>在 IPv6 协议上启用侦听</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code>, <code v-pre>auto</code></td>
+</tr>
+<tr>
+<td><code v-pre>listenAddress.ipv4</code></td>
+<td>侦听特定的 IPv4 地址</td>
+<td><code v-pre>0.0.0.0</code></td>
+<td>有效的 IPv4 地址</td>
+</tr>
+<tr>
+<td><code v-pre>listenAddress.ipv6</code></td>
+<td>侦听特定的 IPv6 地址</td>
+<td><code v-pre>'[::]'</code></td>
+<td>有效的 IPv6 地址</td>
+</tr>
+<tr>
+<td><code v-pre>dnsPreferIPv6</code></td>
+<td>DNS 解析首选 IPv6</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="ssl-配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ssl-配置">#</doc-anchor-trigger>
+        <span>SSL 配置</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>ssl.enabled</code></td>
+<td>启用 SSL/TLS 加密和 HTTPS 协议</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>dnsPreferIPv6</code></td>
-<td>DNS 解析优先使用 IPv6</td>
-<td><code v-pre>false</code></td>
-<td><code v-pre>true</code>, <code v-pre>false</code></td>
+<td><code v-pre>ssl.keyPath</code></td>
+<td>SSL 私钥的路径（相对于服务器目录）</td>
+<td><code v-pre>&quot;./certs/privkey.pem&quot;</code></td>
+<td>有效的文件路径</td>
+</tr>
+<tr>
+<td><code v-pre>ssl.certPath</code></td>
+<td>SSL 证书的路径（相对于服务器目录）</td>
+<td><code v-pre>&quot;./certs/cert.pem&quot;</code></td>
+<td>有效的文件路径</td>
+</tr>
+<tr>
+<td><code v-pre>ssl.keyPassphrase</code></td>
+<td>SSL 私钥的密码短语。如果不需要则留空</td>
+<td><code v-pre>&quot;&quot;</code></td>
+<td>任何字符串</td>
 </tr>
 </tbody>
 </table>
@@ -351,6 +653,12 @@
         <doc-anchor-trigger class="header-anchor-trigger" to="#安全配置">#</doc-anchor-trigger>
         <span>安全配置</span>
     </h2>
+</doc-anchor-target>
+<doc-anchor-target id="ip-白名单">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ip-白名单">#</doc-anchor-trigger>
+        <span>IP 白名单</span>
+    </h3>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -371,7 +679,7 @@
 </tr>
 <tr>
 <td><code v-pre>enableForwardedWhitelist</code></td>
-<td>检查转发头中的白名单 IP</td>
+<td>检查转发的头以获取白名单 IP</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
@@ -379,17 +687,91 @@
 <td><code v-pre>whitelist</code></td>
 <td>允许的 IP 地址列表</td>
 <td><code v-pre>[&quot;::1&quot;, &quot;127.0.0.1&quot;]</code></td>
-<td>有效 IP 地址数组</td>
+<td>有效 IP 地址的数组</td>
 </tr>
 <tr>
-<td><code v-pre>enableCorsProxy</code></td>
-<td>启用 CORS 代理中间件</td>
+<td><code v-pre>whitelistDockerHosts</code></td>
+<td>自动将 Docker 主机 IP 加入白名单</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="主机白名单">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#主机白名单">#</doc-anchor-trigger>
+        <span>主机白名单</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>hostWhitelist.enabled</code></td>
+<td>启用主机白名单</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
+<td><code v-pre>hostWhitelist.scan</code></td>
+<td>记录来自不受信任主机的传入请求</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>hostWhitelist.hosts</code></td>
+<td>受信任主机名列表</td>
+<td><code v-pre>[]</code></td>
+<td>有效主机名的数组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="安全覆盖">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#安全覆盖">#</doc-anchor-trigger>
+        <span>安全覆盖</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-danger" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><strong>强烈不建议禁用安全措施。在进行更改之前，请确保您了解自己在做什么。</strong></p>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td><code v-pre>allowKeysExposure</code></td>
-<td>允许在 UI 中暴露 API 密钥</td>
+<td>允许在 UI 中暴露未遮蔽的 API 密钥</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
@@ -408,10 +790,10 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="用户认证">
+<doc-anchor-target id="用户身份验证">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#用户认证">#</doc-anchor-trigger>
-        <span><a href="../multi-user/">用户认证</a></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#用户身份验证">#</doc-anchor-trigger>
+        <span><a href="../multi-user/">用户身份验证</a></span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -427,19 +809,19 @@
 <tbody>
 <tr>
 <td><code v-pre>basicAuthMode</code></td>
-<td>启用基本认证</td>
+<td>启用基本身份验证</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
 <td><code v-pre>basicAuthUser.username</code></td>
-<td>基本认证用户名</td>
+<td>基本身份验证用户名</td>
 <td><code v-pre>&quot;user&quot;</code></td>
 <td>任何字符串</td>
 </tr>
 <tr>
 <td><code v-pre>basicAuthUser.password</code></td>
-<td>基本认证密码</td>
+<td>基本身份验证密码</td>
 <td><code v-pre>&quot;password&quot;</code></td>
 <td>任何字符串</td>
 </tr>
@@ -451,31 +833,77 @@
 </tr>
 <tr>
 <td><code v-pre>enableDiscreetLogin</code></td>
-<td>在登录屏幕隐藏用户列表</td>
+<td>在登录屏幕上隐藏用户列表</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
 <td><code v-pre>sessionTimeout</code></td>
-<td>用户会话超时时间（秒）</td>
-<td><code v-pre>86400</code>（24小时）</td>
-<td>任何数字（-1 禁用，0 浏览器关闭时，&gt;0 超时）</td>
+<td>用户会话超时（秒）</td>
+<td><code v-pre>-1</code> (禁用)</td>
+<td>任何数字（-1 禁用，0 为浏览器关闭，&gt;0 为超时）</td>
 </tr>
 <tr>
-<td><code v-pre>cookieSecret</code></td>
-<td>用于签名会话 cookie 的密钥</td>
-<td><code v-pre>''</code>（自动生成）</td>
-<td>任何字符串</td>
+<td><code v-pre>perUserBasicAuth</code></td>
+<td>使用账户凭据进行基本身份验证</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="sso-自动登录">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sso-自动登录">#</doc-anchor-trigger>
+        <span>SSO 自动登录</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
 <tr>
-<td><code v-pre>autheliaAuth</code></td>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>sso.autheliaAuth</code></td>
 <td>启用基于 Authelia 的自动登录。参见：<a href="../sso/">SSO</a></td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>perUserBasicAuth</code></td>
-<td>使用账户凭据进行基本认证</td>
+<td><code v-pre>sso.authentikAuth</code></td>
+<td>启用基于 Authentik 的自动登录。参见：<a href="../sso/">SSO</a></td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="速率限制配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#速率限制配置">#</doc-anchor-trigger>
+        <span>速率限制配置</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>rateLimiting.preferRealIpHeader</code></td>
+<td>使用 X-Real-IP 头而不是套接字 IP 进行速率限制</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
@@ -501,7 +929,7 @@
 <tbody>
 <tr>
 <td><code v-pre>requestProxy.enabled</code></td>
-<td>启用出站请求代理</td>
+<td>为传出请求启用代理</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
@@ -509,7 +937,7 @@
 <td><code v-pre>requestProxy.url</code></td>
 <td>代理服务器 URL</td>
 <td><code v-pre>null</code></td>
-<td>有效的代理 URL（如 <code v-pre>&quot;socks5://username:password@example.com:1080&quot;</code>）</td>
+<td>有效的代理 URL（例如 <code v-pre>&quot;socks5://username:password@example.com:1080&quot;</code>）</td>
 </tr>
 <tr>
 <td><code v-pre>requestProxy.bypass</code></td>
@@ -520,10 +948,106 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="自动运行配置">
+<doc-anchor-target id="cors-代理配置">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#自动运行配置">#</doc-anchor-trigger>
-        <span>自动运行配置</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cors-代理配置">#</doc-anchor-trigger>
+        <span>CORS 代理配置</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>某些扩展可能需要启用的 CORS 代理。任何内置功能都不需要它。</p>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>enableCorsProxy</code></td>
+<td>启用 CORS 代理中间件</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="浏览器启动配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#浏览器启动配置">#</doc-anchor-trigger>
+        <span>浏览器启动配置</span>
+    </h2>
+</doc-anchor-target>
+<blockquote>
+<p>以前称为 &quot;Autorun&quot; 设置。</p>
+</blockquote>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>browserLaunch.enabled</code></td>
+<td>在服务器启动时自动打开浏览器</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>browserLaunch.browser</code></td>
+<td>用于打开 URL 的浏览器</td>
+<td><code v-pre>&quot;default&quot;</code></td>
+<td><code v-pre>&quot;default&quot;</code>, <code v-pre>&quot;chrome&quot;</code>, <code v-pre>&quot;firefox&quot;</code>, <code v-pre>&quot;edge&quot;</code>, <code v-pre>&quot;brave&quot;</code></td>
+</tr>
+<tr>
+<td><code v-pre>browserLaunch.hostname</code></td>
+<td>覆盖浏览器启动的主机名</td>
+<td><code v-pre>&quot;auto&quot;</code></td>
+<td><code v-pre>&quot;auto&quot;</code>，任何有效的主机名（例如 <code v-pre>&quot;localhost&quot;</code>, <code v-pre>&quot;st.example.com&quot;</code>）</td>
+</tr>
+<tr>
+<td><code v-pre>browserLaunch.port</code></td>
+<td>覆盖浏览器启动的端口</td>
+<td><code v-pre>-1</code></td>
+<td><code v-pre>-1</code>（使用服务器端口），任何有效的端口号</td>
+</tr>
+<tr>
+<td><code v-pre>browserLaunch.avoidLocalhost</code></td>
+<td>在启动 URL 中避免使用 &#x27;localhost&#x27;</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="性能配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#性能配置">#</doc-anchor-trigger>
+        <span>性能配置</span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -538,28 +1062,70 @@
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>autorun</code></td>
-<td>启动时自动打开浏览器</td>
+<td><code v-pre>performance.lazyLoadCharacters</code></td>
+<td>延迟加载角色数据</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>autorunHostname</code></td>
-<td>自动运行打开浏览器时使用的主机名</td>
-<td><code v-pre>&quot;auto&quot;</code></td>
-<td><code v-pre>&quot;auto&quot;</code>，任何有效的主机名（如 <code v-pre>&quot;localhost&quot;</code>，<code v-pre>&quot;st.example.com&quot;</code>）</td>
+<td><code v-pre>performance.useDiskCache</code></td>
+<td>为角色卡启用磁盘缓存</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>autorunPortOverride</code></td>
-<td>覆盖浏览器自动运行的端口</td>
-<td><code v-pre>-1</code></td>
-<td><code v-pre>-1</code>（使用服务器端口），任何有效的端口号</td>
+<td><code v-pre>performance.memoryCacheCapacity</code></td>
+<td>最大内存缓存容量</td>
+<td><code v-pre>100mb</code></td>
+<td>人类可读的大小（例如 <code v-pre>100mb</code>, <code v-pre>1gb</code>）</td>
 </tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="cache-buster-配置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-buster-配置">#</doc-anchor-trigger>
+        <span>Cache Buster 配置</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>需要 localhost 或带有 HTTPS 的域，否则将无法工作！</p>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
 <tr>
-<td><code v-pre>avoidLocalhost</code></td>
-<td>避免自动运行使用 &#x27;localhost&#x27;</td>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>cacheBuster.enabled</code></td>
+<td>在首次加载或上传图像文件后清除浏览器缓存</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>cacheBuster.userAgentPattern</code></td>
+<td>仅为与指定正则表达式模式匹配的用户代理清除缓存。例如：<code v-pre>'firefox'</code>（不区分大小写）。</td>
+<td><code v-pre>''</code></td>
+<td>任何有效的正则表达式字符串</td>
 </tr>
 </tbody>
 </table>
@@ -601,13 +1167,19 @@
 </tr>
 <tr>
 <td><code v-pre>thumbnails.dimensions.bg</code></td>
-<td>背景缩略图尺寸</td>
+<td>背景缩略图大小</td>
 <td><code v-pre>[160, 90]</code></td>
 <td>两个数字的数组（宽度，高度）</td>
 </tr>
 <tr>
 <td><code v-pre>thumbnails.dimensions.avatar</code></td>
-<td>头像缩略图尺寸</td>
+<td>头像缩略图大小</td>
+<td><code v-pre>[96, 144]</code></td>
+<td>两个数字的数组（宽度，高度）</td>
+</tr>
+<tr>
+<td><code v-pre>thumbnails.dimensions.persona</code></td>
+<td>人格缩略图大小</td>
 <td><code v-pre>[96, 144]</code></td>
 <td>两个数字的数组（宽度，高度）</td>
 </tr>
@@ -638,6 +1210,12 @@
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
+<td><code v-pre>backups.chat.checkIntegrity</code></td>
+<td>在保存前验证聊天文件的完整性</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
 <td><code v-pre>backups.common.numberOfBackups</code></td>
 <td>要保留的备份数量</td>
 <td><code v-pre>50</code></td>
@@ -645,13 +1223,13 @@
 </tr>
 <tr>
 <td><code v-pre>backups.chat.throttleInterval</code></td>
-<td>备份节流间隔（毫秒）</td>
+<td>备份限制间隔（毫秒）</td>
 <td><code v-pre>10000</code></td>
 <td>任何正整数</td>
 </tr>
 <tr>
 <td><code v-pre>backups.chat.maxTotalBackups</code></td>
-<td>要保留的最大总聊天备份数</td>
+<td>要保留的最大聊天备份总数</td>
 <td><code v-pre>-1</code></td>
 <td>任何正整数或 -1</td>
 </tr>
@@ -676,55 +1254,49 @@
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>enableExtensions</code></td>
+<td><code v-pre>extensions.enabled</code></td>
 <td>启用 UI 扩展</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>enableExtensionsAutoUpdate</code></td>
-<td>自动更新扩展</td>
+<td><code v-pre>extensions.autoUpdate</code></td>
+<td>自动更新扩展（如果扩展清单启用）</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>enableDownloadableTokenizers</code></td>
-<td>启用按需分词器下载</td>
+<td><code v-pre>extensions.models.autoDownload</code></td>
+<td>启用自动下载模型</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>extras.disableAutoDownload</code></td>
-<td>禁用自动模型下载</td>
-<td><code v-pre>false</code></td>
-<td><code v-pre>true</code>, <code v-pre>false</code></td>
-</tr>
-<tr>
-<td><code v-pre>extras.classificationModel</code></td>
+<td><code v-pre>extensions.models.classification</code></td>
 <td>用于分类的 HuggingFace 模型 ID</td>
 <td><code v-pre>&quot;Cohee/distilbert-base-uncased-go-emotions-onnx&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.captioningModel</code></td>
-<td>用于图像说明的 HuggingFace 模型 ID</td>
+<td><code v-pre>extensions.models.captioning</code></td>
+<td>用于图像字幕的 HuggingFace 模型 ID</td>
 <td><code v-pre>&quot;Xenova/vit-gpt2-image-captioning&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.embeddingModel</code></td>
+<td><code v-pre>extensions.models.embedding</code></td>
 <td>用于嵌入的 HuggingFace 模型 ID</td>
 <td><code v-pre>&quot;Cohee/jina-embeddings-v2-base-en&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.speechToTextModel</code></td>
+<td><code v-pre>extensions.models.speechToText</code></td>
 <td>用于语音转文本的 HuggingFace 模型 ID</td>
 <td><code v-pre>&quot;Xenova/whisper-small&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.textToSpeechModel</code></td>
+<td><code v-pre>extensions.models.textToSpeech</code></td>
 <td>用于文本转语音的 HuggingFace 模型 ID</td>
 <td><code v-pre>&quot;Xenova/speecht5_tts&quot;</code></td>
 <td>有效的模型 ID</td>
@@ -753,6 +1325,12 @@
 <td><code v-pre>enableServerPlugins</code></td>
 <td>启用服务器端插件</td>
 <td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>enableServerPluginsAutoUpdate</code></td>
+<td>在启动时尝试自动更新服务器插件</td>
+<td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 </tbody>
@@ -789,13 +1367,13 @@
 </tr>
 <tr>
 <td><code v-pre>openai.randomizeUserId</code></td>
-<td>API 调用随机化用户 ID</td>
+<td>为 API 调用随机化用户 ID</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
 <td><code v-pre>openai.captionSystemPrompt</code></td>
-<td>说明完成的系统消息</td>
+<td>字幕完成的系统消息</td>
 <td><code v-pre>&quot;&quot;</code></td>
 <td>任何字符串</td>
 </tr>
@@ -847,9 +1425,15 @@
 <tbody>
 <tr>
 <td><code v-pre>ollama.keepAlive</code></td>
-<td>模型保持活动时间（秒）</td>
+<td>模型保持活动持续时间（秒）</td>
 <td><code v-pre>-1</code></td>
 <td><code v-pre>-1</code>（无限期），<code v-pre>0</code>（立即卸载），正整数</td>
+</tr>
+<tr>
+<td><code v-pre>ollama.batchSize</code></td>
+<td>控制生成请求的 &quot;num_batch&quot;（批量大小）参数</td>
+<td><code v-pre>-1</code></td>
+<td><code v-pre>-1</code>（模型默认值），正整数</td>
 </tr>
 </tbody>
 </table>
@@ -861,10 +1445,10 @@
     </h3>
 </doc-anchor-target>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -872,9 +1456,9 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><strong>重要！</strong></p>
-<p>请谨慎使用，仅在提示前缀是静态的且在请求之间不变时使用。{{random}} 宏、知识库、向量、摘要等可能会使缓存失效，您只会在缓存未命中时浪费金钱。行为可能不可预测，且不能也不会做出任何保证。</p>
-<p>参见：<a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching">提示缓存</a></p>
+            <h5><strong>重要！</strong></h5>
+<p>请谨慎使用，仅在提示前缀是静态的且在请求之间不会更改时使用。{{random}} 宏、lorebooks、向量、摘要等可能会使缓存无效，您只会在缓存未命中上浪费金钱。行为可能不可预测，不会也不能提供任何保证。</p>
+<p>参见：<a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching">Prompt Caching</a></p>
         </div>
     </div>
 </div>
@@ -900,6 +1484,38 @@
 <td>启用消息历史缓存</td>
 <td><code v-pre>-1</code></td>
 <td><code v-pre>-1</code>（禁用），<code v-pre>0</code> 或正整数</td>
+</tr>
+<tr>
+<td><code v-pre>claude.extendedTTL</code></td>
+<td>使用 1h TTL 而不是默认的 5m。请注意，这也会增加请求的成本。</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="google-ai-studio-配置">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#google-ai-studio-配置">#</doc-anchor-trigger>
+        <span>Google AI Studio 配置</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>gemini.apiVersion</code></td>
+<td>API 端点版本</td>
+<td><code v-pre>v1beta</code></td>
+<td><code v-pre>v1beta</code>, <code v-pre>v1alpha</code></td>
 </tr>
 </tbody>
 </table>
@@ -935,29 +1551,29 @@
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/Administration/config-yaml.md" target="_blank" rel="noopener">
+                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link-weight hover:text-body-link-hover hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/Administration/config-yaml.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../administration/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../administration/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
                                                 <span class="block mt-1">管理</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../administration/multi-user/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../administration/multi-user/">
                                             <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
                                                 <span class="block mt-1">多用户模式</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -967,24 +1583,24 @@
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
                 
                     <!-- Rendered if sidebar right is enabled -->
                     <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
                         <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                         </div>
                     </div>
                 
@@ -1000,7 +1616,7 @@
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "配置文件", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>

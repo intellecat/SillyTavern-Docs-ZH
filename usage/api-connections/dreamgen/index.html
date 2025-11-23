@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794745262959">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817210997328">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
     <title>DreamGen | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="DreamGen | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="DreamGen 是一个用于 AI 驱动的创意写作的应用程序和 API。他们提供免费层级，以及付费订阅，后者允许无限制地访问他们专门为可控 AI 辅助写作目的制作的高质量内部文本生成模型。创建账户以开始使用：">
+    <meta name="description" content="DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐，以及付费订阅，允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
@@ -23,23 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
     <meta property="og:title" content="DreamGen | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="DreamGen 是一个用于 AI 驱动的创意写作的应用程序和 API。他们提供免费层级，以及付费订阅，后者允许无限制地访问他们专门为可控 AI 辅助写作目的制作的高质量内部文本生成模型。创建账户以开始使用：">
+    <meta property="og:description" content="DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐，以及付费订阅，允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:">
     <meta property="og:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
     <meta property="twitter:title" content="DreamGen | SillyTavern傻酒馆中文文档">
-    <meta property="twitter:description" content="DreamGen 是一个用于 AI 驱动的创意写作的应用程序和 API。他们提供免费层级，以及付费订阅，后者允许无限制地访问他们专门为可控 AI 辅助写作目的制作的高质量内部文本生成模型。创建账户以开始使用：">
+    <meta property="twitter:description" content="DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐，以及付费订阅，允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.794745262959" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.817210997328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -87,42 +87,42 @@
 
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                        <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                         </a>
                     </div>
         
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
                 </div>
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                             </li>
         
                         </ul>
@@ -136,7 +136,7 @@
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
                         <!-- Mobile search button -->
@@ -154,7 +154,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -164,26 +164,26 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+    
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
                 </div>
             
                 <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                 </div>
             
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
@@ -193,26 +193,26 @@
             <!-- Sidebar component -->
             <doc-sidebar v-cloak>
                 <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
             
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                                     </li>
             
                                 </ul>
                             </nav>
                         </div>
             
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                             <span class="text-xs whitespace-nowrap">Powered by</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                         </a>
@@ -220,14 +220,14 @@
                 </template>
             </doc-sidebar>
     
-            <div class="grow min-w-0 dark:bg-dark-850">
+            <div class="grow min-w-0 bg-body-bg">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="dreamgen" class="break-words">
     <h1>
@@ -235,28 +235,28 @@
         <span>DreamGen</span>
     </h1>
 </doc-anchor-target>
-<p>DreamGen 是一个用于 AI 驱动的创意写作的应用程序和 API。他们提供免费层级，以及付费订阅，后者允许无限制地访问他们专门为可控 AI 辅助写作目的制作的高质量内部文本生成模型。创建账户以开始使用：<a href="https://dreamgen.com/">https://dreamgen.com/</a>。</p>
-<p>（免费）积分在每个日历月初重置。查看<a href="https://dreamgen.com/pricing">定价</a>以了解每个模型的积分成本，查看<a href="https://dreamgen.com/account/usage">使用情况</a>以了解您剩余的积分。</p>
+<p>DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐，以及付费订阅，允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:<a href="https://dreamgen.com/">https://dreamgen.com/</a>。</p>
+<p>(免费)信用额度在每个日历月初重置。请参阅<a href="https://dreamgen.com/pricing">定价</a>查看每个模型的信用成本，以及<a href="https://dreamgen.com/account/usage">用量</a>查看您的剩余信用额度。</p>
 <doc-anchor-target id="连接到-dreamgen">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#连接到-dreamgen">#</doc-anchor-trigger>
         <span>连接到 DreamGen</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="获取-api-密钥">
+<doc-anchor-target id="获取-api-key">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#获取-api-密钥">#</doc-anchor-trigger>
-        <span>获取 API 密钥</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#获取-api-key">#</doc-anchor-trigger>
+        <span>获取 API Key</span>
     </h3>
 </doc-anchor-target>
-<p>前往 <a href="https://dreamgen.com/account/api-keys">DreamGen API 密钥</a>页面并点击&quot;新建 API 密钥&quot;按钮。确保将 API 密钥复制到剪贴板。</p>
+<p>前往 <a href="https://dreamgen.com/account/api-keys">DreamGen API keys</a> 页面并点击 &quot;New API Key&quot; 按钮。确保将 API Key 复制到剪贴板。</p>
 <p><figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_api_keys_new.jpg" alt="创建新的 DreamGen API 密钥">
-    <figcaption class="caption">创建新的 DreamGen API 密钥</figcaption>
+    <img src="../../../static/dreamgen/dreamgen_api_keys_new.jpg" alt="Create New DreamGen API key" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Create New DreamGen API key</figcaption>
 </figure>
 <figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_api_keys_copy.jpg" alt="复制 DreamGen API 密钥">
-    <figcaption class="caption">复制 DreamGen API 密钥</figcaption>
+    <img src="../../../static/dreamgen/dreamgen_api_keys_copy.jpg" alt="Copy DreamGen API key" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Copy DreamGen API key</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="连接">
@@ -267,14 +267,14 @@
 </doc-anchor-target>
 <ol>
 <li>前往 SillyTavern 连接设置。</li>
-<li>选择 API：文本补全</li>
-<li>选择 API 类型：DreamGen</li>
-<li>输入 API 密钥</li>
-<li>（可选）选择一个模型</li>
+<li>选择 API: Text Completion</li>
+<li>选择 API Type: DreamGen</li>
+<li>输入 API key</li>
+<li>(可选)选择一个模型</li>
 </ol>
 <p><figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_st_connection.jpg" alt="连接到 DreamGen">
-    <figcaption class="caption">连接到 DreamGen</figcaption>
+    <img src="/static/dreamgen/dreamgen_st_connection.png" alt="Connecting to DreamGen" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Connecting to DreamGen</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="模型">
@@ -283,257 +283,122 @@
         <span>模型</span>
     </h2>
 </doc-anchor-target>
-<p>DreamGen 提供 <code v-pre>opus-v1-sm</code>、<code v-pre>opus-v1-lg</code> 和 <code v-pre>opus-v1-xl</code>。模型越大，它在遵循指令和写出好故事方面就越好。</p>
-<doc-anchor-target id="格式设置">
+<p>DreamGen API 提供多个不同大小的模型。</p>
+<ul>
+<li>Lucid Max (在 API 中称为 <code v-pre>lucid-v1-max</code> 或 <code v-pre>lucid-v1-extra-large</code>)</li>
+<li>Lucid Base (在 API 中称为 <code v-pre>lucid-v1-base</code> 或 <code v-pre>lucid-v1-medium</code>) -- 对应于权重可用的 <a href="https://dreamgen.com/docs/models/lucid-v1/huggingface">Lucid V1 Nemo</a>。</li>
+</ul>
+<p>Lucid Base 使用更少的信用额度且速度更快，而 Lucid Max 更具创造力，能够处理更复杂的指令和叙事。</p>
+<doc-anchor-target id="设置">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#格式设置">#</doc-anchor-trigger>
-        <span>格式设置</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#设置">#</doc-anchor-trigger>
+        <span>设置</span>
     </h2>
 </doc-anchor-target>
-<p>DreamGen 模型需要特定的输入格式，这在<a href="https://dreamgen.com/docs/models/opus/v1">此处有文档说明</a>。</p>
-<p>SillyTavern 带有专为 DreamGen 制作的内置预设。确保使用这些设置作为您的基准。
-这些设置尽可能地遵循 DreamGen 格式，但由于角色卡片的格式不规则，它并不总是完美的。</p>
-<ol>
-<li>前往&quot;高级格式设置&quot;页面。</li>
-<li>在&quot;上下文模板&quot;下选择 <code v-pre>DreamGen Role-Play V1 Llama3 / ChatML</code>，具体取决于模型（*）。</li>
-<li><strong>启用&quot;指令模式&quot;。</strong></li>
-<li>在&quot;指令模式预设&quot;下选择 <code v-pre>DreamGen Role-Play V1 Llama3 / ChatML</code>。</li>
-</ol>
+<p>Lucid V1 DreamGen 模型使用针对角色扮演和写作优化的 Llama 3 chat template 扩展。它们在特定的 system prompt 下效果最佳。</p>
+<p>我们强烈建议从以下 master presets 之一开始:</p>
+<ul>
+<li>确保启用 instruct mode 并在导入时选择所有复选框。</li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/role-play">DreamGen Lucid V1 Role-Play preset</a></li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/story">DreamGen Lucid V1 Story preset</a></li>
+</ul>
+<p>这些 presets 内置了对 <code v-pre>/sys</code> 的支持，用于向模型发送指令。您可以使用它们来引导情节或控制角色的行动。</p>
 <p><figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_st_context_settings.jpg" alt="DreamGen 上下文设置">
-    <figcaption class="caption">DreamGen 上下文设置</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_st_instruct_settings.jpg" alt="DreamGen 指令设置">
-    <figcaption class="caption">DreamGen 指令设置</figcaption>
+    <img src="/static/dreamgen/dreamgen_st_preset.png" alt="DreamGen preset selected" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">DreamGen preset selected</figcaption>
 </figure>
 </p>
-<p>（*）什么时候使用 Llama 3，什么时候使用 ChatML？截至 2024/06/17，<code v-pre>opus-v1-sm</code> 是 <code v-pre>ChatML</code>，所有其他模型都是基于 <code v-pre>Llama3</code> 的。
-在运行本地模型时，模板将在模型的 HuggingFace 卡片中指示。</p>
-<doc-anchor-target id="补全设置">
+<p>其他资源:</p>
+<ul>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern"><strong>详细的 DreamGen + SillyTavern 指南</strong></a></li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1">详细的 Lucid V1 prompt format 文档</a>。</li>
+<li><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-roleplay-demo-bhzQpto">DreamGen + SillyTavern role-play 演示</a></li>
+<li><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-writing-demo-JLv5iO3">DreamGen + SillyTavern story-writing 演示</a></li>
+<li><a href="https://v2.dreamgen.com/docs/scenario-editor">制作自己场景的技巧</a></li>
+</ul>
+<doc-anchor-target id="faq">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#补全设置">#</doc-anchor-trigger>
-        <span>补全设置</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#faq">#</doc-anchor-trigger>
+        <span>FAQ</span>
     </h2>
 </doc-anchor-target>
-<p>DreamGen 支持：</p>
-<ul>
-<li>&quot;温度&quot;、&quot;Top P&quot;、&quot;Top K&quot; 和 &quot;Min P&quot;</li>
-<li>&quot;存在惩罚&quot;、&quot;频率惩罚&quot;和&quot;重复惩罚&quot;（无范围）</li>
-<li>&quot;最小长度&quot; -- 让您强制模型至少生成 <code v-pre>min(min_length, max_tokens)</code> 个 token</li>
-</ul>
-<p>好的起始值可能是：</p>
-<ul>
-<li>Min P：0.05</li>
-<li>温度：0.8</li>
-<li>重复惩罚：1.1</li>
-</ul>
-<doc-anchor-target id="格式化提示">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#格式化提示">#</doc-anchor-trigger>
-        <span>格式化提示</span>
-    </h2>
+<doc-anchor-target id="如何使响应更长或更短">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何使响应更长或更短">#</doc-anchor-trigger>
+        <span>如何使响应更长或更短?</span>
+    </h3>
 </doc-anchor-target>
-<p>DreamGen 模型与常规的指令遵循模型（如 OpenAI 的 ChatGPT）不同。</p>
-<p>这些模型经过微调，可以根据提供的描述写故事，这些描述通常包括情节描述、风格描述、角色、地点、背景等。模型也可以在故事中途被<em>引导</em>，让您成为导演，告诉角色他们应该做什么或情节应该如何展开。</p>
-<p>一个格式良好的<strong>系统提示词</strong>消息应该是这样的：</p>
+<p>您可以在 formatting presets 中设置 <code v-pre>Last Assistant Prefix</code>。</p>
+<p>对于长消息:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">You are an intelligent, skilled, versatile writer.
+<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
 
-Your task is to write a story based on the information below.
-
-
-## Plot description:
-
-The librarian sets up a blind date between Lucifer and Mia. Lucifer immediately falls in love with Mia, but Mia needs more space and time to make up her mind.
-
-
-## Style description:
-
-The narrative is vivid and intensely sensual, with a strong emphasis on raw emotion conveyed from a first-person point of view. The language is explicit, evoking intense imagery and indulging in the erotic exploration of the characters' passionate encounters.
-
-
-## Characters
-
-### Lucifer
-
-Lucifer, the red-skinned, horned demon, is the embodiment of fallen grace. Wrestling with his notorious heritage and a newfound desire for love, his complex nature ferments with vulnerability. His character oscillates between hedonism and self-reflection, hungering for acceptance by Mia and the librarian. Embracing his mortal love, he yearns for transformation, embodying the notion that even the damned may seek solace in love's redemption.
-
-### Mia
-
-Mia is a kind woman...</code></pre>
-</doc-codeblock></div>
-<p>注意，<strong>提示词应该是故事的描述</strong>，而不是关于如何写故事的指令或指示。<strong>避免使用以下短语：</strong></p>
-<ul>
-<li>&quot;像...一样写故事&quot;</li>
-<li>&quot;确保...&quot;</li>
-<li>等等</li>
-</ul>
-<p>查看更多关于情节、风格和角色描述应该是什么样子的<a href="https://dreamgen.com/docs/models/opus/v1#task-story-writing">示例</a>。</p>
-<p>默认的&quot;DreamGen Role-Play V1&quot;模板将不同部分替换如下：</p>
-<ul>
-<li><code v-pre>## Plot description:</code> 将由 <code v-pre>{{scenario}}</code> 和 <code v-pre>{{wiBefore}}</code> 组成。</li>
-<li><code v-pre>## Style description:</code> 未提供，您应该将其添加到高级设置中的系统提示词下，或添加到角色卡片中 <code v-pre>{{scenario}}</code> 的末尾。此部分有助于影响叙事风格（第一人称、第二人称、第三人称）、时态（过去时、现在时）、细节和详细程度等。</li>
-<li><code v-pre>## Characters:</code> 将有一个 <code v-pre>{{char}}</code> 角色，其描述由 <code v-pre>{{description}}</code> 和 <code v-pre>{{personality}}</code> 组成，以及一个 <code v-pre>{{user}}</code> 角色，其描述由 <code v-pre>{{persona}}</code> 组成。</li>
-</ul>
-<doc-anchor-target id="消息示例和初始消息">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#消息示例和初始消息">#</doc-anchor-trigger>
-        <span>消息示例和初始消息</span>
-    </h3>
-</doc-anchor-target>
-<p>DreamGen 模型对上下文非常敏感 -- 它们将在很大程度上坚持前面对话轮次中呈现的写作风格（和事实）。
-这使得消息示例和初始消息变得非常重要。</p>
-<doc-anchor-target id="格式化消息示例">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#格式化消息示例">#</doc-anchor-trigger>
-        <span>格式化消息示例</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>{{mesExamples}}</code> 被附加在系统提示词的末尾。要充分利用指令格式，请确保您的示例用 <code v-pre>&lt;START&gt;</code> 分隔符分隔。例如：</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">&lt;START&gt;
-{{user}}: (用户的回合)
-{{char}}: (角色的回合)
-&lt;START&gt;
-{{user}}: (用户的回合)
-{{char}}: (角色的回合)</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="示例">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#示例">#</doc-anchor-trigger>
-        <span>示例</span>
-    </h3>
-</doc-anchor-target>
-<p>这里有几个为 DreamGen 适配的示例卡片，考虑到了独特的提示方式。这些卡片还利用了上述描述的 <code v-pre>{{mesExamples}}</code>。</p>
-<doc-anchor-target id="seraphina">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#seraphina">#</doc-anchor-trigger>
-        <span>Seraphina</span>
-    </h4>
-</doc-anchor-target>
-<p>这是对 SillyTavern 默认内置的流行 Seraphina 卡片的编辑。</p>
-<div style="width:200px;">
-<p><figure class="content-center">
-    <a href="../../../static/dreamgen/cards/seraphina.png">
-        <img src="../../../static/dreamgen/cards/seraphina.png" alt="Seraphina">
-    </a>
-    <figcaption class="caption">Seraphina</figcaption>
-</figure>
-</p>
-</div>
-<doc-anchor-target id="lara-lightland">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lara-lightland">#</doc-anchor-trigger>
-        <span>Lara Lightland</span>
-    </h4>
-</doc-anchor-target>
-<p>这是对 Deffcolony 的 Lara Lightland 卡片的编辑。</p>
-<div style="width:200px;">
-<p><figure class="content-center">
-    <a href="../../../static/dreamgen/cards/laralightland.png">
-        <img src="../../../static/dreamgen/cards/laralightland.png" alt="Lara Lightland">
-    </a>
-    <figcaption class="caption">Lara Lightland</figcaption>
-</figure>
-</p>
-</div>
-<doc-anchor-target id="常见问题">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#常见问题">#</doc-anchor-trigger>
-        <span>常见问题</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="我应该使用什么采样设置">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#我应该使用什么采样设置">#</doc-anchor-trigger>
-        <span>我应该使用什么采样设置？</span>
-    </h3>
-</doc-anchor-target>
-<p>您可以从以下设置开始：</p>
-<ul>
-<li>温度：1.0</li>
-<li>MinP：0.05</li>
-<li>存在惩罚：0.1</li>
-<li>频率惩罚：0.1</li>
-</ul>
-<doc-anchor-target id="如何让回复更长或更短">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#如何让回复更长或更短">#</doc-anchor-trigger>
-        <span>如何让回复更长或更短？</span>
-    </h3>
-</doc-anchor-target>
-<p>您有几个选项：</p>
-<ul>
-<li>在系统提示词或模型卡片中更改或添加 <code v-pre>## Style description:</code>。您可以尝试添加类似&quot;句子通常很长，叙述以极其详细的方式描述场景。&quot;的内容。</li>
-<li>在补全设置中更改 <code v-pre>最小长度</code>。</li>
-<li>在指令模式下的高级格式设置中添加类似以下的 <code v-pre>最后输出序列</code>：</li>
-</ul>
-<p>这是一个使用 Llama 3 模板的 <code v-pre>最后输出序列</code> 示例，可能有助于让模型以更详细的方式回应：</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">&lt;|eot_id|&gt;
-&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
-
-Length: 400 words
-Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|eot_id|&gt;
-&lt;|start_header_id|&gt;writer character: {{char}}&lt;|end_header_id|&gt;
-
+The next message is from  and is at least 100 words long&lt;|eot_id|&gt;&lt;|start_header_id|&gt;writer character &lt;|end_header_id|&gt;
 </code></pre>
 </doc-codeblock></div>
-<p>使用 ChatML 模板表达相同内容：</p>
+<p>对于短消息:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">&lt;|im_end|&gt;
-&lt;|im_start|&gt;user
-Length: 400 words
-Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{char}}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
+
+The next message is from  and is at most 50 words long&lt;|eot_id|&gt;&lt;|start_header_id|&gt;writer character &lt;|end_header_id|&gt;
+</code></pre>
 </doc-codeblock></div>
-<p>您可以将文本更改为更适合您的场景或上下文的内容。</p>
-<doc-anchor-target id="如何阻止模型重复自己">
+<p>确保保留所有换行符，包括末尾的两个换行符。</p>
+<p><figure class="content-center">
+    <img src="/static/dreamgen/dreamgen_st_long_response_prefix.png" alt="Long Message Prefix" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Long Message Prefix</figcaption>
+</figure>
+</p>
+<p>您还可以在您的 card 或 system prompt 中包含写作风格描述，例如:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">## Style
+
+&lt;your description&gt;</code></pre>
+</doc-codeblock></div>
+<p>请参阅 <a href="https://v2.dreamgen.com/docs/scenario-editor#style">&quot;Style&quot; 文档</a>了解更多信息并查看一些示例。</p>
+<doc-anchor-target id="如何引导角色扮演故事">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#如何阻止模型重复自己">#</doc-anchor-trigger>
-        <span>如何阻止模型重复自己？</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何引导角色扮演故事">#</doc-anchor-trigger>
+        <span>如何引导角色扮演/故事?</span>
     </h3>
 </doc-anchor-target>
-<p>如果模型重复上下文中的内容，您可以尝试在补全设置中增加&quot;重复惩罚&quot;，或者尝试重新措辞被重复的上下文部分。
-如果模型在一条消息中重复自己，您可以尝试增加&quot;存在惩罚&quot;或&quot;频率惩罚&quot;。</p>
-<doc-anchor-target id="如何引导故事">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#如何引导故事">#</doc-anchor-trigger>
-        <span>如何引导故事？</span>
-    </h3>
-</doc-anchor-target>
-<p>如果您想指导角色做某事，或将情节引向某个方向，您可以使用 <code v-pre>user</code> 角色（即 <code v-pre>&lt;|im_start|&gt;user</code> 前言）。</p>
-<p>目前，这个功能在 SillyTavern 中没有很好地原生集成，但您可以使用上述描述的 <code v-pre>最后输出序列</code> 来插入 <code v-pre>user</code>（指令）回合。在<a href="https://dreamgen.com/docs/models/opus/v1#prompt-instructions">这里</a>查看指令应该是什么样子的示例。</p>
+<p>使用 <code v-pre>/sys</code> 选项向模型发送指令。一些示例:</p>
+<blockquote>
+<p>The inkeeper offers Daria and the others a pint of ale.</p>
+</blockquote>
+<blockquote>
+<p>The next message is from Draco and should be at least 200 words， focusing on his inner conflict about the decision.</p>
+</blockquote>
+<p><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-roleplay-demo-bhzQpto">查看实际效果。</a></p>
 
                                 
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/Usage/API_Connections/DreamGen.md" target="_blank" rel="noopener">
+                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link-weight hover:text-body-link-hover hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/Usage/API_Connections/DreamGen.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/horde/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/horde/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
                                                 <span class="block mt-1">AI Horde</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/koboldcpp/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/google/">
                                             <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Kobold​Cpp</span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Google Gemini</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -542,24 +407,24 @@ Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|im_end|&gt
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
                 
                     <!-- Rendered if sidebar right is enabled -->
                     <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
                         <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                         </div>
                     </div>
                 
@@ -575,7 +440,7 @@ Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|im_end|&gt
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "DreamGen", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>

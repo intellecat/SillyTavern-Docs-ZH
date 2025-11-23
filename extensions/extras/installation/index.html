@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794745262959">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817210997328">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
     <title>Extras 安装 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="Extras 安装 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本页面包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta name="description" content="本页包含在本地设备上安装 SillyTavern Extras 的说明。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/extras/installation/">
@@ -23,21 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/extras/installation/">
     <meta property="og:title" content="Extras 安装 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本页面包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta property="og:description" content="本页包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/sd-user.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/extras/installation/">
     <meta property="twitter:title" content="Extras 安装 | SillyTavern傻酒馆中文文档">
-    <meta property="twitter:description" content="本页面包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta property="twitter:description" content="本页包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/sd-user.png">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.794745262959" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.817210997328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794745262959" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.817210997328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -85,42 +87,42 @@
 
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                        <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                         </a>
                     </div>
         
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
                 </div>
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                             </li>
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                             </li>
         
                         </ul>
@@ -134,7 +136,7 @@
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
                         <!-- Mobile search button -->
@@ -152,7 +154,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -162,26 +164,26 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+    
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
                 </div>
             
                 <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                 </div>
             
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
@@ -191,26 +193,26 @@
             <!-- Sidebar component -->
             <doc-sidebar v-cloak>
                 <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
             
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
                                     </li>
             
                                 </ul>
                             </nav>
                         </div>
             
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                             <span class="text-xs whitespace-nowrap">Powered by</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                         </a>
@@ -218,14 +220,14 @@
                 </template>
             </doc-sidebar>
     
-            <div class="grow min-w-0 dark:bg-dark-850">
+            <div class="grow min-w-0 bg-body-bg">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="extras-安装" class="break-words">
     <h1>
@@ -233,12 +235,12 @@
         <span>Extras 安装</span>
     </h1>
 </doc-anchor-target>
-<p>本页面包含在本地设备上安装 SillyTavern Extras 的说明。</p>
+<p>本页包含在本地设备上安装 SillyTavern Extras 的说明。</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -248,90 +250,118 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Discontinued</h5>
-<p>Extras 项目已于2024年4月停止维护，不会再收到任何新的更新或模块。绝大多数模块已在 SillyTavern 主应用程序中原生提供。您仍然可以安装和使用它，但如果遇到任何问题，请不要期望能得到及时的支持。</p>
+<p>Extras 项目已于 2024 年 4 月停止维护，不会再收到任何新的更新或模块。绝大多数模块已在主 SillyTavern 应用程序中原生可用。您仍然可以安装和使用它，但如果遇到任何问题，请不要期望获得即时支持。</p>
         </div>
     </div>
 </div>
-<p>在您的操作系统上本地安装 Extras 可能很困难或不可能（尤其是 Termux）。</p>
-<doc-anchor-target id="使用-官方-extras-colab">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#使用-官方-extras-colab">#</doc-anchor-trigger>
-        <span>使用 <a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">官方 Extras Colab</a></span>
-    </h4>
+<p>在您的操作系统上本地安装 Extras 可能很困难甚至不可能(尤其是 Termux)。</p>
+<doc-anchor-target id="使用官方-extras-colab">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#使用官方-extras-colab">#</doc-anchor-trigger>
+        <span>使用<a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">官方 Extras Colab</a></span>
+    </h2>
 </doc-anchor-target>
 <ul>
 <li>设置简单</li>
 <li>免费使用</li>
-<li>不需要 Colab GPU 额度（使用 <code v-pre>use_cpu</code> 选项）</li>
-<li>详情请参见 <a href="../running-extras-in-colab/">Colab 指南页面</a>。</li>
+<li>不需要 Colab GPU 积分(使用 <code v-pre>use_cpu</code> 选项)</li>
+<li>有关详细信息，请参阅 <doc-anchor-trigger to="#running-extras-in-colab">Colab 指南页面</doc-anchor-trigger>。</li>
+</ul>
+<doc-anchor-target id="在-colab-中运行-extras">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#在-colab-中运行-extras">#</doc-anchor-trigger>
+        <span>在 Colab 中运行 Extras</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>打开<a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">官方 Extras Colab</a></li>
+<li>选择所需的&quot;Extra&quot;选项</li>
+<li>选择 <code v-pre>use_cpu</code> 以在不需要 GPU 积分的情况下运行 Extras
+<ul>
+<li>这将使 Stable Diffusion 变慢，但其他一切都会正常运行</li>
+</ul>
+</li>
+<li>非必需，但推荐:选择 <code v-pre>secure</code> 选项以生成 API 密钥来保护您的共享实例。</li>
+<li>点击左侧的开始按钮(看起来像三角形&quot;播放&quot;按钮)</li>
+<li>等待它完成加载所有内容</li>
+<li>在输出底部查找 <code v-pre>trycloudflare.com</code> 链接。忽略 localhost 链接，它不起作用(我们试过了!)。</li>
+<li>它将以 <code v-pre>Running on</code> 文本开头</li>
+<li>复制该行下列出的 API URL 链接。(<strong>不要复制 &#x27;localhost&#x27; URL，使用另一个</strong>)</li>
+<li>启动支持扩展的 SillyTavern:(如有必要，在 <code v-pre>config.yaml</code> 中将 <code v-pre>enableExtensions</code> 设置为 <code v-pre>true</code>)</li>
+<li>导航到 SillyTavern 的扩展菜单(点击页面顶部的&quot;堆叠方块&quot;图标)。</li>
+<li>将 API URL 粘贴到顶部的框中。(<strong>不是 API 密钥框</strong>)</li>
+<li>如果您没有启用 <code v-pre>secure</code> 选项，请确保在使用官方 colab 时 API 密钥框完全为空。</li>
+<li>如果您启用了 <code v-pre>secure</code> 选项，请将生成的 API 密钥粘贴到 API 密钥框中。</li>
+<li>API 密钥将出现在 colab 的控制台输出中，例如:<code v-pre>Your API key is fee2f3f559</code></li>
+<li>点击&quot;连接&quot;</li>
 </ul>
 <hr>
-<doc-anchor-target id="安装方法">
+<doc-anchor-target id="本地安装方法">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#安装方法">#</doc-anchor-trigger>
-        <span>安装方法</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#本地安装方法">#</doc-anchor-trigger>
+        <span>本地安装方法</span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="miniconda推荐">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#miniconda推荐">#</doc-anchor-trigger>
-        <span>MiniConda（推荐）</span>
+        <span>MiniConda(推荐)</span>
     </h3>
 </doc-anchor-target>
-<p>推荐这种方法是因为 Conda 为 Extras 需要的包创建了一个&quot;虚拟环境&quot;，这样它们就不会影响您系统范围的 Python 设置。</p>
+<p>推荐使用此方法，因为 Conda 会为 Extras 需求包创建一个&quot;虚拟环境&quot;，使它们不会影响您的系统级 Python 设置。</p>
 <ol>
 <li><p>安装 <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
-<p><em>（重要！）阅读 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">如何使用 Conda</a></em></p>
+<p><em>(重要!)阅读<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">如何使用 Conda</a></em></p>
 </li>
 <li><p>安装 <a href="https://git-scm.com/downloads">git</a></p>
-<p><em>（一开始就用 git 安装 SillyTavern 的大神可以跳过这一步！）</em></p>
-<p>在您安装好这两个之后...</p>
-<p>在 <code v-pre>CONDA 命令提示符窗口</code> 中 <code v-pre>逐个</code> 输入/粘贴下面的命令，每个命令后按 <code v-pre>Enter</code>。</p>
+<p><em>(一开始就用 git 安装 SillyTavern 的大佬们可以跳过此步骤!)</em></p>
+<p>安装完这两者后...</p>
+<p>在 <code v-pre>CONDA 命令提示符窗口</code>中<code v-pre>逐个</code>输入/粘贴下面的命令，每个命令后按 <code v-pre>Enter</code>。</p>
 </li>
-<li><p>创建一个新的 Conda 环境（让我们称它为 <code v-pre>extras</code>）：</p>
+<li><p>创建一个新的 Conda 环境(我们称之为 <code v-pre>extras</code>):</p>
 <p><code v-pre>conda create -n extras</code></p>
 </li>
 <li><p>激活新环境</p>
-<p><code v-pre>conda activate extras</code>（您应该会在命令提示符左侧看到 <code v-pre>(extras)</code> 出现）</p>
+<p><code v-pre>conda activate extras</code>(您应该看到 <code v-pre>(extras)</code> 出现在命令提示符的左侧)</p>
 </li>
-<li><p>安装所需的系统包（这需要一些时间）</p>
+<li><p>安装所需的系统包(这将需要一些时间)</p>
 <p><code v-pre>conda install python=3.11 git</code></p>
 </li>
 <li><p>克隆 Extras GitHub 仓库</p>
 <p><code v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code></p>
 </li>
-<li><p>导航到您克隆的 Extras 仓库</p>
+<li><p>导航到克隆的 Extras 仓库</p>
 <p><code v-pre>cd SillyTavern-extras</code></p>
 </li>
-<li><p>使用以下命令之<strong>一</strong>安装 Extras 的依赖（这又需要一些时间）：</p>
+<li><p>使用以下命令之一安装 Extras 的需求(将再次需要时间):</p>
 <ul>
 <li><code v-pre>pip install -r requirements.txt</code> - 用于基本功能</li>
 <li><code v-pre>pip install -r requirements-rvc.txt</code> - 用于实时语音克隆</li>
-<li><code v-pre>pip install -r requirements-coqui.txt</code> - 用于 Coqui TTS（不推荐）</li>
+<li><code v-pre>pip install -r requirements-coqui.txt</code> - 用于 Coqui TTS(不推荐)</li>
 </ul>
-<p>如果在此步骤遇到错误，请参见 <a href="common-problems/">常见问题</a>！</p>
+<p>如果在此步骤遇到错误，请参阅<doc-anchor-trigger to="#extras-install-common-problems">常见问题</doc-anchor-trigger>页面!</p>
 </li>
-<li><p>参见下面的&quot;安装后运行 Extras&quot;</p>
+<li><p>请参阅下面的&quot;安装后运行 Extras&quot;</p>
 </li>
 </ol>
 <hr>
-<doc-anchor-target id="系统范围安装">
+<doc-anchor-target id="系统级安装">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#系统范围安装">#</doc-anchor-trigger>
-        <span>系统范围安装</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#系统级安装">#</doc-anchor-trigger>
+        <span>系统级安装</span>
     </h3>
 </doc-anchor-target>
-<p>这更容易，但会影响您系统范围的 Python 安装。</p>
+<p>这更容易，但会影响您的系统级 Python 安装。</p>
 <p>如果您使用许多具有不同需求的 Python 程序，这可能会导致冲突。</p>
-<p>如果这是您第一次接触任何 Python 相关的东西，那应该不是问题。</p>
+<p>如果这是您第一次接触与 Python 相关的任何内容，那应该不是问题。</p>
 <ol>
-<li>安装 Python 3.11：<a href="https://www.python.org/downloads/release/python-3115/">https://www.python.org/downloads/release/python-3115/</a></li>
-<li>安装 git：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
-<li>打开命令提示符窗口，转到一个您拥有完全访问权限的文件夹。</li>
-<li>克隆仓库：输入 <code v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code>，按 Enter。</li>
+<li>安装 Python 3.11: <a href="https://www.python.org/downloads/release/python-3115/">https://www.python.org/downloads/release/python-3115/</a></li>
+<li>安装 git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>打开命令提示符窗口并转到您具有完全访问权限的文件夹。</li>
+<li>克隆仓库:<code v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code>，按 Enter。</li>
 <li>克隆完成后，输入 <code v-pre>cd SillyTavern-extras</code>，按 Enter。</li>
 <li>输入 <code v-pre>python -m pip install -r requirements.txt</code></li>
-<li>参见下面的&quot;安装后运行 Extras&quot;</li>
+<li>请参阅下面的&quot;安装后运行 Extras&quot;</li>
 </ol>
 <hr>
 <doc-anchor-target id="安装后运行-extras">
@@ -340,16 +370,16 @@
         <span>安装后运行 Extras</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="确认已启用扩展">
+<doc-anchor-target id="确认扩展已启用">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#确认已启用扩展">#</doc-anchor-trigger>
-        <span>确认已启用扩展</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#确认扩展已启用">#</doc-anchor-trigger>
+        <span>确认扩展已启用</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>在文本编辑器中打开 ST 基本安装文件夹中的 <code v-pre>config.yaml</code> 文件。</li>
-<li>查找包含 <code v-pre>enableExtensions</code> 的行。</li>
-<li>确保该行是 <code v-pre>true</code>，而不是 <code v-pre>false</code>。</li>
+<li>在文本编辑器中打开名为 <code v-pre>config.yaml</code> 的文件。该文件位于 ST 的基本安装文件夹中。</li>
+<li>查找读取 <code v-pre>enableExtensions</code> 的行。</li>
+<li>确保该行有 <code v-pre>true</code>，而不是 <code v-pre>false</code>。</li>
 </ol>
 <doc-anchor-target id="决定使用哪个模块">
     <h3>
@@ -357,14 +387,14 @@
         <span>决定使用哪个模块</span>
     </h3>
 </doc-anchor-target>
-<p>（这只需要做一次）</p>
+<p>(这只需要做一次)</p>
 <ul>
-<li>Extras 总是通过 Python 命令行启动。</li>
-<li><code v-pre>python server.py</code> 是最基本的，但它不启用任何有用的模块。</li>
-<li>要启用模块，您必须使用 <code v-pre>--enable-modules=</code> 修饰符，后面跟着以逗号分隔的模块名称列表</li>
+<li>Extras 总是使用 Python 命令行启动。</li>
+<li><code v-pre>python server.py</code> 是最低要求，但它不启用任何有用的模块。</li>
+<li>要启用模块，您必须使用 <code v-pre>--enable-modules=</code> 修饰符，带有逗号分隔的模块名称列表</li>
 </ul>
-<p>示例：<code v-pre>python server.py --enable-modules=caption,summarize,classify</code></p>
-<p>这将启用图像说明、聊天摘要和实时更新角色表情。</p>
+<p>示例:<code v-pre>python server.py --enable-modules=caption，summarize，classify</code></p>
+<p>这将启用图像描述、聊天摘要和实时更新角色表情。</p>
 <p>下表描述了每个模块。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -377,7 +407,7 @@
 <tbody>
 <tr>
 <td><code v-pre>caption</code></td>
-<td>图像说明</td>
+<td>图像描述</td>
 </tr>
 <tr>
 <td><code v-pre>summarize</code></td>
@@ -415,23 +445,23 @@
 </table>
 </div>
 <ul>
-<li>决定您想要添加到 Python 命令行的模块。</li>
+<li>决定要将哪些模块添加到 Python 命令行。</li>
 <li>它们将在下一步中使用。</li>
 </ul>
-<p><strong>注意：您的 Python 命令的模块列表中<code v-pre>不能有任何空格</code>！</strong></p>
+<p><strong>注意:Python 命令的模块列表中不能有任何空格!</strong></p>
 <doc-anchor-target id="启动-extras-服务器">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#启动-extras-服务器">#</doc-anchor-trigger>
         <span>启动 Extras 服务器</span>
     </h3>
 </doc-anchor-target>
-<p>在 Extras 安装文件夹中的命令提示符窗口中...</p>
+<p>在 Extras 安装文件夹内的命令提示符窗口中...</p>
 <ol>
-<li>确保您的 conda 环境处于活动状态（如果您使用了 Conda 安装方法）</li>
+<li>确保您的 conda 环境处于活动状态(如果您使用了 Conda 安装方法)</li>
 <li>如果环境未激活，输入 <code v-pre>activate extras</code>。</li>
-<li>输入 <code v-pre>python server.py --enable-modules=您的,选定的,模块,列表,在这里</code></li>
+<li>输入 <code v-pre>python server.py --enable-modules=YOUR，SELECTED，MODULE，LIST，HERE</code></li>
 <li>extras 服务器将加载。</li>
-<li>一段时间后，它会在最后显示一个 URL。对于本地安装，默认为 <code v-pre>http://localhost:5100</code>。</li>
+<li>过一会儿，它会在最后显示一个 URL。对于本地安装，默认为 <code v-pre>http://localhost:5100</code>。</li>
 <li>复制 API URL。</li>
 </ol>
 <doc-anchor-target id="将-st-连接到-extras-服务器">
@@ -442,78 +472,189 @@
 </doc-anchor-target>
 <ol>
 <li>启动您的 SillyTavern 服务器，并在浏览器中查看 SillyTavern 界面。</li>
-<li>打开扩展面板（通过页面顶部的&#x27;堆叠块&#x27;图标）</li>
+<li>打开扩展面板(通过页面顶部的&quot;堆叠方块&quot;图标)</li>
 <li>将 API URL 粘贴到输入框中。</li>
 <li>点击 <code v-pre>连接</code>。</li>
 </ol>
 <p>要再次运行 Extras，只需在命令提示符中激活环境并运行这些命令。</p>
 <p><code v-pre>conda activate extras</code>，按 Enter。
 <code v-pre>python server.py</code>，按 Enter。</p>
-<p>确保添加您的设置所需的 server.py 的其他选项（见下文）。</p>
-<doc-anchor-target id="创建-bat-文件以便于启动">
+<p>确保使用您的设置所需的 server.py 的附加选项(见下文)。</p>
+<doc-anchor-target id="制作-bat-文件以便轻松启动">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#创建-bat-文件以便于启动">#</doc-anchor-trigger>
-        <span>创建 .bat 文件以便于启动</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#制作-bat-文件以便轻松启动">#</doc-anchor-trigger>
+        <span>制作 .bat 文件以便轻松启动</span>
     </h2>
 </doc-anchor-target>
-<p>这是可选的，仅适用于 Windows，但在 MacOS 上应该也可以做类似的事情。</p>
+<p>这是可选的，仅适用于 Windows，但在 MacOS 上应该可以做类似的事情。</p>
 <ol>
-<li><p>查看您的 Windows 桌面</p>
-</li>
-<li><p>右键单击，选择 <code v-pre>新建</code>，然后点击 <code v-pre>文本文档</code></p>
-</li>
-<li><p>桌面上会出现一个新文件，要求输入名称。</p>
-</li>
-<li><p>将文件命名为 <code v-pre>STExtras.txt</code></p>
-</li>
-<li><p>在文本编辑器中打开新创建的文件。</p>
-</li>
-<li><p>将以下代码粘贴到其中：</p>
+<li>查看您的 Windows 桌面</li>
+<li>右键单击，选择 <code v-pre>新建</code>，然后点击 <code v-pre>文本文档</code></li>
+<li>您的桌面上将出现一个新文件，要求输入名称。</li>
+<li>将文件命名为 <code v-pre>STExtras.txt</code></li>
+<li>在文本编辑器中打开新创建的文件。</li>
+<li><p>将以下代码粘贴到其中:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
+<pre translate="no" class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call conda activate extras
-python server.py --enable-modules=您的,选定的,模块,列表,在这里,不要,有,空格
+python server.py --enable-modules=YOUR，SELECTED，MODULE，LIST，HERE，WITH，NO，SPACES
 call conda deactivate
 pause</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>将占位符文件夹路径替换为您实际的 Extras 安装文件夹路径。</p>
-</li>
-<li><p>将 python 命令行替换为您实际的命令行</p>
-</li>
-<li><p>用新名称 <code v-pre>STExtras.bat</code> 保存文件（在大多数文本编辑器中使用 <code v-pre>文件</code> &gt;&gt; <code v-pre>另存为</code>）</p>
-</li>
+<li>将占位符文件夹路径替换为您的实际 Extras 安装文件夹路径。</li>
+<li>将 python 命令行替换为您的实际命令行</li>
+<li>使用新名称 <code v-pre>STExtras.bat</code> 保存文件(在大多数文本编辑器中使用 <code v-pre>文件</code> &gt;&gt; <code v-pre>另存为</code>)</li>
 </ol>
-<p>现在您只需双击这个 .bat 文件就可以轻松启动 Extras。</p>
-<p>如果您想更改模块列表（或 extras 服务器的任何其他命令行修饰符），只需编辑 .bat 文件中的 python 命令。</p>
+<p>您现在可以简单地双击此 .bat 文件以轻松启动 Extras。</p>
+<p>如果您想更改模块列表(或 extras 服务器的任何其他命令行修饰符)，只需编辑 .bat 文件内的 python 命令。</p>
+<doc-anchor-target id="extras-安装常见问题">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-安装常见问题">#</doc-anchor-trigger>
+        <span>Extras 安装常见问题</span>
+    </h2>
+</doc-anchor-target>
+<p>本节列出了安装 SillyTavern Extras 时遇到的常见问题和问题。</p>
+<doc-anchor-target id="错误无法在-linux-上导入-talkinghead-模块">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#错误无法在-linux-上导入-talkinghead-模块">#</doc-anchor-trigger>
+        <span>错误:无法在 Linux 上导入 &#x27;talkinghead&#x27; 模块</span>
+    </h3>
+</doc-anchor-target>
+<p>它需要安装额外的软件包，因为由于与 Colab 不兼容，它不会自动安装。在安装其他需求后运行此命令:</p>
+<p><code v-pre>pip install wxpython</code></p>
+<doc-anchor-target id="extras-服务器无法连接到-automatic1111-的-stable-diffusion-web-ui">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-服务器无法连接到-automatic1111-的-stable-diffusion-web-ui">#</doc-anchor-trigger>
+        <span>Extras 服务器无法连接到 AUTOMATIC1111 的 Stable Diffusion Web UI</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>Could not connect to remote SD backend at <a href="http://127.0.0.1:7860">http://127.0.0.1:7860</a>! Disabling SD module...</p>
+</blockquote>
+<p><strong>确保您启动 Stable Diffusion 的 webui-user.bat 在 COMMANDLINE_ARGS 变量中包含 --api 命令行选项。</strong></p>
+<p>在您的 &quot;webui-user.bat&quot; 中找到并替换该行:<code v-pre>set COMMANDLINE_ARGS=--api</code></p>
+<p><figure class="content-center">
+    <img src="../../../static/extensions/sd-user.png" alt="应该看起来像这样" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">应该看起来像这样</figcaption>
+</figure>
+</p>
+<p>如果 SD Web UI 禁用了 API 模式，Extras 服务器将无法建立连接，您将无法生成图像!</p>
+<doc-anchor-target id="仍然不起作用">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#仍然不起作用">#</doc-anchor-trigger>
+        <span>仍然不起作用?</span>
+    </h4>
+</doc-anchor-target>
+<p>确保您按正确的顺序启动所有内容，等待每个程序完成加载后再继续下一步:</p>
+<ol>
+<li>Stable Diffusion Web UI</li>
+<li>SillyTavern Extras</li>
+<li>SillyTavern</li>
+</ol>
+<p>如果 Extras 服务器在 Stable Diffusion API 之后加载，则无法重新连接。</p>
+<doc-anchor-target id="安装-chromadb-时-hnswlib-wheel-构建错误">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#安装-chromadb-时-hnswlib-wheel-构建错误">#</doc-anchor-trigger>
+        <span>安装 ChromaDB 时 hnswlib wheel 构建错误</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>ERROR: Could not build wheels for hnswlib， which is required to install pyproject.toml-based projects</p>
+</blockquote>
+<p>在安装 ChromaDB 模块之前，您必须先执行以下<code v-pre>操作之一</code>:</p>
+<ul>
+<li>安装 Visual C++ 构建工具: <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></li>
+<li>使用 conda 安装 <code v-pre>hnswlib</code> 包:<code v-pre>conda install -c conda-forge hnswlib</code></li>
+</ul>
+<hr>
+<doc-anchor-target id="在-mac-上安装-python-需求时出错">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#在-mac-上安装-python-需求时出错">#</doc-anchor-trigger>
+        <span>在 Mac 上安装 Python 需求时出错</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>ERROR: No matching distribution found for torch==2.0.0+cu117</p>
+</blockquote>
+<p>Mac 不支持 CUDA，因此应该安装没有 CUDA 支持的 torch 包。</p>
+<p>改用 <code v-pre>requirements-silicon.txt</code> 文件安装需求。</p>
+<hr>
+<doc-anchor-target id="缺少模块">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#缺少模块">#</doc-anchor-trigger>
+        <span>缺少模块?</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>您必须在 Python 命令行中使用 <code v-pre>--enable-modules</code> 修饰符指定模块名称列表。</li>
+<li>请参阅<doc-anchor-trigger to="#decide-which-module-to-use">模块</doc-anchor-trigger>部分。</li>
+</ul>
+<hr>
+<doc-anchor-target id="api-密钥框是用来做什么的">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-密钥框是用来做什么的">#</doc-anchor-trigger>
+        <span>API 密钥框是用来做什么的?</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>SillyTavern 扩展面板中的 API 密钥框仅在以下情况下使用:
+<ul>
+<li>在 Extras 安装文件夹中创建了一个名为 <code v-pre>api_key.txt</code> 的文本文件，其中包含您选择的 Extras &quot;密码&quot;。</li>
+<li>使用 <code v-pre>--secure</code> 命令行参数启动 extras。</li>
+</ul>
+</li>
+<li>这使 Extras API &quot;密码锁定&quot;，因此只有在 API 密钥框中拥有该密钥的用户才能访问它。</li>
+<li>这主要对想要公开部署 Extras(colab 等)的人有用。</li>
+<li>在 PC 上运行 Extras 供个人使用的用户不应在 API 密钥框中输入任何内容。</li>
+</ul>
+<doc-anchor-target id="移动androidtermux-怎么样">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#移动androidtermux-怎么样">#</doc-anchor-trigger>
+        <span>移动/Android/Termux 怎么样?<span class="docs-emoji">&#x1F914;</span></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>社区中有一些人通过 Termux 上的 Ubuntu 在手机上成功运行 Extras。</li>
+<li>但是，Extras 并非考虑移动支持而制作的。</li>
+<li>不会为在 Android 设备上运行 Extras 的人提供支持。</li>
+<li>请将所有问题直接发送给下面链接的指南的创建者。</li>
+</ul>
+<doc-anchor-target id="-这是不支持的">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-这是不支持的">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2757;</span> 这是不支持的</span>
+    </h4>
+</doc-anchor-target>
+<p><a href="https://rentry.org/STAI-Termux#downloading-and-running-tai-extras">https://rentry.org/STAI-Termux#downloading-and-running-tai-extras</a></p>
 
                                 
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/extensions/Extras/Installation.md" target="_blank" rel="noopener">
+                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link-weight hover:text-body-link-hover hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/extensions/Extras/Installation.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/extras/running-extras-in-colab/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/extras/running-extras-in-colab/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
                                                 <span class="block mt-1">Extras via Colab</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/extras/installation/common-problems/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/extras/installation/common-problems/">
                                             <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
                                                 <span class="block mt-1">Common Problems</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -523,24 +664,24 @@ pause</code></pre>
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
                 
                     <!-- Rendered if sidebar right is enabled -->
                     <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
                         <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                         </div>
                     </div>
                 
@@ -556,8 +697,8 @@ pause</code></pre>
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Local Installation", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "本地安装", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
