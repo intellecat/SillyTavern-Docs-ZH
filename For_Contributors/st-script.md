@@ -248,56 +248,56 @@ STscript 是基于斜杠命令引擎构建的，利用命令批处理、数据�
 /echo title=a\|b c\|d |
 ```
 
-### Quotes
+### 引号
 
-To use a literal quote-character inside a quoted value, the character must be escaped.
+要在引号值内使用字面引号字符，必须转义该字符。
 
 ```stscript
 /echo title="a \"b\" c" d "e" f
 ```
 
-### Spaces
+### 空格
 
-To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.
+要在命名参数的值中使用空格，您必须用引号括起该值，或者转义空格字符。
 
 ```stscript
 /echo title="a b" c d |
 /echo title=a\ b c d
 ```
 
-### Closure Delimiters
+### 闭包分隔符
 
-If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.
+如果要使用用于标记闭包开始或结束的字符组合，必须使用单个反斜杠转义该序列。
 
 ```stscript
 /echo \{: |
 /echo \:}
 ```
 
-## Pipe Breakers
+## 管道中断符
 
 ```stscript
 ||
 ```
 
-To prevent the previous command's output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.
+要防止前一个命令的输出自动注入到下一个命令的未命名参数中，请在两个命令之间放置双管道符。
 
 ```stscript
 /echo we don't want to pass this on ||
 /world
 ```
 
-## Closures
+## 闭包
 
 ```stscript
 {: ... :}
 ```
 
-Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between `{:` and `:}`, that are only evaluated once that part of the code is executed.
+闭包（块语句、lambda、匿名函数，随你怎么称呼）是包装在 `{:` 和 `:}` 之间的一系列命令，只有在执行到代码的该部分时才会被评估。
 
-### Sub-Commands
+### 子命令
 
-Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.
+闭包使子命令的使用变得更加容易，并且不再需要转义管道符和宏。
 
 ```stscript
 // if without closures |
@@ -323,9 +323,9 @@ Closures make using sub-commands a lot easier and get rid of the need to escape 
     :}
 ```
 
-### Scopes
+### 作用域
 
-Closures have their own scope and support scoped variables. Scoped variables are declared with `/let`, their values set and retrieved with `/var`. Another way to get a scoped variable is the `{{var::}}` macro.
+闭包有自己的作用域并支持作用域变量。作用域变量使用 `/let` 声明，使用 `/var` 设置和检索其值。获取作用域变量的另一种方法是使用 `{{var::}}` 宏。
 
 ```stscript
 /let x |
@@ -335,8 +335,8 @@ Closures have their own scope and support scoped variables. Scoped variables are
 /echo x is {{var::x}} and y is {{pipe}}.
 ```
 
-Within a closure, you have access to all variables declared within that same closure or in one of its ancestors. You don't have access to variables declared in a closure's descendants.  
-If a variable is declared with the same name as a variable that was declared in one of the closure's ancestors, you don't have access to the ancestor variable in this closure and its descendants.
+在闭包内，您可以访问在同一闭包或其祖先之一中声明的所有变量。您无法访问在闭包的后代中声明的变量。
+如果声明了与在闭包的祖先之一中声明的变量同名的变量，则在此闭包及其后代中无法访问祖先变量。
 
 ```stscript
 /let x this is root x |
@@ -357,13 +357,13 @@ If a variable is declared with the same name as a variable that was declared in 
 /echo called from root: x is "{{var::x}}" and y is "{{var::y}}"
 ```
 
-### Named Closures
+### 命名闭包
 
 ```stscript
 /let x {: ... :} | /:x
 ```
 
-Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.
+闭包可以分配给变量（仅作用域变量），以便稍后调用或用作子命令。
 
 ```stscript
 /let myClosure {:
@@ -380,16 +380,16 @@ Closures can be assigned to variables (only scoped variables) to be called at a 
 /times 3 {{var::myClosure}}
 ```
 
-`/:` can also be used to execute Quick Replies, as it is just a shorthand for `/run`.
+`/:` 也可用于执行快速回复，因为它只是 `/run` 的简写。
 
 ```stscript
 /:QrSetName.QrButtonLabel |
 /run QrSetName.QrButtonLabel
 ```
 
-### Closure Arguments
+### 闭包参数
 
-Named closures can take named arguments, just like slash commands. The arguments can have default values.
+命名闭包可以接受命名参数，就像斜杠命令一样。参数可以有默认值。
 
 ```stscript
 /let myClosure {: a=1 b=
@@ -398,10 +398,10 @@ Named closures can take named arguments, just like slash commands. The arguments
 /:myClosure b=10
 ```
 
-### Closures and Piped Arguments
+### 闭包和管道参数
 
-The piped value from a parent closure will not be automatically injected into the first command of a child closure.  
-You can still explicitly reference the parent's piped value with `{{pipe}}`, but if you leave the unnamed argument of the first command inside a closure blank, the value will *not* be automatically injected.
+父闭包的管道值不会自动注入到子闭包的第一个命令中。
+您仍然可以使用 `{{pipe}}` 显式引用父闭包的管道值，但如果将闭包内第一个命令的未命名参数留空，该值将*不会*被自动注入。
 
 ```stscript
 /* This used to attempt to change the model to "foo"
@@ -428,13 +428,13 @@ You can still explicitly reference the parent's piped value with `{{pipe}}`, but
 :} |
 ```
 
-### Immediately Executed Closures
+### 立即执行的闭包
 
 ```stscript
 {: ... :}()
 ```
 
-Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.
+闭包可以立即执行，这意味着它们将被替换为其返回值。这在没有明确支持闭包的地方很有用，并且可以缩短一些否则需要大量中间变量的命令。
 
 ```stscript
 // a simple length comparison of two strings without closures |
@@ -450,7 +450,7 @@ Closures can be immediately executed, meaning they will be replaced with their r
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!
 ```
 
-In addition to running named closures saved inside scoped variables, the `/run` command can also be used to execute closures immediately.
+除了运行保存在作用域变量中的命名闭包外，`/run` 命令还可用于立即执行闭包。
 
 ```stscript
 /run {:
@@ -459,13 +459,13 @@ In addition to running named closures saved inside scoped variables, the `/run` 
 /echo |
 ```
 
-## Comments
+## 注释
 
 ```stscript
 // ... | /# ...
 ```
 
-A comment is a human-readable explanation or annotation in the script code. Comments don't break pipes.
+注释是脚本代码中人类可读的解释或标注。注释不会中断管道。
 
 ```stscript
 // this is a comment |
@@ -473,9 +473,9 @@ A comment is a human-readable explanation or annotation in the script code. Comm
 /# this is also a comment
 ```
 
-### Block Comments
+### 块注释
 
-Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.
+块注释可用于快速注释掉多个命令。它们不会在管道符处终止。
 
 ```stscript
 /echo foo |
@@ -487,26 +487,26 @@ Block comments can be used to quickly comment out multiple commands at once. The
 ```
 
 
-## Flow Control
+## 流程控制
 
-### Loops: `/while` and `/times`
+### 循环：`/while` 和 `/times`
 
-If you need to run some command in a loop until a certain condition is met, use the `/while` command.
+如果需要在循环中运行某些命令直到满足特定条件，请使用 `/while` 命令。
 
 ```stscript
 /while left=valueA right=valueB rule=operation guard=on "commands"
 ```
 
-On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
+在循环的每一步中，它会将变量 A 的值与变量 B 的值进行比较，如果条件为真，则执行引号中的任何有效斜杠命令，否则退出循环。此命令不会向输出管道写入任何内容。
 
-#### Arguments for `/while`
+#### `/while` 的参数
 
-**The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the `/if` command.**
+**可用的布尔比较集、变量处理、字面值和子命令与 `/if` 命令相同。**
 
-The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
-To disable and allow endless loops, set `guard=off`.
+可选的 `guard` 命名参数（默认为 `on`）用于防止无限循环，将迭代次数限制为 100 次。
+要禁用并允许无限循环，请设置 `guard=off`。
 
-This example adds 1 to the value of `i` until it reaches 10, then outputs the resulting value (10 in this case).
+此示例将 `i` 的值加 1 直到达到 10，然后输出结果值（在这种情况下为 10）。
 
 ```stscript
 /setvar key=i 0 |
@@ -515,26 +515,26 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 /flushvar i
 ```
 
-#### Arguments for `/times`
+#### `/times` 的参数
 
-Runs a subcommand a specified number of times.
+运行子命令指定的次数。
 
-`/times (repeats) "(command)"` – any valid slash command enclosed in quotes repeats a number of times, e.g. `/setvar key=i 1 | /times 5 "/addvar key=i 1"` adds 1 to the value of "i" 5 times.
-- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 "/echo {{timesIndex}}"` echoes the numbers 0 through 4.
-- Loops are limited to 100 iterations by default, pass `guard=off` to disable.
+`/times (repeats) "(command)"` — 引号中的任何有效斜杠命令重复多次，例如 `/setvar key=i 1 | /times 5 "/addvar key=i 1"` 将 "i" 的值加 1 共 5 次。
+- {{timesIndex}} 被替换为迭代编号（从零开始），例如 `/times 4 "/echo {{timesIndex}}"` 回显数字 0 到 4。
+- 循环默认限制为 100 次迭代，传递 `guard=off` 以禁用。
 
-### Breaking out of Loops and Closures
+### 跳出循环和闭包
 
 ```stscript
 /break |
 ```
 
-The `/break` command can be used to break out of a loop (`/while` or `/times`) or a closure early. The unnamed argument of `/break` can be used to pass a value different from the current pipe along.  
-`/break` is currently implemented in the following commands:
-- `/while` - exits the loop early
-- `/times` - exits the loop early
-- `/run` (with a closure or closure via variable) - exits the closure early
-- `/:` (with a closure) - exits the closure early
+`/break` 命令可用于提前跳出循环（`/while` 或 `/times`）或闭包。`/break` 的未命名参数可用于传递与当前管道不同的值。
+`/break` 目前在以下命令中实现：
+- `/while` - 提前退出循环
+- `/times` - 提前退出循环
+- `/run`（带闭包或通过变量的闭包）- 提前退出闭包
+- `/:`（带闭包）- 提前退出闭包
 
 ```stscript
 /times 10 {:
@@ -577,33 +577,33 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 /echo pipe will be one: {{pipe}} |
 ```
 
-## Math operations
+## 数学运算
 
-- All of the following operations accept a series of numbers or variable names and output the result to the pipe.
-- Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.
-- Multiplication, addition, minimum and maximum accept an unlimited number of arguments separated by spaces.
-- Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.
-- Sine, cosine, natural logarithm, square root, absolute value, and rounding accept one argument.
+- 以下所有运算都接受一系列数字或变量名，并将结果输出到管道。
+- 无效运算（例如除以零）以及导致 NaN 值或无穷大的运算返回零。
+- 乘法、加法、最小值和最大值接受无限数量的参数，用空格分隔。
+- 减法、除法、指数运算和模运算接受用空格分隔的两个参数。
+- 正弦、余弦、自然对数、平方根、绝对值和四舍五入接受一个参数。
 
-**List of operations:**
+**运算列表：**
 
-1. `/add (a b c d)` – performs an addition of the set of values, e.g. `/add 10 i 30 j`
-2. `/mul (a b c d)` – performs a multiplication of the set of values, e.g. `/mul 10 i 30 j`
-3. `/max (a b c d)` – returns a maximum from the set of values, e.g. `/max 1 0 4 k`
-4. `/min (a b c d)` – return a minimum from the set of values, e.g. `/min 5 4 i 2`
-5. `/sub (a b)` – performs a subtraction of two values, e.g. `/sub i 5`
-6. `/div (a b)` – performs a division of two values, e.g. `/div 10 i`
-7. `/mod (a b)` – performs a modulo operation of two values, e.g. `/mod i 2`
-8. `/pow (a b)` – performs a power operation of two values, e.g. `/pow i 2`
-9. `/sin (a)` – performs a sine operation of a value, e.g. `/sin i`
-10. `/cos (a)` – performs a cosine operation of a value, e.g. `/cos i`
-11. `/log (a)` – performs a natural logarithm operation of a value, e.g. `/log i`
-12. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
-13. `/sqrt (a)`– performs a square root operation of a value, e.g. `/sqrt 9`
-14. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
-15. `/rand (round=round|ceil|floor from=number=0 to=number=1)` – returns a random number between from and to, e.g. `/rand` or `/rand 10` or `/rand from=5 to=10`. Ranges are inclusive. The returned value will contain a fractional part. Use `round` named argument to get an integral value, e.g. `/rand round=ceil` to round up, `round=floor` to round down, and `round=round` to round to nearest.
+1. `/add (a b c d)` — 对值集进行加法运算，例如 `/add 10 i 30 j`
+2. `/mul (a b c d)` — 对值集进行乘法运算，例如 `/mul 10 i 30 j`
+3. `/max (a b c d)` — 从值集中返回最大值，例如 `/max 1 0 4 k`
+4. `/min (a b c d)` — 从值集中返回最小值，例如 `/min 5 4 i 2`
+5. `/sub (a b)` — 对两个值进行减法运算，例如 `/sub i 5`
+6. `/div (a b)` — 对两个值进行除法运算，例如 `/div 10 i`
+7. `/mod (a b)` — 对两个值进行模运算，例如 `/mod i 2`
+8. `/pow (a b)` — 对两个值进行幂运算，例如 `/pow i 2`
+9. `/sin (a)` — 对值进行正弦运算，例如 `/sin i`
+10. `/cos (a)` — 对值进行余弦运算，例如 `/cos i`
+11. `/log (a)` — 对值进行自然对数运算，例如 `/log i`
+12. `/abs (a)` — 对值进行绝对值运算，例如 `/abs -10`
+13. `/sqrt (a)` — 对值进行平方根运算，例如 `/sqrt 9`
+14. `/round (a)` — 对值进行四舍五入到最接近整数的运算，例如 `/round 3.14`
+15. `/rand (round=round|ceil|floor from=number=0 to=number=1)` — 返回介于 from 和 to 之间的随机数，例如 `/rand` 或 `/rand 10` 或 `/rand from=5 to=10`。范围是包含的。返回的值将包含小数部分。使用 `round` 命名参数获取整数值，例如 `/rand round=ceil` 向上舍入，`round=floor` 向下舍入，`round=round` 舍入到最接近的值。
 
-### Example 1: get an area of a circle with a radius of 50.
+### 示例 1：获取半径为 50 的圆的面积。
 
 ```stscript
 /setglobalvar key=PI 3.1415 |
@@ -613,7 +613,7 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 /echo Circle area: {{pipe}}
 ```
 
-### Example 2: calculate a factorial of 5.
+### 示例 2：计算 5 的阶乘。
 
 ```stscript
 /setvar key=input 5 |
@@ -627,26 +627,26 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 /flushvar product
 ```
 
-## Using the LLM
+## 使用 LLM
 
-Scripts can make requests to your currently connected LLM API using the following commands:
+脚本可以使用以下命令向当前连接的 LLM API 发出请求：
 
-- `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
-- `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
-- `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.
+- `/gen (prompt)` — 使用提供的提示词为所选角色生成文本，并包含聊天消息。
+- `/genraw (prompt)` — 仅使用提供的提示词生成文本，忽略当前角色和聊天。
+- `/trigger` — 触发正常生成（相当于单击"发送"按钮）。如果在群组聊天中，您可以选择提供基于 1 的群组成员索引或角色名称让他们回复，否则根据群组设置触发群组回合。
 
-### Arguments for `/gen` and `/genraw`
+### `/gen` 和 `/genraw` 的参数
 
 ```stscript
 /genraw lock=on/off stop=[] instruct=on/off (prompt)
 ```
 
-- `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
-- `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
-- `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to `off` to force pure prompts. Default: `on`.
-- `as` (for Text Completion APIs) — can be `system` (default) or `char`. Defines how the last prompt line will be formatted. `char` will use a character name, `system` will use no or neutral name.
+- `lock` — 可以是 `on` 或 `off`。指定在生成进行时是否应阻止用户输入。默认值：`off`。
+- `stop` — JSON 序列化的字符串数组。仅为此生成添加自定义停止字符串（如果 API 支持）。默认值：无。
+- `instruct`（仅 `/genraw`）— 可以是 `on` 或 `off`。允许在输入提示词上使用指令格式（如果启用了指令模式并且 API 支持）。设置为 `off` 以强制纯提示词。默认值：`on`。
+- `as`（用于文本补全 API）— 可以是 `system`（默认）或 `char`。定义最后一行提示词的格式。`char` 将使用角色名称，`system` 将不使用或使用中性名称。
 
-The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
+然后，生成的文本通过管道传递到下一个命令，并可以保存到变量或使用 I/O 功能显示：
 
 ```stscript
 /genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
@@ -656,57 +656,57 @@ The generated text is then passed through the pipe to the next command and can b
 | ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
 |---------------------------------------------------|
 
-or to insert the generated message as a response from your character:
+或将生成的消息作为角色的回应插入：
 
 ```stscript
 /genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
 /sendas name={{char}} {{pipe}}
 ```
 
-## Prompt injections
+## 提示词注入
 
-Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
+脚本可以添加自定义 LLM 提示词注入，使其本质上相当于无限的作者注释。
 
-- `/inject (text)` — inserts any text into the normal LLM prompt for the current chat, and requires a unique identifier. Saved to chat metadata.
-- `/listinjects` — shows a list of all prompt injections added by scripts for the current chat in a system message.
-- `/flushinjects` — deletes all prompt injections added by scripts for the current chat.
-- `/note (text)` — sets the Author's Note value for the current chat. Saved to chat metadata.
-- `/interval` — sets the Author's Note insertion interval for the current chat.
-- `/depth` — sets the Author's Note insertion depth for the in-chat position.
-- `/position`  — sets the Author's Note position for the current chat.
+- `/inject (text)` — 将任何文本插入到当前聊天的正常 LLM 提示词中，并需要唯一标识符。保存到聊天元数据。
+- `/listinjects` — 在系统消息中显示脚本为当前聊天添加的所有提示词注入的列表。
+- `/flushinjects` — 删除脚本为当前聊天添加的所有提示词注入。
+- `/note (text)` — 设置当前聊天的作者注释值。保存到聊天元数据。
+- `/interval` — 设置当前聊天的作者注释插入间隔。
+- `/depth` — 设置聊天内位置的作者注释插入深度。
+- `/position` — 设置当前聊天的作者注释位置。
 
-### Arguments for `/inject`
+### `/inject` 的参数
 
 ```stscript
 /inject id=IdGoesHere position=chat depth=4 My prompt injection
 ```
 
-- `id` — an identifier string or a reference to a variable. Consequent calls of `/inject` with the same ID will overwrite the previous text injection. **Required argument.**
-- `position` — sets a position for the injection. Default: `after`. Possible values:
-  - `after`: after the main prompt.
-  - `before`: before main prompt.
-  - `chat`: in-chat.
-- `depth` — sets an injection depth for the in-chat position. 0 means insertion after the last message, 1 - before the last message, etc. Default: 4.
-- Unnamed argument is a text to be injected. An empty string will unset the previous value for the provided identifier.
+- `id` — 标识符字符串或对变量的引用。使用相同 ID 的 `/inject` 的后续调用将覆盖以前的文本注入。**必需参数。**
+- `position` — 设置注入的位置。默认值：`after`。可能的值：
+  - `after`：在主提示词之后。
+  - `before`：在主提示词之前。
+  - `chat`：聊天内。
+- `depth` — 设置聊天内位置的注入深度。0 表示在最后一条消息之后插入，1 - 在最后一条消息之前，等等。默认值：4。
+- 未命名参数是要注入的文本。空字符串将取消设置所提供标识符的先前值。
 
-## Access chat messages
+## 访问聊天消息
 
-### Read messages
+### 读取消息
 
-You can access messages in the currently selected chat using the `/messages` command.
+您可以使用 `/messages` 命令访问当前选定聊天中的消息。
 
 ```stscript
 /messages names=on/off start-finish
 ```
 
-- The `names` argument is used to specify whether you want to include character names or not, default: `on`.
-- In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
-- If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.
-- Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.
-- If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
+- `names` 参数用于指定是否要包含角色名称，默认值：`on`。
+- 在未命名参数中，它接受 `start-finish` 格式的消息索引或范围。范围是包含的！
+- 如果范围无法满足，即请求的索引无效或消息数量超过存在的消息数量，则返回空字符串。
+- 从提示词中隐藏的消息（由幽灵图标表示）将从输出中排除。
+- 如果您想知道最新消息的索引，请使用 `{{lastMessageId}}` 宏，`{{lastMessage}}` 将为您获取消息本身。
 
-To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
-This example will get you 3 last messages in the chat:
+要计算范围的起始索引，例如，当您需要获取最后 N 条消息时，请使用变量减法。
+此示例将为您获取聊天中的最后 3 条消息：
 
 ```stscript
 /setvar key=start {{lastMessageId}} |
@@ -715,39 +715,39 @@ This example will get you 3 last messages in the chat:
 /setinput
 ```
 
-### Send messages
+### 发送消息
 
-A script can send messages as either a user, character, persona, neutral narrator, or add comments.
+脚本可以以用户、角色、人设、中立叙述者的身份发送消息，或添加注释。
 
-1. `/send (text)` — adds a message as the currently selected persona.
-2. `/sendas name=charname (text)` — adds a message as any character, matching by their name. `name` argument is required. Use the `{{char}}` macro to send as the current character.
-3. `/sys (text)` — adds a message from the neutral narrator that doesn't belong to the user or character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
-4. `/comment (text)` — adds a hidden comment that is displayed in the chat but is not visible to the prompt.
-5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to the user or hidden messages.
-6. `/hide (message id or range)` — hides one or several messages from the prompt based on the provided message index or inclusive range in the `start-finish` format.
-7. `/unhide (message id or range)` — returns one or several messages to the prompt based on the provided message index or inclusive range in the `start-finish` format.
+1. `/send (text)` — 以当前选定的人设添加消息。
+2. `/sendas name=charname (text)` — 以任何角色添加消息，按其名称匹配。`name` 参数是必需的。使用 `{{char}}` 宏以当前角色发送。
+3. `/sys (text)` — 添加来自中立叙述者的消息，该消息不属于用户或角色。显示的名称纯粹是装饰性的，可以使用 `/sysname` 命令自定义。
+4. `/comment (text)` — 添加在聊天中显示但对提示词不可见的隐藏注释。
+5. `/addswipe (text)` — 向最后一条角色消息添加滑动。无法向用户或隐藏消息添加滑动。
+6. `/hide (message id or range)` — 根据提供的消息索引或 `start-finish` 格式的包含范围从提示词中隐藏一条或多条消息。
+7. `/unhide (message id or range)` — 根据提供的消息索引或 `start-finish` 格式的包含范围将一条或多条消息返回到提示词。
 
-`/send`, `/sendas`, `/sys`, and `/comment` commands optionally accept a named argument `at` with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.
+`/send`、`/sendas`、`/sys` 和 `/comment` 命令可选择接受命名参数 `at`，其值为从零开始的数值（或包含此类值的变量名），用于指定消息插入的确切位置。默认情况下，新消息插入到聊天日志的末尾。
 
-This will insert a user message at the beginning of the conversation history:
+这将在对话历史的开头插入一条用户消息：
 
 ```stscript
 /send at=0 Hi, I use Linux.
 ```
 
-### Delete messages
+### 删除消息
 
-**These commands are potentially destructive and have no "undo" function. Check the /backups/ folder if you accidentally deleted something important.**
+**这些命令具有潜在破坏性，并且没有"撤消"功能。如果您不小心删除了重要内容，请检查 /backups/ 文件夹。**
 
-1. `/cut (message id or range)` — cuts one or several messages from the chat based on the provided message index or inclusive range in the `start-finish` format.
-2. `/del (number)` — deletes last N messages from the chat.
-3. `/delswipe (1-based swipe id)` — deletes a swipe from the last character message based on the provided 1-based swipe ID.
-4. `/delname (character name)` — deletes all messages in the current chat that belong to a character with the specified name.
-5. `/delchat` — deletes the current chat.
+1. `/cut (message id or range)` — 根据提供的消息索引或 `start-finish` 格式的包含范围从聊天中剪切一条或多条消息。
+2. `/del (number)` — 从聊天中删除最后 N 条消息。
+3. `/delswipe (1-based swipe id)` — 根据提供的基于 1 的滑动 ID 从最后一条角色消息中删除滑动。
+4. `/delname (character name)` — 删除当前聊天中属于具有指定名称的角色的所有消息。
+5. `/delchat` — 删除当前聊天。
 
-## World Info commands
+## World Info 命令
 
-World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: [World Info](/Usage/worldinfo.md).
+World Info（也称为 Lorebook）是一个高度实用的工具，用于动态地将数据插入提示词中。有关更详细的说明，请参阅专用页面：[World Info](/Usage/worldinfo.md)。
 
 1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.
 2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
