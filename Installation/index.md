@@ -2,7 +2,9 @@
 order: 50
 icon: package
 expanded: true
+route: /installation/
 ---
+
 
 # 安装指南
 

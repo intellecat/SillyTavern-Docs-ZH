@@ -1,5 +1,6 @@
 ---
 order: TTS-XTTS
+route: /extensions/xtts/
 ---
 
 # 使用语音克隆的 XTTS

@@ -1,7 +1,9 @@
 ---
 order: 100
 icon: person-fill
+route: /usage/characters/
 ---
+
 
 # 角色
 

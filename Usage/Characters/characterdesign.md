@@ -1,8 +1,9 @@
 ---
-order: character-10
-route: /usage/core-concepts/characterdesign
+order: 100
+route: /usage/core-concepts/characterdesign/
 templating: false
 ---
+
 
 # 角色设计
 

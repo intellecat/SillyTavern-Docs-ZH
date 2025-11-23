@@ -1,7 +1,8 @@
 ---
-redirect: /installation/updating
+redirect: /installation/updating/
 visibility: hidden
 ---
+
 
 # 更新
 

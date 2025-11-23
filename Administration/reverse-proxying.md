@@ -2,8 +2,9 @@
 label: 反向代理
 order: -50
 icon: server
-route: /usage/st-reverse-proxy-guide
+route: /usage/st-reverse-proxy-guide/
 ---
+
 
 !!! danger 注意
 本节**不**涉及 OpenAI/Claude 反向代理。这仅涉及 **HTTP/HTTPS 反向代理**。
@@ -252,28 +253,28 @@ Termux 的设置让您感到困惑吗？您是否厌倦了在每个设备上更�
     **Zone -> Zone -> Read**
     !!!
 
-    Click on _Continue to summary_ followed by _Create Token._
+    点击 _Continue to summary_，然后点击 _Create Token_。
 
-4. Copy the Token Key given to you and store it somewhere secure.
-5. `cd` into `secrets/cloudflare` and using `nano` or a similar editor, create a file named **CF_DNS_API_KEY** and paste your key inside.
-6. Return to your domain page and go to **DNS**. Create a new record using **Add record** and create two _A_ type keys like the ones below. Replace `PUBLIC_IP` with your own public IP and the example domain with your domain, then click _Save_.
+4. 复制给您的令牌密钥并将其存储在安全的地方。
+5. `cd` 进入 `secrets/cloudflare`，使用 `nano` 或类似的编辑器，创建一个名为 **CF_DNS_API_KEY** 的文件并在其中粘贴您的密钥。
+6. 返回到您的域名页面并转到 **DNS**。使用 **Add record** 创建新记录，并创建两个如下所示的 _A_ 类型密钥。将 `PUBLIC_IP` 替换为您自己的公共 IP，将示例域名替换为您的域名，然后点击 _Save_。
 
-    | Type | Name (required) | Target (required) | Proxy Status | TTL  |
-    |------|-----------------|-------------------|--------------|------|
-    | A    | DOMAIN.com      | PUBLIC_IP         | Proxied      | Auto |
-    | A    | www             | PUBLIC_IP         | Proxied      | Auto |
+    | 类型 | 名称（必填） | 目标（必填） | 代理状态 | TTL  |
+    |------|------------|-------------|----------|------|
+    | A    | DOMAIN.com | PUBLIC_IP   | 已代理   | 自动 |
+    | A    | www        | PUBLIC_IP   | 已代理   | 自动 |
 
-7. Create another record of the **`CNAME`** type, then click _Save_. Here is an example on how it should appear on the Cloudflare dashboard.
+7. 创建另一个 **`CNAME`** 类型的记录，然后点击 _Save_。以下是它在 Cloudflare 仪表板上应该显示的示例。
 
-    | Type  | Name (required) | Target (required) | Proxy Status | TTL |
-    |-------|-----------------|-------------------|--------------|-----|
-    | CNAME | silly           | DOMAIN.com        | Proxied      | N/A |
+    | 类型  | 名称（必填） | 目标（必填） | 代理状态 | TTL |
+    |-------|------------|-------------|----------|-----|
+    | CNAME | silly      | DOMAIN.com  | 已代理   | N/A |
 
-8. Git clone SillyTavern into the `docker` folder.
+8. 将 SillyTavern Git clone 到 `docker` 文件夹中。
     ```sh
     cd /docker && git clone https://github.com/SillyTavern/SillyTavern
     ```
-9. Using `nano` or a similar editor, create a file name _docker-compose.yaml_ and paste the following. Replace `silly.DOMAIN.com` with the subdomain you added above, the save the file afterwards.
+9. 使用 `nano` 或类似的编辑器，创建一个名为 _docker-compose.yaml_ 的文件并粘贴以下内容。将 `silly.DOMAIN.com` 替换为您在上面添加的子域名，然后保存文件。
 
     ```yaml
     secrets:
@@ -326,15 +327,15 @@ Termux 的设置让您感到困惑吗？您是否厌倦了在每个设备上更�
             driver: bridge
     ```
 
-10. Run Docker Compose using the following commands:
+10. 使用以下命令运行 Docker Compose：
     ```sh
     docker compose up -d
     ```
-11. Stop the SillyTavern Docker container.
+11. 停止 SillyTavern Docker 容器。
     ```sh
     docker compose stop sillytavern
     ```
-12. Go to your SillyTavern folder (`appdata/sillytavern/config`) and edit `config.yaml` to enable listen mode and basic authentication, whilst disabling `whitelistMode`.
+12. 进入您的 SillyTavern 文件夹（`appdata/sillytavern/config`）并编辑 `config.yaml` 以启用监听模式和基本认证，同时禁用 `whitelistMode`。
 
     ```yaml
     listen: yes
@@ -342,20 +343,20 @@ Termux 的设置让您感到困惑吗？您是否厌倦了在每个设备上更�
     basicAuthMode: true
     ```
 
-    !!! warning Tip
-    Make sure to change the default username and password to something strong that you can remember.
+    !!! warning 提示
+    确保将默认用户名和密码更改为您能记住的强密码。
     !!!
 
-13. Start the SillyTavern Docker container again.
+13. 再次启动 SillyTavern Docker 容器。
     ```sh
     docker compose up -d sillytavern
     ```
-14. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
-    !!! info Tip
-    If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
+14. 等待几分钟，然后打开您为 ST 创建的域名页面。最后，您应该能够从任何地方只使用一个 URL 和一个账户就能打开 SillyTavern。
+    !!! info 提示
+    如果几分钟后什么都没有发生，请检查 Traefik 的容器日志是否有任何可能的错误。
     !!!
-15. Enjoy! :D
+15. 尽情享受！:D
 
-## Updating your Cloudflare DNS
+## 更新您的 Cloudflare DNS
 
-[**DDClient**](https://ddclient.net/) allows you to sync your public IP to Cloudflare in the situation that your ISP changes it, allowing you to continue accessing your ST instance as if nothing ever happened.
+[**DDClient**](https://ddclient.net/) 允许您在 ISP 更改公共 IP 的情况下将公共 IP 同步到 Cloudflare，让您可以继续访问您的 ST 实例，就像什么都没发生一样。

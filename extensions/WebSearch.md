@@ -1,6 +1,14 @@
+---
+route: /extensions/websearch/
+---
+
 # Web Search (网络搜索)
 
 为 LLM 提示添加网络搜索结果。
+
+!!! Note
+一些 [聊天补全](/Usage/API_Connections/openai.md) 来源提供内置的网络搜索功能。在这种情况下，此扩展将基本上是多余的。检查 **<i class="fa-solid fa-sliders"></i> AI 响应配置** 面板中的"启用网络搜索"开关。例如，Claude、Google AI Studio / Vertex AI、xAI 和 OpenRouter 后端都可用此功能。
+!!!
 
 ## 可用源
 
@@ -22,23 +30,31 @@
 
 需要 SerpApi 密钥并提供对 Google 搜索的访问。
 
-在此处获取密钥：https://serpapi.com/dashboard
+在此处获取密钥：<https://serpapi.com/dashboard>
 
 ### SearXNG
 
 需要 SearXNG 实例 URL（私有或公共）。使用 HTML 格式显示搜索结果。
 
+SearXNG 偏好设置字符串：从 SearXNG - 偏好设置 - COOKIES - 复制偏好设置哈希 获取
+
 了解更多：<https://docs.searxng.org/>
 
 ### Tavily AI
 
-需要 API 密钥。在此处获取密钥：<https://app.tavily.com/> :icon-lock: 
+需要 API 密钥。在此处获取密钥：<https://app.tavily.com/>
 
 ### KoboldCpp
 
 必须在文本补全 API 设置中提供 KoboldCpp URL。KoboldCpp 版本必须 >= 1.81.1，并且必须在启动时启用 WebSearch 模块：在 GUI 启动器中启用 Network => Enable WebSearch，或在命令行中添加 `--websearch`。
 
 参见：<https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1>
+
+### Serper
+
+需要 API 密钥。
+
+在此处获取密钥：<https://serper.dev/>
 
 ## 如何使用
 
@@ -69,7 +85,7 @@
 2. 使用反引号 - 启用使用单引号包裹的单词进行搜索激活。
 3. 使用触发短语 - 启用使用触发短语进行搜索激活。
 4. 正则表达式 - 提供 JS 风格的正则表达式来匹配用户消息。如果正则表达式匹配，将触发具有给定查询的搜索。搜索查询支持 `{{macros}}` 和 $1 语法来引用匹配的组。示例：`/what is happening in (.*)/i` 正则表达式，搜索查询为 `news in $1`，将匹配包含 `what is happening in New York` 的消息，并触发查询 `news in New York` 的搜索。
-5. 触发短语 - 逐个添加将触发搜索的短语。它可以在消息的任何位置，查询从触发词开始，总共跨越到"最大单词数"。要排除特定消息的处理，它必须以句点开头，例如 `.What do you think?`。触发器优先级：首先按文本框中的顺序，然后是用户消息中的第一个。
+5. 触发短语 - 逐个添加将触发搜索的短语。它可以在消息的任何位置，查询从触发词开始，总共跨越到"最大单词数"。要排除特定消息的处理，它必须以句期开头，例如 `.What do you think?`。触发器优先级：首先按文本框中的顺序，然后是用户消息中的第一个。
 6. 最大单词数 - 搜索查询中包含的单词数（包括触发短语）。Google 每个提示的限制约为 32 个单词。默认 = 10 个单词。
 
 ### 页面抓取
@@ -79,14 +95,15 @@
 3. 访问域名黑名单 - 要排除访问的网站域名。每行一个。
 4. 文件头 - 文件头模板，插入到文本文件的开头，有一个额外的 \{\{query\}\} 宏。
 5. 块头 - 链接块模板，与每个链接的解析内容一起插入。使用 \{\{link\}\} 宏表示页面 URL，\{\{text\}\} 表示页面内容。
-6. 保存目标 - 保存抓取结果的位置。可能的选项：触发消息附件，或 Data Bank 的聊天附件。
+6. 保存目标 - 保存抓取结果的位置。可能的选项：触发消息附件，或 Data Bank 的聊天附件，或仅图像（如果源支持）。
+7. 包含图像 - 将相关图像附加到聊天。需要支持图像的源（见下文）。
 
 ## 更多信息
 
 最新查询的搜索结果将保留在提示中，直到找到下一个有效查询。
 如果您想问额外的问题而不意外触发搜索，请以句点开始您的消息。
 
-!!! info
+!!!info
 如果启用并可用，Web Search 函数工具始终会覆盖其他触发器。
 !!!
 
@@ -100,7 +117,7 @@
 
 此扩展还提供了一个 `/websearch` 斜杠命令，用于在 STscript 中使用。更多信息请参见：[STscript 语言参考](/For_Contributors/st-script.md#extension-commands)
 
-```
+```stscript
 /websearch (links=on|off snippets=on|off [query]) – 执行网络搜索查询。使用命名参数指定要返回的内容 - 页面片段（默认：on），完整解析页面（默认：off）或两者都返回。
 
 示例：/websearch links=off snippets=on how to make a sandwich
@@ -108,29 +125,50 @@
 
 ### 搜索结果中可以包含什么？
 
+**术语表：**
+
+- 答案框：问题的直接答案。
+- 知识图谱：关于主题的百科知识。
+- 页面片段：来自网页的相关摘录。
+- 相关问题：类似主题的问题和答案。
+- 图像：相关图像。
+
 #### SerpApi
 
-1. 答案框。问题的直接答案。
-2. 知识图谱。关于主题的百科知识。
-3. 页面片段（最多 10 个）。来自网页的相关摘录。
-4. 相关问题（最多 10 个）。类似主题的问题和答案。
+1. 答案框。
+2. 知识图谱。
+3. 页面片段（最多 10 个）。
+4. 相关问题（最多 10 个）。
+5. 图像（最多 10 个）。
 
 #### Selenium 插件和 Extras API
 
 1. Google - 答案框、知识图谱、页面片段。
 2. DuckDuckGo - 页面片段。
 
+**Selenium 插件** 还可以提供图像。
+
 #### SearXNG
 
 1. 信息框。
 2. 页面片段。
+3. 图像。
 
 #### Tavily AI
 
 1. 答案。
 2. 页面内容。
+3. 图像（最多 5 个）。
 
 #### KoboldCpp
 
 1. 页面标题。
 2. 页面片段。
+
+#### Serper
+
+1. 答案框。
+2. 知识图谱。
+3. 页面片段。
+4. 相关问题。
+5. 图像。

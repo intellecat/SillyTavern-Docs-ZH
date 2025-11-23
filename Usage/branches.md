@@ -1,7 +1,8 @@
 ---
-redirect: /installation
+redirect: /installation/
 visibility: hidden
 ---
+
 
 # 分支
 

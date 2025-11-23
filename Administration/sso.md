@@ -2,6 +2,7 @@
 label: 单点登录 (SSO)
 icon: key
 order: -20
+route: /administration/sso/
 ---
 
 # 单点登录 (SSO)

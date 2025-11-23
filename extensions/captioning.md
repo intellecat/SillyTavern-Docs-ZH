@@ -1,6 +1,8 @@
 ---
+route: /extensions/captioning/
 templating: false
 ---
+
 
 # Image Captioning (图像描述生成)
 
@@ -207,4 +209,3 @@ templating: false
 您可以尝试一些 LLaVA 微调版本：[xtuner/llava-llama-3-8b-v1_1-gguf](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf)、[xtuner/llava-phi-3-mini-gguf](https://huggingface.co/xtuner/llava-phi-3-mini-gguf)。
 
 您可以使用您特定微调版本所基于的基础模型的多模态投影。一些常见基础模型的投影可以从 [koboldcpp/mmproj](https://huggingface.co/koboldcpp/mmproj/tree/main) 获取。
-

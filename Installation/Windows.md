@@ -1,6 +1,7 @@
 ---
 order: 10
 label: Windows
+route: /installation/windows/
 ---
 # Windows 安装指南
 

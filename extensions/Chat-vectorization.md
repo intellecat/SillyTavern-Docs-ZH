@@ -1,4 +1,5 @@
 ---
+route: /extensions/chat-vectorization/
 tags:
     [
         vector storage,
@@ -10,6 +11,7 @@ tags:
         messages
     ]
 ---
+
 
 # Chat Vectorization (聊天向量化)
 

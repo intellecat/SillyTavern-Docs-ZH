@@ -1,7 +1,8 @@
 ---
 icon: rel-file-path
-route: /usage/core-concepts/slashcommands
+route: /usage/core-concepts/slashcommands/
 ---
+
 
 # 斜杠命令
 

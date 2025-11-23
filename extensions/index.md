@@ -1,8 +1,9 @@
 ---
-label: Extensions
+label: 扩展
 icon: plug
 expanded: true
 order: 35
+route: /extensions/
 ---
 
 # 扩展
@@ -81,8 +82,6 @@ SillyTavern 自带许多可以在扩展面板中启用或禁用的扩展。扩�
 
 将文本转换为 token 并计算 token 数量
 :::
-
----
 
 ## 可安装扩展
 
@@ -301,5 +300,3 @@ Extras 项目已于 2024 年 4 月停止。您不需要安装 Extras 来使用�
 
 为扩展提供直接在浏览器中使用语言模型的接口。
 :::
-
-

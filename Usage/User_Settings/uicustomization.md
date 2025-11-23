@@ -1,7 +1,40 @@
 ---
-order: user-settings-10
+order: 20
 route: /usage/core-concepts/uicustomization/
 ---
+---
+
+## Message Sound
+
+To play your own custom sound on receiving a new message from bot, replace the following MP3 file in your SillyTavern folder:
+
+`public/sounds/message.mp3`
+
+Plays at 80% volume.
+
+If the "[Background Sound Only](index.md#miscellaneous)" option is enabled, the sound plays only if SillyTavern window is **unfocused**.
+
+## Formulas Rendering
+
+To enable math formulas rendering, use the [LaTeX extension](https://github.com/SillyTavern/Extension-LaTeX). To get the extension, you need to install it via the "Download Extensions & Assets" menu in SillyTavern.
+
+Type your formulas in code blocks with `latex` or `asciimath` language identifiers for LaTeX and AsciiMath respectively. The extension uses [KaTeX](https://katex.org/) for rendering.
+
+<pre><code>```latex
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+```
+
+```asciimath
+int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
+```</code></pre>
+
+!!!info Deprecation notice
+The legacy `$` and `$$` wrapper syntax is no longer supported. Please use the following regex scripts to polyfill the old syntax:
+
+* [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json)
+* [$ - AsciiMath](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$_-_asciimath.json)
+---
+
 
 # UI 自定义
 
@@ -83,8 +116,6 @@ route: /usage/core-concepts/uicustomization/
 如果您切换主题，您的自定义 CSS 将被新主题的自定义 CSS 替换。如果您想在切换主题时保留您的自定义 CSS，请确保将其保存到主题中。
 
 如果您使用大量自定义 CSS，或想在多个主题中使用相同的自定义 CSS，非官方的 [CSS Snippets 扩展](https://github.com/LenAnderson/SillyTavern-CssSnippets) 可以帮助您管理和组织您的自定义 CSS。
-
----
 
 ## 消息声音
 

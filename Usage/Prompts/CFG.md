@@ -1,5 +1,6 @@
 ---
 order: prompts-50
+route: /usage/prompts/cfg/
 ---
 
 # CFG（无分类器引导）
