@@ -91,3 +91,7 @@ SillyTavern 支持扩展功能。
 ## 许可证
 
 SillyTavern 是一个免费和开源项目，根据 [AGPL-3.0 许可证](https://github.com/SillyTavern/SillyTavern/blob/release/LICENSE) 发布。
+
+## 其他语言文档
+
+请查看[日语](https://ja.sillytavern.wiki/)、[西班牙语](https://es.sillytavern.wiki/)和[葡萄牙语](https://pt.sillytavern.wiki/)的 SillyTavern 文档。
