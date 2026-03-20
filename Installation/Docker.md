@@ -275,17 +275,17 @@ route: /installation/docker/
     ```
 
     !!!
-    If you can't run `nano`, either install it via Homebrew or use TextEdit.
+    如果无法运行 `nano`，请通过 Homebrew 安装，或改用 TextEdit。
     !!!
 
-    Within `nano`, go down to `whitelist`. You should see something similar to the following below.
+    在 `nano` 中向下找到 `whitelist`，你应该会看到类似下面的内容。
 
     ```yaml
     whitelist:
         - 127.0.0.1
     ```
 
-    Add a new line below _127.0.0.1_ and put in the IP you copied from Docker. It should look something similar to the following afterwards.
+    在 _127.0.0.1_ 下面新增一行，填入从 Docker 复制的 IP 地址。完成后应类似如下。
 
     ```yaml
     whitelist:
@@ -293,28 +293,28 @@ route: /installation/docker/
         - 172.18.0.1
     ```
 
-    Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
+    按 _Ctrl+S_ 保存文件，然后按 _Ctrl+X_ 退出 `nano`。
 
     !!! info
-    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    注意：如果你将 Docker 网络配置为 bridge 模式，也可以像平时一样把外部 IP 地址加入白名单。
     !!!
 
-7.  Restart the Docker Container to apply the new configuration.
+7.  重启 Docker 容器以应用新配置。
 
     ```sh
     docker compose restart sillytavern
     ```
 
-8.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+8.  打开一个新浏览器并访问 [http://localhost:8000](http://localhost:8000)。稍等片刻即可看到 SillyTavern 加载完成。
 
-9.  Enjoy! :D
+9.  享受吧！:D
 
-## Configuring SillyTavern
+## 配置 SillyTavern
 
-SillyTavern's configuration file (config.yaml) will be located within the `config` folder. Configuring the config file should be no different than configuring it without Docker, however you will need to run `nano` or a code editor with administrator rights in order to save your changes.
+SillyTavern 的配置文件（config.yaml）位于 `config` 文件夹内。配置方式与非 Docker 安装没有区别，但保存修改时需要以管理员权限运行 `nano` 或代码编辑器。
 
 !!! warning
-Don't forget to restart the Docker container for SillyTavern in order to apply your changes! Make sure you execute this command within the `docker` folder.
+别忘了重启 SillyTavern 的 Docker 容器以应用更改！请确保在 `docker` 文件夹内执行此命令。
 
 ```sh
 docker compose restart sillytavern
@@ -322,19 +322,19 @@ docker compose restart sillytavern
 
 !!!
 
-## Locating User Data
+## 查找用户数据
 
-SillyTavern's data folder will be within the `data` folder. Backing up your files should be easy to do, however, restoring or adding content into it may require you to do so with administrator rights.
+SillyTavern 的数据目录位于 `data` 文件夹中。备份文件很容易，但恢复或添加内容时可能需要管理员权限。
 
-## Running Server Plugins
+## 运行服务端插件
 
-Running plugins like [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS) or [SillyTavern-Fandom-Scraper](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper) within Docker is no different from running it on your system without Docker, however we will need to do a slight modification to the Docker Compose script in order to do so.
+在 Docker 中运行 [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS) 或 [SillyTavern-Fandom-Scraper](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper) 等插件，与不使用 Docker 时没有区别，但需要对 Docker Compose 脚本做一点小修改。
 
 !!! Note
-If you already see a _plugins_ folder within the `docker` folder, you can skip Steps 1-2.
+如果在 `docker` 文件夹内已看到 _plugins_ 文件夹，可跳过步骤 1-2。
 !!!
 
-1. Using `nano` or a code editor, open _docker-compose.yml_ and add the following line below `volumes`.
+1. 使用 `nano` 或代码编辑器打开 _docker-compose.yml_，在 `volumes` 下添加如下内容。
 
     ```sh
         volumes:
@@ -343,18 +343,18 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
             - "./plugins:/home/node/app/plugins"
     ```
 
-2. Create a new folder within the `docker` folder called _plugins_.
-3. Follow your plugin's instructions on installing the plugin.
-4. Using `nano` or a code editor with administrator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
+2. 在 `docker` 文件夹中创建一个名为 _plugins_ 的新文件夹。
+3. 按插件的说明进行安装。
+4. 使用 `nano` 或具备管理员权限的代码编辑器打开 `config` 文件夹内的 _config.yaml_，并启用 `enableServerPlugins`
 
     ```sh
     enableServerPlugins: true
     ```
 
-5. Restart the Docker container.
+5. 重启 Docker 容器。
 
     ```sh
     docker compose restart sillytavern
     ```
 
-6. Profit.
+6. 完成。
