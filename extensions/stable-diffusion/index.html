@@ -6,10 +6,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817299673960">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.11.0">
+    <meta name="generator" content="Retype 4.3.0">
 
     <!-- Primary Meta Tags -->
     <title>Image Generatio (图像生成) | SillyTavern傻酒馆中文文档</title>
@@ -19,28 +20,35 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/stable-diffusion/">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/stable-diffusion/">
     <meta property="og:title" content="Image Generatio (图像生成) | SillyTavern傻酒馆中文文档">
     <meta property="og:description" content="使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。">
     <meta property="og:image" content="https://sillytavern.wiki/static/extensions/sd-comfy-prompt-primitive.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Image Generatio (图像生成) | SillyTavern傻酒馆中文文档">
+    <meta property="og:site_name" content="SillyTavern中文文档">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://sillytavern.wiki/extensions/stable-diffusion/">
-    <meta property="twitter:title" content="Image Generatio (图像生成) | SillyTavern傻酒馆中文文档">
-    <meta property="twitter:description" content="使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。">
-    <meta property="twitter:image" content="https://sillytavern.wiki/static/extensions/sd-comfy-prompt-primitive.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sillytavern.wiki/extensions/stable-diffusion/">
+    <meta name="twitter:title" content="Image Generatio (图像生成) | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。">
+    <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/sd-comfy-prompt-primitive.png">
+    <meta name="twitter:image:alt" content="Image Generatio (图像生成) | SillyTavern傻酒馆中文文档">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.817299673960" rel="stylesheet">
+    <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
+    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817299673960" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817299673960" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.817299673960" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
 
     <style>
         a {
@@ -89,155 +97,125 @@
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
-                            </span>
-                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
-                        </a>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
+                        <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                        </span>
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
+                    </a>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav id="retype-header-nav" class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="retype-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-    
-        <div id="retype-container" class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-            
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
                     <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/sillytavern">Discord</a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 bg-body-bg">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="retype-markdown" id="retype-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="retype-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="image-generatio-图像生成" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#image-generatio-图像生成">#</doc-anchor-trigger>
-        <span>Image Generatio (图像生成)</span>
-    </h1>
-</doc-anchor-target>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <!-- Page content  -->
+<h1 id="image-generatio-图像生成">Image Generatio (图像生成)</h1>
 <p>使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。</p>
-<p>自动生成图像作为您消息的回复以获得完全沉浸感，从魔杖菜单或斜杠命令使用聊天历史和角色信息生成图像，或在聊天输入栏中使用 <code v-pre>/sd (任何内容)</code> 命令使用您自己的提示词生成图像。</p>
+<p>自动生成图像作为您消息的回复以获得完全沉浸感，从魔杖菜单或斜杠命令使用聊天历史和角色信息生成图像，或在聊天输入栏中使用 <code translate="no" v-pre>/sd (任何内容)</code> 命令使用您自己的提示词生成图像。</p>
 <p>大多数常用的 Stable Diffusion 生成设置都可以在 SillyTavern UI 中自定义。</p>
 <ul>
 <li>支持<doc-anchor-trigger to="#%E6%94%AF%E6%8C%81%E7%9A%84%E6%BA%90">多种图像生成源</doc-anchor-trigger>，包括本地和基于云的服务</li>
@@ -254,12 +232,7 @@
 <li>选项可以<doc-anchor-trigger to="#%E7%94%9F%E6%88%90%E5%89%8D%E7%BC%96%E8%BE%91%E6%8F%90%E7%A4%BA%E8%AF%8D">在生成前编辑提示词</doc-anchor-trigger>和<doc-anchor-trigger to="#%E6%89%A9%E5%B1%95%E8%87%AA%E7%94%B1%E6%A8%A1%E5%BC%8F%E6%8F%90%E7%A4%BA%E8%AF%8D">扩展自由模式提示词</doc-anchor-trigger></li>
 <li>与 AI <doc-anchor-trigger to="#%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%B7%A5%E5%85%B7">函数调用</doc-anchor-trigger>集成以自动检测图像生成意图</li>
 </ul>
-<doc-anchor-target id="支持的源">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#支持的源">#</doc-anchor-trigger>
-        <span>支持的源</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="支持的源">支持的源</h2>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -324,12 +297,7 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="生成模式">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#生成模式">#</doc-anchor-trigger>
-        <span>生成模式</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="生成模式">生成模式</h2>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -343,137 +311,87 @@
 <tbody>
 <tr>
 <td style="text-align: left;">&quot;Yourself&quot;</td>
-<td style="text-align: left;"><code v-pre>you</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>you</code></td>
 <td style="text-align: left;">当前角色的全身肖像。</td>
 <td style="text-align: left;">-</td>
 </tr>
 <tr>
 <td style="text-align: left;">&quot;Your Face&quot;</td>
-<td style="text-align: left;"><code v-pre>face</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>face</code></td>
 <td style="text-align: left;">当前角色的特写肖像。</td>
 <td style="text-align: left;">强制使用肖像纵横比。</td>
 </tr>
 <tr>
 <td style="text-align: left;">&quot;Me&quot;</td>
-<td style="text-align: left;"><code v-pre>me</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>me</code></td>
 <td style="text-align: left;">用户角色的肖像。</td>
 <td style="text-align: left;">-</td>
 </tr>
 <tr>
 <td style="text-align: left;">&quot;The Whole Story&quot;</td>
-<td style="text-align: left;"><code v-pre>scene</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>scene</code></td>
 <td style="text-align: left;">聊天事件的视觉回顾。</td>
 <td style="text-align: left;">-</td>
 </tr>
 <tr>
 <td style="text-align: left;">&quot;The Last Message&quot;</td>
-<td style="text-align: left;"><code v-pre>last</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>last</code></td>
 <td style="text-align: left;">最后一条聊天消息的视觉回顾。</td>
 <td style="text-align: left;">-</td>
 </tr>
 <tr>
 <td style="text-align: left;">&quot;Raw Last Message&quot;</td>
-<td style="text-align: left;"><code v-pre>raw_last</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>raw_last</code></td>
 <td style="text-align: left;">直接使用最后一条消息作为提示词。</td>
 <td style="text-align: left;">-</td>
 </tr>
 <tr>
 <td style="text-align: left;">&quot;Background&quot;</td>
-<td style="text-align: left;"><code v-pre>background</code></td>
+<td style="text-align: left;"><code translate="no" v-pre>background</code></td>
 <td style="text-align: left;">基于故事背景的聊天背景。</td>
 <td style="text-align: left;">强制使用宽景观纵横比。</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="如何生成图像">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#如何生成图像">#</doc-anchor-trigger>
-        <span>如何生成图像</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="如何生成图像">如何生成图像</h2>
 <ol>
 <li>使用扩展上下文菜单（魔杖）中的&quot;Image Generation&quot;项。</li>
-<li>输入带有生成模式表中参数的 <code v-pre>/sd (参数)</code> 斜杠命令。其他任何内容都会触发&quot;自由模式&quot;，让 SD 生成您提示的任何内容。例如：<code v-pre>/sd apple tree</code> 会生成一棵苹果树的图片。</li>
+<li>输入带有生成模式表中参数的 <code translate="no" v-pre>/sd (参数)</code> 斜杠命令。其他任何内容都会触发&quot;自由模式&quot;，让 SD 生成您提示的任何内容。例如：<code translate="no" v-pre>/sd apple tree</code> 会生成一棵苹果树的图片。</li>
 <li>查找聊天消息上下文操作中的画笔图标。这将为所选消息强制使用&quot;Raw Message&quot;模式。</li>
 </ol>
 <p>除了原始消息和自由模式之外的每种生成模式都会使用您当前选择的主要生成 API 触发提示词生成，将聊天上下文转换为 SD 提示词。
 您可以使用扩展面板中的&quot;SD Prompt Templates&quot;设置抽屉为每种生成模式配置指令模板。</p>
-<doc-anchor-target id="sd-命令使用技巧">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sd-命令使用技巧">#</doc-anchor-trigger>
-        <span><code v-pre>/sd</code> 命令使用技巧</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="查看所有生成的图像">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#查看所有生成的图像">#</doc-anchor-trigger>
-        <span>查看所有生成的图像</span>
-    </h4>
-</doc-anchor-target>
-<p>要查看角色的所有保存图像（包括其他聊天），请从角色信息面板的&quot;More...&quot;下拉菜单打开画廊，或使用 <code v-pre>/show-gallery</code> 斜杠命令。</p>
-<doc-anchor-target id="指定负面提示词">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#指定负面提示词">#</doc-anchor-trigger>
-        <span>指定负面提示词</span>
-    </h4>
-</doc-anchor-target>
-<p>在提示词之前使用 <code v-pre>negative</code> 命名参数来强制使用特定的负面提示词进行生成。</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<h3 id="sd-命令使用技巧"><code translate="no" v-pre>/sd</code> 命令使用技巧</h3>
+<h4 id="查看所有生成的图像">查看所有生成的图像</h4>
+<p>要查看角色的所有保存图像（包括其他聊天），请从角色信息面板的&quot;More...&quot;下拉菜单打开画廊，或使用 <code translate="no" v-pre>/show-gallery</code> 斜杠命令。</p>
+<h4 id="指定负面提示词">指定负面提示词</h4>
+<p>在提示词之前使用 <code translate="no" v-pre>negative</code> 命名参数来强制使用特定的负面提示词进行生成。</p>
+<div id="指定负面提示词-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/sd negative=&quot;fries&quot; cute tater farmer holding a tayto in a spud-field</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="包含角色特定前缀">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#包含角色特定前缀">#</doc-anchor-trigger>
-        <span>包含角色特定前缀</span>
-    </h4>
-</doc-anchor-target>
-<p>在自由提示词模式下使用特殊的 <code v-pre>{{charPrefix}}</code> 宏来包含当前角色的正面和负面提示词前缀（如果已定义）。</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<h4 id="包含角色特定前缀">包含角色特定前缀</h4>
+<p>在自由提示词模式下使用特殊的 <code translate="no" v-pre>{{charPrefix}}</code> 宏来包含当前角色的正面和负面提示词前缀（如果已定义）。</p>
+<div id="包含角色特定前缀-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/sd {{charPrefix}}, riding a bike</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="抑制聊天消息">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#抑制聊天消息">#</doc-anchor-trigger>
-        <span>抑制聊天消息</span>
-    </h4>
-</doc-anchor-target>
-<p>您可以通过传递 <code v-pre>quiet=true</code> 命名参数来避免将生成的图像发布到聊天中。图像仍会添加到角色画廊中，命令将生成图像的相对 URL，可供其他命令使用。</p>
+<h4 id="抑制聊天消息">抑制聊天消息</h4>
+<p>您可以通过传递 <code translate="no" v-pre>quiet=true</code> 命名参数来避免将生成的图像发布到聊天中。图像仍会添加到角色画廊中，命令将生成图像的相对 URL，可供其他命令使用。</p>
 <p>下面的示例将使用 Markdown 作为用户角色发送生成的图像。</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="抑制聊天消息-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]({{pipe}})</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="图像滑动">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#图像滑动">#</doc-anchor-trigger>
-        <span>图像滑动</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="图像滑动">图像滑动</h3>
 <p>图像滑动允许在保持相同提示词的同时重新生成图像。如果设置了固定种子，它将为下一次生成随机化。</p>
 <p>要循环浏览图像，将鼠标光标悬停（移动设备上点击）在生成的图像上以显示箭头按钮和滑动计数器。点击最新图像上的右箭头将生成一个新图像。</p>
 <p><em>这里的&quot;滑动&quot;只是一个名称，不要尝试实际的滑动手势，因为这会重新生成消息本身，而不是附加的图像。</em></p>
-<doc-anchor-target id="选项">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#选项">#</doc-anchor-trigger>
-        <span>选项</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="生成前编辑提示词">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#生成前编辑提示词">#</doc-anchor-trigger>
-        <span>生成前编辑提示词</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="选项">选项</h2>
+<h3 id="生成前编辑提示词">生成前编辑提示词</h3>
 <p>允许在将自动生成的提示词发送到 Stable Diffusion API 之前手动编辑。</p>
-<doc-anchor-target id="使用函数工具">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#使用函数工具">#</doc-anchor-trigger>
-        <span>使用函数工具</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="使用函数工具">使用函数工具</h3>
 <p>使用<a href="">函数调用</a>自动检测生成图像的意图。</p>
 <p><strong>要求：</strong></p>
 <ol>
@@ -500,12 +418,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="使用交互模式">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#使用交互模式">#</doc-anchor-trigger>
-        <span>使用交互模式</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="使用交互模式">使用交互模式</h3>
 <p>允许在回复遵循特殊模式的用户消息时触发图像生成而不是文本：</p>
 <ol>
 <li>包含以下动词之一：send、mail、imagine、generate、make、create、draw、paint、render</li>
@@ -514,9 +427,9 @@
 </ol>
 <p>有效请求和捕获主题的示例：</p>
 <ul>
-<li><code v-pre>Can you please send me a picture of a cat</code> =&gt; <code v-pre>cat</code></li>
-<li><code v-pre>Generate a picture of the Eiffel tower</code> =&gt; <code v-pre>Eiffel tower</code></li>
-<li><code v-pre>Let's draw a painting of Mona Lisa</code> =&gt; <code v-pre>Mona Lisa</code></li>
+<li><code translate="no" v-pre>Can you please send me a picture of a cat</code> =&gt; <code translate="no" v-pre>cat</code></li>
+<li><code translate="no" v-pre>Generate a picture of the Eiffel tower</code> =&gt; <code translate="no" v-pre>Eiffel tower</code></li>
+<li><code translate="no" v-pre>Let's draw a painting of Mona Lisa</code> =&gt; <code translate="no" v-pre>Mona Lisa</code></li>
 </ul>
 <p>一些特殊主题会触发预定义的生成模式：</p>
 <ul>
@@ -527,46 +440,21 @@
 <li>&#x27;last message&#x27; =&gt; &quot;The Last Message&quot;</li>
 <li>&#x27;background&#x27;, &#x27;scene background&#x27;, &#x27;scene&#x27;, &#x27;scenery&#x27;, &#x27;surroundings&#x27;, &#x27;environment&#x27; =&gt; &quot;Background&quot;</li>
 </ul>
-<doc-anchor-target id="扩展自由模式提示词">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#扩展自由模式提示词">#</doc-anchor-trigger>
-        <span>扩展自由模式提示词</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="扩展自由模式提示词">扩展自由模式提示词</h3>
 <p>使用交互模式或斜杠命令时，通过提示您的主要 API 自动扩展自由模式生成主题描述。</p>
-<doc-anchor-target id="对齐自动调整的分辨率">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#对齐自动调整的分辨率">#</doc-anchor-trigger>
-        <span>对齐自动调整的分辨率</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="对齐自动调整的分辨率">对齐自动调整的分辨率</h3>
 <p>将具有强制纵横比（肖像、背景）的图像生成请求对齐到最接近的已知分辨率，同时尽量保持绝对像素数。请参阅&quot;Resolution&quot;下拉菜单了解可能的选项。</p>
 <p><strong>推荐用于 SDXL 模型</strong>。</p>
-<doc-anchor-target id="通用提示词前缀">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#通用提示词前缀">#</doc-anchor-trigger>
-        <span>通用提示词前缀</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="通用提示词前缀">通用提示词前缀</h2>
 <p>在每个生成或自由模式提示词之前添加。通常用于设置图片的整体风格。</p>
-<p>示例：<code v-pre>best quality, anime lineart</code>。</p>
-<p>**专业提示：**使用 <code v-pre>{prompt}</code> 宏来指定生成的提示词将被插入的确切位置。</p>
-<doc-anchor-target id="负面提示词">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#负面提示词">#</doc-anchor-trigger>
-        <span>负面提示词</span>
-    </h2>
-</doc-anchor-target>
+<p>示例：<code translate="no" v-pre>best quality, anime lineart</code>。</p>
+<p>**专业提示：**使用 <code translate="no" v-pre>{prompt}</code> 宏来指定生成的提示词将被插入的确切位置。</p>
+<h2 id="负面提示词">负面提示词</h2>
 <p>您不希望在输出中出现的图像特征。</p>
-<p>示例：<code v-pre>bad quality, watermark</code>。</p>
-<doc-anchor-target id="角色特定提示词前缀">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#角色特定提示词前缀">#</doc-anchor-trigger>
-        <span>角色特定提示词前缀</span>
-    </h2>
-</doc-anchor-target>
+<p>示例：<code translate="no" v-pre>bad quality, watermark</code>。</p>
+<h2 id="角色特定提示词前缀">角色特定提示词前缀</h2>
 <p>描述当前选择的角色的任何特征。将在通用前缀之后添加。</p>
-<p>示例：<code v-pre>female, green eyes, brown hair, pink shirt</code>。</p>
+<p>示例：<code translate="no" v-pre>female, green eyes, brown hair, pink shirt</code>。</p>
 <p>您还可以为任何不需要的内容指定负面提示词前缀。它将与通用负面提示词组合。</p>
 <p>限制：</p>
 <ol>
@@ -574,52 +462,27 @@
 <li>不会用于背景和自由模式生成。</li>
 </ol>
 <p>如果您想与他人共享前缀，请勾选&quot;Shareable&quot;复选框。这将把它们保存在角色数据中，而不是您的本地设置中。</p>
-<p>**专业提示：**如果生成源支持，您也可以在这里使用 LoRAs/embeddings，例如：<code v-pre>&lt;lora:DonaldDuck:1&gt;</code>。</p>
-<doc-anchor-target id="风格">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#风格">#</doc-anchor-trigger>
-        <span>风格</span>
-    </h2>
-</doc-anchor-target>
+<p>**专业提示：**如果生成源支持，您也可以在这里使用 LoRAs/embeddings，例如：<code translate="no" v-pre>&lt;lora:DonaldDuck:1&gt;</code>。</p>
+<h2 id="风格">风格</h2>
 <p>使用此功能可以快速保存和恢复您喜欢的风格/质量预设，以便稍后使用或在模型之间切换时使用。风格预设包括以下内容：</p>
 <ol>
 <li>通用提示词前缀</li>
 <li>负面提示词</li>
 </ol>
-<p>您还可以使用 <code v-pre>/imagine-style</code> 命令（或 <code v-pre>/sd-style</code> 或 <code v-pre>/img-style</code>）在风格之间切换。</p>
-<doc-anchor-target id="聊天消息可见性">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#聊天消息可见性">#</doc-anchor-trigger>
-        <span>聊天消息可见性</span>
-    </h2>
-</doc-anchor-target>
+<p>您还可以使用 <code translate="no" v-pre>/imagine-style</code> 命令（或 <code translate="no" v-pre>/sd-style</code> 或 <code translate="no" v-pre>/img-style</code>）在风格之间切换。</p>
+<h2 id="聊天消息可见性">聊天消息可见性</h2>
 <p>默认情况下，插入聊天的生成图像在主 API 提示词中是隐藏的，但可以针对每个生成发起者（&quot;魔杖&quot;图标、斜杠命令、交互模式）单独覆盖。这可以用于通过让角色&quot;认知&quot;图像来使体验更具沉浸感。如果启用了&quot;Send inline images&quot;，Chat Completions API 中的多模态模型也可能会&quot;看到&quot;图像。</p>
-<p>可以通过更改图像提示词模板下的&quot;Chat Message Template&quot;来自定义文本消息。所有常规宏都可以在此模板中使用，另外还有一个特殊的 <code v-pre>{{prompt}}</code> 宏来指定图像提示词将被添加的位置。</p>
-<doc-anchor-target id="comfyui-配置">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comfyui-配置">#</doc-anchor-trigger>
-        <span>ComfyUI 配置</span>
-    </h2>
-</doc-anchor-target>
+<p>可以通过更改图像提示词模板下的&quot;Chat Message Template&quot;来自定义文本消息。所有常规宏都可以在此模板中使用，另外还有一个特殊的 <code translate="no" v-pre>{{prompt}}</code> 宏来指定图像提示词将被添加的位置。</p>
+<h2 id="comfyui-配置">ComfyUI 配置</h2>
 <p><a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a> 是一个快速且非常灵活的图像生成选项。</p>
 <p>如果您熟悉 ComfyUI，简单来说：在 ComfyUI 中制作您的工作流程，<strong>以 API 格式</strong>下载，然后粘贴到 SillyTavern ComfyUI 工作流程编辑器中。ST 将把您的工作流程提交到 ComfyUI 的 API，您将在聊天中获得一张图像。但是能力越大，责任越大，主要责任是在工作流程 JSON 中插入占位符，以便您可以从 SillyTavern 更改设置。</p>
 <p>如果您不熟悉 ComfyUI，您仍然可以使用默认工作流程在 SillyTavern 中生成图像。之后，当您想要更强大的功能时，您可以学习如何使用 ComfyUI...</p>
-<doc-anchor-target id="控制">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#控制">#</doc-anchor-trigger>
-        <span>控制</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="控制">控制</h3>
 <p>此面板允许您配置和管理 ComfyUI 与 SillyTavern 的集成。</p>
-<p>在 <strong>ComfyUI URL</strong> 输入字段中输入您的 ComfyUI 服务器的 URL。默认值是 <code v-pre>http://127.0.0.1:8188</code>。
-如果您使用的是 <a href="https://github.com/mcmonkeyprojects/SwarmUI">SwarmUI</a>，<a href="https://github.com/mcmonkeyprojects/SwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/README.md">托管 ComfyUI 服务器</a>的默认端口是 <code v-pre>7821</code>，比 SwarmUI 的默认端口高 20。</p>
+<p>在 <strong>ComfyUI URL</strong> 输入字段中输入您的 ComfyUI 服务器的 URL。默认值是 <code translate="no" v-pre>http://127.0.0.1:8188</code>。
+如果您使用的是 <a href="https://github.com/mcmonkeyprojects/SwarmUI">SwarmUI</a>，<a href="https://github.com/mcmonkeyprojects/SwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/README.md">托管 ComfyUI 服务器</a>的默认端口是 <code translate="no" v-pre>7821</code>，比 SwarmUI 的默认端口高 20。</p>
 <p>输入 URL 后，选择 <i class="fa-solid fa-check"></i> <strong>Connect</strong> 以验证并建立连接。ComfyUI 服务器必须可以从 SillyTavern 主机访问。</p>
-<doc-anchor-target id="工作流程管理">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#工作流程管理">#</doc-anchor-trigger>
-        <span>工作流程管理</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="工作流程管理">工作流程管理</h3>
 <p>从下拉菜单中选择 ComfyUI 工作流程。提供了两个默认工作流程：</p>
 <ul>
 <li>Default_Comfy_Workflow.json：支持最常见图像生成设置的基本文本到图像工作流程。</li>
@@ -631,12 +494,7 @@
 <li><i class="fa-solid fa-plus"></i> <strong>Create new workflow</strong> 创建具有自定义名称的新工作流程。</li>
 <li><i class="fa-solid fa-trash-can"></i> <strong>Delete workflow</strong> 删除所选工作流程。</li>
 </ul>
-<doc-anchor-target id="工作流程编辑器">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#工作流程编辑器">#</doc-anchor-trigger>
-        <span>工作流程编辑器</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="工作流程编辑器">工作流程编辑器</h3>
 <p>ComfyUI 工作流程编辑器允许您查看和修改用于 SillyTavern 的 ComfyUI 工作流程。</p>
 <p>编辑器的主要组件是一个大型文本区域，您可以在其中插入或编辑 JSON 格式的 ComfyUI 工作流程。</p>
 <p>要将 ComfyUI 工作流程添加到编辑器，请按照以下步骤操作：</p>
@@ -660,27 +518,17 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>info Tips</h5>
-<p>您可以添加 API-格式 JSON 文件直接到 <code v-pre>data/default-user/user/workflows</code> 目录在您的 SillyTavern 安装。这将节省步骤 3 和 4。</p>
+<p>您可以添加 API-格式 JSON 文件直接到 <code translate="no" v-pre>data/default-user/user/workflows</code> 目录在您的 SillyTavern 安装。这将节省步骤 3 和 4。</p>
 <p>保留原始 JSON 文件。如果您需要再次在 ComfyUI 中打开工作流程以进行更改，编辑原始文件比带有所有占位符的文件要方便得多。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="占位符">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#占位符">#</doc-anchor-trigger>
-        <span>占位符</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="占位符">占位符</h3>
 <p>编辑器提供了一系列预定义的占位符，可以在您的工作流 JSON 中使用。这些占位符在 SillyTavern 执行工作流时会被替换为动态值。</p>
 <p>标记为 <span class="docs-emoji">&#x2705;</span> 的占位符存在于您的工作流 JSON 中。标记为 <span class="docs-emoji">&#x274C;</span> 的占位符不存在于您的工作流 JSON 中。您可以根据需要将这些占位符添加到您的工作流 JSON 中。您不需要添加所有占位符，只需添加您的工作流使用并且您想要动态替换的占位符。</p>
-<doc-anchor-target id="提示词">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#提示词">#</doc-anchor-trigger>
-        <span>提示词</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>%prompt%</code> 和 <code v-pre>%negative_prompt%</code> 占位符用于将图像生成提示词插入到工作流中。它们包含由 SillyTavern 生成的最终提示词，包括为您选择的 <code v-pre>/sd</code> 模式生成的提示词、通用提示词前缀、负面提示词和角色特定提示词前缀。</p>
-<p>例如，您可能在 ComfyUI 中使用类似&quot;森林精灵&quot;的提示词测试了您的工作流。要在 SillyTavern 中使用此工作流，您可以用 <code v-pre>%prompt%</code> 占位符替换&quot;森林精灵&quot;提示词：</p>
+<h4 id="提示词">提示词</h4>
+<p><code translate="no" v-pre>%prompt%</code> 和 <code translate="no" v-pre>%negative_prompt%</code> 占位符用于将图像生成提示词插入到工作流中。它们包含由 SillyTavern 生成的最终提示词，包括为您选择的 <code translate="no" v-pre>/sd</code> 模式生成的提示词、通用提示词前缀、负面提示词和角色特定提示词前缀。</p>
+<p>例如，您可能在 ComfyUI 中使用类似&quot;森林精灵&quot;的提示词测试了您的工作流。要在 SillyTavern 中使用此工作流，您可以用 <code translate="no" v-pre>%prompt%</code> 占位符替换&quot;森林精灵&quot;提示词：</p>
 <doc-tabs>
 <doc-tab v-cloak id="带有占位符的-json">
 <template #title>带有占位符的 JSON</template>
@@ -711,11 +559,11 @@
 <p>有时提示词（或其他值）不会出现在您期望的位置。如果节点对于工作流在 API 模式下运行不是必需的，ComfyUI 将从工作流的 API 版本中删除这些节点。</p>
 <p>例如，此工作流使用 <a href="https://github.com/badjeff/comfyui_lora_tag_loader">LoRA 标签加载器节点</a> 和提示词原语，以便工作流在 UI 模式下更清晰：</p>
 <p><figure class="content-center">
-    <img src="../../static/extensions/sd-comfy-prompt-primitive.png" alt="Prompt primitive and LoRA loader" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <img src="../../static/extensions/sd-comfy-prompt-primitive.png" alt="Prompt primitive and LoRA loader" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1222" height="336" />
     <figcaption class="caption">Prompt primitive and LoRA loader</figcaption>
 </figure>
 </p>
-<p>提示词原语节点将从工作流的 API 版本中删除，因此您需要在 LoraTagLoader 节点中插入占位符。在工作流中找到文本&quot;apple tree&quot;并将其替换为 <code v-pre>%prompt%</code> 占位符：</p>
+<p>提示词原语节点将从工作流的 API 版本中删除，因此您需要在 LoraTagLoader 节点中插入占位符。在工作流中找到文本&quot;apple tree&quot;并将其替换为 <code translate="no" v-pre>%prompt%</code> 占位符：</p>
 <doc-tabs>
 <doc-tab v-cloak id="带有占位符的-json">
 <template #title>带有占位符的 JSON</template>
@@ -747,13 +595,8 @@
 </doc-tab>
 </doc-tabs>
 <p>在某些情况下，您可能需要在工作流 JSON 中进行多次替换，即使提示词在 UI 中只出现一次。</p>
-<doc-anchor-target id="模型">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#模型">#</doc-anchor-trigger>
-        <span>模型</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>%model%</code> 占位符将插入图像生成设置中选定模型的值。</p>
+<h4 id="模型">模型</h4>
+<p><code translate="no" v-pre>%model%</code> 占位符将插入图像生成设置中选定模型的值。</p>
 <p>默认文本到图像工作流中的一个示例：</p>
 <doc-tabs>
 <doc-tab v-cloak id="带有占位符的-json">
@@ -780,7 +623,7 @@
 </doc-tab>
 </doc-tabs>
 <p>要加载 GGUF 量化的 UNet，请在工作流中使用 <a href="https://github.com/city96/ComfyUI-GGUF">UNet Loader (GGUF)</a> 节点，
-在 SillyTavern 模型下拉菜单中选择一个 <code v-pre>GGUF</code> 模型，并在节点设置中像这样使用 <code v-pre>%model%</code> 占位符：</p>
+在 SillyTavern 模型下拉菜单中选择一个 <code translate="no" v-pre>GGUF</code> 模型，并在节点设置中像这样使用 <code translate="no" v-pre>%model%</code> 占位符：</p>
 <doc-tabs>
 <doc-tab v-cloak id="带有占位符的-json">
 <template #title>带有占位符的 JSON</template>
@@ -831,21 +674,16 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="头像图像">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#头像图像">#</doc-anchor-trigger>
-        <span>头像图像</span>
-    </h4>
-</doc-anchor-target>
-<p>使用 <code v-pre>%user_avatar%</code> 和 <code v-pre>%char_avatar%</code> 占位符在工作流中包含用户和角色头像。这些占位符在执行工作流时会被替换为头像的 PNG 数据。图像数据以 base64 格式编码，因此您必须在工作流中对其进行解码。此任务的一个流行选择是 <a href="https://github.com/Acly/comfyui-tooling-nodes">Load image (Base64)</a> 节点。</p>
-<p>在此示例中，角色头像使用 <code v-pre>Load Image (Base64)</code> 节点加载。它还使用 Image Resize 节点将图像重新缩放到图像生成设置中指定的任何大小：</p>
+<h4 id="头像图像">头像图像</h4>
+<p>使用 <code translate="no" v-pre>%user_avatar%</code> 和 <code translate="no" v-pre>%char_avatar%</code> 占位符在工作流中包含用户和角色头像。这些占位符在执行工作流时会被替换为头像的 PNG 数据。图像数据以 base64 格式编码，因此您必须在工作流中对其进行解码。此任务的一个流行选择是 <a href="https://github.com/Acly/comfyui-tooling-nodes">Load image (Base64)</a> 节点。</p>
+<p>在此示例中，角色头像使用 <code translate="no" v-pre>Load Image (Base64)</code> 节点加载。它还使用 Image Resize 节点将图像重新缩放到图像生成设置中指定的任何大小：</p>
 <p><figure class="content-center">
-    <img src="../../static/extensions/sd-comfy-load-b64.png" alt="Load image from base64 string and resize" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <img src="../../static/extensions/sd-comfy-load-b64.png" alt="Load image from base64 string and resize" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1234" height="418" />
     <figcaption class="caption">Load image from base64 string and resize</figcaption>
 </figure>
 </p>
-<p>将 <code v-pre>%char_avatar%</code>、<code v-pre>%width%</code> 和 <code v-pre>%height%</code> 占位符插入到 Load Image (Base64) 和 Image Resize 节点的 JSON 中：</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<p>将 <code translate="no" v-pre>%char_avatar%</code>、<code translate="no" v-pre>%width%</code> 和 <code translate="no" v-pre>%height%</code> 占位符插入到 Load Image (Base64) 和 Image Resize 节点的 JSON 中：</p>
+<div id="头像图像-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
     &quot;97&quot;: {
         &quot;inputs&quot;: {
@@ -868,40 +706,30 @@
 </doc-codeblock></div>
 <p>要获取 base64 编码的图像字符串以在 ComfyUI 中测试您的工作流，请使用任何将图像转换为 base64 字符串的在线工具。
 这是一个您可以用于初始测试的示例字符串：<a href="../../static/extensions/sd-comfy-base64-test-string.txt">sd-comfy-base64-test-string.txt</a>。</p>
-<doc-anchor-target id="其他占位符">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#其他占位符">#</doc-anchor-trigger>
-        <span>其他占位符</span>
-    </h4>
-</doc-anchor-target>
-<p>大多数其他占位符使用图像生成设置中相应控件的值，或您使用 <code v-pre>/sd</code> 命令指定的值：</p>
+<h4 id="其他占位符">其他占位符</h4>
+<p>大多数其他占位符使用图像生成设置中相应控件的值，或您使用 <code translate="no" v-pre>/sd</code> 命令指定的值：</p>
 <ul>
-<li><code v-pre>%vae%</code>，但大多数 SD 模型都包含 VAE，因此默认工作流不使用此占位符。将其与自定义工作流一起使用以加载 VAE 以及 UNet，覆盖默认 VAE 等。</li>
-<li><code v-pre>%sampler%</code></li>
-<li><code v-pre>%scheduler%</code></li>
-<li><code v-pre>%steps%</code></li>
-<li><code v-pre>%scale%</code></li>
-<li><code v-pre>%width%</code></li>
-<li><code v-pre>%height%</code></li>
-<li><code v-pre>%denoise%</code>：对于示例图像到图像工作流，在约 0.5（对源图像几乎没有明显更改）和 1.0（完全不同的图像，就像没有使用源图像一样）之间改变去噪量。默认文本到图像工作流不使用，因为对于文本到图像使用除 1.0 之外的值没有意义。</li>
-<li><code v-pre>%clip_skip%</code>：默认工作流不使用，但可用于自定义工作流。</li>
+<li><code translate="no" v-pre>%vae%</code>，但大多数 SD 模型都包含 VAE，因此默认工作流不使用此占位符。将其与自定义工作流一起使用以加载 VAE 以及 UNet，覆盖默认 VAE 等。</li>
+<li><code translate="no" v-pre>%sampler%</code></li>
+<li><code translate="no" v-pre>%scheduler%</code></li>
+<li><code translate="no" v-pre>%steps%</code></li>
+<li><code translate="no" v-pre>%scale%</code></li>
+<li><code translate="no" v-pre>%width%</code></li>
+<li><code translate="no" v-pre>%height%</code></li>
+<li><code translate="no" v-pre>%denoise%</code>：对于示例图像到图像工作流，在约 0.5（对源图像几乎没有明显更改）和 1.0（完全不同的图像，就像没有使用源图像一样）之间改变去噪量。默认文本到图像工作流不使用，因为对于文本到图像使用除 1.0 之外的值没有意义。</li>
+<li><code translate="no" v-pre>%clip_skip%</code>：默认工作流不使用，但可用于自定义工作流。</li>
 </ul>
-<p>如果您指定了种子值，<code v-pre>%seed%</code> 占位符将插入控件中的种子值。如果您将种子设置为 <code v-pre>-1</code>，SillyTavern 将为 <code v-pre>%seed%</code> 中的每个图像生成一个新的随机种子。</p>
-<doc-anchor-target id="自定义占位符">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#自定义占位符">#</doc-anchor-trigger>
-        <span>自定义占位符</span>
-    </h4>
-</doc-anchor-target>
+<p>如果您指定了种子值，<code translate="no" v-pre>%seed%</code> 占位符将插入控件中的种子值。如果您将种子设置为 <code translate="no" v-pre>-1</code>，SillyTavern 将为 <code translate="no" v-pre>%seed%</code> 中的每个图像生成一个新的随机种子。</p>
+<h4 id="自定义占位符">自定义占位符</h4>
 <p>您可以向工作流添加自定义占位符：</p>
 <ol>
 <li>在预定义占位符下方查找&quot;自定义&quot;部分。</li>
 <li>单击&quot;+&quot;按钮添加新的自定义占位符。</li>
-<li>在 <code v-pre>find</code> 字段中输入占位符的名称。</li>
-<li>在 <code v-pre>replace</code> 字段中输入要替换占位符的值。</li>
+<li>在 <code translate="no" v-pre>find</code> 字段中输入占位符的名称。</li>
+<li>在 <code translate="no" v-pre>replace</code> 字段中输入要替换占位符的值。</li>
 </ol>
 <p>自定义占位符将出现在预定义占位符下方的单独列表中。</p>
-<p>例如，您可以使用自定义占位符替换默认工作流中已保存图像文件名的&quot;SillyTavern&quot;前缀。添加一个新的自定义占位符，将 <code v-pre>find</code> 设置为 <code v-pre>filename_prefix</code>，将 <code v-pre>replace</code> 设置为 <code v-pre>ServiceTesnor</code>。将新的 <code v-pre>%filename_prefix%</code> 占位符插入到您的工作流 JSON 中。现在，您可以通过更改自定义占位符的值，将 SillyTavern 中的文件名前缀更改为 ServiceTesnor。</p>
+<p>例如，您可以使用自定义占位符替换默认工作流中已保存图像文件名的&quot;SillyTavern&quot;前缀。添加一个新的自定义占位符，将 <code translate="no" v-pre>find</code> 设置为 <code translate="no" v-pre>filename_prefix</code>，将 <code translate="no" v-pre>replace</code> 设置为 <code translate="no" v-pre>ServiceTesnor</code>。将新的 <code translate="no" v-pre>%filename_prefix%</code> 占位符插入到您的工作流 JSON 中。现在，您可以通过更改自定义占位符的值，将 SillyTavern 中的文件名前缀更改为 ServiceTesnor。</p>
 <doc-tabs>
 <doc-tab v-cloak id="带有占位符的-json">
 <template #title>带有占位符的 JSON</template>
@@ -928,107 +756,92 @@
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="comfy-技巧">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comfy-技巧">#</doc-anchor-trigger>
-        <span>Comfy 技巧</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="comfy-技巧">Comfy 技巧</h3>
 <p>阅读此页面上的所有常规信息，以便您熟悉图像生成选项。诸如可切换样式和通用提示词前缀之类的选项，与 ComfyUI 工作流的完全灵活性相结合，使您能够创建各种各样的图像生成设置。</p>
-<doc-anchor-target id="加载-lora">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#加载-lora">#</doc-anchor-trigger>
-        <span>加载 LoRA</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="加载-lora">加载 LoRA</h4>
 <p>使用 LoRA 标签加载器节点（例如 <a href="https://github.com/badjeff/comfyui_lora_tag_loader">Load LoRA Tag</a>）加载提示词中指定的任何 LoRA。
-现在，您可以使用 <code v-pre>&lt;lora:CroissantStyle:0.8&gt;</code> 之类的标签将任意数量的 LoRA 添加到您的提示词中，它们将被加载到您的工作流中。
+现在，您可以使用 <code translate="no" v-pre>&lt;lora:CroissantStyle:0.8&gt;</code> 之类的标签将任意数量的 LoRA 添加到您的提示词中，它们将被加载到您的工作流中。
 这也将使在<doc-anchor-trigger to="#%E8%A7%92%E8%89%B2%E7%89%B9%E5%AE%9A%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%89%8D%E7%BC%80">角色特定提示词前缀</doc-anchor-trigger>中使用 LoRA 的&quot;专业提示&quot;与 ComfyUI 一起使用。</p>
-<doc-anchor-target id="从样式或斜杠命令设置工作流值">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#从样式或斜杠命令设置工作流值">#</doc-anchor-trigger>
-        <span>从样式或斜杠命令设置工作流值</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="从样式或斜杠命令设置工作流值">从样式或斜杠命令设置工作流值</h4>
 <p>您可以在自定义占位符值中使用宏。作为一个实际示例，
 假设您有时想生成没有背景的图像，并且您希望可以使用
 斜杠命令或图像样式切换此功能。以下是您可以执行的操作：</p>
 <ol>
 <li>制作一个 ComfyUI 工作流，根据输入的值删除图像背景或不删除。</li>
-<li>使用自定义占位符设置该输入的值，但使用 <code v-pre>{{getvar::remove_background}}</code> 作为替换值</li>
-<li>现在您可以在生成图像之前使用 <code v-pre>/setvar key=remove_background true</code> 或 <code v-pre>/setvar key=remove_background false</code> 设置 <code v-pre>remove_background</code> 的值</li>
+<li>使用自定义占位符设置该输入的值，但使用 <code translate="no" v-pre>{{getvar::remove_background}}</code> 作为替换值</li>
+<li>现在您可以在生成图像之前使用 <code translate="no" v-pre>/setvar key=remove_background true</code> 或 <code translate="no" v-pre>/setvar key=remove_background false</code> 设置 <code translate="no" v-pre>remove_background</code> 的值</li>
 <li>工作流将使用您设置的值来确定是否删除背景</li>
-<li>制作一个带有通用提示词前缀 <code v-pre>{{setvar::remove_background::true}}</code> 的图像样式&quot;无背景&quot;</li>
-<li>在生成图像之前使用样式控件或 <code v-pre>/imagine-style 无背景</code> 将 <code v-pre>remove_background</code> 的值设置为 <code v-pre>true</code></li>
+<li>制作一个带有通用提示词前缀 <code translate="no" v-pre>{{setvar::remove_background::true}}</code> 的图像样式&quot;无背景&quot;</li>
+<li>在生成图像之前使用样式控件或 <code translate="no" v-pre>/imagine-style 无背景</code> 将 <code translate="no" v-pre>remove_background</code> 的值设置为 <code translate="no" v-pre>true</code></li>
 </ol>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer id="retype-content-footer" class="clear-both">
-                                <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link-weight hover:text-body-link-hover hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/extensions/Stable-Diffusion.md" target="_blank" rel="noopener">
-                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        <span>Edit this page</span>
-                                    </a>
-                                </div>
-                            
-                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/captioning/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Image Captioning (图像描述生成)</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/live2d/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Live​2​D</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div id="retype-footer-links" class="print:hidden">
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-14">
+                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link hover:text-body-link-hover hover:underline" href="https://github.com/intellecat/SillyTavern-Docs-ZH/edit/main/extensions/Stable-Diffusion.md" target="_blank" rel="noopener">
+                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        <span>Edit this page</span>
+                    </a>
+                </div>
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/captioning/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">Image Captioning (图像描述生成)</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/live2d/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">Live​2​D</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
 
 
     <div id="retype-overlay-target"></div>
