@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Objective (目标扩展) | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/objective/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/objective-panel.png">
     <meta name="twitter:image:alt" content="Objective (目标扩展) | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/objective.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="objective-目标扩展">Objective (目标扩展)</h1>
 <h3 id="这是什么">这是什么？</h3>
@@ -224,29 +229,33 @@
 </ul>
 <h3 id="常见用例">常见用例</h3>
 <p>您的想象力就是极限，您可以给 AI 任何您希望的目标，它会规划如何实现。您可以让它规划如何杀死恶魔、抢劫神庙、举办豪华派对，甚至统治世界。</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/objective-panel.png" alt="目标设置面板" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="501" height="692" />
     <figcaption class="caption">目标设置面板</figcaption>
 </figure>
-</p>
 <h3 id="配置">配置</h3>
 <ul>
-<li><p>该扩展位于扩展菜单的 Objective 下。</p>
+<li>
+<p>该扩展位于扩展菜单的 Objective 下。</p>
 </li>
-<li><p>在顶部文本框中输入目标，然后点击 <code translate="no" v-pre>Auto-Generate Tasks</code>。这会向连接的 API 发送请求，要求它提供与您输入的目标相匹配的任务列表。</p>
+<li>
+<p>在顶部文本框中输入目标，然后点击 <code translate="no" v-pre>Auto-Generate Tasks</code>。这会向连接的 API 发送请求，要求它提供与您输入的目标相匹配的任务列表。</p>
 </li>
 </ul>
 <p><em>注意：点击 Auto-Generate Tasks 将在添加新任务之前删除当前选定目标的所有现有任务。</em></p>
 <ul>
-<li><p>收到 AI 的响应后，任务列表将自动创建在目标输入框下方的空间中。任务可以在创建后编辑。</p>
+<li>
+<p>收到 AI 的响应后，任务列表将自动创建在目标输入框下方的空间中。任务可以在创建后编辑。</p>
 </li>
-<li><p>面板底部有两个框：<code translate="no" v-pre>Position in Chat</code> 和 <code translate="no" v-pre>Task Check Frequency</code></p>
+<li>
+<p>面板底部有两个框：<code translate="no" v-pre>Position in Chat</code> 和 <code translate="no" v-pre>Task Check Frequency</code></p>
 <ul>
 <li><code translate="no" v-pre>Position in Chat</code> - 这是您希望当前任务在提示词的聊天部分中插入的&quot;深度&quot;。数字越低，AI 对任务的关注度就越高。设置为 0 将使任务成为 AI 思维中的主要内容。设置较高的值会将任务放在后台，让 AI 专注于当前的对话，但设置太高可能会导致 AI 永远&quot;不会去做&quot;这个任务。</li>
 <li><code translate="no" v-pre>Task Check Frequency</code> - 这是您希望 AI 检查任务是否完成的频率。如果设置为 <code translate="no" v-pre>3</code>，AI 将每发送 3 条消息就检查一次当前任务是否完成。</li>
 </ul>
 </li>
-<li><p>目标、任务及其描述会实时保存到当前聊天会话。自定义提示词会全局保存。</p>
+<li>
+<p>目标、任务及其描述会实时保存到当前聊天会话。自定义提示词会全局保存。</p>
 </li>
 </ul>
 <h3 id="自定义提示词">自定义提示词</h3>
@@ -271,11 +280,10 @@
 <p>您可以通过<code translate="no" v-pre>点击任务旁边的复选框</code>手动切换任务的完成状态。这将设置下一个未完成的任务被选中。</p>
 <h4 id="手动任务检查">手动任务检查</h4>
 <p>如果您想手动触发 AI 检查任务完成情况，点击聊天输入栏右侧的 Extras 扩展按钮（<code translate="no" v-pre>魔杖</code>）并选择 <code translate="no" v-pre>Manual Task Check</code>。</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/task-check.png" alt="手动任务检查" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="195" height="241" />
     <figcaption class="caption">手动任务检查</figcaption>
 </figure>
-</p>
 <h4 id="手动添加任务">手动添加任务</h4>
 <p>当没有任务存在时，会显示 <code translate="no" v-pre>Add Task</code> 按钮，允许您手动创建第一个任务。</p>
 <p>如果已经存在其他任务，点击任何任务右侧的 <code translate="no" v-pre>+</code> 按钮在其后插入新任务。</p>
@@ -356,6 +364,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Objective (目标扩展)", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Objective (目标扩展)", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/objective.md" }</script>
 </body>
 </html>

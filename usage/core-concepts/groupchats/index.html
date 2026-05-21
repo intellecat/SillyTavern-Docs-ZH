@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>群组聊天 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/core-concepts/groupchats/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,14 +35,17 @@
     <meta name="twitter:title" content="群组聊天 | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="决定群组聊天中的角色如何被选择进行回复。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/characters/groupchats.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -103,8 +107,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -202,9 +205,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="群组聊天">群组聊天</h1>
 <h3 id="回复顺序策略">回复顺序策略</h3>
@@ -214,14 +219,17 @@
 <h4 id="自然顺序">自然顺序</h4>
 <p>尝试模拟真实人类对话的流程。算法如下：</p>
 <ol>
-<li><p>从聊天中的最后一条消息中提取群组成员名字的提及。</p>
+<li>
+<p>从聊天中的最后一条消息中提取群组成员名字的提及。</p>
 <p>只有完整的词才会被识别为提及！如果您的角色名字是&quot;御坂美琴&quot;，他们只会对&quot;御坂&quot;或&quot;美琴&quot;做出回应，但永远不会对&quot;御&quot;、&quot;炮姐&quot;等做出回应。</p>
 <p>除非启用了&quot;允许自我回应&quot;设置，否则角色不会对自己消息中提到的名字做出回应！</p>
 </li>
-<li><p>角色根据&quot;健谈程度&quot;因素被激活。</p>
+<li>
+<p>角色根据&quot;健谈程度&quot;因素被激活。</p>
 <p>健谈程度定义了在没有被提及时角色说话的频率。在角色编辑器的&quot;高级定义&quot;屏幕中调整此值。滑块值在线性范围内从 <strong>0% / 害羞</strong>（角色除非被提及否则不说话）到 <strong>100% / 健谈</strong>（角色总是回复）。新角色的默认值是 50% 几率。</p>
 </li>
-<li><p>随机选择一个角色。</p>
+<li>
+<p>随机选择一个角色。</p>
 <p>如果在前面的步骤中没有角色被激活，则随机选择一个发言者，忽略所有其他条件。</p>
 </li>
 </ol>
@@ -340,6 +348,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "群组聊天", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "群组聊天", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/characters/groupchats.md" }</script>
 </body>
 </html>

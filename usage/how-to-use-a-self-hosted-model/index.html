@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>自托管 AI 模型 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/how-to-use-a-self-hosted-model/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,14 +35,17 @@
     <meta name="twitter:title" content="自托管 AI 模型 | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="本指南基于作者的个人经验和知识，并不是绝对真理。所有陈述都应该谨慎对待。如果您有任何更正或建议，请在 Discord 上联系我们或向 SillyTavern 文档仓库发送 PR。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/api_connections/self-hosted.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -103,8 +107,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -202,16 +205,18 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="自托管-ai-模型">自托管 AI 模型</h1>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -279,7 +284,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -295,16 +300,34 @@
 </div>
 <h3 id="下载和使用-koboldcpp无需安装gguf-模型">下载和使用 KoboldCpp（无需安装，GGUF 模型）</h3>
 <ol>
-<li>访问 <a href="https://koboldai.org/cpp%EF%BC%8C%E6%82%A8%E5%B0%86%E7%9C%8B%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E5%92%8C%E5%90%84%E7%A7%8D%E5%8F%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82">https://koboldai.org/cpp，您将看到最新版本和各种可下载的文件。</a>
-在撰写本文时，他们列出的最新 CUDA 版本是 cu12，这将在现代 Nvidia GPU 上运行最好，如果您有较旧的 GPU 或不同品牌，您可以使用常规的 koboldcpp.exe。如果您有旧 CPU，KoboldCpp 可能会在您尝试加载模型时崩溃，在这种情况下，尝试 _oldcpu 版本看看是否能解决您的问题。</li>
-<li>KoboldCpp 不需要安装，一旦您启动 KoboldCpp，您就可以使用&quot;Model&quot;字段旁边的&quot;Browse&quot;按钮立即选择您的 GGUF 模型，如上面链接的模型。</li>
-<li>默认情况下，KoboldCpp 的最大上下文为 4K，即使您在 SillyTavern 中设置更高，如果您希望以更高的上下文运行模型，请确保在启动模型之前调整此屏幕上的上下文滑块。请记住，更多的上下文大小意味着更高的（视频）内存要求，如果您设置得太高或加载的模型对您的系统来说太大，KoboldCpp 将自动开始使用您的 CPU 来处理无法放入 GPU 的层，这将慢得多。</li>
-<li>点击&quot;Launch&quot;，如果一切顺利，将打开一个新的网页，显示 KoboldAI Lite，您可以在那里测试一切是否正常工作。</li>
-<li>打开 SillyTavern 并点击 API 连接（顶部栏中的第二个按钮）</li>
-<li>将 API 设置为&quot;文本补全&quot;，API 类型设置为 KoboldCpp。</li>
-<li>将服务器 URL 设置为 <a href="http://127.0.0.1:5001/">http://127.0.0.1:5001/</a> 或 KoboldCpp 给您的链接（如果它不在同一系统上运行）（您可以激活 KoboldCpp 的远程隧道模式以获取可从任何地方访问的链接）。</li>
-<li>点击连接。它应该成功连接并检测到 kunoichi-dpo-v2-7b.Q6_K.gguf 作为模型。</li>
-<li>与角色聊天以测试它是否工作。</li>
+<li>
+<p>访问 <a href="https://koboldai.org/cpp%EF%BC%8C%E6%82%A8%E5%B0%86%E7%9C%8B%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E5%92%8C%E5%90%84%E7%A7%8D%E5%8F%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82">https://koboldai.org/cpp，您将看到最新版本和各种可下载的文件。</a>
+在撰写本文时，他们列出的最新 CUDA 版本是 cu12，这将在现代 Nvidia GPU 上运行最好，如果您有较旧的 GPU 或不同品牌，您可以使用常规的 koboldcpp.exe。如果您有旧 CPU，KoboldCpp 可能会在您尝试加载模型时崩溃，在这种情况下，尝试 _oldcpu 版本看看是否能解决您的问题。</p>
+</li>
+<li>
+<p>KoboldCpp 不需要安装，一旦您启动 KoboldCpp，您就可以使用&quot;Model&quot;字段旁边的&quot;Browse&quot;按钮立即选择您的 GGUF 模型，如上面链接的模型。</p>
+</li>
+<li>
+<p>默认情况下，KoboldCpp 的最大上下文为 4K，即使您在 SillyTavern 中设置更高，如果您希望以更高的上下文运行模型，请确保在启动模型之前调整此屏幕上的上下文滑块。请记住，更多的上下文大小意味着更高的（视频）内存要求，如果您设置得太高或加载的模型对您的系统来说太大，KoboldCpp 将自动开始使用您的 CPU 来处理无法放入 GPU 的层，这将慢得多。</p>
+</li>
+<li>
+<p>点击&quot;Launch&quot;，如果一切顺利，将打开一个新的网页，显示 KoboldAI Lite，您可以在那里测试一切是否正常工作。</p>
+</li>
+<li>
+<p>打开 SillyTavern 并点击 API 连接（顶部栏中的第二个按钮）</p>
+</li>
+<li>
+<p>将 API 设置为&quot;文本补全&quot;，API 类型设置为 KoboldCpp。</p>
+</li>
+<li>
+<p>将服务器 URL 设置为 <a href="http://127.0.0.1:5001/">http://127.0.0.1:5001/</a> 或 KoboldCpp 给您的链接（如果它不在同一系统上运行）（您可以激活 KoboldCpp 的远程隧道模式以获取可从任何地方访问的链接）。</p>
+</li>
+<li>
+<p>点击连接。它应该成功连接并检测到 kunoichi-dpo-v2-7b.Q6_K.gguf 作为模型。</p>
+</li>
+<li>
+<p>与角色聊天以测试它是否工作。</p>
+</li>
 </ol>
 <h3 id="优化-koboldcpp-速度的提示">优化 KoboldCpp 速度的提示</h3>
 <ol>
@@ -416,6 +439,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "自托管 AI 模型", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "自托管 AI 模型", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/api_connections/self-hosted.md" }</script>
 </body>
 </html>

@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Chat Translation (聊天翻译) | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/translation/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,15 +41,18 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/translation/sensei.png">
     <meta name="twitter:image:alt" content="Chat Translation (聊天翻译) | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/translation.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -110,8 +114,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -209,58 +212,54 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="chat-translation-聊天翻译">Chat Translation (聊天翻译)</h1>
 <h2 id="概述">概述</h2>
 <p>聊天翻译扩展使用各种翻译提供商实现聊天消息在不同语言之间的实时翻译。它支持手动和自动翻译模式。</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/sensei.png" alt="使用&quot;Translate Message/翻譯訊息&quot;消息操作按钮将英文消息翻译成中文" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="960" height="424" />
     <figcaption class="caption">使用&quot;Translate Message/翻譯訊息&quot;消息操作按钮将英文消息翻译成中文</figcaption>
 </figure>
-</p>
 <doc-tabs>
 <doc-tab v-cloak id="english">
 <template #title>English</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-en.png" alt="&quot;Translate Chat&quot;, &quot;Translate Input&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1190" height="224" />
     <figcaption class="caption">&quot;Translate Chat&quot;, &quot;Translate Input&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="简体中文">
 <template #title>简体中文</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-zh-cn.png" alt="&quot;翻译聊天&quot;, &quot;翻译输入&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1194" height="232" />
     <figcaption class="caption">&quot;翻译聊天&quot;, &quot;翻译输入&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="繁體中文">
 <template #title>繁體中文</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-zh-tw.png" alt="&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1196" height="230" />
     <figcaption class="caption">&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="한국어">
 <template #title>한국어</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-ko.png" alt="&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1196" height="226" />
     <figcaption class="caption">&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="русский">
 <template #title>Русский</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-ru.png" alt="&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1194" height="222" />
     <figcaption class="caption">&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 </doc-tabs>
 <h2 id="使用方法">使用方法</h2>
@@ -394,20 +393,18 @@
 <div id="基本用法-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/translate Welcome to the Tavern | /echo </code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/welcome-tavern.png" alt="中文（简体）弹出窗口，'欢迎来到酒馆/Welcome to the Tavern'" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="488" height="98" />
     <figcaption class="caption">中文（简体）弹出窗口，'欢迎来到酒馆/Welcome to the Tavern'</figcaption>
 </figure>
-</p>
 <p>将文本翻译成西班牙语并添加到聊天中：</p>
 <div id="基本用法-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/translate target=es Hello world | /send</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/hola-mundo.png" alt="西班牙语用户消息，'Hola Mundo/Hello world'" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1064" height="184" />
     <figcaption class="caption">西班牙语用户消息，'Hola Mundo/Hello world'</figcaption>
 </figure>
-</p>
 <h3 id="测试管道翻译本地化">测试、管道翻译、本地化</h3>
 <p>提示用户输入消息和语言，将消息翻译成该语言，然后重新翻译成配置的目标语言，并在弹出窗口中显示两个翻译。此示例使用 <code translate="no" v-pre>/input</code> 和 <code translate="no" v-pre>/buttons</code> 命令收集用户输入：</p>
 <div id="测试管道翻译本地化-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -449,11 +446,10 @@
 </tbody>
 </table>
 </div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/eels-out-tw-en.png" alt="弹出窗口，'我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1206" height="192" />
     <figcaption class="caption">弹出窗口，'我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW</figcaption>
 </figure>
-</p>
 <p>在以下示例中，输入语言检测相对有效：</p>
 <p><figure class="content-center">
     <img src="../../static/extensions/translation/eels-out-tw-hu.png" alt="弹出窗口，'(My hovercraft is full of eels)/A légpárnás hajóm tele van angolnával/我的氣墊船裡裝滿了鰻魚', zh-TW -&gt; hu -&gt; zh-TW" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1204" height="190" />
@@ -566,6 +562,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Chat Translation (聊天翻译)", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Chat Translation (聊天翻译)", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/translation.md" }</script>
 </body>
 </html>

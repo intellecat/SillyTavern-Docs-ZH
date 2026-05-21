@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Docker 安装指南 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/installation/docker/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,15 +35,18 @@
     <meta name="twitter:title" content="Docker 安装指南 | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="本指南假设您在非 root（非管理员）文件夹中安装 SillyTavern。如果您在 root 文件夹中安装 SillyTavern，您可能需要使用管理员权限运行某些命令[sudo、doas、Command Prompt (Administrator)]。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/installation/docker.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -104,8 +108,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -203,16 +206,18 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="docker-安装指南">Docker 安装指南</h1>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -229,12 +234,12 @@
 <h2 id="安装">安装</h2>
 <h3 id="linux">Linux</h3>
 <ol>
-<li><p>请按照<a href="https://docs.docker.com/engine/install/">此处</a>的 Docker 安装指南安装 Docker。</p>
+<li>请按照<a href="https://docs.docker.com/engine/install/">此处</a>的 Docker 安装指南安装 Docker。
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -250,45 +255,54 @@
 </div>
 </li>
 <li>按照 Docker <a href="https://docs.docker.com/engine/install/linux-postinstall/">安装后配置指南</a>中的<strong>以非 root 用户身份管理 Docker</strong>部分进行操作。</li>
-<li>使用包管理器安装 <a href="https://git-scm.com/download/linux">Git</a>。
+<li>
+<p>使用包管理器安装 <a href="https://git-scm.com/download/linux">Git</a>。</p>
 <ul>
-<li><p>Debian (Ubuntu/Pop! OS/等)</p>
+<li>
+<p>Debian (Ubuntu/Pop! OS/等)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo apt install git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Arch Linux (Manjaro/EndeavourOS/等)</p>
+<li>
+<p>Arch Linux (Manjaro/EndeavourOS/等)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo pacman -S git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Fedora, Red Hat Enterprise Linux (RHEL), 等</p>
+<li>
+<p>Fedora, Red Hat Enterprise Linux (RHEL), 等</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo dnf install git</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li>克隆 SillyTavern 仓库。
+<li>
+<p>克隆 SillyTavern 仓库。</p>
 <ul>
-<li><p>Release (稳定分支)</p>
+<li>
+<p>Release (稳定分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (开发分支)</p>
+<li>
+<p>Staging (开发分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>在 Docker 文件夹中运行以下命令执行 <code translate="no" v-pre>docker compose</code>。</p>
+<li>
+<p>在 Docker 文件夹中运行以下命令执行 <code translate="no" v-pre>docker compose</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>执行以下 Docker 命令获取 SillyTavern Docker 容器的 IP 地址。</p>
+<li>
+<p>执行以下 Docker 命令获取 SillyTavern Docker 容器的 IP 地址。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
@@ -310,7 +324,8 @@
 </doc-codeblock></div>
 <p>记下您在 <em>Gateway</em> 中看到的 IP 地址，这很重要。</p>
 </li>
-<li><p>使用 <code translate="no" v-pre>sudo</code> 打开 <code translate="no" v-pre>nano</code> 并运行以下命令：</p>
+<li>
+<p>使用 <code translate="no" v-pre>sudo</code> 打开 <code translate="no" v-pre>nano</code> 并运行以下命令：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nano config/config.yaml</code></pre>
 </doc-codeblock></div>
@@ -330,7 +345,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -345,7 +360,8 @@
     </div>
 </div>
 </li>
-<li><p>重启 Docker 容器以应用新配置。</p>
+<li>
+<p>重启 Docker 容器以应用新配置。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
@@ -358,7 +374,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -376,26 +392,31 @@
 <ol>
 <li>按照<a href="https://docs.docker.com/desktop/setup/install/windows-install/">此处</a>的 Docker 安装指南安装 Docker Desktop。</li>
 <li>安装 <a href="https://git-scm.com/download/win">Git for Windows</a>。</li>
-<li>克隆 SillyTavern 仓库。
+<li>
+<p>克隆 SillyTavern 仓库。</p>
 <ul>
-<li><p>Release (稳定分支)</p>
+<li>
+<p>Release (稳定分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (开发分支)</p>
+<li>
+<p>Staging (开发分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>在 Docker 文件夹中运行以下命令执行 <code translate="no" v-pre>docker compose</code>。</p>
+<li>
+<p>在 Docker 文件夹中运行以下命令执行 <code translate="no" v-pre>docker compose</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>执行以下 Docker 命令获取 SillyTavern Docker 容器的 IP 地址。</p>
+<li>
+<p>执行以下 Docker 命令获取 SillyTavern Docker 容器的 IP 地址。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
@@ -417,7 +438,8 @@
 </doc-codeblock></div>
 <p>记下您在 <em>Gateway</em> 中看到的 IP 地址，这很重要。</p>
 </li>
-<li><p>以管理员权限运行 <em>Notepad</em> 或您选择的代码编辑器，进入 <code translate="no" v-pre>config</code> 目录并打开 <em>config.yaml</em>。</p>
+<li>
+<p>以管理员权限运行 <em>Notepad</em> 或您选择的代码编辑器，进入 <code translate="no" v-pre>config</code> 目录并打开 <em>config.yaml</em>。</p>
 <p>在您选择的编辑器中，您应该会看到类似下面的内容：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
@@ -434,7 +456,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -449,7 +471,8 @@
     </div>
 </div>
 </li>
-<li><p>重启 Docker 容器以应用新配置。</p>
+<li>
+<p>重启 Docker 容器以应用新配置。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
@@ -462,7 +485,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -478,31 +501,37 @@
 </div>
 <ol>
 <li>按照<a href="https://docs.docker.com/desktop/setup/install/mac-install/">此处</a>的 Docker 安装指南安装 Docker Desktop。</li>
-<li><p>使用 Homebrew 安装 <code translate="no" v-pre>git</code>。</p>
+<li>
+<p>使用 Homebrew 安装 <code translate="no" v-pre>git</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">brew install git</code></pre>
 </doc-codeblock></div>
 </li>
-<li>克隆 SillyTavern 仓库。
+<li>
+<p>克隆 SillyTavern 仓库。</p>
 <ul>
-<li><p>Release (稳定分支)</p>
+<li>
+<p>Release (稳定分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Staging (开发分支)</p>
+<li>
+<p>Staging (开发分支)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging &amp;&amp; cd SillyTavern/docker</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p>在 Docker 文件夹中运行以下命令执行 <code translate="no" v-pre>docker compose</code>。</p>
+<li>
+<p>在 Docker 文件夹中运行以下命令执行 <code translate="no" v-pre>docker compose</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>执行以下 Docker 命令获取 SillyTavern Docker 容器的 IP 地址。</p>
+<li>
+<p>执行以下 Docker 命令获取 SillyTavern Docker 容器的 IP 地址。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
 </doc-codeblock></div>
@@ -524,7 +553,8 @@
 </doc-codeblock></div>
 <p>记下您在 <em>Gateway</em> 中看到的 IP 地址，这很重要。</p>
 </li>
-<li><p>使用 <code translate="no" v-pre>sudo</code> 打开 <code translate="no" v-pre>nano</code> 并运行以下命令。</p>
+<li>
+<p>使用 <code translate="no" v-pre>sudo</code> 打开 <code translate="no" v-pre>nano</code> 并运行以下命令。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nano config/config.yaml</code></pre>
 </doc-codeblock></div>
@@ -532,7 +562,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -561,7 +591,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -576,7 +606,8 @@
     </div>
 </div>
 </li>
-<li><p>重启 Docker 容器以应用新配置。</p>
+<li>
+<p>重启 Docker 容器以应用新配置。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
@@ -590,7 +621,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -615,7 +646,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -630,7 +661,8 @@
     </div>
 </div>
 <ol>
-<li><p>使用 <code translate="no" v-pre>nano</code> 或代码编辑器打开 <em>docker-compose.yml</em>，在 <code translate="no" v-pre>volumes</code> 下添加如下内容。</p>
+<li>
+<p>使用 <code translate="no" v-pre>nano</code> 或代码编辑器打开 <em>docker-compose.yml</em>，在 <code translate="no" v-pre>volumes</code> 下添加如下内容。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">    volumes:
         - &quot;./config:/home/node/app/config&quot;
@@ -640,12 +672,14 @@
 </li>
 <li>在 <code translate="no" v-pre>docker</code> 文件夹中创建一个名为 <em>plugins</em> 的新文件夹。</li>
 <li>按插件的说明进行安装。</li>
-<li><p>使用 <code translate="no" v-pre>nano</code> 或具备管理员权限的代码编辑器打开 <code translate="no" v-pre>config</code> 文件夹内的 <em>config.yaml</em>，并启用 <code translate="no" v-pre>enableServerPlugins</code></p>
+<li>
+<p>使用 <code translate="no" v-pre>nano</code> 或具备管理员权限的代码编辑器打开 <code translate="no" v-pre>config</code> 文件夹内的 <em>config.yaml</em>，并启用 <code translate="no" v-pre>enableServerPlugins</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">enableServerPlugins: true</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>重启 Docker 容器。</p>
+<li>
+<p>重启 Docker 容器。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
@@ -724,6 +758,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Docker", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Docker", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/installation/docker.md" }</script>
 </body>
 </html>

@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Speech Recognition (语音识别) | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/speech-recognition/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,15 +35,18 @@
     <meta name="twitter:title" content="Speech Recognition (语音识别) | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/speech-recognition.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -104,8 +108,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -203,9 +206,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="speech-recognition-语音识别">Speech Recognition (语音识别)</h1>
 <p>本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。</p>
@@ -218,14 +223,16 @@
 </ul>
 <h2 id="语音识别设置浏览器">语音识别设置（浏览器）</h2>
 <ol>
-<li><p><strong>配置 SillyTavern</strong>：</p>
+<li>
+<p><strong>配置 SillyTavern</strong>：</p>
 <ul>
 <li>启动 SillyTavern 并转到 <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>。</li>
 <li>从下拉选项中选择&quot;Browser&quot;。</li>
 <li>如果您的浏览器不支持语音识别，将出现错误弹窗。</li>
 </ul>
 </li>
-<li><p><strong>选择消息模式</strong>：</p>
+<li>
+<p><strong>选择消息模式</strong>：</p>
 <ul>
 <li>选择您想要的&quot;Message Mode&quot;：
 <ul>
@@ -236,19 +243,22 @@
 </li>
 </ul>
 </li>
-<li><p><strong>启用消息映射</strong>（可选）：</p>
+<li>
+<p><strong>启用消息映射</strong>（可选）：</p>
 <ul>
 <li>设置语音快捷方式的短语映射。</li>
 <li>例如，通过添加&quot;command delete = /del2&quot;，当检测到&quot;command delete&quot;时，&quot;/del2&quot;命令将替换您的语音消息。</li>
 <li>与自动发送模式结合使用时很有用，可实现完全的语音控制。通过勾选&quot;Enable messages mapping&quot;启用此功能。</li>
 </ul>
 </li>
-<li><p><strong>选择语言</strong>：</p>
+<li>
+<p><strong>选择语言</strong>：</p>
 <ul>
 <li>选择您要使用的语言（注意：并非所有浏览器都支持所有语言）。</li>
 </ul>
 </li>
-<li><p><strong>录音</strong>：</p>
+<li>
+<p><strong>录音</strong>：</p>
 <ul>
 <li>要开始录音，点击消息区域右侧发送按钮旁边的麦克风按钮。再次点击停止录音。如果未检测到声音，录音可能会自动停止。</li>
 </ul>
@@ -256,22 +266,23 @@
 </ol>
 <h2 id="语音识别设置whispervosk">语音识别设置（Whisper/Vosk）</h2>
 <ol>
-<li><p><strong>启用提供商</strong>：</p>
+<li>
+<p><strong>启用提供商</strong>：</p>
 <ul>
-<li><p>使用以下命令在 extras 服务器上启用所需的语音识别提供商：</p>
+<li>使用以下命令在 extras 服务器上启用所需的语音识别提供商：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=whisper-stt</code></pre>
 </doc-codeblock></div>
-<p>或</p>
+或
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=vosk-stt</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>您也可以通过添加选项 <code translate="no" v-pre>--stt-vosk-model-path</code> 或 <code translate="no" v-pre>--stt-whisper-model-path</code> 并指定模型路径来使用自定义模型。</p>
-</li>
+<li>您也可以通过添加选项 <code translate="no" v-pre>--stt-vosk-model-path</code> 或 <code translate="no" v-pre>--stt-whisper-model-path</code> 并指定模型路径来使用自定义模型。</li>
 </ul>
 </li>
-<li><p><strong>配置 SillyTavern</strong>：</p>
+<li>
+<p><strong>配置 SillyTavern</strong>：</p>
 <ul>
 <li>启动 SillyTavern 并转到 <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>。</li>
 <li>从下拉选项中选择&quot;Vosk&quot;或&quot;Whisper&quot;（whisper 更准确）。</li>
@@ -281,16 +292,18 @@
 </ol>
 <h2 id="语音识别设置流式传输">语音识别设置（流式传输）</h2>
 <ol>
-<li><p><strong>启用提供商</strong>：</p>
+<li>
+<p><strong>启用提供商</strong>：</p>
 <ul>
-<li><p>使用以下命令在 Sillytavern-extras 上启用流式语音识别模块：</p>
+<li>使用以下命令在 Sillytavern-extras 上启用流式语音识别模块：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=streaming-stt</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
 </li>
-<li><p><strong>配置 SillyTavern</strong>：</p>
+<li>
+<p><strong>配置 SillyTavern</strong>：</p>
 <ul>
 <li>（可选）如上述 Whisper 设置中所述指定自定义 Whisper 模型。</li>
 <li>（可选但推荐）在 SillyTavern 中设置触发词。只有以这些触发词开头的消息才会作为实际消息发送到 SillyTavern。这可以防止随机语音或噪音被转录。使用复选框启用此功能。可以使用复选框选择是否在实际消息中包含/排除触发词。</li>
@@ -371,6 +384,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Speech Recognition (语音识别)", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Speech Recognition (语音识别)", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/speech-recognition.md" }</script>
 </body>
 </html>

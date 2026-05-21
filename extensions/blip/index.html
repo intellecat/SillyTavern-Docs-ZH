@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Blip | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/blip/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,14 +35,17 @@
     <meta name="twitter:title" content="Blip | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/blip.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -103,8 +107,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -202,9 +205,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="blip">Blip</h1>
 <p>本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。</p>
@@ -216,24 +221,28 @@
 </ul>
 <h2 id="blip-全局设置">Blip 全局设置</h2>
 <ol>
-<li><p><strong>Blip user message</strong>：</p>
+<li>
+<p><strong>Blip user message</strong>：</p>
 <ul>
 <li>启用复选框以在用户消息上播放动画。</li>
 <li>为用户设置配置文件，或如果您想要用户的 blip 动画，则设置默认配置文件。</li>
 </ul>
 </li>
-<li><p><strong>Blip only for certain text</strong>：</p>
+<li>
+<p><strong>Blip only for certain text</strong>：</p>
 <ul>
 <li>启用复选框仅对引号内的文本进行 blip 处理。</li>
 <li>启用复选框以忽略星号内的所有内容。</li>
 </ul>
 </li>
-<li><p><strong>Automatic scroll down</strong>：</p>
+<li>
+<p><strong>Automatic scroll down</strong>：</p>
 <ul>
 <li>启用复选框使聊天窗口跟随文本动画向下滚动，如果您想在动画播放期间自由滚动，请禁用此选项。</li>
 </ul>
 </li>
-<li><p><strong>Audio volume</strong>：</p>
+<li>
+<p><strong>Audio volume</strong>：</p>
 <ul>
 <li>如果只需要文本动画效果，可以将音频静音。</li>
 <li>您可以调整 blip 音频的全局音量。</li>
@@ -247,7 +256,8 @@
 <li>如果列表中只显示当前聊天的角色，请点击复选框显示所有角色。</li>
 </ul>
 <ol>
-<li><p><strong>选择要分配/更新配置文件的角色</strong>：</p>
+<li>
+<p><strong>选择要分配/更新配置文件的角色</strong>：</p>
 <ul>
 <li>选择一个角色，如果他有配置文件，将会加载。</li>
 <li>如果还没有配置文件，当前参数将成为他的配置文件设置。</li>
@@ -255,26 +265,30 @@
 <li>如果您的角色未出现在列表中，请使用刷新按钮。</li>
 </ul>
 </li>
-<li><p><strong>文本动画设置</strong>：</p>
+<li>
+<p><strong>文本动画设置</strong>：</p>
 <ul>
 <li>设置文本速度：每个字母打印之间的延迟（毫秒）。</li>
 <li>设置最小/最大速度乘数不为 1.0 以实现速度动画的随机性。</li>
 <li>设置逗号/短语延迟大于 0 以在打印特殊字符时添加暂停，可以为动画增加生动性。在这种情况下，音频也会暂停。</li>
 </ul>
 </li>
-<li><p><strong>音频参数</strong>：</p>
+<li>
+<p><strong>音频参数</strong>：</p>
 <ul>
 <li>如果需要，设置音量乘数，这只会影响此语音配置文件。</li>
 <li>设置音频速度：每个 blip 声音之间的延迟，独立于文本速度。</li>
 </ul>
 </li>
-<li><p><strong>Blip 来源：生成的声音</strong>：</p>
+<li>
+<p><strong>Blip 来源：生成的声音</strong>：</p>
 <ul>
 <li>使用最小/最大频率滑块自定义播放的 blip 声音。</li>
 <li>如果最小/最大值不同，每次都会在此范围内播放随机声音。</li>
 </ul>
 </li>
-<li><p><strong>Blip 来源：文件</strong>：</p>
+<li>
+<p><strong>Blip 来源：文件</strong>：</p>
 <ul>
 <li>从列表中选择文件。</li>
 <li>您可以从资源扩展菜单获取官方 ST blip 资源。</li>
@@ -356,6 +370,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Blip", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Blip", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/blip.md" }</script>
 </body>
 </html>

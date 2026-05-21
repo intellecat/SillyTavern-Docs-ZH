@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>使用语音克隆的 XTTS | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/xtts/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,15 +35,18 @@
     <meta name="twitter:title" content="使用语音克隆的 XTTS | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="您好！您是否被那些展示 AI 文本转语音技术发展程度的 Reddit 帖子震撼到了？">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/xtts.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -104,8 +108,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -203,9 +206,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="使用语音克隆的-xtts">使用语音克隆的 XTTS</h1>
 <p>您好！您是否被那些展示 AI 文本转语音技术发展程度的 Reddit 帖子震撼到了？</p>
@@ -236,54 +241,64 @@
 打开 Anaconda 命令提示符并逐行按照说明操作。</p>
 <h3 id="启动并运行服务器">启动并运行服务器</h3>
 <ol>
-<li><p>导航到您在前提条件步骤 4 中创建的文件夹。</p>
+<li>导航到您在前提条件步骤 4 中创建的文件夹。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">cd C:\xtts</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>创建一个新的 conda 环境。从现在开始，我们将其称为 <code translate="no" v-pre>xtts</code>。</p>
+<li>创建一个新的 conda 环境。从现在开始，我们将其称为 <code translate="no" v-pre>xtts</code>。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">conda create -n xtts</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>激活新创建的环境。</p>
+<li>激活新创建的环境。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">conda activate xtts</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>在您的环境中安装 Python 3.10。当提示时确认&quot;y&quot;。</p>
+<li>在您的环境中安装 Python 3.10。当提示时确认&quot;y&quot;。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">conda install python=3.10</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>安装 XTTS 服务器及其要求。</p>
+<li>安装 XTTS 服务器及其要求。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">pip install xtts-api-server pydub</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>安装 PyTorch。这可能需要一些时间。以下命令安装带有 GPU 加速支持（CUDA）的 PyTorch。
+<li>
+<p>安装 PyTorch。这可能需要一些时间。以下命令安装带有 GPU 加速支持（CUDA）的 PyTorch。
 如果您只想使用 CPU 推理，请删除从 <code translate="no" v-pre>--index-url</code> 开始的最后一部分。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>在默认主机和端口上启动 XTTS 服务器：<a href="http://localhost:8020">http://localhost:8020</a></p>
+<li>在默认主机和端口上启动 XTTS 服务器：<a href="http://localhost:8020">http://localhost:8020</a>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">python -m xtts_api_server</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>在首次启动期间，将下载模型（约 2 GB）。
-不要忘记仔细阅读来自 Coqui AI 的法律声明。开玩笑的，只需再次点击&quot;y&quot;即可。</p>
-</li>
+<li>在首次启动期间，将下载模型（约 2 GB）。
+不要忘记仔细阅读来自 Coqui AI 的法律声明。开玩笑的，只需再次点击&quot;y&quot;即可。</li>
 </ol>
 <h3 id="连接到-sillytavern">连接到 SillyTavern</h3>
 <ol>
-<li>打开扩展面板，展开 TTS 菜单，并在提供商列表中选择&quot;XTTSv2&quot;。</li>
-<li>在语言下拉列表中选择您的文本转语音语言（如果不是波兰语我会很伤心）。</li>
-<li>验证提供商端点指向 <a href="http://localhost:8020">http://localhost:8020</a> 并且&quot;Available voices&quot;显示您的语音样本列表。</li>
-<li>选择任何角色并设置语音样本和角色之间的映射。
-如果角色列表为空，多点击几次&quot;Reload&quot;。</li>
-<li>根据您的偏好配置其余的 TTS 设置。</li>
+<li>
+<p>打开扩展面板，展开 TTS 菜单，并在提供商列表中选择&quot;XTTSv2&quot;。</p>
+</li>
+<li>
+<p>在语言下拉列表中选择您的文本转语音语言（如果不是波兰语我会很伤心）。</p>
+</li>
+<li>
+<p>验证提供商端点指向 <a href="http://localhost:8020">http://localhost:8020</a> 并且&quot;Available voices&quot;显示您的语音样本列表。</p>
+</li>
+<li>
+<p>选择任何角色并设置语音样本和角色之间的映射。
+如果角色列表为空，多点击几次&quot;Reload&quot;。</p>
+</li>
+<li>
+<p>根据您的偏好配置其余的 TTS 设置。</p>
+</li>
 </ol>
 <h3 id="现在您已经设置完成">现在您已经设置完成！</h3>
 <p>点击任何消息的上下文操作菜单中的喇叭图标，就能听到从扬声器中传出的美丽克隆语音。
@@ -295,7 +310,8 @@
 <h4 id="如何获得流式传输支持">如何获得流式传输支持？</h4>
 <ol>
 <li>将 SillyTavern 更新到最新版本。</li>
-<li><p>将 XTTS 服务器更新到最新版本。</p>
+<li>
+<p>将 XTTS 服务器更新到最新版本。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">conda activate xtts
 pip install xtts-api-server --upgrade</code></pre>
@@ -384,6 +400,6 @@ pip install xtts-api-server --upgrade</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "使用语音克隆的 XTTS", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "使用语音克隆的 XTTS", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/xtts.md" }</script>
 </body>
 </html>

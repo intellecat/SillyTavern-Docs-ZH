@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>CFG（无分类器引导） | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/prompts/cfg/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/cfg-hamburger.png">
     <meta name="twitter:image:alt" content="CFG（无分类器引导） | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/prompts/cfg.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="cfg无分类器引导">CFG（无分类器引导）</h1>
 <p>页面作者：kingbri</p>
@@ -224,35 +229,37 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 <hr>
 <h2 id="配置">配置</h2>
 <p>访问 CFG 设置的方式与访问作者注释相同：</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-hamburger.png" alt="CFGhamburgermenupng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="197" height="409" />
     <figcaption class="caption">CFGhamburgermenupng</figcaption>
 </figure>
-</p>
 <p>以下是 CFG 面板的样子：</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-panel.png" alt="CFGchatpanelpng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="478" height="653" />
     <figcaption class="caption">CFGchatpanelpng</figcaption>
 </figure>
-</p>
 <p>CFG 面板中有四个下拉菜单：</p>
 <ul>
-<li>聊天 CFG
+<li>
+<p>聊天 CFG</p>
 <ul>
 <li>将 CFG 比例和提示词的范围限定在当前聊天中</li>
 </ul>
 </li>
-<li>角色 CFG
+<li>
+<p>角色 CFG</p>
 <ul>
 <li>将 CFG 比例和提示词的范围限定在指定角色</li>
 </ul>
 </li>
-<li>全局 CFG
+<li>
+<p>全局 CFG</p>
 <ul>
 <li>全局覆盖 CFG 比例和提示词（也会覆盖模型预设！）</li>
 </ul>
 </li>
-<li>CFG 高级设置（以前称为 CFG 提示词级联）
+<li>
+<p>CFG 高级设置（以前称为 CFG 提示词级联）</p>
 <ul>
 <li>用于组合前三个下拉菜单中的提示词并设置插入深度的位置。</li>
 </ul>
@@ -261,11 +268,10 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 <p>注意：如果引导比例设置为 1，由于这是 CFG 的&quot;关闭&quot;状态，因此不会发送任何内容。</p>
 <h4 id="群聊">群聊</h4>
 <p>在群聊中，CFG 比例面板看起来是这样的：</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-groups.png" alt="CFGpanelgcpng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="479" height="634" />
     <figcaption class="caption">CFGpanelgcpng</figcaption>
 </figure>
-</p>
 <p>主要变化是移除了角色 CFG，并在聊天 CFG 下拉菜单中添加了一个名为&quot;使用角色 CFG 比例&quot;的复选框。这允许使用当前角色的引导比例，而不是聊天 CFG 比例设置的值。</p>
 <p>此功能的主要用途是根据每个角色的个别需求来调整比例。</p>
 <p>此外，在提示词级联中勾选&quot;角色负面提示词&quot;框将会在聊天提示词（如果启用）的基础上附加独立的角色负面提示词。</p>
@@ -274,16 +280,17 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 <h3 id="这不是在-stable-diffusion-中使用的吗">这不是在 Stable Diffusion 中使用的吗？</h3>
 <p>是也不是。LLM 中的 CFG 的工作方式与 Stable Diffusion 中的不同。基于 LLM 的 CFG 基于&quot;提示词混合&quot;原理工作。CFG 公式接受一个正面提示词和一个负面提示词，然后混合它们之间的<em>差异</em>。之后，发送组合的提示词并生成响应！</p>
 <p>这里有一个插图帮助理解这个概念。红色代表负面提示词，蓝色代表中性提示词，紫色代表被解释的混合结果。所有三个提示词中相同的白色空间不会用于 CFG 混合。</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-diagram.png" alt="stcfgdiagrampng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="747" height="296" />
     <figcaption class="caption">stcfgdiagrampng</figcaption>
 </figure>
-</p>
 <p>如果您想了解更多关于 CFG 和 LLM 的信息，Vermifuge 的原始论文在这里。建议您阅读/收听：</p>
 <ul>
-<li><p>论文 - <a href="https://arxiv.org/abs//2306.17806">[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)</a></p>
+<li>
+<p>论文 - <a href="https://arxiv.org/abs//2306.17806">[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)</a></p>
 </li>
-<li><p>音频版本 - <a href="https://www.youtube.com/watch?v=MGY00YFcyco">https://www.youtube.com/watch?v=MGY00YFcyco</a></p>
+<li>
+<p>音频版本 - <a href="https://www.youtube.com/watch?v=MGY00YFcyco">https://www.youtube.com/watch?v=MGY00YFcyco</a></p>
 </li>
 </ul>
 <h3 id="我需要-cfg-提示词吗">我需要 CFG 提示词吗？</h3>
@@ -380,6 +387,6 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "CFG（无分类器引导）", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "CFG（无分类器引导）", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/prompts/cfg.md" }</script>
 </body>
 </html>

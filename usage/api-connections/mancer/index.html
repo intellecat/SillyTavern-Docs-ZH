@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Mancer | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/api-connections/mancer/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/mancer-dashboard.png">
     <meta name="twitter:image:alt" content="Mancer | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/api_connections/mancer.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="mancer">Mancer</h1>
 <p>Mancer 是一个大语言模型推理服务，让您可以运行任何您想要的提示词，并且不会审查响应。截至撰写时（2024-11-28），大多数模型需要预先充值余额才能开始聊天，但有一个免费模型。</p>
@@ -220,18 +225,24 @@
 </ul>
 <h2 id="如何开始">如何开始</h2>
 <ol>
-<li>在 <a href="https://mancer.tech/">mancer.tech</a> 注册账户。</li>
-<li><p>点击仪表板并复制您的 API 密钥。</p>
+<li>
+<p>在 <a href="https://mancer.tech/">mancer.tech</a> 注册账户。</p>
+</li>
+<li>
+<p>点击仪表板并复制您的 API 密钥。</p>
 <p><img src="../../../static/mancer-dashboard.png" alt="2024/2/27 的 Mancer 仪表板" class="max-w-full h-auto" width="573" height="431" /></p>
 </li>
-<li>在 SillyTavern 中，选择文本补全 API，然后在 API 类型下选择 Mancer。</li>
-<li>输入您的 Mancer API 密钥并点击连接。</li>
+<li>
+<p>在 SillyTavern 中，选择文本补全 API，然后在 API 类型下选择 Mancer。</p>
+</li>
+<li>
+<p>输入您的 Mancer API 密钥并点击连接。</p>
+</li>
 </ol>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/mancer-key.png" alt="API 密钥" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="588" height="353" />
     <figcaption class="caption">API 密钥</figcaption>
 </figure>
-</p>
 <p>现在您应该可以与任何您选择的 Mancer 模型聊天了。</p>
 <h2 id="匿名日志记录">匿名日志记录</h2>
 <p>如果您不介意您的聊天可能被用于训练模型、改进 Mancer 的服务、发布数据集或他们可能决定用它做的<em>其他任何事情</em>，您可以选择加入匿名日志记录，以获得特定模型 25% 的 token 折扣。只需前往您的 <a href="https://mancer.tech/dashboard.html">Mancer 仪表板</a>并勾选&quot;启用匿名日志记录&quot;。</p>
@@ -309,6 +320,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Mancer", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Mancer", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/api_connections/mancer.md" }</script>
 </body>
 </html>

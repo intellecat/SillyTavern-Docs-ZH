@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>会说话的头像 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/talkinghead/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/input_spec.png">
     <meta name="twitter:image:alt" content="会说话的头像 | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/extras/talkinghead.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="会说话的头像">会说话的头像</h1>
 <h3 id="这是什么">这是什么？</h3>
@@ -229,15 +234,20 @@ ifacialmocap_puppeteer 让您将自己的面部动作转移到动漫角色上。
 <p>您必须使用以下模块启动 extras 才能使 talkinghead 工作：<code translate="no" v-pre>classify</code> 和 <code translate="no" v-pre>talkinghead</code>！
 classify 是处理 talkinghead.png 文件所必需的。此外，您还可以使用 <code translate="no" v-pre>--talkinghead-gpu</code> 将混合模型加载到 GPU 内存中，使动画速度提高 10 倍。强烈建议使用 GPU 加速！默认情况下，程序启动后会加载默认图像 SillyTavern-extras\talkinghead\tha3\images\lambda_00.png。您可以通过访问 http://localhost:5100/api/talkinghead/result_feed 或 <code translate="no" v-pre>您的扩展 URL:端口/api/talkinghead/result_feed</code> 来验证它是否正常工作。</p>
 <ul>
-<li><p>服务器启动后，转到扩展 API 选项卡并连接。然后只需选择一个角色卡进行加载。（启动 server.py 时使用 <code translate="no" v-pre>--enable-modules=classify,talkinghead --talkinghead-gpu</code>）</p>
+<li>
+<p>服务器启动后，转到扩展 API 选项卡并连接。然后只需选择一个角色卡进行加载。（启动 server.py 时使用 <code translate="no" v-pre>--enable-modules=classify,talkinghead --talkinghead-gpu</code>）</p>
 </li>
-<li><p>现在选择角色表情，如果您勾选 talkinghead 图像类型框，脚本将用 <code translate="no" v-pre>您的扩展 URL:端口/api/talkinghead/result_feed</code> 的结果替换您当前的角色表情。取消勾选该框应该会将图像恢复为原始表情，但有时您需要向聊天发送新消息来&quot;重新加载&quot;图像。</p>
+<li>
+<p>现在选择角色表情，如果您勾选 talkinghead 图像类型框，脚本将用 <code translate="no" v-pre>您的扩展 URL:端口/api/talkinghead/result_feed</code> 的结果替换您当前的角色表情。取消勾选该框应该会将图像恢复为原始表情，但有时您需要向聊天发送新消息来&quot;重新加载&quot;图像。</p>
 </li>
-<li><p>如果角色目录中没有 talkinghead.png 文件，它将只显示默认图像或最后一个有 talkinghead.png 文件的角色卡。当角色卡更改时，动画源图像也会更改。</p>
+<li>
+<p>如果角色目录中没有 talkinghead.png 文件，它将只显示默认图像或最后一个有 talkinghead.png 文件的角色卡。当角色卡更改时，动画源图像也会更改。</p>
 </li>
-<li><p>现在打开角色表情，滚动到 talkinghead 图像，上传一个符合下面&quot;输入图像的约束条件&quot;部分要求的图像文件。</p>
+<li>
+<p>现在打开角色表情，滚动到 talkinghead 图像，上传一个符合下面&quot;输入图像的约束条件&quot;部分要求的图像文件。</p>
 </li>
-<li><p>然后勾选并取消勾选 talkinghead 框以重新加载角色。如果图像看起来很奇怪，可能是因为它不是透明的/没有 alpha 层。否则，请按照下面的说明和模板操作。</p>
+<li>
+<p>然后勾选并取消勾选 talkinghead 框以重新加载角色。如果图像看起来很奇怪，可能是因为它不是透明的/没有 alpha 层。否则，请按照下面的说明和模板操作。</p>
 </li>
 </ul>
 <h3 id="输入图像的约束条件">输入图像的约束条件</h3>
@@ -249,11 +259,10 @@ classify 是处理 talkinghead.png 文件所必需的。此外，您还可以使
 角色的手应该在头部以下且远离头部。
 角色的头部应该大致包含在图像上半部分中间的 128 x 128 框内。
 不属于角色的所有像素（即背景像素）的 alpha 通道必须为 0。</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/input_spec.png" alt="输入约束" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="796" height="715" />
     <figcaption class="caption">输入约束</figcaption>
 </figure>
-</p>
 <h3 id="高级部分">高级部分</h3>
 <h3 id="python-环境">Python 环境</h3>
 <p>除了基本功能（app.py）外，manual_poser 和 ifacialmocap_puppeteer 都可以作为桌面应用程序使用。要运行它们，您需要设置一个用于运行 Python 语言程序的环境。该环境需要以下软件包：</p>
@@ -293,33 +302,30 @@ conda install matplotlib</p>
 <ul>
 <li>
 <dl>
-<dt>editor.pt</dt>
+<dt id="editorpt">editor.pt</dt>
 </dl>
 </li>
-<li><p>two_algo_face_body_rotator.pt</p>
-</li>
+<li>two_algo_face_body_rotator.pt</li>
 </ul>
 </li>
 <li>standard_float
 <ul>
 <li>
 <dl>
-<dt>editor.pt</dt>
+<dt id="editorpt-1">editor.pt</dt>
 </dl>
 </li>
-<li><p>two_algo_face_body_rotator.pt</p>
-</li>
+<li>two_algo_face_body_rotator.pt</li>
 </ul>
 </li>
 <li>standard_half
 <ul>
 <li>
 <dl>
-<dt>editor.pt</dt>
+<dt id="editorpt-2">editor.pt</dt>
 </dl>
 </li>
-<li><p>two_algo_face_body_rotator.pt</p>
-</li>
+<li>two_algo_face_body_rotator.pt</li>
 </ul>
 </li>
 </ul>
@@ -421,6 +427,6 @@ conda install matplotlib</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "会说话的头像", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "会说话的头像", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/extras/talkinghead.md" }</script>
 </body>
 </html>

@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>VPN 和隧道 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/administration/tunneling/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,14 +35,17 @@
     <meta name="twitter:title" content="VPN 和隧道 | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="VPN 和隧道是一种从世界任何地方安全访问您的家庭网络的方式。本指南将向您展示如何使用 VPN 或隧道从任何地方访问您的 SillyTavern 实例。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/administration/tunneling.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -103,8 +107,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -202,25 +205,31 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="vpn-和隧道">VPN 和隧道</h1>
 <p>VPN 和隧道是一种从世界任何地方安全访问您的家庭网络的方式。本指南将向您展示如何使用 VPN 或隧道从任何地方访问您的 SillyTavern 实例。</p>
 <h2 id="方法">方法</h2>
 <ol>
-<li><p>使用<strong>自建 VPN</strong>。</p>
+<li>
+<p>使用<strong>自建 VPN</strong>。</p>
 <p>许多路由器都具有在路由器管理页面中托管 VPN 服务器（主要是 OpenVPN 或 WireGuard）的功能。请参考您的路由器手册来设置 VPN 并将您的设备添加到 VPN 中。连接后，只需访问您为 SillyTavern 设置的私有 IP 地址即可正常连接。对用户和 Windows 使用来说都更简单。</p>
 </li>
-<li><p>使用 <a href="https://developers.cloudflare.com/cloudflare-one/"><strong>Cloudflare Zero Trust</strong></a>。</p>
+<li>
+<p>使用 <a href="https://developers.cloudflare.com/cloudflare-one/"><strong>Cloudflare Zero Trust</strong></a>。</p>
 <p>Cloudflare Zero Trust 是 Cloudflare 中的一项免费组织功能，允许您添加 50 个用户。这将通过 Cloudflare 代理您的流量，通过使用 <code translate="no" v-pre>cloudflared</code> 将您的 ST PC 添加为隧道，您可以像在家一样连接到您的 ST 实例。</p>
 <p>请注意，在创建隧道后，您需要添加到路由器私有 IP 地址的路由，并计算 IP CIDR 值，以便使用 Cloudflare Zero Trust 在移动中获得完整的本地访问权限。</p>
 </li>
-<li><p>使用独立的 <strong>Cloudflare</strong> 或 <strong><a href="https://ngrok.com">ngrok</a></strong> 隧道。</p>
+<li>
+<p>使用独立的 <strong>Cloudflare</strong> 或 <strong><a href="https://ngrok.com">ngrok</a></strong> 隧道。</p>
 <p>与 AI 后端可以连接的方式类似，您也可以通过 Cloudflare 隧道连接您的 ST 实例并打开 Cloudflare 隧道页面。但是，每次您想要在移动中使用 ST 时，都必须复制并粘贴由 Cloudflare/NGROK 生成的每个新链接。</p>
 </li>
-<li><p>使用 <strong>Tailscale</strong>。</p>
+<li>
+<p>使用 <strong>Tailscale</strong>。</p>
 <p>Tailscale 是一个 VPN 提供商，可以实现与您的 PC 的安全远程连接。</p>
 </li>
 </ol>
@@ -331,6 +340,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "VPN 和隧道", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "VPN 和隧道", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/administration/tunneling.md" }</script>
 </body>
 </html>

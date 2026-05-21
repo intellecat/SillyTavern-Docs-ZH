@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Windows 安装指南 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/installation/windows/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,15 +41,18 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/windows-1.png">
     <meta name="twitter:image:alt" content="Windows 安装指南 | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/installation/windows.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -110,8 +114,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -209,16 +212,18 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="windows-安装指南">Windows 安装指南</h1>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -239,7 +244,8 @@
 <li>打开 Windows 资源管理器（<code translate="no" v-pre>Win+E</code>）</li>
 <li>浏览或创建一个不受 Windows 控制或监视的文件夹（例如：C:\MySpecialFolder\）</li>
 <li>通过点击顶部的&quot;地址栏&quot;，输入 <code translate="no" v-pre>cmd</code> 并按回车键，在该文件夹中打开命令提示符。</li>
-<li>当黑色框（命令提示符）弹出后，输入以下其中一个命令并按回车：
+<li>
+<p>当黑色框（命令提示符）弹出后，输入以下其中一个命令并按回车：</p>
 <ul>
 <li>Release 分支：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern -b release</code></li>
 <li>Staging 分支：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern -b staging</code></li>
@@ -250,12 +256,12 @@
 </ol>
 <h2 id="通过-sillytavern-launcher-安装">通过 SillyTavern Launcher 安装</h2>
 <ol>
-<li><p>在键盘上：按 <strong><code translate="no" v-pre>WINDOWS + R</code></strong> 打开运行对话框。然后运行以下命令安装 git：</p>
+<li>在键盘上：按 <strong><code translate="no" v-pre>WINDOWS + R</code></strong> 打开运行对话框。然后运行以下命令安装 git：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cmd /c winget install -e --id Git.Git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>在键盘上：按 <strong><code translate="no" v-pre>WINDOWS + E</code></strong> 打开文件资源管理器，然后导航到您想要安装启动器的文件夹。进入目标文件夹后，在地址栏中输入 <code translate="no" v-pre>cmd</code> 并按回车。然后运行以下命令：</p>
+<li>在键盘上：按 <strong><code translate="no" v-pre>WINDOWS + E</code></strong> 打开文件资源管理器，然后导航到您想要安装启动器的文件夹。进入目标文件夹后，在地址栏中输入 <code translate="no" v-pre>cmd</code> 并按回车。然后运行以下命令：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"> git clone https://github.com/SillyTavern/SillyTavern-Launcher.git &amp;&amp; cd SillyTavern-Launcher &amp;&amp; start installer.bat</code></pre>
 </doc-codeblock></div>
@@ -264,23 +270,37 @@
 <h2 id="通过-github-desktop-安装">通过 GitHub Desktop 安装</h2>
 <p>（这种方法仅允许在 GitHub Desktop 中使用 git，如果您也想在命令行中使用 <code translate="no" v-pre>git</code>，您还需要安装 <a href="https://gitforwindows.org/">Git for Windows</a>）</p>
 <ol>
-<li>安装 <a href="https://nodejs.org/en">NodeJS</a>（推荐使用最新的 LTS 版本）</li>
-<li>安装 <a href="https://central.github.com/deployments/desktop/desktop/latest/win32">GitHub Desktop</a></li>
-<li><p>安装 GitHub Desktop 后，点击 <code translate="no" v-pre>Clone a repository from the internet....</code>（注意：这一步<strong>不需要</strong>创建 GitHub 账户）</p>
+<li>
+<p>安装 <a href="https://nodejs.org/en">NodeJS</a>（推荐使用最新的 LTS 版本）</p>
+</li>
+<li>
+<p>安装 <a href="https://central.github.com/deployments/desktop/desktop/latest/win32">GitHub Desktop</a></p>
+</li>
+<li>
+<p>安装 GitHub Desktop 后，点击 <code translate="no" v-pre>Clone a repository from the internet....</code>（注意：这一步<strong>不需要</strong>创建 GitHub 账户）</p>
 <p><img src="../../static/windows-1.png" alt="image" class="max-w-full h-auto" width="747" height="593" /></p>
 </li>
-<li><p>在菜单中，点击 URL 标签页，输入此 URL <code translate="no" v-pre>https://github.com/SillyTavern/SillyTavern</code>，然后点击 Clone。您可以更改本地路径来改变 SillyTavern 的下载位置。</p>
+<li>
+<p>在菜单中，点击 URL 标签页，输入此 URL <code translate="no" v-pre>https://github.com/SillyTavern/SillyTavern</code>，然后点击 Clone。您可以更改本地路径来改变 SillyTavern 的下载位置。</p>
 <p><img src="../../static/windows-2.png" alt="image" class="max-w-full h-auto" width="609" height="364" /></p>
 </li>
-<li>要打开 SillyTavern，使用 Windows 资源管理器浏览到您克隆仓库的文件夹。默认情况下，仓库将被克隆到：<code translate="no" v-pre>C:\Users\[您的 Windows 用户名]\Documents\GitHub\SillyTavern</code></li>
-<li><p>双击 <code translate="no" v-pre>start.bat</code> 文件。（注意：文件名中的 <code translate="no" v-pre>.bat</code> 部分可能被您的操作系统隐藏，在这种情况下，它看起来像一个名为 &quot;<code translate="no" v-pre>Start</code>&quot; 的文件。这就是您需要双击运行 SillyTavern 的文件）</p>
+<li>
+<p>要打开 SillyTavern，使用 Windows 资源管理器浏览到您克隆仓库的文件夹。默认情况下，仓库将被克隆到：<code translate="no" v-pre>C:\Users\[您的 Windows 用户名]\Documents\GitHub\SillyTavern</code></p>
+</li>
+<li>
+<p>双击 <code translate="no" v-pre>start.bat</code> 文件。（注意：文件名中的 <code translate="no" v-pre>.bat</code> 部分可能被您的操作系统隐藏，在这种情况下，它看起来像一个名为 &quot;<code translate="no" v-pre>Start</code>&quot; 的文件。这就是您需要双击运行 SillyTavern 的文件）</p>
 <p><img src="../../static/windows-3.png" alt="image" class="max-w-full h-auto" width="268" height="592" /></p>
 </li>
-<li>双击后，一个大的黑色命令控制台窗口将打开，SillyTavern 将开始安装运行所需的内容。</li>
-<li><p>安装过程完成后，如果一切正常，命令控制台窗口应该如下所示，并且 SillyTavern 标签页应该在您的浏览器中打开：</p>
+<li>
+<p>双击后，一个大的黑色命令控制台窗口将打开，SillyTavern 将开始安装运行所需的内容。</p>
+</li>
+<li>
+<p>安装过程完成后，如果一切正常，命令控制台窗口应该如下所示，并且 SillyTavern 标签页应该在您的浏览器中打开：</p>
 <p><img src="../../static/windows-4.png" alt="image" class="max-w-full h-auto" width="550" height="318" /></p>
 </li>
-<li>连接到任何<a href="../../usage/api-connections/">支持的 API</a> 并开始聊天！</li>
+<li>
+<p>连接到任何<a href="../../usage/api-connections/">支持的 API</a> 并开始聊天！</p>
+</li>
 </ol>
 
                 
@@ -310,7 +330,7 @@
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../installation/linuxmacos/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Mac​OS & Linux</span>
+                                <span class="block mt-1">Mac​OS &amp; Linux</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -354,6 +374,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Windows", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Windows", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/installation/windows.md" }</script>
 </body>
 </html>

@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Image Generatio (图像生成) | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/stable-diffusion/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,15 +41,18 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/sd-comfy-prompt-primitive.png">
     <meta name="twitter:image:alt" content="Image Generatio (图像生成) | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/stable-diffusion.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -110,8 +114,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -209,9 +212,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="image-generatio-图像生成">Image Generatio (图像生成)</h1>
 <p>使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。</p>
@@ -404,7 +409,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -508,7 +513,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -558,14 +563,13 @@
 <p>请注意，占位符用双引号括起来。这对于 JSON 格式很重要，并且是 SillyTavern 的占位符替换系统所必需的。即使对于数字，您也必须在模板 JSON 中使用双引号。</p>
 <p>有时提示词（或其他值）不会出现在您期望的位置。如果节点对于工作流在 API 模式下运行不是必需的，ComfyUI 将从工作流的 API 版本中删除这些节点。</p>
 <p>例如，此工作流使用 <a href="https://github.com/badjeff/comfyui_lora_tag_loader">LoRA 标签加载器节点</a> 和提示词原语，以便工作流在 UI 模式下更清晰：</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/sd-comfy-prompt-primitive.png" alt="Prompt primitive and LoRA loader" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1222" height="336" />
     <figcaption class="caption">Prompt primitive and LoRA loader</figcaption>
 </figure>
-</p>
 <p>提示词原语节点将从工作流的 API 版本中删除，因此您需要在 LoraTagLoader 节点中插入占位符。在工作流中找到文本&quot;apple tree&quot;并将其替换为 <code translate="no" v-pre>%prompt%</code> 占位符：</p>
 <doc-tabs>
-<doc-tab v-cloak id="带有占位符的-json">
+<doc-tab v-cloak id="带有占位符的-json-1">
 <template #title>带有占位符的 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -579,7 +583,7 @@
 }</code></pre>
 </doc-codeblock></div>
 </doc-tab>
-<doc-tab v-cloak id="原始-json">
+<doc-tab v-cloak id="原始-json-1">
 <template #title>原始 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -599,7 +603,7 @@
 <p><code translate="no" v-pre>%model%</code> 占位符将插入图像生成设置中选定模型的值。</p>
 <p>默认文本到图像工作流中的一个示例：</p>
 <doc-tabs>
-<doc-tab v-cloak id="带有占位符的-json">
+<doc-tab v-cloak id="带有占位符的-json-2">
 <template #title>带有占位符的 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -610,7 +614,7 @@
 }</code></pre>
 </doc-codeblock></div>
 </doc-tab>
-<doc-tab v-cloak id="原始-json">
+<doc-tab v-cloak id="原始-json-2">
 <template #title>原始 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -625,7 +629,7 @@
 <p>要加载 GGUF 量化的 UNet，请在工作流中使用 <a href="https://github.com/city96/ComfyUI-GGUF">UNet Loader (GGUF)</a> 节点，
 在 SillyTavern 模型下拉菜单中选择一个 <code translate="no" v-pre>GGUF</code> 模型，并在节点设置中像这样使用 <code translate="no" v-pre>%model%</code> 占位符：</p>
 <doc-tabs>
-<doc-tab v-cloak id="带有占位符的-json">
+<doc-tab v-cloak id="带有占位符的-json-3">
 <template #title>带有占位符的 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -639,7 +643,7 @@
 }</code></pre>
 </doc-codeblock></div>
 </doc-tab>
-<doc-tab v-cloak id="原始-json">
+<doc-tab v-cloak id="原始-json-3">
 <template #title>原始 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -658,7 +662,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -677,11 +681,10 @@
 <h4 id="头像图像">头像图像</h4>
 <p>使用 <code translate="no" v-pre>%user_avatar%</code> 和 <code translate="no" v-pre>%char_avatar%</code> 占位符在工作流中包含用户和角色头像。这些占位符在执行工作流时会被替换为头像的 PNG 数据。图像数据以 base64 格式编码，因此您必须在工作流中对其进行解码。此任务的一个流行选择是 <a href="https://github.com/Acly/comfyui-tooling-nodes">Load image (Base64)</a> 节点。</p>
 <p>在此示例中，角色头像使用 <code translate="no" v-pre>Load Image (Base64)</code> 节点加载。它还使用 Image Resize 节点将图像重新缩放到图像生成设置中指定的任何大小：</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/sd-comfy-load-b64.png" alt="Load image from base64 string and resize" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1234" height="418" />
     <figcaption class="caption">Load image from base64 string and resize</figcaption>
 </figure>
-</p>
 <p>将 <code translate="no" v-pre>%char_avatar%</code>、<code translate="no" v-pre>%width%</code> 和 <code translate="no" v-pre>%height%</code> 占位符插入到 Load Image (Base64) 和 Image Resize 节点的 JSON 中：</p>
 <div id="头像图像-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -731,7 +734,7 @@
 <p>自定义占位符将出现在预定义占位符下方的单独列表中。</p>
 <p>例如，您可以使用自定义占位符替换默认工作流中已保存图像文件名的&quot;SillyTavern&quot;前缀。添加一个新的自定义占位符，将 <code translate="no" v-pre>find</code> 设置为 <code translate="no" v-pre>filename_prefix</code>，将 <code translate="no" v-pre>replace</code> 设置为 <code translate="no" v-pre>ServiceTesnor</code>。将新的 <code translate="no" v-pre>%filename_prefix%</code> 占位符插入到您的工作流 JSON 中。现在，您可以通过更改自定义占位符的值，将 SillyTavern 中的文件名前缀更改为 ServiceTesnor。</p>
 <doc-tabs>
-<doc-tab v-cloak id="带有占位符的-json">
+<doc-tab v-cloak id="带有占位符的-json-4">
 <template #title>带有占位符的 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -743,7 +746,7 @@
 }</code></pre>
 </doc-codeblock></div>
 </doc-tab>
-<doc-tab v-cloak id="原始-json">
+<doc-tab v-cloak id="原始-json-4">
 <template #title>原始 JSON</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -846,6 +849,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Image Generatio (图像生成)", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Image Generatio (图像生成)", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/stable-diffusion.md" }</script>
 </body>
 </html>

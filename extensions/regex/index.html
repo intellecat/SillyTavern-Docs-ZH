@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Regex | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/regex/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/regex-listview.png">
     <meta name="twitter:image:alt" content="Regex | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/regex.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="regex">Regex</h1>
 <h2 id="这是什么">这是什么?</h2>
@@ -218,13 +223,17 @@
 <h2 id="有用的链接">有用的链接</h2>
 <p><strong>本文档不会深入解释编写 RegEx 序列的过程。有许多在线资源可以帮助您。</strong></p>
 <ul>
-<li><p><a href="https://regexr.com">https://regexr.com</a></p>
+<li>
+<p><a href="https://regexr.com">https://regexr.com</a></p>
 </li>
-<li><p><a href="https://regex101.com">https://regex101.com</a></p>
+<li>
+<p><a href="https://regex101.com">https://regex101.com</a></p>
 </li>
-<li><p><a href="https://extendsclass.com/regex-tester.html">https://extendsclass.com/regex-tester.html</a></p>
+<li>
+<p><a href="https://extendsclass.com/regex-tester.html">https://extendsclass.com/regex-tester.html</a></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a></p>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a></p>
 </li>
 </ul>
 <h2 id="前置条件">前置条件</h2>
@@ -233,11 +242,10 @@
 <h2 id="常见用例">常见用例</h2>
 <p>RegEx 通常用于对聊天中的某些单词应用查找-替换功能，为某些单词或句子类型添加 markdown 样式，或向 STscript 返回布尔值。</p>
 <h2 id="脚本列表">脚本列表</h2>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/regex-listview.png" alt="RegEx 扩展脚本列表" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="467" height="649" />
     <figcaption class="caption">RegEx 扩展脚本列表</figcaption>
 </figure>
-</p>
 <ul>
 <li>顶部的按钮用于创建新脚本。
 <ul>
@@ -257,29 +265,36 @@
 <li>&quot;删除&quot;(垃圾桶)删除脚本。</li>
 </ul>
 <h2 id="regex-编辑器">RegEx 编辑器</h2>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/regex-editor.png" alt="RegEx 编辑器" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="515" height="703" />
     <figcaption class="caption">RegEx 编辑器</figcaption>
 </figure>
-</p>
 <ul>
-<li><p><strong>测试模式</strong>:这将在编辑器顶部打开一个比较视图。在&quot;输入&quot;框中键入一些文本，您的 RegEx 脚本的结果将显示在输出框中。这是一个有价值的调试工具，因为它会在您对脚本设置进行更改时实时更新输出框。</p>
+<li>
+<p><strong>测试模式</strong>:这将在编辑器顶部打开一个比较视图。在&quot;输入&quot;框中键入一些文本，您的 RegEx 脚本的结果将显示在输出框中。这是一个有价值的调试工具，因为它会在您对脚本设置进行更改时实时更新输出框。</p>
 </li>
-<li><p><strong>名称</strong>:扩展的脚本列表上显示的脚本标签。<strong>这也用于在通过斜杠命令或 STscript 触发脚本时定位脚本。</strong></p>
+<li>
+<p><strong>名称</strong>:扩展的脚本列表上显示的脚本标签。<strong>这也用于在通过斜杠命令或 STscript 触发脚本时定位脚本。</strong></p>
 </li>
-<li><p><strong>查找 Regex</strong>:这是用于检测目标文本模式的正则表达式。这通常是任何 RegEx 脚本中最复杂的部分，也是最容易出错的地方。请参阅页面顶部的链接了解如何编写 RegEx 序列的信息。如果&quot;查找 Regex 中的宏&quot;设置为这样做，此框可以解析<a href="../../usage/core-concepts/macros/">常见的 SillyTavern 宏</a>(如 {{user}}、{{char}} 等)的值(见下文)。</p>
+<li>
+<p><strong>查找 Regex</strong>:这是用于检测目标文本模式的正则表达式。这通常是任何 RegEx 脚本中最复杂的部分，也是最容易出错的地方。请参阅页面顶部的链接了解如何编写 RegEx 序列的信息。如果&quot;查找 Regex 中的宏&quot;设置为这样做，此框可以解析<a href="../../usage/core-concepts/macros/">常见的 SillyTavern 宏</a>(如 {{user}}、{{char}} 等)的值(见下文)。</p>
 </li>
-<li><p><strong>替换为</strong>:这将替换匹配的序列。在一个非常简单的例子中，如果您的&quot;查找 Regex&quot;是 <code translate="no" v-pre>apple</code>，而您的&quot;替换为&quot;是 <code translate="no" v-pre>orange</code>，那么在应用脚本的任何文本中，&quot;apple&quot;的第一次出现将自动更改为&quot;orange&quot;。</p>
+<li>
+<p><strong>替换为</strong>:这将替换匹配的序列。在一个非常简单的例子中，如果您的&quot;查找 Regex&quot;是 <code translate="no" v-pre>apple</code>，而您的&quot;替换为&quot;是 <code translate="no" v-pre>orange</code>，那么在应用脚本的任何文本中，&quot;apple&quot;的第一次出现将自动更改为&quot;orange&quot;。</p>
 <ul>
-<li><p>在此框中添加扩展特定的宏 {{match}} 将插入完整匹配的文本序列。这通常用于对特定单词应用样式。回到上面的例子，如果将 **{{match}}** 放入&quot;替换为&quot;框中，则所有出现的单词&quot;apple&quot;将被替换为 <code translate="no" v-pre>**apple**</code>，这将对其应用粗体 markdown 样式。</p>
+<li>
+<p>在此框中添加扩展特定的宏 {{match}} 将插入完整匹配的文本序列。这通常用于对特定单词应用样式。回到上面的例子，如果将 **{{match}}** 放入&quot;替换为&quot;框中，则所有出现的单词&quot;apple&quot;将被替换为 <code translate="no" v-pre>**apple**</code>，这将对其应用粗体 markdown 样式。</p>
 </li>
-<li><p>可以使用变量 $1、$2、$3 等来插入所谓的&quot;捕获组&quot;。这些是由&quot;查找 Regex&quot;序列匹配的文本序列中的子字符串。<strong>请注意，使用这些变量需要匹配表达式包含一组括号来定义匹配字符串的哪一部分算作捕获组。</strong> 有关如何设置捕获组的参考，请参阅顶部的链接。</p>
+<li>
+<p>可以使用变量 $1、$2、$3 等来插入所谓的&quot;捕获组&quot;。这些是由&quot;查找 Regex&quot;序列匹配的文本序列中的子字符串。<strong>请注意，使用这些变量需要匹配表达式包含一组括号来定义匹配字符串的哪一部分算作捕获组。</strong> 有关如何设置捕获组的参考，请参阅顶部的链接。</p>
 </li>
 </ul>
 </li>
-<li><p><strong>修剪</strong>:放入此框的文本将在应用&quot;替换为&quot;过程之前从匹配的文本序列中删除。例如，如果我们的匹配是&quot;apple&quot;，修剪框包含&quot;le&quot;，那么在应用&quot;替换为&quot;过程之前，字母&quot;le&quot;将首先被删除。由于我们的&quot;替换为&quot;框包含 **{{match}}**，它将导致 <code translate="no" v-pre>**app**</code> 被放入作为&quot;apple&quot;的替换(首先删除&quot;le&quot;，并且剩余的匹配文本被赋予粗体 markdown 样式)。可以通过在要删除的每个字符串之间添加换行符来应用多个修剪。</p>
+<li>
+<p><strong>修剪</strong>:放入此框的文本将在应用&quot;替换为&quot;过程之前从匹配的文本序列中删除。例如，如果我们的匹配是&quot;apple&quot;，修剪框包含&quot;le&quot;，那么在应用&quot;替换为&quot;过程之前，字母&quot;le&quot;将首先被删除。由于我们的&quot;替换为&quot;框包含 **{{match}}**，它将导致 <code translate="no" v-pre>**app**</code> 被放入作为&quot;apple&quot;的替换(首先删除&quot;le&quot;，并且剩余的匹配文本被赋予粗体 markdown 样式)。可以通过在要删除的每个字符串之间添加换行符来应用多个修剪。</p>
 </li>
-<li><p><strong>影响</strong>:此复选框列表定义将应用 RegEx 脚本的文本源。</p>
+<li>
+<p><strong>影响</strong>:此复选框列表定义将应用 RegEx 脚本的文本源。</p>
 <ul>
 <li>&quot;用户输入&quot;:脚本将在用户点击发送后针对用户键入的输入内容运行。</li>
 <li>&quot;AI 响应&quot;:脚本将在收到 AI 响应的内容后针对其运行。</li>
@@ -289,13 +304,15 @@
 <li><strong>如果这里的所有内容都未勾选，脚本将永远不会在正常聊天期间激活，但仍可以通过斜杠命令或 STscript 激活。</strong></li>
 </ul>
 </li>
-<li><p><strong>其他选项</strong>:</p>
+<li>
+<p><strong>其他选项</strong>:</p>
 <ul>
 <li>&quot;禁用&quot;可防止脚本运行。当您只是不想更改脚本的任何设置和/或不想通过脚本列表上的开关完全禁用它时(因为这样做会阻止斜杠命令触发它)，这将用作覆盖以防止脚本运行。</li>
 <li>&quot;编辑时运行&quot;使脚本在编辑聊天消息后也运行。如果未选中此项，编辑的聊天消息的内容将不会触发脚本。</li>
 </ul>
 </li>
-<li><p><strong>查找 Regex 中的宏</strong>:选择是否替换&quot;查找 Regex&quot;框序列中存在的宏(如 {{user}}、{{char}} 等)。</p>
+<li>
+<p><strong>查找 Regex 中的宏</strong>:选择是否替换&quot;查找 Regex&quot;框序列中存在的宏(如 {{user}}、{{char}} 等)。</p>
 <ul>
 <li>&quot;不替换&quot;将导致任何 SillyTavern 宏被忽略，因此 RegEx 脚本在搜索时将按字面意思处理它们。</li>
 <li>&quot;原始&quot;将逐字发送宏的值。如果宏的值包含某些特殊字符，这可能会改变 RegEx 脚本搜索文本的方式。</li>
@@ -306,7 +323,8 @@
 <h3 id="深度设置">深度设置</h3>
 <p>最小/最大深度设置提供对 regex 模式将影响聊天历史中哪些消息的精确控制:</p>
 <ul>
-<li><p><strong>最小深度</strong>:仅影响聊天历史中至少 N 级深度的消息</p>
+<li>
+<p><strong>最小深度</strong>:仅影响聊天历史中至少 N 级深度的消息</p>
 <ul>
 <li>0 = 最后一条消息</li>
 <li>1 = 倒数第二条消息</li>
@@ -314,7 +332,8 @@
 <li>当为空(设置为&quot;无限制&quot;)或 -1 时，也将影响&quot;继续&quot;操作上要继续的消息</li>
 </ul>
 </li>
-<li><p><strong>最大深度</strong>:仅影响聊天历史中深度不超过 N 级的消息</p>
+<li>
+<p><strong>最大深度</strong>:仅影响聊天历史中深度不超过 N 级的消息</p>
 <ul>
 <li>必须大于最小深度才能应用 regex</li>
 <li>系统提示和实用程序提示不受这些设置的影响</li>
@@ -418,6 +437,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Regex", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Regex", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/regex.md" }</script>
 </body>
 </html>

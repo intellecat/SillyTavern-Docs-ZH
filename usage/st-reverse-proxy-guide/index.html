@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>反向代理 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/st-reverse-proxy-guide/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -34,15 +35,18 @@
     <meta name="twitter:title" content="反向代理 | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="本节不涉及 OpenAI/Claude 反向代理。这仅涉及 HTTP/HTTPS 反向代理。">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/administration/reverse-proxying.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.3.0.827364103663" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
 
     <style>
         a {
@@ -104,8 +108,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -203,16 +206,18 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="反向代理">反向代理</h1>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -231,7 +236,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -250,7 +255,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -268,7 +273,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -293,12 +298,12 @@
 <h3 id="linux裸机-sillytavern">Linux（裸机 SillyTavern）</h3>
 <p>对于 Linux，我们将通过 <a href="https://traefik.io/traefik/">Traefik</a> 反向代理 SillyTavern。还有其他选项，如 <em>NGINX</em> 或 <em>Caddy</em>，但在本指南中，我们将使用 Traefik，因为这是我们自己使用的。</p>
 <ol>
-<li><p>使用 <code translate="no" v-pre>ifconfig</code> 或从路由器获取计算机的私有 IP。</p>
+<li>使用 <code translate="no" v-pre>ifconfig</code> 或从路由器获取计算机的私有 IP。
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -313,12 +318,12 @@
     </div>
 </div>
 </li>
-<li><p>通过 Google 搜索 <code translate="no" v-pre>what's my ip</code> 获取调制解调器的公共 IP。</p>
+<li>通过 Google 搜索 <code translate="no" v-pre>what's my ip</code> 获取调制解调器的公共 IP。
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -333,12 +338,12 @@
     </div>
 </div>
 </li>
-<li><p>按照<a href="https://docs.docker.com/engine/install/">此处</a>的 Docker 安装指南安装 Docker。</p>
+<li>按照<a href="https://docs.docker.com/engine/install/">此处</a>的 Docker 安装指南安装 Docker。
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -354,35 +359,35 @@
 </div>
 </li>
 <li>按照<a href="https://docs.docker.com/engine/install/linux-postinstall/">此处</a>的 Docker 安装后指南中的<strong>以非 root 用户身份管理 Docker</strong>步骤进行操作。</li>
-<li><p>进入 Linux 的根文件夹并创建一个名为 <code translate="no" v-pre>docker</code> 的新文件夹。</p>
+<li>进入 Linux 的根文件夹并创建一个名为 <code translate="no" v-pre>docker</code> 的新文件夹。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd /
 sudo mkdir docker &amp;&amp; cd docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>执行 <code translate="no" v-pre>chown</code>，将 <em><USER></em> 替换为您的 Linux 用户名，以设置 docker 文件夹中的权限。</p>
+<li>执行 <code translate="no" v-pre>chown</code>，将 <em><USER></em> 替换为您的 Linux 用户名，以设置 docker 文件夹中的权限。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo chown -R &lt;USER&gt;:&lt;USER&gt; .</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>在 <em>docker</em> 文件夹内创建一个名为 <code translate="no" v-pre>secrets</code> 的文件夹，在 <em>secrets</em> 内创建 <code translate="no" v-pre>cloudflare</code>。</p>
+<li>在 <em>docker</em> 文件夹内创建一个名为 <code translate="no" v-pre>secrets</code> 的文件夹，在 <em>secrets</em> 内创建 <code translate="no" v-pre>cloudflare</code>。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">mkdir secrets &amp;&amp; mkdir secrets/cloudflare</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>在 <em>docker</em> 文件夹内创建一个名为 <code translate="no" v-pre>appdata</code> 的文件夹，在 <em>appdata</em> 内创建 <code translate="no" v-pre>traefik</code>。之后进入 <code translate="no" v-pre>appdata/traefik</code> 文件夹。</p>
+<li>在 <em>docker</em> 文件夹内创建一个名为 <code translate="no" v-pre>appdata</code> 的文件夹，在 <em>appdata</em> 内创建 <code translate="no" v-pre>traefik</code>。之后进入 <code translate="no" v-pre>appdata/traefik</code> 文件夹。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">mkdir appdata &amp;&amp; mkdir appdata/traefik
 cd appdata/traefik</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>使用 <code translate="no" v-pre>touch</code> 创建一个 <em>acme.json</em> 文件，并将其权限设置为 600。</p>
+<li>使用 <code translate="no" v-pre>touch</code> 创建一个 <em>acme.json</em> 文件，并将其权限设置为 600。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">touch acme.json
 chmod 600 acme.json</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>traefik.yml</em> 的文件并粘贴以下内容。将模板电子邮件替换为您自己的电子邮件，然后保存文件。</p>
+<li>使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>traefik.yml</em> 的文件并粘贴以下内容。将模板电子邮件替换为您自己的电子邮件，然后保存文件。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">api:
     dashboard: true
@@ -420,12 +425,13 @@ certificatesResolvers:
                     - &quot;1.0.0.1:53&quot;</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>返回到 <code translate="no" v-pre>docker</code> 文件夹。</p>
+<li>返回到 <code translate="no" v-pre>docker</code> 文件夹。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd /docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>docker-compose.yaml</em> 的文件并粘贴以下内容。之后保存文件。</p>
+<li>
+<p>使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>docker-compose.yaml</em> 的文件并粘贴以下内容。之后保存文件。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">secrets:
     CF_DNS_API_KEY:
@@ -458,12 +464,13 @@ networks:
 </doc-codeblock></div>
 </li>
 <li>登录 Cloudflare 并点击您的域名，然后点击 <strong>Get your API token</strong>。</li>
-<li><p>点击 <em>Create Token</em>，然后点击 <em>Create Custom Token</em>，确保您给予令牌以下权限。</p>
+<li>
+<p>点击 <em>Create Token</em>，然后点击 <em>Create Custom Token</em>，确保您给予令牌以下权限。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -482,7 +489,8 @@ networks:
 </li>
 <li>复制给您的令牌密钥并将其存储在安全的地方。</li>
 <li><code translate="no" v-pre>cd</code> 进入 <code translate="no" v-pre>secrets/cloudflare</code>，使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <strong>CF_DNS_API_KEY</strong> 的文件并在其中粘贴您的密钥。</li>
-<li><p>返回到您的域名页面并转到 <strong>DNS</strong>。使用 <strong>Add record</strong> 创建新记录，并创建两个如下所示的 <em>A</em> 类型密钥。将 <code translate="no" v-pre>PUBLIC_IP</code> 替换为您自己的公共 IP，然后点击 <em>Save</em>。</p>
+<li>
+<p>返回到您的域名页面并转到 <strong>DNS</strong>。使用 <strong>Add record</strong> 创建新记录，并创建两个如下所示的 <em>A</em> 类型密钥。将 <code translate="no" v-pre>PUBLIC_IP</code> 替换为您自己的公共 IP，然后点击 <em>Save</em>。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -513,7 +521,8 @@ networks:
 </table>
 </div>
 </li>
-<li><p>创建另一个 <strong><code translate="no" v-pre>CNAME</code></strong> 类型的记录，然后点击 <em>Save</em>。以下是它在 Cloudflare 仪表板上应该显示的示例。</p>
+<li>
+<p>创建另一个 <strong><code translate="no" v-pre>CNAME</code></strong> 类型的记录，然后点击 <em>Save</em>。以下是它在 Cloudflare 仪表板上应该显示的示例。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -537,7 +546,8 @@ networks:
 </table>
 </div>
 </li>
-<li><p><code translate="no" v-pre>cd</code> 进入 <em>appdata/traefik</em>，使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>config.yml</em> 的文件并粘贴以下内容。将 <code translate="no" v-pre>PRIVATE_IP</code> 替换为您获得的私有 IP，将 <code translate="no" v-pre>silly.DOMAIN.com</code> 替换为您的子域名和域名页面的名称，然后保存文件。</p>
+<li>
+<p><code translate="no" v-pre>cd</code> 进入 <em>appdata/traefik</em>，使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>config.yml</em> 的文件并粘贴以下内容。将 <code translate="no" v-pre>PRIVATE_IP</code> 替换为您获得的私有 IP，将 <code translate="no" v-pre>silly.DOMAIN.com</code> 替换为您的子域名和域名页面的名称，然后保存文件。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">http:
     routers:
@@ -564,13 +574,14 @@ networks:
                 permanent: true</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>使用以下命令运行 Docker Compose：</p>
+<li>使用以下命令运行 Docker Compose：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd /docker
 docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>进入您的 SillyTavern 文件夹并编辑 <code translate="no" v-pre>config.yaml</code> 以启用监听模式和基本认证，同时禁用 <code translate="no" v-pre>whitelistMode</code>。</p>
+<li>
+<p>进入您的 SillyTavern 文件夹并编辑 <code translate="no" v-pre>config.yaml</code> 以启用监听模式和基本认证，同时禁用 <code translate="no" v-pre>whitelistMode</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">listen: yes
 whitelistMode: false
@@ -580,7 +591,7 @@ basicAuthMode: true</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -604,7 +615,7 @@ perUserBasicAuth: true</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -619,12 +630,12 @@ perUserBasicAuth: true</code></pre>
     </div>
 </div>
 </li>
-<li><p>等待几分钟，然后打开您为 ST 创建的域名页面。最后，您应该能够从任何地方只使用一个 URL 和一个账户就能打开 SillyTavern。</p>
+<li>等待几分钟，然后打开您为 ST 创建的域名页面。最后，您应该能够从任何地方只使用一个 URL 和一个账户就能打开 SillyTavern。
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -646,7 +657,7 @@ perUserBasicAuth: true</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -663,12 +674,13 @@ perUserBasicAuth: true</code></pre>
 <ol>
 <li>按照 **Linux（裸机 SillyTavern）**的步骤 1-11 操作。</li>
 <li>登录 Cloudflare 并点击您的域名，然后点击 <strong>Get your API token</strong>。</li>
-<li><p>点击 <em>Create Token</em>，然后点击 <em>Create Custom Token</em>，确保您给予令牌以下权限。</p>
+<li>
+<p>点击 <em>Create Token</em>，然后点击 <em>Create Custom Token</em>，确保您给予令牌以下权限。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -687,7 +699,8 @@ perUserBasicAuth: true</code></pre>
 </li>
 <li>复制给您的令牌密钥并将其存储在安全的地方。</li>
 <li><code translate="no" v-pre>cd</code> 进入 <code translate="no" v-pre>secrets/cloudflare</code>，使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <strong>CF_DNS_API_KEY</strong> 的文件并在其中粘贴您的密钥。</li>
-<li><p>返回到您的域名页面并转到 <strong>DNS</strong>。使用 <strong>Add record</strong> 创建新记录，并创建两个如下所示的 <em>A</em> 类型密钥。将 <code translate="no" v-pre>PUBLIC_IP</code> 替换为您自己的公共 IP，将示例域名替换为您的域名，然后点击 <em>Save</em>。</p>
+<li>
+<p>返回到您的域名页面并转到 <strong>DNS</strong>。使用 <strong>Add record</strong> 创建新记录，并创建两个如下所示的 <em>A</em> 类型密钥。将 <code translate="no" v-pre>PUBLIC_IP</code> 替换为您自己的公共 IP，将示例域名替换为您的域名，然后点击 <em>Save</em>。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -718,7 +731,8 @@ perUserBasicAuth: true</code></pre>
 </table>
 </div>
 </li>
-<li><p>创建另一个 <strong><code translate="no" v-pre>CNAME</code></strong> 类型的记录，然后点击 <em>Save</em>。以下是它在 Cloudflare 仪表板上应该显示的示例。</p>
+<li>
+<p>创建另一个 <strong><code translate="no" v-pre>CNAME</code></strong> 类型的记录，然后点击 <em>Save</em>。以下是它在 Cloudflare 仪表板上应该显示的示例。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -742,12 +756,13 @@ perUserBasicAuth: true</code></pre>
 </table>
 </div>
 </li>
-<li><p>将 SillyTavern Git clone 到 <code translate="no" v-pre>docker</code> 文件夹中。</p>
+<li>将 SillyTavern Git clone 到 <code translate="no" v-pre>docker</code> 文件夹中。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd /docker &amp;&amp; git clone https://github.com/SillyTavern/SillyTavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>docker-compose.yaml</em> 的文件并粘贴以下内容。将 <code translate="no" v-pre>silly.DOMAIN.com</code> 替换为您在上面添加的子域名，然后保存文件。</p>
+<li>
+<p>使用 <code translate="no" v-pre>nano</code> 或类似的编辑器，创建一个名为 <em>docker-compose.yaml</em> 的文件并粘贴以下内容。将 <code translate="no" v-pre>silly.DOMAIN.com</code> 替换为您在上面添加的子域名，然后保存文件。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">secrets:
     CF_DNS_API_KEY:
@@ -799,17 +814,18 @@ networks:
         driver: bridge</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>使用以下命令运行 Docker Compose：</p>
+<li>使用以下命令运行 Docker Compose：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>停止 SillyTavern Docker 容器。</p>
+<li>停止 SillyTavern Docker 容器。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose stop sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>进入您的 SillyTavern 文件夹（<code translate="no" v-pre>appdata/sillytavern/config</code>）并编辑 <code translate="no" v-pre>config.yaml</code> 以启用监听模式和基本认证，同时禁用 <code translate="no" v-pre>whitelistMode</code>。</p>
+<li>
+<p>进入您的 SillyTavern 文件夹（<code translate="no" v-pre>appdata/sillytavern/config</code>）并编辑 <code translate="no" v-pre>config.yaml</code> 以启用监听模式和基本认证，同时禁用 <code translate="no" v-pre>whitelistMode</code>。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">listen: yes
 whitelistMode: false
@@ -819,7 +835,7 @@ basicAuthMode: true</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -834,17 +850,17 @@ basicAuthMode: true</code></pre>
     </div>
 </div>
 </li>
-<li><p>再次启动 SillyTavern Docker 容器。</p>
+<li>再次启动 SillyTavern Docker 容器。
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>等待几分钟，然后打开您为 ST 创建的域名页面。最后，您应该能够从任何地方只使用一个 URL 和一个账户就能打开 SillyTavern。</p>
+<li>等待几分钟，然后打开您为 ST 创建的域名页面。最后，您应该能够从任何地方只使用一个 URL 和一个账户就能打开 SillyTavern。
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -935,6 +951,6 @@ basicAuthMode: true</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "反向代理", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "反向代理", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/administration/reverse-proxying.md" }</script>
 </body>
 </html>

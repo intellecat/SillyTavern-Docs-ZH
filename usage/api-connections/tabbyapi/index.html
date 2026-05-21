@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>TabbyAPI | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/api-connections/tabbyapi/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/tabby-terminal.png">
     <meta name="twitter:image:alt" content="TabbyAPI | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/api_connections/tabbyapi.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="tabbyapi">TabbyAPI</h1>
 <p>一个基于 FastAPI 的应用程序，使用 Exllamav2 后端生成文本，支持 Exl2、GPTQ 和 FP16 模型。</p>
@@ -219,37 +224,53 @@
 </ul>
 <h3 id="快速开始">快速开始</h3>
 <ol>
-<li>按照官方 TabbyAPI GitHub 上的<a href="https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started">安装说明</a>进行操作。</li>
-<li><a href="https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options">创建您的 config.yml</a> 来设置您的模型路径、默认模型、序列长度等。如果您愿意，可以忽略大部分（如果不是全部）这些设置。</li>
-<li><p>启动 TabbyAPI。如果成功，您应该看到类似这样的内容：</p>
+<li>
+<p>按照官方 TabbyAPI GitHub 上的<a href="https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started">安装说明</a>进行操作。</p>
+</li>
+<li>
+<p><a href="https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options">创建您的 config.yml</a> 来设置您的模型路径、默认模型、序列长度等。如果您愿意，可以忽略大部分（如果不是全部）这些设置。</p>
+</li>
+<li>
+<p>启动 TabbyAPI。如果成功，您应该看到类似这样的内容：</p>
 <p><img src="../../../static/tabby-terminal.png" alt="TabbyAPI 终端" class="max-w-full h-auto" width="849" height="357" /></p>
 </li>
-<li>在 SillyTavern 的文本补全 API 下，选择 TabbyAPI。</li>
-<li>从 TabbyAPI 终端复制您的 API 密钥到&quot;Tabby API key&quot;，并确保您的&quot;API URL&quot;正确（默认应该是 <code translate="no" v-pre>http://127.0.0.1:5000</code>）。</li>
+<li>
+<p>在 SillyTavern 的文本补全 API 下，选择 TabbyAPI。</p>
+</li>
+<li>
+<p>从 TabbyAPI 终端复制您的 API 密钥到&quot;Tabby API key&quot;，并确保您的&quot;API URL&quot;正确（默认应该是 <code translate="no" v-pre>http://127.0.0.1:5000</code>）。</p>
+</li>
 </ol>
 <p>如果您正确完成了所有操作，您应该在 SillyTavern 中看到类似这样的内容：</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/tabby-config.png" alt="TabbyAPI SillyTavern" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="275" height="361" />
     <figcaption class="caption">TabbyAPI SillyTavern</figcaption>
 </figure>
-</p>
 <p>现在您可以使用 TabbyAPI 进行聊天了！</p>
 <h3 id="tabbyapi-加载器">TabbyAPI 加载器</h3>
 <p>TabbyAPI 的开发者创建了一个官方扩展，可以直接从 SillyTavern 加载/卸载模型。安装很简单：</p>
 <ol>
-<li>在 SillyTavern 中，点击扩展标签并导航到&quot;下载扩展和资源&quot;。</li>
-<li>将 <code translate="no" v-pre>https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json</code> 复制到&quot;资源 URL&quot;中，并点击右侧的插头按钮。</li>
-<li><p>您应该看到类似这样的内容。点击 Tabby Loader 旁边的下载按钮。</p>
+<li>
+<p>在 SillyTavern 中，点击扩展标签并导航到&quot;下载扩展和资源&quot;。</p>
+</li>
+<li>
+<p>将 <code translate="no" v-pre>https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json</code> 复制到&quot;资源 URL&quot;中，并点击右侧的插头按钮。</p>
+</li>
+<li>
+<p>您应该看到类似这样的内容。点击 Tabby Loader 旁边的下载按钮。</p>
 <p><img src="../../../static/tabby-assets.png" alt="Tabby 加载器" class="max-w-full h-auto" width="672" height="257" /></p>
 </li>
-<li>如果安装成功，您应该在屏幕顶部看到一个绿色的弹出消息。在扩展标签下，导航到 TabbyAPI 加载器，并将您的管理员密钥从 TabbyAPI 终端复制到&quot;管理员密钥&quot;中。</li>
-<li>点击&quot;模型选择&quot;旁边的刷新按钮。当您点击它下面的文本框时，您应该看到模型目录中的所有模型。</li>
+<li>
+<p>如果安装成功，您应该在屏幕顶部看到一个绿色的弹出消息。在扩展标签下，导航到 TabbyAPI 加载器，并将您的管理员密钥从 TabbyAPI 终端复制到&quot;管理员密钥&quot;中。</p>
+</li>
+<li>
+<p>点击&quot;模型选择&quot;旁边的刷新按钮。当您点击它下面的文本框时，您应该看到模型目录中的所有模型。</p>
+</li>
 </ol>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/tabby-loader.png" alt="Tabby 加载器扩展" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="670" height="412" />
     <figcaption class="caption">Tabby 加载器扩展</figcaption>
 </figure>
-</p>
 <p>现在您可以直接从 SillyTavern 加载和卸载您的模型了！</p>
 <h3 id="支持">支持</h3>
 <p>还需要帮助？访问 <a href="https://github.com/theroyallab/tabbyAPI">TabbyAPI GitHub</a> 获取开发者官方 Discord 服务器的链接，并<a href="https://github.com/theroyallab/tabbyAPI/wiki/1.-Getting-Started">阅读 wiki</a>。</p>
@@ -325,6 +346,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "TabbyAPI", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "TabbyAPI", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/api_connections/tabbyapi.md" }</script>
 </body>
 </html>

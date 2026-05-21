@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>NovelAI | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/api-connections/novelai/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/novel-side.png">
     <meta name="twitter:image:alt" content="NovelAI | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/api_connections/novelai.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="novelai">NovelAI</h1>
 <p>NovelAI 是一个付费订阅服务，允许每月无限制访问他们高质量的内部文本生成、图像生成和文本转语音模型。在此注册账户以开始使用：<a href="https://novelai.net/">https://novelai.net/</a></p>
@@ -218,28 +223,32 @@
 <h2 id="api-密钥">API 密钥</h2>
 <p>要获取 NovelAI API 密钥，请按以下步骤操作：</p>
 <ol>
-<li><p>选择左侧边栏顶部的齿轮图标。
+<li>
+<p>选择左侧边栏顶部的齿轮图标。
 <figure class="content-center">
     <img src="../../../static/novel-side.png" alt="Left Sidebar" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="367" height="109" />
     <figcaption class="caption">Left Sidebar</figcaption>
 </figure>
 </p>
 </li>
-<li><p>在 &quot;User Settings&quot; 下选择 &quot;Account&quot;。
+<li>
+<p>在 &quot;User Settings&quot; 下选择 &quot;Account&quot;。
 <figure class="content-center">
     <img src="../../../static/novel-user.png" alt="User Settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="163" height="401" />
     <figcaption class="caption">User Settings</figcaption>
 </figure>
 </p>
 </li>
-<li><p>选择 &quot;Get Persistent API Token&quot;。
+<li>
+<p>选择 &quot;Get Persistent API Token&quot;。
 <figure class="content-center">
     <img src="../../../static/novel-account.png" alt="Account" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="505" height="440" />
     <figcaption class="caption">Account</figcaption>
 </figure>
 </p>
 </li>
-<li><p>点击复制图标将 NovelAI API 令牌复制到剪贴板。
+<li>
+<p>点击复制图标将 NovelAI API 令牌复制到剪贴板。
 <figure class="content-center">
     <img src="../../../static/novel-token.png" alt="Persistent API Token" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="495" height="292" />
     <figcaption class="caption">Persistent API Token</figcaption>
@@ -355,20 +364,18 @@ Attributes:</code></pre>
 <h4 id="示例角色卡">示例角色卡</h4>
 <p>这里有几个专门为 NovelAI 制作的示例角色卡，展示了不同的创建方法。第一个角色卡 Valka 使用属性方法描述角色，而第二个角色卡 Eris 使用散文描述，并包含大量对话示例。</p>
 <div style="display:flex;gap:2em;justify-content:center">
-<p><figure class="content-center">
+<figure class="content-center">
     <a href="../../../static/valka.png">
         <img src="../../../static/valka.png" alt="Valka" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" height="600" />
     </a>
     <figcaption class="caption">Valka</figcaption>
 </figure>
-</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <a href="../../../static/eris.png">
         <img src="../../../static/eris.png" alt="Eris" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" height="600" />
     </a>
     <figcaption class="caption">Eris</figcaption>
 </figure>
-</p>
 </div>
 <h4 id="不应该做什么">不应该做什么</h4>
 <p>大多数现有的角色卡格式都不太适合 NovelAI。它们可能会给你一些结果，甚至一些不错的结果，但存在很多问题。W++ 是最大的问题之一，它与 NovelAI 模型的训练内容完全不同，而且经常使用方括号/大括号/引号消耗了大量令牌，增加了卡片的大小但没有实际好处。</p>
@@ -489,6 +496,6 @@ Attributes:</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "NovelAI", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "NovelAI", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/api_connections/novelai.md" }</script>
 </body>
 </html>

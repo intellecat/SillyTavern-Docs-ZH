@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827364103663">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.3.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Extras 安装 | SillyTavern傻酒馆中文文档</title>
@@ -19,6 +19,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/extras/installation/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://sillytavern.wiki/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -40,14 +41,17 @@
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/sd-user.png">
     <meta name="twitter:image:alt" content="Extras 安装 | SillyTavern傻酒馆中文文档">
 
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/extras/installation.md">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.3.0.827364103663" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827364103663" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -109,8 +113,7 @@
                 <div class="flex items-center px-2 md:px-6">
                     <a id="retype-branding-logo" href="https://sillytavern.wiki/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="330" height="330">
+                            <img class="max-h-10 md:inline-block" src="../../../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern中文文档</span>
                     </a>
@@ -208,9 +211,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="extras-安装">Extras 安装</h1>
 <p>本页包含在本地设备上安装 SillyTavern Extras 的说明。</p>
@@ -218,7 +223,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -268,30 +273,38 @@
 <h3 id="miniconda推荐">MiniConda(推荐)</h3>
 <p>推荐使用此方法，因为 Conda 会为 Extras 需求包创建一个&quot;虚拟环境&quot;，使它们不会影响您的系统级 Python 设置。</p>
 <ol>
-<li><p>安装 <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
+<li>
+<p>安装 <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
 <p><em>(重要!)阅读<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">如何使用 Conda</a></em></p>
 </li>
-<li><p>安装 <a href="https://git-scm.com/downloads">git</a></p>
+<li>
+<p>安装 <a href="https://git-scm.com/downloads">git</a></p>
 <p><em>(一开始就用 git 安装 SillyTavern 的大佬们可以跳过此步骤!)</em></p>
 <p>安装完这两者后...</p>
 <p>在 <code translate="no" v-pre>CONDA 命令提示符窗口</code>中<code translate="no" v-pre>逐个</code>输入/粘贴下面的命令，每个命令后按 <code translate="no" v-pre>Enter</code>。</p>
 </li>
-<li><p>创建一个新的 Conda 环境(我们称之为 <code translate="no" v-pre>extras</code>):</p>
+<li>
+<p>创建一个新的 Conda 环境(我们称之为 <code translate="no" v-pre>extras</code>):</p>
 <p><code translate="no" v-pre>conda create -n extras</code></p>
 </li>
-<li><p>激活新环境</p>
+<li>
+<p>激活新环境</p>
 <p><code translate="no" v-pre>conda activate extras</code>(您应该看到 <code translate="no" v-pre>(extras)</code> 出现在命令提示符的左侧)</p>
 </li>
-<li><p>安装所需的系统包(这将需要一些时间)</p>
+<li>
+<p>安装所需的系统包(这将需要一些时间)</p>
 <p><code translate="no" v-pre>conda install python=3.11 git</code></p>
 </li>
-<li><p>克隆 Extras GitHub 仓库</p>
+<li>
+<p>克隆 Extras GitHub 仓库</p>
 <p><code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code></p>
 </li>
-<li><p>导航到克隆的 Extras 仓库</p>
+<li>
+<p>导航到克隆的 Extras 仓库</p>
 <p><code translate="no" v-pre>cd SillyTavern-extras</code></p>
 </li>
-<li><p>使用以下命令之一安装 Extras 的需求(将再次需要时间):</p>
+<li>
+<p>使用以下命令之一安装 Extras 的需求(将再次需要时间):</p>
 <ul>
 <li><code translate="no" v-pre>pip install -r requirements.txt</code> - 用于基本功能</li>
 <li><code translate="no" v-pre>pip install -r requirements-rvc.txt</code> - 用于实时语音克隆</li>
@@ -299,7 +312,8 @@
 </ul>
 <p>如果在此步骤遇到错误，请参阅<doc-anchor-trigger to="#extras-install-common-problems">常见问题</doc-anchor-trigger>页面!</p>
 </li>
-<li><p>请参阅下面的&quot;安装后运行 Extras&quot;</p>
+<li>
+<p>请参阅下面的&quot;安装后运行 Extras&quot;</p>
 </li>
 </ol>
 <hr>
@@ -416,7 +430,8 @@
 <li>您的桌面上将出现一个新文件，要求输入名称。</li>
 <li>将文件命名为 <code translate="no" v-pre>STExtras.txt</code></li>
 <li>在文本编辑器中打开新创建的文件。</li>
-<li><p>将以下代码粘贴到其中:</p>
+<li>
+<p>将以下代码粘贴到其中:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call conda activate extras
@@ -442,11 +457,10 @@ pause</code></pre>
 </blockquote>
 <p><strong>确保您启动 Stable Diffusion 的 webui-user.bat 在 COMMANDLINE_ARGS 变量中包含 --api 命令行选项。</strong></p>
 <p>在您的 &quot;webui-user.bat&quot; 中找到并替换该行:<code translate="no" v-pre>set COMMANDLINE_ARGS=--api</code></p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/extensions/sd-user.png" alt="应该看起来像这样" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="468" height="244" />
     <figcaption class="caption">应该看起来像这样</figcaption>
 </figure>
-</p>
 <p>如果 SD Web UI 禁用了 API 模式，Extras 服务器将无法建立连接，您将无法生成图像!</p>
 <h4 id="仍然不起作用">仍然不起作用?</h4>
 <p>确保您按正确的顺序启动所有内容，等待每个程序完成加载后再继续下一步:</p>
@@ -572,6 +586,6 @@ pause</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "本地安装", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "本地安装", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/extras/installation.md" }</script>
 </body>
 </html>
