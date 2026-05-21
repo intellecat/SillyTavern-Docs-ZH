@@ -149,8 +149,8 @@ SillyTavern 可以连接到多种 LLM API。
 
 ### DeepSeek
 
-- 提供对非常流行的 DeepSeek V3（`deepseek-chat`）和 DeepSeek R1（`deepseek-reasoner`）模型的最新版本的访问
-- 需要付费购买积分（最低 $2），但模型的质量相对价格来说相当便宜
+- 提供对非常流行的 DeepSeek V4（`deepseek-v4-flash`和`deepseek-v4-pro`）模型的最新版本的访问
+- 需要付费购买积分（最低 $2），但模型的价格相对质量来说相当便宜
 - API 上没有审核，但模型可能会拒绝某些提示词
 - [网站](https://platform.deepseek.com/)，[设置说明](/Usage/API_Connections/openai.md#deepseek)
 
