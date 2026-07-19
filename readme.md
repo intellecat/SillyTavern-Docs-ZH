@@ -8,7 +8,7 @@ route: /
 
 SillyTavern（简称 ST）是一个本地安装的用户界面，允许您与文本生成 LLM、图像生成引擎和 TTS 语音模型进行交互。我们的目标是为用户提供尽可能多的 LLM 提示词实用工具和控制能力，将陡峭的学习曲线视为乐趣的一部分。
 
-SillyTavern 是由一群热衷于 LLM 的社区成员带来的热情项目，将永远保持免费和开源。始于 2023 年 2 月，作为 TavernAI 1.2.8 的一个分支，SillyTavern 现在已有超过 200 名贡献者和 2 年的独立开发历程，并继续作为精通 AI 的爱好者的领先软件。
+SillyTavern 是由一群热衷于 LLM 的社区成员带来的热情项目，将永远保持免费和开源。始于 2023 年 2 月，作为 TavernAI 1.2.8 的一个分支，SillyTavern 现在已有超过 300 名贡献者和 3 年的独立开发历程，并继续作为精通 AI 的爱好者的领先软件。
 
 ## 截图
 
@@ -18,7 +18,7 @@ SillyTavern 是由一群热衷于 LLM 的社区成员带来的热情项目，将
 
 ## 安装要求
 
-硬件要求很低：任何能运行 NodeJS 18 或更高版本的设备都可以运行。如果您打算在本地机器上进行 LLM 推理，我们建议使用具有至少 6GB 显存的 3000 系列 NVIDIA 显卡。
+硬件要求很低：任何能运行 NodeJS 20 或更高版本的设备都可以运行。如果您打算在本地机器上进行 LLM 推理，我们建议使用具有至少 6GB 显存的 3000 系列 NVIDIA 显卡。
 
 请根据您的平台选择相应的安装指南：
 
@@ -66,7 +66,7 @@ SillyTavern 支持扩展功能。
 * [聊天历史自动摘要](/extensions/Summarize.md)
 * 自动 UI 和[聊天翻译](extensions/Translation.md)
 * [Stable Diffusion/FLUX/DALL-E 图像生成](/extensions/Stable-Diffusion.md)
-* [AI 回复消息的文本转语音（通过 ElevenLabs、Silero 或系统 TTS）](/extensions/TTS.md)
+* [AI 回复消息的文本转语音](/extensions/TTS.md)
 * [网络搜索功能，为您的提示添加额外的真实世界背景](/extensions/WebSearch.md)
 * 更多扩展可从"下载扩展和资源"菜单下载。
 

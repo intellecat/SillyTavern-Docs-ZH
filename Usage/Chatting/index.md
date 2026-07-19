@@ -92,7 +92,7 @@ AI 将回复一条继续对话的消息。
 
 * <i class="fa-lg fa-solid fa-note-sticky"></i> **[作者注释](/Usage/Characters/Author's-Note.md)**：自定义上下文指令
 * <i class="fa-lg fa-solid fa-scale-balanced"></i> **[CFG 比例](/Usage/Prompts/CFG.md)**：调整回复创造性
-* <i class="fa-lg fa-solid fa-pie-chart"></i> **[Token 概率](#Token-概率面板)**：查看 token 生成统计
+* <i class="fa-lg fa-solid fa-pie-chart"></i> **[Token 概率](#token-probabilities-panel)**：查看 token 生成统计
 
 ### 聊天导航
 
@@ -114,7 +114,7 @@ AI 将回复一条继续对话的消息。
 
 注意：根据上下文和聊天状态，某些选项可能被隐藏。
 
-## Token 概率面板
+## Token 概率面板 {#token-probabilities-panel}
 
 Token 概率面板让您深入了解 AI 的文本生成采样过程。它不仅显示 AI 写了什么，还显示它在文本的每个点上考虑的其他选项。
 

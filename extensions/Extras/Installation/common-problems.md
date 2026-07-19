@@ -71,7 +71,7 @@ Mac 不支持 CUDA，所以应该安装不带 CUDA 支持的 torch 包。
 ### 缺少模块？
 
 * 您必须在 Python 命令行中使用 `--enable-modules` 修饰符指定模块名称列表。
-* 参见[模块](/extensions/Extras/Installation.md#决定使用哪个模块)部分。
+* 参见[模块](/extensions/Extras/Installation.md#decide-which-module-to-use)部分。
 
 ---
 
