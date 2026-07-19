@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>提示词 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="提示词 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="当您向 AI 发送消息时，您编写的文本会与其他文本结合形成发送给 AI 的单个请求。这种组合的文本称为\"提示词\"，有时也称为\"请求\"或\"上下文\"。">
+    <meta name="description" content="当你向 AI 发送消息时，你编写的文本会与其他文本组合，形成一个发送给 AI 的完整请求。这段组合文本称为「提示词」，有时也叫「请求」或「上下文」。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/prompts/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/prompts/">
     <meta property="og:title" content="提示词 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="当您向 AI 发送消息时，您编写的文本会与其他文本结合形成发送给 AI 的单个请求。这种组合的文本称为\"提示词\"，有时也称为\"请求\"或\"上下文\"。">
+    <meta property="og:description" content="当你向 AI 发送消息时，你编写的文本会与其他文本组合，形成一个发送给 AI 的完整请求。这段组合文本称为「提示词」，有时也叫「请求」或「上下文」。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/prompts/">
     <meta name="twitter:title" content="提示词 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="当您向 AI 发送消息时，您编写的文本会与其他文本结合形成发送给 AI 的单个请求。这种组合的文本称为\"提示词\"，有时也称为\"请求\"或\"上下文\"。">
+    <meta name="twitter:description" content="当你向 AI 发送消息时，你编写的文本会与其他文本组合，形成一个发送给 AI 的完整请求。这段组合文本称为「提示词」，有时也叫「请求」或「上下文」。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/prompts/index.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,67 +212,67 @@
 
                 <!-- Page content  -->
 <h1 id="提示词">提示词</h1>
-<p>当您向 AI 发送消息时，您编写的文本会与其他文本结合形成发送给 AI 的单个请求。这种组合的文本称为&quot;提示词&quot;，有时也称为&quot;请求&quot;或&quot;上下文&quot;。</p>
-<p>提示词可以包括各种不同类型的文本,包括：</p>
+<p>当你向 AI 发送消息时，你编写的文本会与其他文本组合，形成一个发送给 AI 的完整请求。这段组合文本称为「提示词」，有时也叫「请求」或「上下文」。</p>
+<p>提示词可以包含多种不同类型的文本，包括：</p>
 <ul>
-<li><doc-anchor-trigger to="#main-prompt-system-prompt">主要指令</doc-anchor-trigger>告诉 AI 如何生成响应</li>
+<li>告诉 AI 如何生成回复的<doc-anchor-trigger to="#main-prompt-system-prompt">主要指令</doc-anchor-trigger></li>
 <li><a href="../core-concepts/characterdesign/">AI 应扮演的角色</a>的定义</li>
-<li><a href="../core-concepts/personas/">您扮演的角色</a>的定义</li>
-<li><a href="../core-concepts/worldinfo/">关于 AI 交互的&quot;世界&quot;的信息</a></li>
-<li><a href="../core-concepts/data-bank/">数据库</a>中的相关文档或信息</li>
+<li><a href="../core-concepts/personas/">你所扮演的角色</a>的定义</li>
+<li><a href="../core-concepts/worldinfo/">AI 所处「世界」的信息</a></li>
+<li>来自<a href="../core-concepts/data-bank/">数据库</a>的相关文档或信息</li>
 <li>过去对话的<a href="../../extensions/summarize/">摘要</a></li>
-<li><a href="../../extensions/websearch/">网络搜索</a>或其他<a href="../../for-contributors/function-calling/">外部数据源</a>的结果</li>
-<li>对话中的先前消息</li>
-<li><strong>您发给 AI 的消息</strong></li>
-<li>AI 如何生成响应的<doc-anchor-trigger to="#post-history-instructions">最终指令</doc-anchor-trigger></li>
+<li><a href="../../extensions/websearch/">网页搜索</a>或其他<a href="../../for-contributors/function-calling/">外部数据源</a>的结果</li>
+<li>对话中的历史消息</li>
+<li><strong>你发给 AI 的消息</strong></li>
+<li>告诉 AI 如何生成回复的<doc-anchor-trigger to="#post-history-instructions">最终指令</doc-anchor-trigger></li>
 </ul>
-<p>这可能需要管理很多内容！为了帮助您了解如何构建和修改发送给 AI 的请求，SillyTavern 识别了您可能想要包含在提示词中的不同元素。然后，您可以构建提示词以包含对您想要与 AI 交互的方式有意义的内容。</p>
-<p>这些元素中的许多在您更改它们的部分中进行了说明。例如，要描述您希望 AI 扮演的角色，您可以使用<a href="../core-concepts/characterdesign/">角色设计</a>中的<a href="../core-concepts/characterdesign/#personality-summary">描述</a>字段。</p>
+<p>内容繁多，不易管理！为帮助你理解如何构建和调整发送给 AI 的请求，SillyTavern 将你可能想包含在提示词中的不同元素分门别类加以标识。你可以据此构建提示词，纳入与你期望的 AI 交互方式相匹配的内容。</p>
+<p>这些元素的许多说明会出现在你实际修改它们的相应章节中。例如，要描述你希望 AI 扮演的角色，可以使用<a href="../core-concepts/characterdesign/">角色设计</a>中的<a href="../core-concepts/characterdesign/#personality-summary">描述</a>字段。</p>
 <h2 id="查看提示词">查看提示词</h2>
-<p>阅读发送给 AI 的最终提示词对于理解 AI 被告知了什么以及为什么生成该响应非常有帮助。您可以通过多种方式查看提示词：</p>
+<p>阅读发送给 AI 的最终提示词，对于理解 AI 收到了什么信息、以及为什么生成了那样的回复非常有帮助。可以通过以下几种方式查看：</p>
 <ul>
-<li>使用 AI 回复消息上的提示词详细信息图标</li>
+<li>使用 AI 回复消息上的「提示词详情」图标</li>
 <li>使用 <a href="https://github.com/SillyTavern/Extension-PromptInspector">Prompt Inspector</a> 扩展</li>
-<li>检查您运行 SillyTavern 的终端窗口中的日志</li>
-<li>检查浏览器开发者工具中的控制台</li>
+<li>查看运行 SillyTavern 的终端窗口中的日志</li>
+<li>查看浏览器开发者工具中的控制台</li>
 </ul>
 <h2 id="更改提示词的构建方式">更改提示词的构建方式</h2>
-<p>以正确的方式向 AI 呈现提示词的所有部分对于获得最佳响应至关重要。您可以控制提示词的构建方式。</p>
+<p>以正确的方式向 AI 呈现提示词的各个部分，对于获得最佳回复至关重要。你可以控制提示词的构建方式。</p>
 <doc-tabs>
 <doc-tab v-cloak id="文本补全-api">
 <template #title>文本补全 API</template>
-<p>使用<a href="../core-concepts/advancedformatting/">高级格式化</a>面板自定义文本补全 API 的提示词构建。</p>
+<p>使用<a href="../core-concepts/advancedformatting/">高级格式设置</a>面板自定义文本补全 API 的提示词构建。</p>
 </doc-tab>
 <doc-tab v-cloak id="聊天补全-api">
 <template #title>聊天补全 API</template>
 <p>使用<a href="prompt-manager/">提示词管理器</a>自定义聊天补全 API 的提示词构建。</p>
 </doc-tab>
 </doc-tabs>
-<h2 id="主提示词系统提示词">主提示词（系统提示词）</h2>
-<p>主提示词（或系统提示词）定义了模型要遵循的一般指令。它为对话设定了基调和上下文。例如，它告诉模型作为 AI 助手、写作伙伴或虚构角色行事。</p>
+<h2 id="main-prompt-system-prompt">主提示词（系统提示词）</h2>
+<p>主提示词（或系统提示词）定义了模型需要遵循的总体指令，为对话设定基调和上下文。例如，它告诉模型扮演 AI 助手、写作伙伴或虚构角色。</p>
 <doc-tabs>
 <doc-tab v-cloak id="文本补全-api-1">
 <template #title>文本补全 API</template>
-<p><a href="../core-concepts/advancedformatting/#system-prompt">系统提示词</a>是<a href="context-template/#story-string">故事字符串</a>的一部分，通常是模型接收的提示词的第一部分。</p>
+<p><a href="../core-concepts/advancedformatting/#system-prompt">系统提示词</a>是<a href="context-template/#story-string">故事字符串</a>的组成部分，通常是模型接收的提示词的第一部分。</p>
 </doc-tab>
 <doc-tab v-cloak id="聊天补全-api-1">
 <template #title>聊天补全 API</template>
-<p>主提示词是<a href="prompt-manager/">提示词管理器</a>中的默认提示词之一。它通常是模型接收的上下文中的第一条消息，归属于（&quot;由...发送&quot;）系统角色。</p>
+<p>主提示词是<a href="prompt-manager/">提示词管理器</a>中的默认提示词之一，通常是模型收到的上下文中的第一条消息，归属于（「由……发送」）系统角色。</p>
 </doc-tab>
 </doc-tabs>
-<p>默认的主提示词是：</p>
+<p>默认主提示词为：</p>
 <blockquote>
 <p>Write {{char}}&#x27;s next reply in a fictional chat between {{char}} and {{user}}.</p>
 </blockquote>
-<p>{{char}} 和 {{user}} 占位符会替换为您在对话中定义的角色和人设的名称。</p>
-<p>您可以在主提示词中使用任何支持的 <a href="../core-concepts/macros/">{{宏}}</a> 标签来包含可能在对话之间变化或随着对话进展而变化的信息。</p>
+<p>{{char}} 和 {{user}} 占位符会被替换为你在对话中定义的角色和人设的名称。</p>
+<p>可以在主提示词中使用任何受支持的 <a href="../core-concepts/macros/">{{宏}}</a> 标签，以纳入在不同对话间可能变化或随对话进程而变化的信息。</p>
 <h3 id="调整主提示词">调整主提示词</h3>
-<p>默认的主提示词帮助模型理解它应该如何处理后续的角色和人设信息，如何解释过去的对话，以及应该生成什么样的响应。这是一个灵活的通用提示词，适用于许多情况，因为它确立了 AI 正在作为与您的人设对话的角色进行写作。</p>
-<p>但是，您可以调整主提示词以更好地满足您的需求。以下是调整主提示词的一些常见原因：</p>
+<p>默认主提示词帮助模型理解如何处理随后的角色和人设信息、如何解读历史消息，以及生成什么样的回复。它是一个灵活的通用提示词，适用于很多场景——它明确了 AI 正在作为角色与你的人设对话。</p>
+<p>但你可以根据自己的需求调整主提示词。以下是一些常见的调整理由：</p>
 <ul>
-<li><strong>提供额外的指令</strong>：例如，您希望 AI 解释其推理、遵循特定规则或避免某些主题</li>
-<li><strong>澄清 AI 的角色</strong>：例如，您希望 AI 作为叙述者、讲故事的人或向导行事</li>
-<li><strong>更改对话的上下文</strong>：例如，您希望 AI 的响应就像它是 AI 助手、文字冒险游戏或写作伙伴一样</li>
+<li><strong>提供额外指令</strong>：例如，希望 AI 解释推理过程、遵循特定规则或回避某些话题</li>
+<li><strong>明确 AI 的角色</strong>：例如，希望 AI 扮演叙述者、讲故事的人或向导</li>
+<li><strong>改变对话情境</strong>：例如，希望 AI 以 AI 助手、文字冒险游戏或写作伙伴的身份回应</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -287,12 +287,12 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>尝试不同的方法，看看什么最适合您</h5>
-<p>本指南中的所有示例都对其他用户效果很好，但适合您的需求和您使用的模型的提示词可能有所不同。尝试不同的指令和提示风格，看看什么最适合您。如果您不确定要尝试什么，您可以随时在 <a href="https://discord.gg/sillytavern">SillyTavern Discord</a> 中寻求帮助。</p>
+            <h5>多尝试，找到最适合你的方式</h5>
+<p>本指南中的所有示例对其他用户都行之有效，但适合你的需求和所用模型的提示词可能有所不同。多尝试不同的指令和提示风格，找到最有效的方式。如果不知道从何入手，可以随时在 <a href="https://discord.gg/sillytavern">SillyTavern Discord</a> 中寻求帮助。</p>
         </div>
     </div>
 </div>
-<p>在主提示词中为 AI 提供额外的指令可以帮助它理解您想要从对话中得到什么。</p>
+<p>在主提示词中为 AI 提供额外指令，有助于它理解你对对话的期望。</p>
 <blockquote>
 <p>Write one reply only. Write at least one paragraph, up to four.</p>
 </blockquote>
@@ -308,17 +308,17 @@
 <blockquote>
 <p>Answer truthfully and write out your thinking step by step to be sure you get the right answer.</p>
 </blockquote>
-<p>AI 更容易遵循关于它应该做什么的指令，而不是它不应该做什么的指令。例如，如果您希望 AI 避免以某种方式写作，最好告诉它您希望它如何写作。虽然 <em>&quot;Do not decide what {{user}} says or does&quot;</em> 通常包含在提示词中以防止 AI 控制您的人设，但一些用户发现 <em>&quot;Write {{char}}&#x27;s responses in a way that respects {{user}}&#x27;s autonomy&quot;</em> 更有效。</p>
-<p>通常有比主提示词更好的地方来包含有关用户或角色的信息、修改角色的写作和说话风格或提供其他特定指令。主提示词最适合用于关于整个对话的一般指令，或关于您想要进行的对话类型的指令。</p>
+<p>AI 更容易遵循「要做什么」的指令，而非「不要做什么」的指令。例如，如果不希望 AI 以某种方式写作，最好告诉它你想要的写作方式。虽然「不要决定 {{user}} 说什么或做什么」常被加入提示词以防止 AI 控制你的人设，但有些用户发现「以尊重 {{user}} 自主性的方式书写 {{char}} 的回复」更为有效。</p>
+<p>关于用户或角色的信息、角色写作和说话风格的调整、其他具体指令，通常有比主提示词更合适的位置。主提示词最适合用于针对整体对话或某类对话风格的通用指令。</p>
 <h3 id="消息历史的影响">消息历史的影响</h3>
-<p>在调整主提示词以改善 AI 的响应时，请考虑 AI 从消息历史中获取了很多信息。历史是它对过去事件、角色互动和关系的记忆，以及它的词汇选择和写作风格的风格指南。</p>
-<p>通过提供<a href="../core-concepts/characterdesign/#examples-of-dialogue">对话示例</a>来展示您希望 AI 如何响应，从而利用这一点。展示您想要的内容通常比试图解释它更容易！</p>
-<p>当您的对话已经有历史记录时，更改主提示词对 AI 的响应影响有限。就事件和关系而言，AI 假设主提示词发生在遥远的过去，而消息历史会更新它。就写作风格和词汇选择而言，AI 假设历史中的所有消息都是根据<em>当前</em>主提示词中的规则生成的，并且它应该继续以相同的方式生成消息。处理此问题的一些建议包括：</p>
+<p>在调整主提示词以改善 AI 回复时，要意识到 AI 会从消息历史中获取大量信息。历史记录是它对过去事件、角色互动和关系的「记忆」，也是它在词汇选择和写作风格上的参考。</p>
+<p>充分利用这一点，为 AI 提供<a href="../core-concepts/characterdesign/#examples-of-dialogue">示例消息</a>来展示你期望的回复方式——展示往往比解释更高效！</p>
+<p>当对话已有历史记录时，修改主提示词对 AI 回复的影响有限。就事件和关系而言，AI 会将主提示词视为发生在遥远过去的背景，而消息历史则是更新的信息。就写作风格和词汇选择而言，AI 会假设历史中的所有消息都是按<em>当前</em>主提示词的规则生成的，并会继续以相同方式生成消息。处理这一问题的几点建议：</p>
 <ul>
-<li>在消息历史结束附近或之后插入当前指令，例如通过使用<a href="../core-concepts/authors-note/">作者注释</a></li>
-<li>通过开始新对话来测试对主提示词的更改</li>
-<li>编辑消息历史以删除或纠正不需要的行为示例</li>
-<li>使用<doc-anchor-trigger to="#post-history-instructions">历史后指令</doc-anchor-trigger>向 AI 提供最终指令</li>
+<li>在消息历史末尾附近或之后插入当前指令，例如通过使用 <a href="../core-concepts/authors-note/">Author&#x27;s Note</a></li>
+<li>开启新对话来测试主提示词的改动效果</li>
+<li>编辑消息历史，删除或修正不理想行为的示例</li>
+<li>使用<doc-anchor-trigger to="#post-history-instructions">历史后指令</doc-anchor-trigger>向 AI 发出最终指令</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -333,33 +333,33 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>第一次就做对！</h5>
-<p>永远不要让 AI&quot;逃脱&quot;您不希望它做的事情。如果您不喜欢 AI 的响应，不要像它是正确的那样继续对话。相反，修改提示词，重新生成消息，然后从那里继续。这将帮助 AI 学习您想要什么。</p>
+            <h5>第一次就做到位！</h5>
+<p>永远不要让 AI「得逞」做出你不希望的事情。如果不满意 AI 的回复，不要假装它是正确的继续聊天。应该修改提示词、重新生成消息，然后从那里继续。这样 AI 才能学到你真正想要的是什么。</p>
         </div>
     </div>
 </div>
-<h3 id="删除虚构聊天上下文">删除&quot;虚构聊天&quot;上下文</h3>
-<p>在某些情况下，&quot;虚构聊天&quot;可能不是您对话的正确上下文。</p>
-<p>您可以从主提示词中删除&quot;虚构&quot;上下文：</p>
+<h3 id="移除虚构聊天情境">移除「虚构聊天」情境</h3>
+<p>在某些情况下，「虚构聊天」可能并不是你对话的合适情境。</p>
+<p>可以从主提示词中移除「虚构」情境：</p>
 <blockquote>
 <p>Write {{char}}&#x27;s next reply in a conversation with {{user}}.</p>
 </blockquote>
-<p>您可能不希望 AI 认为自己在角色扮演。您可以删除角色的想法，而不是删除 AI 的想法：</p>
+<p>你可能完全不希望 AI 认为自己在角色扮演。与其删除角色概念，不如删除 AI 的概念：</p>
 <blockquote>
 <p>You are {{char}}, a helpful assistant. You provide useful information and help {{user}} with their questions.</p>
 </blockquote>
-<h3 id="ai-作为叙述者或讲故事的人">AI 作为叙述者或讲故事的人</h3>
-<p>如果您希望 AI 作为叙述者，从全知的角度描述事件，创造自己的角色和设定，该怎么办？</p>
-<p>一种方法是为 AI 创建一个命名角色作为叙述者。此角色可以称为&quot;叙述者&quot;或&quot;AI&quot;，表明 AI 是通用讲故事的人，或者可以根据特定场景或设定命名，赋予 AI 在该设定中叙述故事的任务。然后可以在<a href="../core-concepts/characterdesign/">角色</a>或<a href="../core-concepts/worldinfo/">世界信息</a>中定义设定的详细信息。</p>
-<p>您需要调整默认的主提示词以反映 AI 的角色。对于通用叙述者，您可以使用：</p>
+<h3 id="ai-作为叙述者或讲故事者">AI 作为叙述者或讲故事者</h3>
+<p>如果你希望 AI 扮演叙述者，从全知视角描述事件，自行创造角色和场景，该怎么做？</p>
+<p>一种方法是为 AI 创建一个命名角色作为叙述者。这个角色可以叫「叙述者」或「AI」，表明 AI 是通用讲故事者；也可以以特定场景或世界命名，赋予 AI 在该场景中叙述故事的任务。场景的具体细节可以在<a href="../core-concepts/characterdesign/">角色</a>或<a href="../core-concepts/worldinfo/">世界信息</a>中定义。</p>
+<p>你需要调整默认主提示词来反映 AI 的角色。对于通用叙述者，可以使用：</p>
 <blockquote>
 <p>You are {{char}}, a skilled and versatile storyteller. Narrate the story.</p>
 </blockquote>
-<p>或者对于特定设定：</p>
+<p>针对特定场景：</p>
 <blockquote>
 <p>You are the narrator of a fantasy scenario. Play as the characters that visit {{char}}.</p>
 </blockquote>
-<p>澄清用户在对话中的角色很有帮助。您的消息是故事的一部分，还是关于您的角色做什么或说什么的叙述者指令？包含用户在故事中的示例：</p>
+<p>明确用户在对话中的角色也很有帮助：你的消息是故事的一部分，还是告诉叙述者你的角色该做什么或说什么的指令？以下是将用户纳入故事的示例：</p>
 <blockquote>
 <p>The story should progress by responding to the actions and dialogue of {{user}}. Narrate the story in third person.</p>
 </blockquote>
@@ -367,30 +367,30 @@
 <blockquote>
 <p>Enter Adventure Mode. Narrate the story based on {{user}}&#x27;s dialogue and actions after &quot;&gt;&quot;. Describe the surroundings in vivid detail. Be detailed, creative, verbose, and proactive. Move the story forward by introducing fantasy elements and interesting characters.</p>
 </blockquote>
-<p>定义用户的角色不仅有助于 AI 理解如何响应您的消息，而且有助于了解它在多大程度上被允许控制您的人设。这避免了 AI 为您的人设做出您宁愿自己做的决定的情况。</p>
-<h2 id="历史后指令">历史后指令</h2>
-<p>历史后指令（PHI）是在主提示词和用户消息之后发送给 AI 的额外指令。它们可用于根据消息历史向 AI 提供额外的上下文或指令。</p>
-<p>由于历史后指令是在用户消息之后发送的，因此它们是 AI 在生成响应之前接收的最终指令。AI 通常赋予它们比主提示词更高的优先级，它们可以覆盖主提示词的指令。</p>
-<p>要使用每个角色的历史后指令，请将它们添加到角色的<a href="../core-concepts/characterdesign/">历史后指令</a>中并启用<a href="../user-settings/">优先使用角色指令</a>。要在使用特定于角色的指令的同时保留全局定义的 PHI，您可以在角色的历史后指令字段中使用 <code translate="no" v-pre>{{original}}</code> 宏。</p>
+<p>定义用户的角色，不仅有助于 AI 理解如何回应你的消息，也有助于明确它在多大程度上可以控制你的人设——避免出现 AI 替你的人设做决定的情况。</p>
+<h2 id="post-history-instructions">历史后指令</h2>
+<p>历史后指令（PHI）是在主提示词和用户消息之后发送给 AI 的额外指令，可根据消息历史为 AI 提供额外的上下文或指引。</p>
+<p>由于历史后指令在用户消息之后发送，它是 AI 在生成回复前收到的最后一条指令。AI 通常会给予它比主提示词更高的优先级，因此它可以覆盖主提示词的指令。</p>
+<p>要使用角色专属的历史后指令，请将其添加到角色的<a href="../core-concepts/characterdesign/">历史后指令</a>字段，并启用<a href="../user-settings/">优先使用角色指令</a>。若想在使用角色专属指令的同时保留全局 PHI，可以在角色的历史后指令字段中使用 <code translate="no" v-pre>{{original}}</code> 宏。</p>
 <doc-tabs>
 <doc-tab v-cloak id="文本补全-api-2">
 <template #title>文本补全 API</template>
-<p>历史后指令在系统提示词类别下的<a href="../core-concepts/advancedformatting/">高级格式化</a>面板中定义。历史后指令被添加为不可见的用户角色注入，位于提示词的最后一行（通常包含响应消息&quot;标题&quot;）之前。请注意，必须启用&quot;启用系统提示词&quot;切换才能应用历史后指令（即使系统提示词本身为空）。</p>
+<p>历史后指令在<a href="../core-concepts/advancedformatting/">高级格式设置</a>面板的系统提示词类别下定义。历史后指令会作为不可见的用户角色注入添加到提示词最后一行（通常是回复消息的「标题」行）之前。注意，必须启用「启用系统提示词」开关，历史后指令才会生效（即使系统提示词本身为空也一样）。</p>
 </doc-tab>
 <doc-tab v-cloak id="聊天补全-api-2">
 <template #title>聊天补全 API</template>
-<p>历史后指令是<a href="prompt-manager/">提示词管理器</a>中的默认提示词之一。它通常是模型接收的上下文中的最后一条消息，归属于（&quot;由...发送&quot;）系统角色。如果您的聊天补全 API 不支持系统角色，它通常会归属于用户角色。</p>
+<p>历史后指令是<a href="prompt-manager/">提示词管理器</a>中的默认提示词之一，通常是模型收到的上下文中的最后一条消息，归属于（「由……发送」）系统角色。如果你的聊天补全 API 不支持系统角色，它通常会归属于用户角色。</p>
 </doc-tab>
 </doc-tabs>
 <h2 id="添加到提示词世界信息">添加到提示词（世界信息）</h2>
-<p>您可以使用<a href="../core-concepts/worldinfo/">世界信息</a>功能在提示词的任何位置插入额外信息。通过设置何时应插入信息的条件，您可以引导 AI 包含特定详细信息、更改其响应方式或向对话添加新元素。</p>
-<p>世界信息的一些常见用途包括：</p>
+<p>可以使用<a href="../core-concepts/worldinfo/">世界信息</a>功能在提示词的任意位置插入额外信息。通过设置信息插入的触发条件，可以引导 AI 纳入特定细节、改变回复方式或为对话添加新元素。</p>
+<p>世界信息的常见用途包括：</p>
 <ul>
-<li>包含有关世界或设定信息的&quot;传说书&quot;或&quot;百科全书&quot;</li>
-<li>为各种角色和情况管理不同系统提示词的方法</li>
-<li>存储 AI 应在对话中&quot;回忆&quot;的记忆的地方</li>
-<li>用于创建、编辑和共享角色详细信息的更模块化的系统</li>
-<li>AI 要反应的随机事件和惊喜的来源，或让您做出反应！</li>
+<li>包含世界或场景信息的「传说书」或「百科全书」</li>
+<li>为不同角色和情境管理不同系统提示词的方式</li>
+<li>存储 AI 应在对话中「回忆」的记忆</li>
+<li>更模块化的角色细节创建、编辑和分享系统</li>
+<li>AI 可以做出反应的随机事件和惊喜，也可以反过来让你做出反应！</li>
 </ul>
 
                 

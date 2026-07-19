@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>CFG（无分类器引导） | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="CFG（无分类器引导） | SillyTavern傻酒馆中文文档">
+    <title>CFG | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="CFG | SillyTavern傻酒馆中文文档">
     <meta name="description" content="页面作者：kingbri">
 
     <!-- Canonical -->
@@ -24,22 +24,22 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/prompts/cfg/">
-    <meta property="og:title" content="CFG（无分类器引导） | SillyTavern傻酒馆中文文档">
+    <meta property="og:title" content="CFG | SillyTavern傻酒馆中文文档">
     <meta property="og:description" content="页面作者：kingbri">
     <meta property="og:image" content="https://sillytavern.wiki/static/cfg-hamburger.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="CFG（无分类器引导） | SillyTavern傻酒馆中文文档">
+    <meta property="og:image:alt" content="CFG | SillyTavern傻酒馆中文文档">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/prompts/cfg/">
-    <meta name="twitter:title" content="CFG（无分类器引导） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:title" content="CFG | SillyTavern傻酒馆中文文档">
     <meta name="twitter:description" content="页面作者：kingbri">
     <meta name="twitter:image" content="https://sillytavern.wiki/static/cfg-hamburger.png">
-    <meta name="twitter:image:alt" content="CFG（无分类器引导） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:image:alt" content="CFG | SillyTavern傻酒馆中文文档">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/prompts/cfg.md">
@@ -47,11 +47,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -217,23 +217,23 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="cfg无分类器引导">CFG（无分类器引导）</h1>
+<h1 id="cfg">CFG</h1>
 <p>页面作者：kingbri</p>
-<p>贡献者：kingbri, Guillaume &quot;Vermeille&quot; Sanchez, AliCat</p>
+<p>贡献者：kingbri、Guillaume &quot;Vermeille&quot; Sanchez、AliCat</p>
 <h2 id="这是什么">这是什么？</h2>
-<p>CFG（classifier-free guidance，无分类器引导）是一种用于帮助使提示词的某些部分变得更不突出或更突出的方法。</p>
+<p>CFG（classifier-free guidance，无分类器引导）是一种让提示词的某些部分变得更突出或更不突出的方法。</p>
 <h3 id="支持的后端-api">支持的后端 API</h3>
 <p>目前支持的后端包括 oobabooga 的 textgen WebUI、NovelAI 和 TabbyAPI。
 NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html">CFG 文档</a>。</p>
-<p>警告：由于需要处理多个提示词，CFG 会增加显存使用量！如果在使用 CFG 生成提示词时 GPU 内存耗尽，请考虑减小上下文大小、使用参数较少的模型或完全关闭 CFG。</p>
+<p>警告：由于 CFG 需要处理多个提示词，会增加显存使用量！如果在使用 CFG 生成提示词时 GPU 内存不足，请考虑减小上下文大小、使用参数量更小的模型，或完全关闭 CFG。</p>
 <hr>
 <h2 id="配置">配置</h2>
-<p>访问 CFG 设置的方式与访问作者注释相同：</p>
+<p>访问 CFG 设置的方式与访问 Author&#x27;s Note 相同：</p>
 <figure class="content-center">
     <img src="../../../static/cfg-hamburger.png" alt="CFGhamburgermenupng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="197" height="409" />
     <figcaption class="caption">CFGhamburgermenupng</figcaption>
 </figure>
-<p>以下是 CFG 面板的样子：</p>
+<p>CFG 面板如下所示：</p>
 <figure class="content-center">
     <img src="../../../static/cfg-panel.png" alt="CFGchatpanelpng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="478" height="653" />
     <figcaption class="caption">CFGchatpanelpng</figcaption>
@@ -243,48 +243,48 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 <li>
 <p>聊天 CFG</p>
 <ul>
-<li>将 CFG 比例和提示词的范围限定在当前聊天中</li>
+<li>将 CFG 比例和提示词的作用范围限定在当前聊天</li>
 </ul>
 </li>
 <li>
 <p>角色 CFG</p>
 <ul>
-<li>将 CFG 比例和提示词的范围限定在指定角色</li>
+<li>将 CFG 比例和提示词的作用范围限定在指定角色</li>
 </ul>
 </li>
 <li>
 <p>全局 CFG</p>
 <ul>
-<li>全局覆盖 CFG 比例和提示词（也会覆盖模型预设！）</li>
+<li>全局覆盖 CFG 比例和提示词（同时也会覆盖模型预设！）</li>
 </ul>
 </li>
 <li>
-<p>CFG 高级设置（以前称为 CFG 提示词级联）</p>
+<p>CFG 高级设置（原名 CFG 提示词级联）</p>
 <ul>
-<li>用于组合前三个下拉菜单中的提示词并设置插入深度的位置。</li>
+<li>用于合并前三个下拉菜单的提示词，并设置插入深度。</li>
 </ul>
 </li>
 </ul>
-<p>注意：如果引导比例设置为 1，由于这是 CFG 的&quot;关闭&quot;状态，因此不会发送任何内容。</p>
+<p>注意：如果引导比例设置为 1，由于此时 CFG 处于「关闭」状态，不会发送任何内容。</p>
 <h4 id="群聊">群聊</h4>
-<p>在群聊中，CFG 比例面板看起来是这样的：</p>
+<p>在群聊中，CFG 比例面板如下所示：</p>
 <figure class="content-center">
     <img src="../../../static/cfg-groups.png" alt="CFGpanelgcpng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="479" height="634" />
     <figcaption class="caption">CFGpanelgcpng</figcaption>
 </figure>
-<p>主要变化是移除了角色 CFG，并在聊天 CFG 下拉菜单中添加了一个名为&quot;使用角色 CFG 比例&quot;的复选框。这允许使用当前角色的引导比例，而不是聊天 CFG 比例设置的值。</p>
-<p>此功能的主要用途是根据每个角色的个别需求来调整比例。</p>
-<p>此外，在提示词级联中勾选&quot;角色负面提示词&quot;框将会在聊天提示词（如果启用）的基础上附加独立的角色负面提示词。</p>
+<p>主要变化是移除了角色 CFG，并在聊天 CFG 下拉菜单中新增了一个名为「Use Character CFG Scales」的复选框。勾选后，将使用当前角色的引导比例，而不是聊天 CFG 比例的设定值。</p>
+<p>此功能的主要用途是根据每个角色的各自需求来调整比例。</p>
+<p>此外，在提示词级联中勾选「Character Negatives」框，将在聊天负面提示词的基础上（如已启用）额外附加各角色独立的负面提示词。</p>
 <hr>
 <h2 id="概念">概念</h2>
-<h3 id="这不是在-stable-diffusion-中使用的吗">这不是在 Stable Diffusion 中使用的吗？</h3>
-<p>是也不是。LLM 中的 CFG 的工作方式与 Stable Diffusion 中的不同。基于 LLM 的 CFG 基于&quot;提示词混合&quot;原理工作。CFG 公式接受一个正面提示词和一个负面提示词，然后混合它们之间的<em>差异</em>。之后，发送组合的提示词并生成响应！</p>
-<p>这里有一个插图帮助理解这个概念。红色代表负面提示词，蓝色代表中性提示词，紫色代表被解释的混合结果。所有三个提示词中相同的白色空间不会用于 CFG 混合。</p>
+<h3 id="这不是-stable-diffusion-里的东西吗">这不是 Stable Diffusion 里的东西吗？</h3>
+<p>是也不是。LLM 中 CFG 的工作方式与 Stable Diffusion 中不同。基于 LLM 的 CFG 基于「提示词混合」原理运作：CFG 公式接受一个正面提示词和一个负面提示词，然后混合两者之间的<em>差异</em>，最终发送合并后的提示词并生成响应。</p>
+<p>下图有助于理解这一概念：红色表示负面提示词，蓝色表示中性提示词，紫色表示被解读的混合结果。三个提示词中相同的白色空间不参与 CFG 混合。</p>
 <figure class="content-center">
     <img src="../../../static/cfg-diagram.png" alt="stcfgdiagrampng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="747" height="296" />
     <figcaption class="caption">stcfgdiagrampng</figcaption>
 </figure>
-<p>如果您想了解更多关于 CFG 和 LLM 的信息，Vermifuge 的原始论文在这里。建议您阅读/收听：</p>
+<p>如果想深入了解 CFG 与 LLM，Vermifuge 的原始论文在这里，推荐阅读/收听：</p>
 <ul>
 <li>
 <p>论文 - <a href="https://arxiv.org/abs//2306.17806">[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)</a></p>
@@ -294,27 +294,27 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 </li>
 </ul>
 <h3 id="我需要-cfg-提示词吗">我需要 CFG 提示词吗？</h3>
-<p>不需要！CFG 提示词完全是可选的。仅仅将引导比例调整到 <code translate="no" v-pre>1</code> 以上也会对响应产生影响，这可以突出聊天和角色互动。</p>
+<p>不需要！CFG 提示词完全是可选的。仅仅将引导比例调整到 <code translate="no" v-pre>1</code> 以上，就能对回复产生影响，从而凸显聊天内容和角色互动特色。</p>
 <h3 id="什么是好的-cfg-提示词">什么是好的 CFG 提示词？</h3>
-<p>我们已经确定 CFG 提示词与 Stable Diffusion 的负面标签和嵌入不同。那么我们如何制作提示词呢？</p>
-<p>警告：这假设您使用 PLists 和 Ali:Chat 创建了一个角色。如果没有，请随意尝试各种提示词技巧。</p>
-<p>假设我有一个名叫&quot;John&quot;的角色。从他的示例对话中可以看出，John 应该一直感到快乐和兴奋。然而，在与 John 聊天时，他有时会表现得悲伤和沮丧。</p>
-<p>为了消除这种情况，CFG 来救场！只需将负面提示词设为 <code translate="no" v-pre>[John's feelings: sad, depressed]</code> 来帮助消除悲伤部分。您可以选择将正面提示词设为 <code translate="no" v-pre>[John's feelings: happy, joyful]</code> 来进一步突出 John 的快乐部分。</p>
+<p>既然 CFG 提示词与 Stable Diffusion 的负面标签和嵌入不同，我们该如何创建提示词呢？</p>
+<p>警告：以下内容假定你已使用 PLists 和 Ali:Chat 格式创建了角色。如果没有，可以自由尝试各种提示词技巧。</p>
+<p>假设有一个叫「John」的角色，根据他的示例对话，他应该时刻感到快乐和兴奋。然而在实际聊天中，他有时会显得悲伤和沮丧。</p>
+<p>这时 CFG 就派上用场了！只需将负面提示词设为 <code translate="no" v-pre>[John's feelings: sad, depressed]</code> 来压制悲伤的部分，还可以选择将正面提示词设为 <code translate="no" v-pre>[John's feelings: happy, joyful]</code> 来进一步凸显 John 快乐的一面。</p>
 <h3 id="正面提示词">正面提示词</h3>
-<p>我在上一节中提到了这一点，但我想再详细说明一下。正面提示词用于进一步突出角色的某些部分。让我们再次以 John 为例。通过使用正面提示词 <code translate="no" v-pre>[John's feelings: happy, joyful]</code> 使他更快乐，John 应该会开始输出比不包含正面提示词时更快乐的对话。</p>
-<h3 id="但是">但是...</h3>
-<p>这些只是基于特定角色格式经验的<strong>宽松指南</strong>。还有许多其他方法可以创建提示词，您应该进行实验。请随意与其他用户分享您的想法！</p>
+<p>上文已有涉及，此处再补充说明。正面提示词用于进一步凸显角色的某些特质。还以 John 为例：通过正面提示词 <code translate="no" v-pre>[John's feelings: happy, joyful]</code> 让他更快乐，John 输出的对话应该比不使用正面提示词时更具快乐感。</p>
+<h3 id="但是">但是……</h3>
+<p>以上只是基于特定角色格式经验总结的<strong>宽泛指导原则</strong>，制作提示词的方式远不止于此，欢迎自行探索实验。也欢迎与其他用户分享你的心得！</p>
 <h3 id="引导比例">引导比例</h3>
-<p>这里有一个经验法则。引导比例为 <code translate="no" v-pre>1</code> 意味着 CFG 被禁用。实际上，如果引导比例为 1，SillyTavern 不会向后端发送任何内容。引导比例 <code translate="no" v-pre>&gt;1</code> 将在不同程度上产生其他部分所示的结果。</p>
-<p>然而，引导比例 <code translate="no" v-pre>&lt;1</code> 将产生<em>相反</em>的效果，因为这里负面提示词被用作主要提示词。</p>
-<p>让我们再次以 John 为例。负面提示词是 <code translate="no" v-pre>[John's feelings: sad, depressed]</code>，正面提示词是 <code translate="no" v-pre>[John's feelings: happy, joyful]</code>，引导比例为 <code translate="no" v-pre>0.8</code>。</p>
-<p>这将反过来更多地突出<em>负面</em>提示词，您会看到 John 开始表现得比正常情况更悲伤，而不是更快乐。</p>
-<p>简而言之：使用引导比例 <code translate="no" v-pre>1.5</code>，然后根据您的输出向上或向下调整。</p>
+<p>一个经验法则：引导比例为 <code translate="no" v-pre>1</code> 时，CFG 被禁用——SillyTavern 实际上不会向后端发送任何内容。引导比例 <code translate="no" v-pre>&gt;1</code> 时，将在不同程度上产生上述各节所示的效果。</p>
+<p>然而，引导比例 <code translate="no" v-pre>&lt;1</code> 时，效果会<em>反转</em>，因为此时负面提示词成为主导。</p>
+<p>再以 John 为例：负面提示词为 <code translate="no" v-pre>[John's feelings: sad, depressed]</code>，正面提示词为 <code translate="no" v-pre>[John's feelings: happy, joyful]</code>，引导比例设为 <code translate="no" v-pre>0.8</code>。</p>
+<p>这将反而更多地凸显<em>负面</em>提示词，John 会开始表现得比平时更悲伤，而不是更快乐。</p>
+<p>简而言之：从引导比例 <code translate="no" v-pre>1.5</code> 开始，再根据输出结果上下调整。</p>
 <h3 id="提示词级联">提示词级联</h3>
-<p>负面和正面提示词可以在 CFG 类型之间级联（类型包括每次聊天、每个角色和全局覆盖）。有关更多信息，请参见配置标题。</p>
+<p>负面和正面提示词可以在不同 CFG 类型（按聊天、按角色和全局覆盖）之间进行级联。详情请参见「配置」一节。</p>
 <h3 id="插入深度">插入深度</h3>
-<p>遵循基本规则：在提示词中位置越低，对响应的影响就越大。对于聊天，我建议使用默认深度 <code translate="no" v-pre>1</code>，因为它与 SillyTavern 的其他组件非常灵活。</p>
-<p>然而，如果您想要实验，插入深度 <code translate="no" v-pre>0</code> 是开放的。但是，这些可能会显著改变您的响应的外观，并且不建议在这里使用提示词级联！</p>
+<p>基本原则：在提示词中位置越靠下，对回复的影响越大。对于聊天而言，建议使用默认深度 <code translate="no" v-pre>1</code>，这与 SillyTavern 的其他组件有很好的兼容性。</p>
+<p>如果想要实验，可以尝试插入深度 <code translate="no" v-pre>0</code>，但这可能会显著改变回复的面貌，<strong>不建议</strong>在此深度下使用提示词级联！</p>
 
                 
                 <!-- Required only on API pages -->
@@ -340,10 +340,10 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/worldinfo/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/prompts/prompt-manager/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">世界信息</span>
+                                <span class="block mt-1">提示词管理器</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -387,6 +387,6 @@ NovelAI 有其自己的 <a href="https://web.archive.org/web/20240917150051/http
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "CFG（无分类器引导）", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/prompts/cfg.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "CFG", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/prompts/cfg.md" }</script>
 </body>
 </html>

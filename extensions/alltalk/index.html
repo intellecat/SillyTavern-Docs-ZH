@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>AllTalk TTS V2 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="AllTalk TTS V2 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="Multi-engine Support: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.">
+    <meta name="description" content="AllTalk 是一个基于 Coqui XTTS、F5-TTS、VITS、Piper 及其他 TTS 模型引擎的语音克隆系统，旨在生成高质量的语音复现（零样本语音克隆或内置语音）。AllTalk V2 带来了显著的功能更新和易用性改进，包括多 TTS 引擎支持、扩展的自定义选项以及性能优化。完整功能列表请参阅">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/alltalk/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/alltalk/">
     <meta property="og:title" content="AllTalk TTS V2 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="Multi-engine Support: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.">
+    <meta property="og:description" content="AllTalk 是一个基于 Coqui XTTS、F5-TTS、VITS、Piper 及其他 TTS 模型引擎的语音克隆系统，旨在生成高质量的语音复现（零样本语音克隆或内置语音）。AllTalk V2 带来了显著的功能更新和易用性改进，包括多 TTS 引擎支持、扩展的自定义选项以及性能优化。完整功能列表请参阅">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/alltalk/">
     <meta name="twitter:title" content="AllTalk TTS V2 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="Multi-engine Support: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.">
+    <meta name="twitter:description" content="AllTalk 是一个基于 Coqui XTTS、F5-TTS、VITS、Piper 及其他 TTS 模型引擎的语音克隆系统，旨在生成高质量的语音复现（零样本语音克隆或内置语音）。AllTalk V2 带来了显著的功能更新和易用性改进，包括多 TTS 引擎支持、扩展的自定义选项以及性能优化。完整功能列表请参阅">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/alltalk.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,80 +211,63 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<hr>
-<h2 id="-key-features-in-alltalk-v2"><span class="docs-emoji">&#x1F7E9;</span> Key Features in AllTalk V2</h2>
-<ul>
-<li><strong>Multi-engine Support</strong>: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.</li>
-<li><strong>Voice Conversion (RVC)</strong>: Enhanced retrieval-based voice cloning pipeline.</li>
-<li><strong>Customizable Settings</strong>: Adjust per-engine settings and save startup configurations.</li>
-<li><strong>Narrator Functionality</strong>: Specify separate voices for narration and characters.</li>
-<li><strong>Standalone and Integrated Use</strong>: Seamless integration with SillyTavern.</li>
-<li><strong>DeepSpeed and Low VRAM Modes</strong>: Performance optimization for resource-limited environments.</li>
-<li><strong>Screenshots</strong>: See AllTalk V2’s interface <a href="https://github.com/erew123/alltalk_tts/discussions/237">here</a>.</li>
-</ul>
-<hr>
-<hr>
-<h2 id="-using-alltalk-within-sillytavern"><span class="docs-emoji">&#x1F7E8;</span> Using AllTalk within SillyTavern</h2>
-<p>Once AllTalk is loaded, select it within SillyTavern on the TTS page, ensuring to select the correct AllTalk server version in the settings.</p>
-<ul>
-<li><strong>Settings Management</strong>: AllTalk may enable or disable specific settings based on your selected configuration.</li>
-<li><strong>Loading Sequence</strong>: If SillyTavern is loaded before AllTalk, reload the TTS extensions page.</li>
-<li><strong>Performance Optimization</strong>: Enable DeepSpeed and Low VRAM modes selectively to improve performance based on system resources.</li>
-<li><strong>Narrator function</strong>: Details of the Narrator function can be found on the <a href="https://github.com/erew123/alltalk_tts/wiki/Narrator-Function">AllTalk Wiki</a>.</li>
-</ul>
-<p>Full details of the SillyTavern AllTalk Extension will be updated on the <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki page for SillyTavern</a></p>
-<p>TGWUI Users who user the AllTalk extension for TGWUI need to disable <code translate="no" v-pre>Enable TGWUI TTS</code> in the TGWUI chat interface, otherwise you will have duplicate TTS audio generated.</p>
-<hr>
-<hr>
-<h3 id="-support-assistance-and-feature-requests"><span class="docs-emoji">&#x1F7EA;</span> Support, Assistance, and Feature Requests</h3>
-<p>For further assistance:</p>
-<ul>
-<li>Refer to the <a href="https://github.com/erew123/alltalk_tts/wiki">Wiki</a> and built-in documentation.</li>
-<li>Join discussions on the <a href="https://github.com/erew123/alltalk_tts/discussions/245">Discussion Board</a>.</li>
-<li>Submit bugs or feature requests through the <a href="https://github.com/erew123/alltalk_tts/issues">Issue Tracker</a>.</li>
-</ul>
-<hr>
 <h1 id="alltalk-tts-v2">AllTalk TTS V2</h1>
-<p>AllTalk 是一个基于 Coqui XTTS、F5-TTS、VITS、Piper 和其他 TTS 模型引擎的语音克隆系统，旨在产生高质量的语音复制（无论是零样本语音克隆还是内置语音）。在 AllTalk V2 中，重大更新增强了功能性和易用性，包括多个 TTS 引擎支持、扩展的自定义选项和性能优化。有关功能的完整列表，请参阅 <a href="https://github.com/erew123/alltalk_tts/wiki">AllTalk Wiki</a>。</p>
-<h2 id="-alltalk-v2-的主要功能"><span class="docs-emoji">&#x1F7E9;</span> AllTalk V2 的主要功能</h2>
+<p>AllTalk 是一个基于 Coqui XTTS、F5-TTS、VITS、Piper 及其他 TTS 模型引擎的语音克隆系统，旨在生成高质量的语音复现（零样本语音克隆或内置语音）。AllTalk V2 带来了显著的功能更新和易用性改进，包括多 TTS 引擎支持、扩展的自定义选项以及性能优化。完整功能列表请参阅 <a href="https://github.com/erew123/alltalk_tts/wiki">AllTalk Wiki</a>。</p>
+<hr>
+<h2 id="-alltalk-v2-主要功能"><span class="docs-emoji">&#x1F7E9;</span> AllTalk V2 主要功能</h2>
 <ul>
-<li><strong>多引擎支持</strong>：轻松在 Coqui XTTS、VITS、Piper、Parler、F5 和自定义引擎之间切换。</li>
-<li><strong>语音转换 (RVC)</strong>：增强的基于检索的语音克隆管道。</li>
-<li><strong>可自定义设置</strong>：调整每个引擎的设置并保存启动配置。</li>
-<li><strong>叙述功能</strong>：为叙述和角色指定不同的语音。</li>
-<li><strong>独立和集成使用</strong>：与 SillyTavern 无缝集成。</li>
-<li><strong>DeepSpeed 和低 VRAM 模式</strong>：针对资源受限环境的性能优化。</li>
-<li><strong>截图</strong>：在<a href="https://github.com/erew123/alltalk_tts/discussions/237">此处</a>查看 AllTalk V2 的界面。</li>
+<li><strong>多引擎支持</strong>：可在 Coqui XTTS、VITS、Piper、Parler、F5 及自定义引擎之间轻松切换。</li>
+<li><strong>语音转换（RVC）</strong>：增强的基于检索的语音克隆流水线。</li>
+<li><strong>可自定义设置</strong>：调整各引擎设置并保存启动配置。</li>
+<li><strong>旁白功能</strong>：为旁白和角色分别指定不同的声音。</li>
+<li><strong>独立及集成使用</strong>：与 SillyTavern 无缝集成。</li>
+<li><strong>DeepSpeed 与低显存模式</strong>：针对资源受限环境的性能优化。</li>
+<li><strong>截图</strong>：在<a href="https://github.com/erew123/alltalk_tts/discussions/237">此处</a>查看 AllTalk V2 的界面截图。</li>
 </ul>
-<h2 id="-设置和安装选项"><span class="docs-emoji">&#x1F7E8;</span> 设置和安装选项</h2>
-<p>AllTalk 提供独立和集成的安装方法。最快的设置方法是使用提供的快速安装选项之一，这些脚本可以自动完成大部分过程。</p>
+<hr>
+<h2 id="-安装与配置选项"><span class="docs-emoji">&#x1F7E8;</span> 安装与配置选项</h2>
+<p>AllTalk 提供独立安装和集成安装两种方式。最快速的安装方式是使用提供的快速安装选项，脚本会自动处理大部分流程。</p>
 <ul>
 <li><strong>独立安装</strong>：推荐大多数用户使用（<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Standalone-Installation">独立安装指南</a>）</li>
-<li><strong>Text-generation-webui 集成</strong>：用于集成到 Text-generation-webui（<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Text%E2%80%90generation%E2%80%90webui-Installation">TGWUI 安装指南</a>）</li>
+<li><strong>Text-generation-webui 集成</strong>：集成到 Text-generation-webui（<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Text%E2%80%90generation%E2%80%90webui-Installation">TGWUI 安装指南</a>）</li>
 </ul>
+<h4 id="-自动安装"><span class="docs-emoji">&#x1F7E9;</span> 自动安装</h4>
+<p><strong>此方法仅适用于 Windows 用户。</strong>
+对于希望快速安装的新用户，自动安装使用 SillyTavern-Launcher。
+注意：此方法假设你已经安装了 SillyTavern-Launcher。如果尚未安装，请访问 <a href="https://github.com/SillyTavern/SillyTavern-Launcher">https://github.com/SillyTavern/SillyTavern-Launcher</a> 并按照 readme.md 文件中的说明进行安装。
+安装 SillyTavern-Launcher 后：</p>
+<ol>
+<li>运行 Launcher.bat</li>
+<li>进入：<code translate="no" v-pre>Home &gt; Toolbox &gt; App Installer &gt; Voice Generation</code></li>
+<li>选择标有：<strong>Install AllTalk V2</strong> 的选项</li>
+</ol>
 <h4 id="-手动安装"><span class="docs-emoji">&#x1F7E9;</span> 手动安装</h4>
-<p>对于需要详细控制的高级用户，请按照<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Manual-Installation-Guide">手动安装指南</a>在 Windows、Linux 或 Mac（未测试）上进行逐步设置。</p>
+<p>对于需要详细控制的高级用户，请参阅<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Manual-Installation-Guide">手动安装指南</a>，在 Windows、Linux 或 Mac（未测试）上逐步完成安装。</p>
 <h4 id="-google-colab-安装"><span class="docs-emoji">&#x1F7E9;</span> Google Colab 安装</h4>
-<p>使用 <a href="https://github.com/erew123/alltalk_tts/wiki/Google-COLAB">Google Colab 安装</a>在云环境中运行 AllTalk，适用于不想在本地安装的用户。</p>
+<p>通过 <a href="https://github.com/erew123/alltalk_tts/wiki/Google-COLAB">Google Colab 安装</a>在云端环境运行 AllTalk，适合不希望本地安装的用户。</p>
+<hr>
 <h2 id="-在-sillytavern-中使用-alltalk"><span class="docs-emoji">&#x1F7E8;</span> 在 SillyTavern 中使用 AllTalk</h2>
-<p>一旦 AllTalk 加载完成，在 TTS 页面中选择它，确保在设置中选择正确的 AllTalk 服务器版本。</p>
+<p>AllTalk 加载完成后，在 SillyTavern 的 TTS 页面中选择它，并确保在设置中选择正确的 AllTalk 服务器版本。</p>
 <ul>
-<li><strong>设置管理</strong>：AllTalk 可能会根据您选择的配置启用或禁用特定设置。</li>
-<li><strong>加载顺序</strong>：如果在 AllTalk 之前加载了 SillyTavern，请重新加载 TTS 扩展页面。</li>
-<li><strong>性能优化</strong>：根据系统资源有选择地启用 DeepSpeed 和低 VRAM 模式以提高性能。</li>
-<li><strong>叙述功能</strong>：叙述功能的详细信息可以在 <a href="https://github.com/erew123/alltalk_tts/wiki/Narrator-Function">AllTalk Wiki</a> 中找到。</li>
+<li><strong>设置管理</strong>：AllTalk 可能会根据你选择的配置启用或禁用特定设置。</li>
+<li><strong>加载顺序</strong>：如果 SillyTavern 在 AllTalk 之前加载，请重新加载 TTS 扩展页面。</li>
+<li><strong>性能优化</strong>：根据系统资源有选择地启用 DeepSpeed 和低显存模式以提升性能。</li>
+<li><strong>旁白功能</strong>：旁白功能的详细说明请参阅 <a href="https://github.com/erew123/alltalk_tts/wiki/Narrator-Function">AllTalk Wiki</a>。</li>
 </ul>
-<p>SillyTavern AllTalk 扩展的完整详细信息将在 <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki 的 SillyTavern 页面</a>上更新。</p>
-<p>使用 TGWUI 的 AllTalk 扩展的 TGWUI 用户需要在 TGWUI 聊天界面中禁用 <code translate="no" v-pre>Enable TGWUI TTS</code>，否则会生成重复的 TTS 音频。</p>
+<p>SillyTavern AllTalk 扩展的完整详情将在 <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki 的 SillyTavern 页面</a>持续更新。</p>
+<p>使用 TGWUI AllTalk 扩展的 TGWUI 用户需要在 TGWUI 聊天界面中禁用 <code translate="no" v-pre>Enable TGWUI TTS</code>，否则会生成重复的 TTS 音频。</p>
+<hr>
 <h2 id="-故障排除"><span class="docs-emoji">&#x1F7E8;</span> 故障排除</h2>
-<p>如果您遇到您认为是 SillyTavern 中 AllTalk 特有的问题，请参阅 <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki 的 SillyTavern 页面</a>获取最新信息。</p>
-<h3 id="-支持帮助和功能请求"><span class="docs-emoji">&#x1F7EA;</span> 支持、帮助和功能请求</h3>
+<p>如果你遇到认为是 AllTalk 在 SillyTavern 中特有的问题，请参阅 <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki 的 SillyTavern 页面</a>获取最新信息。</p>
+<hr>
+<h3 id="-支持帮助与功能请求"><span class="docs-emoji">&#x1F7EA;</span> 支持、帮助与功能请求</h3>
 <p>如需进一步帮助：</p>
 <ul>
-<li>参考 <a href="https://github.com/erew123/alltalk_tts/wiki">Wiki</a> 和内置文档。</li>
-<li>在<a href="https://github.com/erew123/alltalk_tts/discussions/245">讨论板</a>上参与讨论。</li>
-<li>通过<a href="https://github.com/erew123/alltalk_tts/issues">问题追踪器</a>提交错误或功能请求。</li>
+<li>参阅 <a href="https://github.com/erew123/alltalk_tts/wiki">Wiki</a> 和内置文档。</li>
+<li>在<a href="https://github.com/erew123/alltalk_tts/discussions/245">讨论区</a>加入讨论。</li>
+<li>通过<a href="https://github.com/erew123/alltalk_tts/issues">问题追踪器</a>提交错误报告或功能请求。</li>
 </ul>
+<hr>
 
                 
                 <!-- Required only on API pages -->

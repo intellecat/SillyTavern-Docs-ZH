@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>管理 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="管理 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="尽管遵循了许多安全最佳实践，SillyTavern 服务器的安全性仍不足以暴露在公共互联网上。">
+    <meta name="description" content="尽管遵循了许多安全最佳实践，SillyTavern 服务器仍不足以安全地暴露在公开的互联网上。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/administration/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/administration/">
     <meta property="og:title" content="管理 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="尽管遵循了许多安全最佳实践，SillyTavern 服务器的安全性仍不足以暴露在公共互联网上。">
+    <meta property="og:description" content="尽管遵循了许多安全最佳实践，SillyTavern 服务器仍不足以安全地暴露在公开的互联网上。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/administration/">
     <meta name="twitter:title" content="管理 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="尽管遵循了许多安全最佳实践，SillyTavern 服务器的安全性仍不足以暴露在公共互联网上。">
+    <meta name="twitter:description" content="尽管遵循了许多安全最佳实践，SillyTavern 服务器仍不足以安全地暴露在公开的互联网上。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/administration/index.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../favicon.ico" />
-    <link href="../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -224,41 +224,77 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>尽管遵循了许多安全最佳实践，SillyTavern 服务器的安全性仍不足以暴露在公共互联网上。</p>
-<p><strong>在未首先确保适当的安全措施的情况下，切勿在开放的互联网上托管任何实例。</strong></p>
-<p><strong>对于因不当或不充分的安全实施而导致未经授权访问造成的任何损害或损失，我们概不负责。</strong></p>
+<p>尽管遵循了许多安全最佳实践，SillyTavern 服务器仍不足以安全地暴露在公开的互联网上。</p>
+<p><strong>在未确保实施适当安全措施的情况下，切勿将任何实例托管在公开的互联网上。</strong></p>
+<p><strong>由于安全措施不当或不足导致未经授权的访问而造成的任何损害或损失，我们概不负责。</strong></p>
         </div>
     </div>
 </div>
 <div class="callout"><p><strong><a href="config-yaml/">config.yaml</a></strong></p>
-<p>SillyTavern 的主配置文件。它包含各种设置，例如网络、安全和后端特定选项。</p>
+<p>SillyTavern 的主配置文件，包含网络、安全及后端特定选项等各种设置。</p>
 </div>
 <div class="callout"><p><strong><a href="multi-user/">多用户</a></strong></p>
-<p>要与他人共享您的 SillyTavern 实例，您可以创建多个用户账户。每个用户都有自己的设置、扩展和数据。用户账户也可以设置密码保护。</p>
+<p>要与他人共享您的 SillyTavern 实例，可以创建多个用户账户。每位用户拥有各自独立的设置、扩展和数据。用户账户还可以设置密码保护。</p>
 </div>
 <div class="callout"><p><strong><a href="../usage/remoteconnections/">远程访问</a></strong></p>
 <p>您可以从手机、平板电脑或其他计算机访问您的 SillyTavern 实例。</p>
 </div>
-<div class="callout"><p><strong><a href="tunneling/">VPN 和隧道</a></strong></p>
-<p>要从互联网访问您的 SillyTavern 实例，您可以使用 VPN 或隧道服务，如 Cloudflare Zero Trust、ngrok 或 Tailscale。</p>
+<div class="callout"><p><strong><a href="tunneling/">VPN 与隧道</a></strong></p>
+<p>要从互联网访问您的 SillyTavern 实例，可以使用 VPN 或隧道服务，例如 Cloudflare Zero Trust、ngrok 或 Tailscale。</p>
 </div>
 <div class="callout"><p><strong><a href="../usage/st-reverse-proxy-guide/">反向代理</a></strong></p>
-<p>高级用户可以设置反向代理以从互联网访问他们的 SillyTavern 实例。</p>
+<p>进阶用户可以设置反向代理，以便从互联网访问其 SillyTavern 实例。</p>
 </div>
+<h2 id="数据目录结构">数据目录结构</h2>
+<p>本节概述了 SillyTavern 中用户数据的存储结构。此处仅描述默认数据布局（数据根目录为 SillyTavern 安装目录的子目录）。如果您已自定义数据布局，请参阅您的自定义配置以获取详细信息。</p>
+<h3 id="datauser-handle例如-datadefault-user"><code translate="no" v-pre>data/[user-handle]</code>（例如 <code translate="no" v-pre>data/default-user</code>）</h3>
+<p>为每个用户账户创建，此文件夹包含用户特定数据，例如角色文件、对话历史记录和设置。</p>
+<h3 id="data_cache"><code translate="no" v-pre>data/_cache</code></h3>
+<p>用于存储服务器下载的文件，例如分词器文件和 transformers.js 模型。</p>
+<h4 id="data_cachecharacters"><code translate="no" v-pre>data/_cache/characters</code></h4>
+<p>当启用 <code translate="no" v-pre>performance.useDiskCache</code> 设置时，包含已解析的角色数据，在启动时及角色更新时同步。</p>
+<p>这以磁盘空间为代价，实现更快速的角色数据加载。</p>
+<h3 id="data_css"><code translate="no" v-pre>data/_css</code></h3>
+<p>用于存储自定义 CSS 文件。</p>
+<p>目前仅支持 <code translate="no" v-pre>user.css</code> 文件，该文件允许您向前端添加自定义样式。</p>
+<h3 id="data_errors"><code translate="no" v-pre>data/_errors</code></h3>
+<p>存储包含各种 HTTP 状态码错误页面的 HTML 文件。当服务器遇到错误时，这些文件用于显示自定义错误页面。</p>
+<ul>
+<li><code translate="no" v-pre>forbidden-by-whitelist.html</code>：当请求被 IP 地址白名单阻止时显示。</li>
+<li><code translate="no" v-pre>host-not-allowed.html</code>：当请求被主机白名单阻止时显示。</li>
+<li><code translate="no" v-pre>unauthorized.html</code>：当基本身份验证失败时显示。</li>
+<li><code translate="no" v-pre>url-not-found.html</code>：当请求的资源未找到时显示。</li>
+</ul>
+<h3 id="data_storage"><code translate="no" v-pre>data/_storage</code></h3>
+<p>用于存储<a href="multi-user/">用户账户数据</a>。</p>
+<p>不建议手动编辑这些文件，否则可能导致数据损坏。</p>
+<h3 id="data_uploads"><code translate="no" v-pre>data/_uploads</code></h3>
+<p>用于临时存储用户上传的文件，在服务器处理期间使用。</p>
+<p>每次启动时这些文件会被自动清除。</p>
+<h3 id="data_webpack"><code translate="no" v-pre>data/_webpack</code></h3>
+<p>用于存储已编译的 webpack 资产和缓存文件。</p>
+<p>如果更新后前端出现问题，请尝试清除此文件夹，以强制完整重新构建前端资产。</p>
+<h3 id="dataaccesslog"><code translate="no" v-pre>data/access.log</code></h3>
+<p>记录服务器收到的传入 HTTP 请求的日志文件，从首次成功连接后开始记录。</p>
+<p>请定期检查此文件，以监控是否有任何可疑活动。</p>
+<h3 id="datacookie-secrettxt"><code translate="no" v-pre>data/cookie-secret.txt</code></h3>
+<p>包含服务器用于签名 Cookie 的密钥。</p>
+<p>如果该文件不存在，首次启动时会自动生成。</p>
 <h2 id="安全检查清单">安全检查清单</h2>
-<p><strong>这些只是建议。在使您的 ST 实例上线之前，请咨询 Web 应用程序安全专家。</strong></p>
+<p><strong>以下内容仅为建议。在将您的 ST 实例上线之前，请咨询 Web 应用安全专家。</strong></p>
 <ol>
-<li>保持您的操作系统和运行时软件（如 Node.js）更新。这可确保您的系统拥有最新的安全补丁和修复程序，有助于防止潜在的漏洞。</li>
-<li>使用<a href="config-yaml/#ip-whitelisting">白名单</a>和网络防火墙。仅允许受信任的 IP 范围访问服务器。</li>
-<li>启用<a href="config-yaml/#user-authentication">基本身份验证</a>。它在您访问前端应用程序之前充当&quot;主密码&quot;。</li>
-<li>或者，配置外部身份验证。一些已知的服务包括 <a href="https://www.authelia.com/">Authelia</a> 和 <a href="https://goauthentik.io/">authentik</a>。详情请参阅 <a href="sso/">SSO 指南</a>。</li>
-<li>永远不要让管理员账户没有密码。如果您有任何未受保护的管理员账户，服务器将在启动时警告您。</li>
-<li>在本地网络外使用隐私登录设置。这会对潜在的外部人员隐藏用户列表。</li>
-<li>经常检查访问日志。它们被写入服务器控制台和 <code translate="no" v-pre>access.log</code> 文件，并提供有关传入连接的信息，例如 IP 地址和用户代理。</li>
-<li>配置 HTTPS。对于 localhost 服务器，您可以生成并使用自签名证书。否则，您可能需要部署反向代理 Web 服务器，如 <a href="https://traefik.io/">Traefik</a> 或 <a href="https://caddyserver.com/docs/getting-started">Caddy</a>。</li>
-<li>配置并启用<a href="config-yaml/#host-whitelisting">主机白名单</a>，特别是如果您在本地网络上未使用 HTTPS 加密。</li>
+<li>保持操作系统和运行时软件（例如 Node.js）为最新版本。这可确保您的系统拥有最新的安全补丁和修复，有助于防范潜在漏洞。</li>
+<li>使用<a href="config-yaml/#ip-whitelisting">白名单</a>和网络防火墙，仅允许受信任的 IP 范围访问服务器。</li>
+<li>启用<a href="config-yaml/#user-authentication">基本身份验证</a>，它在访问前端应用之前充当&quot;主密码&quot;。</li>
+<li>或者，配置外部身份验证。一些常见的服务包括 <a href="https://www.authelia.com/">Authelia</a> 和 <a href="https://goauthentik.io/">authentik</a>。详情请参阅 <a href="sso/">SSO 指南</a>。</li>
+<li>切勿让管理账户没有密码。如果存在未受保护的管理账户，服务器将在启动时发出警告。</li>
+<li>在本地网络以外的地方使用隐蔽登录设置，以对潜在的外部人员隐藏用户列表。</li>
+<li>经常检查访问日志。日志会写入服务器控制台和 <code translate="no" v-pre>access.log</code> 文件，提供有关传入连接的信息，例如 IP 地址和用户代理。</li>
+<li>配置 HTTPS。对于本地服务器，可以生成并使用自签名证书。否则，您可能需要部署反向代理 Web 服务器，例如 <a href="https://traefik.io/">Traefik</a> 或 <a href="https://caddyserver.com/docs/getting-started">Caddy</a>。</li>
+<li>配置并启用<a href="config-yaml/#host-whitelisting">主机白名单</a>，尤其是在本地网络上不使用 HTTPS 加密时。</li>
+<li>配置并启用<a href="config-yaml/#private-address-whitelisting">私有地址白名单</a>以防止 SSRF 攻击。</li>
 </ol>
-<p>在以下指南中查找有关安全代理的更多信息：<a href="../usage/st-reverse-proxy-guide/">反向代理 SillyTavern</a>。</p>
+<p>有关安全代理的更多信息，请参阅以下指南：<a href="../usage/st-reverse-proxy-guide/">SillyTavern 反向代理</a>。</p>
 
                 
                 <!-- Required only on API pages -->

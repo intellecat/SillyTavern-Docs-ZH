@@ -43,7 +43,7 @@ User: { Write a happy song about Nintendo Switch. }
 ### 系统提示词
 
 !!! warning 最近更改
-系统提示词现在是一个独立的实体。有关更多详细信息，请参见[高级格式化](advancedformatting.md#系统提示词)页面。
+系统提示词现在是一个独立的实体。有关更多详细信息，请参见[高级格式化](advancedformatting.md#system-prompt)页面。
 !!!
 
 ### 模板
@@ -70,7 +70,7 @@ User: { Write a happy song about Nintendo Switch. }
 
 此外，可以在消息前缀中使用特殊的 \{\{name\}\} 宏来引用附加到消息的实际名称（而不是当前活动的 \{\{char\}\} 或 \{\{user\}\}），这在使用群组聊天或 /sendas 命令时很有帮助。如果无法确定名称，则使用"System"作为后备占位符。
 
-### 包含名称
+### 包含名称 {#include-names}
 
 如果启用，在前缀序列后将角色和用户名添加到聊天历史记录中。
 
@@ -80,7 +80,7 @@ User: { Write a happy song about Nintendo Switch. }
 * **群组和过去的个性**：仅为群组角色和过去的个性的消息添加名称前缀。
 * **始终**：始终在消息内容前添加名称前缀。
 
-### 序列：系统提示词包装
+### 序列：系统提示词包装 {#sequences-story-string-wrapping}
 
 定义系统提示词的包装方式。
 
@@ -94,7 +94,7 @@ User: { Write a happy song about Nintendo Switch. }
 
 **重要：**这*仅*适用于系统提示词本身，*不*适用于整个故事字符串！如果您想包装故事字符串，请将这些序列添加到上下文模板部分中的故事字符串模板。
 
-### 序列：聊天消息包装
+### 序列：聊天消息包装 {#sequences-chat-messages-wrapping}
 
 这些设置定义了在构建提示词时如何包装属于不同角色的消息。
 

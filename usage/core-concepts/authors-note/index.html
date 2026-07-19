@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>作者注释 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="作者注释 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="作者注释是一个强大的工具，用于自定义 AI 回应，它可以在您想要的任何位置和频率将一段文本插入到提示词中。">
+    <meta name="description" content="作者注释是一个强大的自定义 AI 响应的工具，它可以在提示词的任意位置、以任意频率插入一段文本。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/core-concepts/authors-note/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/core-concepts/authors-note/">
     <meta property="og:title" content="作者注释 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="作者注释是一个强大的工具，用于自定义 AI 回应，它可以在您想要的任何位置和频率将一段文本插入到提示词中。">
+    <meta property="og:description" content="作者注释是一个强大的自定义 AI 响应的工具，它可以在提示词的任意位置、以任意频率插入一段文本。">
     <meta property="og:image" content="https://sillytavern.wiki/static/extensions/note-menu.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/core-concepts/authors-note/">
     <meta name="twitter:title" content="作者注释 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="作者注释是一个强大的工具，用于自定义 AI 回应，它可以在您想要的任何位置和频率将一段文本插入到提示词中。">
+    <meta name="twitter:description" content="作者注释是一个强大的自定义 AI 响应的工具，它可以在提示词的任意位置、以任意频率插入一段文本。">
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/note-menu.png">
     <meta name="twitter:image:alt" content="作者注释 | SillyTavern傻酒馆中文文档">
 
@@ -47,11 +47,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -218,10 +218,13 @@
 
                 <!-- Page content  -->
 <h1 id="作者注释">作者注释</h1>
-<h2 id="这是什么">这是什么？</h2>
-<p>作者注释是一个强大的工具，用于自定义 AI 回应，它可以在您想要的任何位置和频率将一段文本插入到提示词中。</p>
+<h2 id="什么是作者注释">什么是作者注释？</h2>
+<p>作者注释是一个强大的自定义 AI 响应的工具，它可以在提示词的任意位置、以任意频率插入一段文本。</p>
 <h2 id="使用方法">使用方法</h2>
 <p>作者注释可以在聊天输入栏左侧的选项菜单中找到。</p>
+<retype-table copy-text="| 选项菜单                              | 作者注释面板                           |
+|---------------------------------------|----------------------------------------|
+| ![](/static/extensions/note-menu.png) | ![](/static/extensions/note-panel.png) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -238,42 +241,43 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="配置作者注释">配置作者注释</h2>
 <h3 id="特定聊天的作者注释">特定聊天的作者注释</h3>
-<p>作者注释面板顶部的框包含当前聊天的作者注释。</p>
-<p><strong>此框的内容不会自动转移到任何新的聊天中。</strong></p>
-<h3 id="放置选项">放置选项</h3>
+<p>作者注释面板顶部的文本框包含当前聊天的作者注释。</p>
+<p><strong>此文本框的内容不会自动转移到任何新聊天中。</strong></p>
+<h3 id="插入位置选项">插入位置选项</h3>
 <h4 id="场景之后">场景之后</h4>
-<p>这会将作者注释放在靠近上下文顶部的位置，位于角色定义的&quot;场景&quot;部分之后。如果没有指定场景，它将被放在角色定义的最后部分之后，示例消息之前。</p>
-<h4 id="聊天中">聊天中</h4>
-<p>这会将作者注释放在指定深度的聊天历史中。</p>
-<p>深度 0 = 放在聊天历史的最末端。</p>
-<p>深度 4 = 放在最近 3 条聊天历史消息之前，使其成为聊天历史中的第 4 个实体。</p>
-<p><em>作者注释越接近提示词底部，对下一个 AI 回应的影响就越大。</em></p>
+<p>将作者注释插入到上下文中角色定义&quot;场景&quot;部分之后的位置。如果未指定场景，它将被插入到角色定义最后一部分之后、示例消息之前。</p>
+<h4 id="聊天内">聊天内</h4>
+<p>将作者注释以指定深度插入到聊天历史记录中。</p>
+<p>深度 0 = 插入到聊天历史记录的最末尾。</p>
+<p>深度 4 = 插入到最近 3 条聊天历史消息之前，成为聊天历史记录中的第 4 个元素。</p>
+<p><em>作者注释在提示词中越靠近底部，对下一次 AI 响应的影响越大。</em></p>
 <h3 id="插入频率">插入频率</h3>
-<p>这是您希望作者注释被包含在聊天中的频率。</p>
-<p>频率 0 = 作者注释永远不会被插入。</p>
-<p>频率 1 = 作者注释将在每个用户输入提示词中插入。</p>
-<p>频率 4 = 作者注释将在每第 4 个用户输入提示词中插入。</p>
+<p>设置作者注释被包含到聊天中的频率。</p>
+<p>频率 0 = 永远不插入作者注释。</p>
+<p>频率 1 = 每次用户输入提示时都插入作者注释。</p>
+<p>频率 4 = 每隔 4 次用户输入提示插入一次作者注释。</p>
 <h3 id="默认作者注释">默认作者注释</h3>
-<p>面板底部的框包含默认作者注释，它将应用于每个新的聊天。</p>
-<h2 id="常见用例">常见用例</h2>
-<h3 id="提醒-ai-回应格式">提醒 AI 回应格式</h3>
-<p>作者注释可用于指定 AI 应如何写其回应。</p>
+<p>面板底部的文本框包含默认作者注释，该注释将应用于每个新聊天。</p>
+<h2 id="常见使用场景">常见使用场景</h2>
+<h3 id="提醒-ai-响应格式">提醒 AI 响应格式</h3>
+<p>作者注释可用于指定 AI 应如何撰写其回复。</p>
 <ul>
-<li>[您的下一个回应必须是 300 个 token 长度。]</li>
-<li>[用爱伦·坡的风格写下一个回复]</li>
-<li>[使用 markdown 斜体表示未说出的动作，使用引号表示说出的话。]</li>
+<li>[Your next response must be 300 tokens in length.]</li>
+<li>[Write your next reply in the style of Edgar Allan Poe]</li>
+<li>[Use markdown italics to signify unspoken actions, and quotation marks to specify spoken word.]</li>
 </ul>
 <h3 id="强化指令">强化指令</h3>
 <ul>
-<li>[记住您在这次聊天开始时收到的指令。]</li>
+<li>[Remember the instructions you were given at the beginning of this chat.]</li>
 </ul>
-<h3 id="作为临时世界信息角色倾向或非指令模型的指令">作为临时世界信息、角色倾向或非指令模型的指令</h3>
+<h3 id="作为临时世界信息角色偏向或用于非指令模式模型的指令">作为临时世界信息、角色偏向，或用于非指令模式模型的指令</h3>
 <ul>
-<li>[{{char}} 在图书馆里]</li>
-<li>[{{user}} 腿上有一处新伤，所以无法逃跑。]</li>
-<li>[{{char}} 无法说话，必须使用手势交流。]</li>
+<li>[{{char}} is in the library]</li>
+<li>[{{user}} has a fresh wound to his leg, so won&#x27;t be able to run away.]</li>
+<li>[{{char}} cannot speak and must communicate using hand signals.]</li>
 </ul>
 
                 

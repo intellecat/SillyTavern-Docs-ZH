@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>常用设置 | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="常用设置 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="这些设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的后端都是通用的。">
+    <title>通用设置 | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="通用设置 | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="这些设置控制使用语言模型生成文本时的采样过程。以下所有设置的含义对所有支持的后端均通用。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/common-settings/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/common-settings/">
-    <meta property="og:title" content="常用设置 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="这些设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的后端都是通用的。">
+    <meta property="og:title" content="通用设置 | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="这些设置控制使用语言模型生成文本时的采样过程。以下所有设置的含义对所有支持的后端均通用。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/common-settings/">
-    <meta name="twitter:title" content="常用设置 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="这些设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的后端都是通用的。">
+    <meta name="twitter:title" content="通用设置 | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="这些设置控制使用语言模型生成文本时的采样过程。以下所有设置的含义对所有支持的后端均通用。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/common-settings.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,98 +211,98 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="常用设置">常用设置</h1>
-<p>这些设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的后端都是通用的。</p>
+<h1 id="通用设置">通用设置</h1>
+<p>这些设置控制使用语言模型生成文本时的采样过程。以下所有设置的含义对所有支持的后端均通用。</p>
 <h2 id="上下文设置">上下文设置</h2>
-<h3 id="回应长度tokens">回应长度（tokens）</h3>
-<p>API 将生成的最大 token 数量。</p>
+<h3 id="response-tokens">响应长度（token）</h3>
+<p>API 生成回复时的最大 token 数。</p>
 <ul>
-<li>回应长度越高，生成回应所需的时间就越长。</li>
-<li>如果 API 支持，您可以启用 <code translate="no" v-pre>流式传输</code> 来逐步显示正在生成的回应。</li>
-<li>当 <code translate="no" v-pre>流式传输</code> 关闭时，回应将在完成后一次性显示。</li>
+<li>响应长度越高，生成回复所需的时间越长。</li>
+<li>如果 API 支持，你可以启用<code translate="no" v-pre>流式传输</code>，以便在生成过程中逐步显示回复内容。</li>
+<li>关闭<code translate="no" v-pre>流式传输</code>时，回复将在生成完成后一次性显示。</li>
 </ul>
-<h3 id="上下文长度tokens">上下文长度（tokens）</h3>
-<p>SillyTavern 将作为提示词发送给 API 的最大 token 数量，减去回应长度。</p>
+<h3 id="上下文长度token">上下文长度（token）</h3>
+<p>SillyTavern 作为提示词发送给 API 的最大 token 数，不含响应长度。</p>
 <ul>
-<li>上下文包括角色信息、系统提示词、聊天历史等。</li>
-<li>消息之间的虚线表示聊天的上下文范围。该线以上的消息不会发送给 AI。</li>
-<li>要在生成消息后查看上下文的组成，请点击 <code translate="no" v-pre>提示词项目化</code> 消息选项（展开 <code translate="no" v-pre>...</code> 菜单并点击带线条的方形图标）。</li>
+<li>上下文包含角色信息、系统提示词、聊天历史等内容。</li>
+<li>消息之间的虚线表示聊天的上下文范围，虚线以上的消息不会发送给 AI。</li>
+<li>若要在生成消息后查看上下文的组成，请点击<code translate="no" v-pre>提示词分项</code>消息选项（展开 <code translate="no" v-pre>...</code> 菜单并点击有线条的方形图标）。</li>
 </ul>
 <h2 id="采样参数">采样参数</h2>
-<h3 id="temperature温度">Temperature（温度）</h3>
-<p>Temperature 控制 token 选择的随机性：</p>
+<h3 id="温度temperature">温度（Temperature）</h3>
+<p>温度控制 token 选择时的随机性：</p>
 <ul>
-<li>低温度（&lt;1.0）会产生更可预测的文本，倾向于选择概率更高的 token</li>
-<li>高温度（&gt;1.0）通过给予低概率 token 更好的机会，增加输出的创造性和多样性。</li>
+<li>低温度（&lt;1.0）使文本更具可预测性，更倾向于选择高概率 token</li>
+<li>高温度（&gt;1.0）通过提高低概率 token 的权重，增加输出的创造性和多样性</li>
 </ul>
-<p>设置为 1 以保持原始概率。</p>
-<h3 id="repetition-penalty重复惩罚">Repetition Penalty（重复惩罚）</h3>
-<p>尝试通过根据 token 在上下文中出现的频率来惩罚它们以抑制重复。</p>
-<p>将值设置为 1 以禁用其效果。</p>
-<h4 id="repetition-penalty-range重复惩罚范围">Repetition Penalty Range（重复惩罚范围）</h4>
-<p>从最后生成的 token 开始，将考虑多少个 token 进行重复惩罚。如果设置得太高，可能会破坏回应，因为常用词如&quot;的、了、和&quot;等将受到最严重的惩罚。</p>
-<p>将值设置为 0 以禁用其效果。</p>
-<h4 id="repetition-penalty-slope重复惩罚斜率">Repetition Penalty Slope（重复惩罚斜率）</h4>
-<p>如果这个值和 <code translate="no" v-pre>重复惩罚范围</code> 都大于 0，重复惩罚在提示词的末尾将有更大的效果。值越高，效果越强。</p>
-<p>将值设置为 0 以禁用其效果。</p>
+<p>设为 1 时使用原始概率分布。</p>
+<h3 id="重复惩罚repetition-penalty">重复惩罚（Repetition Penalty）</h3>
+<p>通过对上下文中出现频率较高的 token 施加惩罚来抑制重复内容。</p>
+<p>设为 1 时禁用该效果。</p>
+<h4 id="重复惩罚范围repetition-penalty-range">重复惩罚范围（Repetition Penalty Range）</h4>
+<p>从最后生成的 token 向前计算，纳入重复惩罚范围的 token 数量。设置过高可能导致回复质量下降，因为&quot;the、a、and&quot;等常见词会受到最强的惩罚。</p>
+<p>设为 0 时禁用该效果。</p>
+<h4 id="重复惩罚斜率repetition-penalty-slope">重复惩罚斜率（Repetition Penalty Slope）</h4>
+<p>若此值和<code translate="no" v-pre>重复惩罚范围</code>均大于 0，重复惩罚在提示词末尾的效果将更强。值越高，效果越强。</p>
+<p>设为 0 时禁用该效果。</p>
 <h3 id="top-k">Top K</h3>
-<p>Top K 设置可以选择的最大顶级 token 数量。例如，如果 Top K 是 20，这意味着只会保留排名最高的 20 个 token（无论它们的概率是多样的还是有限的）。</p>
-<p>设置为 0（或 -1，取决于您的后端）以禁用。</p>
+<p>Top K 设定可供选择的顶部 token 的最大数量。例如，若 Top K 为 20，则仅保留概率最高的 20 个 token（无论其概率分布是否集中）。</p>
+<p>设为 0（或 -1，取决于后端）时禁用。</p>
 <h3 id="top-p">Top P</h3>
-<p>Top P（又称核采样）将所需的顶级 token 相加以达到目标百分比。如果前 2 个 token 都是 25%，而 Top P 是 0.50，则只考虑前 2 个 token。</p>
-<p>将值设置为 1 以禁用其效果。</p>
+<p>Top P（又称核采样）将概率从高到低累加，直至达到目标百分比。例如，若前 2 个 token 各占 25%，且 Top P 为 0.50，则仅考虑这 2 个 token。</p>
+<p>设为 1 时禁用该效果。</p>
 <h3 id="typical-p">Typical P</h3>
-<p>Typical P 采样基于 token 与集合平均熵的偏差来确定优先级。它保留累积概率接近预定阈值（例如 0.5）的 token，强调那些具有平均信息内容的 token。</p>
-<p>将值设置为 1 以禁用其效果。</p>
+<p>Typical P 采样根据 token 与集合平均熵的偏差进行优先级排序。它保留累积概率接近预定义阈值（如 0.5）的 token，强调具有平均信息量的 token。</p>
+<p>设为 1 时禁用该效果。</p>
 <h3 id="min-p">Min P</h3>
-<p>通过相对于最高 token 切断低概率 token 来限制 token 池。产生更连贯的回应，但如果设置得太高也可能加剧重复。</p>
+<p>通过相对于最高概率 token 截断低概率 token 来限制候选池。可提升回复的连贯性，但设置过高时可能加剧重复。</p>
 <ul>
-<li>在低值如 <code translate="no" v-pre>0.1-0.01</code> 时效果最好，但在高 <code translate="no" v-pre>Temperature</code> 时可以设置更高。例如：<code translate="no" v-pre>Temperature: 5, Min P: 0.5</code></li>
+<li>在较低值（如 <code translate="no" v-pre>0.1-0.01</code>）下效果最佳，但在高<code translate="no" v-pre>温度</code>下可以设置更高。例如：<code translate="no" v-pre>温度: 5，Min P: 0.5</code></li>
 </ul>
-<p>将值设置为 0 以禁用其效果。</p>
+<p>设为 0 时禁用该效果。</p>
 <h3 id="top-a">Top A</h3>
-<p>Top A 基于最高 token 概率的平方设置 token 选择的阈值。例如，如果 Top-A 值为 0.2，最高 token 的概率为 50%，则概率低于 5%（0.2 * 0.5^2）的 token 将被排除。</p>
-<p>将值设置为 0 以禁用其效果。</p>
-<h3 id="tail-free-sampling尾部自由采样">Tail Free Sampling（尾部自由采样）</h3>
-<p>Tail-Free Sampling (TFS) 通过使用导数分析 token 概率的变化率来搜索分布中的低概率 token 尾部。它根据归一化的二阶导数保留阈值（例如 0.3）以内的 token。越接近 0，丢弃的 token 越多。</p>
-<p>将值设置为 1 以禁用其效果。</p>
-<h3 id="smoothing-factor平滑因子">Smoothing Factor（平滑因子）</h3>
-<p>使用二次变换增加高概率 token 的可能性，同时降低低概率 token 的可能性。旨在无论 <code translate="no" v-pre>Temperature</code> 如何都产生更有创意的回应。</p>
+<p>Top A 根据最高 token 概率的平方为 token 选择设定阈值。例如，若 Top A 值为 0.2，且最高 token 概率为 50%，则概率低于 5%（0.2 × 0.5²）的 token 将被排除。</p>
+<p>设为 0 时禁用该效果。</p>
+<h3 id="尾部自由采样tail-free-sampling">尾部自由采样（Tail Free Sampling）</h3>
+<p>尾部自由采样（TFS）通过分析 token 概率的变化率（使用导数）来寻找概率分布中的低概率尾部。它根据归一化的二阶导数保留 token，直至达到阈值（如 0.3）。值越接近 0，被丢弃的 token 越多。</p>
+<p>设为 1 时禁用该效果。</p>
+<h3 id="平滑因子smoothing-factor">平滑因子（Smoothing Factor）</h3>
+<p>使用二次变换提高高概率 token 的可能性，同时降低低概率 token 的可能性。旨在不依赖<code translate="no" v-pre>温度</code>的情况下产生更具创意的回复。</p>
 <ul>
-<li>在没有截断采样器（如 <code translate="no" v-pre>Top K</code>、<code translate="no" v-pre>Top P</code>、<code translate="no" v-pre>Min P</code> 等）时效果最好。</li>
+<li>在不使用 <code translate="no" v-pre>Top K</code>、<code translate="no" v-pre>Top P</code>、<code translate="no" v-pre>Min P</code> 等截断采样器时效果最佳。</li>
 </ul>
-<p>将值设置为 0 以禁用其效果。</p>
-<h3 id="dynamic-temperature动态温度">Dynamic Temperature（动态温度）</h3>
-<p>根据最高 token 的可能性动态调整温度。旨在产生更有创意的输出而不牺牲连贯性。</p>
+<p>设为 0 时禁用该效果。</p>
+<h3 id="动态温度dynamic-temperature">动态温度（Dynamic Temperature）</h3>
+<p>根据最高概率 token 的可能性动态调整温度。旨在在不牺牲连贯性的情况下产生更具创意的输出。</p>
 <ul>
-<li>接受从最小到最大的温度范围。例如：<code translate="no" v-pre>最小温度: 0.75</code> 和 <code translate="no" v-pre>最大温度: 1.25</code></li>
-<li><code translate="no" v-pre>指数</code> 根据最高 token 应用指数曲线。</li>
+<li>接受从最小值到最大值的温度范围。例如：<code translate="no" v-pre>最小温度: 0.75</code>，<code translate="no" v-pre>最大温度: 1.25</code></li>
+<li><code translate="no" v-pre>指数（Exponent）</code>根据最高 token 应用指数曲线。</li>
 </ul>
-<p>取消勾选以禁用其效果。</p>
-<h3 id="epsilon-cutoffepsilon-截断">Epsilon Cutoff（Epsilon 截断）</h3>
-<p>Epsilon 截断设置一个概率下限，低于该下限的 token 将被排除在采样之外。单位为 1e-4；合理的值是 3。</p>
-<p>设置为 0 以禁用。</p>
-<h3 id="eta-cutoffeta-截断">Eta Cutoff（Eta 截断）</h3>
-<p>Eta 截断是特殊 Eta 采样技术的主要参数。单位为 1e-4；合理的值是 3。详情请参见论文 <a href="https://arxiv.org/abs/2210.15191">Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)</a>。</p>
-<p>设置为 0 以禁用。</p>
-<h3 id="dry-repetition-penaltydry-重复惩罚">DRY Repetition Penalty（DRY 重复惩罚）</h3>
-<p>DRY 惩罚那些会将输入的结尾扩展成先前在输入中出现过的序列的 token。如果您想允许逐字重复某些序列（例如名字），您可以将它们添加到序列中断器列表中。请参见<a href="https://github.com/oobabooga/text-generation-webui/pull/5677">这里</a>的 Pull Request。</p>
-<p>将乘数设置为 0 以禁用。</p>
-<h3 id="exclude-top-choices-xtc排除顶级选择">Exclude Top Choices (XTC)（排除顶级选择）</h3>
-<p>XTC 采样算法移除最可能的 token，而不是修剪最不可能的 token。它以给定的概率移除除了满足给定阈值的最不可能的 token 之外的所有 token。这确保至少保留一个&quot;可行&quot;的选择，保持连贯性。请参见<a href="https://github.com/oobabooga/text-generation-webui/pull/6335">这里</a>的 Pull Request。</p>
-<p>将概率设置为 0 以禁用。</p>
+<p>取消勾选时禁用该效果。</p>
+<h3 id="epsilon-截断epsilon-cutoff">Epsilon 截断（Epsilon Cutoff）</h3>
+<p>Epsilon 截断设定概率下限，低于该值的 token 将被排除在采样之外。单位为 1e-4，合理值为 3。</p>
+<p>设为 0 时禁用。</p>
+<h3 id="eta-截断eta-cutoff">Eta 截断（Eta Cutoff）</h3>
+<p>Eta 截断是特殊 Eta 采样技术的主要参数。单位为 1e-4，合理值为 3。详情参见论文 <a href="https://arxiv.org/abs/2210.15191">Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)</a>。</p>
+<p>设为 0 时禁用。</p>
+<h3 id="dry-重复惩罚dry-repetition-penalty">DRY 重复惩罚（DRY Repetition Penalty）</h3>
+<p>DRY 惩罚那些会将输入末尾延伸为输入中已出现过的序列的 token。如果希望允许某些序列逐字重复（例如名字），可将其添加到序列分隔符列表中。详情参见 <a href="https://github.com/oobabooga/text-generation-webui/pull/5677">Pull Request</a>。</p>
+<p>将乘数设为 0 时禁用。</p>
+<h3 id="排除最高选项xtc">排除最高选项（XTC）</h3>
+<p>XTC 采样算法移除最有可能的 token，而非修剪最不可能的 token。它以给定概率移除所有超过给定阈值的 token（仅保留最不可能的那个），从而确保至少保留一个&quot;可行&quot;选择，维持连贯性。详情参见 <a href="https://github.com/oobabooga/text-generation-webui/pull/6335">Pull Request</a>。</p>
+<p>将概率设为 0 时禁用。</p>
 <h3 id="mirostat">Mirostat</h3>
-<p>Mirostat 将输出的困惑度与输入的困惑度匹配，从而避免重复陷阱（在自回归推理产生文本时，输出的困惑度趋向于零）和混乱陷阱（困惑度发散）。详情请参见论文 <a href="https://arxiv.org/abs/2007.14966">Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)</a>。</p>
-<p>模式选择 Mirostat 版本。</p>
+<p>Mirostat 将输出的困惑度与输入的困惑度相匹配，从而避免重复陷阱（即自回归推理产生文本时，输出困惑度趋向于零）和混乱陷阱（困惑度发散）。详情参见论文 <a href="https://arxiv.org/abs/2007.14966">Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)</a>。</p>
+<p>模式选择 Mirostat 版本：</p>
 <ul>
-<li>0 = 禁用，</li>
-<li>1 = Mirostat 1.0（仅限 llama.cpp），</li>
-<li>2 = Mirostat 2.0。</li>
+<li>0 = 禁用</li>
+<li>1 = Mirostat 1.0（仅限 llama.cpp）</li>
+<li>2 = Mirostat 2.0</li>
 </ul>
-<h3 id="beam-search束搜索">Beam Search（束搜索）</h3>
-<p>一种贪婪的暴力算法，用于 LLM 采样以找到最可能的词序或 token 序列。它一次性扩展多个候选序列，在每一步保持固定数量（束宽）的顶级序列。</p>
+<h3 id="束搜索beam-search">束搜索（Beam Search）</h3>
+<p>一种在 LLM 采样中用于寻找最可能词/token 序列的贪心暴力算法。它同时扩展多个候选序列，在每步保留固定数量（束宽）的最优序列。</p>
 <h3 id="top-nsigma">Top nsigma</h3>
-<p>一种基于 logits 统计特性的采样方法。它保留在最大 logit 值的 n 个标准差内的 token，为 top-p/top-k 采样提供了一个更简单的替代方案，同时保持不同温度下的采样稳定性。</p>
+<p>一种基于统计属性过滤 logit 的采样方法。它保留在最大 logit 值 n 个标准差以内的 token，相比 top-p/top-k 采样提供了更简单的替代方案，同时在不同温度下保持采样稳定性。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -375,6 +375,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "常用设置", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/common-settings.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "通用设置", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/common-settings.md" }</script>
 </body>
 </html>

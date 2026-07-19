@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>安装指南 | SillyTavern傻酒馆中文文档</title>
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../favicon.ico" />
-    <link href="../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -219,12 +219,69 @@
 <li><a href="android-(termux)/">Android</a></li>
 <li><a href="docker/">Docker</a></li>
 </ul>
-<h2 id="分支说明">分支说明</h2>
+<h2 id="branches">分支说明</h2>
 <p>SillyTavern 采用双分支开发系统，以确保所有用户获得流畅的使用体验。</p>
 <ul>
 <li><code translate="no" v-pre>release</code> - <span class="docs-emoji">&#x1F31F;</span> <strong>推荐大多数用户使用。</strong> 这是最稳定且推荐的分支，仅在发布重要版本时更新。适合绝大多数用户使用。通常每月更新一次。</li>
 <li><code translate="no" v-pre>staging</code> - <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>不建议普通用户使用。</strong> 此分支包含最新功能，但请注意它可能随时出现问题。仅适合专业用户和发烧友使用。每天更新多次。</li>
 </ul>
+<h2 id="全局独立模式">全局/独立模式</h2>
+<p>SillyTavern 有两种运行模式，在处理配置和数据路径的方式上有所不同。</p>
+<ul>
+<li><strong>独立模式</strong>（默认）——使用服务器目录中的 <code translate="no" v-pre>config.yaml</code> 文件和 <code translate="no" v-pre>data</code> 目录。所有数据将限制在安装路径内。这是大多数用户推荐的模式。</li>
+<li><strong>全局模式</strong>——使用系统范围内的路径来存储配置和数据。当您以软件包形式安装 SillyTavern，或希望在多个安装之间共享相同的配置和数据时，此模式非常有用。</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>使用<a href="https://www.npmjs.com/package/sillytavern">官方 npm 包</a>安装的 SillyTavern（例如 <code translate="no" v-pre>npx sillytavern@latest</code>）默认以全局模式运行。</p>
+        </div>
+    </div>
+</div>
+<h3 id="data-paths">数据路径</h3>
+<p><strong>独立模式</strong>路径相对于 SillyTavern 安装目录：</p>
+<ul>
+<li><strong>配置路径</strong>：<code translate="no" v-pre>./config.yaml</code></li>
+<li><strong>数据根目录</strong>：<code translate="no" v-pre>./data/</code></li>
+</ul>
+<p><strong>全局模式</strong>路径取决于操作系统：</p>
+<ul>
+<li><strong>Linux</strong>：<code translate="no" v-pre>~/.local/share/SillyTavern/config.yaml</code>（或 <code translate="no" v-pre>$XDG_DATA_HOME/SillyTavern/config.yaml</code>）和 <code translate="no" v-pre>~/.local/share/SillyTavern/data/</code>（或 <code translate="no" v-pre>$XDG_DATA_HOME/SillyTavern/data/</code>）</li>
+<li><strong>Windows</strong>：<code translate="no" v-pre>%APPDATA%\SillyTavern\config.yaml</code> 和 <code translate="no" v-pre>%APPDATA%\SillyTavern\data\</code></li>
+<li><strong>MacOS</strong>：<code translate="no" v-pre>~/Library/Application Support/SillyTavern/config.yaml</code> 和 <code translate="no" v-pre>~/Library/Application Support/SillyTavern/data/</code></li>
+</ul>
+<h3 id="如何在全局模式下运行">如何在全局模式下运行</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>在全局模式下运行时，<code translate="no" v-pre>dataRoot</code> 和 <code translate="no" v-pre>configPath</code> 不能通过 <a href="../administration/config-yaml/#command-line-arguments">CLI 参数</a> 或 <a href="../administration/config-yaml/">config.yaml</a> 覆盖。</p>
+        </div>
+    </div>
+</div>
+<ol>
+<li>向服务器启动命令传递 <code translate="no" v-pre>--global</code> 参数（例如 <code translate="no" v-pre>node server.js --global</code>）。</li>
+<li>向 shell 启动脚本传递 <code translate="no" v-pre>--global</code> 参数（例如 <code translate="no" v-pre>Start.bat --global</code> 或 <code translate="no" v-pre>./start.sh --global</code>）。</li>
+<li>使用 <code translate="no" v-pre>package.json</code> 中的 <code translate="no" v-pre>start:global</code> 脚本（例如 <code translate="no" v-pre>npm run start:global</code>）。</li>
+</ol>
 
                 
                 <!-- Required only on API pages -->

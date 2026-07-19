@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>自托管 AI 模型 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="自托管 AI 模型 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本指南基于作者的个人经验和知识，并不是绝对真理。所有陈述都应该谨慎对待。如果您有任何更正或建议，请在 Discord 上联系我们或向 SillyTavern 文档仓库发送 PR。">
+    <meta name="description" content="本指南基于作者的个人经验和知识，并不代表绝对真理。所有陈述均应保持审慎态度。如果您有任何更正或建议，请在 Discord 上联系我们，或向 SillyTavern 文档仓库 提交 PR。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/how-to-use-a-self-hosted-model/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/how-to-use-a-self-hosted-model/">
     <meta property="og:title" content="自托管 AI 模型 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本指南基于作者的个人经验和知识，并不是绝对真理。所有陈述都应该谨慎对待。如果您有任何更正或建议，请在 Discord 上联系我们或向 SillyTavern 文档仓库发送 PR。">
+    <meta property="og:description" content="本指南基于作者的个人经验和知识，并不代表绝对真理。所有陈述均应保持审慎态度。如果您有任何更正或建议，请在 Discord 上联系我们，或向 SillyTavern 文档仓库 提交 PR。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/how-to-use-a-self-hosted-model/">
     <meta name="twitter:title" content="自托管 AI 模型 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="本指南基于作者的个人经验和知识，并不是绝对真理。所有陈述都应该谨慎对待。如果您有任何更正或建议，请在 Discord 上联系我们或向 SillyTavern 文档仓库发送 PR。">
+    <meta name="twitter:description" content="本指南基于作者的个人经验和知识，并不代表绝对真理。所有陈述均应保持审慎态度。如果您有任何更正或建议，请在 Discord 上联系我们，或向 SillyTavern 文档仓库 提交 PR。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/api_connections/self-hosted.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -213,160 +213,174 @@
                 <!-- Page content  -->
 <h1 id="自托管-ai-模型">自托管 AI 模型</h1>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
-<p>本指南基于作者的个人经验和知识，并不是绝对真理。所有陈述都应该谨慎对待。如果您有任何更正或建议，请在 Discord 上联系我们或向 <a href="https://github.com/SillyTavern/SillyTavern-Docs">SillyTavern 文档仓库</a>发送 PR。</p>
+<p>本指南基于作者的个人经验和知识，并不代表绝对真理。所有陈述均应保持审慎态度。如果您有任何更正或建议，请在 Discord 上联系我们，或向 <a href="https://github.com/SillyTavern/SillyTavern-Docs">SillyTavern 文档仓库</a> 提交 PR。</p>
         </div>
     </div>
 </div>
 <h2 id="简介">简介</h2>
-<p>本指南旨在帮助您在自己的电脑上使用 SillyTavern 运行本地 AI（从现在开始，我们将使用正确的术语，称之为 LLM）。在询问技术支持问题之前，请先阅读本指南。</p>
+<p>本指南旨在帮助您在自己的电脑上通过 SillyTavern 运行本地 AI（从现在起我们将使用正确的术语，称之为 LLM）。在向他人提问技术支持问题之前，请先阅读本指南。</p>
 <h3 id="哪些大语言模型最好">哪些大语言模型最好？</h3>
-<p>这个问题无法回答，因为没有标准化的&quot;最佳&quot;衡量标准。社区在 Reddit 和 Discord 上有足够的资源和讨论，可以形成对首选/常用模型的一些看法。您的体验可能会有所不同。</p>
+<p>这个问题无法给出答案，因为不存在标准化的&quot;最佳&quot;衡量尺度。社区在 Reddit 和 Discord 上拥有足够的资源与讨论，可以帮助您形成对首选/常用模型的基本判断。您的实际体验可能因人而异。</p>
 <h3 id="什么是最佳配置">什么是最佳配置？</h3>
-<p>如果存在最佳或显而易见的设置，还需要配置吗？最佳配置是适合您的配置。这是一个反复试验的过程。</p>
-<h2 id="硬件要求和方向">硬件要求和方向</h2>
-<p>这是一个复杂的主题，所以我会坚持基本要点并进行概括。</p>
+<p>如果存在某种最佳或显而易见的设置，还需要配置选项吗？最佳配置就是适合您的配置，这是一个反复试验的过程。</p>
+<h2 id="硬件要求与概览">硬件要求与概览</h2>
+<p>这是一个复杂的话题，因此我将只介绍要点并进行概括。</p>
 <ul>
-<li>您可以从互联网上下载数千个免费的 LLM，类似于 Stable Diffusion 有大量可用于生成图像的模型。</li>
-<li>运行未经修改的 LLM 需要具有大量 VRAM（GPU 内存）的强大 GPU。比您能拥有的还要多。</li>
-<li>可以通过使用 GPTQ 或 AWQ 等量化技术来压缩模型，从而减少 VRAM 要求。这使模型的能力略有下降，但大大减少了运行它所需的 VRAM。突然间，这让拥有 3080 等游戏 GPU 的人也能运行 13B 模型。虽然它不如未量化的模型好，但仍然不错。</li>
-<li>更好的是：还存在一种称为 GGUF（以前称为 GGML）的模型格式和量化方法，它已成为没有强大 GPU 的普通用户的首选格式。这允许您完全不使用 GPU 就能运行 LLM。它只会使用 CPU 和 RAM。这比在 GPU 上使用 GPTQ/AWQ 运行 LLM 要慢得多（可能慢 15 倍），特别是在提示词处理期间，但模型的能力同样出色。然后 GGUF 创建者通过添加一个配置选项进一步优化了 GGUF，该选项允许拥有游戏级 GPU 的用户将模型的部分内容卸载到 GPU，使他们能够以 GPU 速度运行部分模型（注意，这不会减少 RAM 要求，它只会提高您的生成速度）。</li>
-<li>有不同大小的模型，根据它们训练时使用的参数数量命名。您会看到像 7B、13B、30B、70B 等名称。您可以将这些视为模型的大脑大小。来自同一模型系列的 13B 模型将比 7B 更强大：它们在相同的数据上训练，但更大的大脑可以更好地保留知识并思考得更连贯。更大的模型也需要更多的 VRAM/RAM。</li>
-<li>有几种量化程度（8 位、5 位、4 位等）。位数越低，模型退化越严重，但硬件要求也越低。因此，即使在性能较差的硬件上，您也可能能够运行所需模型的 4 位版本。甚至还有 3 位和 2 位量化，但在这一点上，您已经在浪费时间了。还有进一步的量化子类型，命名为 k_s、k_m、k_l 等。k_m 比 k_s 好，但需要更多资源。</li>
-<li>上下文大小（您的对话在模型丢弃部分内容之前可以变得多长）也会影响 VRAM/RAM 要求。幸运的是，这是一个可配置的设置，允许您使用较小的上下文来减少 VRAM/RAM 要求。（注意：基于 Llama2 的模型的上下文大小是 4k。Mistral 宣传为 8k，但实际上是 4k。）</li>
-<li>2023 年的某个时候，NVIDIA 更改了他们的 GPU 驱动程序，如果您需要的 VRAM 超过 GPU 所拥有的，任务不会崩溃，而是会开始使用常规 RAM 作为备用。这会降低 LLM 的写入速度，但模型仍然可以工作并提供相同质量的输出。幸运的是，这种行为<a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">可以禁用</a>。</li>
+<li>您可以从互联网上下载数千个免费的 LLM，类似于 Stable Diffusion 拥有大量可用于生成图像的模型。</li>
+<li>运行未经修改的 LLM 需要配备大量 VRAM（GPU 显存）的顶级 GPU，其需求远超普通用户所能拥有的。</li>
+<li>通过使用 GPTQ 或 AWQ 等量化技术压缩模型，可以降低 VRAM 需求。这会使模型能力略有下降，但大幅减少了运行所需的 VRAM。正因如此，拥有 3080 等游戏级 GPU 的用户也能运行 13B 模型。尽管效果不如未量化模型，但仍然相当出色。</li>
+<li>更好的消息是：还存在一种名为 GGUF（前身为 GGML）的模型格式与量化方案，已成为没有顶级 GPU 的普通用户的首选格式。这使您无需任何 GPU 即可运行 LLM，仅使用 CPU 和内存。这比在 GPU 上使用 GPTQ/AWQ 运行 LLM 要慢得多（大约慢 15 倍），尤其是在提示词处理阶段，但模型的能力同样出色。随后，GGUF 的创建者通过添加一个配置选项进一步优化了 GGUF，该选项允许拥有游戏级 GPU 的用户将模型的部分内容卸载到 GPU 上运行，从而以 GPU 速度处理部分模型（注意：这不会降低内存需求，只会提升生成速度）。</li>
+<li>模型有不同的规模，以训练时使用的参数数量命名，如 7B、13B、30B、70B 等。您可以将其理解为模型的&quot;大脑容量&quot;。来自同一模型系列的 13B 模型将比 7B 更强大：两者使用相同的数据训练，但更大的&quot;大脑&quot;能更好地保留知识并进行更连贯的推理。更大的模型也需要更多 VRAM/RAM。</li>
+<li>量化有几种不同的程度（8 位、5 位、4 位等）。位数越低，模型性能退化越严重，但硬件要求也越低。因此，即便在性能较差的硬件上，您也可能能够运行所需模型的 4 位版本。甚至还有 3 位和 2 位量化，但那样已经得不偿失了。此外还有更细分的量化子类型，命名为 k_s、k_m、k_l 等。k_m 优于 k_s，但需要更多资源。</li>
+<li>上下文大小（即对话在模型开始丢弃早期内容之前能达到的长度）同样影响 VRAM/RAM 需求。幸运的是，这是一个可配置的设置，允许您使用较小的上下文以降低 VRAM/RAM 需求。（注意：基于 Llama2 的模型上下文大小为 4k；Mistral 宣传为 8k，但实际上是 4k。）</li>
+<li>2023 年某时，NVIDIA 更改了 GPU 驱动程序：当所需 VRAM 超出 GPU 容量时，任务不再直接崩溃，而是开始使用普通内存作为备用。这会降低 LLM 的生成速度，但模型仍可正常工作并输出同等质量的内容。幸运的是，此行为<a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">可以禁用</a>。</li>
 </ul>
-<p>考虑到以上所有因素，硬件要求和性能完全取决于模型系列、模型类型、模型大小、量化方法等。</p>
+<p>综上所述，硬件需求和性能表现因模型系列、模型类型、模型大小、量化方法等因素的不同而完全不同。</p>
 <h4 id="模型大小计算器">模型大小计算器</h4>
-<p>您可以使用 <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">Nyx 的模型大小计算器</a>来确定需要多少 RAM/VRAM。</p>
-<p>记住，您想要运行可以适应您内存的最大、最少量化的模型，即不会导致<a href="https://serverfault.com/a/48487">磁盘交换</a>。</p>
+<p>您可以使用 <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">Nyx 的模型大小计算器</a> 来估算所需的 RAM/VRAM 大小。</p>
+<p>请记住，您的目标是运行能够放入内存的最大、量化程度最低的模型，即不会导致<a href="https://serverfault.com/a/48487">磁盘交换</a>的模型。</p>
 <h2 id="下载-llm">下载 LLM</h2>
-<p>要开始，您需要下载一个 LLM。找到和下载 LLM 最常见的地方是 HuggingFace。那里有数千个可用的模型。查找 GGUF 模型的好方法是查看 bartowski 的账户页面：<a href="https://huggingface.co/bartowski">https://huggingface.co/bartowski</a>。如果您不想要 GGUF，他会链接到原始模型页面，在那里您可能会找到该模型的其他格式。</p>
-<p>在给定模型的页面上，您会找到一堆文件。</p>
+<p>首先，您需要下载一个 LLM。查找和下载 LLM 最常见的平台是 HuggingFace，上面有数千个可用模型。查找 GGUF 模型的好方法是浏览 bartowski 的账户页面：<a href="https://huggingface.co/bartowski">https://huggingface.co/bartowski</a>。如果您不需要 GGUF 格式，他会链接到原始模型页面，在那里您可能会找到该模型的其他格式。</p>
+<p>在某个模型的页面上，您会看到一系列文件。</p>
 <ul>
-<li>您可能不需要所有这些文件！对于 GGUF，您只需要 .gguf 模型文件（通常 4-11GB）。如果您找到多个大文件，通常都是同一模型的不同量化版本，您只需要选择一个。</li>
-<li>对于 .safetensors 文件（可以是 GPTQ 或 AWQ 或 HF 量化或未量化），如果您在文件名中看到像 model-00001-of-00003.safetensors 这样的数字序列，那么您需要所有 3 个 .safetensors 文件 + 仓库中的所有其他文件（分词器、配置等）才能获得完整的模型。</li>
-<li>截至 2024 年 1 月，Mixtral MOE 8x7B 被广泛认为是本地 LLM 的最新技术。如果您有 32GB 的 RAM 来运行它，一定要尝试一下。如果您的 RAM 少于 32GB，那么使用 Kunoichi-DPO-v2-7B，尽管它的大小较小，但一开始就表现出色。</li>
+<li>您可能不需要所有文件！对于 GGUF，您只需要 .gguf 模型文件（通常为 4-11GB）。如果您看到多个大型文件，通常是同一模型的不同量化版本，您只需选择其中一个。</li>
+<li>对于 .safetensors 文件（可以是 GPTQ、AWQ、HF 量化或未量化格式），如果文件名中包含类似 model-00001-of-00003.safetensors 的数字序列，则需要下载全部 3 个 .safetensors 文件，以及仓库中的所有其他文件（分词器、配置文件等），才能获得完整的模型。</li>
+<li>截至 2024 年 1 月，Mixtral MOE 8x7B 被广泛认为是本地 LLM 的最佳选择。如果您有 32GB RAM 可以运行它，强烈建议尝试。如果 RAM 不足 32GB，则推荐使用 Kunoichi-DPO-v2-7B，这款模型虽然体积较小，但开箱即用的表现相当出色。</li>
 </ul>
 <h3 id="下载-kunoichi-dpo-v2-7b-的步骤">下载 Kunoichi-DPO-v2-7B 的步骤</h3>
-<p>我们将在本指南的其余部分使用 Kunoichi-DPO-v2-7B 模型。它是一个基于 Mistral 7B 的出色模型，只需要 7GB RAM，并且表现远超其规模。注意：Kunoichi 使用 Alpaca 提示。</p>
+<p>本指南后续部分将使用 Kunoichi-DPO-v2-7B 模型。它是一款基于 Mistral 7B 的出色模型，仅需 7GB RAM，表现远超其规模所限。注意：Kunoichi 使用 Alpaca 提示格式。</p>
 <ul>
 <li>前往 <a href="https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF">https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF</a></li>
-<li>点击&quot;Files and versions&quot;。您会看到几个文件的列表。这些都是同一个模型，但提供了不同的量化选项。点击文件&quot;kunoichi-dpo-v2-7b.Q6_K.gguf&quot;，这给我们一个 6 位量化。</li>
-<li>点击&quot;download&quot;按钮。您的下载应该开始了。</li>
+<li>点击&quot;Files and versions&quot;，您将看到若干文件的列表。这些都是同一模型的不同量化版本。点击文件&quot;kunoichi-dpo-v2-7b.Q6_K.gguf&quot;，这是一个 6 位量化版本。</li>
+<li>点击&quot;download&quot;按钮，下载即可开始。</li>
 </ul>
 <h3 id="如何识别模型类型">如何识别模型类型</h3>
-<p>像 TheBloke 这样优秀的模型上传者会给出描述性的名称。但如果他们没有：</p>
+<p>像 TheBloke 这样优秀的模型上传者会提供描述性的名称。如果没有的话：</p>
 <ul>
-<li>文件名以 .gguf 结尾：GGUF CPU 模型（显然）</li>
-<li>文件名以 .safetensors 结尾：可以是未量化的，或 HF 量化的，或 GPTQ，或 AWQ</li>
-<li>文件名是 pytorch-***.bin：与上面相同，但这是一个较旧的模型文件格式，允许在加载模型时执行任意 Python 脚本，被认为是不安全的。如果您信任模型创建者，或者别无选择，您仍然可以使用它，但如果有选择，请选择 .safetensors。</li>
-<li>存在 config.json？查看它是否有 quant_method。</li>
-<li>q4 表示 4 位量化，q5 是 5 位量化，等等</li>
-<li>您看到像 -16k 这样的数字？那是增加的上下文大小（即您的对话在模型忘记聊天开始之前可以变得多长）！注意，更高的上下文大小需要更多的 VRAM。</li>
+<li>文件名以 .gguf 结尾：GGUF CPU 模型（显而易见）</li>
+<li>文件名以 .safetensors 结尾：可能是未量化、HF 量化、GPTQ 或 AWQ 格式</li>
+<li>文件名为 pytorch-***.bin：与上一条相同，但这是一种较旧的模型文件格式，会在加载模型时允许执行任意 Python 脚本，被认为存在安全风险。如果您信任模型创建者，或别无选择，仍可使用，但有选择的话请优先选择 .safetensors。</li>
+<li>存在 config.json？查看其中是否有 quant_method 字段。</li>
+<li>q4 表示 4 位量化，q5 表示 5 位量化，以此类推</li>
+<li>文件名中出现类似 -16k 的数字？那是增加的上下文大小（即对话在模型忘记早期内容之前可以达到的长度）！注意，更高的上下文大小需要更多 VRAM。</li>
 </ul>
 <h2 id="安装-llm-服务器oobabooga-或-koboldai">安装 LLM 服务器：Oobabooga 或 KoboldAI</h2>
-<p>现在 LLM 在您的电脑上了，我们需要下载一个工具，作为 SillyTavern 和模型之间的中间人：它将加载模型，并将其功能作为本地 HTTP Web API 暴露出来，供 SillyTavern 使用，就像 SillyTavern 与 OpenAI GPT 或 Claude 等付费网络服务通信一样。您使用的工具应该是 KoboldAI 或 Oobabooga（或其他兼容工具）。</p>
-<p>本指南涵盖了这两个选项，您只需要一个。</p>
+<p>LLM 现在已经在您的电脑上了，接下来我们需要下载一个工具，充当 SillyTavern 与模型之间的中间层：它将加载模型，并将其功能以本地 HTTP Web API 的形式对外暴露，供 SillyTavern 使用——就像 SillyTavern 与 OpenAI GPT 或 Claude 等付费网络服务通信的方式一样。您使用的工具应为 KoboldAI 或 Oobabooga（或其他兼容工具）。</p>
+<p>本指南涵盖两种选项，您只需选择其中一个。</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning</h5>
-<p>如果您在 Docker 上托管 SillyTavern，请使用 <strong><a href="http://host.docker.internal">http://host.docker.internal</a>:<port></strong> 而不是 <strong><a href="http://127.0.0.1">http://127.0.0.1</a>:<port></strong>。这是因为 SillyTavern 从运行在 Docker 容器中的服务器连接到 API 端点。Docker 的网络栈与主机的网络栈是分开的，因此回环接口不共享。</p>
+<p>如果您在 Docker 上托管 SillyTavern，请使用 <strong><a href="http://host.docker.internal:%5C">http://host.docker.internal:\</a>&lt;port&gt;</strong> 代替 <strong><a href="http://127.0.0.1:%5C">http://127.0.0.1:\</a>&lt;port&gt;</strong>。这是因为 SillyTavern 从运行在 Docker 容器中的服务器连接到 API 端点。Docker 的网络栈与宿主机是隔离的，回环接口并不共享。</p>
         </div>
     </div>
 </div>
-<h3 id="下载和使用-koboldcpp无需安装gguf-模型">下载和使用 KoboldCpp（无需安装，GGUF 模型）</h3>
+<h3 id="下载和使用-koboldcpp无需安装适用于-gguf-模型">下载和使用 KoboldCpp（无需安装，适用于 GGUF 模型）</h3>
 <ol>
 <li>
-<p>访问 <a href="https://koboldai.org/cpp%EF%BC%8C%E6%82%A8%E5%B0%86%E7%9C%8B%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E5%92%8C%E5%90%84%E7%A7%8D%E5%8F%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82">https://koboldai.org/cpp，您将看到最新版本和各种可下载的文件。</a>
-在撰写本文时，他们列出的最新 CUDA 版本是 cu12，这将在现代 Nvidia GPU 上运行最好，如果您有较旧的 GPU 或不同品牌，您可以使用常规的 koboldcpp.exe。如果您有旧 CPU，KoboldCpp 可能会在您尝试加载模型时崩溃，在这种情况下，尝试 _oldcpu 版本看看是否能解决您的问题。</p>
+<p>访问 <a href="https://koboldai.org/cpp%EF%BC%8C%E6%82%A8%E5%B0%86%E7%9C%8B%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E5%8F%8A%E5%90%84%E7%A7%8D%E5%8F%AF%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82">https://koboldai.org/cpp，您将看到最新版本及各种可下载的文件。</a>
+撰写本文时，他们列出的最新 CUDA 版本为 cu12，在现代 Nvidia GPU 上表现最佳。如果您使用的是较旧的 GPU 或其他品牌，可以使用常规版 koboldcpp.exe。如果您的 CPU 较旧，KoboldCpp 在尝试加载模型时可能会崩溃，这种情况下请尝试 _oldcpu 版本，看看是否能解决问题。</p>
 </li>
 <li>
-<p>KoboldCpp 不需要安装，一旦您启动 KoboldCpp，您就可以使用&quot;Model&quot;字段旁边的&quot;Browse&quot;按钮立即选择您的 GGUF 模型，如上面链接的模型。</p>
+<p>KoboldCpp 无需安装，启动后即可通过 Model 字段旁边的 Browse 按钮直接选择您的 GGUF 模型（如上面链接的模型）。</p>
 </li>
 <li>
-<p>默认情况下，KoboldCpp 的最大上下文为 4K，即使您在 SillyTavern 中设置更高，如果您希望以更高的上下文运行模型，请确保在启动模型之前调整此屏幕上的上下文滑块。请记住，更多的上下文大小意味着更高的（视频）内存要求，如果您设置得太高或加载的模型对您的系统来说太大，KoboldCpp 将自动开始使用您的 CPU 来处理无法放入 GPU 的层，这将慢得多。</p>
+<p>默认情况下，KoboldCpp 的最大上下文为 4K，即使您在 SillyTavern 中设置了更高的值。如果希望以更大的上下文运行模型，请在启动模型之前调整此界面上的上下文滑块。请注意，上下文越大，对（视频）内存的需求也越高。如果设置过高，或加载的模型超出系统承载能力，KoboldCpp 将自动将无法放入 GPU 的层改由 CPU 处理，速度会慢很多。</p>
 </li>
 <li>
-<p>点击&quot;Launch&quot;，如果一切顺利，将打开一个新的网页，显示 KoboldAI Lite，您可以在那里测试一切是否正常工作。</p>
+<p>点击 Launch，如果一切正常，将打开一个新网页显示 KoboldAI Lite，您可以在那里测试是否正常工作。</p>
 </li>
 <li>
-<p>打开 SillyTavern 并点击 API 连接（顶部栏中的第二个按钮）</p>
+<p>打开 SillyTavern，点击 API 连接（顶部工具栏中的第二个按钮）</p>
 </li>
 <li>
 <p>将 API 设置为&quot;文本补全&quot;，API 类型设置为 KoboldCpp。</p>
 </li>
 <li>
-<p>将服务器 URL 设置为 <a href="http://127.0.0.1:5001/">http://127.0.0.1:5001/</a> 或 KoboldCpp 给您的链接（如果它不在同一系统上运行）（您可以激活 KoboldCpp 的远程隧道模式以获取可从任何地方访问的链接）。</p>
+<p>将服务器 URL 设置为 <a href="http://127.0.0.1:5001/">http://127.0.0.1:5001/</a>，或在 KoboldCpp 不在同一系统上运行时使用其提供的链接（您可以激活 KoboldCpp 的远程隧道模式，获取一个可从任何地方访问的链接）。</p>
 </li>
 <li>
-<p>点击连接。它应该成功连接并检测到 kunoichi-dpo-v2-7b.Q6_K.gguf 作为模型。</p>
+<p>点击连接。应成功连接，并检测到 kunoichi-dpo-v2-7b.Q6_K.gguf 作为当前模型。</p>
 </li>
 <li>
-<p>与角色聊天以测试它是否工作。</p>
+<p>与某个角色聊天，测试是否正常工作。</p>
 </li>
 </ol>
-<h3 id="优化-koboldcpp-速度的提示">优化 KoboldCpp 速度的提示</h3>
+<h3 id="优化-koboldcpp-速度的技巧">优化 KoboldCpp 速度的技巧</h3>
 <ol>
-<li>Flash Attention 将帮助减少内存要求，根据您的系统，它可能更快或更慢，并且将允许您在 GPU 上放置比默认更多的层。</li>
-<li>KoboldCpp 会为其他软件留出一些空间，当它猜测层以防止问题时，如果您打开的程序很少，并且无法将模型完全放入 GPU，您可能可以添加一些额外的层。</li>
-<li>如果模型对上下文大小使用了太多内存，您可以通过量化 KV 来减少这个问题。这将降低输出质量，但可以帮助您在 GPU 上放置更多层。要做到这一点，您需要转到 KoboldCpp 中的 Tokens 标签，然后禁用 Context Shifting 并启用 Flash Attention。这将解锁量化 KV 缓存滑块，数字越低意味着模型的内存/智能越少。</li>
-<li>在较慢的系统上运行 KoboldCpp，处理提示词需要很长时间？当您避免使用知识库、随机化或其他动态更改输入的功能时，Context Shifting 效果最好。保持启用 context shifting，KoboldCpp 将帮助您避免长时间的重新处理。</li>
+<li>Flash Attention 有助于降低内存需求，根据系统不同，可能会更快或更慢，同时能让您在 GPU 上放置比默认更多的层。</li>
+<li>KoboldCpp 在估算层数时会为其他软件预留一些空间以防出错。如果您打开的程序较少，且无法将模型完全放入 GPU，可以尝试手动增加几层。</li>
+<li>如果模型的上下文大小占用了过多内存，可以通过量化 KV 缓存来降低需求。这会略微降低输出质量，但可以帮助您在 GPU 上放置更多层。操作方法：进入 KoboldCpp 的 Tokens 标签，禁用 Context Shifting 并启用 Flash Attention，此时将解锁量化 KV 缓存滑块，数值越低意味着占用内存越少，但模型智能也相应降低。</li>
+<li>在较慢的系统上运行 KoboldCpp，提示词处理耗时较长？当您避免使用知识库、随机化或其他动态改变输入的功能时，Context Shifting 效果最佳。保持启用 Context Shifting，KoboldCpp 将帮助您避免漫长的重新处理等待。</li>
 </ol>
 <h3 id="安装-oobabooga">安装 Oobabooga</h3>
-<p>这是一个更正确/傻瓜式的安装程序：</p>
+<div class="flex mb-6 note">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note</h5>
+<p>根据您安装 Oobabooga 的方式，文件路径可能略有不同：通过 git clone 安装时为 <code translate="no" v-pre>/text-generation-webui/user_data</code>，通过 .zip 方式安装时为 <code translate="no" v-pre>/text-generation-webui-main/user_data</code>。</p>
+        </div>
+    </div>
+</div>
+<p>以下是一个更规范/更适合新手的安装流程：</p>
 <ol>
-<li>git clone <a href="https://github.com/oobabooga/text-generation-webui">https://github.com/oobabooga/text-generation-webui</a>（或在浏览器中将他们的仓库下载为 .zip，然后解压）</li>
-<li>运行 start_windows.bat 或您的操作系统对应的文件</li>
-<li>当被问及时，选择您的 GPU 类型。即使您打算使用 GGUF/CPU，如果您的 GPU 在列表中，现在就选择它，因为它将给您一个称为 GPU 分片的速度优化选项（无需从头重新安装）。如果您没有游戏级 dGPU（NVIDIA、AMD），选择 None。</li>
+<li>git clone <a href="https://github.com/oobabooga/text-generation-webui">https://github.com/oobabooga/text-generation-webui</a>（或在浏览器中将仓库下载为 .zip 文件后解压）</li>
+<li>运行 <code translate="no" v-pre>start_windows.bat</code> 或您操作系统对应的启动脚本</li>
+<li>当提示选择 GPU 类型时，即使您打算使用 GGUF/CPU，如果您的 GPU 在列表中，请现在就选择它——这样以后可以使用一个名为 GPU 分片的速度优化选项（无需从头重新安装）。如果您没有游戏级独立 GPU（NVIDIA、AMD），请选择 None。</li>
 <li>等待安装完成</li>
-<li>将 kunoichi-dpo-v2-7b.Q6_K.gguf 放在 text-generation-webui/models 中</li>
-<li>打开 text-generation-webui/CMD_FLAGS.txt，删除里面的所有内容并写入：--api</li>
+<li>将 kunoichi-dpo-v2-7b.Q6_K.gguf 放入 <code translate="no" v-pre>text-generation-webui/user_data/models</code> 目录</li>
+<li>打开 <code translate="no" v-pre>text-generation-webui/user_data/CMD_FLAGS.txt</code>，删除其中的所有内容，写入：<code translate="no" v-pre>--api</code></li>
 <li>重启 Oobabooga</li>
-<li>访问 <a href="http://127.0.0.1:5000/docs">http://127.0.0.1:5000/docs</a>。它是否加载了一个 FastAPI 页面？如果没有，您在某个地方出错了。</li>
+<li>访问 <a href="http://127.0.0.1:5000/docs">http://127.0.0.1:5000/docs</a>，是否加载了 FastAPI 页面？如果没有，说明某个步骤出了问题。</li>
 </ol>
-<h3 id="在-oobabooga-中加载我们的模型">在 Oobabooga 中加载我们的模型</h3>
+<h3 id="在-oobabooga-中加载模型">在 Oobabooga 中加载模型</h3>
 <ol>
 <li>在浏览器中打开 <a href="http://127.0.0.1:7860/">http://127.0.0.1:7860/</a></li>
 <li>点击 Model 标签</li>
-<li>在下拉菜单中，选择我们的 Kunoichi DPO v2 模型。它应该已经自动选择了 llama.cpp 加载器。</li>
-<li>（可选）我们之前多次提到&quot;GPU 卸载&quot;：那就是这个页面上的 n-gpu-layers 设置。如果您想使用它，在加载模型之前设置一个值。作为基本参考，将其设置为 30 对于 13B 及以下的模型使用不到 6GB VRAM。（它随模型架构和大小而变化）</li>
+<li>在下拉菜单中选择我们的 Kunoichi DPO v2 模型，应该已自动选择 llama.cpp 加载器。</li>
+<li>（可选）我们之前多次提到&quot;GPU 卸载&quot;：即本页面上的 n-gpu-layers 设置。如需使用，请在加载模型前设置一个值。基本参考：对于 13B 及以下的模型，设为 30 大约使用不到 6GB VRAM。（具体数值因模型架构和大小而异）</li>
 <li>点击 Load</li>
 </ol>
 <h3 id="配置-sillytavern-与-oobabooga-通信">配置 SillyTavern 与 Oobabooga 通信</h3>
 <ol>
-<li>点击 API 连接（顶部栏中的第二个按钮）</li>
+<li>点击 API 连接（顶部工具栏中的第二个按钮）</li>
 <li>将 API 设置为&quot;文本补全&quot;</li>
 <li>将 API 类型设置为&quot;默认（Oobabooga）&quot;</li>
 <li>将服务器 URL 设置为 <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a></li>
-<li>点击连接。它应该成功连接并检测到 kunoichi-dpo-v2-7b.Q6_K.gguf 作为模型。</li>
-<li>与角色聊天以测试它是否工作</li>
+<li>点击连接。应成功连接，并检测到 kunoichi-dpo-v2-7b.Q6_K.gguf 作为当前模型。</li>
+<li>与某个角色聊天，测试是否正常工作</li>
 </ol>
-<h2 id="结论">结论</h2>
-<p>恭喜，您现在应该有一个正常工作的本地 LLM 了。</p>
+<h2 id="结语">结语</h2>
+<p>恭喜，您现在应该已经拥有一个正常运行的本地 LLM 了。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -386,7 +400,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">连接配置文件</span>
+                                <span class="block mt-1">连接配置</span>
                             </span>
                         </a>
                     </div>

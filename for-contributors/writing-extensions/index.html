@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>UI 扩展 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="UI 扩展 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="UI 扩展通过挂钩到 SillyTavern 的事件和 API 来扩展其功能。它们在浏览器环境中运行，几乎可以无限制地访问 DOM、JavaScript API 和 SillyTavern 上下文。扩展可以修改 UI、调用内部 API 并与聊天数据交互。本指南介绍如何创建您自己的扩展(需要">
+    <meta name="description" content="UI 扩展通过钩入 SillyTavern 的事件和 API 来扩展其功能。扩展运行在浏览器环境中，对 DOM、JavaScript API 和 SillyTavern 上下文拥有几乎不受限制的访问权限。扩展可以修改 UI、调用内部 API 并与聊天数据进行交互。本指南介绍如何创建自己的扩展（需要具备">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/for-contributors/writing-extensions/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/for-contributors/writing-extensions/">
     <meta property="og:title" content="UI 扩展 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="UI 扩展通过挂钩到 SillyTavern 的事件和 API 来扩展其功能。它们在浏览器环境中运行，几乎可以无限制地访问 DOM、JavaScript API 和 SillyTavern 上下文。扩展可以修改 UI、调用内部 API 并与聊天数据交互。本指南介绍如何创建您自己的扩展(需要">
+    <meta property="og:description" content="UI 扩展通过钩入 SillyTavern 的事件和 API 来扩展其功能。扩展运行在浏览器环境中，对 DOM、JavaScript API 和 SillyTavern 上下文拥有几乎不受限制的访问权限。扩展可以修改 UI、调用内部 API 并与聊天数据进行交互。本指南介绍如何创建自己的扩展（需要具备">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/for-contributors/writing-extensions/">
     <meta name="twitter:title" content="UI 扩展 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="UI 扩展通过挂钩到 SillyTavern 的事件和 API 来扩展其功能。它们在浏览器环境中运行，几乎可以无限制地访问 DOM、JavaScript API 和 SillyTavern 上下文。扩展可以修改 UI、调用内部 API 并与聊天数据交互。本指南介绍如何创建您自己的扩展(需要">
+    <meta name="twitter:description" content="UI 扩展通过钩入 SillyTavern 的事件和 API 来扩展其功能。扩展运行在浏览器环境中，对 DOM、JavaScript API 和 SillyTavern 上下文拥有几乎不受限制的访问权限。扩展可以修改 UI、调用内部 API 并与聊天数据进行交互。本指南介绍如何创建自己的扩展（需要具备">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/for_contributors/writing-extensions.md">
@@ -41,12 +41,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -213,7 +213,7 @@
 
                 <!-- Page content  -->
 <h1 id="ui-扩展">UI 扩展</h1>
-<p>UI 扩展通过挂钩到 SillyTavern 的事件和 API 来扩展其功能。它们在浏览器环境中运行，几乎可以无限制地访问 DOM、JavaScript API 和 SillyTavern 上下文。扩展可以修改 UI、调用内部 API 并与聊天数据交互。本指南介绍如何创建您自己的扩展(需要 JavaScript 知识)。</p>
+<p>UI 扩展通过钩入 SillyTavern 的事件和 API 来扩展其功能。扩展运行在浏览器环境中，对 DOM、JavaScript API 和 SillyTavern 上下文拥有几乎不受限制的访问权限。扩展可以修改 UI、调用内部 API 并与聊天数据进行交互。本指南介绍如何创建自己的扩展（需要具备 JavaScript 知识）。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -225,51 +225,51 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>只想安装扩展?</h5>
-<p>前往这里:<a href="../../extensions/">Extensions</a>。</p>
+            <h5>只是想安装扩展？</h5>
+<p>请前往：<a href="../../extensions/">扩展</a>。</p>
         </div>
     </div>
 </div>
-<p>要扩展 Node.js 服务器的功能，请参阅 <a href="../server-plugins/">Server Plugins</a> 页面。</p>
-<p><strong>不会写 JavaScript?</strong></p>
+<p>如需扩展 Node.js 服务器的功能，请参阅 <a href="../server-plugins/">服务器插件</a> 页面。</p>
+<p><strong>不会写 JavaScript？</strong></p>
 <ul>
-<li>考虑使用 <a href="../../usage/st-script/">STscript</a> 作为编写完整扩展的简单替代方案。</li>
-<li>学习 <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">MDN 课程</a>，完成后再回来。</li>
+<li>可以考虑将 <a href="../../usage/st-script/">STscript</a> 作为编写完整扩展的简单替代方案。</li>
+<li>先学习 <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">MDN 课程</a>，完成后再回来。</li>
 </ul>
 <h2 id="扩展提交">扩展提交</h2>
-<p>想要将您的扩展贡献到 <a href="https://github.com/SillyTavern/SillyTavern-Content">官方内容仓库</a>? 联系我们!</p>
-<p>为确保所有扩展安全且易于使用，我们有一些要求:</p>
+<p>想将你的扩展贡献到 <a href="https://github.com/SillyTavern/SillyTavern-Content">官方内容仓库</a>？请联系我们！</p>
+<p>为确保所有扩展的安全性和易用性，我们有以下要求：</p>
 <ol>
-<li>您的扩展必须是开源的，并具有自由许可证(参见 <a href="https://choosealicense.com/licenses/">选择许可证</a>)。如果不确定，AGPLv3 是个不错的选择。</li>
-<li>扩展必须与最新发布版本的 SillyTavern 兼容。如果核心发生变化，请准备好更新您的扩展。</li>
-<li>扩展必须有完善的文档。这包括一个包含安装说明、使用示例和功能列表的 README 文件。</li>
-<li>需要 server plugin 才能运行的扩展将不被接受。</li>
+<li>你的扩展必须是开源的，并拥有自由许可证（参见 <a href="https://choosealicense.com/licenses/">Choose a License</a>）。如果不确定，AGPLv3 是个不错的选择。</li>
+<li>扩展必须与 SillyTavern 的最新发布版本兼容。如果核心功能发生变化，请准备好更新你的扩展。</li>
+<li>扩展必须有完善的文档，包含安装说明、使用示例和功能列表的 README 文件。</li>
+<li>需要服务器插件才能运行的扩展将不被接受。</li>
 </ol>
 <h2 id="示例">示例</h2>
-<p>查看简单 SillyTavern 扩展的实时示例:</p>
+<p>查看简单 SillyTavern 扩展的实例：</p>
 <ul>
-<li><a href="https://github.com/city-unit/st-extension-example">https://github.com/city-unit/st-extension-example</a> - 基础扩展模板。展示 manifest 创建、本地脚本导入、添加设置 UI 面板和持久化扩展设置的使用。</li>
+<li><a href="https://github.com/city-unit/st-extension-example">https://github.com/city-unit/st-extension-example</a> - 基础扩展模板，展示了清单文件创建、本地脚本导入、添加设置 UI 面板以及持久化扩展设置的用法。</li>
 <li><a href="https://github.com/search?q=topic%3Aextension+org%3ASillyTavern&amp;type=Repositories">https://github.com/search?q=topic%3Aextension+org%3ASillyTavern&amp;type=Repositories</a> - GitHub 上所有官方 SillyTavern 扩展的列表。</li>
 </ul>
 <h2 id="打包">打包</h2>
-<p>扩展还可以使用打包工具将自己与其他模块隔离，并使用 NPM 中的任何依赖项，包括 Vue、React 等 UI 框架。</p>
+<p>扩展也可以使用打包工具，将自身与其他模块隔离，并使用 NPM 上的任意依赖，包括 Vue、React 等 UI 框架。</p>
 <ul>
-<li><a href="https://github.com/SillyTavern/Extension-WebpackTemplate">https://github.com/SillyTavern/Extension-WebpackTemplate</a> - 使用 TypeScript 和 Webpack 的扩展模板仓库(无 React)。</li>
-<li><a href="https://github.com/SillyTavern/Extension-ReactTemplate">https://github.com/SillyTavern/Extension-ReactTemplate</a> - 使用 React 和 Webpack 的基础扩展模板仓库。</li>
+<li><a href="https://github.com/SillyTavern/Extension-WebpackTemplate">https://github.com/SillyTavern/Extension-WebpackTemplate</a> - 使用 TypeScript 和 Webpack（无 React）的扩展模板仓库。</li>
+<li><a href="https://github.com/SillyTavern/Extension-ReactTemplate">https://github.com/SillyTavern/Extension-ReactTemplate</a> - 使用 React 和 Webpack 的最简扩展模板仓库。</li>
 </ul>
-<p>要从打包的文件中使用相对导入，您可能需要创建一个导入包装器。以下是 Webpack 的示例:</p>
+<p>如需在打包产物中使用相对导入，你可能需要创建一个导入包装器。以下是 Webpack 的示例：</p>
 <div id="打包-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">/**
- * Import a member from a module by URL， bypassing webpack.
+ * Import a member from a module by URL, bypassing webpack.
  * @param {string} url URL to import from
  * @param {string} what Name of the member to import
  * @param {any} defaultValue Fallback value
  * @returns {Promise&lt;any&gt;} Imported member
  */
-export async function importFromUrl(url， what， defaultValue = null) {
+export async function importFromUrl(url, what, defaultValue = null) {
     try {
         const module = await import(/* webpackIgnore: true */ url);
-        if (!Object.hasOwn(module， what)) {
+        if (!Object.hasOwn(module, what)) {
             throw new Error(`No ${what} in module`);
         }
         return module[what];
@@ -280,70 +280,85 @@ export async function importFromUrl(url， what， defaultValue = null) {
 }
 
 // Import a function from 'script.js' module
-const generateRaw = await importFromUrl('/script.js'， 'generateRaw');</code></pre>
+const generateRaw = await importFromUrl('/script.js', 'generateRaw');</code></pre>
 </doc-codeblock></div>
 <h2 id="manifestjson">manifest.json</h2>
-<p>每个扩展都必须在 <code translate="no" v-pre>data/&lt;user-handle&gt;/extensions</code> 中有一个文件夹和一个 <code translate="no" v-pre>manifest.json</code> 文件，该文件包含有关扩展的元数据以及作为扩展入口点的 JS 脚本文件的路径。</p>
-<p>可下载的扩展在通过 HTTP 提供服务时会被挂载到 <code translate="no" v-pre>/scripts/extensions/third-party</code> 文件夹中，因此应该基于此使用相对导入。为方便本地开发，建议将扩展仓库放在 <code translate="no" v-pre>/scripts/extensions/third-party</code> 文件夹中(&quot;为所有用户安装&quot;选项)。</p>
+<p>每个扩展都必须在 <code translate="no" v-pre>data/&lt;user-handle&gt;/extensions</code> 目录下拥有一个文件夹，以及一个 <code translate="no" v-pre>manifest.json</code> 文件。该文件包含扩展的元数据，以及指向作为扩展入口点的 JS 脚本文件的路径。</p>
+<p>可下载的扩展在通过 HTTP 提供服务时，会被挂载到 <code translate="no" v-pre>/scripts/extensions/third-party</code> 文件夹，因此应基于该路径使用相对导入。为了便于本地开发，可以考虑将扩展仓库直接放在 <code translate="no" v-pre>/scripts/extensions/third-party</code> 文件夹中（即&quot;为所有用户安装&quot;选项）。</p>
 <div id="manifestjson-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
-    &quot;display_name&quot;: &quot;The name of the extension&quot;，
-    &quot;loading_order&quot;: 1，
-    &quot;requires&quot;: []，
-    &quot;optional&quot;: []，
-    &quot;dependencies&quot;: []，
-    &quot;js&quot;: &quot;index.js&quot;，
-    &quot;css&quot;: &quot;style.css&quot;，
-    &quot;author&quot;: &quot;Your name&quot;，
-    &quot;version&quot;: &quot;1.0.0&quot;，
-    &quot;homePage&quot;: &quot;https://github.com/your/extension&quot;，
-    &quot;auto_update&quot;: true，
-    &quot;minimum_client_version&quot;: &quot;1.0.0&quot;，
+    &quot;display_name&quot;: &quot;The name of the extension&quot;,
+    &quot;loading_order&quot;: 1,
+    &quot;requires&quot;: [],
+    &quot;optional&quot;: [],
+    &quot;dependencies&quot;: [],
+    &quot;js&quot;: &quot;index.js&quot;,
+    &quot;css&quot;: &quot;style.css&quot;,
+    &quot;author&quot;: &quot;Your name&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;homePage&quot;: &quot;https://github.com/your/extension&quot;,
+    &quot;auto_update&quot;: true,
+    &quot;minimum_client_version&quot;: &quot;1.0.0&quot;,
     &quot;i18n&quot;: {
         &quot;de-de&quot;: &quot;i18n/de-de.json&quot;
+    },
+    &quot;hooks&quot;: {
+        &quot;install&quot;: &quot;onInstall&quot;,
+        &quot;update&quot;: &quot;onUpdate&quot;,
+        &quot;delete&quot;: &quot;onDelete&quot;,
+        &quot;enable&quot;: &quot;onEnable&quot;,
+        &quot;disable&quot;: &quot;onDisable&quot;,
+        &quot;activate&quot;: &quot;onActivate&quot;
     }
 }</code></pre>
 </doc-codeblock></div>
-<h3 id="manifest-字段">Manifest 字段</h3>
+<h3 id="清单文件字段">清单文件字段</h3>
 <ul>
-<li><code translate="no" v-pre>display_name</code> 是必需的。它显示在&quot;管理扩展&quot;菜单中。</li>
-<li><code translate="no" v-pre>loading_order</code> 是可选的。数字越大，加载越晚。</li>
-<li><code translate="no" v-pre>js</code> 是主 JS 文件引用，是必需的。</li>
-<li><code translate="no" v-pre>css</code> 是可选的样式文件引用。</li>
-<li><code translate="no" v-pre>author</code> 是必需的。应包含作者的姓名或联系信息。</li>
-<li><code translate="no" v-pre>auto_update</code> 设置为 <code translate="no" v-pre>true</code> 时，当 ST 包的版本更改时，扩展将自动更新。</li>
-<li><code translate="no" v-pre>i18n</code> 是一个可选对象，指定支持的语言环境及其对应的 JSON 文件(见下文)。</li>
-<li><code translate="no" v-pre>dependencies</code> 是一个可选的字符串数组，指定此扩展依赖的其他<strong>扩展</strong>。</li>
-<li><code translate="no" v-pre>generate_interceptor</code> 是一个可选字符串，指定在文本生成请求时调用的全局函数名称。</li>
-<li><code translate="no" v-pre>minimum_client_version</code> 是一个可选字符串，指定此扩展正常工作所需的最低 SillyTavern 版本。</li>
+<li><code translate="no" v-pre>display_name</code> 必填。显示在&quot;管理扩展&quot;菜单中。</li>
+<li><code translate="no" v-pre>loading_order</code> 可选。数值越大，加载越晚。</li>
+<li><code translate="no" v-pre>js</code> 必填，为主 JS 文件的引用路径。</li>
+<li><code translate="no" v-pre>css</code> 可选的样式文件引用路径。</li>
+<li><code translate="no" v-pre>author</code> 必填，应包含作者的姓名或联系信息。</li>
+<li><code translate="no" v-pre>auto_update</code> 设置为 <code translate="no" v-pre>true</code> 时，当 ST 软件包版本变更时扩展会自动更新。</li>
+<li><code translate="no" v-pre>i18n</code> 可选对象，用于指定支持的区域设置及其对应的 JSON 文件（见下文）。</li>
+<li><code translate="no" v-pre>dependencies</code> 可选字符串数组，指定本扩展所依赖的其他<strong>扩展</strong>。</li>
+<li><code translate="no" v-pre>generate_interceptor</code> 可选字符串，指定在文本生成请求时调用的全局函数名。</li>
+<li><code translate="no" v-pre>minimum_client_version</code> 可选字符串，指定本扩展运行所需的最低 SillyTavern 版本。</li>
+<li><code translate="no" v-pre>hooks</code> 可选对象，指定从 JS 入口点模块导出的<doc-anchor-trigger to="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90">生命周期钩子</doc-anchor-trigger>函数名。</li>
 </ul>
-<h3 id="依赖项">依赖项</h3>
-<p>扩展也可以依赖其他 SillyTavern 扩展。如果缺少或禁用了这些依赖项中的任何一个，扩展将不会加载。</p>
-<p>依赖项由其在 <code translate="no" v-pre>public/extensions</code> 目录中显示的<strong>文件夹名称</strong>指定。</p>
-<p>示例:</p>
+<h3 id="依赖关系">依赖关系</h3>
+<p>扩展也可以依赖其他 SillyTavern 扩展。如果任何依赖项缺失或被禁用，该扩展将不会加载。</p>
+<p>依赖项通过其在 <code translate="no" v-pre>public/extensions</code> 目录中显示的<strong>文件夹名称</strong>来指定。</p>
+<p>示例：</p>
 <ul>
-<li>内置扩展: <code translate="no" v-pre>&quot;vectors&quot;</code>， <code translate="no" v-pre>&quot;caption&quot;</code></li>
-<li>第三方扩展: <code translate="no" v-pre>&quot;third-party/Extension-WebLLM&quot;</code>， <code translate="no" v-pre>&quot;third-party/Extension-Mermaid&quot;</code></li>
+<li>内置扩展：<code translate="no" v-pre>&quot;vectors&quot;</code>、<code translate="no" v-pre>&quot;caption&quot;</code></li>
+<li>第三方扩展：<code translate="no" v-pre>&quot;third-party/Extension-WebLLM&quot;</code>、<code translate="no" v-pre>&quot;third-party/Extension-Mermaid&quot;</code></li>
 </ul>
-<h3 id="已弃用的字段">已弃用的字段</h3>
+<h3 id="已弃用字段">已弃用字段</h3>
 <ul>
-<li><code translate="no" v-pre>requires</code> 是一个可选的字符串数组，指定所需的 <strong>Extras 模块</strong>。如果连接的 Extras API 不提供所有列出的模块，扩展将不会加载。</li>
-<li><code translate="no" v-pre>optional</code> 是一个可选的字符串数组，指定可选的 <strong>Extras 模块</strong>。如果缺少这些模块，扩展仍将加载，扩展应优雅地处理它们的缺失。</li>
+<li><code translate="no" v-pre>requires</code> 可选字符串数组，指定所需的 <strong>Extras 模块</strong>。如果已连接的 Extras API 未提供所有列出的模块，扩展将不会加载。</li>
+<li><code translate="no" v-pre>optional</code> 可选字符串数组，指定可选的 <strong>Extras 模块</strong>。即使这些模块缺失，扩展仍会加载，扩展应妥善处理其缺失的情况。</li>
 </ul>
-<p>要检查当前连接的 Extras API 提供哪些模块，请从 <code translate="no" v-pre>scripts/extensions.js</code> 导入 <code translate="no" v-pre>modules</code> 数组。</p>
+<p>要检查当前已连接的 Extras API 提供了哪些模块，可从 <code translate="no" v-pre>scripts/extensions.js</code> 导入 <code translate="no" v-pre>modules</code> 数组。</p>
 <h2 id="脚本编写">脚本编写</h2>
+<h3 id="扩展初始化的最佳实践">扩展初始化的最佳实践</h3>
+<ul>
+<li>使用 <code translate="no" v-pre>activate</code> 钩子进行同步设置，该设置需要在 SillyTavern 的加载阶段、阻塞式加载器处于活动状态时运行。</li>
+<li>使用 <code translate="no" v-pre>APP_INITIALIZED</code> 事件进行在所有扩展和 UI 元素加载完毕后、但加载器仍在阻塞时需要执行的设置。</li>
+<li>使用 <code translate="no" v-pre>APP_READY</code> 事件进行不需要阻塞 SillyTavern 就绪的异步设置。此事件的处理函数会被等待（await），因此应使用定时器或类似机制来延迟处理。</li>
+</ul>
 <h3 id="使用-getcontext">使用 getContext</h3>
-<p><code translate="no" v-pre>SillyTavern</code> 全局对象中的 <code translate="no" v-pre>getContext()</code> 函数可以让您访问 SillyTavern 上下文，这是所有主要应用状态对象、有用函数和实用程序的集合。</p>
+<p><code translate="no" v-pre>SillyTavern</code> 全局对象中的 <code translate="no" v-pre>getContext()</code> 函数可让你访问 SillyTavern 上下文，这是一个包含所有主要应用状态对象、实用函数和工具的集合。</p>
 <div id="使用-getcontext-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const context = SillyTavern.getContext();
-context.chat; // Chat log - MUTABLE
-context.characters; // Character list
-context.characterId; // Index of the current character
-context.groups; // Group list
-context.groupId; // ID of the current group
-// And many more...</code></pre>
+context.chat; // 聊天记录 - 可变对象
+context.characters; // 角色列表
+context.characterId; // 当前角色的索引
+context.groups; // 群组列表
+context.groupId; // 当前群组的 ID
+// 以及更多...</code></pre>
 </doc-codeblock></div>
-<p>您可以在 <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/st-context.js">SillyTavern 源代码</a>中找到可用属性和函数的完整列表。</p>
+<p>完整的可用属性和函数列表可在 <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/st-context.js">SillyTavern 源代码</a>中找到。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -357,44 +372,108 @@ context.groupId; // ID of the current group
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>如果 <code translate="no" v-pre>getContext</code> 中缺少任何您需要的函数/属性，请联系开发人员或向我们发送 pull request!</p>
+<p>如果 <code translate="no" v-pre>getContext</code> 中缺少你需要的函数/属性，请联系开发者或向我们提交 pull request！</p>
         </div>
     </div>
 </div>
 <h3 id="共享库">共享库</h3>
-<p>SillyTavern 前端内部使用的大多数 npm 库都在 <code translate="no" v-pre>SillyTavern</code> 全局对象的 <code translate="no" v-pre>libs</code> 属性中共享。</p>
+<p>SillyTavern 前端内部使用的大多数 npm 库都通过 <code translate="no" v-pre>SillyTavern</code> 全局对象的 <code translate="no" v-pre>libs</code> 属性共享。</p>
 <ul>
-<li><code translate="no" v-pre>lodash</code> - 实用程序库。<a href="https://lodash.com/">文档</a>。</li>
-<li><code translate="no" v-pre>localforage</code> - 浏览器存储库。<a href="https://localforage.github.io/localForage/">文档</a>。</li>
+<li><code translate="no" v-pre>lodash</code> - 实用工具库。<a href="https://lodash.com/">文档</a>。</li>
 <li><code translate="no" v-pre>Fuse</code> - 模糊搜索库。<a href="https://www.fusejs.io/">文档</a>。</li>
-<li><code translate="no" v-pre>DOMPurify</code> - HTML 清理库。<a href="https://github.com/cure53/DOMPurify">文档</a>。</li>
+<li><code translate="no" v-pre>DOMPurify</code> - HTML 净化库。<a href="https://github.com/cure53/DOMPurify">文档</a>。</li>
+<li><code translate="no" v-pre>hljs</code> - 语法高亮库。<a href="https://highlightjs.org/">文档</a>。</li>
+<li><code translate="no" v-pre>localforage</code> - 浏览器存储库（IndexedDB/localStorage 抽象层）。<a href="https://localforage.github.io/localForage/">文档</a>。</li>
 <li><code translate="no" v-pre>Handlebars</code> - 模板库。<a href="https://handlebarsjs.com/">文档</a>。</li>
-<li><code translate="no" v-pre>moment</code> - 日期/时间操作库。<a href="http://momentjs.com/">文档</a>。</li>
+<li><code translate="no" v-pre>css</code> - CSS 解析/序列化工具。<a href="https://github.com/nicolo-ribaudo/css-tools">文档</a>。</li>
+<li><code translate="no" v-pre>Bowser</code> - 浏览器/平台检测库。<a href="https://github.com/bowser-js/bowser">文档</a>。</li>
+<li><code translate="no" v-pre>DiffMatchPatch</code> - 文本差异、匹配和补丁库。<a href="https://github.com/google/diff-match-patch">文档</a>。</li>
+<li><code translate="no" v-pre>Readability</code> / <code translate="no" v-pre>isProbablyReaderable</code> - Mozilla 的文章提取库。<a href="https://github.com/mozilla/readability">文档</a>。</li>
+<li><code translate="no" v-pre>SVGInject</code> - 内联 SVG 注入库。<a href="https://github.com/nicolo-ribaudo/svg-inject">文档</a>。</li>
 <li><code translate="no" v-pre>showdown</code> - Markdown 转换库。<a href="https://showdownjs.com/">文档</a>。</li>
+<li><code translate="no" v-pre>moment</code> - 日期/时间操作库。<a href="http://momentjs.com/">文档</a>。</li>
+<li><code translate="no" v-pre>seedrandom</code> - 种子随机数生成器。<a href="https://github.com/davidbau/seedrandom">文档</a>。</li>
+<li><code translate="no" v-pre>Popper</code> - 工具提示/弹出框定位引擎。<a href="https://popper.js.org/">文档</a>。</li>
+<li><code translate="no" v-pre>droll</code> - 掷骰子库。<a href="https://github.com/thebinarypenguin/droll">文档</a>。</li>
+<li><code translate="no" v-pre>morphdom</code> - 快速 DOM 差异/补丁库。<a href="https://github.com/patrick-steele-iber/morphdom">文档</a>。</li>
+<li><code translate="no" v-pre>slideToggle</code> - 原生 JS 滑动切换动画。<a href="https://github.com/nicolo-ribaudo/slidetoggle">文档</a>。</li>
+<li><code translate="no" v-pre>chalk</code> - 终端字符串样式（在浏览器中用途有限）。<a href="https://github.com/chalk/chalk">文档</a>。</li>
+<li><code translate="no" v-pre>yaml</code> - YAML 解析器和序列化工具。<a href="https://eemeli.org/yaml/">文档</a>。</li>
+<li><code translate="no" v-pre>chevrotain</code> - 解析器构建工具包。<a href="https://chevrotain.io/">文档</a>。</li>
+<li><code translate="no" v-pre>gzipSync</code> / <code translate="no" v-pre>gzip</code> - 来自 fflate 的快速压缩工具。<a href="https://github.com/101arrowz/fflate">文档</a>。</li>
 </ul>
-<p>您可以在 <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/lib.js">SillyTavern 源代码</a>中找到导出库的完整列表。</p>
-<p><strong>示例:</strong> 使用 DOMPurify 库。</p>
+<p>完整的导出库列表可在 <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/lib.js">SillyTavern 源代码</a>中找到。</p>
+<p><strong>示例：</strong> 使用 DOMPurify 库。</p>
 <div id="共享库-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { DOMPurify } = SillyTavern.libs;
 
 const sanitizedHtml = DOMPurify.sanitize('&lt;script&gt;&quot;dirty HTML&quot;&lt;/script&gt;');</code></pre>
 </doc-codeblock></div>
-<h3 id="typescript-注意事项">TypeScript 注意事项</h3>
-<p>如果您想要 <code translate="no" v-pre>SillyTavern</code> 全局对象中所有方法的自动完成功能(您可能想要)，包括 <code translate="no" v-pre>getContext()</code> 和 <code translate="no" v-pre>libs</code>，您应该添加一个 TypeScript <code translate="no" v-pre>.d.ts</code> 模块声明。此声明应从 SillyTavern 的源代码导入全局类型，具体取决于您的扩展位置。以下示例适用于两种安装类型:&quot;所有用户&quot;和&quot;当前用户&quot;。</p>
-<p><strong>global.d.ts</strong> - 将此文件放在扩展目录的根目录中(<code translate="no" v-pre>manifest.json</code> 旁边):</p>
-<div id="typescript-注意事项-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="typescript-说明">TypeScript 说明</h3>
+<p>如果你想为 <code translate="no" v-pre>SillyTavern</code> 全局对象中的所有方法（包括 <code translate="no" v-pre>getContext()</code> 和 <code translate="no" v-pre>libs</code>）获得自动补全功能（你大概率会需要），应添加一个 TypeScript <code translate="no" v-pre>.d.ts</code> 模块声明文件。根据扩展的位置，该声明应从 SillyTavern 的源代码中导入全局类型。以下示例适用于&quot;所有用户&quot;和&quot;当前用户&quot;两种安装类型。</p>
+<p><strong>global.d.ts</strong> - 将此文件放在扩展的根目录中（与 <code translate="no" v-pre>manifest.json</code> 同级）：</p>
+<div id="typescript-说明-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-typescript"><code v-pre class="language-typescript">export {};
 
-// 1. Import for user-scoped extensions
+// 1. 为用户范围扩展的导入
 import '../../../../public/global';
-// 2. Import for server-scoped extensions
+// 2. 为服务器范围扩展的导入
 import '../../../../global';
 
-// Define additional types if needed...
+// 如需定义其他类型...
 declare global {
-    // Add global type declarations here
+    // 在此添加全局类型声明
 }</code></pre>
 </doc-codeblock></div>
+<h3 id="html-模板">HTML 模板</h3>
+<p>扩展可以使用 Handlebars HTML 模板来构建 UI。将 <code translate="no" v-pre>.html</code> 模板文件放在扩展目录中，并使用 <code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>renderExtensionTemplateAsync()</code> 函数进行渲染。</p>
+<p>该函数接受扩展的文件夹名、模板文件名（不含 <code translate="no" v-pre>.html</code>）以及一个可选的 Handlebars 模板变量数据对象。返回的 HTML 会自动通过 DOMPurify 净化，并通过 <code translate="no" v-pre>data-i18n</code> 属性进行本地化处理。</p>
+<div id="html-模板-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { renderExtensionTemplateAsync } = SillyTavern.getContext();
+
+// 使用给定数据渲染 'third-party/my-extension/settings.html'
+const settingsHtml = await renderExtensionTemplateAsync(
+    'third-party/my-extension',
+    'settings',
+    { title: 'My Extension', version: '1.0', defaultValue: 'test' }
+);
+
+// 追加到扩展设置面板
+$('#extensions_settings2').append(settingsHtml);</code></pre>
+</doc-codeblock></div>
+<p><strong>模板文件示例</strong>（<code translate="no" v-pre>settings.html</code>）：</p>
+<div id="html-模板-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;div class=&quot;my-extension-settings&quot;&gt;
+    &lt;div class=&quot;inline-drawer&quot;&gt;
+        &lt;div class=&quot;inline-drawer-toggle inline-drawer-header&quot;&gt;
+            &lt;b data-i18n=&quot;{{title}}&quot;&gt;{{title}}&lt;/b&gt;
+            &lt;div class=&quot;inline-drawer-icon fa-solid fa-circle-chevron-down down&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;inline-drawer-content&quot;&gt;
+            &lt;label for=&quot;my_ext_option&quot;&gt;
+                &lt;span data-i18n=&quot;Option&quot;&gt;Option&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;input id=&quot;my_ext_option&quot; type=&quot;text&quot; value=&quot;{{defaultValue}}&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code translate="no" v-pre>renderExtensionTemplate()</code>（同步版本）已弃用。请始终使用 <code translate="no" v-pre>renderExtensionTemplateAsync()</code>。</p>
+        </div>
+    </div>
+</div>
 <h3 id="从其他文件导入">从其他文件导入</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -408,12 +487,12 @@ declare global {
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>从 SillyTavern 代码导入是不可靠的，如果 ST 模块的内部结构发生变化，可能会随时中断。<code translate="no" v-pre>getContext</code> 提供了更稳定的 API。</p>
+<p>从 SillyTavern 代码中直接导入是不可靠的，如果 ST 内部模块结构发生变化，可能随时失效。<code translate="no" v-pre>getContext</code> 提供了更稳定的 API。</p>
         </div>
     </div>
 </div>
-<p>除非您正在构建打包的扩展，否则您可以从其他 JS 文件导入变量和函数。</p>
-<p>例如，此代码片段将在后台从当前选择的 API 生成回复:</p>
+<p>除非你正在构建打包扩展，否则可以从其他 JS 文件导入变量和函数。</p>
+<p>例如，以下代码片段将使用当前选定的 API 在后台生成回复：</p>
 <div id="从其他文件导入-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">import { generateQuietPrompt } from &quot;../../../../script.js&quot;;
 
@@ -425,31 +504,31 @@ async function handleMessage(data) {
 </doc-codeblock></div>
 <h2 id="状态管理">状态管理</h2>
 <h3 id="持久化设置">持久化设置</h3>
-<p>当扩展需要持久化其状态时，它可以使用 <code translate="no" v-pre>getContext()</code> 函数中的 <code translate="no" v-pre>extensionSettings</code> 对象来存储和检索数据。扩展可以在设置对象中存储任何 JSON 可序列化的数据，并且必须使用唯一的键来避免与其他扩展冲突。</p>
-<p>要持久化设置，请使用 <code translate="no" v-pre>saveSettingsDebounced()</code> 函数，该函数将设置保存到服务器。</p>
+<p>当扩展需要持久保存其状态时，可以使用 <code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>extensionSettings</code> 对象来存储和检索数据。扩展可以在设置对象中存储任何 JSON 可序列化的数据，且必须使用唯一键以避免与其他扩展冲突。</p>
+<p>要持久化设置，请使用 <code translate="no" v-pre>saveSettingsDebounced()</code> 函数，它将把设置保存到服务器。</p>
 <div id="持久化设置-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { extensionSettings， saveSettingsDebounced } = SillyTavern.getContext();
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { extensionSettings, saveSettingsDebounced } = SillyTavern.getContext();
 
-// Define a unique identifier for your extension
+// 为你的扩展定义一个唯一标识符
 const MODULE_NAME = 'my_extension';
 
-// Define default settings
+// 定义默认设置
 const defaultSettings = Object.freeze({
-    enabled: false，
-    option1: 'default'，
+    enabled: false,
+    option1: 'default',
     option2: 5
 });
 
-// Define a function to get or initialize settings
+// 定义一个获取或初始化设置的函数
 function getSettings() {
-    // Initialize settings if they don't exist
+    // 如果设置不存在则初始化
     if (!extensionSettings[MODULE_NAME]) {
         extensionSettings[MODULE_NAME] = structuredClone(defaultSettings);
     }
 
-    // Ensure all default keys exist (helpful after updates)
+    // 确保所有默认键都存在（更新后很有用）
     for (const key of Object.keys(defaultSettings)) {
-        if (!Object.hasOwn(extensionSettings[MODULE_NAME]， key)) {
+        if (!Object.hasOwn(extensionSettings[MODULE_NAME], key)) {
             extensionSettings[MODULE_NAME][key] = defaultSettings[key];
         }
     }
@@ -457,16 +536,16 @@ function getSettings() {
     return extensionSettings[MODULE_NAME];
 }
 
-// Use the settings
+// 使用设置
 const settings = getSettings();
 settings.option1 = 'new value';
 
-// Save the settings
+// 保存设置
 saveSettingsDebounced();</code></pre>
 </doc-codeblock></div>
 <h3 id="聊天元数据">聊天元数据</h3>
-<p>要将某些数据绑定到特定聊天，您可以使用 <code translate="no" v-pre>getContext()</code> 函数中的 <code translate="no" v-pre>chatMetadata</code> 对象。此对象允许您存储与聊天关联的任意数据，这对于存储特定于扩展的状态很有用。</p>
-<p>要持久化元数据，请使用 <code translate="no" v-pre>saveMetadata()</code> 函数，该函数将元数据保存到服务器。</p>
+<p>要将某些数据绑定到特定聊天，可以使用 <code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>chatMetadata</code> 对象。该对象允许你存储与聊天相关联的任意数据，对于存储扩展特定状态非常有用。</p>
+<p>要持久化元数据，请使用 <code translate="no" v-pre>saveMetadata()</code> 函数，它将把元数据保存到服务器。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -479,20 +558,20 @@ saveSettingsDebounced();</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>不要在长期变量中保存对 <code translate="no" v-pre>chatMetadata</code> 的引用，因为切换聊天时引用会改变。始终使用 <code translate="no" v-pre>SillyTavern.getContext().chatMetadata</code> 来访问当前聊天元数据。</p>
+<p>不要在长期变量中保存 <code translate="no" v-pre>chatMetadata</code> 的引用，因为当切换聊天时该引用会发生变化。请始终使用 <code translate="no" v-pre>SillyTavern.getContext().chatMetadata</code> 来访问当前聊天的元数据。</p>
         </div>
     </div>
 </div>
 <div id="聊天元数据-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { chatMetadata， saveMetadata } = SillyTavern.getContext();
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { chatMetadata, saveMetadata } = SillyTavern.getContext();
 
-// Set some metadata for the current chat
+// 为当前聊天设置一些元数据
 chatMetadata['my_key'] = 'my_value';
 
-// Get the metadata for the current chat
+// 获取当前聊天的元数据
 const value = chatMetadata['my_key'];
 
-// Save the metadata to the server
+// 将元数据保存到服务器
 await saveMetadata();</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -506,14 +585,14 @@ await saveMetadata();</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>切换聊天时会发出 <code translate="no" v-pre>CHAT_CHANGED</code> 事件，因此您可以监听此事件以相应地更新扩展的状态。请参阅<doc-anchor-trigger to="#listening-to-events">监听事件</doc-anchor-trigger>部分了解更多信息。</p>
+<p>切换聊天时会触发 <code translate="no" v-pre>CHAT_CHANGED</code> 事件，你可以监听此事件来相应地更新扩展的状态。更多信息请参见<doc-anchor-trigger to="#%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6">监听事件</doc-anchor-trigger>部分。</p>
         </div>
     </div>
 </div>
-<h3 id="角色卡片">角色卡片</h3>
-<p>SillyTavern 完全支持 <a href="https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md">Character Cards V2 规范</a>，允许在角色卡片 JSON 数据中存储任意数据。</p>
-<p>这对于需要存储与角色关联的附加数据并在导出角色卡片时使其可共享的扩展很有用。</p>
-<p>要将数据写入角色卡片 <a href="https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#extensions">extensions</a> 数据字段，请使用 <code translate="no" v-pre>getContext()</code> 函数中的 <code translate="no" v-pre>writeExtensionField</code> 函数。此函数接受角色 ID、字符串键和要写入的值。该值必须是 JSON 可序列化的。</p>
+<h3 id="角色卡">角色卡</h3>
+<p>SillyTavern 完整支持 <a href="https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md">Character Cards V2 规范</a>，该规范允许在角色卡 JSON 数据中存储任意数据。</p>
+<p>这对于需要存储与角色相关联的附加数据、并在导出角色卡时使其可共享的扩展非常有用。</p>
+<p>要向角色卡的 <a href="https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#extensions">extensions</a> 数据字段写入数据，请使用 <code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>writeExtensionField</code> 函数。该函数接受角色 ID、字符串键和要写入的值，值必须是 JSON 可序列化的。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -526,51 +605,51 @@ await saveMetadata();</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>注意奇怪的地方</h5>
-<p>尽管被称为 <code translate="no" v-pre>characterId</code>，但它不是&quot;真正的&quot;唯一标识符，而是 <code translate="no" v-pre>characters</code> 数组中角色的索引。</p>
-<p>当前角色的索引由上下文中的 <code translate="no" v-pre>characterId</code> 属性提供。如果要将数据写入当前选择的角色，请使用 <code translate="no" v-pre>SillyTavern.getContext().characterId</code>。如果需要为另一个角色存储数据，请通过在 <code translate="no" v-pre>characters</code> 数组中搜索角色来找到索引。</p>
-<p><strong>注意:<code translate="no" v-pre>characterId</code> 在群聊或未选择角色时为 <code translate="no" v-pre>undefined</code>!</strong></p>
+            <h5>注意事项</h5>
+<p>尽管叫做 <code translate="no" v-pre>characterId</code>，它并不是真正意义上的唯一标识符，而是角色在 <code translate="no" v-pre>characters</code> 数组中的索引。</p>
+<p>当前角色的索引由上下文中的 <code translate="no" v-pre>characterId</code> 属性提供。如果要向当前选定的角色写入数据，请使用 <code translate="no" v-pre>SillyTavern.getContext().characterId</code>。如果需要为其他角色存储数据，请通过在 <code translate="no" v-pre>characters</code> 数组中搜索角色来找到其索引。</p>
+<p><strong>注意：在群组聊天中或未选择角色时，<code translate="no" v-pre>characterId</code> 为 <code translate="no" v-pre>undefined</code>！</strong></p>
         </div>
     </div>
 </div>
-<div id="角色卡片-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { writeExtensionField， characterId } = SillyTavern.getContext();
+<div id="角色卡-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { writeExtensionField, characterId } = SillyTavern.getContext();
 
-// Write some data to the character card
-await writeExtensionField(characterId， 'my_extension_key'， {
-    someData: 'value'，
+// 向角色卡写入一些数据
+await writeExtensionField(characterId, 'my_extension_key', {
+    someData: 'value',
     anotherData: 42
 });
 
-// Read the data back from the character card
+// 从角色卡读回数据
 const character = SillyTavern.getContext().characters[characterId];
-// The data is stored in the `extensions` object of the character's data
+// 数据存储在角色数据的 `extensions` 对象中
 const myData = character.data?.extensions?.my_extension_key;</code></pre>
 </doc-codeblock></div>
 <h3 id="设置预设">设置预设</h3>
-<p>任意 JSON 数据可以存储在主要 API 类型的设置预设中。它将与预设 JSON 一起导出和导入，因此您可以使用它来存储预设的扩展特定设置。以下 API 类型支持设置预设中的数据扩展:</p>
+<p>任意 JSON 数据可以存储在主要 API 类型的设置预设中。它会随预设 JSON 一同导出和导入，因此你可以用它为预设存储扩展特定的设置。以下 API 类型在设置预设中支持数据扩展：</p>
 <ul>
 <li>Chat Completion</li>
 <li>Text Completion</li>
 <li>NovelAI</li>
 <li>KoboldAI / AI Horde</li>
 </ul>
-<p>要读取或写入数据，您首先需要从上下文获取 PresetManager 实例:</p>
+<p>要读取或写入数据，首先需要从上下文中获取 PresetManager 实例：</p>
 <div id="设置预设-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { getPresetManager } = SillyTavern.getContext();
 
-// Get the preset manager for the current API type
+// 获取当前 API 类型的预设管理器
 const pm = getPresetManager();
 
-// Write data to the preset extension field:
-// - path: the path to the field in the preset data
-// - value: the value to write
-// - name (optional): the name of the preset to write to， defaults to the currently selected preset
-await pm.writePresetExtensionField({ path: 'hello'， value: 'world' });
+// 向预设扩展字段写入数据：
+// - path: 预设数据中字段的路径
+// - value: 要写入的值
+// - name（可选）: 要写入的预设名称，默认为当前选定的预设
+await pm.writePresetExtensionField({ path: 'hello', value: 'world' });
 
-// Read data from the preset extension field:
-// - path: the path to the field in the preset data
-// - name (optional): the name of the preset to read from， defaults to the currently selected preset
+// 从预设扩展字段读取数据：
+// - path: 预设数据中字段的路径
+// - name（可选）: 要读取的预设名称，默认为当前选定的预设
 const value = pm.readPresetExtensionField({ path: 'hello' });</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -584,7 +663,7 @@ const value = pm.readPresetExtensionField({ path: 'hello' });</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>切换预设或主 API 时会发出 <code translate="no" v-pre>PRESET_CHANGED</code> 和 <code translate="no" v-pre>MAIN_API_CHANGED</code> 事件，因此您可以监听这些事件以相应地更新扩展的状态。请参阅<doc-anchor-trigger to="#listening-to-events">监听事件</doc-anchor-trigger>部分了解更多信息。</p>
+<p>切换预设或主要 API 时会分别触发 <code translate="no" v-pre>PRESET_CHANGED</code> 和 <code translate="no" v-pre>MAIN_API_CHANGED</code> 事件，你可以监听这些事件来相应地更新扩展的状态。更多信息请参见<doc-anchor-trigger to="#%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6">监听事件</doc-anchor-trigger>部分。</p>
         </div>
     </div>
 </div>
@@ -606,58 +685,58 @@ const value = pm.readPresetExtensionField({ path: 'hello' });</code></pre>
         </div>
     </div>
 </div>
-<p>扩展可以提供额外的本地化字符串，以便与 <code translate="no" v-pre>t</code>、<code translate="no" v-pre>translate</code> 函数和 HTML 模板中的 <code translate="no" v-pre>data-i18n</code> 属性一起使用。</p>
-<p>在此处查看支持的语言环境列表(<code translate="no" v-pre>lang</code> 键): <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/locales/lang.json">https://github.com/SillyTavern/SillyTavern/blob/release/public/locales/lang.json</a></p>
+<p>扩展可以提供额外的本地化字符串，供 HTML 模板中的 <code translate="no" v-pre>t</code>、<code translate="no" v-pre>translate</code> 函数和 <code translate="no" v-pre>data-i18n</code> 属性使用。</p>
+<p>支持的区域设置列表（<code translate="no" v-pre>lang</code> 键）参见：<a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/locales/lang.json">https://github.com/SillyTavern/SillyTavern/blob/release/public/locales/lang.json</a></p>
 <h3 id="直接调用-addlocaledata">直接调用 <code translate="no" v-pre>addLocaleData</code></h3>
-<p>将语言环境代码和包含翻译的对象传递给 <code translate="no" v-pre>addLocaleData</code> 函数。<em>不</em>允许覆盖现有键。如果传递的语言环境代码不是当前选择的语言环境，数据将被静默忽略。</p>
+<p>将区域代码和包含翻译内容的对象传递给 <code translate="no" v-pre>addLocaleData</code> 函数。<strong>不允许</strong>覆盖已有的键。如果传入的区域代码不是当前选定的区域，数据将被静默忽略。</p>
 <div id="直接调用-addlocaledata-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">SillyTavern.getContext().addLocaleData('fr-fr'， { 'Hello': 'Bonjour' });
-SillyTavern.getContext().addLocaleData('de-de'， { 'Hello': 'Hallo' });</code></pre>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">SillyTavern.getContext().addLocaleData('fr-fr', { 'Hello': 'Bonjour' });
+SillyTavern.getContext().addLocaleData('de-de', { 'Hello': 'Hallo' });</code></pre>
 </doc-codeblock></div>
-<h3 id="通过扩展-manifest">通过扩展 manifest</h3>
-<p>将包含支持的语言环境列表及其对应 JSON 文件路径(相对于扩展目录)的 i18n 对象添加到 manifest 中。</p>
-<div id="通过扩展-manifest-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="通过扩展清单文件">通过扩展清单文件</h3>
+<p>在清单文件中添加 i18n 对象，列出支持的区域设置及其对应的 JSON 文件路径（相对于扩展目录）。</p>
+<div id="通过扩展清单文件-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
-  &quot;display_name&quot;: &quot;Foobar&quot;，
-  &quot;js&quot;: &quot;index.js&quot;，
-  // rest of the fields
+  &quot;display_name&quot;: &quot;Foobar&quot;,
+  &quot;js&quot;: &quot;index.js&quot;,
+  // 其他字段...
   &quot;i18n&quot;: {
-    &quot;fr-fr&quot;: &quot;i18n/french.json&quot;，
+    &quot;fr-fr&quot;: &quot;i18n/french.json&quot;,
     &quot;de-de&quot;: &quot;i18n/german.json&quot;
   }
 }</code></pre>
 </doc-codeblock></div>
-<h2 id="注册-slash-命令新方法">注册 slash 命令(新方法)</h2>
-<p>虽然 <code translate="no" v-pre>registerSlashCommand</code> 仍然存在以实现向后兼容，但现在应该通过 <code translate="no" v-pre>SlashCommandParser.addCommandObject()</code> 注册新的 slash 命令，以向解析器(进而向自动完成和命令帮助)提供有关命令及其参数的扩展详细信息。</p>
-<div id="注册-slash-命令新方法-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat'，
-    callback: (namedArgs， unnamedArgs) =&gt; {
+<h2 id="注册斜杠命令新方式">注册斜杠命令（新方式）</h2>
+<p>虽然 <code translate="no" v-pre>registerSlashCommand</code> 仍然存在以保持向后兼容性，但新的斜杠命令现在应通过 <code translate="no" v-pre>SlashCommandParser.addCommandObject()</code> 来注册，以便向解析器（进而向自动补全和命令帮助）提供关于命令及其参数的详细信息。</p>
+<div id="注册斜杠命令新方式-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
+    callback: (namedArgs, unnamedArgs) =&gt; {
         return Array(namedArgs.times ?? 5)
             .fill(unnamedArgs.toString())
             .join(isTrueBoolean(namedArgs.space.toString()) ? ' ' : '')
         ;
-    }，
-    aliases: ['example-command']，
-    returns: 'the repeated text'，
+    },
+    aliases: ['example-command'],
+    returns: 'the repeated text',
     namedArgumentList: [
-        SlashCommandNamedArgument.fromProps({ name: 'times'，
-            description: 'number of times to repeat the text'，
-            typeList: ARGUMENT_TYPE.NUMBER，
-            defaultValue: '5'，
-        })，
-        SlashCommandNamedArgument.fromProps({ name: 'space'，
-            description: 'whether to separate the texts with a space'，
-            typeList: ARGUMENT_TYPE.BOOLEAN，
-            defaultValue: 'off'，
-            enumList: ['on'， 'off']，
-        })，
-    ]，
+        SlashCommandNamedArgument.fromProps({ name: 'times',
+            description: 'number of times to repeat the text',
+            typeList: ARGUMENT_TYPE.NUMBER,
+            defaultValue: '5',
+        }),
+        SlashCommandNamedArgument.fromProps({ name: 'space',
+            description: 'whether to separate the texts with a space',
+            typeList: ARGUMENT_TYPE.BOOLEAN,
+            defaultValue: 'off',
+            enumList: ['on', 'off'],
+        }),
+    ],
     unnamedArgumentList: [
-        SlashCommandArgument.fromProps({ description: 'the text to repeat'，
-            typeList: ARGUMENT_TYPE.STRING，
-            isRequired: true，
-        })，
-    ]，
+        SlashCommandArgument.fromProps({ description: 'the text to repeat',
+            typeList: ARGUMENT_TYPE.STRING,
+            isRequired: true,
+        }),
+    ],
     helpString: `
         &lt;div&gt;
             Repeats the provided text a number of times.
@@ -675,36 +754,92 @@ SillyTavern.getContext().addLocaleData('de-de'， { 'Hello': 'Hallo' });</code><
                 &lt;/li&gt;
             &lt;/ul&gt;
         &lt;/div&gt;
-    `，
+    `,
 }));</code></pre>
 </doc-codeblock></div>
 <p>所有注册的命令都可以在 <a href="../../usage/st-script/">STscript</a> 中以任何可能的方式使用。</p>
 <h2 id="事件">事件</h2>
 <h3 id="监听事件">监听事件</h3>
-<p>使用 <code translate="no" v-pre>eventSource.on(eventType， eventHandler)</code> 来监听事件:</p>
+<p>使用 <code translate="no" v-pre>eventSource.on(eventType, eventHandler)</code> 来监听事件：</p>
 <div id="监听事件-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { eventSource， event_types } = SillyTavern.getContext();
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { eventSource, event_types } = SillyTavern.getContext();
 
-eventSource.on(event_types.MESSAGE_RECEIVED， handleIncomingMessage);
+eventSource.on(event_types.MESSAGE_RECEIVED, handleIncomingMessage);
 
 function handleIncomingMessage(data) {
-    // Handle message
+    // 处理消息
 }</code></pre>
 </doc-codeblock></div>
-<p>主要事件类型:</p>
+<p>主要事件类型如下：</p>
+<p><strong>应用生命周期：</strong></p>
 <ul>
-<li><code translate="no" v-pre>APP_READY</code>: 应用完全加载并准备使用。应用准备就绪后，每次附加新监听器时都会自动触发。</li>
-<li><code translate="no" v-pre>MESSAGE_RECEIVED</code>: LLM 消息已生成并记录到 <code translate="no" v-pre>chat</code> 对象中，但尚未在 UI 中渲染。</li>
-<li><code translate="no" v-pre>MESSAGE_SENT</code>: 消息由用户发送并记录到 <code translate="no" v-pre>chat</code> 对象中，但尚未在 UI 中渲染。</li>
-<li><code translate="no" v-pre>USER_MESSAGE_RENDERED</code>: 用户发送的消息在 UI 中渲染。</li>
-<li><code translate="no" v-pre>CHARACTER_MESSAGE_RENDERED</code>: 生成的 LLM 消息在 UI 中渲染。</li>
-<li><code translate="no" v-pre>CHAT_CHANGED</code>: 聊天已切换(例如，切换到另一个角色，或加载了另一个聊天)。</li>
-<li><code translate="no" v-pre>GENERATION_AFTER_COMMANDS</code>: 在处理 slash 命令后即将开始生成。</li>
-<li><code translate="no" v-pre>GENERATION_STOPPED</code>: 生成被用户停止。</li>
-<li><code translate="no" v-pre>GENERATION_ENDED</code>: 生成已完成或出错。</li>
-<li><code translate="no" v-pre>SETTINGS_UPDATED</code>: 应用程序设置已更新。</li>
+<li><code translate="no" v-pre>APP_INITIALIZED</code>：应用已初始化并接近就绪状态，但加载器仍可见。可以在此处进行 UI 修改。每次在应用初始化后附加新监听器时，此事件会自动触发。</li>
+<li><code translate="no" v-pre>APP_READY</code>：应用已完全加载并准备好使用。每次在应用就绪后附加新监听器时，此事件会自动触发。</li>
 </ul>
-<p>其余可以在<a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js">源代码</a>中找到。</p>
+<p><strong>消息：</strong></p>
+<ul>
+<li><code translate="no" v-pre>MESSAGE_SENT</code>：用户发送的消息已记录到 <code translate="no" v-pre>chat</code> 对象中，但尚未在 UI 中渲染。</li>
+<li><code translate="no" v-pre>MESSAGE_RECEIVED</code>：LLM 生成的消息已记录到 <code translate="no" v-pre>chat</code> 对象中，但尚未在 UI 中渲染。</li>
+<li><code translate="no" v-pre>USER_MESSAGE_RENDERED</code>：用户发送的消息已在 UI 中渲染。</li>
+<li><code translate="no" v-pre>CHARACTER_MESSAGE_RENDERED</code>：LLM 生成的消息已在 UI 中渲染。</li>
+<li><code translate="no" v-pre>MESSAGE_EDITED</code>：用户编辑了一条消息。</li>
+<li><code translate="no" v-pre>MESSAGE_DELETED</code>：一条消息被删除。</li>
+<li><code translate="no" v-pre>MESSAGE_SWIPED</code>：触发了消息滑动操作。</li>
+<li><code translate="no" v-pre>STREAM_TOKEN_RECEIVED</code>：流式生成过程中收到了新的 token。</li>
+</ul>
+<p><strong>生成：</strong></p>
+<ul>
+<li><code translate="no" v-pre>GENERATION_AFTER_COMMANDS</code>：处理斜杠命令后，生成即将开始。</li>
+<li><code translate="no" v-pre>GENERATION_STARTED</code>：生成已开始。</li>
+<li><code translate="no" v-pre>GENERATION_STOPPED</code>：生成被用户停止。</li>
+<li><code translate="no" v-pre>GENERATION_ENDED</code>：生成已完成或发生错误。</li>
+</ul>
+<p><strong>聊天：</strong></p>
+<ul>
+<li><code translate="no" v-pre>CHAT_CHANGED</code>：聊天已切换（例如，切换到另一个角色，或加载了另一个聊天）。</li>
+<li><code translate="no" v-pre>CHAT_CREATED</code>：新聊天已创建。</li>
+<li><code translate="no" v-pre>CHAT_DELETED</code>：聊天已删除。</li>
+</ul>
+<p><strong>角色：</strong></p>
+<ul>
+<li><code translate="no" v-pre>CHARACTER_EDITED</code>：角色数据已更改。</li>
+<li><code translate="no" v-pre>CHARACTER_DELETED</code>：角色已删除。</li>
+<li><code translate="no" v-pre>CHARACTER_DUPLICATED</code>：角色已复制。</li>
+</ul>
+<p><strong>人设：</strong></p>
+<ul>
+<li><code translate="no" v-pre>PERSONA_CHANGED</code>：当前活动人设已更改。</li>
+<li><code translate="no" v-pre>PERSONA_CREATED</code>：新人设已创建。</li>
+<li><code translate="no" v-pre>PERSONA_UPDATED</code>：人设已更新。</li>
+<li><code translate="no" v-pre>PERSONA_RENAMED</code>：人设已重命名。</li>
+<li><code translate="no" v-pre>PERSONA_DELETED</code>：人设已删除。</li>
+</ul>
+<p><strong>设置与预设：</strong></p>
+<ul>
+<li><code translate="no" v-pre>SETTINGS_UPDATED</code>：应用设置已更新。</li>
+<li><code translate="no" v-pre>PRESET_CHANGED</code>：当前活动预设已更改。</li>
+<li><code translate="no" v-pre>MAIN_API_CHANGED</code>：主要 API 类型已切换。</li>
+<li><code translate="no" v-pre>CHATCOMPLETION_SOURCE_CHANGED</code>：对话补全来源已更改。</li>
+<li><code translate="no" v-pre>CHATCOMPLETION_MODEL_CHANGED</code>：对话补全模型已更改。</li>
+<li><code translate="no" v-pre>CONNECTION_PROFILE_LOADED</code>：连接配置文件已加载。</li>
+</ul>
+<p><strong>世界信息：</strong></p>
+<ul>
+<li><code translate="no" v-pre>WORLDINFO_UPDATED</code>：世界信息数据已更新。</li>
+<li><code translate="no" v-pre>WORLDINFO_SETTINGS_UPDATED</code>：世界信息设置已更改。</li>
+</ul>
+<p><strong>工具调用：</strong></p>
+<ul>
+<li><code translate="no" v-pre>TOOL_CALLS_PERFORMED</code>：工具调用已执行。</li>
+<li><code translate="no" v-pre>TOOL_CALLS_RENDERED</code>：工具调用结果已在聊天中渲染。</li>
+</ul>
+<p><strong>文本转语音：</strong></p>
+<ul>
+<li><code translate="no" v-pre>TTS_JOB_STARTED</code>：TTS 任务已开始。</li>
+<li><code translate="no" v-pre>TTS_AUDIO_READY</code>：TTS 音频数据已准备好播放。</li>
+<li><code translate="no" v-pre>TTS_JOB_COMPLETE</code>：TTS 任务已完成。</li>
+</ul>
+<p>完整的事件类型列表可在<a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js">源代码</a>中找到。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -719,98 +854,227 @@ function handleIncomingMessage(data) {
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>事件数据</h5>
-<p>每个事件将数据传递给监听器的方式不统一。有些事件不发出任何数据;有些传递对象或原始值。请参阅发出事件的源代码以查看它传递的数据，或使用调试器检查。</p>
+<p>每个事件向监听器传递数据的方式并不统一。有些事件不发送任何数据，有些则传递对象或原始值。请参考事件触发处的源代码以了解其传递的数据，或使用调试器进行检查。</p>
         </div>
     </div>
 </div>
-<h3 id="发出事件">发出事件</h3>
-<p>您可以通过调用 <code translate="no" v-pre>eventSource.emit(eventType， ...eventData)</code> 从扩展产生任何应用程序事件，包括自定义事件:</p>
-<div id="发出事件-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="触发事件">触发事件</h3>
+<p>你可以从扩展中触发任何应用事件，包括自定义事件，只需调用 <code translate="no" v-pre>eventSource.emit(eventType, ...eventData)</code>：</p>
+<div id="触发事件-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { eventSource } = SillyTavern.getContext();
 
-// Can be a built-in event_types field or any string.
+// 可以是内置的 event_types 字段，也可以是任意字符串。
 const eventType = 'myCustomEvent';
 
-// Use `await` to ensure all event handlers complete before continuing execution.
-await eventSource.emit(eventType， { data: 'custom event data' });</code></pre>
+// 使用 `await` 确保所有事件处理程序在继续执行前完成。
+await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
 </doc-codeblock></div>
-<h2 id="prompt-interceptors">Prompt Interceptors</h2>
-<p>Prompt Interceptors 提供了一种方式，允许扩展在发出文本生成请求之前执行任何活动，例如修改聊天数据、添加注入或中止生成。</p>
-<p>来自不同扩展的 interceptors 按顺序运行。顺序由其各自 <code translate="no" v-pre>manifest.json</code> 文件中的 <code translate="no" v-pre>loading_order</code> 字段确定。<code translate="no" v-pre>loading_order</code> 值较低的扩展较早运行。如果未指定 <code translate="no" v-pre>loading_order</code>，则使用 <code translate="no" v-pre>display_name</code> 作为后备。如果两者都未指定，则顺序未定义。</p>
-<h3 id="注册-interceptor">注册 Interceptor</h3>
-<p>要定义 prompt interceptor，请在扩展的 <code translate="no" v-pre>manifest.json</code> 文件中添加 <code translate="no" v-pre>generate_interceptor</code> 字段。该值应该是 SillyTavern 将调用的全局函数的名称。</p>
-<div id="注册-interceptor-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h2 id="提示词拦截器">提示词拦截器</h2>
+<p>提示词拦截器为扩展提供了一种在发出文本生成请求之前执行各种操作的方式，例如修改聊天数据、添加注入内容或中止生成。</p>
+<p>来自不同扩展的拦截器按顺序依次运行。执行顺序由各自 <code translate="no" v-pre>manifest.json</code> 文件中的 <code translate="no" v-pre>loading_order</code> 字段决定。<code translate="no" v-pre>loading_order</code> 值越低，运行越早。若未指定 <code translate="no" v-pre>loading_order</code>，则使用 <code translate="no" v-pre>display_name</code> 作为备用。若两者都未指定，则顺序不确定。</p>
+<h3 id="注册拦截器">注册拦截器</h3>
+<p>要定义提示词拦截器，请在扩展的 <code translate="no" v-pre>manifest.json</code> 文件中添加 <code translate="no" v-pre>generate_interceptor</code> 字段。其值应为一个全局函数的名称，SillyTavern 将调用该函数。</p>
+<div id="注册拦截器-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
-    &quot;display_name&quot;: &quot;My Interceptor Extension&quot;，
-    &quot;loading_order&quot;: 10， // Affects execution order
-    &quot;generate_interceptor&quot;: &quot;myCustomInterceptorFunction&quot;，
-    // ... other manifest properties
+    &quot;display_name&quot;: &quot;My Interceptor Extension&quot;,
+    &quot;loading_order&quot;: 10, // 影响执行顺序
+    &quot;generate_interceptor&quot;: &quot;myCustomInterceptorFunction&quot;,
+    // ... 其他清单属性
 }</code></pre>
 </doc-codeblock></div>
-<h3 id="interceptor-函数">Interceptor 函数</h3>
-<p><code translate="no" v-pre>generate_interceptor</code> 函数是一个全局函数，将在非试运行的生成请求时调用。它必须在全局作用域中定义(例如，<code translate="no" v-pre>globalThis.myCustomInterceptorFunction = async function(...) { ... }</code>)，并且如果需要执行任何异步操作，可以返回 <code translate="no" v-pre>Promise</code>。</p>
-<p>interceptor 函数接收以下参数:</p>
+<h3 id="拦截器函数">拦截器函数</h3>
+<p><code translate="no" v-pre>generate_interceptor</code> 函数是一个全局函数，将在非干跑（dry run）的生成请求时被调用。它必须定义在全局作用域中（例如，<code translate="no" v-pre>globalThis.myCustomInterceptorFunction = async function(...) { ... }</code>），并且如果需要执行任何异步操作，可以返回一个 <code translate="no" v-pre>Promise</code>。</p>
+<p>拦截器函数接收以下参数：</p>
 <ul>
-<li><code translate="no" v-pre>chat</code>: 表示将用于构建 prompt 的聊天历史的消息对象数组。您可以直接修改此数组(例如，添加、删除或更改消息)。请注意，消息是可变的，因此您对数组所做的任何更改都将反映在实际聊天历史中。如果您希望更改是临时的，请使用 <code translate="no" v-pre>structuredClone</code> 创建消息对象的深层副本。</li>
-<li><code translate="no" v-pre>contextSize</code>: 表示为即将进行的生成计算的当前上下文大小(以 tokens 为单位)的数字。</li>
-<li><code translate="no" v-pre>abort</code>: 调用时将发出信号以阻止文本生成继续进行的函数。它接受一个布尔参数，如果为 <code translate="no" v-pre>true</code>，则阻止任何后续 interceptors 运行。</li>
-<li><code translate="no" v-pre>type</code>: 表示生成的类型或触发器的字符串(例如，<code translate="no" v-pre>'quiet'</code>、<code translate="no" v-pre>'regenerate'</code>、<code translate="no" v-pre>'impersonate'</code>、<code translate="no" v-pre>'swipe'</code> 等)。这有助于 interceptor 根据生成的启动方式有条件地应用逻辑。</li>
+<li><code translate="no" v-pre>chat</code>：一个消息对象数组，代表将用于提示词构建的聊天历史。你可以直接修改此数组（例如，添加、删除或修改消息）。请注意，消息是可变对象，因此你对数组所做的任何修改都会反映到实际的聊天历史中。如果你希望修改是临时的，请使用 <code translate="no" v-pre>structuredClone</code> 创建消息对象的深度副本。</li>
+<li><code translate="no" v-pre>contextSize</code>：一个数字，表示为即将到来的生成计算的当前上下文大小（以 token 为单位）。</li>
+<li><code translate="no" v-pre>abort</code>：一个函数，调用时将发出信号以阻止文本生成继续进行。它接受一个布尔参数，如果为 <code translate="no" v-pre>true</code>，则阻止任何后续拦截器运行。</li>
+<li><code translate="no" v-pre>type</code>：一个字符串，表示生成的类型或触发方式（例如，<code translate="no" v-pre>'quiet'</code>、<code translate="no" v-pre>'regenerate'</code>、<code translate="no" v-pre>'impersonate'</code>、<code translate="no" v-pre>'swipe'</code> 等）。这帮助拦截器根据生成的发起方式有条件地应用逻辑。</li>
 </ul>
-<p><strong>示例实现:</strong></p>
-<div id="interceptor-函数-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">globalThis.myCustomInterceptorFunction = async function(chat， contextSize， abort， type) {
-    // Example: Add a system note before the last user message
+<p><strong>实现示例：</strong></p>
+<div id="拦截器函数-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">globalThis.myCustomInterceptorFunction = async function(chat, contextSize, abort, type) {
+    // 示例：在最后一条用户消息之前添加一条系统说明
     const systemNote = {
-        is_user: false，
-        name: &quot;System Note&quot;，
-        send_date: Date.now()，
+        is_user: false,
+        name: &quot;System Note&quot;,
+        send_date: Date.now(),
         mes: &quot;This was added by my extension!&quot;
     };
-    // Insert before the last message
-    chat.splice(chat.length - 1， 0， systemNote);
+    // 在最后一条消息之前插入
+    chat.splice(chat.length - 1, 0, systemNote);
 }</code></pre>
 </doc-codeblock></div>
+<h2 id="生命周期钩子">生命周期钩子</h2>
+<p>扩展可以在 <code translate="no" v-pre>manifest.json</code> 中定义生命周期钩子，这些钩子在扩展生命周期的特定时间点被调用。每个钩子映射到扩展 JS 入口点模块（<code translate="no" v-pre>js</code> 字段指定的文件）中<strong>导出的函数</strong>。</p>
+<p>所有钩子都是可选的。钩子函数可以返回一个 <code translate="no" v-pre>Promise</code>，该 <code translate="no" v-pre>Promise</code> 将被等待（有 5 秒超时）。如果钩子超时，将记录警告并继续执行。钩子中的错误会被捕获并记录，不会阻塞操作。</p>
+<h3 id="可用钩子">可用钩子</h3>
+<retype-table copy-text="| 钩子 | 调用时机 |
+|------|---------|
+| `activate` | 页面加载期间扩展成功激活时 |
+| `install` | 扩展安装完成且设置加载后 |
+| `update` | 扩展成功更新后（在重载通知提示之前） |
+| `delete` | 扩展从服务器删除之前 |
+| `enable` | 扩展启用且设置保存之前 |
+| `disable` | 扩展禁用且设置保存之前 |
+| `clean` | 用户在扩展管理器中点击&quot;清理扩展数据&quot;按钮时，或在删除扩展时选择清理选项时 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>钩子</th>
+<th>调用时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>activate</code></td>
+<td>页面加载期间扩展成功激活时</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>install</code></td>
+<td>扩展安装完成且设置加载后</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>update</code></td>
+<td>扩展成功更新后（在重载通知提示之前）</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>delete</code></td>
+<td>扩展从服务器删除之前</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>enable</code></td>
+<td>扩展启用且设置保存之前</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>disable</code></td>
+<td>扩展禁用且设置保存之前</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>clean</code></td>
+<td>用户在扩展管理器中点击&quot;清理扩展数据&quot;按钮时，或在删除扩展时选择清理选项时</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="清单文件配置">清单文件配置</h3>
+<p>在 <code translate="no" v-pre>manifest.json</code> 中添加 <code translate="no" v-pre>hooks</code> 对象，将钩子名称映射到导出的函数名称：</p>
+<div id="清单文件配置-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+    &quot;display_name&quot;: &quot;My Extension&quot;,
+    &quot;js&quot;: &quot;index.js&quot;,
+    // 其他字段...
+    &quot;hooks&quot;: {
+        &quot;install&quot;: &quot;onInstall&quot;,
+        &quot;update&quot;: &quot;onUpdate&quot;,
+        &quot;delete&quot;: &quot;onDelete&quot;,
+        &quot;enable&quot;: &quot;onEnable&quot;,
+        &quot;disable&quot;: &quot;onDisable&quot;,
+        &quot;activate&quot;: &quot;onActivate&quot;,
+        &quot;clean&quot;: &quot;onClean&quot;
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>名称可以自由选择，只要是有效的 JS 函数名即可。
+可以配置任意数量的钩子，不必填写并实现所有钩子。</p>
+<h3 id="实现">实现</h3>
+<p>从主 JS 入口点导出钩子函数。每个函数不接受参数，可以选择性地返回 <code translate="no" v-pre>Promise</code>：</p>
+<div id="实现-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// index.js - 你的扩展入口点
+
+export async function onInstall() {
+    console.log('Extension installed! Performing first-time setup...');
+    // 例如：初始化默认数据、创建存储条目
+}
+
+export async function onActivate() {
+    console.log('Extension activated during page load');
+}
+
+export async function onUpdate() {
+    console.log('Extension updated! Running migrations...');
+    // 例如：将数据从旧格式迁移到新格式
+}
+
+export async function onDelete() {
+    console.log('Extension about to be deleted. Cleaning up...');
+    // 例如：删除存储的数据、清理 localStorage
+    const { localforage } = SillyTavern.libs;
+    await localforage.removeItem('my_extension_data');
+}
+
+export function onEnable() {
+    console.log('Extension enabled');
+}
+
+export function onDisable() {
+    console.log('Extension disabled');
+}
+
+export async function onClean() {
+    console.log('Extension data cleaned');
+    // 例如：在此处清理扩展数据
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>钩子函数有 <strong>5 秒超时</strong>限制。如果钩子执行时间超过此限制，将继续执行并记录警告。请保持钩子逻辑快速轻量。</p>
+        </div>
+    </div>
+</div>
 <h2 id="生成文本">生成文本</h2>
-<p>SillyTavern 提供了几个函数，可以使用当前选择的 LLM API 在不同上下文中生成文本。这些函数允许您在聊天上下文中生成文本、无需任何上下文的原始生成，或使用结构化输出。</p>
+<p>SillyTavern 提供了几个函数，可以使用当前选定的 LLM API 在不同上下文中生成文本。这些函数允许你在聊天上下文中生成文本、进行不带任何上下文的原始生成，或生成结构化输出。</p>
 <h3 id="在聊天上下文中">在聊天上下文中</h3>
-<p><code translate="no" v-pre>generateQuietPrompt()</code> 函数用于在后台(输出不在 UI 中渲染)在聊天上下文中使用添加的&quot;quiet&quot; prompt(历史后指令)生成文本。这对于在不中断用户体验的同时生成文本很有用，同时还保持相关的聊天和角色数据完整，例如生成摘要或图像 prompt。</p>
+<p><code translate="no" v-pre>generateQuietPrompt()</code> 函数用于在聊天上下文中，以添加&quot;静默&quot;提示词（后置历史指令）的方式在后台生成文本（输出不会在 UI 中渲染）。这对于在不打扰用户体验的同时保留相关聊天和角色数据（例如生成摘要或图像提示词）非常有用。</p>
 <div id="在聊天上下文中-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { generateQuietPrompt } = SillyTavern.getContext();
 
 const quietPrompt = 'Generate a summary of the chat history.';
 
 const result = await generateQuietPrompt({
-    quietPrompt，
+    quietPrompt,
 });</code></pre>
 </doc-codeblock></div>
 <h3 id="原始生成">原始生成</h3>
-<p><code translate="no" v-pre>generateRaw()</code> 函数用于在没有任何聊天上下文的情况下生成文本。当您想要完全控制 prompt 构建过程时，它很有用。</p>
-<p>它接受 <code translate="no" v-pre>prompt</code> 作为 Text Completion 字符串或 Chat Completion 对象数组，根据所选 API 类型以适当的格式构造请求，例如，在 chat/text 模式之间转换、应用 instruct 格式等。您还可以将额外的 <code translate="no" v-pre>systemPrompt</code> 和 <code translate="no" v-pre>prefill</code> 传递给函数，以更好地控制生成过程。</p>
+<p><code translate="no" v-pre>generateRaw()</code> 函数用于不带任何聊天上下文地生成文本。当你想要完全控制提示词构建过程时，它非常有用。</p>
+<p>它接受一个 <code translate="no" v-pre>prompt</code>，作为 Text Completion 字符串或 Chat Completion 对象数组，并根据所选 API 类型（例如在聊天/文本模式之间转换、应用指令格式等）以适当的格式构建请求。你还可以向函数传递额外的 <code translate="no" v-pre>systemPrompt</code> 和 <code translate="no" v-pre>prefill</code>，以更精细地控制生成过程。</p>
 <div id="原始生成-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { generateRaw } = SillyTavern.getContext();
 
 const systemPrompt = 'You are a helpful assistant.';
 const prompt = 'Generate a story about a brave knight.';
-const prefill = 'Once upon a time，';
+const prefill = 'Once upon a time,';
 
 /*
-In Chat Completion mode， will produce a prompt like this:
+在 Chat Completion 模式下，将生成如下提示词：
 [
-  {role: 'system'， content: 'You are a helpful assistant.'}，
-  {role: 'user'， content: 'Generate a story about a brave knight.'}，
-  {role: 'assistant'， content: 'Once upon a time，'}
+  {role: 'system', content: 'You are a helpful assistant.'},
+  {role: 'user', content: 'Generate a story about a brave knight.'},
+  {role: 'assistant', content: 'Once upon a time,'}
 ]
 */
 
 /*
-In Text Completion mode (no instruct)， will produce a prompt like this:
-&quot;You are a helpful assistant.\nGenerate a story about a brave knight.\nOnce upon a time，&quot;
+在 Text Completion 模式下（无指令格式），将生成如下提示词：
+&quot;You are a helpful assistant.\nGenerate a story about a brave knight.\nOnce upon a time,&quot;
 */
 
 const result = await generateRaw({
-    systemPrompt，
-    prompt，
-    prefill，
+    systemPrompt,
+    prompt,
+    prefill,
 });</code></pre>
 </doc-codeblock></div>
 <h3 id="结构化输出">结构化输出</h3>
@@ -827,12 +1091,12 @@ const result = await generateRaw({
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>目前仅 Chat Completion API 支持。可用性因所选源和模型而异。如果所选模型不支持结构化输出，生成将失败或返回空对象(<code translate="no" v-pre>'{}'</code>)。请查看您使用的特定 API 的文档以查看是否支持结构化输出。</p>
+<p>目前仅支持 Chat Completion API。可用性取决于所选的来源和模型。如果所选模型不支持结构化输出，生成将失败或返回空对象（<code translate="no" v-pre>'{}'</code>）。请查阅你所使用的具体 API 的文档，以了解是否支持结构化输出。</p>
         </div>
     </div>
 </div>
-<p>您可以使用结构化输出功能来确保模型生成符合提供的 <a href="https://json-schema.org/learn">JSON Schema</a> 的有效 JSON 对象。这对于需要结构化数据的扩展很有用，例如状态跟踪、数据分类等。</p>
-<p>要使用结构化输出，您必须将 JSON schema 对象传递给 <code translate="no" v-pre>generateRaw()</code> 或 <code translate="no" v-pre>generateQuietPrompt()</code>。然后，模型将生成与 schema 匹配的响应，并将其作为字符串化的 JSON 对象返回。</p>
+<p>你可以使用结构化输出功能，确保模型生成符合所提供 <a href="https://json-schema.org/learn">JSON Schema</a> 的有效 JSON 对象。这对于需要结构化数据的扩展（如状态追踪、数据分类等）非常有用。</p>
+<p>要使用结构化输出，必须向 <code translate="no" v-pre>generateRaw()</code> 或 <code translate="no" v-pre>generateQuietPrompt()</code> 传递一个 JSON schema 对象。模型将生成符合该 schema 的响应，并以序列化 JSON 对象字符串的形式返回。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -845,85 +1109,591 @@ const result = await generateRaw({
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>输出不会根据 schema 进行验证，您必须自己处理生成输出的解析和验证。如果模型无法生成有效的 JSON 对象，函数将返回空对象(<code translate="no" v-pre>'{}'</code>)。</p>
-<p><a href="https://zod.dev/json-schema">Zod</a> 是一个流行的库，用于生成和验证 JSON schemas。这里不会涉及其使用。</p>
+<p>输出不会根据 schema 进行验证，你必须自己处理生成输出的解析和验证。如果模型未能生成有效的 JSON 对象，函数将返回一个空对象（<code translate="no" v-pre>'{}'</code>）。</p>
+<p><a href="https://zod.dev/json-schema">Zod</a> 是一个用于生成和验证 JSON schema 的常用库，此处不作介绍。</p>
         </div>
     </div>
 </div>
 <div id="结构化输出-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { generateRaw， generateQuietPrompt } = SillyTavern.getContext();
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { generateRaw, generateQuietPrompt } = SillyTavern.getContext();
 
-// Define a JSON schema for the expected output
+// 为预期输出定义 JSON schema
 const jsonSchema = {
-    // Required: a name for the schema
-    name: 'StoryStateModel'，
-    // Optional: a description of the schema
-    description: 'A schema for a story state with location， plans， and memories.'，
-    // Optional:  the schema will be used in strict mode， meaning that only the fields defined in the schema will be allowed
-    strict: true，
-    // Required: a definition of the schema
+    // 必填：schema 的名称
+    name: 'StoryStateModel',
+    // 可选：schema 的描述
+    description: 'A schema for a story state with location, plans, and memories.',
+    // 可选：schema 将以严格模式使用，意味着只允许 schema 中定义的字段
+    strict: true,
+    // 必填：schema 的定义
     value: {
-        '$schema': 'http://json-schema.org/draft-04/schema#'，
-        'type': 'object'，
+        '$schema': 'http://json-schema.org/draft-04/schema#',
+        'type': 'object',
         'properties': {
             'location': {
                 'type': 'string'
-            }，
+            },
             'plans': {
                 'type': 'string'
-            }，
+            },
             'memories': {
                 'type': 'string'
             }
-        }，
+        },
         'required': [
-            'location'，
-            'plans'，
+            'location',
+            'plans',
             'memories'
-        ]，
-    }，
+        ],
+    },
 };
 
-const prompt = 'Generate a story state with location， plans， and memories. Output as a JSON object.';
+const prompt = 'Generate a story state with location, plans, and memories. Output as a JSON object.';
 
 const rawResult = await generateRaw({
-    prompt，
-    jsonSchema，
+    prompt,
+    jsonSchema,
 });
 
 const quietResult = await generateQuietPrompt({
-    quietPrompt: prompt，
-    jsonSchema，
+    quietPrompt: prompt,
+    jsonSchema,
 });</code></pre>
 </doc-codeblock></div>
 <h2 id="注册自定义宏">注册自定义宏</h2>
-<p>您可以注册自定义宏，这些宏可以在支持宏替换的任何地方使用，例如在角色卡片字段、STscript 命令、prompt 模板等中。</p>
-<p>要注册宏，请使用 <code translate="no" v-pre>SillyTavern.getContext()</code> 对象中的 <code translate="no" v-pre>registerMacro()</code> 函数。该函数接受一个宏名称(应该是唯一的字符串)和一个字符串或返回字符串的函数。该函数将使用唯一的 <code translate="no" v-pre>nonce</code> 字符串调用，该字符串在每次 <code translate="no" v-pre>substituteParams</code> 调用之间都会不同。</p>
-<div id="注册自定义宏-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerMacro } = SillyTavern.getContext();
+<p>你可以注册自定义宏，在任何支持宏替换的地方使用，例如角色卡字段、STscript 命令、提示词模板等。</p>
+<h3 id="新宏系统">新宏系统</h3>
+<p>注册宏的推荐方式是通过 <code translate="no" v-pre>SillyTavern.getContext()</code> 提供的 <code translate="no" v-pre>macros.register()</code> 函数。该系统支持参数、分类、描述和丰富的文档元数据。</p>
+<div id="新宏系统-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { macros } = SillyTavern.getContext();
 
-// Simple string macro
-registerMacro('fizz'， 'buzz');
-// Function macro
-registerMacro('tomorrow'， () =&gt; {
-    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+// 带处理函数的简单宏
+macros.register('tomorrow', {
+    description: 'Returns tomorrow\'s date',
+    handler: () =&gt; {
+        return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+    },
+});
+
+// 带无名参数和分类的宏
+macros.register('greet', {
+    description: 'Generates a greeting for the given name',
+    category: macros.category.UTILITY,
+    unnamedArgs: [
+        { name: 'name', description: 'The name to greet' },
+    ],
+    handler: ({ unnamedArgs }) =&gt; {
+        const [name] = unnamedArgs;
+        return `Hello, ${name}!`;
+    },
 });</code></pre>
 </doc-codeblock></div>
-<p>当不再需要自定义宏时，使用 <code translate="no" v-pre>unregisterMacro()</code> 函数删除它:</p>
-<div id="注册自定义宏-code-2" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { unregisterMacro } = SillyTavern.getContext();
+<p><code translate="no" v-pre>handler</code> 函数接收一个 <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/macros/engine/MacroRegistry.js">MacroExecutionContext</a> 对象，包含：</p>
+<ul>
+<li><code translate="no" v-pre>args</code> - 传递给宏的所有无名参数。</li>
+<li><code translate="no" v-pre>unnamedArgs</code> - 与已定义参数列表匹配的位置参数。</li>
+<li><code translate="no" v-pre>list</code> - 列表参数（在无名参数之后），如果未启用列表则为 <code translate="no" v-pre>null</code>。</li>
+<li><code translate="no" v-pre>env</code> - 宏环境，可访问角色数据、聊天状态等。</li>
+<li><code translate="no" v-pre>resolve(text)</code> - 用于解析文本中嵌套宏的函数（当 <code translate="no" v-pre>delayArgResolution</code> 为 <code translate="no" v-pre>true</code> 时）。</li>
+</ul>
+<p>以及更多。</p>
+<p>处理函数同步运行，因此不能返回 <code translate="no" v-pre>Promise</code> 或同步调用异步操作。</p>
+<p>取消注册宏：</p>
+<div id="新宏系统-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { macros } = SillyTavern.getContext();
 
-// Unregister the 'fizz' macro
+macros.registry.unregisterMacro('greet');</code></pre>
+</doc-codeblock></div>
+<p>你还可以为已有宏注册别名：</p>
+<div id="新宏系统-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { macros } = SillyTavern.getContext();
+
+macros.registerAlias('greet', 'hello', { visible: true });</code></pre>
+</doc-codeblock></div>
+<h3 id="旧版宏系统已弃用">旧版宏系统（已弃用）</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>registerMacro()</code> 和 <code translate="no" v-pre>unregisterMacro()</code> 已<strong>弃用</strong>。请改用 <code translate="no" v-pre>macros.register()</code> 和 <code translate="no" v-pre>macros.registry.unregisterMacro()</code>。</p>
+        </div>
+    </div>
+</div>
+<p>旧版 API 仍可用以保持向后兼容性，但将在未来版本中移除：</p>
+<div id="旧版宏系统已弃用-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerMacro, unregisterMacro } = SillyTavern.getContext();
+
+// 简单字符串宏
+registerMacro('fizz', 'buzz');
+// 函数宏（必须是同步的）
+registerMacro('tomorrow', () =&gt; {
+    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+});
+
+// 取消注册
 unregisterMacro('fizz');</code></pre>
 </doc-codeblock></div>
-<p><strong>有关自定义宏的重要详细信息和已知限制:</strong></p>
+<h2 id="消息格式化钩子">消息格式化钩子</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Staging 功能</h5>
+<p>此功能目前仅在 SillyTavern 的 <code translate="no" v-pre>staging</code> 分支上可用，尚未包含在最新版本中。</p>
+        </div>
+    </div>
+</div>
+<p>扩展可以钩入消息格式化流水线，在消息文本到达 DOM 之前对其进行转换。这对于添加注解（ruby 标签、工具提示）、高亮显示或自定义文本转换非常有用。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>钩子同步运行且<strong>必须返回字符串</strong>。异步函数和非字符串返回值会在注册时抛出 <code translate="no" v-pre>TypeError</code>，或在运行时被静默忽略并输出控制台警告。不要在这些钩子中执行耗时操作——它们在每次消息渲染时都会运行。</p>
+        </div>
+    </div>
+</div>
+<h3 id="流水线阶段">流水线阶段</h3>
+<p>钩子可以注册到三个流水线阶段。所有阶段都在 DOMPurify 净化<strong>之前</strong>运行，因此输出始终是安全的：</p>
+<retype-table copy-text="| 阶段 | 运行时机 | 文本格式 |
+|------|---------|---------|
+| `beforeRegex` | 剥离提示词偏置后、自定义正则规则前 | 纯文本 |
+| `afterRegex` | 自定义正则规则后、Markdown 转换前 | 纯文本 |
+| `afterMarkdown` | Markdown 转 HTML（showdown）后、DOMPurify 前 | HTML 字符串 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>阶段</th>
+<th>运行时机</th>
+<th>文本格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>beforeRegex</code></td>
+<td>剥离提示词偏置后、自定义正则规则前</td>
+<td>纯文本</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>afterRegex</code></td>
+<td>自定义正则规则后、Markdown 转换前</td>
+<td>纯文本</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>afterMarkdown</code></td>
+<td>Markdown 转 HTML（showdown）后、DOMPurify 前</td>
+<td>HTML 字符串</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p><code translate="no" v-pre>afterMarkdown</code> 阶段是默认选项，也是扩展注解渲染 HTML 时最常用的插入点。</p>
+<h3 id="注册钩子">注册钩子</h3>
+<p>从 <code translate="no" v-pre>getContext()</code> 中访问 <code translate="no" v-pre>messageFormatter</code>：</p>
+<div id="注册钩子-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { messageFormatter } = SillyTavern.getContext();
+
+// 简单钩子 - 转换消息文本
+messageFormatter.addHook((mes, ctx) =&gt; {
+    // 跳过用户消息
+    if (ctx.isUser) return mes;
+
+    // 为日文文本添加振假名
+    return addFurigana(mes);
+});
+
+// 带有明确阶段和顺序的钩子
+messageFormatter.addHook((mes, ctx) =&gt; {
+    // 在 Markdown 转换后、净化前进行转换
+    return mes.replace(/\*\*(.+?)\*\*/g, '&lt;mark&gt;$1&lt;/mark&gt;');
+}, {
+    stage: messageFormatter.stage.AFTER_MARKDOWN,
+    order: messageFormatter.order.EARLY,
+});</code></pre>
+</doc-codeblock></div>
+<h3 id="钩子上下文">钩子上下文</h3>
+<p>钩子接收一个不可变的上下文对象，包含消息元数据：</p>
+<retype-table copy-text="| 属性 | 类型 | 描述 |
+|------|------|------|
+| `characterName` | `string` | 与消息关联的角色名称 |
+| `isSystem` | `boolean` | 消息是否为系统消息 |
+| `isUser` | `boolean` | 消息是否由用户发送 |
+| `messageId` | `number` | 消息在聊天数组中的索引，瞬态消息（流式预览）为 `-1` |
+| `isReasoning` | `boolean` | 消息是否为推理/思考输出 |
+| `stage` | `string` | 当前正在执行的流水线阶段 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>characterName</code></td>
+<td><code translate="no" v-pre>string</code></td>
+<td>与消息关联的角色名称</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>isSystem</code></td>
+<td><code translate="no" v-pre>boolean</code></td>
+<td>消息是否为系统消息</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>isUser</code></td>
+<td><code translate="no" v-pre>boolean</code></td>
+<td>消息是否由用户发送</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>messageId</code></td>
+<td><code translate="no" v-pre>number</code></td>
+<td>消息在聊天数组中的索引，瞬态消息（流式预览）为 <code translate="no" v-pre>-1</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>isReasoning</code></td>
+<td><code translate="no" v-pre>boolean</code></td>
+<td>消息是否为推理/思考输出</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>stage</code></td>
+<td><code translate="no" v-pre>string</code></td>
+<td>当前正在执行的流水线阶段</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>上下文对象通过 <code translate="no" v-pre>Object.freeze()</code> 冻结——尝试修改它将不会生效。</p>
+<h3 id="钩子排序">钩子排序</h3>
+<p>同一阶段内的钩子按升序运行。使用 <code translate="no" v-pre>order</code> 选项控制执行顺序：</p>
+<div id="钩子排序-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { hook_order } = messageFormatter;
+
+// 预定义常量
+hook_order.EARLIEST;  // 0
+hook_order.EARLY;     // 10
+hook_order.NORMAL;    // 50（默认值）
+hook_order.LATE;      // 90
+hook_order.LATEST;    // 100
+
+// 自定义数值
+messageFormatter.addHook(myHook, { order: 25 });</code></pre>
+</doc-codeblock></div>
+<p>数值越小，越先运行。当多个扩展转换同一文本时，这非常有用——例如，一个扩展可能先提取数据，另一个扩展再对其进行格式化。</p>
+<h3 id="错误处理">错误处理</h3>
+<p>钩子执行包裹在 try/catch 中。如果钩子抛出异常，该钩子会被跳过并记录控制台错误——流水线继续执行剩余的钩子。</p>
+<p>如果钩子返回非字符串值（包括 <code translate="no" v-pre>undefined</code> 或 <code translate="no" v-pre>Promise</code>），将发出控制台警告并忽略返回值。流水线继续使用之前的文本继续执行。</p>
+<h3 id="完整流水线顺序">完整流水线顺序</h3>
+<p>以下是完整的消息格式化流水线顺序供参考：</p>
 <ol>
-<li>目前仅支持简单的字符串替换宏。我们正在努力在未来添加对更复杂宏的支持。</li>
-<li>使用函数提供值的宏<em>必须</em>是同步的。返回 <code translate="no" v-pre>Promise</code> 将不起作用。</li>
-<li>注册时不需要用双花括号(<code translate="no" v-pre>{{ }}</code>)包装宏名称。SillyTavern 会为您执行此操作。</li>
-<li>由于宏是纯正则表达式替换，注册大量宏会导致性能问题，因此请谨慎使用。</li>
+<li>提示词偏置剥离（仅消息 0）</li>
+<li>注释/隐藏消息规范化</li>
+<li><code translate="no" v-pre>beforeRegex</code> 扩展钩子</li>
+<li>自定义正则规则（<code translate="no" v-pre>getRegexedString</code>）</li>
+<li><code translate="no" v-pre>afterRegex</code> 扩展钩子</li>
+<li>Markdown 自动修复（<code translate="no" v-pre>fixMarkdown</code>）</li>
+<li>HTML 标签编码（<code translate="no" v-pre>encode_tags</code>）</li>
+<li>Showdown Markdown → HTML 转换</li>
+<li><code translate="no" v-pre>afterMarkdown</code> 扩展钩子</li>
+<li>名称前缀剥离（<code translate="no" v-pre>allow_name2_display</code>）</li>
+<li>DOMPurify 净化</li>
 </ol>
-<h2 id="执行-extras-请求">执行 Extras 请求</h2>
+<p>所有扩展钩子（步骤 3、5、9）均在 DOMPurify <strong>之前</strong>运行，因此其输出始终会被净化。</p>
+<h2 id="函数工具调用">函数工具调用</h2>
+<p>扩展可以注册自定义函数工具，LLM 可以在聊天补全期间调用这些工具。这让你的扩展能够对来自模型的结构化数据作出响应——例如，查询 API、执行计算或触发扩展功能。</p>
+<p>完整指南（包括前提条件、支持的 API、注册字段和技巧）请参阅专门的<a href="../function-calling/">函数调用</a>页面。</p>
+<p><strong>快速示例：</strong></p>
+<div id="函数工具调用-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerFunctionTool } = SillyTavern.getContext();
+
+registerFunctionTool({
+    name: 'get_weather',
+    displayName: 'Get Weather',
+    description: 'Get the current weather for a given location',
+    parameters: {
+        $schema: 'http://json-schema.org/draft-04/schema#',
+        type: 'object',
+        properties: {
+            location: { type: 'string', description: 'City name' },
+        },
+        required: ['location'],
+    },
+    action: async ({ location }) =&gt; {
+        const data = await fetchWeatherData(location);
+        return JSON.stringify(data);
+    },
+});</code></pre>
+</doc-codeblock></div>
+<h2 id="操作加载器">操作加载器</h2>
+<p>操作加载器为长时间运行的操作提供加载覆盖层和通知提示系统。它替代了已弃用的 <code translate="no" v-pre>showLoader()</code> / <code translate="no" v-pre>hideLoader()</code> 函数。</p>
+<p>通过 <code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>loader</code> 访问它：</p>
+<div id="操作加载器-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { loader } = SillyTavern.getContext();
+
+// 基本阻塞加载器，带有可停止的通知提示
+const handle = loader.show({ message: 'Processing data...' });
+try {
+    const result = await someExpensiveOperation();
+} finally {
+    await handle.hide();
+}</code></pre>
+</doc-codeblock></div>
+<h3 id="选项">选项</h3>
+<retype-table copy-text="| 选项 | 默认值 | 描述 |
+|------|--------|------|
+| `blocking` | `true` | 显示阻止交互的全屏覆盖层 |
+| `message` | `'Generating...'` | 通知提示中显示的消息 |
+| `title` | `''` | 通知提示的可选标题 |
+| `toastMode` | `'stoppable'` | `'stoppable'`（带停止按钮）、`'static'`（无按钮）或 `'none'`（无通知提示） |
+| `stopTooltip` | `'Stop'` | 停止按钮的工具提示文本 |
+| `onStop` | `null` | 自定义停止处理函数，默认为 `stopGeneration()` |
+| `onHide` | `null` | 加载器隐藏时（非停止时）调用 |
+| `overlayContent` | `null` | 替换默认旋转器的自定义 HTML 元素或字符串 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>blocking</code></td>
+<td><code translate="no" v-pre>true</code></td>
+<td>显示阻止交互的全屏覆盖层</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>message</code></td>
+<td><code translate="no" v-pre>'Generating...'</code></td>
+<td>通知提示中显示的消息</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>title</code></td>
+<td><code translate="no" v-pre>''</code></td>
+<td>通知提示的可选标题</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>toastMode</code></td>
+<td><code translate="no" v-pre>'stoppable'</code></td>
+<td><code translate="no" v-pre>'stoppable'</code>（带停止按钮）、<code translate="no" v-pre>'static'</code>（无按钮）或 <code translate="no" v-pre>'none'</code>（无通知提示）</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>stopTooltip</code></td>
+<td><code translate="no" v-pre>'Stop'</code></td>
+<td>停止按钮的工具提示文本</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>onStop</code></td>
+<td><code translate="no" v-pre>null</code></td>
+<td>自定义停止处理函数，默认为 <code translate="no" v-pre>stopGeneration()</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>onHide</code></td>
+<td><code translate="no" v-pre>null</code></td>
+<td>加载器隐藏时（非停止时）调用</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>overlayContent</code></td>
+<td><code translate="no" v-pre>null</code></td>
+<td>替换默认旋转器的自定义 HTML 元素或字符串</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="叠加加载器">叠加加载器</h3>
+<p>多个加载器可以同时激活。只要至少有一个阻塞加载器处于活动状态，覆盖层就会保持可见：</p>
+<div id="叠加加载器-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { loader } = SillyTavern.getContext();
+
+const loader1 = loader.show({ message: 'Task 1...' });
+const loader2 = loader.show({ message: 'Task 2...' });
+await loader1.hide(); // 覆盖层保持——loader2 仍在活动
+await loader2.hide(); // 现在覆盖层隐藏</code></pre>
+</doc-codeblock></div>
+<h3 id="非阻塞加载器">非阻塞加载器</h3>
+<p>对于不应阻塞 UI 的后台任务：</p>
+<div id="非阻塞加载器-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { loader } = SillyTavern.getContext();
+
+const handle = loader.show({
+    blocking: false,
+    message: 'Downloading in background...',
+    onStop: () =&gt; abortDownload(),
+});</code></pre>
+</doc-codeblock></div>
+<h2 id="弹出窗口与用户反馈">弹出窗口与用户反馈</h2>
+<h3 id="弹出窗口辅助函数">弹出窗口辅助函数</h3>
+<p>SillyTavern 通过 <code translate="no" v-pre>getContext()</code> 中的 <code translate="no" v-pre>Popup.show</code> 提供便捷的弹出窗口辅助函数：</p>
+<div id="弹出窗口辅助函数-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { Popup } = SillyTavern.getContext();
+
+// 确认对话框——返回 POPUP_RESULT.AFFIRMATIVE 或 POPUP_RESULT.NEGATIVE
+const confirmed = await Popup.show.confirm('Confirm Action', 'Are you sure you want to proceed?');
+
+// 文本输入对话框——返回输入的字符串，取消则返回 null
+const userInput = await Popup.show.input('Enter Name', 'Please provide a name:', 'default value');
+
+// 信息显示——返回点击的按钮结果
+await Popup.show.text('Info', 'Operation completed successfully.');</code></pre>
+</doc-codeblock></div>
+<h3 id="自定义弹出窗口">自定义弹出窗口</h3>
+<p>对于更复杂的弹出窗口，可以直接实例化 <code translate="no" v-pre>Popup</code> 并传入完整选项：</p>
+<div id="自定义弹出窗口-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { Popup, POPUP_TYPE, POPUP_RESULT } = SillyTavern.getContext();
+
+const popup = new Popup(
+    '&lt;div&gt;Custom HTML content here&lt;/div&gt;',
+    POPUP_TYPE.TEXT,
+    '',
+    {
+        wide: true,              // 宽屏显示模式
+        okButton: 'Save',       // 自定义确认按钮文本
+        cancelButton: 'Discard', // 自定义取消按钮文本
+        customButtons: [
+            {
+                text: 'Export',
+                icon: 'fa-download',
+                result: POPUP_RESULT.CUSTOM1,
+            },
+        ],
+        customInputs: [
+            {
+                id: 'my_checkbox',
+                label: 'Enable feature',
+                type: 'checkbox',
+                defaultState: false,
+            },
+        ],
+        allowVerticalScrolling: true,
+    }
+);
+
+const result = await popup.show();
+
+if (result === POPUP_RESULT.AFFIRMATIVE) {
+    // 点击了确认
+} else if (result === POPUP_RESULT.CUSTOM1) {
+    // 点击了导出按钮
+}
+
+// 读取自定义输入值
+const checkboxValue = popup.inputResults?.get('my_checkbox');</code></pre>
+</doc-codeblock></div>
+<h3 id="弹出窗口类型">弹出窗口类型</h3>
+<retype-table copy-text="| 类型 | 描述 |
+|------|------|
+| `POPUP_TYPE.TEXT` | 带按钮的通用内容弹出窗口 |
+| `POPUP_TYPE.CONFIRM` | 是/否确认对话框 |
+| `POPUP_TYPE.INPUT` | 带文本输入框的弹出窗口 |
+| `POPUP_TYPE.DISPLAY` | 仅含内容和关闭按钮的弹出窗口 |
+| `POPUP_TYPE.CROP` | 图片裁剪弹出窗口 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.TEXT</code></td>
+<td>带按钮的通用内容弹出窗口</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.CONFIRM</code></td>
+<td>是/否确认对话框</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.INPUT</code></td>
+<td>带文本输入框的弹出窗口</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.DISPLAY</code></td>
+<td>仅含内容和关闭按钮的弹出窗口</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.CROP</code></td>
+<td>图片裁剪弹出窗口</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="通知提示">通知提示</h3>
+<p>对于轻量级反馈，使用全局可用的 <code translate="no" v-pre>toastr</code>：</p>
+<div id="通知提示-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">toastr.success('Data saved successfully');
+toastr.error('Failed to connect to API');
+toastr.warning('This feature is experimental');
+toastr.info('Processing...');</code></pre>
+</doc-codeblock></div>
+<h2 id="数据库抓取器">数据库抓取器</h2>
+<p>扩展可以为数据库功能注册自定义数据抓取器。抓取器提供了一种从自定义来源（如网页、API、文件格式）导入数据的方式：</p>
+<div id="数据库抓取器-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerDataBankScraper } = SillyTavern.getContext();
+
+await registerDataBankScraper({
+    id: 'my_scraper',
+    name: 'My Data Source',
+    description: 'Import data from My Data Source',
+    iconClass: 'fa-solid fa-database',
+    iconAvailable: true,
+    isAvailable: async () =&gt; true,
+    scrape: async () =&gt; {
+        // 返回 File 对象数组
+        const content = await fetchDataFromSource();
+        return [new File([content], 'data.txt', { type: 'text/plain' })];
+    },
+});</code></pre>
+</doc-codeblock></div>
+<h2 id="调试函数">调试函数</h2>
+<p>扩展可以注册自定义调试函数，这些函数将出现在调试菜单（通过高级用户设置访问）中。这对于在开发期间暴露诊断工具、缓存/清理功能或手动触发器非常有用：</p>
+<div id="调试函数-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerDebugFunction } = SillyTavern.getContext();
+
+registerDebugFunction(
+    'my_ext_clear_cache',        // 唯一函数 ID
+    'Clear My Extension Cache',   // 显示名称
+    'Clears all cached data for My Extension', // 描述
+    async () =&gt; {
+        const { localforage } = SillyTavern.libs;
+        await localforage.removeItem('my_extension_cache');
+        toastr.success('Cache cleared');
+    }
+);</code></pre>
+</doc-codeblock></div>
+<h2 id="extras-请求">Extras 请求</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -940,40 +1710,153 @@ unregisterMacro('fizz');</code></pre>
         </div>
     </div>
 </div>
-<p><code translate="no" v-pre>doExtrasFetch()</code> 函数允许您向 SillyTavern Extras API 服务器发出请求。</p>
-<p>例如，要调用 <code translate="no" v-pre>/api/summarize</code> 端点:</p>
-<div id="执行-extras-请求-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">import { getApiUrl， doExtrasFetch } from &quot;../../extensions.js&quot;;
+<p><code translate="no" v-pre>doExtrasFetch()</code> 函数允许你向 SillyTavern Extras API 服务器发出请求。</p>
+<p>例如，调用 <code translate="no" v-pre>/api/summarize</code> 端点：</p>
+<div id="extras-请求-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">import { getApiUrl, doExtrasFetch } from &quot;../../extensions.js&quot;;
 
 const url = new URL(getApiUrl());
 url.pathname = '/api/summarize';
 
-const apiResult = await doExtrasFetch(url， {
-    method: 'POST'，
+const apiResult = await doExtrasFetch(url, {
+    method: 'POST',
     headers: {
-        'Content-Type': 'application/json'，
-        'Bypass-Tunnel-Reminder': 'bypass'，
-    }，
+        'Content-Type': 'application/json',
+        'Bypass-Tunnel-Reminder': 'bypass',
+    },
     body: JSON.stringify({
-        // Request body
+        // 请求体
     })
 });</code></pre>
 </doc-codeblock></div>
-<p><code translate="no" v-pre>getApiUrl()</code> 返回 Extras 服务器的基本 URL。</p>
-<p><code translate="no" v-pre>doExtrasFetch()</code> 函数:</p>
+<p><code translate="no" v-pre>getApiUrl()</code> 返回 Extras 服务器的基础 URL。</p>
+<p><code translate="no" v-pre>doExtrasFetch()</code> 函数：</p>
 <ul>
-<li>添加 <code translate="no" v-pre>Authorization</code> 和 <code translate="no" v-pre>Bypass-Tunnel-Reminder</code> headers</li>
-<li>处理获取结果</li>
-<li>返回结果(响应对象)</li>
+<li>添加 <code translate="no" v-pre>Authorization</code> 和 <code translate="no" v-pre>Bypass-Tunnel-Reminder</code> 请求头</li>
+<li>处理结果的获取</li>
+<li>返回结果（响应对象）</li>
 </ul>
-<p>这使得从扩展调用 Extras API 变得容易。</p>
-<p>您可以指定:</p>
+<p>这使得从扩展中调用 Extras API 变得非常简单。</p>
+<p>你可以指定：</p>
 <ul>
-<li>请求方法: GET、POST 等。</li>
-<li>附加 headers</li>
-<li>POST 请求的 body</li>
+<li>请求方法：GET、POST 等</li>
+<li>额外的请求头</li>
+<li>POST 请求的请求体</li>
 <li>任何其他 fetch 选项</li>
 </ul>
+<h2 id="最佳实践">最佳实践</h2>
+<h3 id="安全性">安全性</h3>
+<p><strong>永远不要在 <code translate="no" v-pre>extensionSettings</code> 中存储 API 密钥或机密信息</strong></p>
+<p>扩展设置对所有其他扩展可见，并以明文形式存储。不要在客户端存储敏感数据：</p>
+<div id="安全性-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// 错误做法——请勿这样做！
+extensionSettings[MODULE_NAME].apiKey = 'secret_key_123';
+
+// 注意：没有安全的方式在客户端扩展中存储机密信息。
+// 如果需要处理敏感数据，请改用服务器插件。
+// 参见：https://docs.sillytavern.app/for-contributors/server-plugins/</code></pre>
+</doc-codeblock></div>
+<p><strong>净化用户输入</strong></p>
+<p>在将用户输入用于命令、API 调用或 DOM 操作之前，始终对其进行验证和净化：</p>
+<div id="安全性-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// 先验证输入类型
+if (typeof userInput !== 'string') {
+    toastr.error('Invalid input type');
+    return;
+}
+// 使用 DOMPurify 净化 HTML 输入
+const { DOMPurify } = SillyTavern.libs;
+const cleanInput = DOMPurify.sanitize(userInput);</code></pre>
+</doc-codeblock></div>
+<p><strong>避免使用 <code translate="no" v-pre>eval()</code> 或 <code translate="no" v-pre>Function()</code> 构造函数</strong></p>
+<p>这些会执行任意代码并带来安全风险。如果需要动态求值，请使用更安全的替代方案或仔细限制输入。</p>
+<h3 id="性能">性能</h3>
+<p><strong>不要在 <code translate="no" v-pre>extensionSettings</code> 中存储大量数据</strong></p>
+<p>扩展设置会加载到内存中并频繁保存。大量数据会导致性能问题：</p>
+<div id="性能-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// 错误做法——不要存储大量数据
+extensionSettings[MODULE_NAME].largeDataset = { /* 数 MB 的数据 */ };
+
+// 正确做法——使用 localforage（IndexedDB/localStorage 的抽象层）
+const { localforage } = SillyTavern.libs;
+await localforage.setItem(`${MODULE_NAME}_data`, largeData);
+
+// 或者使用 localStorage 存储较小的数据
+localStorage.setItem(`${MODULE_NAME}_data`, JSON.stringify(smallData));</code></pre>
+</doc-codeblock></div>
+<p><strong>清理事件监听器</strong></p>
+<p>当事件监听器不再需要时，移除它们以防止内存泄漏：</p>
+<div id="性能-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function cleanup() {
+    eventSource.removeListener(event_types.MESSAGE_RECEIVED, handleMessage);
+    document.getElementById('myElement').removeEventListener('click', handleClick);
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>不要阻塞 UI 线程</strong></p>
+<p>对于繁重操作，使用 async/await 或 Web Worker：</p>
+<div id="性能-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// 对 I/O 操作使用 async
+async function processData() {
+    const result = await fetch('/api/process');
+    return result.json();
+}
+
+// 拆分繁重的计算任务
+async function heavyComputation(data) {
+    for (let i = 0; i &lt; data.length; i++) {
+        // 处理数据块
+        if (i % 1000 === 0) {
+            await new Promise(resolve =&gt; setTimeout(resolve, 0)); // 让出 UI 控制权
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<h3 id="兼容性">兼容性</h3>
+<p><strong>优先使用 <code translate="no" v-pre>getContext()</code> 而非直接导入</strong></p>
+<p>context API 更稳定，随 SillyTavern 更新而失效的可能性更低：</p>
+<div id="兼容性-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// 正确做法——稳定的 API
+const { chat, characters, saveSettingsDebounced } = SillyTavern.getContext();
+
+// 应避免——可能随内部变更而失效
+import { chat, characters } from '../../../../script.js';</code></pre>
+</doc-codeblock></div>
+<p><strong>使用唯一的模块名称</strong></p>
+<p>通过使用描述性的唯一模块名称来防止与其他扩展冲突：</p>
+<div id="兼容性-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// 正确做法——具体且唯一
+const MODULE_NAME = 'my_extension_name';
+
+// 错误做法——过于通用，容易冲突
+const MODULE_NAME = 'settings';</code></pre>
+</doc-codeblock></div>
+<h3 id="用户体验">用户体验</h3>
+<p><strong>提供清晰的反馈</strong></p>
+<p>使用 <code translate="no" v-pre>toastr</code> 进行轻量级通知，使用 <code translate="no" v-pre>Popup</code> 进行重要的用户交互。完整详情请参阅<doc-anchor-trigger to="#%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3%E4%B8%8E%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88">弹出窗口与用户反馈</doc-anchor-trigger>部分。</p>
+<p>对于长时间运行的操作，使用<doc-anchor-trigger to="#%E6%93%8D%E4%BD%9C%E5%8A%A0%E8%BD%BD%E5%99%A8">操作加载器</doc-anchor-trigger>，而不是静默地阻塞 UI。</p>
+<p><strong>提供有用的控制台消息</strong></p>
+<p>为控制台日志使用一致的前缀，但不要在生产环境中输出过多日志：</p>
+<div id="用户体验-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const MODULE_NAME = 'MyExtension';
+
+console.log(`[${MODULE_NAME}] Extension loaded`);
+console.debug(`[${MODULE_NAME}] Processing data:`, data);
+console.error(`[${MODULE_NAME}] Error occurred:`, error);</code></pre>
+</doc-codeblock></div>
+<h3 id="代码质量">代码质量</h3>
+<p><strong>使用 <code translate="no" v-pre>lib.js</code> 中的打包库</strong></p>
+<p>在添加新依赖之前，请查阅<doc-anchor-trigger to="#%E5%85%B1%E4%BA%AB%E5%BA%93">共享库</doc-anchor-trigger>部分——SillyTavern 打包了许多常用库（lodash、Fuse、DOMPurify、moment、yaml 等），这些库可通过 <code translate="no" v-pre>SillyTavern.libs</code> 访问。</p>
+<p><strong>正确初始化设置</strong></p>
+<p>始终提供默认值并处理缺失的键：</p>
+<div id="代码质量-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function loadSettings() {
+    // 与默认值合并，以处理更新后的新键并在不存在时初始化。
+    extensionSettings[MODULE_NAME] = SillyTavern.libs.lodash.merge(
+        structuredClone(defaultSettings),
+        extensionSettings[MODULE_NAME]
+    );
+}</code></pre>
+</doc-codeblock></div>
 
                 
                 <!-- Required only on API pages -->

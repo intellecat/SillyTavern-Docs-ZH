@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>配置文件 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="配置文件 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
+    <meta name="description" content="本文档可能已过时、不完整或存在错误。请参阅您安装目录中的 默认 config.yaml 以获取最新的设置列表。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/administration/config-yaml/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/administration/config-yaml/">
     <meta property="og:title" content="配置文件 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
+    <meta property="og:description" content="本文档可能已过时、不完整或存在错误。请参阅您安装目录中的 默认 config.yaml 以获取最新的设置列表。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/administration/config-yaml/">
     <meta name="twitter:title" content="配置文件 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。">
+    <meta name="twitter:description" content="本文档可能已过时、不完整或存在错误。请参阅您安装目录中的 默认 config.yaml 以获取最新的设置列表。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/administration/config-yaml.md">
@@ -41,12 +41,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -226,19 +226,19 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>免责声明</h5>
-<p>此文档可能已过时、不完整或不正确。请参考您安装中的 <a href="https://github.com/SillyTavern/SillyTavern/blob/release/default/config.yaml">默认 config.yaml</a> 以获取最新的设置列表。</p>
-<p><strong>警告：不要直接编辑默认配置。这不会产生任何积极效果。请编辑存储库根目录中的副本。</strong></p>
+<p>本文档可能已过时、不完整或存在错误。请参阅您安装目录中的 <a href="https://github.com/SillyTavern/SillyTavern/blob/release/default/config.yaml">默认 config.yaml</a> 以获取最新的设置列表。</p>
+<p><strong>警告：请勿直接编辑默认配置文件，这样做不会产生任何效果。请编辑仓库根目录中的副本。</strong></p>
         </div>
     </div>
 </div>
-<p><code translate="no" v-pre>config.yaml</code> 是 SillyTavern 服务器的主配置文件，您可以在<a href="../../installation/">完成安装</a>后在存储库根目录中找到它。它是一个 YAML 文件，包含各种设置，例如网络、安全和后端特定选项。<strong>对此文件所做的更改将在重新启动服务器后生效。</strong></p>
-<p>在<a href="../../installation/updating/">更新存储库</a>后运行 <code translate="no" v-pre>npm install</code>（具体来说是 <code translate="no" v-pre>post-install.js</code> 脚本）时，上游添加的新设置会自动填充默认值。然后您可以根据需要修改这些设置。</p>
-<p>对于嵌套设置，使用点表示法来指示层次结构。例如，<code translate="no" v-pre>protocol.ipv6: false</code> 指的是 <code translate="no" v-pre>protocol</code> 部分下的 <code translate="no" v-pre>ipv6</code> 设置，值为 <code translate="no" v-pre>false</code>。</p>
+<p><code translate="no" v-pre>config.yaml</code> 是 SillyTavern 服务器的主配置文件，您可以在<a href="../../installation/">完成安装</a>并首次运行服务器后，在仓库根目录中找到它。这是一个 YAML 文件，包含各种设置，例如网络、安全和后端专用选项。<strong>对此文件所做的更改将在重启服务器后生效。</strong></p>
+<p>上游新增的设置在<a href="../../installation/updating/">更新仓库</a>后重启服务器时会自动填充默认值。您可以按需修改这些设置。若要在启动前添加缺失的设置，请运行 <code translate="no" v-pre>npm run init</code> 脚本。</p>
+<p>对于嵌套设置，使用点表示法来标识层级关系。例如，<code translate="no" v-pre>protocol.ipv6: false</code> 表示 <code translate="no" v-pre>protocol</code> 部分下的 <code translate="no" v-pre>ipv6</code> 设置，值为 <code translate="no" v-pre>false</code>。</p>
 <div id="配置文件-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">protocol:
   ipv6: false</code></pre>
 </doc-codeblock></div>
-<h2 id="命令行参数">命令行参数</h2>
+<h2 id="command-line-arguments">命令行参数</h2>
 <p>启动 SillyTavern 服务器时，您可以传递命令行参数来覆盖 <a href="">config.yaml</a> 中的某些设置。</p>
 <h3 id="示例">示例</h3>
 <div id="示例-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -260,10 +260,37 @@ Start.bat --port 8000 --listen false</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>所有参数都不是必需的。如果您不提供它们，SillyTavern 将使用 <code translate="no" v-pre>config.yaml</code> 中的设置。</p>
+<p>所有参数均为可选。如果不提供，SillyTavern 将使用 <code translate="no" v-pre>config.yaml</code> 中的设置。</p>
         </div>
     </div>
 </div>
+<retype-table copy-text="| 选项 | 描述 | 类型 |
+|---------------------------------|----------------------------------------------------------------------|----------|
+| `--version` | 显示版本号 | boolean |
+| `--global` | 强制使用系统级路径存储应用数据 | boolean |
+| `--configPath` | 覆盖 config.yaml 文件路径（仅独立模式） | string |
+| `--dataRoot` | 设置数据存储根目录（仅独立模式） | string |
+| `--port` | 设置 SillyTavern 运行的端口 | number |
+| `--listen` | 使 SillyTavern 监听所有网络接口 | boolean |
+| `--whitelist` | 启用白名单模式 | boolean |
+| `--basicAuthMode` | 启用基本身份验证 | boolean |
+| `--enableIPv4` | 启用 IPv4 协议 | boolean |
+| `--enableIPv6` | 启用 IPv6 协议 | boolean |
+| `--listenAddressIPv4` | 指定要监听的 IPv4 地址 | string |
+| `--listenAddressIPv6` | 指定要监听的 IPv6 地址 | string |
+| `--dnsPreferIPv6` | DNS 优先使用 IPv6 | boolean |
+| `--ssl` | 启用 SSL | boolean |
+| `--certPath` | 设置证书文件路径 | string |
+| `--keyPath` | 设置私钥文件路径 | string |
+| `--browserLaunchEnabled` | 自动在浏览器中启动 SillyTavern | boolean |
+| `--browserLaunchHostname` | 设置浏览器启动的主机名 | string |
+| `--browserLaunchPort` | 覆盖浏览器启动的端口 | string |
+| `--browserLaunchAvoidLocalhost` | 自动模式下避免使用 'localhost' 进行浏览器启动 | boolean |
+| `--corsProxy` | 启用 CORS 代理 | boolean |
+| `--requestProxyEnabled` | 启用出站请求代理 | boolean |
+| `--requestProxyUrl` | 设置请求代理 URL（HTTP 或 SOCKS 协议） | string |
+| `--requestProxyBypass` | 设置请求代理绕过列表（以空格分隔的主机列表） | array |
+| `--disableCsrf` | 禁用 CSRF 保护（不推荐） | boolean |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -281,17 +308,17 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--global</code></td>
-<td>强制使用系统范围的应用程序数据路径</td>
+<td>强制使用系统级路径存储应用数据</td>
 <td>boolean</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--configPath</code></td>
-<td>覆盖 config.yaml 文件的路径（仅限独立模式）</td>
+<td>覆盖 config.yaml 文件路径（仅独立模式）</td>
 <td>string</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--dataRoot</code></td>
-<td>设置数据存储的根目录（仅限独立模式）</td>
+<td>设置数据存储根目录（仅独立模式）</td>
 <td>string</td>
 </tr>
 <tr>
@@ -301,7 +328,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--listen</code></td>
-<td>使 SillyTavern 在所有网络接口上侦听</td>
+<td>使 SillyTavern 监听所有网络接口</td>
 <td>boolean</td>
 </tr>
 <tr>
@@ -326,17 +353,17 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--listenAddressIPv4</code></td>
-<td>指定要侦听的 IPv4 地址</td>
+<td>指定要监听的 IPv4 地址</td>
 <td>string</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--listenAddressIPv6</code></td>
-<td>指定要侦听的 IPv6 地址</td>
+<td>指定要监听的 IPv6 地址</td>
 <td>string</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--dnsPreferIPv6</code></td>
-<td>DNS 首选 IPv6</td>
+<td>DNS 优先使用 IPv6</td>
 <td>boolean</td>
 </tr>
 <tr>
@@ -346,22 +373,22 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--certPath</code></td>
-<td>设置证书文件的路径</td>
+<td>设置证书文件路径</td>
 <td>string</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--keyPath</code></td>
-<td>设置私钥文件的路径</td>
+<td>设置私钥文件路径</td>
 <td>string</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--browserLaunchEnabled</code></td>
-<td>在浏览器中自动启动 SillyTavern</td>
+<td>自动在浏览器中启动 SillyTavern</td>
 <td>boolean</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--browserLaunchHostname</code></td>
-<td>设置浏览器启动主机名</td>
+<td>设置浏览器启动的主机名</td>
 <td>string</td>
 </tr>
 <tr>
@@ -371,7 +398,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--browserLaunchAvoidLocalhost</code></td>
-<td>在自动模式下避免使用 &#x27;localhost&#x27; 进行浏览器启动</td>
+<td>自动模式下避免使用 &#x27;localhost&#x27; 进行浏览器启动</td>
 <td>boolean</td>
 </tr>
 <tr>
@@ -381,7 +408,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--requestProxyEnabled</code></td>
-<td>为传出请求启用代理</td>
+<td>启用出站请求代理</td>
 <td>boolean</td>
 </tr>
 <tr>
@@ -391,7 +418,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>--requestProxyBypass</code></td>
-<td>设置请求代理绕过列表（空格分隔的主机列表）</td>
+<td>设置请求代理绕过列表（以空格分隔的主机列表）</td>
 <td>array</td>
 </tr>
 <tr>
@@ -402,10 +429,11 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
-<h2 id="环境变量">环境变量</h2>
-<p>配置也可以通过环境变量设置，这将覆盖 <code translate="no" v-pre>config.yaml</code> 文件中的值。</p>
-<p>环境变量应以 <code translate="no" v-pre>SILLYTAVERN_</code> 为前缀，并对设置名称使用大写字母。例如，<code translate="no" v-pre>dataRoot</code> 设置可以使用 <code translate="no" v-pre>SILLYTAVERN_DATAROOT</code> 环境变量覆盖。</p>
-<p>嵌套设置应使用下划线分隔。例如，<code translate="no" v-pre>protocol.ipv6</code> 可以使用 <code translate="no" v-pre>SILLYTAVERN_PROTOCOL_IPV6</code> 环境变量覆盖。</p>
+</retype-table>
+<h2 id="environment-variables">环境变量</h2>
+<p>配置也可以通过环境变量设置，环境变量的值将覆盖 <code translate="no" v-pre>config.yaml</code> 文件中的值。</p>
+<p>环境变量应以 <code translate="no" v-pre>SILLYTAVERN_</code> 为前缀，设置名称使用大写字母。例如，<code translate="no" v-pre>dataRoot</code> 设置可以通过 <code translate="no" v-pre>SILLYTAVERN_DATAROOT</code> 环境变量覆盖。</p>
+<p>嵌套设置应使用下划线分隔。例如，<code translate="no" v-pre>protocol.ipv6</code> 可以通过 <code translate="no" v-pre>SILLYTAVERN_PROTOCOL_IPV6</code> 环境变量覆盖。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -418,20 +446,26 @@ Start.bat --port 8000 --listen false</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>期望数组或对象的配置应进行 JSON 字符串化。例如，要使用 <code translate="no" v-pre>SILLYTAVERN_WHITELIST</code> 环境变量覆盖 <code translate="no" v-pre>whitelist</code> 设置，您应将其设置为 JSON 字符串：<code translate="no" v-pre>SILLYTAVERN_WHITELIST='[&quot;127.0.0.1&quot;, &quot;::1&quot;]'</code>。</p>
+<p>期望数组或对象的配置应使用 JSON 字符串格式。例如，要通过 <code translate="no" v-pre>SILLYTAVERN_WHITELIST</code> 环境变量覆盖 <code translate="no" v-pre>whitelist</code> 设置，应将其设置为 JSON 字符串：<code translate="no" v-pre>SILLYTAVERN_WHITELIST='[&quot;127.0.0.1&quot;, &quot;::1&quot;]'</code>。</p>
         </div>
     </div>
 </div>
-<p>如果您使用的是 Node.js v20 或更高版本，您还可以在 <code translate="no" v-pre>.env</code> 文件中存储环境变量，并使用 <code translate="no" v-pre>--env-file</code> 标志将其传递给服务器。例如，要使用位于存储库根目录中的 <code translate="no" v-pre>.env</code> 文件，您可以使用以下命令启动服务器：</p>
-<div id="环境变量-code-1" class="codeblock-wrapper"><doc-codeblock>
+<p>如果您使用 Node.js v20 或更高版本，也可以将环境变量存储在 <code translate="no" v-pre>.env</code> 文件中，并通过 <code translate="no" v-pre>--env-file</code> 标志传递给服务器。例如，要使用位于仓库根目录的 <code translate="no" v-pre>.env</code> 文件，可以使用以下命令启动服务器：</p>
+<div id="environment-variables-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">node --env-file=.env server.js</code></pre>
 </doc-codeblock></div>
 <p>或者，直接通过命令行传递环境变量：</p>
-<div id="环境变量-code-2" class="codeblock-wrapper"><doc-codeblock>
+<div id="environment-variables-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">SILLYTAVERN_LISTEN=true SILLYTAVERN_PORT=8000 node server.js</code></pre>
 </doc-codeblock></div>
-<p>有关使用环境变量的更多信息，请参见 <a href="https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs">Node.js 文档</a>。</p>
-<h2 id="数据配置">数据配置</h2>
+<p>更多关于环境变量的使用方法，请参阅 <a href="https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs">Node.js 文档</a>。</p>
+<h2 id="data-configuration">数据配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `dataRoot` | 用户数据存储的根目录（仅独立模式） | `./data` | 任意有效的目录路径 |
+| `skipContentCheck` | 跳过新默认内容的检查 | `false` | `true`、`false` |
+| `enableDownloadableTokenizers` | 启用按需分词器下载 | `true` | `true`、`false` |
+| `whitelistImportDomains` | 用于导入网络托管角色卡和资源的可信域名列表 | [查看此处](https://github.com/SillyTavern/SillyTavern/blob/d118eee014330c37978cc0226f4ca74a1f321eea/default/config.yaml#L220) | 字符串数组 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -445,26 +479,37 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>dataRoot</code></td>
-<td>用户数据存储的根目录（仅限独立模式）</td>
+<td>用户数据存储的根目录（仅独立模式）</td>
 <td><code translate="no" v-pre>./data</code></td>
-<td>任何有效的目录路径</td>
+<td>任意有效的目录路径</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>skipContentCheck</code></td>
 <td>跳过新默认内容的检查</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>enableDownloadableTokenizers</code></td>
-<td>启用按需下载 tokenizer</td>
+<td>启用按需分词器下载</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>whitelistImportDomains</code></td>
+<td>用于导入网络托管角色卡和资源的可信域名列表</td>
+<td><a href="https://github.com/SillyTavern/SillyTavern/blob/d118eee014330c37978cc0226f4ca74a1f321eea/default/config.yaml#L220">查看此处</a></td>
+<td>字符串数组</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="日志配置">日志配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `logging.minLogLevel` | 终端中显示的最低日志级别 | `0`（DEBUG） | （DEBUG = 0，INFO = 1，WARN = 2，ERROR = 3） |
+| `logging.enableAccessLog` | 将服务器访问日志写入文件和控制台 | `true` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -478,20 +523,32 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>logging.minLogLevel</code></td>
-<td>在终端中显示的最小日志级别</td>
-<td><code translate="no" v-pre>0</code> (DEBUG)</td>
-<td>(DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3)</td>
+<td>终端中显示的最低日志级别</td>
+<td><code translate="no" v-pre>0</code>（DEBUG）</td>
+<td>（DEBUG = 0，INFO = 1，WARN = 2，ERROR = 3）</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>logging.enableAccessLog</code></td>
 <td>将服务器访问日志写入文件和控制台</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="网络配置"><a href="../../usage/remoteconnections/">网络配置</a></h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `listen` | 启用监听传入连接 | `false` | `true`、`false` |
+| `port` | 服务器监听端口 | `8000` | 任意有效端口号（1-65535） |
+| `heartbeatInterval` | 为 Docker 健康检查写入心跳文件的间隔（秒）。设置为 0 可禁用 | `0` | `0`（禁用）、正整数 |
+| `protocol.ipv4` | 启用 IPv4 协议监听 | `true` | `true`、`false`、`auto` |
+| `protocol.ipv6` | 启用 IPv6 协议监听 | `false` | `true`、`false`、`auto` |
+| `listenAddress.ipv4` | 监听特定的 IPv4 地址 | `0.0.0.0` | 有效的 IPv4 地址 |
+| `listenAddress.ipv6` | 监听特定的 IPv6 地址 | `'[::]'` | 有效的 IPv6 地址 |
+| `dnsPreferIPv6` | DNS 解析优先使用 IPv6 | `false` | `true`、`false` |
+| `enableKeepAlive` | 全局启用 HTTP/HTTPS 长连接 | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -505,50 +562,69 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>listen</code></td>
-<td>启用侦听传入连接</td>
+<td>启用监听传入连接</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>port</code></td>
-<td>服务器侦听端口</td>
+<td>服务器监听端口</td>
 <td><code translate="no" v-pre>8000</code></td>
-<td>任何有效的端口号 (1-65535)</td>
+<td>任意有效端口号（1-65535）</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>heartbeatInterval</code></td>
+<td>为 Docker 健康检查写入心跳文件的间隔（秒）。设置为 0 可禁用</td>
+<td><code translate="no" v-pre>0</code></td>
+<td><code translate="no" v-pre>0</code>（禁用）、正整数</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>protocol.ipv4</code></td>
-<td>在 IPv4 协议上启用侦听</td>
+<td>启用 IPv4 协议监听</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code>, <code translate="no" v-pre>auto</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code>、<code translate="no" v-pre>auto</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>protocol.ipv6</code></td>
-<td>在 IPv6 协议上启用侦听</td>
+<td>启用 IPv6 协议监听</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code>, <code translate="no" v-pre>auto</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code>、<code translate="no" v-pre>auto</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>listenAddress.ipv4</code></td>
-<td>侦听特定的 IPv4 地址</td>
+<td>监听特定的 IPv4 地址</td>
 <td><code translate="no" v-pre>0.0.0.0</code></td>
 <td>有效的 IPv4 地址</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>listenAddress.ipv6</code></td>
-<td>侦听特定的 IPv6 地址</td>
+<td>监听特定的 IPv6 地址</td>
 <td><code translate="no" v-pre>'[::]'</code></td>
 <td>有效的 IPv6 地址</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>dnsPreferIPv6</code></td>
-<td>DNS 解析首选 IPv6</td>
+<td>DNS 解析优先使用 IPv6</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>enableKeepAlive</code></td>
+<td>全局启用 HTTP/HTTPS 长连接</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="ssl-配置">SSL 配置</h2>
+</retype-table>
+<h2 id="ssl-configuration">SSL 配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `ssl.enabled` | 启用 SSL/TLS 加密和 HTTPS 协议 | `false` | `true`、`false` |
+| `ssl.keyPath` | SSL 私钥路径（相对于服务器目录） | `&quot;./certs/privkey.pem&quot;` | 有效的文件路径 |
+| `ssl.certPath` | SSL 证书路径（相对于服务器目录） | `&quot;./certs/cert.pem&quot;` | 有效的文件路径 |
+| `ssl.keyPassphrase` | SSL 私钥的密码短语。如不需要请留空 | `&quot;&quot;` | 任意字符串 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -564,31 +640,38 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>ssl.enabled</code></td>
 <td>启用 SSL/TLS 加密和 HTTPS 协议</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>ssl.keyPath</code></td>
-<td>SSL 私钥的路径（相对于服务器目录）</td>
+<td>SSL 私钥路径（相对于服务器目录）</td>
 <td><code translate="no" v-pre>&quot;./certs/privkey.pem&quot;</code></td>
 <td>有效的文件路径</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>ssl.certPath</code></td>
-<td>SSL 证书的路径（相对于服务器目录）</td>
+<td>SSL 证书路径（相对于服务器目录）</td>
 <td><code translate="no" v-pre>&quot;./certs/cert.pem&quot;</code></td>
 <td>有效的文件路径</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>ssl.keyPassphrase</code></td>
-<td>SSL 私钥的密码短语。如果不需要则留空</td>
+<td>SSL 私钥的密码短语。如不需要请留空</td>
 <td><code translate="no" v-pre>&quot;&quot;</code></td>
-<td>任何字符串</td>
+<td>任意字符串</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="安全配置">安全配置</h2>
-<h3 id="ip-白名单">IP 白名单</h3>
+<h3 id="ip-whitelisting">IP 白名单</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `whitelistMode` | 启用 IP 白名单过滤 | `true` | `true`、`false` |
+| `enableForwardedWhitelist` | 检查转发头中的白名单 IP。头信息在[转发头配置](#转发头配置)部分定义 | `true` | `true`、`false` |
+| `whitelist` | 允许的 IP 地址列表 | `[&quot;::1&quot;, &quot;127.0.0.1&quot;]` | 有效 IP 地址数组 |
+| `whitelistDockerHosts` | 自动将 Docker 主机 IP 加入白名单 | `true` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -604,30 +687,164 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>whitelistMode</code></td>
 <td>启用 IP 白名单过滤</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>enableForwardedWhitelist</code></td>
-<td>检查转发的头以获取白名单 IP</td>
+<td>检查转发头中的白名单 IP。头信息在<doc-anchor-trigger to="#%E8%BD%AC%E5%8F%91%E5%A4%B4%E9%85%8D%E7%BD%AE">转发头配置</doc-anchor-trigger>部分定义</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>whitelist</code></td>
 <td>允许的 IP 地址列表</td>
 <td><code translate="no" v-pre>[&quot;::1&quot;, &quot;127.0.0.1&quot;]</code></td>
-<td>有效 IP 地址的数组</td>
+<td>有效 IP 地址数组</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>whitelistDockerHosts</code></td>
 <td>自动将 Docker 主机 IP 加入白名单</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="主机白名单">主机白名单</h3>
+</retype-table>
+<h3 id="转发头配置">转发头配置</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>调整用于确定真实 IP 的头信息，以用于 IP 白名单、速率限制和访问日志等功能。</p>
+<p>仅当您确定使用了正确配置的<a href="../../usage/st-reverse-proxy-guide/">反向代理</a>时才进行修改，否则可能导致 IP 欺骗。</p>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `forwardedHeaders.xRealIp` | 使用 `X-Real-IP` 头检测客户端 IP | `true` | `true`、`false` |
+| `forwardedHeaders.xForwardedFor` | 使用 `X-Forwarded-For` 头检测客户端 IP | `true` | `true`、`false` |
+| `forwardedHeaders.cfConnectingIp` | 使用 `CF-Connecting-IP` 头检测客户端 IP | `false` | `true`、`false` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>forwardedHeaders.xRealIp</code></td>
+<td>使用 <code translate="no" v-pre>X-Real-IP</code> 头检测客户端 IP</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>forwardedHeaders.xForwardedFor</code></td>
+<td>使用 <code translate="no" v-pre>X-Forwarded-For</code> 头检测客户端 IP</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>forwardedHeaders.cfConnectingIp</code></td>
+<td>使用 <code translate="no" v-pre>CF-Connecting-IP</code> 头检测客户端 IP</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="private-address-whitelisting">私有地址白名单</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>这是防止服务器端请求伪造（SSRF）攻击的额外安全层，对解析到私有 IP 地址的服务器端 HTTP 请求执行白名单检查。启用后，<a href="../../usage/remoteconnections/#what-is-considered-a-private-address">私有网络范围</a>将被阻止，除非在 <code translate="no" v-pre>privateAddressWhitelist.allowedRanges</code> 设置中明确允许。</p>
+<p><strong>此功能默认禁用，但在启用监听模式或服务器可被不可信用户访问时，建议启用。</strong></p>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `privateAddressWhitelist.enabled` | 启用私有地址白名单 | `false` | `true`、`false` |
+| `privateAddressWhitelist.allowUnresolvedHosts` | 允许对无法解析的主机发送请求 | `false` | `true`、`false` |
+| `privateAddressWhitelist.allowedRanges` | 允许的私有 IP 地址和 CIDR 范围列表 | `['127.0.0.0/8', '::1/128']` | 有效 IP 地址和 CIDR 范围数组 |
+| `privateAddressWhitelist.log.blockedRequests` | 记录解析到私有 IP 地址的被阻止请求 | `true` | `true`、`false` |
+| `privateAddressWhitelist.log.allowedRequests` | 记录解析到私有 IP 地址的被允许请求 | `false` | `true`、`false` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>privateAddressWhitelist.enabled</code></td>
+<td>启用私有地址白名单</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>privateAddressWhitelist.allowUnresolvedHosts</code></td>
+<td>允许对无法解析的主机发送请求</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>privateAddressWhitelist.allowedRanges</code></td>
+<td>允许的私有 IP 地址和 CIDR 范围列表</td>
+<td><code translate="no" v-pre>['127.0.0.0/8', '::1/128']</code></td>
+<td>有效 IP 地址和 CIDR 范围数组</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>privateAddressWhitelist.log.blockedRequests</code></td>
+<td>记录解析到私有 IP 地址的被阻止请求</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>privateAddressWhitelist.log.allowedRequests</code></td>
+<td>记录解析到私有 IP 地址的被允许请求</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h3 id="host-whitelisting">主机白名单</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `hostWhitelist.enabled` | 启用主机白名单 | `false` | `true`、`false` |
+| `hostWhitelist.scan` | 记录来自不可信主机的传入请求 | `true` | `true`、`false` |
+| `hostWhitelist.hosts` | 可信主机名列表 | `[]` | 有效主机名数组 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -643,23 +860,24 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>hostWhitelist.enabled</code></td>
 <td>启用主机白名单</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>hostWhitelist.scan</code></td>
-<td>记录来自不受信任主机的传入请求</td>
+<td>记录来自不可信主机的传入请求</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>hostWhitelist.hosts</code></td>
-<td>受信任主机名列表</td>
+<td>可信主机名列表</td>
 <td><code translate="no" v-pre>[]</code></td>
-<td>有效主机名的数组</td>
+<td>有效主机名数组</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="安全覆盖">安全覆盖</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
@@ -673,10 +891,15 @@ Start.bat --port 8000 --listen false</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><strong>强烈不建议禁用安全措施。在进行更改之前，请确保您了解自己在做什么。</strong></p>
+<p><strong>强烈不建议禁用安全措施。在进行任何更改之前，请确保您了解自己在做什么。</strong></p>
         </div>
     </div>
 </div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `allowKeysExposure` | 允许在界面中显示未遮蔽的 API 密钥 | `false` | `true`、`false` |
+| `disableCsrfProtection` | 禁用 CSRF 保护（不推荐） | `false` | `true`、`false` |
+| `securityOverride` | 禁用启动时的安全检查（不推荐） | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -690,26 +913,52 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>allowKeysExposure</code></td>
-<td>允许在 UI 中暴露未遮蔽的 API 密钥</td>
+<td>允许在界面中显示未遮蔽的 API 密钥</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>disableCsrfProtection</code></td>
 <td>禁用 CSRF 保护（不推荐）</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>securityOverride</code></td>
-<td>禁用启动安全检查（不推荐）</td>
+<td>禁用启动时的安全检查（不推荐）</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="用户身份验证"><a href="../multi-user/">用户身份验证</a></h2>
+</retype-table>
+<h2 id="user-authentication"><a href="../multi-user/">用户身份验证</a></h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>默认情况下，速率限制同时适用于基本身份验证和用户账户登录尝试。您可以在<doc-anchor-trigger to="#%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6%E9%85%8D%E7%BD%AE">速率限制配置</doc-anchor-trigger>部分调整限制。</p>
+<p>如果通过隧道连接（例如 Cloudflare Tunnel）使用基本身份验证，请务必相应地调整<doc-anchor-trigger to="#%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6%E9%85%8D%E7%BD%AE">速率限制设置</doc-anchor-trigger>和 <doc-anchor-trigger to="#%E8%BD%AC%E5%8F%91%E5%A4%B4%E9%85%8D%E7%BD%AE">IP 地址检测</doc-anchor-trigger>，以防止被锁定。</p>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `basicAuthMode` | 启用基本身份验证 | `false` | `true`、`false` |
+| `basicAuthUser.username` | 基本身份验证用户名 | `&quot;user&quot;` | 任意字符串 |
+| `basicAuthUser.password` | 基本身份验证密码 | `&quot;password&quot;` | 任意字符串 |
+| `enableUserAccounts` | 启用多用户模式 | `false` | `true`、`false` |
+| `enableDiscreetLogin` | 在登录界面隐藏用户列表 | `false` | `true`、`false` |
+| `sessionTimeout` | 用户会话超时时间（秒） | `-1`（禁用） | 任意数字（-1 表示禁用，0 表示关闭浏览器时过期，大于 0 表示超时时间） |
+| `perUserBasicAuth` | 使用账户凭据进行基本身份验证 | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -725,48 +974,70 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>basicAuthMode</code></td>
 <td>启用基本身份验证</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>basicAuthUser.username</code></td>
 <td>基本身份验证用户名</td>
 <td><code translate="no" v-pre>&quot;user&quot;</code></td>
-<td>任何字符串</td>
+<td>任意字符串</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>basicAuthUser.password</code></td>
 <td>基本身份验证密码</td>
 <td><code translate="no" v-pre>&quot;password&quot;</code></td>
-<td>任何字符串</td>
+<td>任意字符串</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>enableUserAccounts</code></td>
 <td>启用多用户模式</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>enableDiscreetLogin</code></td>
-<td>在登录屏幕上隐藏用户列表</td>
+<td>在登录界面隐藏用户列表</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>sessionTimeout</code></td>
-<td>用户会话超时（秒）</td>
-<td><code translate="no" v-pre>-1</code> (禁用)</td>
-<td>任何数字（-1 禁用，0 为浏览器关闭，&gt;0 为超时）</td>
+<td>用户会话超时时间（秒）</td>
+<td><code translate="no" v-pre>-1</code>（禁用）</td>
+<td>任意数字（-1 表示禁用，0 表示关闭浏览器时过期，大于 0 表示超时时间）</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>perUserBasicAuth</code></td>
 <td>使用账户凭据进行基本身份验证</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="sso-自动登录">SSO 自动登录</h3>
+</retype-table>
+<h3 id="sso-auto-login">SSO 自动登录</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>不当保护 SSO 流程可能导致未授权访问。在启用 SSO 之前，请确保正确配置可信代理并测试您的设置。如果不确定安全影响，建议保持 SSO 自动登录禁用，并使用其他身份验证方法。</p>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `sso.trustedProxies` | 用于 SSO 身份验证的可信代理 IP 列表 | `[&quot;::1&quot;, &quot;127.0.0.1&quot;]` | 有效 IP 地址、CIDR 范围或通配符模式数组 |
+| `sso.autheliaAuth` | 启用基于 Authelia 的自动登录。参见：[SSO](/Administration/sso.md) | `false` | `true`、`false` |
+| `sso.authentikAuth` | 启用基于 Authentik 的自动登录。参见：[SSO](/Administration/sso.md) | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -779,21 +1050,50 @@ Start.bat --port 8000 --listen false</code></pre>
 </thead>
 <tbody>
 <tr>
+<td><code translate="no" v-pre>sso.trustedProxies</code></td>
+<td>用于 SSO 身份验证的可信代理 IP 列表</td>
+<td><code translate="no" v-pre>[&quot;::1&quot;, &quot;127.0.0.1&quot;]</code></td>
+<td>有效 IP 地址、CIDR 范围或通配符模式数组</td>
+</tr>
+<tr>
 <td><code translate="no" v-pre>sso.autheliaAuth</code></td>
 <td>启用基于 Authelia 的自动登录。参见：<a href="../sso/">SSO</a></td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>sso.authentikAuth</code></td>
 <td>启用基于 Authentik 的自动登录。参见：<a href="../sso/">SSO</a></td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="速率限制配置">速率限制配置</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>要禁用特定路由的速率限制，请将限制设置为 <code translate="no" v-pre>0</code>。</p>
+<p>例如，要禁用登录速率限制，请将 <code translate="no" v-pre>rateLimiting.accountsLoginMaxAttempts</code> 设置为 <code translate="no" v-pre>0</code>。</p>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `rateLimiting.preferRealIpHeader` | 使用[转发头配置](#转发头配置)中配置的头信息中的 IP，而非套接字 IP 进行速率限制 | `false` | `true`、`false` |
+| `rateLimiting.accountsLoginMaxAttempts` | 用户账户临时锁定前的最大登录尝试次数（锁定 1 分钟） | `5` | 任意正整数或 `0` |
+| `rateLimiting.accountsRecoverMaxAttempts` | 临时锁定前的最大密码恢复尝试次数（锁定 5 分钟） | `5` | 任意正整数或 `0` |
+| `rateLimiting.basicAuthMaxAttempts` | 临时锁定前的最大基本身份验证尝试次数（锁定 1 分钟） | `5` | 任意正整数或 `0` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -807,14 +1107,54 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>rateLimiting.preferRealIpHeader</code></td>
-<td>使用 X-Real-IP 头而不是套接字 IP 进行速率限制</td>
+<td>使用<doc-anchor-trigger to="#%E8%BD%AC%E5%8F%91%E5%A4%B4%E9%85%8D%E7%BD%AE">转发头配置</doc-anchor-trigger>中配置的头信息中的 IP，而非套接字 IP 进行速率限制</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>rateLimiting.accountsLoginMaxAttempts</code></td>
+<td>用户账户临时锁定前的最大登录尝试次数（锁定 1 分钟）</td>
+<td><code translate="no" v-pre>5</code></td>
+<td>任意正整数或 <code translate="no" v-pre>0</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>rateLimiting.accountsRecoverMaxAttempts</code></td>
+<td>临时锁定前的最大密码恢复尝试次数（锁定 5 分钟）</td>
+<td><code translate="no" v-pre>5</code></td>
+<td>任意正整数或 <code translate="no" v-pre>0</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>rateLimiting.basicAuthMaxAttempts</code></td>
+<td>临时锁定前的最大基本身份验证尝试次数（锁定 1 分钟）</td>
+<td><code translate="no" v-pre>5</code></td>
+<td>任意正整数或 <code translate="no" v-pre>0</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="请求代理配置">请求代理配置</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>请求代理与私有地址白名单功能存在冲突。如果同时启用两者，只有绕过代理的请求会被私有地址白名单检查，而经过代理的请求将不会被检查。如有疑虑，建议禁用请求代理。</p>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `requestProxy.enabled` | 启用出站请求代理 | `false` | `true`、`false` |
+| `requestProxy.url` | 代理服务器 URL | `null` | 有效的代理 URL（例如 `&quot;socks5://username:password@example.com:1080&quot;`） |
+| `requestProxy.bypass` | 绕过代理的主机 | `[&quot;localhost&quot;, &quot;127.0.0.1&quot;]` | 主机名/IP 数组 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -828,9 +1168,9 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>requestProxy.enabled</code></td>
-<td>为传出请求启用代理</td>
+<td>启用出站请求代理</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>requestProxy.url</code></td>
@@ -847,24 +1187,28 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="cors-代理配置">CORS 代理配置</h2>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>某些扩展可能需要启用的 CORS 代理。任何内置功能都不需要它。</p>
+<p>某些扩展可能需要启用 CORS 代理。内置功能不需要此功能。</p>
+<p>在没有适当安全措施（例如 IP、主机和私有地址白名单）的情况下启用 CORS 代理可能导致 SSRF 漏洞。如果启用此功能，请确保相应地配置白名单，并且只在信任需要此功能的扩展时才启用它。</p>
         </div>
     </div>
 </div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `enableCorsProxy` | 启用 CORS 代理中间件 | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -880,15 +1224,90 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>enableCorsProxy</code></td>
 <td>启用 CORS 代理中间件</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
+<h2 id="cors-配置">CORS 配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `cors.enabled` | 启用或禁用 CORS 中间件 | `true` | `true`、`false` |
+| `cors.origin` | 允许的来源。`&quot;null&quot;` 匹配浏览器默认文件来源 | `[&quot;null&quot;]` | `&quot;*&quot;`（任意来源）、允许来源数组 |
+| `cors.methods` | 允许的 HTTP 方法 | `[&quot;OPTIONS&quot;]` | HTTP 方法数组 |
+| `cors.allowedHeaders` | 允许的请求头 | `[]` | 头名称数组 |
+| `cors.exposedHeaders` | 暴露的响应头 | `[]` | 头名称数组 |
+| `cors.credentials` | 允许凭据（Cookie、授权头） | `false` | `true`、`false` |
+| `cors.maxAge` | 预检缓存最大有效期（秒） | `null` | `null`、正整数 |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>cors.enabled</code></td>
+<td>启用或禁用 CORS 中间件</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>cors.origin</code></td>
+<td>允许的来源。<code translate="no" v-pre>&quot;null&quot;</code> 匹配浏览器默认文件来源</td>
+<td><code translate="no" v-pre>[&quot;null&quot;]</code></td>
+<td><code translate="no" v-pre>&quot;*&quot;</code>（任意来源）、允许来源数组</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>cors.methods</code></td>
+<td>允许的 HTTP 方法</td>
+<td><code translate="no" v-pre>[&quot;OPTIONS&quot;]</code></td>
+<td>HTTP 方法数组</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>cors.allowedHeaders</code></td>
+<td>允许的请求头</td>
+<td><code translate="no" v-pre>[]</code></td>
+<td>头名称数组</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>cors.exposedHeaders</code></td>
+<td>暴露的响应头</td>
+<td><code translate="no" v-pre>[]</code></td>
+<td>头名称数组</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>cors.credentials</code></td>
+<td>允许凭据（Cookie、授权头）</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>cors.maxAge</code></td>
+<td>预检缓存最大有效期（秒）</td>
+<td><code translate="no" v-pre>null</code></td>
+<td><code translate="no" v-pre>null</code>、正整数</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 <h2 id="浏览器启动配置">浏览器启动配置</h2>
 <blockquote>
-<p>以前称为 &quot;Autorun&quot; 设置。</p>
+<p>以前称为&quot;自动运行&quot;设置。</p>
 </blockquote>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `browserLaunch.enabled` | 服务器启动时自动打开浏览器 | `true` | `true`、`false` |
+| `browserLaunch.browser` | 用于打开 URL 的浏览器 | `&quot;default&quot;` | `&quot;default&quot;`、`&quot;chrome&quot;`、`&quot;firefox&quot;`、`&quot;edge&quot;`、`&quot;brave&quot;` |
+| `browserLaunch.hostname` | 覆盖浏览器启动的主机名 | `&quot;auto&quot;` | `&quot;auto&quot;`、任意有效主机名（例如 `&quot;localhost&quot;`、`&quot;st.example.com&quot;`） |
+| `browserLaunch.port` | 覆盖浏览器启动的端口 | `-1` | `-1`（使用服务器端口）、任意有效端口号 |
+| `browserLaunch.avoidLocalhost` | 在启动 URL 中避免使用 'localhost' | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -902,38 +1321,48 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>browserLaunch.enabled</code></td>
-<td>在服务器启动时自动打开浏览器</td>
+<td>服务器启动时自动打开浏览器</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>browserLaunch.browser</code></td>
 <td>用于打开 URL 的浏览器</td>
 <td><code translate="no" v-pre>&quot;default&quot;</code></td>
-<td><code translate="no" v-pre>&quot;default&quot;</code>, <code translate="no" v-pre>&quot;chrome&quot;</code>, <code translate="no" v-pre>&quot;firefox&quot;</code>, <code translate="no" v-pre>&quot;edge&quot;</code>, <code translate="no" v-pre>&quot;brave&quot;</code></td>
+<td><code translate="no" v-pre>&quot;default&quot;</code>、<code translate="no" v-pre>&quot;chrome&quot;</code>、<code translate="no" v-pre>&quot;firefox&quot;</code>、<code translate="no" v-pre>&quot;edge&quot;</code>、<code translate="no" v-pre>&quot;brave&quot;</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>browserLaunch.hostname</code></td>
 <td>覆盖浏览器启动的主机名</td>
 <td><code translate="no" v-pre>&quot;auto&quot;</code></td>
-<td><code translate="no" v-pre>&quot;auto&quot;</code>，任何有效的主机名（例如 <code translate="no" v-pre>&quot;localhost&quot;</code>, <code translate="no" v-pre>&quot;st.example.com&quot;</code>）</td>
+<td><code translate="no" v-pre>&quot;auto&quot;</code>、任意有效主机名（例如 <code translate="no" v-pre>&quot;localhost&quot;</code>、<code translate="no" v-pre>&quot;st.example.com&quot;</code>）</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>browserLaunch.port</code></td>
 <td>覆盖浏览器启动的端口</td>
 <td><code translate="no" v-pre>-1</code></td>
-<td><code translate="no" v-pre>-1</code>（使用服务器端口），任何有效的端口号</td>
+<td><code translate="no" v-pre>-1</code>（使用服务器端口）、任意有效端口号</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>browserLaunch.avoidLocalhost</code></td>
 <td>在启动 URL 中避免使用 &#x27;localhost&#x27;</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="性能配置">性能配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `performance.lazyLoadCharacters` | 延迟加载角色数据 | `true` | `true`、`false` |
+| `performance.useDiskCache` | 启用角色卡磁盘缓存 | `true` | `true`、`false` |
+| `performance.memoryCacheCapacity` | 最大内存缓存容量 | `100mb` | 可读大小（例如 `100mb`、`1gb`） |
+| `performance.requestCompression.enabled` | 为包含大量数据的客户端请求启用 gzip 压缩（例如设置或聊天保存） | `false` | `true`、`false` |
+| `performance.requestCompression.minPayloadSize` | 触发压缩的最小载荷大小。设置为 0 可压缩所有请求 | `256kb` | 可读大小（例如 `256kb`、`1mb`） |
+| `performance.requestCompression.maxPayloadSize` | 压缩的载荷大小硬性上限。设置为 0 可允许压缩任意大小 | `8mb` | 可读大小（例如 `8mb`、`16mb`） |
+| `performance.requestCompression.timeout` | 请求压缩超时时间（毫秒） | `4000` | 正整数 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -949,24 +1378,49 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>performance.lazyLoadCharacters</code></td>
 <td>延迟加载角色数据</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>performance.useDiskCache</code></td>
-<td>为角色卡启用磁盘缓存</td>
+<td>启用角色卡磁盘缓存</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>performance.memoryCacheCapacity</code></td>
 <td>最大内存缓存容量</td>
 <td><code translate="no" v-pre>100mb</code></td>
-<td>人类可读的大小（例如 <code translate="no" v-pre>100mb</code>, <code translate="no" v-pre>1gb</code>）</td>
+<td>可读大小（例如 <code translate="no" v-pre>100mb</code>、<code translate="no" v-pre>1gb</code>）</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>performance.requestCompression.enabled</code></td>
+<td>为包含大量数据的客户端请求启用 gzip 压缩（例如设置或聊天保存）</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>performance.requestCompression.minPayloadSize</code></td>
+<td>触发压缩的最小载荷大小。设置为 0 可压缩所有请求</td>
+<td><code translate="no" v-pre>256kb</code></td>
+<td>可读大小（例如 <code translate="no" v-pre>256kb</code>、<code translate="no" v-pre>1mb</code>）</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>performance.requestCompression.maxPayloadSize</code></td>
+<td>压缩的载荷大小硬性上限。设置为 0 可允许压缩任意大小</td>
+<td><code translate="no" v-pre>8mb</code></td>
+<td>可读大小（例如 <code translate="no" v-pre>8mb</code>、<code translate="no" v-pre>16mb</code>）</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>performance.requestCompression.timeout</code></td>
+<td>请求压缩超时时间（毫秒）</td>
+<td><code translate="no" v-pre>4000</code></td>
+<td>正整数</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="cache-buster-配置">Cache Buster 配置</h2>
+</retype-table>
+<h2 id="缓存清除配置">缓存清除配置</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -979,10 +1433,14 @@ Start.bat --port 8000 --listen false</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>需要 localhost 或带有 HTTPS 的域，否则将无法工作！</p>
+<p>需要 localhost 或带有 HTTPS 的域名，否则将无法工作！</p>
         </div>
     </div>
 </div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|------------------|
+| `cacheBuster.enabled` | 首次加载或上传图片文件后清除浏览器缓存 | `false` | `true`、`false` |
+| `cacheBuster.userAgentPattern` | 仅为匹配指定正则表达式的用户代理清除缓存。示例：`'firefox'`（不区分大小写）。 | `''` | 任意有效的正则表达式字符串 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -996,20 +1454,29 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>cacheBuster.enabled</code></td>
-<td>在首次加载或上传图像文件后清除浏览器缓存</td>
+<td>首次加载或上传图片文件后清除浏览器缓存</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>cacheBuster.userAgentPattern</code></td>
-<td>仅为与指定正则表达式模式匹配的用户代理清除缓存。例如：<code translate="no" v-pre>'firefox'</code>（不区分大小写）。</td>
+<td>仅为匹配指定正则表达式的用户代理清除缓存。示例：<code translate="no" v-pre>'firefox'</code>（不区分大小写）。</td>
 <td><code translate="no" v-pre>''</code></td>
-<td>任何有效的正则表达式字符串</td>
+<td>任意有效的正则表达式字符串</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="缩略图配置">缩略图配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `thumbnails.enabled` | 启用缩略图生成 | `true` | `true`、`false` |
+| `thumbnails.quality` | JPEG 缩略图质量 | `95` | 0-100 |
+| `thumbnails.format` | 缩略图的图片格式 | `jpg` | `jpg`、`png` |
+| `thumbnails.dimensions.bg` | 背景缩略图尺寸 | `[160, 90]` | 两个数字的数组（宽度、高度） |
+| `thumbnails.dimensions.avatar` | 头像缩略图尺寸 | `[96, 144]` | 两个数字的数组（宽度、高度） |
+| `thumbnails.dimensions.persona` | 人设缩略图尺寸 | `[96, 144]` | 两个数字的数组（宽度、高度） |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1025,7 +1492,7 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>thumbnails.enabled</code></td>
 <td>启用缩略图生成</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>thumbnails.quality</code></td>
@@ -1035,32 +1502,41 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>thumbnails.format</code></td>
-<td>缩略图的图像格式</td>
+<td>缩略图的图片格式</td>
 <td><code translate="no" v-pre>jpg</code></td>
-<td><code translate="no" v-pre>jpg</code>, <code translate="no" v-pre>png</code></td>
+<td><code translate="no" v-pre>jpg</code>、<code translate="no" v-pre>png</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>thumbnails.dimensions.bg</code></td>
-<td>背景缩略图大小</td>
+<td>背景缩略图尺寸</td>
 <td><code translate="no" v-pre>[160, 90]</code></td>
-<td>两个数字的数组（宽度，高度）</td>
+<td>两个数字的数组（宽度、高度）</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>thumbnails.dimensions.avatar</code></td>
-<td>头像缩略图大小</td>
+<td>头像缩略图尺寸</td>
 <td><code translate="no" v-pre>[96, 144]</code></td>
-<td>两个数字的数组（宽度，高度）</td>
+<td>两个数字的数组（宽度、高度）</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>thumbnails.dimensions.persona</code></td>
-<td>人格缩略图大小</td>
+<td>人设缩略图尺寸</td>
 <td><code translate="no" v-pre>[96, 144]</code></td>
-<td>两个数字的数组（宽度，高度）</td>
+<td>两个数字的数组（宽度、高度）</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="备份配置">备份配置</h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `backups.common.numberOfBackups` | 保留的备份数量 | `50` | 任意正整数 |
+| `backups.chat.enabled` | 启用自动聊天备份 | `true` | `true`、`false` |
+| `backups.chat.checkIntegrity` | 保存前验证聊天文件完整性 | `true` | `true`、`false` |
+| `backups.chat.throttleInterval` | 备份节流间隔（毫秒） | `10000` | 任意正整数 |
+| `backups.chat.maxTotalBackups` | 保留的最大聊天备份总数 | `-1` | 任意正整数或 -1 |
+| `backups.allowFullDataBackup` | 允许用户创建完整数据备份存档 | `true` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1073,39 +1549,56 @@ Start.bat --port 8000 --listen false</code></pre>
 </thead>
 <tbody>
 <tr>
+<td><code translate="no" v-pre>backups.common.numberOfBackups</code></td>
+<td>保留的备份数量</td>
+<td><code translate="no" v-pre>50</code></td>
+<td>任意正整数</td>
+</tr>
+<tr>
 <td><code translate="no" v-pre>backups.chat.enabled</code></td>
 <td>启用自动聊天备份</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>backups.chat.checkIntegrity</code></td>
-<td>在保存前验证聊天文件的完整性</td>
+<td>保存前验证聊天文件完整性</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
-</tr>
-<tr>
-<td><code translate="no" v-pre>backups.common.numberOfBackups</code></td>
-<td>要保留的备份数量</td>
-<td><code translate="no" v-pre>50</code></td>
-<td>任何正整数</td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>backups.chat.throttleInterval</code></td>
-<td>备份限制间隔（毫秒）</td>
+<td>备份节流间隔（毫秒）</td>
 <td><code translate="no" v-pre>10000</code></td>
-<td>任何正整数</td>
+<td>任意正整数</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>backups.chat.maxTotalBackups</code></td>
-<td>要保留的最大聊天备份总数</td>
+<td>保留的最大聊天备份总数</td>
 <td><code translate="no" v-pre>-1</code></td>
-<td>任何正整数或 -1</td>
+<td>任意正整数或 -1</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>backups.allowFullDataBackup</code></td>
+<td>允许用户创建完整数据备份存档</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="扩展配置"><a href="../../extensions/">扩展配置</a></h2>
+</retype-table>
+<h2 id="extensions-configuration"><a href="../../extensions/">扩展配置</a></h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `extensions.enabled` | 启用 UI 扩展 | `true` | `true`、`false` |
+| `extensions.autoUpdate` | 自动更新扩展（如果扩展清单启用） | `true` | `true`、`false` |
+| `extensions.models.autoDownload` | 启用自动模型下载 | `true` | `true`、`false` |
+| `extensions.models.classification` | 用于分类的 HuggingFace 模型 ID | `&quot;Cohee/distilbert-base-uncased-go-emotions-onnx&quot;` | 有效的模型 ID |
+| `extensions.models.captioning` | 用于图片说明的 HuggingFace 模型 ID | `&quot;Xenova/vit-gpt2-image-captioning&quot;` | 有效的模型 ID |
+| `extensions.models.embedding` | 用于嵌入的 HuggingFace 模型 ID | `&quot;Cohee/jina-embeddings-v2-base-en&quot;` | 有效的模型 ID |
+| `extensions.models.speechToText` | 用于语音转文字的 HuggingFace 模型 ID | `&quot;Xenova/whisper-small&quot;` | 有效的模型 ID |
+| `extensions.models.textToSpeech` | 用于文字转语音的 HuggingFace 模型 ID | `&quot;Xenova/speecht5_tts&quot;` | 有效的模型 ID |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1121,19 +1614,19 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>extensions.enabled</code></td>
 <td>启用 UI 扩展</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>extensions.autoUpdate</code></td>
 <td>自动更新扩展（如果扩展清单启用）</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>extensions.models.autoDownload</code></td>
-<td>启用自动下载模型</td>
+<td>启用自动模型下载</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>extensions.models.classification</code></td>
@@ -1143,7 +1636,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>extensions.models.captioning</code></td>
-<td>用于图像字幕的 HuggingFace 模型 ID</td>
+<td>用于图片说明的 HuggingFace 模型 ID</td>
 <td><code translate="no" v-pre>&quot;Xenova/vit-gpt2-image-captioning&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
@@ -1155,20 +1648,25 @@ Start.bat --port 8000 --listen false</code></pre>
 </tr>
 <tr>
 <td><code translate="no" v-pre>extensions.models.speechToText</code></td>
-<td>用于语音转文本的 HuggingFace 模型 ID</td>
+<td>用于语音转文字的 HuggingFace 模型 ID</td>
 <td><code translate="no" v-pre>&quot;Xenova/whisper-small&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>extensions.models.textToSpeech</code></td>
-<td>用于文本转语音的 HuggingFace 模型 ID</td>
+<td>用于文字转语音的 HuggingFace 模型 ID</td>
 <td><code translate="no" v-pre>&quot;Xenova/speecht5_tts&quot;</code></td>
 <td>有效的模型 ID</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="服务器插件"><a href="../../for-contributors/server-plugins/">服务器插件</a></h2>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `enableServerPlugins` | 启用服务器端插件 | `false` | `true`、`false` |
+| `enableServerPluginsAutoUpdate` | 启动时尝试自动更新服务器插件 | `true` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1184,19 +1682,72 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>enableServerPlugins</code></td>
 <td>启用服务器端插件</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>enableServerPluginsAutoUpdate</code></td>
-<td>在启动时尝试自动更新服务器插件</td>
+<td>启动时尝试自动更新服务器插件</td>
 <td><code translate="no" v-pre>true</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
+<h2 id="git-配置">Git 配置</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Git 后端说明</h5>
+<ol>
+<li><code translate="no" v-pre>auto</code> - 优先使用系统二进制文件，回退到内置引擎</li>
+<li><code translate="no" v-pre>system</code> - 使用 <a href="https://www.npmjs.com/package/simple-git">simple-git</a> 的系统 git 二进制文件</li>
+<li><code translate="no" v-pre>builtin</code> - 使用 <a href="https://www.npmjs.com/package/isomorphic-git">isomorphic-git</a> 的内置引擎</li>
+</ol>
+        </div>
+    </div>
+</div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `git.backend` | 用于插件/扩展仓库操作的 Git 后端 | `auto` | `auto`、`system`、`builtin` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>设置</th>
+<th>描述</th>
+<th>默认值</th>
+<th>允许的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>git.backend</code></td>
+<td>用于插件/扩展仓库操作的 Git 后端</td>
+<td><code translate="no" v-pre>auto</code></td>
+<td><code translate="no" v-pre>auto</code>、<code translate="no" v-pre>system</code>、<code translate="no" v-pre>builtin</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 <h2 id="api-集成设置"><a href="../../usage/api-connections/">API 集成设置</a></h2>
 <h3 id="openai-配置">OpenAI 配置</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `promptPlaceholder` | 空提示词的默认消息 | `&quot;[Start a new chat]&quot;` | 任意字符串 |
+| `openai.randomizeUserId` | 随机化 API 调用的用户 ID | `false` | `true`、`false` |
+| `openai.captionSystemPrompt` | 说明补全的系统消息 | `&quot;&quot;` | 任意字符串 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1210,26 +1761,30 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>promptPlaceholder</code></td>
-<td>空提示的默认消息</td>
+<td>空提示词的默认消息</td>
 <td><code translate="no" v-pre>&quot;[Start a new chat]&quot;</code></td>
-<td>任何字符串</td>
+<td>任意字符串</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>openai.randomizeUserId</code></td>
-<td>为 API 调用随机化用户 ID</td>
+<td>随机化 API 调用的用户 ID</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>openai.captionSystemPrompt</code></td>
-<td>字幕完成的系统消息</td>
+<td>说明补全的系统消息</td>
 <td><code translate="no" v-pre>&quot;&quot;</code></td>
-<td>任何字符串</td>
+<td>任意字符串</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="mistralai-配置">MistralAI 配置</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `mistral.enablePrefix` | 启用回复预填充。**前缀将在响应中回显** | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1245,12 +1800,17 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>mistral.enablePrefix</code></td>
 <td>启用回复预填充。<strong>前缀将在响应中回显</strong></td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="ollama-配置">Ollama 配置</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `ollama.keepAlive` | 模型保活时长（秒） | `-1` | `-1`（无限期）、`0`（立即卸载）、正整数 |
+| `ollama.batchSize` | 控制生成请求的 &quot;num_batch&quot;（批处理大小）参数 | `-1` | `-1`（模型默认值）、正整数 |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1264,19 +1824,20 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>ollama.keepAlive</code></td>
-<td>模型保持活动持续时间（秒）</td>
+<td>模型保活时长（秒）</td>
 <td><code translate="no" v-pre>-1</code></td>
-<td><code translate="no" v-pre>-1</code>（无限期），<code translate="no" v-pre>0</code>（立即卸载），正整数</td>
+<td><code translate="no" v-pre>-1</code>（无限期）、<code translate="no" v-pre>0</code>（立即卸载）、正整数</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>ollama.batchSize</code></td>
-<td>控制生成请求的 &quot;num_batch&quot;（批量大小）参数</td>
+<td>控制生成请求的 &quot;num_batch&quot;（批处理大小）参数</td>
 <td><code translate="no" v-pre>-1</code></td>
-<td><code translate="no" v-pre>-1</code>（模型默认值），正整数</td>
+<td><code translate="no" v-pre>-1</code>（模型默认值）、正整数</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="claude-配置">Claude 配置</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -1291,11 +1852,17 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5><strong>重要！</strong></h5>
-<p>请谨慎使用，仅在提示前缀是静态的且在请求之间不会更改时使用。{{random}} 宏、lorebooks、向量、摘要等可能会使缓存无效，您只会在缓存未命中上浪费金钱。行为可能不可预测，不会也不能提供任何保证。</p>
-<p>参见：<a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching">Prompt Caching</a></p>
+<p>请谨慎使用，仅在提示词前缀在请求之间保持不变时使用。<code translate="no" v-pre>\{\{random\}\}</code> 宏、知识书、向量、摘要等可能会使缓存失效，导致您浪费缓存未命中的费用。提供商可能对缓存有最低提示词大小要求。行为可能不可预测，不提供任何保证，请查阅 API 文档。</p>
+<p>参见：<a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching">提示词缓存</a></p>
         </div>
     </div>
 </div>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `claude.enableSystemPromptCache` | 启用系统提示词缓存 | `false` | `true`、`false` |
+| `claude.cachingAtDepth` | 启用消息历史缓存 | `-1` | `-1`（禁用）、`0` 或正整数 |
+| `claude.extendedTTL` | 使用 1 小时 TTL 代替默认的 5 分钟。注意这也会增加请求费用。 | `false` | `true`、`false` |
+| `claude.enableAdaptiveThinking` | 为支持的模型（Opus 4.6+）启用自适应思考。禁用可强制使用旧版思考模式（带有思考预算）。参见：[自适应思考](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) | `false` | `true`、`false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1309,26 +1876,39 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>claude.enableSystemPromptCache</code></td>
-<td>启用系统提示缓存</td>
+<td>启用系统提示词缓存</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>claude.cachingAtDepth</code></td>
 <td>启用消息历史缓存</td>
 <td><code translate="no" v-pre>-1</code></td>
-<td><code translate="no" v-pre>-1</code>（禁用），<code translate="no" v-pre>0</code> 或正整数</td>
+<td><code translate="no" v-pre>-1</code>（禁用）、<code translate="no" v-pre>0</code> 或正整数</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>claude.extendedTTL</code></td>
-<td>使用 1h TTL 而不是默认的 5m。请注意，这也会增加请求的成本。</td>
+<td>使用 1 小时 TTL 代替默认的 5 分钟。注意这也会增加请求费用。</td>
 <td><code translate="no" v-pre>false</code></td>
-<td><code translate="no" v-pre>true</code>, <code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>claude.enableAdaptiveThinking</code></td>
+<td>为支持的模型（Opus 4.6+）启用自适应思考。禁用可强制使用旧版思考模式（带有思考预算）。参见：<a href="https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking">自适应思考</a></td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="google-ai-studio-配置">Google AI Studio 配置</h3>
+</retype-table>
+<h3 id="google-gemini-配置">Google Gemini 配置</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `gemini.apiVersion` | API 端点版本（仅限 AI Studio） | `v1beta` | `v1beta`、`v1alpha` |
+| `gemini.thoughtSignatures` | 为请求添加思考签名（如可用）。仅适用于 Gemini 3 及以上版本 | `true` | `true`、`false` |
+| `gemini.enableSystemPromptCache` | 启用系统提示词缓存（仅限 OpenRouter） | `false` | `true`、`false` |
+| `gemini.image.personGeneration` | 参见：&lt;https://ai.google.dev/gemini-api/docs/imagen#imagen-configuration&gt; | `allow_adult` | `dont_allow`、`allow_adult`、`allow_all` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1342,14 +1922,36 @@ Start.bat --port 8000 --listen false</code></pre>
 <tbody>
 <tr>
 <td><code translate="no" v-pre>gemini.apiVersion</code></td>
-<td>API 端点版本</td>
+<td>API 端点版本（仅限 AI Studio）</td>
 <td><code translate="no" v-pre>v1beta</code></td>
-<td><code translate="no" v-pre>v1beta</code>, <code translate="no" v-pre>v1alpha</code></td>
+<td><code translate="no" v-pre>v1beta</code>、<code translate="no" v-pre>v1alpha</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>gemini.thoughtSignatures</code></td>
+<td>为请求添加思考签名（如可用）。仅适用于 Gemini 3 及以上版本</td>
+<td><code translate="no" v-pre>true</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>gemini.enableSystemPromptCache</code></td>
+<td>启用系统提示词缓存（仅限 OpenRouter）</td>
+<td><code translate="no" v-pre>false</code></td>
+<td><code translate="no" v-pre>true</code>、<code translate="no" v-pre>false</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>gemini.image.personGeneration</code></td>
+<td>参见：<a href="https://ai.google.dev/gemini-api/docs/imagen#imagen-configuration">https://ai.google.dev/gemini-api/docs/imagen#imagen-configuration</a></td>
+<td><code translate="no" v-pre>allow_adult</code></td>
+<td><code translate="no" v-pre>dont_allow</code>、<code translate="no" v-pre>allow_adult</code>、<code translate="no" v-pre>allow_all</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="deepl-配置">DeepL 配置</h3>
+<retype-table copy-text="| 设置 | 描述 | 默认值 | 允许的值 |
+|---------|-------------|---------|-----------------|
+| `deepl.formality` | 翻译正式程度 | `&quot;default&quot;` | `&quot;default&quot;`、`&quot;more&quot;`、`&quot;less&quot;`、`&quot;prefer_more&quot;`、`&quot;prefer_less&quot;` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1365,11 +1967,12 @@ Start.bat --port 8000 --listen false</code></pre>
 <td><code translate="no" v-pre>deepl.formality</code></td>
 <td>翻译正式程度</td>
 <td><code translate="no" v-pre>&quot;default&quot;</code></td>
-<td><code translate="no" v-pre>&quot;default&quot;</code>, <code translate="no" v-pre>&quot;more&quot;</code>, <code translate="no" v-pre>&quot;less&quot;</code>, <code translate="no" v-pre>&quot;prefer_more&quot;</code>, <code translate="no" v-pre>&quot;prefer_less&quot;</code></td>
+<td><code translate="no" v-pre>&quot;default&quot;</code>、<code translate="no" v-pre>&quot;more&quot;</code>、<code translate="no" v-pre>&quot;less&quot;</code>、<code translate="no" v-pre>&quot;prefer_more&quot;</code>、<code translate="no" v-pre>&quot;prefer_less&quot;</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 
                 
                 <!-- Required only on API pages -->

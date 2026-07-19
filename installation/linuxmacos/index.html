@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Linux/MacOS 安装指南 | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="Linux/MacOS 安装指南 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="对于 MacOS / Linux，所有这些操作都将在终端（Terminal）中完成。">
+    <title>Linux/MacOS 安装 | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="Linux/MacOS 安装 | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="在 MacOS / Linux 上，以下所有操作均在终端中完成。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/installation/linuxmacos/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/installation/linuxmacos/">
-    <meta property="og:title" content="Linux/MacOS 安装指南 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="对于 MacOS / Linux，所有这些操作都将在终端（Terminal）中完成。">
+    <meta property="og:title" content="Linux/MacOS 安装 | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="在 MacOS / Linux 上，以下所有操作均在终端中完成。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/installation/linuxmacos/">
-    <meta name="twitter:title" content="Linux/MacOS 安装指南 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="对于 MacOS / Linux，所有这些操作都将在终端（Terminal）中完成。">
+    <meta name="twitter:title" content="Linux/MacOS 安装 | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="在 MacOS / Linux 上，以下所有操作均在终端中完成。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/installation/linuxmacos.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,41 +211,41 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="linuxmacos-安装指南">Linux/MacOS 安装指南</h1>
+<h1 id="linuxmacos-安装">Linux/MacOS 安装</h1>
 <h2 id="手动-git-安装">手动 Git 安装</h2>
-<p>对于 MacOS / Linux，所有这些操作都将在终端（Terminal）中完成。</p>
+<p>在 MacOS / Linux 上，以下所有操作均在终端中完成。</p>
 <ol>
-<li>安装 git 和 nodeJS（具体方法将根据您的操作系统而异）</li>
+<li>安装 git 和 nodeJS（具体方法因操作系统而异）</li>
 <li>
 <p>克隆仓库</p>
 <ul>
-<li>Release 分支：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern -b release</code></li>
-<li>Staging 分支：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern -b staging</code></li>
+<li>正式版分支：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern -b release</code></li>
+<li>预览版分支：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern -b staging</code></li>
 </ul>
 </li>
-<li>使用 <code translate="no" v-pre>cd SillyTavern</code> 进入安装文件夹。</li>
-<li>使用以下任一命令运行 <code translate="no" v-pre>start.sh</code> 脚本：</li>
+<li>执行 <code translate="no" v-pre>cd SillyTavern</code> 进入安装目录。</li>
+<li>使用以下命令之一运行 <code translate="no" v-pre>start.sh</code> 脚本：</li>
 </ol>
 <ul>
 <li><code translate="no" v-pre>./start.sh</code></li>
 <li><code translate="no" v-pre>bash start.sh</code></li>
 </ul>
-<h2 id="sillytavern-launcher">SillyTavern Launcher</h2>
-<h3 id="linux-用户">Linux 用户</h3>
+<h2 id="sillytavern-启动器">SillyTavern 启动器</h2>
+<h3 id="适用于-linux-用户">适用于 Linux 用户</h3>
 <ol>
-<li>打开您喜欢的终端并安装 git</li>
-<li>使用以下命令下载 Sillytavern Launcher：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-Launcher.git</code></li>
-<li>使用以下命令进入 SillyTavern-Launcher：<code translate="no" v-pre>cd SillyTavern-Launcher</code></li>
-<li>使用以下命令启动安装程序：<code translate="no" v-pre>chmod +x install.sh &amp;&amp; ./install.sh</code> 并选择您想要安装的内容</li>
+<li>打开你喜欢的终端并安装 git</li>
+<li>使用以下命令下载 SillyTavern 启动器：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-Launcher.git</code></li>
+<li>使用以下命令进入启动器目录：<code translate="no" v-pre>cd SillyTavern-Launcher</code></li>
+<li>使用以下命令启动安装程序：<code translate="no" v-pre>chmod +x install.sh &amp;&amp; ./install.sh</code>，然后选择要安装的内容</li>
 <li>安装完成后，使用以下命令启动启动器：<code translate="no" v-pre>chmod +x launcher.sh &amp;&amp; ./launcher.sh</code></li>
 </ol>
-<h3 id="mac-用户">Mac 用户</h3>
+<h3 id="适用于-mac-用户">适用于 Mac 用户</h3>
 <ol>
 <li>打开终端并使用以下命令安装 brew：<code translate="no" v-pre>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code></li>
-<li>然后使用以下命令安装 git：<code translate="no" v-pre>brew install git</code></li>
-<li>使用以下命令下载 Sillytavern Launcher：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-Launcher.git</code></li>
-<li>使用以下命令进入 SillyTavern-Launcher：<code translate="no" v-pre>cd SillyTavern-Launcher</code></li>
-<li>使用以下命令启动安装程序：<code translate="no" v-pre>chmod +x install.sh &amp;&amp; ./install.sh</code> 并选择您想要安装的内容</li>
+<li>使用以下命令安装 git：<code translate="no" v-pre>brew install git</code></li>
+<li>使用以下命令下载 SillyTavern 启动器：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-Launcher.git</code></li>
+<li>使用以下命令进入启动器目录：<code translate="no" v-pre>cd SillyTavern-Launcher</code></li>
+<li>使用以下命令启动安装程序：<code translate="no" v-pre>chmod +x install.sh &amp;&amp; ./install.sh</code>，然后选择要安装的内容</li>
 <li>安装完成后，使用以下命令启动启动器：<code translate="no" v-pre>chmod +x launcher.sh &amp;&amp; ./launcher.sh</code></li>
 </ol>
 

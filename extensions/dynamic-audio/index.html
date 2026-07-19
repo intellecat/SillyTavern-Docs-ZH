@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Dynamic Audio (动态音频) | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="Dynamic Audio (动态音频) | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本指南将帮助您为 SillyTavern 设置和自定义动态音频资源。">
+    <title>Dynamic Audio（动态音频） | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="Dynamic Audio（动态音频） | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="本指南将引导你完成动态音频资产的设置和自定义，以丰富你的 SillyTavern 体验。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/dynamic-audio/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/dynamic-audio/">
-    <meta property="og:title" content="Dynamic Audio (动态音频) | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本指南将帮助您为 SillyTavern 设置和自定义动态音频资源。">
+    <meta property="og:title" content="Dynamic Audio（动态音频） | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="本指南将引导你完成动态音频资产的设置和自定义，以丰富你的 SillyTavern 体验。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/dynamic-audio/">
-    <meta name="twitter:title" content="Dynamic Audio (动态音频) | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="本指南将帮助您为 SillyTavern 设置和自定义动态音频资源。">
+    <meta name="twitter:title" content="Dynamic Audio（动态音频） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="本指南将引导你完成动态音频资产的设置和自定义，以丰富你的 SillyTavern 体验。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/dynamic-audio.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,38 +211,38 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="dynamic-audio-动态音频">Dynamic Audio (动态音频)</h1>
-<p>本指南将帮助您为 SillyTavern 设置和自定义动态音频资源。</p>
+<h1 id="dynamic-audio动态音频">Dynamic Audio（动态音频）</h1>
+<p>本指南将引导你完成动态音频资产的设置和自定义，以丰富你的 SillyTavern 体验。</p>
 <h2 id="前提条件">前提条件</h2>
 <p>在开始之前，请确保满足以下前提条件：</p>
 <ul>
-<li>确保您使用的是最新版本的 SillyTavern。</li>
-<li>从扩展面板（堆叠块图标）的&quot;Download Extensions &amp; Assets&quot;菜单中安装&quot;Dynamic Audio&quot;扩展。</li>
+<li>确保你使用的是最新版本的 SillyTavern。</li>
+<li>从扩展面板（堆叠方块图标）的&quot;下载扩展与资产&quot;菜单中安装&quot;Dynamic Audio&quot;扩展。</li>
 </ul>
 <h2 id="动态音频设置浏览器">动态音频设置（浏览器）</h2>
 <ol>
 <li>
-<p><strong>连接到资源库</strong>：</p>
+<p><strong>连接到资产仓库</strong>：</p>
 <ul>
-<li>启动 SillyTavern 并导航到 <strong>Extensions</strong> &gt; <strong>Assets</strong>。</li>
-<li>点击&quot;Connect&quot;按钮建立与官方资源库的连接。</li>
-<li>下载所需的音频资源，如背景音乐（BGM）或环境音效，这些资源应与您打算使用的背景相对应。</li>
+<li>启动 SillyTavern 并导航到<strong>扩展</strong> &gt; <strong>资产</strong>。</li>
+<li>点击&quot;连接&quot;按钮以建立与官方资产仓库的连接。</li>
+<li>下载所需的音频资产，例如背景音乐（BGM）或环境音效，对应你打算使用的背景图片。</li>
 </ul>
 </li>
 <li>
 <p><strong>启用动态音频扩展</strong>：</p>
 <ul>
-<li>在 SillyTavern 中，转到 <strong>Extensions</strong> &gt; <strong>Dynamic Audio</strong>。</li>
-<li>启用扩展，取消静音并根据您的偏好调整 BGM 和环境音效的音量。</li>
-<li>当 BGM 结束时，将随机播放另一首，点击循环按钮可以保持当前 BGM 持续播放。</li>
-<li>点击随机按钮可以随机选择另一首 BGM。</li>
+<li>在 SillyTavern 中，进入<strong>扩展</strong> &gt; <strong>Dynamic Audio</strong>。</li>
+<li>启用该扩展，取消静音并根据喜好调整 BGM 和环境音效的音量。</li>
+<li>当 BGM 结束后，会随机播放另一首；点击循环按钮可保持当前 BGM 持续播放。</li>
+<li>点击随机按钮可随机切换到另一首 BGM。</li>
 </ul>
 </li>
 <li>
 <p><strong>基于表情的 BGM</strong>：</p>
 <ul>
-<li>如果您希望 BGM 跟随角色表情变化，请启用表情 BGM 开关（需要在角色文件夹中有 BGM，详见下文）。</li>
-<li>调整 BGM 更新之间的冷却时间（以秒为单位）。如果您发现在群聊中或使用基于情绪检测的角色特定 BGM 时音乐变化太频繁，请增加这个值。</li>
+<li>如果希望 BGM 跟随角色表情变化，请启用表情 BGM 开关（需要在角色文件夹中有 BGM，详见下文）。</li>
+<li>调整 BGM 更新之间的冷却时间（秒）。如果你发现 BGM 在群聊中或使用带情感检测的角色专属 BGM 时切换过于频繁，请增大此值。</li>
 </ul>
 </li>
 </ol>
@@ -252,7 +252,7 @@
 <li>
 <p><strong>导航到角色文件夹</strong>：</p>
 <ul>
-<li>转到角色文件夹，例如 <code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\characters\Seraphina</code>。</li>
+<li>进入角色文件夹，例如：<code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\characters\Seraphina</code>。</li>
 </ul>
 </li>
 <li>
@@ -264,66 +264,66 @@
 <li>
 <p><strong>导入情绪音乐</strong>：</p>
 <ul>
-<li>在 <code translate="no" v-pre>bgm</code> 文件夹内，导入每种情绪的音乐文件。支持的音频扩展名包括 <code translate="no" v-pre>.mp3</code>、<code translate="no" v-pre>.ogg</code> 和 <code translate="no" v-pre>.wav</code>。</li>
-<li>命名规则：<code translate="no" v-pre>[emotion]_[number].mp3</code>，例如 <code translate="no" v-pre>anger_0.mp3</code>、<code translate="no" v-pre>joy_0.mp3</code>。</li>
+<li>在 <code translate="no" v-pre>bgm</code> 文件夹中，为每种情绪导入对应的音乐文件。支持的音频格式包括 <code translate="no" v-pre>.mp3</code>、<code translate="no" v-pre>.ogg</code> 和 <code translate="no" v-pre>.wav</code>。</li>
+<li>命名规范：<code translate="no" v-pre>[情绪]_[编号].mp3</code>，例如 <code translate="no" v-pre>anger_0.mp3</code>、<code translate="no" v-pre>joy_0.mp3</code>。</li>
 </ul>
 </li>
 <li>
-<p><strong>每种情绪的多个音轨</strong>：</p>
+<p><strong>为情绪设置多首曲目</strong>：</p>
 <ul>
-<li>您可以通过递增数字为同一情绪导入多个音轨，例如 <code translate="no" v-pre>neutral_1.mp3</code>、<code translate="no" v-pre>neutral_2.mp3</code>。</li>
+<li>你可以通过递增编号为同一情绪导入多首曲目，例如 <code translate="no" v-pre>neutral_1.mp3</code>、<code translate="no" v-pre>neutral_2.mp3</code>。</li>
 </ul>
 </li>
 <li>
 <p><strong>默认音乐选择</strong>：</p>
 <ul>
-<li>当未检测到情绪时，将随机播放一个中性音轨作为默认值。情绪检测的方式与更新精灵图类似；详情请参阅<a href="../expression-images/">表情图片文档</a>。</li>
+<li>当未检测到情绪时，将随机播放一首中性曲目作为默认值。情绪检测方式与更新精灵图类似；详情请参阅<a href="../expression-images/">表情图片文档</a>。</li>
 </ul>
 </li>
 </ol>
 <h2 id="更改默认-bgm-音乐">更改默认 BGM 音乐</h2>
-<p>如果角色的文件夹中没有自定义 BGM，将播放默认音轨。以下是更改方法：</p>
+<p>如果角色文件夹中没有自定义 BGM，将播放默认曲目。以下是更改方法：</p>
 <ol>
 <li>
 <p><strong>导航到 BGM 文件夹</strong>：</p>
 <ul>
-<li>转到以下文件夹：<code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\assets\bgm</code>。</li>
+<li>进入以下文件夹：<code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\assets\bgm</code>。</li>
 </ul>
 </li>
 <li>
 <p><strong>替换/添加音乐</strong>：</p>
 <ul>
-<li>替换或添加音乐文件（<code translate="no" v-pre>.mp3</code>、<code translate="no" v-pre>.ogg</code>、<code translate="no" v-pre>.wav</code>）到此文件夹。</li>
-<li>这些是使用资源扩展下载的官方音频资源。</li>
-<li>当找不到角色特定的 BGM 时（单人或群聊），将随机播放其中一个音轨。</li>
+<li>在此文件夹中替换或添加音乐文件（<code translate="no" v-pre>.mp3</code>、<code translate="no" v-pre>.ogg</code>、<code translate="no" v-pre>.wav</code>）。</li>
+<li>这些是通过资产扩展下载的官方音频资产。</li>
+<li>当未找到角色专属 BGM 时（单人或群聊），将随机播放其中一首曲目。</li>
 </ul>
 </li>
 </ol>
 <h2 id="更改环境音效">更改环境音效</h2>
-<p>环境音效为您的场景增添深度。以下是自定义方法：</p>
+<p>环境音效为你的场景增添深度。以下是自定义方法：</p>
 <ol>
 <li>
 <p><strong>导航到环境音效文件夹</strong>：</p>
 <ul>
-<li>转到以下文件夹：<code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\assets\ambient</code>。</li>
+<li>进入以下文件夹：<code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\assets\ambient</code>。</li>
 </ul>
 </li>
 <li>
-<p><strong>文件命名规则</strong>：</p>
+<p><strong>文件命名规范</strong>：</p>
 <ul>
-<li>环境音频文件名与背景图片文件名对应，将空格替换为破折号。</li>
-<li>示例：&quot;bedroom-clean.mp3&quot;对应&quot;bedroom clean.jpg&quot;背景。</li>
-<li>如果锁定按钮未锁定，将播放与背景对应的音频文件。激活锁定将保持当前环境音效继续播放。</li>
+<li>环境音频文件名与背景图片文件名对应，将空格替换为连字符。</li>
+<li>示例：<code translate="no" v-pre>&quot;bedroom-clean.mp3&quot;</code> 对应背景图片 &quot;bedroom clean.jpg&quot;。</li>
+<li>如果锁定按钮未锁定，将播放与背景对应的音频文件。激活锁定将保持当前环境音效持续播放。</li>
 </ul>
 </li>
 <li>
 <p><strong>自定义环境音效</strong>：</p>
 <ul>
-<li>您可以按照相同的命名模式为自定义或现有背景添加自己的环境音效。</li>
+<li>你可以按照相同的命名规则为自定义或现有背景添加自己的环境音效。</li>
 </ul>
 </li>
 </ol>
-<p>感谢您阅读本指南！您的 SillyTavern 体验现在已通过动态音频得到增强。</p>
+<p>感谢你阅读本指南！你的 SillyTavern 体验现已通过动态音频得到丰富。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -343,7 +343,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Chat Vectorization (聊天向量化)</span>
+                                <span class="block mt-1">Chat Vectorization（聊天向量化）</span>
                             </span>
                         </a>
                     </div>
@@ -396,6 +396,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Dynamic Audio (动态音频)", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/dynamic-audio.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Dynamic Audio（动态音频）", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/dynamic-audio.md" }</script>
 </body>
 </html>

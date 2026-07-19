@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>多用户模式 | SillyTavern傻酒馆中文文档</title>
@@ -41,12 +41,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -318,6 +318,26 @@ Example: node recover.js admin SecurePassword</code></pre>
     </div>
 </div>
 <h3 id="识别的内容类型">识别的内容类型</h3>
+<retype-table copy-text="| 类型                          | 值                |
+|-------------------------------|----------------------|
+| settings.json                 | `'settings'`         |
+| 角色卡                | `'character'`        |
+| 角色精灵             | `'sprites'`          |
+| 背景图像              | `'background'`       |
+| World Info 文件               | `'world'`            |
+| 人格头像                | `'avatar'`           |
+| UI 主题                      | `'theme'`            |
+| ComfyUI workflow              | `'workflow'`         |
+| KoboldAI Classic 预设       | `'kobold_preset'`    |
+| Chat Completion 预设        | `'openai_preset'`    |
+| NovelAI 预设                | `'novel_preset'`     |
+| Text Completion 预设        | `'textgen_preset'`   |
+| Instruct Mode 模板        | `'instruct'`         |
+| Context Formatting 模板   | `'context'`          |
+| MovingUI 预设               | `'moving_ui'`        |
+| Quick Replies 集             | `'quick_replies'`    |
+| System Prompt 模板        | `'sysprompt'`        |
+| Reasoning Formatting 模板 | `'reasoning'`        |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -402,6 +422,7 @@ Example: node recover.js admin SecurePassword</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="示例-defaultscaffoldindexjson">示例 (<code translate="no" v-pre>/default/scaffold/index.json</code>)</h3>
 <div id="示例-defaultscaffoldindexjson-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">[
@@ -447,7 +468,7 @@ Example: node recover.js admin SecurePassword</code></pre>
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../administration/sso/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">单点登录 (SSO)</span>
+                                <span class="block mt-1">Single Sign-​On (SSO)</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>

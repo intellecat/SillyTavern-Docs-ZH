@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>数据库（RAG） | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="数据库（RAG） | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。">
+    <meta name="description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据以外的信息，帮助提升 AI 回答的准确性。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/core-concepts/data-bank/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/core-concepts/data-bank/">
     <meta property="og:title" content="数据库（RAG） | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。">
+    <meta property="og:description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据以外的信息，帮助提升 AI 回答的准确性。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/core-concepts/data-bank/">
     <meta name="twitter:title" content="数据库（RAG） | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。">
+    <meta name="twitter:description" content="检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据以外的信息，帮助提升 AI 回答的准确性。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/characters/data-bank.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,22 +212,22 @@
 
                 <!-- Page content  -->
 <h1 id="数据库rag">数据库（RAG）</h1>
-<p>检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。</p>
-<p>SillyTavern 提供了一套工具，用于从多种来源构建多用途知识库，以及在 LLM 提示词中使用收集的数据。</p>
+<p>检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据以外的信息，帮助提升 AI 回答的准确性。</p>
+<p>SillyTavern 提供了一套工具，可从多种来源构建多用途知识库，并将收集到的数据用于 LLM 提示词中。</p>
 <h2 id="访问数据库">访问数据库</h2>
-<p>内置的聊天附件扩展（在 1.12.0 及更高版本中默认包含）在&quot;魔法棒&quot;菜单中添加了一个新选项 - 数据库。这是您管理 SillyTavern 中用于 RAG 的文档的中心。</p>
+<p>内置的聊天附件扩展（1.12.0 及更高版本默认包含）在&quot;魔法棒&quot;菜单中新增了一个选项——数据库。这是您管理 SillyTavern 中 RAG 所用文档的中心。</p>
 <h2 id="关于文档">关于文档</h2>
 <p>数据库存储文件附件，也称为文档。文档分为三个可用范围。</p>
 <ol>
-<li>全局附件 - 在每个聊天中都可用，无论是单人还是群组。</li>
-<li>角色附件 - 仅对当前选择的角色可用，包括他们在群组中回复时。<em>附件保存在本地，不会随角色卡片导出！</em></li>
-<li>聊天附件 - 仅在当前打开的聊天中可用。聊天中的每个角色都可以从中获取信息。</li>
+<li>全局附件——在每个聊天中均可用，无论是单人聊天还是群组聊天。</li>
+<li>角色附件——仅对当前选定的角色可用，包括该角色在群组中发言时。<em>附件保存在本地，不会随角色卡导出！</em></li>
+<li>聊天附件——仅在当前打开的聊天中可用。聊天中的每个角色均可从中获取信息。</li>
 </ol>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -236,25 +236,25 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 注意</h5>
-<p>虽然不是数据库的正式组成部分，但您甚至可以将文件附加到单个消息。使用&quot;魔法棒&quot;菜单中的附加文件选项，或消息操作行中的回形针图标。</p>
+            <h5>注意</h5>
+<p>虽然不是数据库的正式组成部分，但您也可以将文件附加到单条消息上。可使用&quot;魔法棒&quot;菜单中的&quot;附加文件&quot;选项，或消息操作栏中的回形针图标。</p>
         </div>
     </div>
 </div>
-<p>什么可以成为文档？实际上任何可以用纯文本形式表示的内容！</p>
+<p>什么可以成为文档？几乎任何可以用纯文本形式表示的内容！</p>
 <p>示例包括但不限于：</p>
 <ul>
 <li>本地文件（书籍、科学论文等）</li>
 <li>网页（维基百科、文章、新闻）</li>
-<li>视频转录</li>
+<li>视频转录文本</li>
 </ul>
-<p>各种扩展和插件也可以提供新的方式来收集和处理数据，下面会详细介绍。</p>
+<p>各种扩展和插件也可以提供收集和处理数据的新途径，详见下文。</p>
 <h2 id="数据来源">数据来源</h2>
-<p>要将文档添加到任何范围，点击&quot;添加&quot;并选择一个可用的来源。</p>
+<p>要向任意范围添加文档，点击&quot;添加&quot;并选择一个可用来源。</p>
 <h3 id="记事本">记事本</h3>
 <p>从头创建文本文件，或编辑现有附件。</p>
 <h3 id="文件">文件</h3>
-<p>从您的计算机硬盘上传文件。SillyTavern 为常见文件格式提供内置转换器：</p>
+<p>从您计算机的硬盘上传文件。SillyTavern 为常见文件格式提供内置转换器：</p>
 <ul>
 <li>PDF（仅文本）</li>
 <li>HTML</li>
@@ -262,12 +262,12 @@
 <li>ePUB</li>
 <li>TXT</li>
 </ul>
-<p>您也可以附加任何带有非标准扩展名的文本文件，如 JSON、YAML、源代码等。如果所选文件类型没有已知的转换方式，并且文件无法解析为纯文本文档，文件上传将被拒绝，这意味着不允许原始二进制文件。</p>
+<p>您也可以附加带有非标准扩展名的文本文件，如 JSON、YAML、源代码等。如果所选文件类型没有已知转换方式，且文件无法解析为纯文本文档，则文件上传将被拒绝，即原始二进制文件不被允许。</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -276,23 +276,23 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 注意</h5>
-<p>导入 Microsoft Office（DOCX、PPTX、XLSX）和 LibreOffice 文档（ODT、ODP、ODS）需要安装并加载<a href="https://github.com/SillyTavern/SillyTavern-Office-Parser">服务器插件</a>。有关安装说明，请参阅插件的 README 页面。</p>
+            <h5>注意</h5>
+<p>导入 Microsoft Office（DOCX、PPTX、XLSX）和 LibreOffice 文档（ODT、ODP、ODS）需要安装并加载<a href="https://github.com/SillyTavern/SillyTavern-Office-Parser">服务器插件</a>。请参阅插件的 README 页面了解安装说明。</p>
         </div>
     </div>
 </div>
 <h3 id="网页">网页</h3>
-<p>通过 URL 从网页抓取文本。然后通过 <a href="https://github.com/mozilla/readability">Readability</a> 库处理 HTML 文档以提取可用文本。</p>
-<p>某些 Web 服务器可能会拒绝获取请求，受 Cloudflare 保护，或严重依赖 JavaScript 来运行。如果您遇到任何特定网站的问题，请通过网络浏览器手动下载页面并使用文件上传器附加它。</p>
+<p>通过 URL 从网页抓取文本。HTML 文档将通过 <a href="https://github.com/mozilla/readability">Readability</a> 库处理，以提取可用文本。</p>
+<p>某些 Web 服务器可能会拒绝抓取请求、受 Cloudflare 保护，或严重依赖 JavaScript 才能正常运行。如果您在抓取某个特定网站时遇到问题，请通过浏览器手动下载该页面，然后使用文件上传器附加。</p>
 <h3 id="youtube">YouTube</h3>
-<p>通过 ID 或 URL 下载 YouTube 视频的转录文本，可以是创作者上传的或由 Google 自动生成的。某些视频可能已禁用转录，同时由于需要登录，无法解析年龄限制视频。</p>
-<p>脚本以视频的默认语言加载。您也可以选择指定两个字母的语言代码，尝试获取特定语言的转录。此功能并非总是可用，可能会失败，因此请谨慎使用。</p>
+<p>通过 ID 或 URL 下载 YouTube 视频的转录文本，可以是创作者上传的或由 Google 自动生成的。某些视频可能已禁用转录功能；此外，由于需要登录，年龄限制视频无法解析。</p>
+<p>脚本以视频的默认语言加载。您也可以选择指定两个字母的语言代码，尝试获取特定语言的转录。此功能并非始终可用，可能会失败，请谨慎使用。</p>
 <h3 id="网页搜索">网页搜索</h3>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -301,19 +301,19 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 注意</h5>
-<p>此来源需要安装并正确配置<a href="../../../extensions/websearch/">网页搜索</a>扩展。有关详细信息，请参阅链接页面。</p>
+            <h5>注意</h5>
+<p>此来源需要安装并正确配置<a href="../../../extensions/websearch/">网页搜索</a>扩展。请参阅链接页面了解更多详情。</p>
         </div>
     </div>
 </div>
-<p>执行网页搜索并从搜索结果页面下载文本。这类似于网页来源但完全自动化。将从扩展设置中继承所选搜索引擎，因此请提前设置。</p>
-<p>首先，指定搜索查询、要访问的最大链接数，以及输出类型：一个组合文件（根据扩展规则格式化）或每个页面一个单独的文件。您也可以选择保存页面摘要。</p>
+<p>执行网页搜索并从搜索结果页面下载文本。与网页来源类似，但完全自动化。所选搜索引擎将继承自扩展设置，请提前配置好。</p>
+<p>首先，指定搜索查询、要访问的最大链接数，以及输出类型：一个合并文件（按扩展规则格式化）或每个页面一个单独文件。您也可以选择保存页面摘要。</p>
 <h3 id="fandom">Fandom</h3>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -322,46 +322,45 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 注意</h5>
-<p>此来源需要安装并加载<a href="https://github.com/SillyTavern/SillyTavern-Fandom-Scraper">服务器插件</a>。有关安装说明，请参阅插件的 README 页面。</p>
+            <h5>注意</h5>
+<p>此来源需要安装并加载<a href="https://github.com/SillyTavern/SillyTavern-Fandom-Scraper">服务器插件</a>。请参阅插件的 README 页面了解安装说明。</p>
         </div>
     </div>
 </div>
-<p>通过 ID 或 URL 从 <a href="https://www.fandom.com/">Fandom</a> wiki 抓取文章。由于某些 wiki 非常大，使用过滤正则表达式限制范围可能会有帮助，它将针对文章标题进行测试。如果没有提供过滤器，则所有页面都将被导出。您可以将它们保存为每个页面的单独文件，或合并为一个文档。</p>
+<p>通过 ID 或 URL 从 <a href="https://www.fandom.com/">Fandom</a> wiki 抓取文章。由于部分 wiki 内容量庞大，建议使用过滤正则表达式限制抓取范围，该表达式将与文章标题进行匹配。若未提供过滤器，则所有页面均会被导出。您可以将内容保存为每个页面的单独文件，或合并为一个文档。</p>
 <h3 id="bronie-解析器扩展第三方">Bronie 解析器扩展（第三方）</h3>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning 注意</h5>
-<p>此来源来自第三方，与 SillyTavern 团队<strong>无关</strong>。此来源需要您安装 Bronya Rand 的 <a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension">Bronie 解析器扩展</a>以及需要解析器工作的服务器插件。</p>
+            <h5>注意</h5>
+<p>此来源来自第三方，与 SillyTavern 团队<strong>无关</strong>。使用此来源需要您安装 Bronya Rand 的 <a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension">Bronie 解析器扩展</a>，以及需要该解析器的服务器插件。</p>
         </div>
     </div>
 </div>
-<p>Bronya Rand 的 Bronie 解析器扩展允许使用第三方抓取器，如米哈游/HoYoverse 的 <a href="https://wiki.hoyolab.com">HoYoLab</a> 到 SillyTavern，类似于其他数据来源。</p>
+<p>Bronya Rand 的 Bronie 解析器扩展允许使用第三方抓取器（如米哈游/HoYoverse 的 <a href="https://wiki.hoyolab.com">HoYoLab</a>）接入 SillyTavern，与其他数据来源用法类似。</p>
 <p>目前，Bronya Rand 的 Bronie 解析器扩展支持以下内容：</p>
 <ul>
-<li>米哈游/HoYoverse 的 HoYoLab（用于原神/崩坏：星穹铁道）通过 <a href="https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS">HoYoWiki-Scraper-TS</a></li>
+<li>米哈游/HoYoverse 的 HoYoLab（适用于原神/崩坏：星穹铁道），通过 <a href="https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS">HoYoWiki-Scraper-TS</a></li>
 </ul>
-<p>首先，按照其<a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation">安装指南</a>安装 Bronya Rand 的 Bronie 解析器扩展，并在 SillyTavern 中安装支持的服务器插件。重启 SillyTavern 并进入_数据库_菜单。点击<code translate="no" v-pre>+ 添加</code>，您应该会看到您最近安装的抓取器已添加到可能的信息来源列表中。</p>
-<h2 id="向量存储">向量存储</h2>
-<p>好的，您已经为您的特定主题建立了一个不错且全面的信息库。接下来呢？</p>
-<p>要将文档用于 RAG，您需要使用兼容的扩展，它将相关数据插入到 LLM 提示词中。</p>
-<p>向量存储，它与 SillyTavern 捆绑在一起，是这种扩展的参考实现。它使用嵌入（也称为向量）来搜索与您正在进行的聊天相关的文档。</p>
+<p>首先，按照其<a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation">安装指南</a>安装 Bronya Rand 的 Bronie 解析器扩展，并在 SillyTavern 中安装受支持的服务器插件。重启 SillyTavern 后进入_数据库_菜单，点击 <code translate="no" v-pre>+ 添加</code>，您应该能看到最近安装的抓取器已添加到可用来源列表中。</p>
+<h2 id="vector-storage">向量存储</h2>
+<p>好的，您已经为特定主题建立了一个不错且全面的信息库。接下来呢？</p>
+<p>要将文档用于 RAG，您需要使用兼容的扩展，由其将相关数据插入到 LLM 提示词中。</p>
+<p>向量存储（Vector Storage）与 SillyTavern 捆绑提供，是此类扩展的参考实现。它使用嵌入（也称为向量）来搜索与当前聊天相关的文档。</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -370,61 +369,68 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 有趣的事实</h5>
+            <h5>有趣的事实</h5>
 <ol>
-<li>嵌入是抽象表示一段文本的数字数组，由专门的语言模型生成。更相似的文本在它们各自的向量之间有更短的距离。</li>
-<li>向量存储扩展使用 <a href="https://github.com/Stevenic/vectra">Vectra</a> 库来跟踪文件嵌入。它们存储在用户数据目录的 <code translate="no" v-pre>/vectors</code> 文件夹中的 JSON 文件中。每个文档在内部由其自己的索引/集合文件表示。</li>
+<li>嵌入是由专门的语言模型生成的数字数组，抽象地表示一段文本。文本越相似，其对应向量之间的距离就越短。</li>
+<li>向量存储扩展使用 <a href="https://github.com/Stevenic/vectra">Vectra</a> 库来跟踪文件嵌入。它们以 JSON 文件的形式存储在用户数据目录的 <code translate="no" v-pre>/vectors</code> 文件夹中。每个文档在内部由其独立的索引/集合文件表示。</li>
 </ol>
         </div>
     </div>
 </div>
-<p>由于向量功能默认是禁用的，您需要打开扩展面板（顶部栏上的&quot;堆叠立方体&quot;图标），然后导航到&quot;向量存储&quot;部分，并在&quot;文件向量化设置&quot;下勾选&quot;为文件启用&quot;复选框。</p>
+<p>由于向量功能默认禁用，您需要打开扩展面板（顶部栏上的&quot;堆叠立方体&quot;图标），导航到&quot;向量存储&quot;部分，并在&quot;文件向量化设置&quot;下勾选&quot;为文件启用&quot;复选框。</p>
 <p>向量存储本身不生成任何向量，您需要使用兼容的嵌入提供者。</p>
 <h2 id="向量提供者">向量提供者</h2>
-<h3 id="本地">本地</h3>
-<p>这些来源是免费且无限制的，使用您的 CPU/GPU 计算嵌入。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>警告</h5>
+<p>嵌入只有在使用生成它们的同一模型检索时才可用。更换嵌入模型或来源时，需要重新计算向量。</p>
+        </div>
+    </div>
+</div>
+<h3 id="本地来源">本地来源</h3>
+<p>这些来源免费且不限量，使用您的 CPU/GPU 计算嵌入。</p>
 <ol>
-<li>本地（Transformers）- 在 Node 服务器上运行。SillyTavern 将自动从 HuggingFace 下载兼容的 ONNX 格式模型。默认模型：<a href="https://huggingface.co/Cohee/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a>。</li>
-<li>Extras - 使用 SentenceTransformers 加载器在 <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras API</a> 下运行。默认模型：<a href="https://huggingface.co/sentence-transformers/all-mpnet-base-v2">all-mpnet-base-v2</a>。</li>
-<li>Ollama - 从 <a href="https://ollama.com/">https://ollama.com/</a> 获取。在 API 连接菜单中设置 API URL（在文本补全下，默认：<code translate="no" v-pre>http://localhost:11434</code>）。必须先下载兼容的模型，然后在扩展设置中设置其名称。示例模型：<a href="https://ollama.com/library/mxbai-embed-large">mxbai-embed-large</a>。可选择勾选选项以将模型保持在内存中。</li>
-<li>llama.cpp 服务器 - 从 <a href="https://github.com/ggerganov/llama.cpp">ggerganov/llama.cpp</a> 获取并使用 <code translate="no" v-pre>--embedding</code> 标志运行服务器可执行文件。从 HuggingFace 加载兼容的 GGUF 嵌入模型，例如 <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF">nomic-ai/nomic-embed-text-v1.5-GGUF</a>。</li>
-<li>vLLM - 从 <a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a> 获取。首先在 API 连接菜单中设置 API URL 和 API 密钥。</li>
+<li>本地（Transformers）——运行在 Node 服务器上。SillyTavern 将自动从 HuggingFace 下载 ONNX 格式的兼容模型。默认模型：<a href="https://huggingface.co/Cohee/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a>。</li>
+<li>WebLLM——需要安装扩展，且浏览器需<a href="https://caniuse.com/webgpu">支持 WebGPU</a>。直接在浏览器中运行，可利用硬件加速。自动从 HuggingFace 下载受支持的模型。扩展安装地址：<a href="https://github.com/SillyTavern/Extension-WebLLM">https://github.com/SillyTavern/Extension-WebLLM</a>。</li>
+<li>Ollama——从 <a href="https://ollama.com/">https://ollama.com/</a> 获取。在 API 连接菜单中设置 API URL（位于文本补全下，默认：<code translate="no" v-pre>http://localhost:11434</code>）。需先下载兼容模型，然后在扩展设置中填写其名称。示例模型：<a href="https://ollama.com/library/mxbai-embed-large">mxbai-embed-large</a>。可选择勾选&quot;保持模型常驻内存&quot;选项。</li>
+<li>llama.cpp 服务器——从 <a href="https://github.com/ggerganov/llama.cpp">ggerganov/llama.cpp</a> 获取，并使用 <code translate="no" v-pre>--embedding</code> 标志运行服务器可执行文件。从 HuggingFace 加载兼容的 GGUF 嵌入模型，例如 <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF">nomic-ai/nomic-embed-text-v1.5-GGUF</a>。</li>
+<li>vLLM——从 <a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a> 获取。需先在 API 连接菜单中设置 API URL 和 API 密钥。</li>
+<li>Extras（已弃用）——使用 SentenceTransformers 加载器运行在 <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras API</a> 下。默认模型：<a href="https://huggingface.co/sentence-transformers/all-mpnet-base-v2">all-mpnet-base-v2</a>。该来源不再维护，未来将被移除。</li>
 </ol>
 <h3 id="api-来源">API 来源</h3>
-<p>所有这些来源都需要相应服务的 API 密钥，通常有使用成本，但一般来说计算嵌入的成本相当低。</p>
+<p>以下所有来源均需要相应服务的 API 密钥，通常有使用费用，但计算嵌入的成本一般较低。</p>
 <ol>
 <li>OpenAI</li>
 <li>Cohere</li>
-<li>Google MakerSuite</li>
+<li>Google AI Studio</li>
+<li>Google Vertex AI</li>
 <li>TogetherAI</li>
 <li>MistralAI</li>
 <li>NomicAI</li>
+<li>OpenRouter</li>
+<li>Electron Hub</li>
+<li>Chutes</li>
+<li>NanoGPT</li>
+<li>SiliconFlow</li>
+<li>Cloudflare Workers AI</li>
 </ol>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>warning 警告</h5>
-<p>嵌入只有在使用生成它们的相同模型检索时才可用。更改嵌入模型或来源时，建议清除并重新计算文件向量。</p>
-        </div>
-    </div>
-</div>
 <h2 id="向量化设置">向量化设置</h2>
-<p>在选择了嵌入提供者之后，不要忘记配置其他设置，这些设置将定义处理和检索文档的规则。</p>
+<p>选择嵌入提供者后，请务必配置其他设置，这些设置将定义处理和检索文档的规则。</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -433,8 +439,8 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 注意</h5>
-<p>附件的分割、向量化和信息检索需要一些时间。虽然文件的初始摄取可能需要一段时间，但 RAG 搜索查询通常足够快，不会造成明显的延迟。</p>
+            <h5>注意</h5>
+<p>附件的分割、向量化和信息检索需要一定时间。虽然文件的初始摄取可能耗时较长，但 RAG 搜索查询通常足够快速，不会造成明显延迟。</p>
         </div>
     </div>
 </div>
@@ -442,45 +448,48 @@
 <p>这些设置控制直接附加到消息的文件。</p>
 <p>适用以下规则：</p>
 <ol>
-<li>只有适合 LLM 上下文窗口的消息才能检索其附件。</li>
-<li>当向量存储扩展被禁用时，文件附件及其附带的消息将完全插入到提示词中。</li>
-<li>当启用文件向量化时，文件将被分割成块，只有最相关的部分会被插入，节省上下文空间并让模型保持专注。</li>
+<li>只有适合 LLM 上下文窗口的消息，其附件才能被检索。</li>
+<li>当向量存储扩展被禁用时，文件附件及其附带的消息会被完整插入到提示词中。</li>
+<li>当启用文件向量化时，文件将被分割为多个块，只有最相关的部分会被插入，从而节省上下文空间并帮助模型保持专注。</li>
 </ol>
 <ul>
-<li>大小阈值（KB）- 设置分块分割阈值。只有大于指定大小的文件才会被分割。</li>
-<li>块大小（字符）- 设置单个块的目标大小（以文本字符为单位，而不是模型 token！）。</li>
-<li>块重叠（%）- 设置相邻块之间共享的块大小百分比。这允许块之间更平滑的过渡，但也可能引入一些冗余。</li>
-<li>检索块数 - 设置要检索的最相关文件块的最大数量。它们将按原始顺序插入。</li>
+<li>大小阈值（KB）——设置分块分割阈值。只有大于指定大小的文件才会被分割。</li>
+<li>块大小（字符）——设置单个块的目标大小（以文本字符计，而非模型 token！）。</li>
+<li>块重叠（%）——设置相邻块之间共享的块大小百分比。这有助于块之间的平滑过渡，但也可能引入一些冗余。</li>
+<li>检索块数——设置要检索的最相关文件块的最大数量。这些块将按原始顺序插入。</li>
 </ul>
 <h3 id="数据库文件">数据库文件</h3>
 <p>这些设置控制数据库文档的处理方式。</p>
 <p>适用以下规则：</p>
 <ol>
 <li>当文件向量化被禁用时，数据库不会被使用。</li>
-<li>否则，当前范围内的所有可用文档（见上文）都会被考虑用于查询。只有所有文件中最相关的块会被检索。同一文件的多个块按原始顺序插入。</li>
-<li>插入的块将在适应聊天消息之前保留部分上下文。</li>
+<li>否则，当前范围内的所有可用文档（见上文）均会被纳入查询考量。只有所有文件中最相关的块会被检索。同一文件的多个块按原始顺序插入。</li>
+<li>插入的块会在适配聊天消息之前预留一部分上下文空间。</li>
 </ol>
 <ul>
-<li>大小阈值（KB）- 设置分块分割阈值。只有大于指定大小的文件才会被分割。</li>
-<li>块大小（字符）- 设置单个块的目标大小（以文本字符为单位，而不是模型 token！）。</li>
-<li>块重叠（%）- 设置相邻块之间共享的块大小百分比。这允许块之间更平滑的过渡，但也可能引入一些冗余。</li>
-<li>检索块数 - 设置要检索的文件块的最大数量。这个限额在所有文件之间共享。</li>
-<li>注入模板 - 定义如何将检索到的信息插入到提示词中。您可以使用特殊的 {{text}} 宏来指定检索文本的位置，以及任何其他宏。</li>
-<li>注入位置 - 设置在哪里插入提示词注入。适用与作者注释和世界信息相同的规则。</li>
+<li>大小阈值（KB）——设置分块分割阈值。只有大于指定大小的文件才会被分割。</li>
+<li>块大小（字符）——设置单个块的目标大小（以文本字符计，而非模型 token！）。</li>
+<li>块重叠（%）——设置相邻块之间共享的块大小百分比。这有助于块之间的平滑过渡，但也可能引入一些冗余。</li>
+<li>检索块数——设置要检索的文件块的最大数量。该限额在所有文件之间共享。</li>
+<li>注入模板——定义检索到的信息插入提示词的方式。可使用特殊的 {{text}} 宏指定检索文本的插入位置，以及其他任意宏。</li>
+<li>注入位置——设置提示词注入的插入位置。适用与作者注释和世界信息相同的规则。</li>
 </ul>
 <h3 id="共享设置">共享设置</h3>
 <ul>
-<li>查询消息 - 用于查询文档块的最新聊天消息数量。</li>
-<li>分数阈值 - 调整以允许根据块的相关性分数（0 - 完全不匹配，1 - 完全匹配）筛选块的检索。较高的值允许更准确的检索并防止完全随机的信息进入上下文。合理的值范围在 0.2（更宽松）到 0.5（更专注）之间。</li>
-<li>包含在世界信息扫描中 - 如果您希望注入的内容激活知识库条目，请勾选。</li>
-<li>向量化全部 - 强制摄取所有未处理文件的嵌入。</li>
-<li>清除向量 - 清除文件嵌入，允许重新计算它们的向量。</li>
+<li>查询消息数——用于查询文档块的最新聊天消息数量。</li>
+<li>分数阈值——调整此项可根据块的相关性分数（0 = 完全不匹配，1 = 完全匹配）过滤检索结果。较高的值允许更精准的检索，防止完全不相关的信息进入上下文。合理的取值范围在 0.2（较宽松）到 0.5（较精准）之间。</li>
+<li>块边界——自定义字符串，分割文件时优先在此处断开。若未指定，默认依次按双换行符、单换行符和单词间空格分割。</li>
+<li>仅在自定义边界处分块——启用后，分块仅在指定的块边界处进行。否则，也会在默认边界处进行分块。</li>
+<li>处理前将文件翻译为英文——启用后，将使用<a href="../../../extensions/translation/">聊天翻译</a>扩展中配置的翻译 API，在处理前将文件翻译为英文。在使用仅支持英文的嵌入模型时很有用。</li>
+<li>包含在世界信息扫描中——如果希望注入的内容触发知识库条目，请勾选此项。</li>
+<li>向量化全部——强制对所有未处理文件摄取嵌入。</li>
+<li>清除向量——清除文件嵌入，以便重新计算其向量。</li>
 </ul>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -489,13 +498,13 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 注意</h5>
+            <h5>注意</h5>
 <p>有关&quot;聊天向量化&quot;设置，请参阅<a href="../../../extensions/chat-vectorization/">聊天向量化</a>。</p>
         </div>
     </div>
 </div>
-<h2 id="结论">结论</h2>
-<p>恭喜！借助 RAG 技术，您的聊天体验已得到显著提升。其潜力无限，全凭您的创意发挥。大胆尝试，勇于探索，让您的聊天体验更上一层楼！</p>
+<h2 id="结语">结语</h2>
+<p>恭喜！您的聊天体验现已借助 RAG 的强大能力得到提升。其可能性仅受您想象力的限制。大胆尝试，勇于探索！</p>
 
                 <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">
                     <span>

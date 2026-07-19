@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>上下文模板 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="上下文模板 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="对于聊天补全 API 中的等效设置，请使用提示词管理器。">
+    <meta name="description" content="聊天补全 API 中的等效设置，请使用提示词管理器。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/prompts/context-template/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/prompts/context-template/">
     <meta property="og:title" content="上下文模板 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="对于聊天补全 API 中的等效设置，请使用提示词管理器。">
+    <meta property="og:description" content="聊天补全 API 中的等效设置，请使用提示词管理器。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/prompts/context-template/">
     <meta name="twitter:title" content="上下文模板 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="对于聊天补全 API 中的等效设置，请使用提示词管理器。">
+    <meta name="twitter:description" content="聊天补全 API 中的等效设置，请使用提示词管理器。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/prompts/context-template.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -226,50 +226,137 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>适用于：文本补全 API</h5>
-<p>对于聊天补全 API 中的等效设置，请使用<a href="../prompt-manager/">提示词管理器</a>。</p>
+<p>聊天补全 API 中的等效设置，请使用<a href="../prompt-manager/">提示词管理器</a>。</p>
         </div>
     </div>
 </div>
-<p>通常，AI 模型需要您以某种特定方式提供角色数据。SillyTavern 包含了一系列针对不同模型的预制转换规则，但您可以根据需要自定义它们。</p>
-<p>在&quot;<a href="../../core-concepts/advancedformatting/">高级格式设置</a>&quot;面板中编辑这些设置。</p>
-<h2 id="故事字符串">故事字符串</h2>
-<p>此字段是聊天前角色数据的模板（在内部称为故事字符串）。
-这是为文本补全和指令模型格式化角色卡片的主要方式。</p>
-<p>模板支持 Handlebars 语法和任何自定义文本注入或格式化。请参阅此处的语言参考：<a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
-<p>我们为 Handlebars 模版引擎提供以下参数（用双大括号包裹它们）：</p>
+<p>AI 模型通常要求以特定方式提供角色数据。SillyTavern 内置了针对多种模型的预制转换规则，你也可以根据需要自由定制。</p>
+<p>在「<a href="../../core-concepts/advancedformatting/">高级格式设置</a>」面板中编辑这些设置。</p>
+<h2 id="story-string">故事字符串</h2>
+<p>此字段是提示词前言的模板（内部称为故事字符串），是为文本补全和 instruct 模型添加<a href="../../characters/">角色卡</a>信息的主要方式。</p>
+<p>该模板支持 Handlebars 语法、自定义文本注入或格式化，以及任何其他<a href="../../core-concepts/macros/">宏</a>。语言参考：<a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
+<p>以下参数可用于 Handlebars 求值器（用双花括号包裹）：</p>
 <ol>
-<li><code translate="no" v-pre>description</code> - 角色的描述</li>
-<li><code translate="no" v-pre>scenario</code> - 角色的场景</li>
-<li><code translate="no" v-pre>personality</code> - 角色的个性</li>
-<li><code translate="no" v-pre>system</code> - <a href="../../core-concepts/advancedformatting/#%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D">系统提示词</a> 或角色的主提示词覆盖（如果存在且在用户设置中启用了&quot;优先使用角色提示词&quot;）</li>
-<li><code translate="no" v-pre>persona</code> - 选定的个性描述</li>
-<li><code translate="no" v-pre>char</code> - 角色名称</li>
-<li><code translate="no" v-pre>user</code> - 选定的个性名称</li>
-<li><code translate="no" v-pre>wiBefore</code> 或 <code translate="no" v-pre>loreBefore</code> - 位置设置为&quot;角色定义之前&quot;的已激活世界信息条目的组合</li>
-<li><code translate="no" v-pre>wiAfter</code> 或 <code translate="no" v-pre>loreAfter</code> - 位置设置为&quot;角色定义之后&quot;的已激活世界信息条目的组合</li>
-<li><code translate="no" v-pre>mesExamples</code> - （可选）角色的示例对话，使用分隔符进行指令格式化。将&quot;示例消息行为&quot;设置为&quot;永不包含示例&quot;以避免重复。</li>
+<li><code translate="no" v-pre>{{anchorBefore}}</code>：位置设置为「Before Story String」的提示词。</li>
+<li><code translate="no" v-pre>{{anchorAfter}}</code>：位置设置为「After Story String」的提示词。</li>
+<li><code translate="no" v-pre>{{description}}</code>：角色的<a href="../../core-concepts/characterdesign/#character-description">描述</a>。</li>
+<li><code translate="no" v-pre>{{scenario}}</code>：角色的<a href="../../core-concepts/characterdesign/#scenario">场景</a>。</li>
+<li><code translate="no" v-pre>{{personality}}</code>：角色的<a href="../../core-concepts/characterdesign/#personality-summary">性格</a>。</li>
+<li><code translate="no" v-pre>{{system}}</code>：<a href="../../core-concepts/advancedformatting/#system-prompt">系统提示词</a>，或角色的<a href="../../core-concepts/characterdesign/#prompt-overrides">主提示词</a>覆盖（若存在且在用户设置中启用了「优先使用角色提示词」）。</li>
+<li><code translate="no" v-pre>{{persona}}</code>：所选<a href="../../core-concepts/personas/#persona-description">人设的描述</a>。</li>
+<li><code translate="no" v-pre>{{char}}</code>：角色名称。</li>
+<li><code translate="no" v-pre>{{user}}</code>：所选人设的名称。</li>
+<li><code translate="no" v-pre>{{wiBefore}}</code> 或 <code translate="no" v-pre>{{loreBefore}}</code>：位置设置为「Before Char Defs」的已激活<a href="../../core-concepts/worldinfo/">世界信息</a>条目合并内容。</li>
+<li><code translate="no" v-pre>{{wiAfter}}</code> 或 <code translate="no" v-pre>{{loreAfter}}</code>：位置设置为「After Char Defs」的已激活<a href="../../core-concepts/worldinfo/">世界信息</a>条目合并内容。</li>
+<li><code translate="no" v-pre>{{mesExamples}}</code>：（可选）角色的<a href="../../core-concepts/characterdesign/#examples-of-dialogue">示例对话</a>，以带分隔符的 instruct 格式呈现。</li>
+<li><code translate="no" v-pre>{{mesExamplesRaw}}</code>：角色的<a href="../../core-concepts/characterdesign/#examples-of-dialogue">示例对话</a>的原始格式，不含任何格式化。</li>
 </ol>
-<p>支持特殊的 {{trim}} 宏来移除其周围的任何换行符。如果您希望某些文本部分与前一行之间<strong>不</strong>用换行符分隔，请使用它（<em>空格<strong>不会</strong>被修剪</em>）。</p>
-<p><strong>警告</strong>：如果故事字符串模板中缺少上述某些参数，它们将完全不会被发送到提示词中。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5><strong>重要</strong></h5>
+<p>在故事字符串中使用 <code translate="no" v-pre>{{mesExamples}}</code> 时，请将 <strong><i class="fa-solid fa-user-cog"></i> 用户设置</strong>面板中的**「示例消息行为」<strong>设置为</strong>「从不包含示例」**，以避免在提示词中重复出现示例消息。</p>
+        </div>
+    </div>
+</div>
+<p>支持特殊的 <code translate="no" v-pre>{{trim}}</code> 宏，可移除其周围的换行符。如果希望某段文本紧接前一行而不换行，请使用此宏（<em>空格<strong>不会</strong>被修剪</em>）。</p>
+<p><strong>警告</strong>：如果故事字符串模板中缺少上述任何参数，该参数的内容将不会出现在提示词中。</p>
+<h3 id="提示词锚点">提示词锚点</h3>
+<p><code translate="no" v-pre>{{anchorBefore}}</code> 和 <code translate="no" v-pre>{{anchorAfter}}</code> 是通用占位符，用于放置由各种扩展和杂项功能在固定位置添加的提示词，例如：</p>
+<ul>
+<li><a href="../../core-concepts/authors-note/">Author&#x27;s Note</a></li>
+<li><a href="../../../extensions/summarize/">摘要</a></li>
+<li><a href="../../../extensions/chat-vectorization/">聊天向量化</a> / <a href="../../core-concepts/data-bank/">数据库</a></li>
+<li><a href="../../st-script/#prompt-injections">STscript 注入</a></li>
+<li><a href="../../../extensions/websearch/">网页搜索</a></li>
+</ul>
+<h3 id="故事字符串位置">故事字符串位置</h3>
+<p>默认情况下，渲染后的故事字符串（所有占位符均已替换）位于提示词最开头，后接示例消息和可见的聊天历史。</p>
+<p>此外，可通过选择「In-chat @ Depth」选项将其移至动态位置，使故事字符串出现在聊天上下文的特定深度处。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5><strong>注意</strong></h5>
+<p>如果模板包含用于包裹故事字符串的静态提示词元素（特定于模型的前缀或后缀），使用「In-Chat @ Depth」位置会导致它被错误地双重包裹，产生重复序列，可能引发意外结果。</p>
+<p>此时可通过以下方式之一解决问题：</p>
+<ol>
+<li><strong>内置模板</strong>：按照<a href="../../core-concepts/advancedformatting/#resetting-templates">高级格式设置</a>中的步骤将模板重置为默认值。</li>
+<li><strong>自定义模板</strong>：将故事字符串模板中的静态元素移至<a href="../../core-concepts/instructmode/#sequences-story-string-wrapping">故事字符串序列</a>。</li>
+</ol>
+        </div>
+    </div>
+</div>
+<h3 id="故事字符串包裹">故事字符串包裹</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>以下内容仅在 <strong>Instruct 模式开启</strong>时适用。</p>
+        </div>
+    </div>
+</div>
+<ul>
+<li>**Default（默认）**位置：渲染后的故事字符串将使用<a href="../../core-concepts/instructmode/#sequences-story-string-wrapping">故事字符串序列</a>中定义的序列进行包裹。</li>
+<li><strong>In-chat @ Depth</strong> 位置：渲染后的故事字符串将使用<a href="../../core-concepts/instructmode/#sequences-chat-messages-wrapping">聊天消息序列</a>中为所选角色（默认为系统）定义的序列进行包裹。</li>
+</ul>
 <h2 id="示例分隔符">示例分隔符</h2>
-<p>用作示例对话块的块头和分隔符。示例对话中的任何 <code translate="no" v-pre>&lt;START&gt;</code> 标签实例都将被此字段的内容替换。</p>
+<p>用作示例对话块的块头和块间分隔符。示例对话中所有的 <code translate="no" v-pre>&lt;START&gt;</code> 标签将被替换为此字段的内容。</p>
 <h2 id="聊天开始">聊天开始</h2>
-<p>在渲染的故事字符串之后和示例对话块之后，但在上下文中的第一条消息之前插入作为分隔符。</p>
+<p>在渲染后的故事字符串之后、示例对话块之后，但在上下文中第一条消息之前插入的分隔符。</p>
 <h2 id="将分隔符作为停止字符串">将分隔符作为停止字符串</h2>
-<p>将&quot;示例分隔符&quot;和&quot;聊天开始&quot;添加到停止字符串列表中。</p>
-<p>如果模型倾向于产生幻觉或泄露由分隔符前导的整个示例对话块，这很有帮助。</p>
+<p>将「示例分隔符」和「聊天开始」添加到停止字符串列表中。</p>
+<p>在模型倾向于产生幻觉或「泄露」以分隔符开头的完整示例对话块时很有帮助。</p>
 <h2 id="将名称作为停止字符串">将名称作为停止字符串</h2>
-<p>将角色和用户个性名称添加到停止字符串列表中。</p>
-<p>建议保持开启以防止模型冒充。</p>
-<h2 id="允许历史后指令">允许历史后指令</h2>
-<p>在提示词末尾包含历史后指令，格式化为最后一条用户消息。</p>
-<p>历史后指令提示词应该在角色卡片中定义，并且应该启用&quot;优先使用角色指令&quot;设置。</p>
-<p>应谨慎使用，因为在上下文中较低位置放置指令可能会导致较小模型的输出质量下降。</p>
+<p>将角色名称和用户人设名称添加到停止字符串列表中。</p>
+<p>建议保持开启，以防止模型冒充用户或角色。</p>
 <h2 id="始终在提示词中添加角色名称">始终在提示词中添加角色名称</h2>
-<p>将角色名称附加到提示词以强制模型以角色身份完成消息：</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>当 Instruct 模式开启时，此设置无效。名称行为由所选的<a href="../../core-concepts/instructmode/#include-names">包含名称</a>选项决定。</p>
+        </div>
+    </div>
+</div>
+<p>在提示词末尾追加角色名称，强制模型以角色身份续写消息：</p>
 <div id="始终在提示词中添加角色名称-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">** 其他上下文在此 **
-角色：</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">** 其他上下文 **
+角色:</code></pre>
 </doc-codeblock></div>
 
                 

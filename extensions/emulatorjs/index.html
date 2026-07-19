@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>EmulatorJS | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="EmulatorJS | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="此扩展允许您直接在 SillyTavern 聊天中玩复古游戏机游戏。">
+    <meta name="description" content="此扩展允许你直接在 SillyTavern 聊天界面中玩复古主机游戏。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/emulatorjs/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/emulatorjs/">
     <meta property="og:title" content="EmulatorJS | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="此扩展允许您直接在 SillyTavern 聊天中玩复古游戏机游戏。">
+    <meta property="og:description" content="此扩展允许你直接在 SillyTavern 聊天界面中玩复古主机游戏。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/emulatorjs/">
     <meta name="twitter:title" content="EmulatorJS | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="此扩展允许您直接在 SillyTavern 聊天中玩复古游戏机游戏。">
+    <meta name="twitter:description" content="此扩展允许你直接在 SillyTavern 聊天界面中玩复古主机游戏。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/emulatorjs.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,14 +212,14 @@
 
                 <!-- Page content  -->
 <h1 id="emulatorjs">EmulatorJS</h1>
-<p>此扩展允许您直接在 SillyTavern 聊天中玩复古游戏机游戏。</p>
+<p>此扩展允许你直接在 SillyTavern 聊天界面中玩复古主机游戏。</p>
 <h2 id="安装">安装</h2>
 <p><strong>前提条件：</strong></p>
 <ul>
-<li>SillyTavern 的最新发布版本。</li>
-<li>从网上下载的 ROM 文件。您可以在<a href="https://archive.org/details/ni-romsets">任何地方</a>找到它们。</li>
+<li>最新发布版本的 SillyTavern。</li>
+<li>从网上下载的 ROM 文件。你可以在<a href="https://archive.org/details/ni-romsets">任何地方</a>找到它们。</li>
 </ul>
-<p><strong>如何安装：</strong></p>
+<p><strong>安装方法：</strong></p>
 <ol>
 <li>使用 SillyTavern 的扩展下载器安装。</li>
 <li>或使用此链接：<code translate="no" v-pre>https://github.com/SillyTavern/SillyTavern-EmulatorJS</code></li>
@@ -227,56 +227,52 @@
 <h2 id="使用方法">使用方法</h2>
 <ul>
 <li>打开&quot;EmulatorJS&quot;扩展菜单。</li>
-<li>点击&quot;Add ROM file&quot;。ROM 保存在您的浏览器存储中，不会存储在服务器上。</li>
-<li>选择要添加的游戏文件。输入名称和核心（如果未自动检测）。如果核心需要 BIOS 文件，也要添加它。</li>
-<li>点击列表中的&quot;Play&quot;按钮或通过魔杖菜单启动。</li>
-<li>启动游戏后，您可以在模拟器框架中自定义控制和其他设置。</li>
-<li>如果需要休息，请使用保存/加载状态功能。</li>
+<li>点击&quot;添加 ROM 文件&quot;。ROM 保存在浏览器存储中，不存储在服务器上。</li>
+<li>选择要添加的游戏文件。输入名称和核心（如果未自动检测到）。如果核心需要 BIOS 文件，也请一并添加。</li>
+<li>点击列表中的&quot;播放&quot;按钮或通过魔杖菜单启动。</li>
+<li>在启动游戏后，可以在模拟器框架中自定义控制方式和其他设置。</li>
+<li>如果需要休息，可以使用存档/读档功能。</li>
 </ul>
-<p>查看 EmulatorJS 文档以了解可用核心及其要求的列表：<a href="https://emulatorjs.org/docs/systems">Systems</a>。</p>
-<h2 id="评论模式">评论模式</h2>
-<p>借助 GPT-4 Vision 等多模态模型的力量，您的 AI 机器人可以看到您的游戏画面并提供有趣的角色评论。</p>
+<p>查看 EmulatorJS 文档以了解可用核心及其要求：<a href="https://emulatorjs.org/docs4devs/cores">核心列表</a>。</p>
+<h2 id="实况解说模式">实况解说模式</h2>
+<p>借助多模态模型的能力，你的 AI 机器人可以&quot;看到&quot;你的游戏画面并给出符合角色风格的即时评论。</p>
 <h3 id="要求">要求</h3>
 <ol>
-<li>支持 <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility">ImageCapture</a> 的浏览器。在桌面版 Chrome 上测试通过。Firefox 需要通过配置启用。Safari 无法工作。</li>
-<li>推荐使用带有图像内联模式的 Chat Completion API。需要 OpenAI 或 OpenRouter API 密钥，选择&quot;gpt-4-turbo&quot;或&quot;gpt-4o&quot;作为模型；Google AI Studio 使用 Gemini 1.5 Pro 或 Gemini 1.5 Flash 模型；Anthropic Claude（推荐 Opus 3 或 Sonnet 3.5 模型）。查看所选 API 的文档，以了解所选模型是否支持多模态提示。</li>
-<li>如果禁用了图像内联，请确保启用了&quot;Image Captioning&quot;扩展，然后选择&quot;Multimodal&quot;描述源：</li>
+<li>支持 <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility">ImageCapture</a> 的浏览器。已在桌面版 Chrome 上测试。Firefox 需要通过配置启用。Safari 不支持。</li>
+<li>推荐使用带有图像内联模式的 Chat Completion API。请查阅 API 文档以确认所选模型是否支持多模态提示词。</li>
+<li>如果禁用了图像内联，请确保已启用<a href="../captioning/#multimodal-source">图像描述</a>扩展，然后选择&quot;多模态&quot;描述来源。</li>
 </ol>
-<ul>
-<li>OpenAI、Claude、MistralAI、Google AI Studio 使用任何支持视觉的模型。</li>
-<li>OpenRouter API 使用兼容的多模态模型。</li>
-<li>在 Ollama、KoboldCpp、oobabooga TextGen WebUI 或 vLLM 中本地托管的 Llava 模型。</li>
-</ul>
-<h3 id="如何启用评论">如何启用评论</h3>
+<h3 id="如何启用解说">如何启用解说</h3>
 <ol>
-<li>确保在 EmulatorJS 扩展设置中设置了提供评论的间隔。此设置定义了使用当前游戏画面快照查询角色评论的频率。值为 0 表示不提供评论。</li>
-<li>选择角色聊天并启动游戏。为了获得最佳性能，请确保 ROM 文件正确命名，以便 AI 可以获得更多背景上下文。</li>
-<li>像平常一样开始玩游戏。视觉模型将定期查询，根据它&quot;看到&quot;的最新截图写评论。</li>
+<li>确保已在 EmulatorJS 扩展设置中设置提供解说的间隔时间。此设置定义了多久向角色查询一次以当前游戏截图为基础的评论。值为 0 表示不提供评论。</li>
+<li>选择一个角色聊天并启动游戏。为了获得最佳效果，请确保 ROM 文件命名规范，以便 AI 能获得更多背景信息。</li>
+<li>正常开始游戏。视觉模型将定期根据最新截图生成评论。</li>
 </ol>
 <h3 id="设置">设置</h3>
 <ol>
-<li>Caption template - 用于描述游戏截图的提示。支持 {{game}} 和 {{core}} 额外宏。</li>
-<li>Comment template - 用于根据生成的描述写评论的提示。支持 {{game}}、{{core}}、{{caption}} 额外宏。对于图像内联模式，{{caption}} 将替换为 <code translate="no" v-pre>see included image</code>。</li>
-<li>Force captions - 即使支持并启用了图像内联，也会强制使用多模态描述。</li>
+<li>描述模板——用于描述游戏内截图的提示词，支持 <code translate="no" v-pre>{{game}}</code> 和 <code translate="no" v-pre>{{core}}</code> 附加宏。</li>
+<li>评论模板——用于根据生成的描述撰写评论的提示词，支持 <code translate="no" v-pre>{{game}}</code>、<code translate="no" v-pre>{{core}}</code>、<code translate="no" v-pre>{{caption}}</code> 附加宏。在图像内联模式下，<code translate="no" v-pre>{{caption}}</code> 会替换为 <code translate="no" v-pre>see included image</code>。</li>
+<li>强制使用描述——即使支持并启用了图像内联，也强制使用多模态图像描述。</li>
 </ol>
 <h3 id="为什么我看不到任何评论">为什么我看不到任何评论？</h3>
 <p>在以下情况下，评论会暂时暂停（跳过间隔步骤）：</p>
 <ol>
-<li>模拟器已暂停（使用暂停按钮，而不是游戏内暂停）。</li>
+<li>模拟器已暂停（使用暂停按钮，而非游戏内暂停）。</li>
 <li>浏览器窗口失去焦点。</li>
-<li>用户输入区域不为空。这是为了让您安静地输入回复。</li>
-<li>另一个回复生成当前正在进行中。</li>
-<li>TTS 语音正在朗读。评论会暂停（最多 20 秒）直到语音结束，但不会跳过。</li>
+<li>用户输入区域不为空。这是为了让你安静地输入回复。</li>
+<li>另一个回复生成正在进行中。</li>
+<li>TTS 语音正在朗读。评论会等待（最多 30 秒）直到朗读结束，但不会跳过。</li>
+<li>角色卡或群组当前处于打开状态。从欢迎界面启动游戏时，评论模式会被禁用。</li>
 </ol>
 <p>其他常见问题：</p>
 <ol>
-<li>确保在启动游戏之前设置了评论间隔。</li>
-<li>确保您已设置多模态 API 密钥，并且 ST 服务器控制台中没有错误。</li>
+<li>确保在启动游戏之前已设置评论间隔。</li>
+<li>确保已设置多模态 API 密钥，且 ST 服务器控制台中没有报错。</li>
 </ol>
-<p>仍然不工作？请发送您的浏览器调试控制台日志（按 F12）。</p>
+<p>仍然无法正常工作？请发送你的浏览器调试控制台日志（按 F12）。</p>
 <h2 id="致谢">致谢</h2>
 <ul>
-<li>EmulatorJS 引擎 (GPLv3)：https://github.com/EmulatorJS/EmulatorJS</li>
+<li>EmulatorJS 引擎（GPLv3）：<a href="https://github.com/EmulatorJS/EmulatorJS">https://github.com/EmulatorJS/EmulatorJS</a></li>
 </ul>
 
                 
@@ -297,16 +293,16 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Dynamic Audio (动态音频)</span>
+                                <span class="block mt-1">Dynamic Audio（动态音频）</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/captioning/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/expression-images/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Image Captioning (图像描述生成)</span>
+                                <span class="block mt-1">Expression Images（角色表情）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>

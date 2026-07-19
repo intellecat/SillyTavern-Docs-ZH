@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Chat Translation (聊天翻译) | SillyTavern傻酒馆中文文档</title>
@@ -47,12 +47,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -328,6 +328,16 @@
 <p><strong><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.103 10.107c0-4.244 3.445-7.607 7.733-7.607 3.19 0 5.912 1.858 7.099 4.563l.01.022.001.006C21.348 7.345 24 10.095 24 13.536 24 17.148 21.076 20 17.431 20H5.017C2.23 20 0 17.83 0 15.06a4.899 4.899 0 0 1 3.112-4.581 7.696 7.696 0 0 1-.009-.372ZM10.836 4c-3.485 0-6.233 2.717-6.233 6.107 0 .284.022.602.052.756a.75.75 0 0 1-.552.869c-1.52.385-2.603 1.712-2.603 3.328 0 1.917 1.532 3.44 3.517 3.44h12.414c2.843 0 5.069-2.206 5.069-4.964 0-2.759-2.226-4.965-5.069-4.965a.75.75 0 0 1-.696-.47l-.179-.446C15.606 5.5 13.424 4 10.836 4Z"/></g></g></svg></strong> 云端
 <strong><i class="fa-solid fa-link"></i></strong> 本地，自定义 URL
 <strong><i class="fa-solid fa-key"></i></strong> 需要 API 密钥</p>
+<retype-table copy-text="| 提供商                                                            | 位置                                                                      | 特点                                                                                               |
+|---------------------------------------------------------------------|-------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| [Libre Translate](https://libretranslate.com/)                      | :icon-cloud: &lt;i class=&quot;fa-solid fa-key&quot;&gt;&lt;/i&gt; &lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt; | 专有翻译服务的自托管（AGPL-3.0）替代品，带有云托管的专业版     | 
+| [Google Translate](https://cloud.google.com/translate)              | :icon-cloud:                                                                  | 使用广泛，支持多种语言，准确度高                                                    |
+| [Lingva Translate](https://lingva.ml/)                              | &lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;                                              | Google Translate 的替代前端，开源（AGPL-3.0），注重隐私                    |
+| [DeepL](https://www.deepl.com/)                                     | :icon-cloud: &lt;i class=&quot;fa-solid fa-key&quot;&gt;&lt;/i&gt;                                  | 高质量翻译，尤其是欧洲语言                                           |
+| [DeepLX](https://github.com/OwO-Network/DeepLX)                     | &lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;                                              | 自托管 DeepL 代理，开源（MIT），免费但代理 DeepL Pro 需要 DeepL API 密钥         |
+| [Bing Translator](https://www.bing.com/translator)                  | :icon-cloud:                                                                  | 微软的翻译服务，与 Azure 服务集成                                        |
+| [OneRing Translator](https://github.com/janvarev/OneRingTranslator) | &lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;                                              | Google Translate 和其他提供商的自托管前端，注重隐私，开源（AGPL-3.0） |
+| [Yandex Translate](https://translate.yandex.com/)                   | :icon-cloud:                                                                  | 适用于俄语和东欧语言                                                        |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -381,6 +391,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="deepl-特定配置">DeepL 特定配置</h3>
 <ul>
 <li>德语、法语、意大利语、西班牙语、荷兰语、日语和俄语可用正式程度级别</li>
@@ -430,6 +441,9 @@
 </figure>
 </p>
 <p>UI 控件以当前语言环境显示，独立于配置的目标语言。</p>
+<retype-table copy-text="| `/input`                                                                                        | `/buttons`                                                                          |
+|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| ![输入对话框，'发送测试消息/Send Test Message'](../static/extensions/translation/eels-input-zh.png) | ![按钮对话框，'语言/Language'](../static/extensions/translation/eels-lang-zh.png) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -446,6 +460,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <figure class="content-center">
     <img src="../../static/extensions/translation/eels-out-tw-en.png" alt="弹出窗口，'我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1206" height="192" />
     <figcaption class="caption">弹出窗口，'我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW</figcaption>
@@ -505,11 +520,11 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/expression-images/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/captioning/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Character Expressions (角色表情)</span>
+                                <span class="block mt-1">Captioning（图像描述）</span>
                             </span>
                         </a>
                     </div>
@@ -518,7 +533,7 @@
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/chat-vectorization/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Chat Vectorization (聊天向量化)</span>
+                                <span class="block mt-1">Chat Vectorization（聊天向量化）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>

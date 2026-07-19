@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>分词器 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="分词器 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="分词器是一个将文本分解成更小单位（称为 token）的工具。这些 token 可以是单个词，甚至是词的部分，如前缀、后缀或标点符号。一个经验法则是，一个 token 通常对应 3~4 个字符的文本。">
+    <meta name="description" content="分词器是一种将文本拆分为更小单元（称为 token）的工具。这些 token 可以是单个词，也可以是词的一部分，例如前缀、后缀或标点符号。一个经验法则是：一个 token 通常对应约 3~4 个字符的文本。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/prompts/tokenizer/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/prompts/tokenizer/">
     <meta property="og:title" content="分词器 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="分词器是一个将文本分解成更小单位（称为 token）的工具。这些 token 可以是单个词，甚至是词的部分，如前缀、后缀或标点符号。一个经验法则是，一个 token 通常对应 3~4 个字符的文本。">
+    <meta property="og:description" content="分词器是一种将文本拆分为更小单元（称为 token）的工具。这些 token 可以是单个词，也可以是词的一部分，例如前缀、后缀或标点符号。一个经验法则是：一个 token 通常对应约 3~4 个字符的文本。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/prompts/tokenizer/">
     <meta name="twitter:title" content="分词器 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="分词器是一个将文本分解成更小单位（称为 token）的工具。这些 token 可以是单个词，甚至是词的部分，如前缀、后缀或标点符号。一个经验法则是，一个 token 通常对应 3~4 个字符的文本。">
+    <meta name="twitter:description" content="分词器是一种将文本拆分为更小单元（称为 token）的工具。这些 token 可以是单个词，也可以是词的一部分，例如前缀、后缀或标点符号。一个经验法则是：一个 token 通常对应约 3~4 个字符的文本。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/prompts/tokenizer.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,54 +212,53 @@
 
                 <!-- Page content  -->
 <h1 id="分词器">分词器</h1>
-<p>分词器是一个将文本分解成更小单位（称为 token）的工具。这些 token 可以是单个词，甚至是词的部分，如前缀、后缀或标点符号。一个经验法则是，一个 token 通常对应 3~4 个字符的文本。</p>
-<p>SillyTavern 提供了一个&quot;最佳匹配&quot;选项，根据使用的 API 提供商使用以下规则尝试匹配分词器。</p>
-<p>Text Completion API <strong>（可覆盖）</strong>：</p>
+<p>分词器是一种将文本拆分为更小单元（称为 token）的工具。这些 token 可以是单个词，也可以是词的一部分，例如前缀、后缀或标点符号。一个经验法则是：一个 token 通常对应约 3~4 个字符的文本。</p>
+<p>SillyTavern 提供「最佳匹配」选项，根据所用 API 提供商，按以下规则自动匹配分词器。</p>
+<p>文本补全 API <strong>（可覆盖）</strong>：</p>
 <ol>
 <li>NovelAI Clio：NerdStash 分词器。</li>
 <li>NovelAI Kayra：NerdStash v2 分词器。</li>
-<li>Text Completion：API 分词器（如果支持）或 Llama 分词器。</li>
+<li>文本补全：API 分词器（如支持）或 Llama 分词器。</li>
 <li>KoboldAI Classic / AI Horde：Llama 分词器。</li>
 <li>KoboldCpp：模型 API 分词器。</li>
 </ol>
-<p>如果您得到不准确的结果或想要实验，您可以设置一个_覆盖分词器_供 SillyTavern 在向 AI 后端发送请求时使用：</p>
+<p>如果结果不够准确，或希望进行实验，可以为 SillyTavern 在向 AI 后端构建请求时设置一个_覆盖分词器_：</p>
 <ol>
-<li>无。每个 token 估计为 ~3.3 个字符，向上取整到最接近的整数。<strong>如果您的提示词在高上下文长度时被截断，请尝试这个。</strong> 这种方法被 KoboldAI Lite 使用。</li>
-<li>Llama 分词器。由 Llama 1/2 模型家族使用：Vicuna、Hermes、Airoboros 等。<strong>如果您使用 Llama 1/2 模型，请选择这个。</strong></li>
-<li>Llama 3 分词器。由 Llama 3/3.1 模型使用。<strong>如果您使用 Llama 3/3.1 模型，请选择这个。</strong></li>
-<li>NerdStash 分词器。由 NovelAI 的 Clio 模型使用。<strong>如果您使用 Clio 模型，请选择这个。</strong></li>
-<li>NerdStash v2 分词器。由 NovelAI 的 Kayra 模型使用。<strong>如果您使用 Kayra 模型，请选择这个。</strong></li>
-<li>Mistral V1 分词器。由较旧的 Mistral 模型家族及其微调版本使用。<strong>如果您使用较旧的 Mistral 模型，请选择这个。</strong></li>
-<li>Mistral Nemo 分词器。由 Mistral Nemo 模型家族及其微调版本使用。<strong>如果您使用 Mistral Nemo/Pixtral 模型，请选择这个。</strong></li>
-<li>Yi 分词器。由 Yi 模型使用。<strong>如果您使用 Yi 模型，请选择这个。</strong></li>
-<li>Gemma 分词器。由 Gemini/Gemma 模型使用。<strong>如果您使用 Gemma 模型，请选择这个。</strong></li>
-<li>DeepSeek 分词器。由 DeepSeek 模型（如 R1）使用。<strong>如果您使用 DeepSeek 模型，请选择这个。</strong></li>
-<li>API 分词器。直接从模型查询生成 API 以获取 token 计数。已知支持的后端：Text Generation WebUI (ooba)、koboldcpp、TabbyAPI、Aphrodite API。<strong>如果您使用支持的后端，请选择这个。</strong></li>
+<li>无。每个 token 估算为约 3.3 个字符，向上取整至最近整数。<strong>如果提示词在高上下文长度时被截断，请尝试此选项。</strong> KoboldAI Lite 采用此方式。</li>
+<li>Llama 分词器。适用于 Llama 1/2 模型系列：Vicuna、Hermes、Airoboros 等。<strong>使用 Llama 1/2 模型时请选择此项。</strong></li>
+<li>Llama 3 分词器。适用于 Llama 3/3.1 模型。<strong>使用 Llama 3/3.1 模型时请选择此项。</strong></li>
+<li>NerdStash 分词器。适用于 NovelAI 的 Clio 模型。<strong>使用 Clio 模型时请选择此项。</strong></li>
+<li>NerdStash v2 分词器。适用于 NovelAI 的 Kayra 模型。<strong>使用 Kayra 模型时请选择此项。</strong></li>
+<li>Mistral V1 分词器。适用于较旧的 Mistral 模型系列及其微调版本。<strong>使用较旧 Mistral 模型时请选择此项。</strong></li>
+<li>Mistral Nemo 分词器。适用于 Mistral Nemo 模型系列及其微调版本。<strong>使用 Mistral Nemo/Pixtral 模型时请选择此项。</strong></li>
+<li>Yi 分词器。适用于 Yi 模型。<strong>使用 Yi 模型时请选择此项。</strong></li>
+<li>Gemma 分词器。适用于 Gemini/Gemma 模型。<strong>使用 Gemma 模型时请选择此项。</strong></li>
+<li>DeepSeek 分词器。适用于 DeepSeek 模型（如 R1）。<strong>使用 DeepSeek 模型时请选择此项。</strong></li>
+<li>API 分词器。直接向生成 API 查询以从模型获取 token 数量。已知支持的后端：Text Generation WebUI (ooba)、koboldcpp、TabbyAPI、Aphrodite API。<strong>使用受支持后端时请选择此项。</strong></li>
 </ol>
-<p>Chat Completion API <strong>（不可覆盖）</strong>：</p>
+<p>聊天补全 API <strong>（不可覆盖）</strong>：</p>
 <ol>
-<li>OpenAI：通过 <a href="https://github.com/openai/tiktoken">tiktoken</a> 的模型相关分词器。</li>
-<li>Claude：通过 <a href="https://github.com/mlc-ai/tokenizers-cpp">WebTokenizers</a> 的模型相关分词器。</li>
-<li>OpenRouter：对应模型的 Llama、Mistral、Gemma、Yi 分词器。</li>
+<li>OpenAI：通过 <a href="https://github.com/openai/tiktoken">tiktoken</a> 使用模型对应的分词器。</li>
+<li>Claude：通过 <a href="https://github.com/mlc-ai/tokenizers-cpp">WebTokenizers</a> 使用模型对应的分词器。</li>
+<li>OpenRouter：对应模型使用 Llama、Mistral、Gemma、Yi 分词器。</li>
 <li>Google AI Studio：Gemma 分词器。</li>
-<li>Scale API：GPT-4 分词器。</li>
 <li>AI21 API：Jamba 分词器（需要一次性下载）。</li>
-<li>Cohere API：Command-R 分词器（需要一次性下载）。</li>
+<li>Cohere API：Command-R 或 Command-A 分词器（需要一次性下载）。</li>
 <li>MistralAI API：Mistral V1 或 V3 分词器（需要一次性下载）。</li>
 <li>DeepSeek API：DeepSeek 分词器（需要一次性下载）。</li>
-<li>后备分词器：GPT-3.5 turbo 分词器。</li>
+<li>兜底分词器：GPT-3.5 turbo 分词器。</li>
 </ol>
-<h4 id="额外分词器">额外分词器</h4>
-<p>由于大小原因，这些分词器不包含在默认安装中。首次使用时需要一次性下载。</p>
+<h4 id="附加分词器">附加分词器</h4>
+<p>以下分词器由于文件体积较大，默认安装中不包含，首次使用时需要进行一次性下载。</p>
 <ol>
 <li>Qwen2 分词器。</li>
-<li>Command-R 分词器。由 Chat Completion 中的 Cohere 源使用。</li>
-<li>Mistral V3 (Nemo) 分词器。由 Chat Completion 中的 MistralAI 源使用（Nemo 和 Pixtral 模型）。</li>
-<li>DeepSeek (deepseek-chat) 分词器。由 Chat Completion 中的 DeepSeek 源使用。</li>
+<li>Command-R / Command-A 分词器。适用于聊天补全中的 Cohere 源。</li>
+<li>Mistral V3（Nemo）分词器。适用于聊天补全中的 MistralAI 源（Nemo 和 Pixtral 模型）。</li>
+<li>DeepSeek（deepseek-chat）分词器。适用于聊天补全中的 DeepSeek 源。</li>
 </ol>
-<p>如果您不想使用互联网下载，可以在 config.yaml 中选择退出：<code translate="no" v-pre>enableDownloadableTokenizers</code>。设置为 <code translate="no" v-pre>false</code> 以禁用下载。</p>
-<p>您也可以从 <a href="https://github.com/SillyTavern/SillyTavern-Tokenizers">SillyTavern-Tokenizers</a> 仓库手动下载分词器。下载 JSON 文件并将它们放在数据根目录的 <code translate="no" v-pre>_cache</code> 子目录中，默认路径是 <code translate="no" v-pre>./data/_cache</code>。如果 <code translate="no" v-pre>_cache</code> 目录不存在，请创建它。之后，重启 SillyTavern 服务器以重新初始化分词器。</p>
-<p>如果所需的分词器模型未缓存且下载被禁用，将使用后备分词器（Llama 3）进行计数。</p>
+<p>如果不希望从互联网下载，可以在 config.yaml 中设置退出选项：<code translate="no" v-pre>enableDownloadableTokenizers</code>，将其设为 <code translate="no" v-pre>false</code> 即可禁用下载。</p>
+<p>也可以从 <a href="https://github.com/SillyTavern/SillyTavern-Tokenizers">SillyTavern-Tokenizers</a> 仓库手动下载分词器。下载 JSON 文件并放置在数据根目录的 <code translate="no" v-pre>_cache</code> 子目录中，默认路径为 <code translate="no" v-pre>./data/_cache</code>。若 <code translate="no" v-pre>_cache</code> 目录不存在，请先创建。之后重启 SillyTavern 服务器以重新初始化分词器。</p>
+<p>如果所需分词器模型未缓存且下载已禁用，将使用兜底分词器（Llama 3）进行计数。</p>
 <h3 id="token-填充">Token 填充</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -274,15 +273,15 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>适用于：Text Completion API</h5>
-<p>SillyTavern 将始终为 Chat Completion 模型使用匹配的分词器，因此不需要 token 填充。</p>
+            <h5>适用于：文本补全 API</h5>
+<p>SillyTavern 会始终为聊天补全模型使用匹配的分词器，因此无需 token 填充。</p>
         </div>
     </div>
 </div>
-<p>除非 SillyTavern 使用由运行模型的远程后端 API 提供的分词器，否则在提示词生成期间假定的所有 token 计数都是基于所选<doc-anchor-trigger to="#%E5%88%86%E8%AF%8D%E5%99%A8">分词器</doc-anchor-trigger>类型的估计。</p>
-<p>由于在接近模型定义的最大值的上下文大小上，分词结果可能不准确，提示词的某些部分可能会被修剪或删除，这可能会对角色定义的连贯性产生负面影响。</p>
-<p>为了防止这种情况，SillyTavern 将上下文大小的一部分分配为填充，以避免添加超过模型容纳能力的聊天项。如果您发现即使选择了最匹配的分词器，提示词的某些部分仍被截断，请调整填充以确保描述不被截断。</p>
-<p>您可以输入负值进行反向填充，这允许分配超过设定的最大 token 数量。</p>
+<p>除非 SillyTavern 使用由运行模型的远程后端 API 提供的分词器，否则提示词生成过程中的所有 token 数量估算均基于所选<doc-anchor-trigger to="#%E5%88%86%E8%AF%8D%E5%99%A8">分词器</doc-anchor-trigger>类型。</p>
+<p>由于在接近模型定义的最大上下文大小时，分词结果可能不够精确，提示词的某些部分可能会被裁剪或丢弃，从而对角色定义的连贯性产生负面影响。</p>
+<p>为防止这种情况，SillyTavern 会将上下文大小的一部分预留为填充空间，以避免加入超过模型容纳能力的聊天内容。如果即使选择了最匹配的分词器，提示词的某些部分仍被截断，请调整填充量以确保描述不被截断。</p>
+<p>可以输入负值进行反向填充，即允许分配超过设定上限的 token 数量。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -298,11 +297,11 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/prompts/reasoning/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/instructmode/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">推理</span>
+                                <span class="block mt-1">指令模式</span>
                             </span>
                         </a>
                     </div>
@@ -311,7 +310,7 @@
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/prompts/cfg/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">CFG（无分类器引导）</span>
+                                <span class="block mt-1">CFG</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>

@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Web Search (网络搜索) | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="Web Search (网络搜索) | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="为 LLM 提示添加网络搜索结果。">
+    <title>Web Search（网络搜索） | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="Web Search（网络搜索） | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="将网络搜索结果添加到 LLM 提示词中。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/websearch/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/websearch/">
-    <meta property="og:title" content="Web Search (网络搜索) | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="为 LLM 提示添加网络搜索结果。">
+    <meta property="og:title" content="Web Search（网络搜索） | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="将网络搜索结果添加到 LLM 提示词中。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/websearch/">
-    <meta name="twitter:title" content="Web Search (网络搜索) | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="为 LLM 提示添加网络搜索结果。">
+    <meta name="twitter:title" content="Web Search（网络搜索） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="将网络搜索结果添加到 LLM 提示词中。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/websearch.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,8 +211,8 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="web-search-网络搜索">Web Search (网络搜索)</h1>
-<p>为 LLM 提示添加网络搜索结果。</p>
+<h1 id="web-search网络搜索">Web Search（网络搜索）</h1>
+<p>将网络搜索结果添加到 LLM 提示词中。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -226,78 +226,82 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>一些 <a href="../../usage/api-connections/openai/">聊天补全</a> 来源提供内置的网络搜索功能。在这种情况下，此扩展将基本上是多余的。检查 <strong><i class="fa-solid fa-sliders"></i> AI 响应配置</strong> 面板中的&quot;启用网络搜索&quot;开关。例如，Claude、Google AI Studio / Vertex AI、xAI 和 OpenRouter 后端都可用此功能。</p>
+            <h5>注意</h5>
+<p>某些 <a href="../../usage/api-connections/openai/">Chat Completion</a> 来源提供内置的网络搜索功能。在这种情况下，此扩展基本上是多余的。请在 <strong><i class="fa-solid fa-sliders"></i> AI 响应配置</strong>面板中查找&quot;启用网络搜索&quot;开关。例如，Claude、Google AI Studio / Vertex AI、OpenRouter、Chutes 和其他后端均提供此功能。</p>
         </div>
     </div>
 </div>
-<h2 id="可用源">可用源</h2>
+<h2 id="可用来源">可用来源</h2>
 <h3 id="selenium-插件">Selenium 插件</h3>
 <p>需要安装并启用官方服务器插件。</p>
-<p>详见 <a href="https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium">SillyTavern-WebSearch-Selenium</a>。</p>
-<p>支持 Google 和 DuckDuckGo 搜索引擎。</p>
+<p>详情见 <a href="https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium">SillyTavern-WebSearch-Selenium</a>。</p>
+<p>支持 Google 和 DuckDuckGo 引擎。</p>
 <h3 id="extras-api">Extras API</h3>
-<p>需要 <code translate="no" v-pre>websearch</code> 模块和在主机上安装的 Chrome/Firefox 网络浏览器。</p>
-<p>支持 Google 和 DuckDuckGo 搜索引擎。</p>
+<p>需要在主机上安装 <code translate="no" v-pre>websearch</code> 模块以及 Chrome/Firefox 浏览器。</p>
+<p>支持 Google 和 DuckDuckGo 引擎。</p>
 <h3 id="serpapi">SerpApi</h3>
-<p>需要 SerpApi 密钥并提供对 Google 搜索的访问。</p>
-<p>在此处获取密钥：<a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
+<p>需要 API 密钥。</p>
+<p>在此获取密钥：<a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
 <h3 id="searxng">SearXNG</h3>
-<p>需要 SearXNG 实例 URL（私有或公共）。使用 HTML 格式显示搜索结果。</p>
-<p>SearXNG 偏好设置字符串：从 SearXNG - 偏好设置 - COOKIES - 复制偏好设置哈希 获取</p>
+<p>需要提供 SearXNG 实例 URL（私有或公开均可）。使用 HTML 格式获取搜索结果。</p>
+<p>SearXNG 偏好字符串：从 SearXNG - 偏好设置 - COOKIES - 复制偏好哈希值获取。</p>
 <p>了解更多：<a href="https://docs.searxng.org/">https://docs.searxng.org/</a></p>
 <h3 id="tavily-ai">Tavily AI</h3>
-<p>需要 API 密钥。在此处获取密钥：<a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
+<p>需要 API 密钥。</p>
+<p>在此获取密钥：<a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
 <h3 id="koboldcpp">KoboldCpp</h3>
-<p>必须在文本补全 API 设置中提供 KoboldCpp URL。KoboldCpp 版本必须 &gt;= 1.81.1，并且必须在启动时启用 WebSearch 模块：在 GUI 启动器中启用 Network =&gt; Enable WebSearch，或在命令行中添加 <code translate="no" v-pre>--websearch</code>。</p>
-<p>参见：<a href="https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1">https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1</a></p>
+<p>必须在文本补全 API 设置中提供 KoboldCpp URL。KoboldCpp 版本须 &gt;= 1.81.1，且启动时必须启用 WebSearch 模块：在 GUI 启动器中启用&quot;网络 =&gt; 启用 WebSearch&quot;，或在命令行中添加 <code translate="no" v-pre>--websearch</code>。</p>
+<p>详见：<a href="https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1">https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1</a></p>
 <h3 id="serper">Serper</h3>
 <p>需要 API 密钥。</p>
-<p>在此处获取密钥：<a href="https://serper.dev/">https://serper.dev/</a></p>
-<h2 id="如何使用">如何使用</h2>
+<p>在此获取密钥：<a href="https://serper.dev/">https://serper.dev/</a></p>
+<h3 id="zai">Z.AI</h3>
+<p>需要 API 密钥，请先在 Chat Completion API 设置中配置。与编程 API 订阅不兼容！</p>
+<p>在此获取密钥：<a href="https://z.ai/manage-apikey/apikey-list/">https://z.ai/manage-apikey/apikey-list/</a></p>
+<p>文档：<a href="https://docs.z.ai/api-reference/tools/web-search">https://docs.z.ai/api-reference/tools/web-search</a></p>
+<h2 id="使用方法">使用方法</h2>
 <ol>
-<li>确保您使用的是最新版本的 SillyTavern。</li>
-<li>通过 SillyTavern 中的&quot;Download Extensions &amp; Assets&quot;菜单安装扩展。</li>
-<li>打开&quot;Web Search&quot;扩展设置，设置您的 API 密钥或连接到 Extras，并启用扩展。</li>
-<li>在聊天过程中，网络搜索结果将自然地添加到提示中。<strong>只有用户消息会触发搜索。</strong></li>
-<li>要更自然地包含搜索结果，请用单引号包裹搜索查询：<code translate="no" v-pre>Tell me about the `latest Ryan Gosling movie`.</code> 将产生搜索查询 <code translate="no" v-pre>latest Ryan Gosling movie</code>。</li>
-<li>您可以根据喜好配置设置。</li>
+<li>确保你使用的是最新版本的 SillyTavern。</li>
+<li>通过 SillyTavern 中的&quot;下载扩展和资源&quot;菜单安装该扩展。</li>
+<li>打开&quot;网络搜索&quot;扩展设置，填写 API 密钥或连接到 Extras，然后启用该扩展。</li>
+<li>聊天过程中，网络搜索结果将自然地添加到提示词中。<strong>只有用户消息才会触发搜索。</strong></li>
+<li>要使搜索结果更自然地融入对话，可以用单个反引号包裹搜索查询：<code translate="no" v-pre>Tell me about the `latest Ryan Gosling movie`.</code> 将产生搜索查询 <code translate="no" v-pre>latest Ryan Gosling movie</code>。</li>
+<li>可选择根据你的喜好配置设置。</li>
 </ol>
 <h2 id="设置">设置</h2>
 <h3 id="常规">常规</h3>
 <ol>
-<li>启用 - 打开和关闭扩展。</li>
-<li>源 - 设置搜索结果源。</li>
-<li>缓存生命周期 - 搜索结果在您的提示中缓存的时间（以秒为单位）。默认 = 一周。</li>
+<li>启用——开启或关闭扩展。</li>
+<li>来源——设置搜索结果来源。</li>
+<li>缓存有效期——搜索结果在提示词中的缓存时长（秒）。默认为一周。</li>
 </ol>
-<h3 id="提示设置">提示设置</h3>
+<h3 id="提示词设置">提示词设置</h3>
 <ol>
-<li>提示预算 - 设置插入文本的最大容量（以文本字符为单位，而不是标记）。经验法则：1 个标记 ~ 3-4 个字符，根据您的模型上下文限制进行调整。默认 = 1500 个字符。</li>
-<li>插入模板 - 结果如何插入到提示中。支持常用宏 + 特殊宏：{{query}} 用于搜索查询，{{text}} 用于搜索结果。</li>
-<li>注入位置 - 结果在提示中的位置。与作者注释相同的选项：作为聊天内注入或在系统提示之前/之后。</li>
+<li>提示词预算——设置插入文本的最大容量（以文本字符数计，而非 token 数）。经验法则：1 token 约等于 3-4 个字符，请根据你的模型上下文限制进行调整。默认为 1500 个字符。</li>
+<li>插入模板——结果插入提示词的方式。支持常规宏，以及特殊宏：{{query}} 表示搜索查询，{{text}} 表示搜索结果。</li>
+<li>注入位置——结果在提示词中的位置。与&quot;作者注释&quot;相同的选项：作为聊天内注入，或在系统提示词之前/之后。</li>
 </ol>
 <h3 id="搜索激活">搜索激活</h3>
 <ol>
-<li>使用函数工具 - 使用<a href="../../for-contributors/function-calling/">函数调用</a>来激活搜索或抓取网页。必须使用支持的聊天补全 API，并在 AI 响应设置中启用。<strong>启用时禁用所有其他激活方法。</strong></li>
-<li>使用反引号 - 启用使用单引号包裹的单词进行搜索激活。</li>
-<li>使用触发短语 - 启用使用触发短语进行搜索激活。</li>
-<li>正则表达式 - 提供 JS 风格的正则表达式来匹配用户消息。如果正则表达式匹配，将触发具有给定查询的搜索。搜索查询支持 &#x60;&#x60; 和 $1 语法来引用匹配的组。示例：<code translate="no" v-pre>/what is happening in (.*)/i</code> 正则表达式，搜索查询为 <code translate="no" v-pre>news in $1</code>，将匹配包含 <code translate="no" v-pre>what is happening in New York</code> 的消息，并触发查询 <code translate="no" v-pre>news in New York</code> 的搜索。</li>
-<li>触发短语 - 逐个添加将触发搜索的短语。它可以在消息的任何位置，查询从触发词开始，总共跨越到&quot;最大单词数&quot;。要排除特定消息的处理，它必须以句期开头，例如 <code translate="no" v-pre>.What do you think?</code>。触发器优先级：首先按文本框中的顺序，然后是用户消息中的第一个。</li>
-<li>最大单词数 - 搜索查询中包含的单词数（包括触发短语）。Google 每个提示的限制约为 32 个单词。默认 = 10 个单词。</li>
+<li>使用函数工具——使用<a href="../../for-contributors/function-calling/">函数调用</a>激活搜索或抓取网页。必须使用支持的 Chat Completion API 并在 AI 响应设置中启用。<strong>启用后将禁用所有其他激活方式。</strong></li>
+<li>使用反引号——启用通过单反引号包裹的词语激活搜索。</li>
+<li>使用触发短语——启用通过触发短语激活搜索。</li>
+<li>正则表达式——提供 JS 风格的正则表达式来匹配用户消息。如果正则匹配，将使用给定查询触发搜索。搜索查询支持 &#x60;&#x60; 和 $1 语法来引用匹配组。示例：针对搜索查询 <code translate="no" v-pre>news in $1</code> 的正则表达式 <code translate="no" v-pre>/what is happening in (.*)/i</code> 将匹配包含 <code translate="no" v-pre>what is happening in New York</code> 的消息，并触发查询 <code translate="no" v-pre>news in New York</code> 的搜索。</li>
+<li>触发短语——逐个添加将触发搜索的短语。它可以出现在消息的任意位置，查询从触发词开始，共跨越&quot;最大词数&quot;个词。要将特定消息排除在处理之外，消息必须以句点开头，例如 <code translate="no" v-pre>.What do you think?</code>。触发优先级：先按文本框中的顺序，再按用户消息中出现的先后顺序。</li>
+<li>最大词数——搜索查询中包含的词数（含触发短语）。Google 每个提示词的限制约为 32 个词。默认为 10 个词。</li>
 </ol>
 <h3 id="页面抓取">页面抓取</h3>
 <ol>
-<li>访问链接 - 将从访问的搜索结果页面提取文本并保存到文件附件中。</li>
-<li>访问计数 - 将访问和解析多少个链接的文本。</li>
-<li>访问域名黑名单 - 要排除访问的网站域名。每行一个。</li>
-<li>文件头 - 文件头模板，插入到文本文件的开头，有一个额外的 {{query}} 宏。</li>
-<li>块头 - 链接块模板，与每个链接的解析内容一起插入。使用 {{link}} 宏表示页面 URL，{{text}} 表示页面内容。</li>
-<li>保存目标 - 保存抓取结果的位置。可能的选项：触发消息附件，或 Data Bank 的聊天附件，或仅图像（如果源支持）。</li>
-<li>包含图像 - 将相关图像附加到聊天。需要支持图像的源（见下文）。</li>
+<li>访问链接——从已访问的搜索结果页面提取文本并保存到文件附件中。</li>
+<li>访问数量——将被访问和解析文本的链接数量。</li>
+<li>访问域名黑名单——要排除访问的网站域名，每行一个。</li>
+<li>文件头——文件头模板，插入在文本文件开头，包含额外的 {{query}} 宏。</li>
+<li>块头——链接块模板，与每个链接的解析内容一起插入。使用 {{link}} 宏表示页面 URL，{{text}} 表示页面内容。</li>
+<li>保存目标——保存抓取结果的位置。可选项：触发消息附件、数据库聊天附件，或仅图像（如果来源支持）。</li>
+<li>包含图像——将相关图像附加到聊天中。需要支持图像的来源（见下文）。</li>
 </ol>
 <h2 id="更多信息">更多信息</h2>
-<p>最新查询的搜索结果将保留在提示中，直到找到下一个有效查询。
-如果您想问额外的问题而不意外触发搜索，请以句点开始您的消息。</p>
+<p>最新查询的搜索结果将持续包含在提示词中，直到找到下一个有效查询。如果你想提出额外问题而不意外触发搜索，请以句点开头发送消息。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -311,30 +315,30 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>如果启用并可用，Web Search 函数工具始终会覆盖其他触发器。</p>
+<p>如果启用了网络搜索函数工具且可用，它将始终覆盖其他触发器。</p>
         </div>
     </div>
 </div>
-<p>触发器优先级（如果启用多个）：</p>
+<p>触发器优先级（如果启用了多个）：</p>
 <ol>
 <li>反引号。</li>
 <li>正则表达式。</li>
 <li>触发短语。</li>
 </ol>
-<p>要丢弃所有先前查询的处理，请在用户消息开头加上感叹号，例如，用户消息 <code translate="no" v-pre>!Now let's talk about...</code> 将丢弃此消息和它上面的每条消息。</p>
-<p>此扩展还提供了一个 <code translate="no" v-pre>/websearch</code> 斜杠命令，用于在 STscript 中使用。更多信息请参见：<a href="../../usage/st-script/#extension-commands">STscript 语言参考</a></p>
+<p>要从处理中丢弃所有之前的查询，可以用感叹号开头发送用户消息，例如，用户消息 <code translate="no" v-pre>!Now let's talk about...</code> 将丢弃该消息及其之上的所有消息。</p>
+<p>此扩展还提供了一个 <code translate="no" v-pre>/websearch</code> 斜线命令，可在 STscript 中使用。更多信息见：<a href="../../usage/st-script/#extension-commands">STscript 语言参考</a></p>
 <div id="更多信息-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre translate="no" class="language-none"><code v-pre class="language-none">/websearch (links=on|off snippets=on|off [query]) – 执行网络搜索查询。使用命名参数指定要返回的内容 - 页面片段（默认：on），完整解析页面（默认：off）或两者都返回。
+<pre translate="no" class="language-none"><code v-pre class="language-none">/websearch (links=on|off snippets=on|off [query]) – 执行网络搜索查询。使用命名参数指定返回内容——页面摘要（默认：开启）、完整解析页面（默认：关闭）或两者均返回。
 
 示例：/websearch links=off snippets=on how to make a sandwich</code></pre>
 </doc-codeblock></div>
-<h3 id="搜索结果中可以包含什么">搜索结果中可以包含什么？</h3>
+<h3 id="搜索结果可以包含哪些内容">搜索结果可以包含哪些内容？</h3>
 <p><strong>术语表：</strong></p>
 <ul>
 <li>答案框：问题的直接答案。</li>
-<li>知识图谱：关于主题的百科知识。</li>
-<li>页面片段：来自网页的相关摘录。</li>
+<li>知识图谱：关于该主题的百科知识。</li>
+<li>页面摘要：来自网页的相关摘录。</li>
 <li>相关问题：类似主题的问题和答案。</li>
 <li>图像：相关图像。</li>
 </ul>
@@ -342,40 +346,45 @@
 <ol>
 <li>答案框。</li>
 <li>知识图谱。</li>
-<li>页面片段（最多 10 个）。</li>
-<li>相关问题（最多 10 个）。</li>
-<li>图像（最多 10 个）。</li>
+<li>页面摘要（最多 10 条）。</li>
+<li>相关问题（最多 10 条）。</li>
+<li>图像（最多 10 张）。</li>
 </ol>
 <h4 id="selenium-插件和-extras-api">Selenium 插件和 Extras API</h4>
 <ol>
-<li>Google - 答案框、知识图谱、页面片段。</li>
-<li>DuckDuckGo - 页面片段。</li>
+<li>Google——答案框、知识图谱、页面摘要。</li>
+<li>DuckDuckGo——页面摘要。</li>
 </ol>
-<p><strong>Selenium 插件</strong> 还可以提供图像。</p>
+<p><strong>Selenium 插件</strong>还可额外提供图像。</p>
 <h4 id="searxng-1">SearXNG</h4>
 <ol>
 <li>信息框。</li>
-<li>页面片段。</li>
+<li>页面摘要。</li>
 <li>图像。</li>
 </ol>
 <h4 id="tavily-ai-1">Tavily AI</h4>
 <ol>
 <li>答案。</li>
 <li>页面内容。</li>
-<li>图像（最多 5 个）。</li>
+<li>图像（最多 5 张）。</li>
 </ol>
 <h4 id="koboldcpp-1">KoboldCpp</h4>
 <ol>
 <li>页面标题。</li>
-<li>页面片段。</li>
+<li>页面摘要。</li>
 </ol>
 <h4 id="serper-1">Serper</h4>
 <ol>
 <li>答案框。</li>
 <li>知识图谱。</li>
-<li>页面片段。</li>
+<li>页面摘要。</li>
 <li>相关问题。</li>
 <li>图像。</li>
+</ol>
+<h4 id="zai-1">Z.AI</h4>
+<ol>
+<li>页面标题。</li>
+<li>页面摘要。</li>
 </ol>
 
                 
@@ -402,10 +411,10 @@
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/extras/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/rvc/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Extras</span>
+                                <span class="block mt-1">基于检索的语音转换（RVC）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -449,6 +458,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Web Search (网络搜索)", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/websearch.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Web Search（网络搜索）", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/websearch.md" }</script>
 </body>
 </html>

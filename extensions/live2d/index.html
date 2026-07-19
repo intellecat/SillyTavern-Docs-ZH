@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Live2D | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="Live2D | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本指南将帮助您为 SillyTavern 设置和自定义 Live2D 扩展。此扩展允许您为角色使用 Live2D 动画模型，为您的虚拟角色添加动态和互动元素。">
+    <meta name="description" content="本指南将引导你完成 Live2D 扩展的设置和自定义，以丰富你的 SillyTavern 体验。此扩展允许你为角色使用 Live2D 动画模型，为虚拟角色添加动态和互动元素。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/live2d/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/live2d/">
     <meta property="og:title" content="Live2D | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本指南将帮助您为 SillyTavern 设置和自定义 Live2D 扩展。此扩展允许您为角色使用 Live2D 动画模型，为您的虚拟角色添加动态和互动元素。">
+    <meta property="og:description" content="本指南将引导你完成 Live2D 扩展的设置和自定义，以丰富你的 SillyTavern 体验。此扩展允许你为角色使用 Live2D 动画模型，为虚拟角色添加动态和互动元素。">
     <meta property="og:image" content="https://sillytavern.wiki/static/extensions/live2d-folder.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/live2d/">
     <meta name="twitter:title" content="Live2D | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="本指南将帮助您为 SillyTavern 设置和自定义 Live2D 扩展。此扩展允许您为角色使用 Live2D 动画模型，为您的虚拟角色添加动态和互动元素。">
+    <meta name="twitter:description" content="本指南将引导你完成 Live2D 扩展的设置和自定义，以丰富你的 SillyTavern 体验。此扩展允许你为角色使用 Live2D 动画模型，为虚拟角色添加动态和互动元素。">
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/live2d-folder.png">
     <meta name="twitter:image:alt" content="Live2D | SillyTavern傻酒馆中文文档">
 
@@ -47,11 +47,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -218,30 +218,30 @@
 
                 <!-- Page content  -->
 <h1 id="live2d">Live2D</h1>
-<p>本指南将帮助您为 SillyTavern 设置和自定义 Live2D 扩展。此扩展允许您为角色使用 Live2D 动画模型，为您的虚拟角色添加动态和互动元素。</p>
+<p>本指南将引导你完成 Live2D 扩展的设置和自定义，以丰富你的 SillyTavern 体验。此扩展允许你为角色使用 Live2D 动画模型，为虚拟角色添加动态和互动元素。</p>
 <h2 id="前提条件">前提条件</h2>
 <p>在开始之前，请确保满足以下前提条件：</p>
 <ol>
 <li>
-<p><strong>分支选择</strong>：确保您使用的是最新版本的 SillyTavern，以访问最新功能和更新。</p>
+<p><strong>版本选择</strong>：确保你使用的是最新版本的 SillyTavern，以访问最新功能和更新。</p>
 </li>
 <li>
-<p><strong>扩展安装</strong>：从扩展面板（堆叠块图标）的&quot;Download Extensions &amp; Assets&quot;菜单中安装&quot;Live2D&quot;扩展。</p>
+<p><strong>扩展安装</strong>：从扩展面板（堆叠方块图标）的&quot;下载扩展与资产&quot;菜单中安装&quot;Live2D&quot;扩展。</p>
 </li>
 <li>
-<p><strong>模型文件夹放置</strong>：将您的 Live2D 模型文件夹放入 <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/live2d</code> 目录。一个正确组织的 <code translate="no" v-pre>live2d</code> 资源文件夹可能如下所示：</p>
-<p><img src="../../static/extensions/live2d-folder.png" alt="资源文件夹示例" class="max-w-full h-auto" width="132" height="161" /></p>
+<p><strong>模型文件夹放置</strong>：将你的 Live2D 模型文件夹放入 <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/live2d</code> 目录。一个正确组织的 <code translate="no" v-pre>live2d</code> 资产文件夹示例如下：</p>
+<p><img src="../../static/extensions/live2d-folder.png" alt="资产文件夹示例" class="max-w-full h-auto" width="132" height="161" /></p>
 <ul>
-<li>Live2D 模型文件夹应包含模型所需的所有组件，如表情、动作、纹理、声音和设置文件。特别注意，<code translate="no" v-pre>***.model.json</code> 文件必须位于 Live2D 模型文件夹的根目录，以便扩展能够检测到模型。在此示例中，<code translate="no" v-pre>shizuku</code> live2d 模型文件夹可能如下所示：</li>
+<li>Live2D 模型文件夹应包含模型所需的所有组件，如表情、动作、纹理、声音和设置文件。特别注意，<code translate="no" v-pre>***.model.json</code> 文件必须位于 Live2D 模型文件夹的根目录，以便扩展能检测到模型。在此示例中，<code translate="no" v-pre>shizuku</code> live2d 模型文件夹可能如下所示：</li>
 </ul>
 <p><img src="../../static/extensions/live2d-model.png" alt="Live2d 模型文件夹示例" class="max-w-full h-auto" width="139" height="265" /></p>
 <ul>
-<li>注意：模型也可以放在角色特定的文件夹中，如 <code translate="no" v-pre>/data/&lt;user-handle&gt;/characters/Shizuku/live2d/</code>。但是，角色文件夹中的模型只能被该特定角色使用。</li>
+<li>注意：模型也可以放在角色专属文件夹中，例如 <code translate="no" v-pre>/data/&lt;user-handle&gt;/characters/Shizuku/live2d/</code>。但是，角色文件夹中的模型只能被该特定角色使用。</li>
 </ul>
 </li>
 </ol>
 <h2 id="扩展设置">扩展设置</h2>
-<p>Live2D 扩展提供了各种设置来自定义您的动画模型的行为。以下是主要设置：</p>
+<p>Live2D 扩展提供了各种设置来自定义动画模型的行为。以下是主要设置：</p>
 <figure class="content-center">
     <img src="../../static/extensions/live2d-global.png" alt="UI 全局设置" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="419" height="331" />
     <figcaption class="caption">UI 全局设置</figcaption>
@@ -251,48 +251,48 @@
 <li>
 <p><strong>启用</strong>：</p>
 <ul>
-<li>选中此复选框以激活扩展，允许您的 Live2D 模型在 SillyTavern 中互动。</li>
-<li>如果您只想使用普通精灵图，可以禁用此扩展。</li>
-<li>当您想在群组聊天中移动普通精灵图时可以禁用此扩展，准备使用 Live2D 模型时再启用。</li>
+<li>勾选此复选框以激活扩展，允许你的 Live2D 模型在 SillyTavern 中互动。</li>
+<li>如果只想使用普通精灵图，可以禁用此扩展。</li>
+<li>当你想在群聊中移动普通精灵图时可以禁用此扩展，准备使用 Live2D 模型时再启用。</li>
 </ul>
 </li>
 <li>
 <p><strong>跟随光标</strong>：</p>
 <ul>
-<li>选中此复选框可使 Live2D 模型跟随您的光标移动，前提是模型支持此功能。</li>
+<li>勾选此复选框可使 Live2D 模型跟随你的光标移动，前提是模型支持此功能。</li>
 </ul>
 </li>
 <li>
 <p><strong>自动发送互动</strong>：</p>
 <ul>
-<li>选中此复选框可在您点击带有映射消息的区域时自动触发角色互动（详见点击区域部分）。</li>
+<li>勾选此复选框可在点击带有映射消息的区域时自动触发角色互动（详见点击区域部分）。</li>
 </ul>
 </li>
 </ol>
 <h2 id="调试设置">调试设置</h2>
-<p>这些设置帮助您控制 Live2D 模型的行为和可见性，用于调试目的。</p>
+<p>这些设置帮助你控制 Live2D 模型的行为和可见性，用于调试目的。</p>
 <ol>
 <li>
 <p><strong>动画前重置模型</strong>：</p>
 <ul>
-<li>选中此复选框可在任何动画之前重新加载模型。这会强制动画开始，并允许您根据需要多次点击。某些模型可能需要此功能以确保动画从兼容状态开始。</li>
+<li>勾选此复选框可在任何动画之前重新加载模型。这会强制动画开始，并允许你连续点击。某些模型可能需要此功能以确保动画从兼容状态开始。</li>
 </ul>
 </li>
 <li>
 <p><strong>显示模型框架</strong>：</p>
 <ul>
-<li>选中此复选框可显示模型框架，使您更容易识别在哪里点击来拖动模型。如果有点击区域，也会显示出来。将鼠标悬停在点击区域上会显示其名称。</li>
+<li>勾选此复选框可显示模型框架，使你更容易识别在哪里点击来拖动模型。如果有点击区域，也会显示出来。将鼠标悬停在点击区域上会显示其名称。</li>
 </ul>
 </li>
 <li>
-<p><strong>重新加载按钮</strong>：</p>
+<p><strong>重新加载按钮</strong></p>
 <ul>
-<li>点击此按钮可重新加载所有 live2d 模型。如果出现故障时使用。</li>
+<li>点击此按钮可重新加载所有 live2d 模型。出现故障时使用。</li>
 </ul>
 </li>
 </ol>
 <h2 id="角色选择">角色选择</h2>
-<p>这些设置允许您管理角色并为其分配 Live2D 模型。</p>
+<p>这些设置允许你管理角色并为其分配 Live2D 模型。</p>
 <ol>
 <li>
 <p><strong>刷新按钮</strong>：</p>
@@ -322,17 +322,17 @@
 <li>
 <p><strong>刷新按钮</strong>：</p>
 <ul>
-<li>如果您的 Live2D 模型未出现在列表中，请点击刷新按钮。</li>
+<li>如果你的 Live2D 模型未出现在列表中，请点击刷新按钮。</li>
 </ul>
 </li>
 <li>
 <p><strong>选择模型</strong>：</p>
 <ul>
 <li>从列表中选择一个模型以分配给所选角色。</li>
-<li>模型可以位于资源文件夹或当前角色的文件夹中。</li>
-<li>列表显示模型文件夹名称、其来源（资源或角色）以及检测到的模型设置文件名称。</li>
-<li>请注意，某些模型文件夹可能包含同一模型的不同版本。您可以尝试不同的模型文件，看看哪个效果最好。</li>
-<li>选择&quot;none&quot;将使用普通精灵图（如果有的话）</li>
+<li>模型可以位于资产文件夹或当前角色的文件夹中。</li>
+<li>列表显示模型文件夹名称、其来源（资产或角色）以及检测到的模型设置文件名称。</li>
+<li>注意，某些模型文件夹可能包含同一模型的不同版本。你可以尝试不同的模型文件，看看哪个效果最好。</li>
+<li>选择&quot;无&quot;将使用普通精灵图（如果有的话）</li>
 <li>设置按每个角色和模型保存</li>
 </ul>
 </li>
@@ -365,8 +365,8 @@
 <h3 id="备注">备注</h3>
 <ul>
 <li>设置会保存并在不同聊天中保持。</li>
-<li>您也可以用鼠标拖动模型，这些设置会更新并保存。</li>
-<li>如果您不小心将模型移出视图，请使用这些 UI 设置将其带回屏幕。另外，选中&quot;显示框架&quot;复选框以清楚地看到可以点击拖动模型的位置。</li>
+<li>你也可以用鼠标拖动模型，这些设置会更新并保存。</li>
+<li>如果不小心将模型移出视图，请使用这些 UI 设置将其带回屏幕。另外，勾选&quot;显示框架&quot;复选框以清楚地看到可以点击拖动模型的位置。</li>
 </ul>
 <h2 id="模型说话">模型说话</h2>
 <figure class="content-center">
@@ -375,19 +375,19 @@
 </figure>
 <ol>
 <li>
-<p><strong>嘴部开启 Y 参数 ID</strong>：</p>
+<p><strong>嘴部开合 Y 参数 ID</strong></p>
 <ul>
 <li>从列表中选择对应模型嘴部 Y 值的参数 ID。并非所有模型都有，名称可能因模型而异。通常是类似&quot;PARAM_MOUTH_OPEN_Y&quot;或&quot;ParamMouthOpenY&quot;的名称。从列表中选择元素时检查模型；它会尝试运行说话动画。如果嘴巴动了，就说明选对了！</li>
 </ul>
 </li>
 <li>
-<p><strong>嘴部移动速度</strong>：</p>
+<p><strong>嘴部移动速度</strong></p>
 <ul>
 <li>调整滑块以更改嘴部动画的移动速度。</li>
 </ul>
 </li>
 <li>
-<p><strong>每个字符的时间</strong>：</p>
+<p><strong>每个字符的时间</strong></p>
 <ul>
 <li>设置每个字符的持续时间。说话动画的持续时间将是此时间乘以消息的字符数。</li>
 </ul>
@@ -395,7 +395,7 @@
 </ol>
 <h3 id="备注-1">备注</h3>
 <ul>
-<li>这个嘴部动画并非在每个模型和每个动画上都有效。即使您的模型有嘴部移动的动画，也不意味着此扩展可以控制嘴部动画。如果参数列表中没有显示任何内容，您的模型可能使用了太旧版本的 Live2D，无法正确访问参数。</li>
+<li>这个嘴部动画并非在每个模型和每个动画上都有效。即使你的模型有嘴部移动的动画，也不意味着此扩展可以控制嘴部动画。如果参数列表中没有显示任何内容，你的模型可能使用了过旧版本的 Live2D，无法正确访问参数。</li>
 </ul>
 <h2 id="模型动画">模型动画</h2>
 <figure class="content-center">
@@ -404,24 +404,24 @@
 </figure>
 <ol>
 <li>
-<p><strong>启动动画</strong>：</p>
+<p><strong>启动动画</strong></p>
 <ul>
-<li>从列表中选择表情和动作，这些将在与角色开始聊天时播放。如果您需要隐藏角色一段时间以达到完美效果，还可以添加延迟，在此期间模型将不可见。</li>
+<li>从列表中选择表情和动作，这些将在与角色开始聊天时播放。如果需要在一段时间内隐藏角色以达到完美效果，还可以添加延迟，在此期间模型将不可见。</li>
 </ul>
 </li>
 <li>
-<p><strong>默认动画</strong>：</p>
+<p><strong>默认动画</strong></p>
 <ul>
-<li>从列表中选择表情和动作，这些将在角色发送消息时播放。使用分类表情扩展时使用回退动画。</li>
+<li>从列表中选择表情和动作，这些将在角色发送消息时播放。使用分类表情扩展时作为备用动画使用。</li>
 </ul>
 </li>
 </ol>
 <h3 id="备注-2">备注</h3>
 <ul>
-<li>当您在列表中选择动画时，动画将播放。</li>
+<li>当你在列表中选择动画时，动画将播放。</li>
 <li>使用重播按钮重新播放所选动画。</li>
 <li>某些模型将表情定义为动作。</li>
-<li>如果列表中没有显示任何内容，可能是您的模型设置文件中没有定义表情/动作。</li>
+<li>如果列表中没有显示任何内容，可能是你的模型设置文件中没有定义表情/动作。</li>
 </ul>
 <h2 id="点击区域映射">点击区域映射</h2>
 <figure class="content-center">
@@ -430,24 +430,24 @@
 </figure>
 <ol>
 <li>
-<p><strong>默认点击动画</strong>：</p>
+<p><strong>默认点击动画</strong></p>
 <ul>
-<li>从列表中选择表情和动作，这些将在您点击模型时播放。您还可以设置一条将作为用户消息发送的消息。</li>
+<li>从列表中选择表情和动作，这些将在你点击模型时播放。你还可以设置一条将作为用户消息发送的消息。</li>
 </ul>
 </li>
 <li>
-<p><strong>点击区域</strong>：</p>
+<p><strong>点击区域</strong></p>
 <ul>
-<li>如果模型有点击区域，它们将被列出，您可以为每个区域分配动画/消息。</li>
+<li>如果模型有点击区域，它们将被列出，你可以为每个区域分配动画/消息。</li>
 </ul>
 </li>
 </ol>
 <h3 id="备注-3">备注</h3>
 <ul>
 <li>某些模型没有点击区域，但默认点击对所有模型都有效。</li>
-<li>如果您点击未映射的点击区域或点击任何点击区域之外，将触发默认点击。</li>
+<li>如果点击未映射的点击区域或点击任何点击区域之外，将触发默认点击。</li>
 <li>点击区域在模型中有定义的优先级；例如，&quot;mouth&quot;在&quot;head&quot;内部。如果行为不正确，可能是由于模型文件的原因。</li>
-<li>对于某些模型，动画需要完成后才能开始另一个动画。如果您想强制刷新和连续播放动画，请使用调试复选框。</li>
+<li>对于某些模型，动画需要完成后才能开始另一个动画。如果你想强制刷新和连续播放动画，请使用调试复选框。</li>
 </ul>
 <h2 id="分类表情映射">分类表情映射</h2>
 <figure class="content-center">
@@ -456,23 +456,23 @@
 </figure>
 <ol>
 <li>
-<p><strong>要求</strong>：</p>
+<p><strong>要求</strong></p>
 <ul>
 <li>需要使用分类表情扩展；否则，将回退到默认动画。</li>
 </ul>
 </li>
 <li>
-<p><strong>映射</strong>：</p>
+<p><strong>映射</strong></p>
 <ul>
-<li>对于分类扩展检测到的每种情绪，您可以分配表情/动作动画。</li>
+<li>对于分类扩展检测到的每种情绪，你可以分配表情/动作动画。</li>
 </ul>
 </li>
 </ol>
 <h3 id="备注-4">备注</h3>
 <ul>
-<li>如果在收到新消息时前一个动画尚未完成，新动画可能不会播放。这种行为取决于 Live2D 模型。如果您想强制播放动画，请使用调试复选框。</li>
+<li>如果在收到新消息时前一个动画尚未完成，新动画可能不会播放。这种行为取决于 Live2D 模型。如果你想强制播放动画，请使用调试复选框。</li>
 </ul>
-<p>感谢您阅读本指南！您的 SillyTavern 体验现在已通过动画和互动的 Live2D 模型得到增强。</p>
+<p>感谢你阅读本指南！你的 SillyTavern 体验现已通过动画和互动的 Live2D 模型得到丰富。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -488,11 +488,11 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/stable-diffusion/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/expression-images/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Image Generatio (图像生成)</span>
+                                <span class="block mt-1">Expression Images（角色表情）</span>
                             </span>
                         </a>
                     </div>
@@ -501,7 +501,7 @@
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/objective/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Objective (目标扩展)</span>
+                                <span class="block mt-1">Objective（目标）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>

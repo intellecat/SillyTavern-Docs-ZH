@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Google Gemini | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="Google Gemini | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助您在 SillyTavern 中设置 Gemini API 连接。">
+    <meta name="description" content="Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助你在 SillyTavern 中配置 Gemini API 连接。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/api-connections/google/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/api-connections/google/">
     <meta property="og:title" content="Google Gemini | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助您在 SillyTavern 中设置 Gemini API 连接。">
+    <meta property="og:description" content="Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助你在 SillyTavern 中配置 Gemini API 连接。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/api-connections/google/">
     <meta name="twitter:title" content="Google Gemini | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助您在 SillyTavern 中设置 Gemini API 连接。">
+    <meta name="twitter:description" content="Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助你在 SillyTavern 中配置 Gemini API 连接。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/api_connections/google.md">
@@ -41,12 +41,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -213,68 +213,68 @@
 
                 <!-- Page content  -->
 <h1 id="google-gemini">Google Gemini</h1>
-<p>Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助您在 SillyTavern 中设置 Gemini API 连接。</p>
+<p>Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助你在 SillyTavern 中配置 Gemini API 连接。</p>
 <h2 id="google-ai-studio">Google AI Studio</h2>
-<p>AI Studio 是试用最新 Google AI 模型最快捷、最友好的方式，无需设置 Google Cloud Platform (GCP) 项目。它提供了一个简单的 API 密钥，您可以使用它来访问 Gemini 模型。</p>
-<h3 id="步骤-1创建-google-ai-studio-密钥">步骤 1：创建 Google AI Studio 密钥</h3>
+<p>AI Studio 是体验最新 Google AI 模型最快捷、最易上手的方式，无需设置 Google Cloud Platform（GCP）项目。它提供简单的 API 密钥，可直接用于访问 Gemini 模型。</p>
+<h3 id="第一步创建-google-ai-studio-密钥">第一步：创建 Google AI Studio 密钥</h3>
 <ol>
-<li>前往 <a href="https://aistudio.google.com/apikey">Google AI Studio</a> 页面并使用您的 Google 账户登录。</li>
-<li>点击&quot;获取 API 密钥&quot;，接受条款和条件。</li>
-<li>点击&quot;创建 API 密钥&quot;以生成您的 API 密钥。</li>
+<li>前往 <a href="https://aistudio.google.com/apikey">Google AI Studio</a> 页面，使用 Google 账号登录。</li>
+<li>点击「获取 API 密钥」，接受条款与条件。</li>
+<li>点击「创建 API 密钥」生成密钥。</li>
 <li>将 API 密钥复制到剪贴板。</li>
 </ol>
-<h3 id="步骤-2将-api-密钥输入-sillytavern">步骤 2：将 API 密钥输入 SillyTavern</h3>
+<h3 id="第二步将-api-密钥填入-sillytavern">第二步：将 API 密钥填入 SillyTavern</h3>
 <ol>
-<li>在 SillyTavern 中，前往&quot;API 连接&quot;页面。</li>
-<li>选择&quot;聊天补全&quot;作为 API 类型。</li>
-<li>从下拉菜单中选择&quot;Google AI Studio&quot;。</li>
-<li>将您之前复制的 API 密钥输入到&quot;API 密钥&quot;文本框中。</li>
-<li>点击&quot;连接&quot;按钮保存密钥。</li>
+<li>在 SillyTavern 中，进入「API 连接」页面。</li>
+<li>选择「聊天补全」作为 API 类型。</li>
+<li>在下拉菜单中选择「Google AI Studio」。</li>
+<li>将之前复制的 API 密钥粘贴到「API 密钥」文本框中。</li>
+<li>点击「连接」按钮保存密钥。</li>
 </ol>
-<p>现在您应该能够在 SillyTavern 中使用 Google AI Studio API 了。</p>
+<p>现在即可在 SillyTavern 中使用 Google AI Studio API。</p>
 <h2 id="google-vertex-ai">Google Vertex AI</h2>
-<p>Vertex AI 是 Google Cloud Platform (GCP) 提供的服务。它提供对各种 AI 模型的访问，包括 Gemini 系列。</p>
-<p>Vertex AI API 有多种设置方式，可用的模型可能因使用的方法而异。</p>
-<h3 id="服务账户">服务账户</h3>
-<p>Google Cloud Platform (GCP) 需要服务账户才能访问 Vertex AI，简单的 API 密钥无法使用。将从服务账户 JSON 文件生成令牌，然后用于对 Vertex AI API 的请求进行身份验证。</p>
-<p>您可以按照以下步骤创建服务账户：</p>
+<p>Vertex AI 是 Google Cloud Platform（GCP）提供的服务，可访问包括 Gemini 系列在内的多种 AI 模型。</p>
+<p>Vertex AI API 有多种配置方式，可用模型因方式不同而有所差异。</p>
+<h3 id="服务账号">服务账号</h3>
+<p>Google Cloud Platform（GCP）要求通过服务账号访问 Vertex AI，普通 API 密钥无法使用。系统将从服务账号 JSON 文件生成令牌，再用于向 Vertex AI API 发起认证请求。</p>
+<p>创建服务账号的步骤如下：</p>
 <p><strong>前提条件：</strong></p>
 <ol>
-<li>您必须拥有 Google Cloud Platform (GCP) 账户。</li>
-<li>您必须在 GCP 账户中创建了项目。</li>
-<li>您必须为该项目启用了计费。</li>
+<li>必须拥有 Google Cloud Platform（GCP）账号。</li>
+<li>必须在 GCP 账号中创建了项目。</li>
+<li>必须为该项目启用了计费功能。</li>
 </ol>
-<h4 id="步骤-1启用-vertex-ai-api">步骤 1：启用 Vertex AI API</h4>
-<p>在密钥可以工作之前，必须为您的项目启用 API。</p>
+<h4 id="第一步启用-vertex-ai-api">第一步：启用 Vertex AI API</h4>
+<p>密钥生效前，必须先为项目启用 API。</p>
 <ol>
-<li>前往 Google Cloud 控制台：<a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a></li>
-<li>确保在顶部栏中选择了正确的项目。</li>
-<li>导航到 Vertex AI API 页面：<a href="https://console.cloud.google.com/apis/library/aiplatform.googleapis.com">https://console.cloud.google.com/apis/library/aiplatform.googleapis.com</a></li>
-<li>如果尚未启用，请点击&quot;启用&quot;按钮。</li>
+<li>进入 Google Cloud 控制台：<a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a></li>
+<li>确认顶部栏中选择了正确的项目。</li>
+<li>导航至 Vertex AI API 页面：<a href="https://console.cloud.google.com/apis/library/aiplatform.googleapis.com">https://console.cloud.google.com/apis/library/aiplatform.googleapis.com</a></li>
+<li>若尚未启用，点击「启用」按钮。</li>
 </ol>
-<h4 id="步骤-2创建服务账户">步骤 2：创建服务账户</h4>
-<p>这是将用于访问 Vertex AI API 的身份。</p>
+<h4 id="第二步创建服务账号">第二步：创建服务账号</h4>
+<p>这是用于访问 Vertex AI API 的身份凭证。</p>
 <ol>
-<li>在 Google Cloud 控制台中，导航到&quot;服务账户&quot;页面。您可以在顶部搜索栏中搜索它，或使用此直接链接：<a href="https://console.cloud.google.com/iam-admin/serviceaccounts">https://console.cloud.google.com/iam-admin/serviceaccounts</a></li>
-<li>选择您的 GCP 项目，然后点击&quot;+ 创建服务账户&quot;。</li>
-<li>服务账户名称：给它一个描述性的名称，例如 <code translate="no" v-pre>my-vertex-ai-client</code>。</li>
-<li>点击&quot;创建并继续&quot;。</li>
-<li>授予此服务账户对项目的访问权限：在&quot;角色&quot;下拉菜单中，搜索并选择 Vertex AI 用户。此角色授予运行模型所需的必要权限，而不会授予过多的访问权限。</li>
-<li>点击&quot;继续&quot;，然后点击&quot;完成&quot;。</li>
+<li>在 Google Cloud 控制台中导航至「服务账号」页面，可在顶部搜索栏搜索，也可直接使用此链接：<a href="https://console.cloud.google.com/iam-admin/serviceaccounts">https://console.cloud.google.com/iam-admin/serviceaccounts</a></li>
+<li>选择你的 GCP 项目，点击「+ 创建服务账号」。</li>
+<li>填写服务账号名称，例如 <code translate="no" v-pre>my-vertex-ai-client</code>。</li>
+<li>点击「创建并继续」。</li>
+<li>授予项目访问权限：在「角色」下拉菜单中搜索并选择「Vertex AI 用户」。该角色拥有运行模型所需的必要权限，且不会授予过多访问权限。</li>
+<li>点击「继续」，然后点击「完成」。</li>
 </ol>
-<h4 id="步骤-3生成-json-密钥">步骤 3：生成 JSON 密钥</h4>
-<p>这是您需要的&quot;密码&quot;文件。它包含敏感信息，因此不要分享或上传到任何公共位置。</p>
+<h4 id="第三步生成-json-密钥">第三步：生成 JSON 密钥</h4>
+<p>这是你需要的「密码」文件，包含敏感信息，请勿分享或上传至任何公开位置。</p>
 <ol>
-<li>您现在应该回到服务账户列表。找到您刚刚创建的账户（例如，sillytavern-vertex-ai）。</li>
-<li>点击该行最右侧的三点菜单 (⋮)，然后选择&quot;管理密钥&quot;。</li>
-<li>点击&quot;添加密钥&quot; -&gt; &quot;创建新密钥&quot;。</li>
-<li>确保密钥类型设置为 JSON。</li>
-<li>点击&quot;创建&quot;。</li>
+<li>返回服务账号列表，找到刚刚创建的账号（如 sillytavern-vertex-ai）。</li>
+<li>点击该行最右侧的三点菜单（⋮），选择「管理密钥」。</li>
+<li>点击「添加密钥」→「创建新密钥」。</li>
+<li>确保密钥类型为 JSON。</li>
+<li>点击「创建」。</li>
 </ol>
-<p>一个 .json 文件将立即下载到您的计算机。请妥善保管，因为如果丢失，此密钥无法恢复。</p>
-<h4 id="步骤-4将-json-内容输入-sillytavern">步骤 4：将 JSON 内容输入 SillyTavern</h4>
-<p>您下载的 JSON 文件包含与 Vertex AI API 进行身份验证所需的所有信息。它看起来像这样：</p>
-<div id="步骤-4将-json-内容输入-sillytavern-code-1" class="codeblock-wrapper"><doc-codeblock>
+<p>系统会立即将一个 .json 文件下载到你的电脑。请妥善保管，因为此密钥一旦丢失无法找回。</p>
+<h4 id="第四步将-json-内容填入-sillytavern">第四步：将 JSON 内容填入 SillyTavern</h4>
+<p>下载的 JSON 文件包含与 Vertex AI API 进行身份验证所需的全部信息，内容类似如下：</p>
+<div id="第四步将-json-内容填入-sillytavern-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
     &quot;type&quot;: &quot;service_account&quot;,
     &quot;project_id&quot;: &quot;your-gcp-project-name&quot;,
@@ -289,45 +289,45 @@
 }</code></pre>
 </doc-codeblock></div>
 <ol>
-<li>使用简单的文本编辑器（如 Windows 上的记事本、Mac 上的 TextEdit 或 VS Code）打开您刚下载的 .json 文件。</li>
-<li>选择文件中的所有文本（Ctrl+A 或 Cmd+A）。</li>
-<li>将文本复制到剪贴板（Ctrl+C 或 Cmd+C）。</li>
-<li>在 SillyTavern 中，前往&quot;API 连接&quot;页面，选择&quot;聊天补全&quot;作为 API 类型，然后从下拉菜单中选择&quot;Google Vertex AI&quot;。将身份验证方法切换为&quot;服务账户&quot;。</li>
-<li>将整个复制的内容粘贴到&quot;服务账户 JSON 内容&quot;文本框中。</li>
-<li>点击&quot;验证 JSON&quot;按钮以确保您正确复制了它。</li>
-<li>最后，向下滚动并点击 API 设置页面底部的&quot;连接&quot;。</li>
+<li>用简单的文本编辑器（Windows 用记事本、Mac 用 TextEdit 或 VS Code）打开刚下载的 .json 文件。</li>
+<li>全选文件中的文本（Ctrl+A 或 Cmd+A）。</li>
+<li>复制文本（Ctrl+C 或 Cmd+C）。</li>
+<li>在 SillyTavern 中，进入「API 连接」页面，选择「聊天补全」作为 API 类型，再从下拉菜单选择「Google Vertex AI」。将认证方式切换为「服务账号」。</li>
+<li>将全部复制的内容粘贴到「服务账号 JSON 内容」文本框中。</li>
+<li>点击「验证 JSON」按钮确认复制正确。</li>
+<li>最后向下滚动，点击 API 设置页面底部的「连接」。</li>
 </ol>
-<p>现在您应该能够在 SillyTavern 中使用 Google Vertex AI API 了。</p>
+<p>现在即可在 SillyTavern 中使用 Google Vertex AI API。</p>
 <h3 id="快速模式">快速模式</h3>
-<p>快速模式是开始在 Google Cloud 上使用生成式 AI 的最快方式。它允许您使用 Gemini API，而无需设置服务账户。相反，您可以直接使用 API 密钥。</p>
-<p>有关更多详细信息，请参阅官方文档：<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview">快速模式下的 Vertex AI 概述</a>。</p>
-<h4 id="步骤-1确保您的账户符合快速模式的资格">步骤 1：确保您的账户符合快速模式的资格</h4>
-<p>您必须拥有之前未用于创建 Google Cloud 项目的 Google 账户。
-如果您有现有的 Google Cloud 项目（包括免费试用），可以为此目的创建一个新项目。</p>
-<h4 id="步骤-2激活-vertex-ai-快速模式">步骤 2：激活 Vertex AI 快速模式</h4>
+<p>快速模式是在 Google Cloud 上开始使用生成式 AI 的最便捷方式。无需配置服务账号，可直接使用 API 密钥。</p>
+<p>详见官方文档：<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview">Vertex AI 快速模式概览</a>。</p>
+<h4 id="第一步确认账号符合快速模式资格">第一步：确认账号符合快速模式资格</h4>
+<p>必须使用此前未曾创建过 Google Cloud 项目的 Google 账号。
+若已有 Google Cloud 项目（包括免费试用），可为此专门创建一个新项目。</p>
+<h4 id="第二步激活-vertex-ai-快速模式">第二步：激活 Vertex AI 快速模式</h4>
 <ol>
-<li>前往以下网页：<a href="https://cloud.google.com/generative-ai-studio">Vertex AI Studio</a>。</li>
-<li>点击&quot;免费试用&quot;。</li>
-<li>接受条款和条件，并使用您的 Google 账户登录。</li>
-<li>选择您的国家/地区，然后点击&quot;同意并免费开始&quot;。等待设置完成。</li>
+<li>访问以下页面：<a href="https://cloud.google.com/generative-ai-studio">Vertex AI Studio</a></li>
+<li>点击「免费试用」。</li>
+<li>接受条款与条件，使用 Google 账号登录。</li>
+<li>选择所在国家/地区，点击「同意并免费开始」，等待设置完成。</li>
 </ol>
-<h4 id="步骤-3创建-api-密钥">步骤 3：创建 API 密钥</h4>
+<h4 id="第三步创建-api-密钥">第三步：创建 API 密钥</h4>
 <ol>
-<li>验证您的 Google Cloud 控制台是否以快速模式运行。您应该在页面左上角看到一个横幅。</li>
-<li>点击左侧边栏中的&quot;API 密钥&quot;链接。</li>
-<li>点击&quot;创建 API 密钥&quot;按钮。</li>
-<li>将生成一个新的 API 密钥。将此密钥复制到剪贴板。</li>
+<li>确认 Google Cloud 控制台处于快速模式运行状态，页面左上角应有提示横幅。</li>
+<li>点击左侧边栏中的「API 密钥」链接。</li>
+<li>点击「创建 API 密钥」按钮。</li>
+<li>生成新密钥后，将其复制到剪贴板。</li>
 </ol>
-<h4 id="步骤-4将-api-密钥输入-sillytavern">步骤 4：将 API 密钥输入 SillyTavern</h4>
+<h4 id="第四步将-api-密钥填入-sillytavern">第四步：将 API 密钥填入 SillyTavern</h4>
 <ol>
-<li>在 SillyTavern 中，前往&quot;API 连接&quot;页面。</li>
-<li>选择&quot;聊天补全&quot;作为 API 类型。</li>
-<li>从下拉菜单中选择&quot;Google Vertex AI&quot;。</li>
-<li>将身份验证方法切换为&quot;快速模式（API 密钥）&quot;。</li>
-<li>将您之前复制的 API 密钥粘贴到&quot;API 密钥&quot;文本框中。</li>
-<li>点击&quot;连接&quot;按钮保存密钥。</li>
+<li>在 SillyTavern 中，进入「API 连接」页面。</li>
+<li>选择「聊天补全」作为 API 类型。</li>
+<li>从下拉菜单选择「Google Vertex AI」。</li>
+<li>将认证方式切换为「快速模式（API 密钥）」。</li>
+<li>将之前复制的 API 密钥粘贴到「API 密钥」文本框中。</li>
+<li>点击「连接」按钮保存密钥。</li>
 </ol>
-<p>现在您应该能够在 SillyTavern 中以快速模式使用 Google Vertex AI API 了。</p>
+<p>现在即可在 SillyTavern 中以快速模式使用 Google Vertex AI API。</p>
 
                 
                 <!-- Required only on API pages -->

@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>TTS | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="TTS | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="SillyTavern 拥有广泛的 TTS(text-to-speech，文本转语音)选项，用于让语音朗读聊天的部分内容。本页面解释了设置和使用方法。">
+    <meta name="description" content="SillyTavern 提供多种 TTS（文字转语音）选项，用于让语音朗读聊天的部分内容。本页介绍设置和使用方法。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/tts/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/tts/">
     <meta property="og:title" content="TTS | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="SillyTavern 拥有广泛的 TTS(text-to-speech，文本转语音)选项，用于让语音朗读聊天的部分内容。本页面解释了设置和使用方法。">
+    <meta property="og:description" content="SillyTavern 提供多种 TTS（文字转语音）选项，用于让语音朗读聊天的部分内容。本页介绍设置和使用方法。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/tts/">
     <meta name="twitter:title" content="TTS | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="SillyTavern 拥有广泛的 TTS(text-to-speech，文本转语音)选项，用于让语音朗读聊天的部分内容。本页面解释了设置和使用方法。">
+    <meta name="twitter:description" content="SillyTavern 提供多种 TTS（文字转语音）选项，用于让语音朗读聊天的部分内容。本页介绍设置和使用方法。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/tts.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,90 +212,98 @@
 
                 <!-- Page content  -->
 <h1 id="tts">TTS</h1>
-<p>SillyTavern 拥有广泛的 TTS(text-to-speech，文本转语音)选项，用于让语音朗读聊天的部分内容。本页面解释了设置和使用方法。</p>
+<p>SillyTavern 提供多种 TTS（文字转语音）选项，用于让语音朗读聊天的部分内容。本页介绍设置和使用方法。</p>
 <h2 id="配置-tts">配置 TTS</h2>
-<h3 id="tts-provider-选择">TTS Provider 选择</h3>
-<p>用于选择您想要使用的 TTS 服务。一些选项是免费的，一些需要付费订阅，还有一些在您的 PC 上本地运行。</p>
-<p>可用选项(列表可能随时间变化):</p>
+<h3 id="tts-提供商选择">TTS 提供商选择</h3>
+<p>用于选择您想使用的 TTS 服务。部分选项免费，部分需要付费订阅，部分在您的 PC 上本地运行。</p>
+<p>可用选项（列表可能随时间变化）：</p>
 <ul>
-<li><strong>AllTalk</strong> - 免费，开源本地安装，提供多种 TTS 引擎。请参阅 <a href="../alltalk/">AllTalk</a> 页面了解设置说明。</li>
-<li><strong>Azure TTS</strong> - 与 Microsoft Edge 相同的声音。需要 Azure 账户和付费订阅。</li>
-<li><strong>Coqui-TTS</strong>(已弃用)- 免费，需要 Extras API 运行。高性能 Text2Speech 模型(Tacotron、Tacotron2、Glow-TTS、SpeedySpeech)以及 Bark。</li>
-<li><strong>Edge</strong> - 免费，通过 Azure 运行。当选择 &quot;Plugin&quot; 作为 provider 运行时，您还需要安装<a href="https://github.com/SillyTavern/SillyTavern-EdgeTTS-Plugin">此服务器插件</a>。其他选项需要 Extras API(已弃用)运行。</li>
-<li><strong>Electron Hub</strong> - 重用您的 <a href="https://electronhub.ai/">Electron Hub</a> API key 来访问云端语音(GPT-4o Mini TTS、Microsoft neural voices 等)，具有每个模型的控制选项。</li>
-<li><strong>ElevenLabs</strong> - 需要付费订阅。从 <a href="https://elevenlabs.io/">ElevenLabs</a> 获取 API key。</li>
-<li><strong>Google Translate</strong> - Google 提供的免费语音，每种语言一个，质量可能差异很大。</li>
-<li><strong>Google Gemini TTS</strong> - 需要来自 <a href="../../usage/api-connections/google/#google-vertex-ai">Vertex AI</a> 或 <a href="../../usage/api-connections/google/#google-ai-studio">AI Studio</a> 的 API key，使用 <a href="https://cloud.google.com/text-to-speech/docs/gemini-tts">Gemini TTS</a> 模型。</li>
-<li><strong>Kokoro</strong> - 免费，使用 <a href="https://www.npmjs.com/package/kokoro-js">kokoro.js</a> 在您的浏览器中本地运行模型。但是，<a href="https://caniuse.com/webgpu">某些浏览器</a>可能不支持 device 选项的 WebGPU。</li>
-<li><strong>MiniMax</strong> - 需要来自 <a href="https://www.minimax.io/">MiniMax</a> 的 API key。请参阅 <a href="../minimaxtts/">MiniMax TTS</a> 页面了解设置说明。</li>
-<li><strong>Novel</strong> - 需要付费的 NovelAI 订阅，由 NovelAI 的 TTS 引擎生成</li>
-<li><strong>OpenAI</strong> - 需要付费 API key，使用 OpenAI 的 TTS 模型。</li>
+<li><strong>AllTalk</strong> - 免费、开源的本地安装，提供多种 TTS 引擎。设置说明请参阅 <a href="../alltalk/">AllTalk</a> 页面。</li>
+<li><strong>Azure TTS</strong> - 与 Microsoft Edge 使用相同的语音。需要 Azure 账户和付费订阅。</li>
+<li><strong>Coqui-TTS</strong>（已弃用）- 免费，需要 Extras API 才能运行。高性能的文字转语音模型（Tacotron、Tacotron2、Glow-TTS、SpeedySpeech）以及 Bark。</li>
+<li><strong>Edge</strong> - 免费，通过 Azure 运行。当提供商选择&quot;插件&quot;时，您还需要安装<a href="https://github.com/SillyTavern/SillyTavern-EdgeTTS-Plugin">此服务器插件</a>。另一种选项需要 Extras API（已弃用）才能运行。</li>
+<li><strong>Electron Hub</strong> - 复用您的 <a href="https://electronhub.ai/">Electron Hub</a> API 密钥来访问云端语音（GPT-4o Mini TTS、Microsoft 神经语音等），支持按模型控制。</li>
+<li><strong>ElevenLabs</strong> - 需要付费订阅。从 <a href="https://elevenlabs.io/">ElevenLabs</a> 获取 API 密钥。</li>
+<li><strong>Google Translate</strong> - 谷歌提供的免费语音，每种语言一个，质量差异较大。</li>
+<li><strong>Google Gemini TTS</strong> - 需要来自 <a href="../../usage/api-connections/google/#google-vertex-ai">Vertex AI</a> 或 <a href="../../usage/api-connections/google/#google-ai-studio">AI Studio</a> 的 API 密钥，使用 <a href="https://cloud.google.com/text-to-speech/docs/gemini-tts">Gemini TTS</a> 模型。</li>
+<li><strong>Kokoro</strong> - 免费，使用 <a href="https://www.npmjs.com/package/kokoro-js">kokoro.js</a> 在浏览器中本地运行模型。但是，<a href="https://caniuse.com/webgpu">部分浏览器</a>可能不支持 WebGPU 的设备选项。</li>
+<li><strong>MiniMax</strong> - 需要来自 <a href="https://www.minimax.io/">MiniMax</a> 的 API 密钥。设置说明请参阅 <a href="../minimaxtts/">MiniMax TTS</a> 页面。</li>
+<li><strong>Novel</strong> - 需要付费 NovelAI 订阅，由 NovelAI 的 TTS 引擎生成。</li>
+<li><strong>OpenAI</strong> - 需要付费 API 密钥，使用 OpenAI 的 TTS 模型。</li>
 <li><strong>Pollinations</strong> - 免费访问 OpenAI TTS 模型，但有速率限制。<a href="https://pollinations.ai/">网站</a>。</li>
-<li><strong>Silero</strong> - 免费，在您的 PC 上运行，质量可能差异很大。需要<a href="https://github.com/ouoertheo/silero-api-server">专用 API 服务器</a>安装或 Extras API(已弃用)。</li>
-<li><strong>System</strong> - 使用您的操作系统 TTS 引擎(如果存在)。质量可能因操作系统而异。</li>
-<li><strong>XTTS</strong> - 免费，需要专用 API 服务器安装。请参阅 <a href="../xtts/">XTTS</a> 页面了解设置说明。</li>
+<li><strong>Silero</strong> - 免费，在您的 PC 上运行，质量差异较大。需要<a href="https://github.com/ouoertheo/silero-api-server">专用 API 服务器</a>安装或 Extras API（已弃用）。</li>
+<li><strong>System</strong> - 使用您操作系统的 TTS 引擎（如果存在）。质量因操作系统而异。</li>
+<li><strong>XTTS</strong> - 免费，需要专用 API 服务器安装。设置说明请参阅 <a href="../xtts/">XTTS</a> 页面。</li>
 </ul>
 <h3 id="复选框">复选框</h3>
 <ul>
-<li><strong>Enabled</strong> - 打开/关闭 TTS 播放</li>
-<li><strong>Auto Generation</strong> - 让 TTS 在新消息进入聊天时自动开始播放</li>
-<li><strong>Only narrate &quot;quotes&quot;</strong> - 将 TTS 播放限制为仅包含 <code translate="no" v-pre>&quot;引号&quot;</code> 内的文本。这将 <code translate="no" v-pre>*包括星号行内的 &quot;引号&quot;*</code>(内部变量名 = <code translate="no" v-pre>narrate_quoted_only</code>)</li>
-<li><strong>Ignore *text， even &quot;quotes&quot;， inside asterisks*</strong> - TTS 不会播放 <code translate="no" v-pre>*星号*</code> 内的任何文本，即使是 &quot;引号&quot;(内部变量名 = <code translate="no" v-pre>narrate_dialogues_only</code>)</li>
-<li><em>同时勾选 &quot;only narrate quotes&quot; 和 &quot;ignore asterisks&quot; 复选框将导致 TTS 仅读取不在星号内的 &quot;引号&quot;，并忽略其他所有内容。</em></li>
-<li><strong>Narrate only the translated text</strong> - 这将使 TTS 仅朗读翻译后的文本。</li>
+<li><strong>已启用</strong> - 开启/关闭 TTS 播放</li>
+<li><strong>自动生成</strong> - 让 TTS 在新消息进入聊天时自动开始播放</li>
+<li><strong>仅朗读&quot;引号&quot;内容</strong> - 将 TTS 播放限制为仅包含 <code translate="no" v-pre>&quot;引号&quot;</code> 内的文本。这将<code translate="no" v-pre>*包括星号行内的&quot;引号&quot;*</code>（内部变量名 = <code translate="no" v-pre>narrate_quoted_only</code>）</li>
+<li><strong>忽略*星号内的文本，即使是&quot;引号&quot;*</strong> - TTS 不会播放 <code translate="no" v-pre>*星号*</code> 内的任何文本，即使是&quot;引号&quot;（内部变量名 = <code translate="no" v-pre>narrate_dialogues_only</code>）</li>
+<li><em>如果同时勾选&quot;仅朗读引号&quot;和&quot;忽略星号&quot;两个复选框，TTS 将只朗读不在星号内的&quot;引号&quot;，而忽略其他所有内容。</em></li>
+<li><strong>仅朗读翻译后的文本</strong> - 这将使 TTS 只朗读翻译后的文本。</li>
+<li><strong>应用正则表达式</strong> - 在将文本发送到 TTS 提供商之前，对文本应用提供的正则表达式模式。用于从输入文本中删除不需要的部分，例如 TTS 引擎处理不好的表情符号或非本地语言字符。</li>
 </ul>
-<p>给定示例文本:<code translate="no" v-pre>*Cohee approaches you with a faint &quot;nya&quot;* &quot;Good evening， senpai&quot;， she says.</code>
-以下表格显示了根据 <strong>Ignore *text， even &quot;quotes&quot;， inside asterisks*</strong> 和 <strong>Only narrate &quot;quotes&quot;</strong> 的布尔状态，文本将如何修改:</p>
+<p>以示例文本为例：<code translate="no" v-pre>*Cohee approaches you with a faint &quot;nya&quot;* &quot;Good evening, senpai&quot;, she says.</code>
+下表显示了根据<strong>忽略*星号内的文本，即使是&quot;引号&quot;*<strong>和</strong>仅朗读&quot;引号&quot;内容</strong>的布尔状态，文本将如何被修改：</p>
+<retype-table copy-text="| **忽略\*星号内的文本，即使是&quot;引号&quot;\*** 	 | **仅朗读&quot;引号&quot;内容**	 | **输出**                                                                |
+|:-------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------| 
+| 禁用                                               | 	禁用	                 | Cohee approaches you with a faint &quot;nya&quot; &quot;Good evening, senpai&quot;, she says. |
+| 禁用                                               | 启用	                   | &quot;nya&quot;... &quot;Good evening, senpai&quot;                                           |
+| 启用	                                               | 禁用	                  | &quot;Good evening, senpai&quot;, she says.                                         |
+| 启用	                                               | 启用	                   | &quot;Good evening, senpai&quot;                                                    |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Ignore *text， even &quot;quotes&quot;， inside asterisks*</strong></th>
-<th style="text-align: left;"><strong>Only narrate &quot;quotes&quot;</strong></th>
+<th style="text-align: left;"><strong>忽略*星号内的文本，即使是&quot;引号&quot;*</strong></th>
+<th style="text-align: left;"><strong>仅朗读&quot;引号&quot;内容</strong></th>
 <th style="text-align: left;"><strong>输出</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Disabled</td>
-<td style="text-align: left;">Disabled</td>
-<td style="text-align: left;">Cohee approaches you with a faint &quot;nya&quot; &quot;Good evening， senpai&quot;， she says.</td>
+<td style="text-align: left;">禁用</td>
+<td style="text-align: left;">禁用</td>
+<td style="text-align: left;">Cohee approaches you with a faint &quot;nya&quot; &quot;Good evening, senpai&quot;, she says.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Disabled</td>
-<td style="text-align: left;">Enabled</td>
-<td style="text-align: left;">&quot;nya&quot;... &quot;Good evening， senpai&quot;</td>
+<td style="text-align: left;">禁用</td>
+<td style="text-align: left;">启用</td>
+<td style="text-align: left;">&quot;nya&quot;... &quot;Good evening, senpai&quot;</td>
 </tr>
 <tr>
-<td style="text-align: left;">Enabled</td>
-<td style="text-align: left;">Disabled</td>
-<td style="text-align: left;">&quot;Good evening， senpai&quot;， she says.</td>
+<td style="text-align: left;">启用</td>
+<td style="text-align: left;">禁用</td>
+<td style="text-align: left;">&quot;Good evening, senpai&quot;, she says.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Enabled</td>
-<td style="text-align: left;">Enabled</td>
-<td style="text-align: left;">&quot;Good evening， senpai&quot;</td>
+<td style="text-align: left;">启用</td>
+<td style="text-align: left;">启用</td>
+<td style="text-align: left;">&quot;Good evening, senpai&quot;</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="滑块">滑块</h3>
-<p>这些会根据您选择的 API 而变化。</p>
+<p>这些将根据您选择的 API 而有所不同。</p>
 <h3 id="按钮">按钮</h3>
 <ul>
-<li><strong>Apply</strong> - 在设置 TTS API 和编辑 voice map 后必须点击此按钮。</li>
-<li><strong>Refresh</strong> - 从所选 TTS API 重新加载语音列表。</li>
-<li><strong>Available voices</strong> - 加载一个弹出窗口，显示所选 API 的所有可用语音，并让您使用示例对话预览它们。</li>
+<li><strong>应用</strong> - 设置 TTS API 后以及编辑语音映射后，必须单击此按钮。</li>
+<li><strong>刷新</strong> - 从所选 TTS API 重新加载语音列表。</li>
+<li><strong>可用语音</strong> - 加载一个弹出窗口，显示所选 API 的所有可用语音，并让您通过示例对话预览它们。</li>
 </ul>
 <h2 id="使用-tts">使用 TTS</h2>
 <ol>
-<li>点击 &quot;Enable&quot; 复选框，否则什么都不会发生。</li>
-<li>如果您希望 TTS 在每次新消息到达聊天时自动启动，请点击 &quot;Auto-generation&quot; 复选框。</li>
-<li>可选地，点击任何消息右上角的扩音器图标以按需播放。</li>
-<li>点击右下角的 &quot;Stop&quot; 按钮(位于 wand 菜单内)以停止任何播放。</li>
+<li>单击&quot;启用&quot;复选框，否则什么都不会发生。</li>
+<li>如果您希望每次聊天中有新消息到达时 TTS 自动开始，请单击&quot;自动生成&quot;复选框。</li>
+<li>可选地，单击任意消息右上角内部的扬声器图标，按需播放。</li>
+<li>单击右下角的&quot;停止&quot;按钮（在魔杖菜单内）以停止任何播放。</li>
 </ol>
-<h3 id="voice-map">Voice Map</h3>
-<p>您必须为 TTS 提供 voice map，否则它不知道应该为每个角色使用什么语音。要设置 voice map，首先打开与您想要分配语音的角色的聊天和/或选择要分配语音的用户角色，然后从下拉菜单中选择 TTS provider 列出的语音。如果您看不到语音和/或角色列表，请确保您的 TTS provider 配置正确并点击 &quot;Refresh&quot;。某些 provider(如 OpenAI-compatible 或 NovelAI)需要您手动填充语音列表。</p>
+<h3 id="语音映射">语音映射</h3>
+<p>您必须提供语音映射，否则 TTS 将不知道每个角色应使用哪种语音。要设置语音映射，首先打开与您想要分配语音的角色的聊天，和/或选择要分配语音的用户人物设定，然后从 TTS 提供商的下拉列表中选择一个语音。如果您看不到语音和/或角色列表，请确保您的 TTS 提供商配置正确，然后单击&quot;刷新&quot;。部分提供商（如兼容 OpenAI 的或 NovelAI）需要您手动填充语音列表。</p>
 
                 
                 <!-- Required only on API pages -->

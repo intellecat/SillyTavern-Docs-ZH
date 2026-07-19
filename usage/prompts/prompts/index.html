@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>提示词 | SillyTavern傻酒馆中文文档</title>
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -227,7 +227,7 @@
 <li>关于如何生成回应的<doc-anchor-trigger to="#%E5%8E%86%E5%8F%B2%E5%90%8E%E6%8C%87%E4%BB%A4">最终指令</doc-anchor-trigger></li>
 </ul>
 <p>这可能需要管理很多内容！为了帮助您理解如何构建和修改发送给 AI 的请求，SillyTavern 识别了您可能想要包含在提示词中的不同元素。然后，您可以构建您的提示词，包含适合您想要与 AI 交互方式的内容。</p>
-<p>许多这些元素在您需要更改它们的部分中都有解释。例如，要描述您希望 AI 扮演的角色，您可以使用<a href="../../core-concepts/characterdesign/">角色设计</a>中的<a href="../../core-concepts/characterdesign/#%E4%B8%AA%E6%80%A7%E6%A6%82%E8%BF%B0">描述</a>字段。</p>
+<p>许多这些元素在您需要更改它们的部分中都有解释。例如，要描述您希望 AI 扮演的角色，您可以使用<a href="../../core-concepts/characterdesign/">角色设计</a>中的<a href="../../core-concepts/characterdesign/#personality-summary">描述</a>字段。</p>
 <h2 id="查看提示词">查看提示词</h2>
 <p>阅读发送给 AI 的最终提示词对于理解 AI 被告知了什么，以及为什么它生成了这样的回应非常有帮助。您可以通过以下几种方式查看提示词：</p>
 <ul>
@@ -253,7 +253,7 @@
 <doc-tabs>
 <doc-tab v-cloak id="text-completion-api-1">
 <template #title>Text Completion API</template>
-<p><a href="../../core-concepts/advancedformatting/#%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D">系统提示词</a>是<a href="../context-template/#%E6%95%85%E4%BA%8B%E5%AD%97%E7%AC%A6%E4%B8%B2">故事字符串</a>的一部分，通常是模型接收的提示词的第一部分。</p>
+<p><a href="../../core-concepts/advancedformatting/#system-prompt">系统提示词</a>是<a href="../context-template/#story-string">故事字符串</a>的一部分，通常是模型接收的提示词的第一部分。</p>
 </doc-tab>
 <doc-tab v-cloak id="chat-completion-api-1">
 <template #title>Chat Completion API</template>
@@ -312,7 +312,7 @@
 <p>通常有比主提示词更好的地方来包含关于用户或角色的信息，修改角色的写作和说话风格，或给出其他具体指令。主提示词最适合用于关于整个对话的一般指令，或关于您想要进行的对话类型的指令。</p>
 <h3 id="消息历史的影响">消息历史的影响</h3>
 <p>在调整主提示词以改善 AI 的回应时，请考虑 AI 从消息历史中获取了很多信息。历史是它对过去事件、角色互动和关系的记忆，也是它的词汇选择和写作风格的指南。</p>
-<p>通过提供<a href="../../core-concepts/characterdesign/#%E5%AF%B9%E8%AF%9D%E7%A4%BA%E4%BE%8B">示例消息</a>来展示您希望 AI 如何回应，利用这一点。展示您想要的通常比试图解释它更容易！</p>
+<p>通过提供<a href="../../core-concepts/characterdesign/#examples-of-dialogue">示例消息</a>来展示您希望 AI 如何回应，利用这一点。展示您想要的通常比试图解释它更容易！</p>
 <p>当您的对话已经有历史时，更改主提示词对 AI 的回应的影响是有限的。在事件和关系方面，AI 假设主提示词发生在遥远的过去，而消息历史更新了它。在写作风格和词汇选择方面，AI 假设历史中的所有消息都是根据<em>当前</em>主提示词中的规则生成的，并且它应该继续以相同的方式生成消息。处理这种情况的一些建议是：</p>
 <ul>
 <li>在消息历史的末尾或之后插入当前指令，例如使用<a href="../../core-concepts/authors-note/">作者注释</a></li>
@@ -375,7 +375,7 @@
 <doc-tab v-cloak id="text-completion-api-2">
 <template #title>Text Completion API</template>
 <p>历史后指令不能全局定义。您可以使用<a href="../../core-concepts/authors-note/">作者注释</a>达到相同的效果。</p>
-<p>要使用每个角色的历史后指令，将它们添加到角色的<a href="../../core-concepts/characterdesign/">历史后指令</a>中，并启用<strong>both</strong> <a href="../../user-settings/">优先使用角色指令</a>和<a href="../context-template/#%E5%85%81%E8%AE%B8%E5%8E%86%E5%8F%B2%E5%90%8E%E6%8C%87%E4%BB%A4">允许历史后指令</a>。</p>
+<p>要使用每个角色的历史后指令，将它们添加到角色的<a href="../../core-concepts/characterdesign/">历史后指令</a>中，并启用<strong>both</strong> <a href="../../user-settings/">优先使用角色指令</a>和<a href="../context-template/">允许历史后指令</a>。</p>
 <p>历史后指令作为一个不可见的用户角色注入添加，位于提示词的最后一行之前（通常包含回应消息&quot;标题&quot;）。</p>
 </doc-tab>
 <doc-tab v-cloak id="chat-completion-api-2">

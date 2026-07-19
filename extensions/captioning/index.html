@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Image Captioning (图像描述生成) | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="Image Captioning (图像描述生成) | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="图像描述生成允许 SillyTavern 自动为聊天中使用的图像生成文本描述。">
+    <title>Captioning（图像描述） | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="Captioning（图像描述） | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="图像描述功能允许 SillyTavern 自动为聊天中使用的图像生成文字描述。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/captioning/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/captioning/">
-    <meta property="og:title" content="Image Captioning (图像描述生成) | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="图像描述生成允许 SillyTavern 自动为聊天中使用的图像生成文本描述。">
+    <meta property="og:title" content="Captioning（图像描述） | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="图像描述功能允许 SillyTavern 自动为聊天中使用的图像生成文字描述。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/captioning/">
-    <meta name="twitter:title" content="Image Captioning (图像描述生成) | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="图像描述生成允许 SillyTavern 自动为聊天中使用的图像生成文本描述。">
+    <meta name="twitter:title" content="Captioning（图像描述） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="图像描述功能允许 SillyTavern 自动为聊天中使用的图像生成文字描述。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/captioning.md">
@@ -41,12 +41,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -212,186 +212,220 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="image-captioning-图像描述生成">Image Captioning (图像描述生成)</h1>
-<p>图像描述生成允许 SillyTavern 自动为聊天中使用的图像生成文本描述。</p>
-<p>当您希望您的 AI 角色能够&quot;看到&quot;并回应对话中的视觉内容时，请使用图像描述生成功能。</p>
+<h1 id="captioning图像描述">Captioning（图像描述）</h1>
+<p>图像描述功能允许 SillyTavern 自动为聊天中使用的图像生成文字描述。</p>
+<p>当您希望 AI 角色能够&quot;看到&quot;并响应对话中的视觉内容时，请使用图像描述功能。</p>
 <ul>
 <li>为您上传或粘贴到消息中的图像创建描述</li>
 <li>为聊天历史中的现有图像添加上下文</li>
-<li>使用各种生成源，包括本地模型、云 API 和众包网络</li>
+<li>使用各种生成来源，包括本地模型、云端 API 和众包网络</li>
 </ul>
-<p>有些选项不需要设置、不需要费用，也不需要 GPU。也有一些选项需要其中的一些或全部条件。选择适合您需求和资源的选项。</p>
-<p>图像描述生成扩展已内置于 SillyTavern 中，无需单独安装。</p>
+<p>有些选项无需任何设置、无需花钱、无需 GPU。也有些选项需要其中部分或全部条件。请根据您的需求和资源选择合适的选项。</p>
+<p>图像描述扩展内置于 SillyTavern 中，无需单独安装。</p>
 <h2 id="快速开始">快速开始</h2>
 <ol>
 <li>设置：
 <ul>
-<li>在 <strong><i class="fa-solid fa-cubes"></i> Extensions</strong> 面板中打开 <strong>Image Captioning</strong> 面板</li>
-<li>选择描述生成源（最可能是&quot;Local&quot;或&quot;Multimodal&quot;）</li>
-<li>对于&quot;Multimodal&quot;，确保您已在 <strong><i class="fa-solid fa-plug"></i> API Connections</strong> 标签页中设置了连接</li>
+<li>在 <strong><i class="fa-solid fa-cubes"></i> 扩展</strong>面板中打开<strong>图像描述</strong>面板</li>
+<li>选择一个描述来源（最可能是&quot;本地&quot;或&quot;多模态&quot;）</li>
+<li>对于&quot;多模态&quot;，请确保您已在 <strong><i class="fa-solid fa-plug"></i> API 连接</strong>标签页中设置好连接</li>
 </ul>
 </li>
 <li>生成描述：
 <ul>
-<li>从 <strong><i class="fa-solid fa-magic-wand-sparkles"></i> Extensions</strong> 弹出菜单中选择&quot;<strong>Generate Caption</strong>&quot;</li>
+<li>从 <strong><i class="fa-solid fa-magic-wand-sparkles"></i> 扩展</strong>弹出菜单中选择&quot;<strong>生成描述</strong>&quot;</li>
 <li>在提示时选择图像文件</li>
-<li>等待生成描述</li>
+<li>等待描述生成</li>
 </ul>
 </li>
-<li>审查并发送：
+<li>审阅并发送：
 <ul>
-<li>带描述的图像将被插入到您的消息中</li>
-<li>使用图像工具提示查看描述</li>
-<li>点击 <strong><i class="fa-solid fa-paper-plane"></i> Send</strong> 看看您的角色对图像的看法！</li>
+<li>带描述的图像将被插入您的消息中</li>
+<li>通过图像提示查看描述内容</li>
+<li>单击 <strong><i class="fa-solid fa-paper-plane"></i> 发送</strong>，看看您的角色对图像有何看法！</li>
 </ul>
 </li>
 </ol>
-<h2 id="面板控制">面板控制</h2>
-<h3 id="源选择">源选择</h3>
-<p>选择图像描述生成的源。支持的选项：</p>
+<h2 id="面板控件">面板控件</h2>
+<h3 id="来源选择">来源选择</h3>
+<p>选择图像描述的来源。支持的选项：</p>
+<retype-table copy-text="| 来源                           | 描述                                                                                                                                                                                                  |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [多模态](#multimodal-source) | **云端**：OpenAI、Anthropic、Google、MistralAI 等。&lt;br&gt;**本地**：Ollama、llama.cpp、KoboldCpp、Text Generation WebUI 和 vLLM。&lt;br&gt;支持自定义提示词，可以对图像进行提问。 |
+| [本地](#local-source)           | 使用在 SillyTavern 服务器内本地运行的 [transformers.js](https://huggingface.co/docs/transformers.js/en/index)。零设置！                                                                     |
+| Horde                            | 使用 [AI Horde](https://aihorde.net/) 网络，这是一个众包分布式图像生成模型网络。无需下载、配置或付费。响应时间不定。                       |
+| Extras                           | Extras 项目已于 2024 年 4 月停止维护，不再受到维护或支持。                                                                                                                                        |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>源</th>
+<th>来源</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><doc-anchor-trigger to="#%E5%A4%9A%E6%A8%A1%E6%80%81%E6%BA%90">多模态模型</doc-anchor-trigger></td>
-<td><strong>云端</strong>：OpenAI、Anthropic、Google、MistralAI 等。<br><strong>本地</strong>：Ollama、llama.cpp、KoboldCpp、Text Generation WebUI 和 vLLM。<br>支持自定义提示，因此您可以向图像提问。</td>
+<td><doc-anchor-trigger to="#multimodal-source">多模态</doc-anchor-trigger></td>
+<td><strong>云端</strong>：OpenAI、Anthropic、Google、MistralAI 等。<br><strong>本地</strong>：Ollama、llama.cpp、KoboldCpp、Text Generation WebUI 和 vLLM。<br>支持自定义提示词，可以对图像进行提问。</td>
 </tr>
 <tr>
-<td><doc-anchor-trigger to="#%E6%9C%AC%E5%9C%B0%E6%BA%90">Local</doc-anchor-trigger></td>
-<td>使用在您的 SillyTavern 服务器内本地运行的 <a href="https://huggingface.co/docs/transformers.js/en/index">transformers.js</a>。零设置！</td>
+<td><doc-anchor-trigger to="#local-source">本地</doc-anchor-trigger></td>
+<td>使用在 SillyTavern 服务器内本地运行的 <a href="https://huggingface.co/docs/transformers.js/en/index">transformers.js</a>。零设置！</td>
 </tr>
 <tr>
 <td>Horde</td>
-<td>使用 <a href="https://aihorde.net/">AI Horde</a> 网络，这是一个众包分布式图像生成模型网络。无需下载、配置或付费。响应时间不固定。</td>
+<td>使用 <a href="https://aihorde.net/">AI Horde</a> 网络，这是一个众包分布式图像生成模型网络。无需下载、配置或付费。响应时间不定。</td>
 </tr>
 <tr>
 <td>Extras</td>
-<td>Extras 项目已于 2024 年 4 月停止维护，不再提供维护或支持。</td>
+<td>Extras 项目已于 2024 年 4 月停止维护，不再受到维护或支持。</td>
 </tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="描述配置">描述配置</h3>
 <ul>
-<li><strong>Caption Prompt</strong>：输入自定义描述提示。默认提示是&quot;What&#x27;s in this image?&quot;</li>
-<li><strong>Ask every time</strong>：切换是否为每个图像描述请求自定义提示</li>
+<li><strong>描述提示词</strong>：为图像描述输入自定义提示词。默认提示词为&quot;What&#x27;s in this image?&quot;</li>
+<li><strong>每次询问</strong>：切换为每次图像描述请求自定义提示词</li>
 </ul>
 <h3 id="消息模板">消息模板</h3>
 <ul>
-<li><strong>Message Template</strong>：自定义描述消息模板。使用 <code translate="no" v-pre>{{caption}}</code> 宏插入生成的描述。默认模板是 <code translate="no" v-pre>[{{user}} sends {{char}} a picture that contains: {{caption}}]</code></li>
+<li><strong>消息模板</strong>：自定义描述消息模板。使用 <code translate="no" v-pre>{{caption}}</code> 宏插入生成的描述。默认模板为 <code translate="no" v-pre>[{{user}} sends {{char}} a picture that contains: {{caption}}]</code></li>
 </ul>
-<h3 id="自动描述生成">自动描述生成</h3>
+<h3 id="自动描述">自动描述</h3>
 <ul>
-<li><strong>Automatically caption images</strong>：切换是否为粘贴或附加到消息中的图像自动生成描述</li>
-<li><strong>Edit captions before saving</strong>：切换是否允许在保存前编辑描述</li>
+<li><strong>自动为图像生成描述</strong>：切换以启用自动为粘贴或附加到消息的图像生成描述</li>
+<li><strong>保存前编辑描述</strong>：切换以允许在保存前编辑描述</li>
 </ul>
 <h2 id="为图像生成描述">为图像生成描述</h2>
-<p>在 SillyTavern 中生成图像描述的所有方法：</p>
+<p>SillyTavern 中所有为图像生成描述的方式：</p>
 <ul>
-<li>从 <strong><i class="fa-solid fa-magic-wand-sparkles"></i> Extensions</strong> 弹出菜单中选择&quot;<strong>Generate Caption</strong>&quot;，并在提示时选择图像文件</li>
-<li>点击消息中已有图像顶部的 <i class="fa-solid fa-envelope-open-text"></i> <strong>Caption</strong> 图标</li>
-<li>在启用<doc-anchor-trigger to="#%E8%87%AA%E5%8A%A8%E6%8F%8F%E8%BF%B0%E7%94%9F%E6%88%90">自动描述生成</doc-anchor-trigger>的情况下直接将图像粘贴到聊天输入框中</li>
-<li>使用消息操作中的 <i class="fa-solid fa-paperclip"></i> <strong>Embed File or Image</strong> 按钮将图像文件附加到消息中</li>
+<li>从 <strong><i class="fa-solid fa-magic-wand-sparkles"></i> 扩展</strong>弹出菜单中选择&quot;<strong>生成描述</strong>&quot;，并在提示时选择图像文件</li>
+<li>单击消息中已有图像顶部的 <i class="fa-solid fa-envelope-open-text"></i> <strong>描述</strong>图标</li>
+<li>在启用<doc-anchor-trigger to="#auto-captioning">自动描述</doc-anchor-trigger>的情况下，直接将图像粘贴到聊天输入框中</li>
+<li>使用消息操作中的 <i class="fa-solid fa-paperclip"></i> <strong>嵌入文件或图像</strong>按钮，将图像文件附加到消息中</li>
 <li>发送带有嵌入图像的消息</li>
-<li>使用 <code translate="no" v-pre>/caption</code> <doc-anchor-trigger to="#%E6%96%9C%E6%9D%A0%E5%91%BD%E4%BB%A4caption">斜杠命令</doc-anchor-trigger></li>
+<li>使用 <code translate="no" v-pre>/caption</code> <doc-anchor-trigger to="#slash-command-caption">斜杠命令</doc-anchor-trigger></li>
 </ul>
-<h2 id="自动描述生成-1">自动描述生成</h2>
-<p>自动描述生成功能允许您在将图像添加到聊天中时自动生成描述，无需每次手动触发描述生成过程。</p>
-<p>要启用，请在图像描述生成面板中选中&quot;Automatically caption images&quot;复选框。您还可以通过选中&quot;Edit captions before saving&quot;框来选择在保存前编辑描述。</p>
-<p>启用后，自动描述生成将在以下情况下触发：</p>
+<h2 id="auto-captioning">自动描述</h2>
+<p>自动描述功能允许您在图像添加到聊天时自动生成描述，无需每次手动触发描述过程。</p>
+<p>要启用，请在图像描述面板中选中&quot;自动为图像生成描述&quot;复选框。您也可以通过勾选&quot;保存前编辑描述&quot;框，选择在保存前编辑描述。</p>
+<p>启用后，自动描述将在以下情况下触发：</p>
 <ul>
-<li>当图像直接粘贴到聊天输入框中时。</li>
-<li>当图像文件附加到消息中时。</li>
+<li>当图像直接粘贴到聊天输入框时。</li>
+<li>当图像文件附加到消息时。</li>
 <li>当发送带有嵌入图像的消息时。</li>
 </ul>
-<p>系统将使用您选择的描述生成源（Local、Extras、Horde 或 Multimodal）和配置的设置为图像生成描述。</p>
-<h3 id="保存前编辑描述优化模式">保存前编辑描述（优化模式）</h3>
-<p>如果您启用了&quot;Edit captions before saving&quot;选项：</p>
+<p>系统将使用您选择的描述来源（本地、Extras、Horde 或多模态）和配置的设置为图像生成描述。</p>
+<h3 id="保存前编辑描述精细化模式">保存前编辑描述（精细化模式）</h3>
+<p>如果您已启用&quot;保存前编辑描述&quot;选项：</p>
 <ol>
-<li>添加图像后，将出现一个带有生成描述的弹出窗口。</li>
-<li>您可以根据需要查看和编辑描述。</li>
-<li>点击&quot;OK&quot;应用描述，或点击&quot;Cancel&quot;放弃保存描述。</li>
+<li>添加图像后，将出现一个包含生成描述的弹出窗口。</li>
+<li>您可以根据需要审阅和编辑描述。</li>
+<li>单击&quot;确定&quot;应用描述，或单击&quot;取消&quot;放弃描述而不保存。</li>
 </ol>
 <h3 id="描述发送">描述发送</h3>
-<p>生成的（和可选编辑的）描述将使用您配置的消息模板自动插入到提示中。默认情况下，它将以以下格式发送：</p>
+<p>生成的（可选编辑过的）描述将使用您配置的消息模板自动插入提示词中。默认情况下，它将以以下格式发送：</p>
 <div id="描述发送-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">[BaronVonUser sends Seraphina a picture that contains: ...]</code></pre>
 </doc-codeblock></div>
-<h2 id="斜杠命令caption">斜杠命令：/caption</h2>
+<h2 id="slash-command-caption">斜杠命令：/caption</h2>
 <p>该扩展提供了一个 <code translate="no" v-pre>/caption</code> 斜杠命令，可在聊天框或脚本中使用。</p>
 <h3 id="用法">用法</h3>
 <div id="用法-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/caption [quiet=true|false]? [mesId=number]? [prompt]</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><code translate="no" v-pre>prompt</code>（可选）：描述模型的自定义提示。仅 multimodal 源支持。</li>
-<li><code translate="no" v-pre>quiet=true|false</code>：如果设置为 true，则禁止向聊天发送带描述的消息。默认为 false。</li>
-<li><code translate="no" v-pre>mesId=number</code>：指定从现有消息生成图像描述的消息 ID，而不是上传新图像。</li>
+<li><code translate="no" v-pre>prompt</code>（可选）：图像描述模型的自定义提示词。仅多模态来源支持。</li>
+<li><code translate="no" v-pre>quiet=true|false</code>：如果设置为 true，则抑制将带描述的消息发送到聊天。默认为 false。</li>
+<li><code translate="no" v-pre>mesId=number</code>：指定消息 ID，以对现有消息中的图像进行描述，而不是上传新图像。</li>
 </ul>
-<p>如果未提供 <code translate="no" v-pre>mesId</code>，命令将提示您上传图像。当 <code translate="no" v-pre>quiet</code> 为 false（默认）时，将向聊天发送一条带有描述图像的新消息。生成的描述可以用作其他命令的输入。</p>
+<p>如果未提供 <code translate="no" v-pre>mesId</code>，命令将提示您上传图像。当 <code translate="no" v-pre>quiet</code> 为 false（默认）时，包含带描述图像的新消息将被发送到聊天。生成的描述可用作其他命令的输入。</p>
 <h3 id="示例">示例</h3>
 <p>使用默认设置为新图像生成描述：</p>
 <div id="示例-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/caption</code></pre>
 </doc-codeblock></div>
-<p>使用自定义提示为新图像生成描述：</p>
+<p>使用自定义提示词为新图像生成描述：</p>
 <div id="示例-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/caption Describe the main colours and shapes in this image</code></pre>
 </doc-codeblock></div>
-<p>为消息 #5 中的图像生成描述而不发送新消息：</p>
+<p>对第 5 条消息中的图像生成描述而不发送新消息：</p>
 <div id="示例-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/caption mesId=5 quiet=true</code></pre>
 </doc-codeblock></div>
-<p>为消息 #10 中的图像使用自定义提示生成描述，然后<a href="../stable-diffusion/">基于描述生成新图像</a>：</p>
+<p>对第 10 条消息中的图像生成描述，然后根据描述<a href="../stable-diffusion/">生成新图像</a>：</p>
 <div id="示例-code-4" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/caption mesId=10 Describe this image using comma-separated keywords | /imagine </code></pre>
 </doc-codeblock></div>
-<h2 id="本地源">本地源</h2>
-<p>您可以在 <a href="../../administration/config-yaml/#%E6%89%A9%E5%B1%95%E9%85%8D%E7%BD%AE">config.yaml</a> 中更改模型。键名为 <code translate="no" v-pre>extras.captioningModel</code>（因为某些原因）。输入您想使用的 Hugging Face 模型 ID。默认值是 <code translate="no" v-pre>Xenova/vit-gpt2-image-captioning</code>。</p>
-<p>您可以使用任何支持图像描述生成的模型（<code translate="no" v-pre>VisionEncoderDecoderModel</code> 或&quot;image-to-text&quot;管道）。该模型需要与 transformers.js 库兼容。也就是说，它需要 ONNX 权重。寻找带有 <code translate="no" v-pre>ONNX</code> 和 <code translate="no" v-pre>image-to-text</code> 标签的模型，或者有一个名为 <code translate="no" v-pre>onnx</code> 的文件夹，里面装满了 <code translate="no" v-pre>.onnx</code> 文件。</p>
-<h2 id="多模态源">多模态源</h2>
-<h3 id="一般配置">一般配置</h3>
+<h2 id="local-source">本地来源</h2>
+<p>您可以在 <a href="../../administration/config-yaml/#extensions-configuration">config.yaml</a> 中更改模型。键名为 <code translate="no" v-pre>extensions.models.captioning</code>。输入您想使用的 Hugging Face 模型 ID。默认为 <code translate="no" v-pre>Xenova/vit-gpt2-image-captioning</code>。</p>
+<p>您可以使用任何支持图像描述的模型（<code translate="no" v-pre>VisionEncoderDecoderModel</code> 或&quot;image-to-text&quot;流水线）。该模型需要与 transformers.js 库兼容，即需要 ONNX 权重。请查找带有 <code translate="no" v-pre>ONNX</code> 和 <code translate="no" v-pre>image-to-text</code> 标签的模型，或者具有包含 <code translate="no" v-pre>.onnx</code> 文件的 <code translate="no" v-pre>onnx</code> 文件夹的模型。</p>
+<h2 id="multimodal-source">多模态来源</h2>
+<h3 id="通用配置">通用配置</h3>
 <ul>
-<li><strong>Model</strong>：选择用于图像描述生成的模型。选项根据所选 API 而变化。</li>
-<li><strong>Allow reverse proxy</strong>：如果定义并有效，切换是否允许使用反向代理（OpenAI、Anthropic、Google、Mistral）</li>
+<li><strong>模型</strong>：选择用于图像描述的模型。选项因所选 API 而异。</li>
+<li><strong>允许反向代理</strong>：切换以允许在已定义且有效时使用反向代理（OpenAI、Anthropic、Google、Mistral、xAI）</li>
 </ul>
-<p>描述生成源的 API 密钥和端点 URL 在 <a href="../../usage/api-connections/">API Connections</a> 面板中管理。首先在 API Connections 中设置连接，然后在 Captioning 中选择它作为您的描述源。</p>
+<p>描述来源的 API 密钥和端点 URL 在 <a href="../../usage/api-connections/">API 连接</a>面板中管理。请先在&quot;API 连接&quot;中设置连接，然后在&quot;图像描述&quot;中将其选为描述来源。</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning 首先在 API Connections 面板中设置</h5>
-<p>最后一次提醒：在 <strong><i class="fa-solid fa-plug"></i> API Connections</strong> 中配置 API 密钥/地址/端口，并在 Captioning 中使用该连接。</p>
-<p>您仍然可以使用 Claude 进行聊天，使用 Google AI Studio 进行图像描述生成，或者其他组合。只需要先在&quot;API Connections&quot;标签页中设置好它们<em>两个</em>。然后将您的 Chat Completion 源切换到 Claude，将您的 Captioning 源切换到 Google AI Studio。</p>
+            <h5>请先在 API 连接面板中设置</h5>
+<p>再次提醒：在 <strong><i class="fa-solid fa-plug"></i> API 连接</strong>中配置 API 密钥/地址/端口，然后在&quot;图像描述&quot;中使用该连接。</p>
+<p>您完全可以使用 Claude 进行聊天，同时使用 Google AI Studio 进行图像描述，诸如此类。只需先在&quot;API 连接&quot;标签页中<em>分别</em>设置好它们，然后将您的聊天补全来源切换到 Claude，将图像描述来源切换到 Google AI Studio。</p>
         </div>
     </div>
 </div>
-<p>对于大多数本地后端，您需要在模型后端而不是在 SillyTavern 中设置一些选项。如果您的后端一次只能运行一个模型，并且不支持自动切换，那么使用同一个后端进行聊天和描述生成时使用不同的模型将会很困难。</p>
-<p>即使您在不同端口上运行两个后端实例，API Connections 也只允许每种后端类型有一个活动配置。但是如果我告诉您...您可能可以在 Text Completion 和 Chat Completion 模式下都连接到您的后端？现在您可以有两个到同一个后端类型的连接了。</p>
-<h3 id="源">源</h3>
-<p>要使用这些描述源之一，请在源下拉菜单中选择 Multimodal。</p>
+<p>对于大多数本地后端，您需要在模型后端而不是在 SillyTavern 中设置一些选项。如果您的后端一次只能运行一个模型且不支持自动切换，您有以下几种选项来对聊天和图像描述使用不同的模型：</p>
+<ol>
+<li>**辅助端点：**使用辅助端点功能（参见下方<doc-anchor-trigger to="#secondary-endpoints">辅助端点</doc-anchor-trigger>部分）连接到不同的 API 服务器进行图像描述</li>
+<li>**多种连接类型：**在&quot;API 连接&quot;中使用文本补全和聊天补全两种模式连接到您的后端——这样可以对同一后端类型建立两个独立的连接</li>
+</ol>
+<h3 id="来源">来源</h3>
+<p>要使用以下某个描述来源，请在&quot;来源&quot;下拉菜单中选择&quot;多模态&quot;。</p>
 <ul>
-<li>&quot;我想要最好的描述生成，不介意付费&quot;：Anthropic</li>
-<li>&quot;我不想付费或运行任何东西&quot;：Google AI Studio 免费层</li>
-<li>&quot;我想在本地生成图像描述并让它正常工作&quot;：Ollama</li>
+<li>&quot;我想要最佳的图像描述效果，不介意付费&quot;：Anthropic</li>
+<li>&quot;我不想付钱也不想运行任何东西&quot;：Google AI Studio 免费层</li>
+<li>&quot;我想在本地为图像生成描述且开箱即用&quot;：Ollama</li>
 <li>&quot;我想保持本地 AI 的梦想&quot;：<doc-anchor-trigger to="#koboldcpp">KoboldCpp</doc-anchor-trigger></li>
-<li>&quot;我想在它不工作时抱怨&quot;：<del>Extras</del></li>
+<li>&quot;我想在不工作时抱怨&quot;：<del>Extras</del></li>
 </ul>
+<retype-table copy-text="| API 提供商                      | 描述                                                                                                                                                                   |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AI/ML API                         | 云端，付费，多种具有视觉能力的 GPT、Claude 和 Gemini 模型                                                                                                                  |
+| Chutes                            | 云端，多种具有视觉能力的模型                                                                                                                                |
+| Claude                            | 云端，付费，所有具有视觉能力的 Claude 模型                                                                                                                       |
+| Cloudflare Workers AI             | 云端，付费，多种具有视觉能力的模型                                                                                                                          |
+| Cohere                            | 云端，付费，Aya Vision 8B / 32B                                                                                                                                              |
+| Custom (OpenAI-compatible)        | 用于自定义兼容 OpenAI 的 API，使用在&quot;API 连接&quot;标签页中当前配置的模型                                                                                     |
+| Electron Hub                      | 云端，付费，多种具有视觉能力的模型。                                                                                                                         |
+| Google AI Studio                  | 云端，免费层后付费，Gemini Flash/Pro                                                                                                                                  |
+| Google Vertex AI                  | 云端，免费层，Gemini Flash/Pro                                                                                                                                            |
+| Groq                              | 云端，llama-4 scout/maverick                                                                                                                                                 |
+| KoboldCpp                         | 本地，需在 KoboldCpp 中配置模型                                                                                                                                      |
+| llama.cpp                         | 本地，需在 llama.cpp 中配置模型                                                                                                                                           |
+| MistralAI                         | 云端，付费，pixtral-large、pixtral-12B、magistral、mistral-large 等。                                                                                                       |
+| Moonshot AI                       | 云端，付费，moonshot-vision                                                                                                                                                  |
+| NanoGPT                           | 云端，付费，多种具有视觉能力的 GPT/Claude/Google 模型                                                                                                                        |
+| Ollama                            | 本地，可在&quot;图像描述&quot;中切换可用模型并下载[额外的视觉模型](https://ollama.com/search?c=vision)（在&quot;API 连接&quot;中配置后）|
+| OpenAI                            | 云端，付费，GPT-4 Vision、4-turbo、4o、4o-mini                                                                                                                               |
+| OpenRouter                        | 云端，付费（可能有免费选项），众多模型，在&quot;API 连接&quot;中配置后可在&quot;图像描述&quot;中从可用模型中选择                                              |
+| Pollinations                      | 云端，免费                                                                                                                                                                   |
+| Text Generation WebUI (oobabooga) | 本地，需在 ooba 中配置模型                                                                                                                                           |
+| vLLM                              | 本地                                                                                                                                                                         |
+| xAI (Grok)                        | 云端，付费，grok-vision                                                                                                                                                      |
+| Z.AI (GLM)                        | 云端，付费，GLM 视觉模型                                                                                                                                                |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -402,40 +436,68 @@
 </thead>
 <tbody>
 <tr>
-<td>01.AI (Yi)</td>
-<td>云端，付费，yi-vision</td>
+<td>AI/ML API</td>
+<td>云端，付费，多种具有视觉能力的 GPT、Claude 和 Gemini 模型</td>
 </tr>
 <tr>
-<td>Anthropic</td>
-<td>云端，付费，具有视觉能力的 Claude 模型：claude-3-5-sonnet/haiku、claude-3-opus/sonnet</td>
+<td>Chutes</td>
+<td>云端，多种具有视觉能力的模型</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>云端，付费，所有具有视觉能力的 Claude 模型</td>
+</tr>
+<tr>
+<td>Cloudflare Workers AI</td>
+<td>云端，付费，多种具有视觉能力的模型</td>
+</tr>
+<tr>
+<td>Cohere</td>
+<td>云端，付费，Aya Vision 8B / 32B</td>
 </tr>
 <tr>
 <td>Custom (OpenAI-compatible)</td>
-<td>用于自定义 OpenAI 兼容 API，使用 API Connections 标签页中当前配置的模型</td>
+<td>用于自定义兼容 OpenAI 的 API，使用在&quot;API 连接&quot;标签页中当前配置的模型</td>
+</tr>
+<tr>
+<td>Electron Hub</td>
+<td>云端，付费，多种具有视觉能力的模型。</td>
 </tr>
 <tr>
 <td>Google AI Studio</td>
-<td>云端，免费层然后付费，Gemini Flash/Pro</td>
+<td>云端，免费层后付费，Gemini Flash/Pro</td>
+</tr>
+<tr>
+<td>Google Vertex AI</td>
+<td>云端，免费层，Gemini Flash/Pro</td>
 </tr>
 <tr>
 <td>Groq</td>
-<td>云端，llama-3.2-vision 11B/90B，LLaVA</td>
+<td>云端，llama-4 scout/maverick</td>
 </tr>
 <tr>
 <td>KoboldCpp</td>
-<td>本地，必须在 KoboldCpp 中配置模型</td>
+<td>本地，需在 KoboldCpp 中配置模型</td>
 </tr>
 <tr>
 <td>llama.cpp</td>
-<td>本地，必须在 llama.cpp 中配置模型</td>
+<td>本地，需在 llama.cpp 中配置模型</td>
 </tr>
 <tr>
 <td>MistralAI</td>
-<td>云端，付费，pixtral-large、pixtral-12B</td>
+<td>云端，付费，pixtral-large、pixtral-12B、magistral、mistral-large 等。</td>
+</tr>
+<tr>
+<td>Moonshot AI</td>
+<td>云端，付费，moonshot-vision</td>
+</tr>
+<tr>
+<td>NanoGPT</td>
+<td>云端，付费，多种具有视觉能力的 GPT/Claude/Google 模型</td>
 </tr>
 <tr>
 <td>Ollama</td>
-<td>本地，在 API Connections 中配置后可以在 Captioning 中切换可用模型并下载<a href="https://ollama.com/search?c=vision">额外的视觉模型</a></td>
+<td>本地，可在&quot;图像描述&quot;中切换可用模型并下载<a href="https://ollama.com/search?c=vision">额外的视觉模型</a>（在&quot;API 连接&quot;中配置后）</td>
 </tr>
 <tr>
 <td>OpenAI</td>
@@ -443,36 +505,82 @@
 </tr>
 <tr>
 <td>OpenRouter</td>
-<td>云端，付费（可能有免费选项），多个模型，在 API Connections 中配置后从 Captioning 中可用的模型中选择</td>
+<td>云端，付费（可能有免费选项），众多模型，在&quot;API 连接&quot;中配置后可在&quot;图像描述&quot;中从可用模型中选择</td>
+</tr>
+<tr>
+<td>Pollinations</td>
+<td>云端，免费</td>
 </tr>
 <tr>
 <td>Text Generation WebUI (oobabooga)</td>
-<td>本地，必须在 ooba 中配置模型</td>
+<td>本地，需在 ooba 中配置模型</td>
 </tr>
 <tr>
 <td>vLLM</td>
 <td>本地</td>
 </tr>
+<tr>
+<td>xAI (Grok)</td>
+<td>云端，付费，grok-vision</td>
+</tr>
+<tr>
+<td>Z.AI (GLM)</td>
+<td>云端，付费，GLM 视觉模型</td>
+</tr>
 </tbody>
 </table>
 </div>
-<h3 id="koboldcpp">KoboldCpp</h3>
-<p>有关安装和使用 <a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a> 的一般信息，请参阅 <a href="https://github.com/LostRuins/koboldcpp/wiki">KoboldCpp 文档</a>。</p>
-<p>要使用 KoboldCpp 进行多模态描述生成：</p>
+</retype-table>
+<h3 id="secondary-endpoints">辅助端点</h3>
+<p>默认情况下，多模态来源使用在&quot;API 连接&quot;标签页中配置的主端点。
+您也可以专门为多模态图像描述设置辅助端点。</p>
 <ul>
-<li>获取一个多模态模型，该模型经过训练可以同时处理文本和图像提示。</li>
-<li>还要获取该模型的多模态投影。这些权重允许模型理解输入的文本和图像部分之间的关系。</li>
-<li>在 KoboldCpp 启动 GUI 或命令行界面中加载模型和投影。</li>
+<li>在 <strong><i class="fa-solid fa-cubes"></i> 扩展</strong>面板中打开<strong>图像描述</strong>面板。</li>
+<li>选择&quot;多模态&quot;作为描述来源，并选择首选的 API 提供商。</li>
+<li>在&quot;辅助描述端点 URL&quot;字段中输入有效的 URL 作为辅助端点。</li>
+<li>勾选&quot;使用辅助 URL&quot;框以启用辅助端点。</li>
 </ul>
-<p>原始和经典的本地多模态模型是 LLaVA。可以从 <a href="https://huggingface.co/Mozilla/llava-v1.5-7b-llamafile">Mozilla/llava-v1.5-7b-llamafile</a> 获取 GGUF 格式的模型和投影文件。要从命令行加载它们，请使用 <code translate="no" v-pre>--model</code> 和 <code translate="no" v-pre>--mmproj</code> 标志设置模型和投影。例如：</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>请勿在 URL 末尾添加 <code translate="no" v-pre>/v1</code> 或 <code translate="no" v-pre>/chat/completions</code>。扩展将自动处理这部分。</p>
+        </div>
+    </div>
+</div>
+<p>仅以下 API 支持此功能：</p>
+<ul>
+<li>KoboldCpp</li>
+<li>llama.cpp</li>
+<li>Ollama</li>
+<li>Text Generation WebUI (oobabooga)</li>
+<li>vLLM</li>
+</ul>
+<h3 id="特定来源指南">特定来源指南</h3>
+<h4 id="koboldcpp">KoboldCpp</h4>
+<p>有关安装和使用 <a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a> 的一般信息，请参阅 <a href="https://github.com/LostRuins/koboldcpp/wiki">KoboldCpp 文档</a>。</p>
+<p>要使用 KoboldCpp 进行多模态图像描述：</p>
+<ul>
+<li>获取一个多模态兼容模型，该模型经过训练，可以同时处理文本和图像提示词。</li>
+<li>同时获取该模型的多模态投影权重。这些权重使模型能够理解输入的文本和图像部分之间的关系。</li>
+<li>在 KoboldCpp 启动 GUI 或命令行界面中加载模型和投影权重。</li>
+</ul>
+<p>最初的经典本地多模态模型是 LLaVA。该模型和投影权重的 GGUF 格式文件可从 <a href="https://huggingface.co/Mozilla/llava-v1.5-7b-llamafile">Mozilla/llava-v1.5-7b-llamafile</a> 获取。要从命令行加载它们，请使用 <code translate="no" v-pre>--model</code> 和 <code translate="no" v-pre>--mmproj</code> 标志指定模型和投影权重。例如：</p>
 <div id="koboldcpp-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">./koboldcpp \
 --model=&quot;models/llava-v1.5-7b-Q4_K.gguf&quot; \
 --mmproj=&quot;models/ llava-v1.5-7b-mmproj-Q4_0.gguf&quot; \
 ... other flags ...</code></pre>
 </doc-codeblock></div>
-<p>您可以尝试一些 LLaVA 微调版本：<a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>、<a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>。</p>
-<p>您可以使用您特定微调版本所基于的基础模型的多模态投影。一些常见基础模型的投影可以从 <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a> 获取。</p>
+<p>您可以尝试的一些 LLaVA 微调版本：<a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>、<a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>。</p>
+<p>您可以使用您特定微调版本所基于的基础模型的多模态投影权重。部分常见基础模型的投影权重可从 <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a> 获取。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -488,20 +596,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/emulatorjs/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/blip/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Emulator​JS</span>
+                                <span class="block mt-1">Blip</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/stable-diffusion/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/translation/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Image Generatio (图像生成)</span>
+                                <span class="block mt-1">Chat Translation (聊天翻译)</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -545,6 +653,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Image Captioning (图像描述生成)", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/captioning.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Captioning（图像描述）", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/captioning.md" }</script>
 </body>
 </html>

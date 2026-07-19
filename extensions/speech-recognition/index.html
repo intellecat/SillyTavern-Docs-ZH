@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Speech Recognition (语音识别) | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="Speech Recognition (语音识别) | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。">
+    <title>Speech Recognition（语音识别） | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="Speech Recognition（语音识别） | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="本指南将引导你在 SillyTavern 中设置语音识别，将语音转录为文本。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/speech-recognition/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/speech-recognition/">
-    <meta property="og:title" content="Speech Recognition (语音识别) | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。">
+    <meta property="og:title" content="Speech Recognition（语音识别） | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="本指南将引导你在 SillyTavern 中设置语音识别，将语音转录为文本。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/speech-recognition/">
-    <meta name="twitter:title" content="Speech Recognition (语音识别) | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。">
+    <meta name="twitter:title" content="Speech Recognition（语音识别） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="本指南将引导你在 SillyTavern 中设置语音识别，将语音转录为文本。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/speech-recognition.md">
@@ -41,12 +41,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832715202747" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837764144201" defer></script>
 
     <style>
         a {
@@ -212,33 +212,32 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="speech-recognition-语音识别">Speech Recognition (语音识别)</h1>
-<p>本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。</p>
+<h1 id="speech-recognition语音识别">Speech Recognition（语音识别）</h1>
+<p>本指南将引导你在 SillyTavern 中设置语音识别，将语音转录为文本。</p>
 <h2 id="前提条件">前提条件</h2>
-<p>在开始之前，请确保满足以下前提条件：</p>
+<p>开始之前，请确保满足以下前提条件：</p>
 <ul>
-<li>确保您使用的是最新版本的 SillyTavern。</li>
-<li>从扩展面板（堆叠块图标）的&quot;Download Extensions &amp; Assets&quot;菜单中安装&quot;Speech Recognition&quot;扩展。</li>
-<li>已安装 ffmpeg 二进制文件。有关详细信息，请参阅 <a href="../rvc/#rvc-%E8%AE%BE%E7%BD%AE">RVC 设置</a>。</li>
+<li>确保你使用的是最新版本的 SillyTavern。</li>
+<li>从扩展面板（堆叠方块图标）的&quot;下载扩展和资源&quot;菜单中安装&quot;Speech Recognition&quot;扩展。</li>
 </ul>
 <h2 id="语音识别设置浏览器">语音识别设置（浏览器）</h2>
 <ol>
 <li>
 <p><strong>配置 SillyTavern</strong>：</p>
 <ul>
-<li>启动 SillyTavern 并转到 <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>。</li>
+<li>启动 SillyTavern，进入 <strong>扩展</strong> &gt; <strong>语音识别</strong>。</li>
 <li>从下拉选项中选择&quot;Browser&quot;。</li>
-<li>如果您的浏览器不支持语音识别，将出现错误弹窗。</li>
+<li>如果你的浏览器不支持语音识别，将弹出错误提示。</li>
 </ul>
 </li>
 <li>
 <p><strong>选择消息模式</strong>：</p>
 <ul>
-<li>选择您想要的&quot;Message Mode&quot;：
+<li>选择你想要的&quot;消息模式&quot;：
 <ul>
-<li><strong>Append</strong>：您的消息将附加到当前用户消息文本区域。</li>
-<li><strong>Replace</strong>：您的消息将替换文本区域中的当前用户消息。</li>
-<li><strong>Auto send</strong>：一旦检测到语音结束，您的消息将自动发送。</li>
+<li><strong>追加（Append）</strong>：你的消息将追加到当前用户消息文本框中。</li>
+<li><strong>替换（Replace）</strong>：你的消息将替换文本框中当前的用户消息。</li>
+<li><strong>自动发送（Auto send）</strong>：检测到语音结束后，你的消息将自动发送。</li>
 </ul>
 </li>
 </ul>
@@ -247,24 +246,50 @@
 <p><strong>启用消息映射</strong>（可选）：</p>
 <ul>
 <li>设置语音快捷方式的短语映射。</li>
-<li>例如，通过添加&quot;command delete = /del2&quot;，当检测到&quot;command delete&quot;时，&quot;/del2&quot;命令将替换您的语音消息。</li>
-<li>与自动发送模式结合使用时很有用，可实现完全的语音控制。通过勾选&quot;Enable messages mapping&quot;启用此功能。</li>
+<li>例如，添加&quot;command delete = /del2&quot;后，当检测到&quot;command delete&quot;时，将用&quot;/del2&quot;命令替换你的语音消息。</li>
+<li>与自动发送模式结合使用，可实现完整的语音控制。通过勾选&quot;启用消息映射&quot;来启用此功能。</li>
 </ul>
 </li>
 <li>
 <p><strong>选择语言</strong>：</p>
 <ul>
-<li>选择您要使用的语言（注意：并非所有浏览器都支持所有语言）。</li>
+<li>选择你想使用的语言（注意：并非所有浏览器都支持所有语言）。</li>
 </ul>
 </li>
 <li>
 <p><strong>录音</strong>：</p>
 <ul>
-<li>要开始录音，点击消息区域右侧发送按钮旁边的麦克风按钮。再次点击停止录音。如果未检测到声音，录音可能会自动停止。</li>
+<li>要开始录音，请点击消息区域右侧（发送按钮旁）的麦克风按钮。再次点击以停止录音。如果未检测到语音，录音可能会自动停止。</li>
 </ul>
 </li>
 </ol>
-<h2 id="语音识别设置whispervosk">语音识别设置（Whisper/Vosk）</h2>
+<h2 id="语音识别设置api-来源">语音识别设置（API 来源）</h2>
+<p>支持 OpenAI、MistralAI、Groq、Chutes、Z.AI 等提供语音转文本 API 的来源。</p>
+<p>设置步骤：</p>
+<ol>
+<li>在 Chat Completion API 设置中，为所选提供商填写 API 密钥。</li>
+<li>启动 SillyTavern，进入 <strong>扩展</strong> &gt; <strong>语音识别</strong>。</li>
+<li>从下拉选项中选择所需的 API 来源。</li>
+<li>根据需要配置其他设置，与&quot;浏览器&quot;提供商设置类似。</li>
+</ol>
+<h2 id="语音识别设置extras--已废弃">语音识别设置（Extras）- 已废弃</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>需要安装 ffmpeg 二进制文件。详见 <a href="../rvc/#rvc-setup">RVC 设置</a>。</p>
+        </div>
+    </div>
+</div>
 <ol>
 <li>
 <p><strong>启用提供商</strong>：</p>
@@ -278,24 +303,41 @@
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=vosk-stt</code></pre>
 </doc-codeblock></div>
 </li>
-<li>您也可以通过添加选项 <code translate="no" v-pre>--stt-vosk-model-path</code> 或 <code translate="no" v-pre>--stt-whisper-model-path</code> 并指定模型路径来使用自定义模型。</li>
+<li>你也可以通过添加选项 <code translate="no" v-pre>--stt-vosk-model-path</code> 或 <code translate="no" v-pre>--stt-whisper-model-path</code> 并指定模型路径来使用自定义模型。</li>
 </ul>
 </li>
 <li>
 <p><strong>配置 SillyTavern</strong>：</p>
 <ul>
-<li>启动 SillyTavern 并转到 <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>。</li>
-<li>从下拉选项中选择&quot;Vosk&quot;或&quot;Whisper&quot;（whisper 更准确）。</li>
-<li>设置与&quot;Browser&quot;提供商设置类似（除了语言），请参见上文。</li>
+<li>启动 SillyTavern，进入 <strong>扩展</strong> &gt; <strong>语音识别</strong>。</li>
+<li>从下拉选项中选择&quot;Vosk&quot;或&quot;Whisper&quot;（Whisper 更准确）。</li>
+<li>设置与&quot;浏览器&quot;提供商设置类似（语言除外），详见上文。</li>
 </ul>
 </li>
 </ol>
-<h2 id="语音识别设置流式传输">语音识别设置（流式传输）</h2>
+<h2 id="语音识别设置流式传输--已废弃">语音识别设置（流式传输）- 已废弃</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>需要安装 ffmpeg 二进制文件。详见 <a href="../rvc/#rvc-setup">RVC 设置</a>。</p>
+        </div>
+    </div>
+</div>
 <ol>
 <li>
 <p><strong>启用提供商</strong>：</p>
 <ul>
-<li>使用以下命令在 Sillytavern-extras 上启用流式语音识别模块：
+<li>使用以下命令在 SillyTavern-extras 上启用流式语音识别模块：
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=streaming-stt</code></pre>
 </doc-codeblock></div>
@@ -305,13 +347,13 @@
 <li>
 <p><strong>配置 SillyTavern</strong>：</p>
 <ul>
-<li>（可选）如上述 Whisper 设置中所述指定自定义 Whisper 模型。</li>
-<li>（可选但推荐）在 SillyTavern 中设置触发词。只有以这些触发词开头的消息才会作为实际消息发送到 SillyTavern。这可以防止随机语音或噪音被转录。使用复选框启用此功能。可以使用复选框选择是否在实际消息中包含/排除触发词。</li>
+<li>（可选）按照上述 Whisper 设置方式指定自定义 Whisper 模型。</li>
+<li>（可选但推荐）在 SillyTavern 中设置触发词。只有以这些触发词开头的消息才会作为实际消息发送给 SillyTavern，这可以防止随机语音或噪音被转录。通过复选框启用此功能。可以使用复选框选择是否将触发词包含在实际消息中。</li>
 <li>其他设置与其他提供商类似。</li>
 </ul>
 </li>
 </ol>
-<p>现在您已准备好在 SillyTavern 中使用语音识别将您的语音转录为文本。</p>
+<p>你现在已准备好在 SillyTavern 中使用语音识别将语音转录为文本。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -327,20 +369,20 @@
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/rvc/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/regex/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Retrieval-​based Voice Conversion (RVC)（基于检索的语音转换）</span>
+                                <span class="block mt-1">Regex（正则表达式）</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/summarize/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/stable-diffusion/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Summarize (摘要)</span>
+                                <span class="block mt-1">Stable Diffusion（图像生成）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -384,6 +426,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Speech Recognition (语音识别)", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/speech-recognition.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Speech Recognition（语音识别）", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/speech-recognition.md" }</script>
 </body>
 </html>

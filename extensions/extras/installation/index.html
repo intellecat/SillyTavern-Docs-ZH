@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Extras 安装 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="Extras 安装 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本页包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta name="description" content="本页面包含在本地设备上安装 SillyTavern Extras 的说明。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/extras/installation/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/extras/installation/">
     <meta property="og:title" content="Extras 安装 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本页包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta property="og:description" content="本页面包含在本地设备上安装 SillyTavern Extras 的说明。">
     <meta property="og:image" content="https://sillytavern.wiki/static/extensions/sd-user.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/extras/installation/">
     <meta name="twitter:title" content="Extras 安装 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="本页包含在本地设备上安装 SillyTavern Extras 的说明。">
+    <meta name="twitter:description" content="本页面包含在本地设备上安装 SillyTavern Extras 的说明。">
     <meta name="twitter:image" content="https://sillytavern.wiki/static/extensions/sd-user.png">
     <meta name="twitter:image:alt" content="Extras 安装 | SillyTavern傻酒馆中文文档">
 
@@ -47,11 +47,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -218,7 +218,7 @@
 
                 <!-- Page content  -->
 <h1 id="extras-安装">Extras 安装</h1>
-<p>本页包含在本地设备上安装 SillyTavern Extras 的说明。</p>
+<p>本页面包含在本地设备上安装 SillyTavern Extras 的说明。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -232,67 +232,67 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Discontinued</h5>
-<p>Extras 项目已于 2024 年 4 月停止维护，不会再收到任何新的更新或模块。绝大多数模块已在主 SillyTavern 应用程序中原生可用。您仍然可以安装和使用它，但如果遇到任何问题，请不要期望获得即时支持。</p>
+            <h5>已停止维护</h5>
+<p>Extras 项目已于 2024 年 4 月停止维护，将不会收到任何新的更新或模块。绝大多数模块已在 SillyTavern 主应用程序中原生提供。您仍可安装和使用它，但如遇到问题，请勿期望能获得即时支持。</p>
         </div>
     </div>
 </div>
-<p>在您的操作系统上本地安装 Extras 可能很困难甚至不可能(尤其是 Termux)。</p>
+<p>在您的操作系统上进行本地安装可能比较困难，甚至无法实现（尤其是 Termux）。</p>
 <h2 id="使用官方-extras-colab">使用<a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">官方 Extras Colab</a></h2>
 <ul>
 <li>设置简单</li>
 <li>免费使用</li>
-<li>不需要 Colab GPU 积分(使用 <code translate="no" v-pre>use_cpu</code> 选项)</li>
-<li>有关详细信息，请参阅 <doc-anchor-trigger to="#running-extras-in-colab">Colab 指南页面</doc-anchor-trigger>。</li>
+<li>无需 Colab GPU 额度（使用 <code translate="no" v-pre>use_cpu</code> 选项）</li>
+<li>详情请参阅 <doc-anchor-trigger to="#running-extras-in-colab">Colab 指南页面</doc-anchor-trigger>。</li>
 </ul>
-<h3 id="在-colab-中运行-extras">在 Colab 中运行 Extras</h3>
+<h3 id="running-extras-in-colab">在 Colab 中运行 Extras</h3>
 <ul>
 <li>打开<a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">官方 Extras Colab</a></li>
 <li>选择所需的&quot;Extra&quot;选项</li>
-<li>选择 <code translate="no" v-pre>use_cpu</code> 以在不需要 GPU 积分的情况下运行 Extras
+<li>选择 <code translate="no" v-pre>use_cpu</code> 以在无需 GPU 额度的情况下运行 Extras
 <ul>
-<li>这将使 Stable Diffusion 变慢，但其他一切都会正常运行</li>
+<li>这会使 Stable Diffusion 运行变慢，但其他功能均可正常运行</li>
 </ul>
 </li>
-<li>非必需，但推荐:选择 <code translate="no" v-pre>secure</code> 选项以生成 API 密钥来保护您的共享实例。</li>
-<li>点击左侧的开始按钮(看起来像三角形&quot;播放&quot;按钮)</li>
-<li>等待它完成加载所有内容</li>
-<li>在输出底部查找 <code translate="no" v-pre>trycloudflare.com</code> 链接。忽略 localhost 链接，它不起作用(我们试过了!)。</li>
+<li>非必须，但建议：选择 <code translate="no" v-pre>secure</code> 选项以生成 API 密钥来保护您的共享实例。</li>
+<li>单击左侧的开始按钮（看起来像三角形的&quot;播放&quot;按钮）</li>
+<li>等待所有内容加载完毕</li>
+<li>在输出底部查找 <code translate="no" v-pre>trycloudflare.com</code> 链接。忽略 localhost 链接，它无法使用（我们试过了！）。</li>
 <li>它将以 <code translate="no" v-pre>Running on</code> 文本开头</li>
-<li>复制该行下列出的 API URL 链接。(<strong>不要复制 &#x27;localhost&#x27; URL，使用另一个</strong>)</li>
-<li>启动支持扩展的 SillyTavern:(如有必要，在 <code translate="no" v-pre>config.yaml</code> 中将 <code translate="no" v-pre>enableExtensions</code> 设置为 <code translate="no" v-pre>true</code>)</li>
-<li>导航到 SillyTavern 的扩展菜单(点击页面顶部的&quot;堆叠方块&quot;图标)。</li>
-<li>将 API URL 粘贴到顶部的框中。(<strong>不是 API 密钥框</strong>)</li>
-<li>如果您没有启用 <code translate="no" v-pre>secure</code> 选项，请确保在使用官方 colab 时 API 密钥框完全为空。</li>
-<li>如果您启用了 <code translate="no" v-pre>secure</code> 选项，请将生成的 API 密钥粘贴到 API 密钥框中。</li>
-<li>API 密钥将出现在 colab 的控制台输出中，例如:<code translate="no" v-pre>Your API key is fee2f3f559</code></li>
-<li>点击&quot;连接&quot;</li>
+<li>复制该行下方列出的 API URL 链接。（<strong>请勿复制 &#x27;localhost&#x27; URL，请使用另一个</strong>）</li>
+<li>启动带扩展支持的 SillyTavern：（如有必要，在 <code translate="no" v-pre>config.yaml</code> 中将 <code translate="no" v-pre>enableExtensions</code> 设置为 <code translate="no" v-pre>true</code>）</li>
+<li>导航到 SillyTavern 的扩展菜单（单击页面顶部的&quot;层叠方块&quot;图标）。</li>
+<li>将 API URL 粘贴到顶部的框中。（<strong>不是 API 密钥框</strong>）</li>
+<li>如果您<strong>未</strong>启用 <code translate="no" v-pre>secure</code> 选项，请确保使用官方 Colab 时 API 密钥框完全为空。</li>
+<li>如果您已启用 <code translate="no" v-pre>secure</code> 选项，请将生成的 API 密钥粘贴到 API 密钥框中。</li>
+<li>API 密钥将出现在 Colab 的控制台输出中，例如：<code translate="no" v-pre>Your API key is fee2f3f559</code></li>
+<li>单击&quot;连接&quot;</li>
 </ul>
 <hr>
 <h2 id="本地安装方法">本地安装方法</h2>
-<h3 id="miniconda推荐">MiniConda(推荐)</h3>
-<p>推荐使用此方法，因为 Conda 会为 Extras 需求包创建一个&quot;虚拟环境&quot;，使它们不会影响您的系统级 Python 设置。</p>
+<h3 id="miniconda推荐">MiniConda（推荐）</h3>
+<p>此方法之所以推荐，是因为 Conda 为 Extras 的依赖包创建了一个&quot;虚拟环境&quot;，这样它们就不会影响您系统范围内的 Python 安装。</p>
 <ol>
 <li>
 <p>安装 <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
-<p><em>(重要!)阅读<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">如何使用 Conda</a></em></p>
+<p><em>（重要！）阅读<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">如何使用 Conda</a></em></p>
 </li>
 <li>
 <p>安装 <a href="https://git-scm.com/downloads">git</a></p>
-<p><em>(一开始就用 git 安装 SillyTavern 的大佬们可以跳过此步骤!)</em></p>
-<p>安装完这两者后...</p>
-<p>在 <code translate="no" v-pre>CONDA 命令提示符窗口</code>中<code translate="no" v-pre>逐个</code>输入/粘贴下面的命令，每个命令后按 <code translate="no" v-pre>Enter</code>。</p>
+<p><em>（已用 git 安装 SillyTavern 的用户可以跳过此步骤！）</em></p>
+<p>安装好这两者之后……</p>
+<p>在 <code translate="no" v-pre>CONDA 命令提示符窗口</code> 中<strong>逐条</strong>输入/粘贴以下命令，每条后按 <code translate="no" v-pre>Enter</code>。</p>
 </li>
 <li>
-<p>创建一个新的 Conda 环境(我们称之为 <code translate="no" v-pre>extras</code>):</p>
+<p>创建新的 Conda 环境（将其命名为 <code translate="no" v-pre>extras</code>）：</p>
 <p><code translate="no" v-pre>conda create -n extras</code></p>
 </li>
 <li>
 <p>激活新环境</p>
-<p><code translate="no" v-pre>conda activate extras</code>(您应该看到 <code translate="no" v-pre>(extras)</code> 出现在命令提示符的左侧)</p>
+<p><code translate="no" v-pre>conda activate extras</code>（您应该会在命令提示符左侧看到 <code translate="no" v-pre>(extras)</code> 出现）</p>
 </li>
 <li>
-<p>安装所需的系统包(这将需要一些时间)</p>
+<p>安装所需的系统包（这需要一些时间）</p>
 <p><code translate="no" v-pre>conda install python=3.11 git</code></p>
 </li>
 <li>
@@ -300,54 +300,65 @@
 <p><code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code></p>
 </li>
 <li>
-<p>导航到克隆的 Extras 仓库</p>
+<p>导航到已克隆的 Extras 仓库</p>
 <p><code translate="no" v-pre>cd SillyTavern-extras</code></p>
 </li>
 <li>
-<p>使用以下命令之一安装 Extras 的需求(将再次需要时间):</p>
+<p>使用以下<strong>某一</strong>命令安装 Extras 的依赖（同样需要一些时间）：</p>
 <ul>
 <li><code translate="no" v-pre>pip install -r requirements.txt</code> - 用于基本功能</li>
 <li><code translate="no" v-pre>pip install -r requirements-rvc.txt</code> - 用于实时语音克隆</li>
-<li><code translate="no" v-pre>pip install -r requirements-coqui.txt</code> - 用于 Coqui TTS(不推荐)</li>
+<li><code translate="no" v-pre>pip install -r requirements-coqui.txt</code> - 用于 Coqui TTS（不推荐）</li>
 </ul>
-<p>如果在此步骤遇到错误，请参阅<doc-anchor-trigger to="#extras-install-common-problems">常见问题</doc-anchor-trigger>页面!</p>
+<p>如果在此步骤遇到错误，请参阅<doc-anchor-trigger to="#extras-install-common-problems">常见问题</doc-anchor-trigger>页面！</p>
 </li>
 <li>
-<p>请参阅下面的&quot;安装后运行 Extras&quot;</p>
+<p>参见下方&quot;安装后运行 Extras&quot;</p>
 </li>
 </ol>
 <hr>
-<h3 id="系统级安装">系统级安装</h3>
-<p>这更容易，但会影响您的系统级 Python 安装。</p>
-<p>如果您使用许多具有不同需求的 Python 程序，这可能会导致冲突。</p>
-<p>如果这是您第一次接触与 Python 相关的任何内容，那应该不是问题。</p>
+<h3 id="系统全局安装">系统全局安装</h3>
+<p>此方法更简单，但会影响您系统范围内的 Python 安装。</p>
+<p>如果您同时使用许多具有不同依赖的 Python 程序，这可能会导致冲突。</p>
+<p>如果这是您第一次接触 Python 相关内容，应该不会有问题。</p>
 <ol>
-<li>安装 Python 3.11: <a href="https://www.python.org/downloads/release/python-3115/">https://www.python.org/downloads/release/python-3115/</a></li>
-<li>安装 git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
-<li>打开命令提示符窗口并转到您具有完全访问权限的文件夹。</li>
-<li>克隆仓库:<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code>，按 Enter。</li>
+<li>安装 Python 3.11：<a href="https://www.python.org/downloads/release/python-3115/">https://www.python.org/downloads/release/python-3115/</a></li>
+<li>安装 git：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>打开命令提示符窗口，进入一个您拥有完整访问权限的文件夹。</li>
+<li>克隆仓库：<code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code>，按 Enter。</li>
 <li>克隆完成后，输入 <code translate="no" v-pre>cd SillyTavern-extras</code>，按 Enter。</li>
 <li>输入 <code translate="no" v-pre>python -m pip install -r requirements.txt</code></li>
-<li>请参阅下面的&quot;安装后运行 Extras&quot;</li>
+<li>参见下方&quot;安装后运行 Extras&quot;</li>
 </ol>
 <hr>
 <h2 id="安装后运行-extras">安装后运行 Extras</h2>
-<h3 id="确认扩展已启用">确认扩展已启用</h3>
+<h3 id="确认已启用扩展">确认已启用扩展</h3>
 <ol>
-<li>在文本编辑器中打开名为 <code translate="no" v-pre>config.yaml</code> 的文件。该文件位于 ST 的基本安装文件夹中。</li>
-<li>查找读取 <code translate="no" v-pre>enableExtensions</code> 的行。</li>
-<li>确保该行有 <code translate="no" v-pre>true</code>，而不是 <code translate="no" v-pre>false</code>。</li>
+<li>用文本编辑器打开 <code translate="no" v-pre>config.yaml</code> 文件。该文件位于 ST 的基础安装文件夹中。</li>
+<li>查找 <code translate="no" v-pre>enableExtensions</code> 所在行。</li>
+<li>确保该行的值为 <code translate="no" v-pre>true</code>，而不是 <code translate="no" v-pre>false</code>。</li>
 </ol>
-<h3 id="决定使用哪个模块">决定使用哪个模块</h3>
-<p>(这只需要做一次)</p>
+<h3 id="decide-which-module-to-use">决定要使用哪个模块</h3>
+<p>（此操作只需进行一次）</p>
 <ul>
-<li>Extras 总是使用 Python 命令行启动。</li>
-<li><code translate="no" v-pre>python server.py</code> 是最低要求，但它不启用任何有用的模块。</li>
-<li>要启用模块，您必须使用 <code translate="no" v-pre>--enable-modules=</code> 修饰符，带有逗号分隔的模块名称列表</li>
+<li>Extras 始终通过 Python 命令行启动。</li>
+<li><code translate="no" v-pre>python server.py</code> 是最低限度的命令，但它不会启用任何有用的模块。</li>
+<li>要启用模块，您必须使用 <code translate="no" v-pre>--enable-modules=</code> 修饰符，后跟以逗号分隔的模块名称列表</li>
 </ul>
-<p>示例:<code translate="no" v-pre>python server.py --enable-modules=caption，summarize，classify</code></p>
-<p>这将启用图像描述、聊天摘要和实时更新角色表情。</p>
+<p>示例：<code translate="no" v-pre>python server.py --enable-modules=caption,summarize,classify</code></p>
+<p>这将启用图像描述、聊天摘要和实时更新的角色表情。</p>
 <p>下表描述了每个模块。</p>
+<retype-table copy-text="| 名称         | 描述                                                         |
+|--------------|---------------------------------------------------------------------|
+| `caption`    | 图像描述                                                    |
+| `summarize`  | 文本摘要                                                  |
+| `classify`   | 文本情感分类                                       |
+| `sd`         | Stable Diffusion 图像生成                                   |
+| `silero-tts` | [Silero TTS 服务器](https://github.com/ouoertheo/silero-api-server) |
+| `edge-tts`   | [Microsoft Edge TTS 客户端](https://github.com/rany2/edge-tts)      |
+| `chromadb`   | 向量存储服务器                                               |
+| `coqui-tts`  | Coqui TTS                                                           |
+| `rvc`        | 实时语音克隆                                             |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -396,123 +407,124 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <ul>
-<li>决定要将哪些模块添加到 Python 命令行。</li>
-<li>它们将在下一步中使用。</li>
+<li>决定要添加到 Python 命令行的模块。</li>
+<li>这些将在下一步中用到。</li>
 </ul>
-<p><strong>注意:Python 命令的模块列表中不能有任何空格!</strong></p>
+<p><strong>注意：Python 命令的模块列表中绝对不能有空格！</strong></p>
 <h3 id="启动-extras-服务器">启动 Extras 服务器</h3>
-<p>在 Extras 安装文件夹内的命令提示符窗口中...</p>
+<p>在仍位于 Extras 安装文件夹内的命令提示符窗口中……</p>
 <ol>
-<li>确保您的 conda 环境处于活动状态(如果您使用了 Conda 安装方法)</li>
+<li>确保您的 Conda 环境已激活（如果您使用了 Conda 安装方法）</li>
 <li>如果环境未激活，输入 <code translate="no" v-pre>activate extras</code>。</li>
-<li>输入 <code translate="no" v-pre>python server.py --enable-modules=YOUR，SELECTED，MODULE，LIST，HERE</code></li>
-<li>extras 服务器将加载。</li>
-<li>过一会儿，它会在最后显示一个 URL。对于本地安装，默认为 <code translate="no" v-pre>http://localhost:5100</code>。</li>
+<li>输入 <code translate="no" v-pre>python server.py --enable-modules=您,选择的,模块,列表</code></li>
+<li>Extras 服务器将开始加载。</li>
+<li>过一会儿，它将在末尾显示一个 URL。本地安装默认为 <code translate="no" v-pre>http://localhost:5100</code>。</li>
 <li>复制 API URL。</li>
 </ol>
-<h3 id="将-st-连接到-extras-服务器">将 ST 连接到 Extras 服务器</h3>
+<h3 id="将-sillytavern-连接到-extras-服务器">将 SillyTavern 连接到 Extras 服务器</h3>
 <ol>
-<li>启动您的 SillyTavern 服务器，并在浏览器中查看 SillyTavern 界面。</li>
-<li>打开扩展面板(通过页面顶部的&quot;堆叠方块&quot;图标)</li>
+<li>启动 SillyTavern 服务器，并在浏览器中查看 SillyTavern 界面。</li>
+<li>打开扩展面板（通过页面顶部的&quot;层叠方块&quot;图标）</li>
 <li>将 API URL 粘贴到输入框中。</li>
-<li>点击 <code translate="no" v-pre>连接</code>。</li>
+<li>单击&quot;连接&quot;。</li>
 </ol>
-<p>要再次运行 Extras，只需在命令提示符中激活环境并运行这些命令。</p>
+<p>要再次运行 Extras，只需激活环境并在命令提示符中运行这些命令即可。</p>
 <p><code translate="no" v-pre>conda activate extras</code>，按 Enter。
 <code translate="no" v-pre>python server.py</code>，按 Enter。</p>
-<p>确保使用您的设置所需的 server.py 的附加选项(见下文)。</p>
-<h2 id="制作-bat-文件以便轻松启动">制作 .bat 文件以便轻松启动</h2>
-<p>这是可选的，仅适用于 Windows，但在 MacOS 上应该可以做类似的事情。</p>
+<p>请确保使用您的设置所需的 server.py 附加选项（见下文）。</p>
+<h2 id="创建-bat-文件以便快速启动">创建 .bat 文件以便快速启动</h2>
+<p>此操作可选，仅适用于 Windows，但在 MacOS 上也应可以实现类似的操作。</p>
 <ol>
 <li>查看您的 Windows 桌面</li>
-<li>右键单击，选择 <code translate="no" v-pre>新建</code>，然后点击 <code translate="no" v-pre>文本文档</code></li>
-<li>您的桌面上将出现一个新文件，要求输入名称。</li>
+<li>右键单击，选择&quot;新建&quot;，然后单击&quot;文本文档&quot;</li>
+<li>桌面上将出现一个新文件，提示您输入名称。</li>
 <li>将文件命名为 <code translate="no" v-pre>STExtras.txt</code></li>
 <li>在文本编辑器中打开新创建的文件。</li>
 <li>
-<p>将以下代码粘贴到其中:</p>
+<p>将以下代码粘贴到其中：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call conda activate extras
-python server.py --enable-modules=YOUR，SELECTED，MODULE，LIST，HERE，WITH，NO，SPACES
+python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
 call conda deactivate
 pause</code></pre>
 </doc-codeblock></div>
 </li>
-<li>将占位符文件夹路径替换为您的实际 Extras 安装文件夹路径。</li>
-<li>将 python 命令行替换为您的实际命令行</li>
-<li>使用新名称 <code translate="no" v-pre>STExtras.bat</code> 保存文件(在大多数文本编辑器中使用 <code translate="no" v-pre>文件</code> &gt;&gt; <code translate="no" v-pre>另存为</code>)</li>
+<li>将占位符文件夹路径替换为您实际的 Extras 安装文件夹路径。</li>
+<li>将 Python 命令行替换为您实际的命令行</li>
+<li>用新名称 <code translate="no" v-pre>STExtras.bat</code> 保存文件（在大多数文本编辑器中使用&quot;文件&quot; &gt;&gt; &quot;另存为&quot;）</li>
 </ol>
-<p>您现在可以简单地双击此 .bat 文件以轻松启动 Extras。</p>
-<p>如果您想更改模块列表(或 extras 服务器的任何其他命令行修饰符)，只需编辑 .bat 文件内的 python 命令。</p>
-<h2 id="extras-安装常见问题">Extras 安装常见问题</h2>
-<p>本节列出了安装 SillyTavern Extras 时遇到的常见问题和问题。</p>
-<h3 id="错误无法在-linux-上导入-talkinghead-模块">错误:无法在 Linux 上导入 &#x27;talkinghead&#x27; 模块</h3>
-<p>它需要安装额外的软件包，因为由于与 Colab 不兼容，它不会自动安装。在安装其他需求后运行此命令:</p>
+<p>现在您只需双击此 .bat 文件即可轻松启动 Extras。</p>
+<p>如果您想更改模块列表（或 Extras 服务器的任何其他命令行修饰符），只需编辑 .bat 文件中的 Python 命令即可。</p>
+<h2 id="extras-install-common-problems">Extras 安装常见问题</h2>
+<p>本节列出了安装 SillyTavern Extras 时遇到的常见问题。</p>
+<h3 id="错误在-linux-上无法导入talkinghead模块">错误：在 Linux 上无法导入&quot;talkinghead&quot;模块</h3>
+<p>它需要安装一个额外的包，因为由于与 Colab 不兼容，该包不会自动安装。在安装其他依赖后运行此命令：</p>
 <p><code translate="no" v-pre>pip install wxpython</code></p>
 <h3 id="extras-服务器无法连接到-automatic1111-的-stable-diffusion-web-ui">Extras 服务器无法连接到 AUTOMATIC1111 的 Stable Diffusion Web UI</h3>
 <blockquote>
 <p>Could not connect to remote SD backend at <a href="http://127.0.0.1:7860">http://127.0.0.1:7860</a>! Disabling SD module...</p>
 </blockquote>
-<p><strong>确保您启动 Stable Diffusion 的 webui-user.bat 在 COMMANDLINE_ARGS 变量中包含 --api 命令行选项。</strong></p>
-<p>在您的 &quot;webui-user.bat&quot; 中找到并替换该行:<code translate="no" v-pre>set COMMANDLINE_ARGS=--api</code></p>
+<p><strong>确保您用于启动 Stable Diffusion 的 webui-user.bat 文件在 COMMANDLINE_ARGS 变量中包含 --api 命令行选项。</strong></p>
+<p>在您的&quot;webui-user.bat&quot;中找到并替换该行：<code translate="no" v-pre>set COMMANDLINE_ARGS=--api</code></p>
 <figure class="content-center">
-    <img src="../../../static/extensions/sd-user.png" alt="应该看起来像这样" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="468" height="244" />
-    <figcaption class="caption">应该看起来像这样</figcaption>
+    <img src="../../../static/extensions/sd-user.png" alt="外观示例" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="468" height="244" />
+    <figcaption class="caption">外观示例</figcaption>
 </figure>
-<p>如果 SD Web UI 禁用了 API 模式，Extras 服务器将无法建立连接，您将无法生成图像!</p>
-<h4 id="仍然不起作用">仍然不起作用?</h4>
-<p>确保您按正确的顺序启动所有内容，等待每个程序完成加载后再继续下一步:</p>
+<p>如果 SD Web UI 的 API 模式被禁用，Extras 服务器将无法建立连接，您也将无法生成图像！</p>
+<h4 id="还是不行">还是不行？</h4>
+<p>确保您按正确顺序启动所有内容，并在继续下一步之前等待每个程序完成加载：</p>
 <ol>
 <li>Stable Diffusion Web UI</li>
 <li>SillyTavern Extras</li>
 <li>SillyTavern</li>
 </ol>
-<p>如果 Extras 服务器在 Stable Diffusion API 之后加载，则无法重新连接。</p>
-<h3 id="安装-chromadb-时-hnswlib-wheel-构建错误">安装 ChromaDB 时 hnswlib wheel 构建错误</h3>
+<p>如果 Extras 服务器在之后才加载，它将无法重新连接到 Stable Diffusion API。</p>
+<h3 id="安装-chromadb-时出现-hnswlib-构建错误">安装 ChromaDB 时出现 hnswlib 构建错误</h3>
 <blockquote>
-<p>ERROR: Could not build wheels for hnswlib， which is required to install pyproject.toml-based projects</p>
+<p>ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects</p>
 </blockquote>
-<p>在安装 ChromaDB 模块之前，您必须先执行以下<code translate="no" v-pre>操作之一</code>:</p>
+<p>在安装 ChromaDB 模块之前，您必须先执行以下操作之一：</p>
 <ul>
-<li>安装 Visual C++ 构建工具: <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></li>
-<li>使用 conda 安装 <code translate="no" v-pre>hnswlib</code> 包:<code translate="no" v-pre>conda install -c conda-forge hnswlib</code></li>
+<li>安装 Visual C++ 构建工具：<a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></li>
+<li>使用 conda 安装 <code translate="no" v-pre>hnswlib</code> 包：<code translate="no" v-pre>conda install -c conda-forge hnswlib</code></li>
 </ul>
 <hr>
-<h3 id="在-mac-上安装-python-需求时出错">在 Mac 上安装 Python 需求时出错</h3>
+<h3 id="在-mac-上安装-python-依赖时出错">在 Mac 上安装 Python 依赖时出错</h3>
 <blockquote>
 <p>ERROR: No matching distribution found for torch==2.0.0+cu117</p>
 </blockquote>
-<p>Mac 不支持 CUDA，因此应该安装没有 CUDA 支持的 torch 包。</p>
-<p>改用 <code translate="no" v-pre>requirements-silicon.txt</code> 文件安装需求。</p>
+<p>Mac 不支持 CUDA，因此 torch 包应在不支持 CUDA 的情况下安装。</p>
+<p>改用 <code translate="no" v-pre>requirements-silicon.txt</code> 文件安装依赖。</p>
 <hr>
-<h3 id="缺少模块">缺少模块?</h3>
+<h3 id="缺少模块">缺少模块？</h3>
 <ul>
 <li>您必须在 Python 命令行中使用 <code translate="no" v-pre>--enable-modules</code> 修饰符指定模块名称列表。</li>
 <li>请参阅<doc-anchor-trigger to="#decide-which-module-to-use">模块</doc-anchor-trigger>部分。</li>
 </ul>
 <hr>
-<h3 id="api-密钥框是用来做什么的">API 密钥框是用来做什么的?</h3>
+<h3 id="api-密钥框是用来做什么的">API 密钥框是用来做什么的？</h3>
 <ul>
-<li>SillyTavern 扩展面板中的 API 密钥框仅在以下情况下使用:
+<li>SillyTavern 扩展面板中的 API 密钥框仅在以下情况下使用：
 <ul>
-<li>在 Extras 安装文件夹中创建了一个名为 <code translate="no" v-pre>api_key.txt</code> 的文本文件，其中包含您选择的 Extras &quot;密码&quot;。</li>
-<li>使用 <code translate="no" v-pre>--secure</code> 命令行参数启动 extras。</li>
+<li>在您的 Extras 安装文件夹中创建了一个名为 <code translate="no" v-pre>api_key.txt</code> 的文本文件，其中包含您选择的 Extras&quot;密码&quot;。</li>
+<li>使用 <code translate="no" v-pre>--secure</code> 命令行参数启动 Extras。</li>
 </ul>
 </li>
-<li>这使 Extras API &quot;密码锁定&quot;，因此只有在 API 密钥框中拥有该密钥的用户才能访问它。</li>
-<li>这主要对想要公开部署 Extras(colab 等)的人有用。</li>
-<li>在 PC 上运行 Extras 供个人使用的用户不应在 API 密钥框中输入任何内容。</li>
+<li>这使 Extras API 成为&quot;密码锁定&quot;状态，只有在 API 密钥框中拥有该密钥的用户才能访问它。</li>
+<li>这主要适用于希望公开部署 Extras（Colab 等）的用户。</li>
+<li>在个人 PC 上为个人使用运行 Extras 的用户不应在 API 密钥框中输入任何内容。</li>
 </ul>
-<h3 id="移动androidtermux-怎么样">移动/Android/Termux 怎么样?<span class="docs-emoji">&#x1F914;</span></h3>
+<h3 id="移动端androidtermux-怎么办">移动端/Android/Termux 怎么办？<span class="docs-emoji">&#x1F914;</span></h3>
 <ul>
-<li>社区中有一些人通过 Termux 上的 Ubuntu 在手机上成功运行 Extras。</li>
-<li>但是，Extras 并非考虑移动支持而制作的。</li>
-<li>不会为在 Android 设备上运行 Extras 的人提供支持。</li>
-<li>请将所有问题直接发送给下面链接的指南的创建者。</li>
+<li>社区中有一些人成功地通过 Termux 上的 Ubuntu 在手机上运行 Extras。</li>
+<li>但是，Extras 并非为移动端支持而设计。</li>
+<li>不会为在 Android 设备上运行 Extras 的用户提供支持。</li>
+<li>请将您的所有问题直接发送给以下链接中指南的创建者。</li>
 </ul>
-<h4 id="-这是不支持的"><span class="docs-emoji">&#x2757;</span> 这是不支持的</h4>
+<h4 id="-此操作不受支持"><span class="docs-emoji">&#x2757;</span> 此操作不受支持</h4>
 <p><a href="https://rentry.org/STAI-Termux#downloading-and-running-tai-extras">https://rentry.org/STAI-Termux#downloading-and-running-tai-extras</a></p>
 
                 
@@ -586,6 +598,6 @@ pause</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "本地安装", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/extras/installation.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Local Installation", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/extras/installation.md" }</script>
 </body>
 </html>

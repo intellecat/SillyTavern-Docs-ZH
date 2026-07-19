@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>群组聊天 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="群组聊天 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="决定群组聊天中的角色如何被选择进行回复。">
+    <meta name="description" content="决定群组聊天中的角色如何被选定进行回复。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/core-concepts/groupchats/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/core-concepts/groupchats/">
     <meta property="og:title" content="群组聊天 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="决定群组聊天中的角色如何被选择进行回复。">
+    <meta property="og:description" content="决定群组聊天中的角色如何被选定进行回复。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/core-concepts/groupchats/">
     <meta name="twitter:title" content="群组聊天 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="决定群组聊天中的角色如何被选择进行回复。">
+    <meta name="twitter:description" content="决定群组聊天中的角色如何被选定进行回复。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/characters/groupchats.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,70 +212,72 @@
 
                 <!-- Page content  -->
 <h1 id="群组聊天">群组聊天</h1>
-<h3 id="回复顺序策略">回复顺序策略</h3>
-<p>决定群组聊天中的角色如何被选择进行回复。</p>
+<h2 id="reply-order-strategies">回复顺序策略</h2>
+<p>决定群组聊天中的角色如何被选定进行回复。</p>
 <h3 id="手动">手动</h3>
-<p>您可以从菜单中或使用 <code translate="no" v-pre>/trigger</code> 命令手动选择要回复的角色。被选中的群组成员将是唯一回复的角色。用户消息不会自动触发任何回复。在用户输入为空的情况下触发生成将随机选择一个未静音的群组成员进行回复。</p>
-<h4 id="自然顺序">自然顺序</h4>
+<p>您可以从菜单中手动选择回复的角色，或使用 <code translate="no" v-pre>/trigger</code> 命令。被选中的群组成员将是唯一发言的角色。用户消息不会自动触发任何回复。在用户输入为空的情况下触发生成，将随机选择一个未静音的群组成员进行回复。</p>
+<h3 id="natural-order">自然顺序</h3>
 <p>尝试模拟真实人类对话的流程。算法如下：</p>
 <ol>
 <li>
-<p>从聊天中的最后一条消息中提取群组成员名字的提及。</p>
-<p>只有完整的词才会被识别为提及！如果您的角色名字是&quot;御坂美琴&quot;，他们只会对&quot;御坂&quot;或&quot;美琴&quot;做出回应，但永远不会对&quot;御&quot;、&quot;炮姐&quot;等做出回应。</p>
-<p>除非启用了&quot;允许自我回应&quot;设置，否则角色不会对自己消息中提到的名字做出回应！</p>
+<p>从聊天中最后一条消息里提取提及的群组成员名称。</p>
+<p>只有完整的词才会被识别为提及！如果您的角色名称是&quot;Misaka Mikoto&quot;，她只会对&quot;Misaka&quot;或&quot;Mikoto&quot;做出响应，而不会响应&quot;Misa&quot;、&quot;Railgun&quot;等。</p>
+<p>除非启用了&quot;允许自我响应&quot;设置，否则角色不会响应其自身消息中对自己名称的提及！</p>
 </li>
 <li>
 <p>角色根据&quot;健谈程度&quot;因素被激活。</p>
-<p>健谈程度定义了在没有被提及时角色说话的频率。在角色编辑器的&quot;高级定义&quot;屏幕中调整此值。滑块值在线性范围内从 <strong>0% / 害羞</strong>（角色除非被提及否则不说话）到 <strong>100% / 健谈</strong>（角色总是回复）。新角色的默认值是 50% 几率。</p>
+<p>健谈程度定义了在未被提及时角色发言的频率。可在角色编辑器的&quot;高级定义&quot;界面调整此值。滑块值为线性范围，从 <strong>0% / 害羞</strong>（角色除非被提及否则不发言）到 <strong>100% / 健谈</strong>（角色始终回复）。新角色的默认值为 50%。</p>
 </li>
 <li>
 <p>随机选择一个角色。</p>
-<p>如果在前面的步骤中没有角色被激活，则随机选择一个发言者，忽略所有其他条件。</p>
+<p>如果在前述步骤中没有角色被激活，则随机选择一位发言者，忽略所有其他条件。</p>
 </li>
 </ol>
-<h4 id="列表顺序">列表顺序</h4>
-<p>角色根据它们在群组成员列表中的顺序被选择。不适用其他规则。</p>
-<h3 id="群组生成处理模式">群组生成处理模式</h3>
-<p>此设置决定如何处理群组聊天成员的角色信息。无论选择什么，群组聊天历史始终在所有成员之间共享。</p>
-<h4 id="切换角色卡片">切换角色卡片</h4>
-<p>默认模式。每次生成消息时，只有当前发言者的角色卡片信息会包含在上下文中。</p>
-<h4 id="合并角色卡片">合并角色卡片</h4>
-<p>所有群组成员的信息按照他们在列表中的顺序合并成一个联合提示词。这在不希望改变大块上下文的情况下很有帮助，例如使用 llama.cpp 提示词缓存时。</p>
-<p>此模式有两个子模式（您必须选择其中一个）：</p>
+<h3 id="列表顺序">列表顺序</h3>
+<p>角色按其在群组成员列表中的顺序被选定。不应用其他规则。</p>
+<h3 id="轮询顺序">轮询顺序</h3>
+<p>激活一个自上次用户消息以来尚未发言的随机角色。如果所有角色都已发言，则随机选择一个，直到下一条用户消息为止。</p>
+<h2 id="群组生成处理模式">群组生成处理模式</h2>
+<p>此设置决定如何处理群组聊天成员的角色信息。无论选择哪种模式，群组聊天历史始终在所有成员之间共享。</p>
+<h3 id="切换角色卡">切换角色卡</h3>
+<p>默认模式。每次生成消息时，上下文中只包含当前发言者的角色卡信息。</p>
+<h3 id="合并角色卡">合并角色卡</h3>
+<p>所有群组成员的信息按其在列表中的顺序合并为一个联合提示词。这在不希望大幅改变上下文内容时很有帮助，例如使用 llama.cpp 提示词缓存时。</p>
+<p>此模式有两个子模式（必须选择其中一个）：</p>
 <ul>
-<li>包含静音 - 静音的角色将始终包含在联合提示词中。</li>
-<li>排除静音 - 如果静音的角色不是当前发言者，则不会被包含。</li>
+<li>包含静音——已静音的角色始终包含在联合提示词中。</li>
+<li>排除静音——已静音的角色在不是当前发言者时不会被包含。</li>
 </ul>
-<p>以下字段会被合并：</p>
+<p>以下字段将被合并：</p>
 <ol>
 <li>描述</li>
-<li>场景（如果没有为聊天覆盖）</li>
+<li>场景（如果未被聊天覆盖）</li>
 <li>个性</li>
 <li>示例消息</li>
 <li>角色注释 / 深度提示词</li>
 </ol>
-<p><strong>重要！</strong> 请注意，由于典型角色卡片的结构方式，使用此模式可能导致意外行为，包括但不限于：角色对自己感到困惑、个性合并、特征不确定等。</p>
-<h4 id="合并前缀和后缀">合并前缀和后缀</h4>
-<p>当选择&quot;合并角色卡片&quot;时，角色的所有相应字段都会被合并在一起。这意味着在结果提示词中，所有角色描述将被合并成一大块文本。如果您希望这些字段被分开，您可以定义前缀和/或后缀。</p>
-<p>这些选项支持普通宏，并且还会将 {{char}} 替换为相关角色的名字，将 &lt;FIELDNAME&gt; 替换为部分的名称（例如：描述、个性、场景等）。</p>
-<h3 id="其他群组聊天菜单选项">其他群组聊天菜单选项</h3>
-<h4 id="静音角色">静音角色</h4>
-<p>群组聊天菜单中角色头像旁边的划掉的对话气泡图标可以禁用或启用特定角色在聊天中的回复。</p>
-<h4 id="强制发言">强制发言</h4>
-<p>群组聊天菜单中角色头像旁边的对话气泡图标将只触发特定角色的回复，绕过回复顺序策略。即使群组成员被静音，它也会生效。</p>
-<h4 id="自动模式">自动模式</h4>
-<p>当启用自动模式时，群组聊天将遵循回复顺序并在没有用户交互的情况下触发消息生成。当最后一个被选中的角色发送其消息后，下一个自动模式回合将在 5 秒延迟后触发。当用户开始在发送消息文本区域中输入时，自动模式将被禁用，但已经排队的生成不会自动停止。</p>
-<h4 id="允许自我回应">允许自我回应</h4>
-<p>当选择自然顺序时，如果由于在自己的消息中提到自己而被触发，将允许每个回合最后一条消息的角色连续回复。对列表顺序没有影响。</p>
-<h4 id="群组聊天场景覆盖">群组聊天场景覆盖</h4>
-<p>所有群组成员将使用输入的场景文本，而不是他们角色卡片中指定的内容。分支聊天从其父聊天继承场景覆盖，之后可以单独更改。</p>
-<h4 id="查看角色定义">查看角色定义</h4>
-<p>点击群组聊天菜单中头像旁边的角色卡片图标将快速导航到常规角色定义屏幕。在这里所做的任何更改都将保存到卡片本身。</p>
-<p>要返回群组聊天，点击群组名称标题链接。</p>
-<h4 id="成员管理">成员管理</h4>
-<p>您可以在群组聊天中添加、删除、静音或重新排序任何现有角色。默认情况下，新成员会被添加到群组成员列表的顶部，然后可以使用箭头图标重新排序。</p>
-<h4 id="群组聊天弹出窗口">群组聊天弹出窗口</h4>
-<p>通过点击&quot;当前成员&quot;字段旁边的图标可以激活群组聊天菜单弹出窗口。这会创建群组聊天菜单的弹出窗口。通过从用户设置启用 MovingUI，此菜单可以调整大小并拖动到界面内的任何位置，功能与常规群组聊天菜单相同。</p>
+<p><strong>重要！</strong> 请注意，由于典型角色卡的结构特点，使用此模式可能导致意外行为，包括但不限于：角色对自身感到困惑、个性合并、特征不确定等。</p>
+<h3 id="合并前缀与后缀">合并前缀与后缀</h3>
+<p>选择&quot;合并角色卡&quot;后，角色的所有相应字段将合并在一起。这意味着在结果提示词中，所有角色描述将合并为一大段文本。如果希望各字段之间有所分隔，可以定义前缀和/或后缀。</p>
+<p>这些选项支持普通宏，同时还会将 {{char}} 替换为相关角色的名称，将 &lt;FIELDNAME&gt; 替换为字段名称（例如：描述、个性、场景等）。</p>
+<h2 id="其他群组聊天菜单选项">其他群组聊天菜单选项</h2>
+<h3 id="静音角色">静音角色</h3>
+<p>群组聊天菜单中角色头像旁的划线对话气泡图标可以禁用或启用特定角色在聊天中的回复。</p>
+<h3 id="强制发言">强制发言</h3>
+<p>群组聊天菜单中角色头像旁的对话气泡图标将仅触发该特定角色的回复，绕过回复顺序策略。即使该群组成员已被静音，此功能也会生效。</p>
+<h3 id="自动模式">自动模式</h3>
+<p>启用自动模式后，群组聊天将遵循回复顺序，无需用户交互即可触发消息生成。当最后一个被选定的角色发送其消息后，下一轮自动模式将在 5 秒延迟后触发。当用户开始在发送消息文本框中输入时，自动模式将被禁用，但已排队的生成不会自动停止。</p>
+<h3 id="允许自我响应">允许自我响应</h3>
+<p>当选择自然顺序时，若某角色因在自己的消息中提及自己而被触发，则允许其在每轮中连续回复。对列表顺序无效。</p>
+<h3 id="群组聊天场景覆盖">群组聊天场景覆盖</h3>
+<p>所有群组成员将使用此处输入的场景文本，而非其角色卡中指定的内容。分支聊天会从父聊天继承场景覆盖，之后可单独修改。</p>
+<h3 id="查看角色定义">查看角色定义</h3>
+<p>点击群组聊天菜单中头像旁的角色卡图标，可快速跳转到常规角色定义界面。在此处所做的任何更改都将保存到卡片本身。</p>
+<p>如需返回群组聊天，点击群组名称标题链接即可。</p>
+<h3 id="成员管理">成员管理</h3>
+<p>可在群组聊天中添加、移除、静音或重新排序任意现有角色。默认情况下，新成员添加到群组成员列表顶部，之后可使用箭头图标重新排序。</p>
+<h3 id="群组聊天弹出窗口">群组聊天弹出窗口</h3>
+<p>点击&quot;当前成员&quot;字段旁的图标可激活群组聊天菜单弹出窗口，将群组聊天菜单独立显示。在用户设置中启用 MovingUI 后，此菜单可在界面内调整大小并拖动到任意位置，功能与常规群组聊天菜单完全相同。</p>
 
                 
                 <!-- Required only on API pages -->

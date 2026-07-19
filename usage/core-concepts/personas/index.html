@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>人格 | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="人格 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="SillyTavern 中的人格是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人格允许你轻松切换你所扮演的角色或\"角色\"，而无需每次都手动更新你的用户名/头像。">
+    <title>人设 | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="人设 | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="SillyTavern 中的人设是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人设让你能够轻松切换你所扮演的角色，而无需每次手动更新用户名/头像。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/core-concepts/personas/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/core-concepts/personas/">
-    <meta property="og:title" content="人格 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="SillyTavern 中的人格是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人格允许你轻松切换你所扮演的角色或\"角色\"，而无需每次都手动更新你的用户名/头像。">
+    <meta property="og:title" content="人设 | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="SillyTavern 中的人设是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人设让你能够轻松切换你所扮演的角色，而无需每次手动更新用户名/头像。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/core-concepts/personas/">
-    <meta name="twitter:title" content="人格 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="SillyTavern 中的人格是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人格允许你轻松切换你所扮演的角色或\"角色\"，而无需每次都手动更新你的用户名/头像。">
+    <meta name="twitter:title" content="人设 | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="SillyTavern 中的人设是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人设让你能够轻松切换你所扮演的角色，而无需每次手动更新用户名/头像。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/usage/personas.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,9 +211,9 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="人格">人格</h1>
-<h2 id="什么是人格">什么是人格？</h2>
-<p>SillyTavern 中的人格是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人格允许你轻松切换你所扮演的角色或&quot;角色&quot;，而无需每次都手动更新你的用户名/头像。</p>
+<h1 id="人设">人设</h1>
+<h2 id="什么是人设">什么是人设？</h2>
+<p>SillyTavern 中的人设是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人设让你能够轻松切换你所扮演的角色，而无需每次手动更新用户名/头像。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -227,20 +227,20 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><strong>注意：</strong> 未绑定到人格的旧用户头像/名称已被移除。现有数据将迁移到人格。如果未指定名称，人格将被命名为&quot;[未命名人格]&quot;。</p>
+<p><strong>注意：</strong> 未绑定人设的旧版用户头像/名称已被移除。现有数据将迁移到人设中。如果当时未指定名称，该人设将命名为&quot;[Unnamed Persona]&quot;。</p>
         </div>
     </div>
 </div>
-<h2 id="如何创建人格">如何创建人格？</h2>
+<h2 id="如何创建人设">如何创建人设？</h2>
 <ol>
-<li>打开<strong>人格管理</strong>面板（顶部菜单中的 <i class="fa-solid fa-face-smile"></i> 按钮）。</li>
-<li>使用<strong>创建</strong>按钮创建一个空白人格并为其命名。</li>
-<li>在人格列表中，选择新创建的人格。</li>
-<li>在右侧，你可以填写描述并通过&quot;更改人格图像&quot;按钮设置头像。两者都是可选的。</li>
-<li>现在你的人格已准备好在聊天中使用。</li>
+<li>打开<strong>人设管理</strong>面板（顶部菜单中的 <i class="fa-solid fa-face-smile"></i> 按钮）。</li>
+<li>点击<strong>创建</strong>按钮创建一个空白人设，并为其命名。</li>
+<li>在人设列表中，选择刚刚创建的人设。</li>
+<li>在右侧，你可以填写描述，并通过&quot;更改人设图片&quot;按钮设置头像。两者均为可选项。</li>
+<li>现在你的人设已准备好在聊天中使用。</li>
 </ol>
-<h3 id="将角色转换为人格">将角色转换为人格</h3>
-<p>人格也可以通过转换任何现有角色来创建。只需打开角色，选择&quot;更多...&quot;并点击&quot;转换为人格&quot;。将创建一个具有相同名称和描述的人格。不会使用其他角色卡片字段，如场景或个性。角色不会被删除。</p>
+<h3 id="将角色转换为人设">将角色转换为人设</h3>
+<p>人设也可以通过转换现有角色来创建。只需打开该角色，选择&quot;更多...&quot;并点击&quot;转换为人设&quot;。这将创建一个具有相同名称和描述的人设。角色卡中的场景或性格等其他字段不会被使用，角色本身不会被删除。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -255,109 +255,109 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>注意</h5>
-<p>由于 <code translate="no" v-pre>{{user}}</code> 和 <code translate="no" v-pre>{{char}}</code> 宏在人格和角色描述中使用时具有相反的含义，如果转换的描述包含其中任何一个，系统会提示你交换它们。</p>
+<p>由于 <code translate="no" v-pre>{{user}}</code> 和 <code translate="no" v-pre>{{char}}</code> 宏在人设和角色描述中的含义相反，如果转换的描述中包含其中之一，系统将提示你是否需要互换它们。</p>
         </div>
     </div>
 </div>
-<h2 id="人格描述">人格描述</h2>
-<p>每个人格可以存储自定义文本描述——心理和身体特征、年龄、职业或任何个人详细信息。这些也可以包括模板宏，如 <code translate="no" v-pre>{{char}}</code> 或 <code translate="no" v-pre>{{user}}</code>（参见<a href="../macros/">宏</a>）。</p>
-<p>你的人格描述注入到 AI 提示词中的位置取决于人格管理面板中的<strong>位置</strong>设置：</p>
+<h2 id="persona-description">人设描述</h2>
+<p>每个人设可以存储一段自定义文本描述——心理特征、外貌特征、年龄、职业或任何个人信息。其中也可以包含模板宏，例如 <code translate="no" v-pre>{{char}}</code> 或 <code translate="no" v-pre>{{user}}</code>（参见<a href="../macros/">宏</a>）。</p>
+<p>人设描述注入 AI 提示词的位置取决于人设管理面板中的<strong>位置</strong>设置：</p>
 <ul>
 <li><strong>无（禁用）</strong></li>
 <li><strong>在故事字符串/提示词管理器中</strong>（默认）</li>
-<li><strong>作者注释顶部</strong> / <strong>作者注释底部</strong>（仅在存在作者注释时添加）</li>
-<li><strong>在聊天 @ 深度</strong>（这将打开配置选项以设置深度和角色）</li>
+<li><strong>作者注释顶部</strong> / <strong>作者注释底部</strong>（仅在存在作者注释时才会添加）</li>
+<li><strong>聊天内 @ 深度</strong>（将开启配置深度和角色的选项）</li>
 </ul>
-<p>位置是<strong>按人格</strong>保存的。</p>
-<h2 id="人格标题">人格标题</h2>
-<p>标题是一个可选的文本字段，可用于存储关于人格的附加信息，不用于提示词中，但显示在人格管理面板中。</p>
-<p>要设置标题，点击人格管理面板中的 <strong><i class="fa-solid fa-pencil"></i> 重命名人格</strong>按钮，并在&quot;人格标题&quot;字段中输入标题，或在创建人格时指定。当标题已存在时设置空值将删除它。</p>
-<h2 id="人格连接--锁定">人格连接 / 锁定</h2>
-<p>人格连接确保在特定情况下自动选择给定的人格。如果没有连接人格，当前选择的人格将保持选中状态。</p>
-<p>有三种类型的锁定：</p>
+<p>该位置设置<strong>按人设</strong>单独保存。</p>
+<h2 id="人设标题">人设标题</h2>
+<p>标题是一个可选文本字段，可用于存储关于人设的附加信息。标题不会用于提示词，但会显示在人设管理面板中。</p>
+<p>要设置标题，请点击人设管理面板中的**<i class="fa-solid fa-pencil"></i> 重命名人设**按钮，在&quot;人设标题&quot;字段中输入标题；或在创建人设时指定。若已存在标题，将其设为空值将删除该标题。</p>
+<h2 id="人设连接锁定">人设连接/锁定</h2>
+<p>人设连接确保在特定情况下自动选择某个人设。如果没有绑定任何人设，则保持当前已选择的人设。</p>
+<p>共有三种锁定类型：</p>
 <ol>
-<li><strong><i class="fa-solid fa-unlock"></i> 聊天锁定</strong> – 人格锁定到当前聊天。</li>
-<li><strong><i class="fa-solid fa-unlock"></i> 角色锁定</strong> – 人格锁定到特定角色。</li>
-<li><strong><i class="fa-solid fa-crown"></i> 默认人格</strong> – 一个在没有其他锁定适用时使用的人格。</li>
+<li><strong><i class="fa-solid fa-unlock"></i> 聊天锁定</strong> — 将人设锁定到当前聊天。</li>
+<li><strong><i class="fa-solid fa-unlock"></i> 角色锁定</strong> — 将人设锁定到特定角色。</li>
+<li><strong><i class="fa-solid fa-crown"></i> 默认人设</strong> — 在没有其他锁定适用时使用的人设。</li>
 </ol>
 <h3 id="1-锁定到聊天">1. 锁定到聊天</h3>
-<p>如果人格锁定到聊天，将来打开该聊天时将自动切换到锁定的人格。</p>
+<p>将人设锁定到聊天后，以后打开该聊天时将自动切换到已锁定的人设。</p>
 <ul>
-<li><strong>要锁定</strong>：选择所需的人格，然后点击&quot;连接&quot;部分下的 <strong><i class="fa-solid fa-unlock"></i> 聊天</strong>按钮（或使用 <code translate="no" v-pre>/persona-lock type=chat on</code>）。</li>
-<li><strong>要解锁</strong>：再次点击该按钮（或使用 <code translate="no" v-pre>/persona-lock type=chat off</code>）。</li>
+<li><strong>锁定方式</strong>：选择所需人设，然后点击&quot;连接&quot;区域下的**<i class="fa-solid fa-unlock"></i> 聊天**按钮（或使用 <code translate="no" v-pre>/persona-lock type=chat on</code>）。</li>
+<li><strong>解锁方式</strong>：再次点击该按钮（或使用 <code translate="no" v-pre>/persona-lock type=chat off</code>）。</li>
 </ul>
 <h3 id="2-锁定到角色">2. 锁定到角色</h3>
-<p>你还可以将人格链接到特定角色。打开与该角色的任何聊天时会自动选择你锁定的人格。</p>
+<p>你也可以将人设链接到特定角色。打开与该角色的任何聊天时，将自动选择已锁定的人设。</p>
 <ul>
-<li><strong>要锁定</strong>：选择所需的人格，然后点击&quot;连接&quot;部分下的 <strong><i class="fa-solid fa-unlock"></i> 角色</strong>按钮（或使用 <code translate="no" v-pre>/persona-lock type=character on</code>）。</li>
-<li><strong>要解锁</strong>：再次点击该按钮（或使用 <code translate="no" v-pre>/persona-lock type=character off</code>）。</li>
+<li><strong>锁定方式</strong>：选择所需人设，然后点击&quot;连接&quot;区域下的**<i class="fa-solid fa-unlock"></i> 角色**按钮（或使用 <code translate="no" v-pre>/persona-lock type=character on</code>）。</li>
+<li><strong>解锁方式</strong>：再次点击该按钮（或使用 <code translate="no" v-pre>/persona-lock type=character off</code>）。</li>
 </ul>
-<p>人格管理面板还显示哪些角色链接到该人格（显示为小头像）。点击它们可直接导航到该角色的聊天。</p>
-<h4 id="将多个人格锁定到同一角色">将多个人格锁定到同一角色</h4>
-<p>如果另一个人格已经链接到该角色，默认情况下它将自动取消链接。</p>
-<p>要同时链接多个人格，可以使用全局设置<strong>允许每个角色有多个人格连接</strong>。
-如果多个人格链接到同一角色，每次打开或开始与该角色的新聊天时，你都会看到一个弹窗，询问要使用哪个人格（除非人格绑定到聊天）。</p>
-<h3 id="3-默认人格">3. 默认人格</h3>
-<p>你的<strong>默认人格</strong>在没有其他相关锁定时使用。默认人格通过其头像周围的黄色边框可识别。</p>
+<p>人设管理面板还会显示链接到该人设的角色（以小头像形式显示）。点击头像可直接跳转到该角色的聊天。</p>
+<h4 id="将多个人设锁定到同一角色">将多个人设锁定到同一角色</h4>
+<p>如果该角色已链接了另一个人设，默认情况下那个人设将自动解除链接。</p>
+<p>若要同时链接多个人设，可使用全局设置<strong>允许每个角色有多个人设连接</strong>。
+如果同一角色链接了多个人设，每次打开或新建与该角色的聊天时，将弹出提示询问使用哪个人设（除非聊天已绑定了特定人设）。</p>
+<h3 id="3-默认人设">3. 默认人设</h3>
+<p><strong>默认人设</strong>在没有其他相关锁定时使用。默认人设可通过头像周围的黄色边框来识别。</p>
 <ul>
-<li><strong>要设置/取消设置默认人格</strong>：选择所需的人格，然后点击&quot;连接&quot;部分下的 <strong><i class="fa-solid fa-crown"></i> 默认</strong>按钮（或使用 <code translate="no" v-pre>/persona-lock type=default</code>）。</li>
+<li><strong>设置/取消设置方式</strong>：选择所需人设，然后点击&quot;连接&quot;区域下的**<i class="fa-solid fa-crown"></i> 默认**按钮（或使用 <code translate="no" v-pre>/persona-lock type=default</code>）。</li>
 </ul>
-<p>只能选择一个人格作为默认人格。</p>
-<h3 id="临时人格">临时人格</h3>
-<p>如果三个连接选项中的任何一个将人格连接到当前角色/聊天，你仍然可以选择使用不同的人格。此人格将在人格面板中标记为&quot;临时人格&quot;。任何浏览器窗口重新加载或切换到不同聊天再返回都会将其重置为链接的人格。</p>
-<p>你可以通过将临时人格链接到聊天来手动<em>转换</em>它以持久连接。</p>
-<h2 id="全局人格设置">全局人格设置</h2>
-<p><strong>当前人格</strong>下的所有设置都是按人格保存的。也存在一些全局设置，可以在人格管理面板的<strong>全局人格设置</strong>下找到。</p>
+<p>只能有一个人设被设为默认人设。</p>
+<h3 id="临时人设">临时人设</h3>
+<p>如果三种连接选项中的任意一种将人设连接到了当前角色/聊天，你仍然可以选择使用其他人设。该人设将在人设面板中标记为&quot;临时人设&quot;。任何浏览器页面重新加载或切换到其他聊天再切回，都会将其重置为已链接的人设。</p>
+<p>你可以手动将临时人设<em>转换</em>为持久连接，方法是将其锁定到该聊天。</p>
+<h2 id="全局人设设置">全局人设设置</h2>
+<p><strong>当前人设</strong>下的所有设置均按人设单独保存。此外还有少量全局设置，可在人设管理面板的<strong>全局人设设置</strong>中找到。</p>
 <ol>
 <li>
-<p><strong>切换人格时显示通知</strong></p>
+<p><strong>切换人设时显示通知</strong></p>
 <ul>
-<li>启用与人格相关的提示消息（例如，&quot;人格自动选择&quot;、&quot;临时人格&quot;）。</li>
+<li>启用与人设相关的提示消息（例如&quot;人设已自动选择&quot;、&quot;临时人设&quot;）。</li>
 </ul>
 </li>
 <li>
-<p><strong>允许每个角色有多个人格连接</strong></p>
+<p><strong>允许每个角色有多个人设连接</strong></p>
 <ul>
-<li><strong>启用</strong>时，你可以将多个人格链接到单个角色。打开该角色的聊天时会提示你使用哪个人格。如果禁用，一次只能将一个人格连接到一个角色。</li>
+<li><strong>启用</strong>时，你可以将多个人设链接到同一角色。打开该角色的聊天时将提示选择使用哪个人设。禁用时，每个角色同时只能连接一个人设。</li>
 </ul>
 </li>
 <li>
-<p><strong>自动锁定选择的人格到聊天</strong></p>
+<p><strong>自动将所选人设锁定到聊天</strong></p>
 <ul>
-<li><strong>启用</strong>时，每当你选择人格（手动或通过自动选择）或创建新聊天时，它都会将该人格锁定到聊天。
-这与&quot;允许多个&quot;结合使用，提供了为每个角色选择人格的选项，但一旦为聊天选择就保持绑定。</li>
+<li><strong>启用</strong>时，每次你选择人设（手动或自动选择）或新建聊天时，都会将该人设锁定到聊天。
+与&quot;允许多个连接&quot;结合使用，可以实现按角色选择人设，同时在聊天选定后保持绑定。</li>
 </ul>
 </li>
 </ol>
-<h2 id="人格的斜杠命令">人格的斜杠命令</h2>
+<h2 id="人设的斜杠命令">人设的斜杠命令</h2>
 <h3 id="persona-lock-typetype"><code translate="no" v-pre>/persona-lock type=&lt;type?&gt;</code></h3>
 <ul>
-<li><code translate="no" v-pre>chat</code> 将当前人格锁定到你的活动聊天。</li>
-<li><code translate="no" v-pre>character</code> 将当前人格锁定到正在使用的角色。</li>
-<li><code translate="no" v-pre>none</code>（或无参数）解锁/清除当前上下文的人格锁定。</li>
-<li>如果不带参数使用，它将返回当前锁定状态（如果未设置则返回错误）。</li>
-<li>锁定状态可以通过 <code translate="no" v-pre>on</code>、<code translate="no" v-pre>off</code> 或 <code translate="no" v-pre>toggle</code> 选择。默认是 toggle。</li>
+<li><code translate="no" v-pre>chat</code> 将当前人设锁定到你的活跃聊天。</li>
+<li><code translate="no" v-pre>character</code> 将当前人设锁定到正在使用的角色。</li>
+<li><code translate="no" v-pre>none</code>（或无参数）解除/清除当前上下文的人设锁定。</li>
+<li>不带参数使用时，返回当前锁定状态（若无锁定则返回错误）。</li>
+<li>锁定状态可通过 <code translate="no" v-pre>on</code>、<code translate="no" v-pre>off</code> 或 <code translate="no" v-pre>toggle</code> 指定，默认为 toggle。</li>
 </ul>
 <h3 id="persona-name"><code translate="no" v-pre>/persona &lt;name&gt;</code></h3>
 <ul>
-<li>通过名称快速切换你的活动人格，而无需打开人格管理面板。</li>
+<li>通过名称快速切换活跃人设，无需打开人设管理面板。</li>
 <li>示例：<code translate="no" v-pre>/persona Blaze</code>。</li>
-<li>使用 <code translate="no" v-pre>mode=temp</code> 允许临时设置<strong>当前</strong>人格的名称，即使可能已经存在同名的人格（保留你当前的头像和描述）。</li>
+<li>使用 <code translate="no" v-pre>mode=temp</code> 可临时设置<strong>当前</strong>人设的名称，即使已存在同名人设（保留当前头像和描述）。</li>
 </ul>
 <h3 id="persona-sync"><code translate="no" v-pre>/persona-sync</code></h3>
 <ul>
-<li>将活动聊天中的所有用户消息重新归属于<strong>当前</strong>人格及其名称。</li>
+<li>将活跃聊天中的所有用户消息重新归属到<strong>当前</strong>人设及其名称。</li>
 </ul>
 <blockquote>
-<p><strong>注意：</strong> 较旧的 <code translate="no" v-pre>/lock</code> 和 <code translate="no" v-pre>/unlock</code> 命令为了向后兼容而保留，但可能会在将来被移除。请改用 <code translate="no" v-pre>/persona-lock</code>。</p>
+<p><strong>注意：</strong> 旧版 <code translate="no" v-pre>/lock</code> 和 <code translate="no" v-pre>/unlock</code> 命令为向后兼容保留，但未来可能被移除。请改用 <code translate="no" v-pre>/persona-lock</code>。</p>
 </blockquote>
-<h2 id="专业提示">专业提示</h2>
+<h2 id="实用技巧">实用技巧</h2>
 <ol>
-<li><strong>聊天中切换人格</strong>不会将你过去的用户消息重新归属于新人格；这些消息仍归属于你当时使用的人格。</li>
-<li><strong>批量重新归属</strong>：如果你需要所有先前的消息与新人格匹配，点击<strong>同步</strong>按钮或使用 <code translate="no" v-pre>/persona-sync</code>。</li>
-<li><strong>替换人格图像</strong>，而不丢失描述或锁定，方法是选择你的人格并点击 <strong><i class="fa-solid fa-images"></i> 更改人格图像</strong>按钮。</li>
-<li><strong>角色链接弹窗</strong>：如果多个人格链接到同一角色，每次打开聊天时你都会看到一个弹窗来选择使用哪个人格。这是为特定角色提供小范围人格选择的便捷方式。</li>
-<li><strong>备份</strong>：你可以使用人格管理中的<strong>备份</strong>按钮备份整个人格列表（名称、角色连接、描述），并在需要时稍后恢复。</li>
+<li><strong>聊天中途切换人设</strong>不会将过去的用户消息重新归属到新人设；这些消息仍归属于当时使用的人设。</li>
+<li><strong>批量重新归属</strong>：如果需要将所有历史消息更新为新人设，点击<strong>同步</strong>按钮或使用 <code translate="no" v-pre>/persona-sync</code>。</li>
+<li><strong>更换人设图片</strong>而不丢失描述或锁定：选择你的人设并点击**<i class="fa-solid fa-images"></i> 更改人设图片**按钮。</li>
+<li><strong>角色链接弹窗</strong>：如果多个人设链接到同一角色，每次打开聊天时将弹出选择窗口。这是为特定角色提供少量人设供选择的便捷方式。</li>
+<li><strong>备份</strong>：你可以通过人设管理中的<strong>备份</strong>按钮备份整个人设列表（名称、角色连接、描述），并在需要时恢复。</li>
 </ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
@@ -370,10 +370,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>备份备注</h5>
+            <h5>备份说明</h5>
 <ul>
-<li>图像和聊天连接不会与人格一起保存，也不会通过此方式备份。</li>
-<li>这些备份不是为共享而设计的，因为它们包含内部链接。</li>
+<li>图片和聊天连接不会随人设一起保存，不会通过此方式备份。</li>
+<li>这些备份不适合分享，因为它们包含内部链接。</li>
 </ul>
         </div>
     </div>
@@ -450,6 +450,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "人格", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/personas.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "人设", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/usage/personas.md" }</script>
 </body>
 </html>

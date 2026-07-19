@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>开发和自动化 | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="开发和自动化 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="SillyTavern 的默认包只提供了一个基础平台，可以通过多种方式进行扩展。">
+    <title>开发与自动化 | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="开发与自动化 | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="SillyTavern 的默认安装包仅提供一个基础平台，可通过多种方式进行扩展。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/for-contributors/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/for-contributors/">
-    <meta property="og:title" content="开发和自动化 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="SillyTavern 的默认包只提供了一个基础平台，可以通过多种方式进行扩展。">
+    <meta property="og:title" content="开发与自动化 | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="SillyTavern 的默认安装包仅提供一个基础平台，可通过多种方式进行扩展。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/for-contributors/">
-    <meta name="twitter:title" content="开发和自动化 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="SillyTavern 的默认包只提供了一个基础平台，可以通过多种方式进行扩展。">
+    <meta name="twitter:title" content="开发与自动化 | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="SillyTavern 的默认安装包仅提供一个基础平台，可通过多种方式进行扩展。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/for_contributors/index.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../favicon.ico" />
-    <link href="../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,22 +211,22 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="开发和自动化">开发和自动化</h1>
-<p>SillyTavern 的默认包只提供了一个基础平台，可以通过多种方式进行扩展。</p>
+<h1 id="开发与自动化">开发与自动化</h1>
+<p>SillyTavern 的默认安装包仅提供一个基础平台，可通过多种方式进行扩展。</p>
 <div class="callout"><p><strong><a href="../usage/st-script/">STscript</a></strong></p>
-<p>STscript 是一种强大的脚本语言，基于批处理聊天命令，无需任何编程知识即可上手。</p>
+<p>STscript 是一种功能强大的脚本语言，基于批量聊天命令构建，无需任何编程基础即可上手使用。</p>
 </div>
-<div class="callout"><p><strong><a href="function-calling/">Function Calling</a></strong></p>
-<p>通过让 LLM 使用外部数据源或触发扩展的特定功能来添加更多动态功能。</p>
+<div class="callout"><p><strong><a href="function-calling/">函数调用（Function Calling）</a></strong></p>
+<p>通过让 LLM 使用外部数据源或触发扩展的特定功能，为其添加更动态的能力。</p>
 </div>
-<div class="callout"><p><strong><a href="writing-extensions/">UI Extensions</a></strong></p>
-<p>UI 扩展在浏览器环境中运行，通过挂钩其事件和 API 来扩展 SillyTavern 的功能。</p>
+<div class="callout"><p><strong><a href="writing-extensions/">UI 扩展（UI Extensions）</a></strong></p>
+<p>UI 扩展在浏览器环境中运行，通过挂载 SillyTavern 的事件和 API 来扩展其功能。</p>
 </div>
-<div class="callout"><p><strong><a href="server-plugins/">Server Plugins</a></strong></p>
-<p>服务器插件允许通过在 NodeJS 环境中运行代码来添加新的 API 端点等功能。</p>
+<div class="callout"><p><strong><a href="server-plugins/">服务器插件（Server Plugins）</a></strong></p>
+<p>服务器插件允许通过在 NodeJS 环境中运行代码来添加功能，例如新的 API 端点。</p>
 </div>
-<div class="callout"><p><strong><a href="i18n/">Internationalization (i18n)</a></strong></p>
-<p>了解如何将 SillyTavern 的 UI 翻译成您的语言。</p>
+<div class="callout"><p><strong><a href="i18n/">国际化（i18n）</a></strong></p>
+<p>了解如何将 SillyTavern 的用户界面翻译为你的语言。</p>
 </div>
 
                 
@@ -300,6 +300,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "开发和自动化", level: 1, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/for_contributors/index.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Development and Automation", level: 1, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/for_contributors/index.md" }</script>
 </body>
 </html>

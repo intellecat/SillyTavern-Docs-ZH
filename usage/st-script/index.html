@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>STscript 语言参考 | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
+    <meta name="description" content="STscript 是一种简单而强大的脚本语言，无需编写复杂代码即可扩展 SillyTavern 的功能，让你能够：">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/usage/st-script/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/usage/st-script/">
     <meta property="og:title" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
+    <meta property="og:description" content="STscript 是一种简单而强大的脚本语言，无需编写复杂代码即可扩展 SillyTavern 的功能，让你能够：">
     <meta property="og:image" content="https://sillytavern.wiki/static/scripts/hello-world.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/usage/st-script/">
     <meta name="twitter:title" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：">
+    <meta name="twitter:description" content="STscript 是一种简单而强大的脚本语言，无需编写复杂代码即可扩展 SillyTavern 的功能，让你能够：">
     <meta name="twitter:image" content="https://sillytavern.wiki/static/scripts/hello-world.png">
     <meta name="twitter:image:alt" content="STscript 语言参考 | SillyTavern傻酒馆中文文档">
 
@@ -47,11 +47,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -219,22 +219,23 @@
                 <!-- Page content  -->
 <h1 id="stscript-语言参考">STscript 语言参考</h1>
 <h2 id="什么是-stscript">什么是 STscript？</h2>
-<p>这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：</p>
+<p>STscript 是一种简单而强大的脚本语言，无需编写复杂代码即可扩展 SillyTavern 的功能，让你能够：</p>
 <ul>
-<li>创建迷你游戏或速通挑战</li>
+<li>创建小游戏或速通挑战</li>
 <li>构建 AI 驱动的聊天洞察</li>
-<li>释放您的创造力并与他人分享</li>
+<li>释放你的创造力并与他人分享</li>
 </ul>
-<p>STscript 是基于斜杠命令引擎构建的，利用命令批处理、数据管道、宏和变量。
-这些概念将在以下文档中详细描述。</p>
+<p>STscript 基于斜杠命令引擎构建，利用命令批处理、数据管道、宏和变量。这些概念将在以下文档中详细介绍。</p>
 <h3 id="安全注意事项">安全注意事项</h3>
-<p>能力越大，责任越大。在执行脚本之前，请务必仔细检查。</p>
+<p>能力越大，责任越大。请谨慎操作，执行脚本前务必仔细检查其内容。</p>
 <h2 id="hello-world">Hello, World!</h2>
-<p>要运行您的第一个脚本，打开任何 SillyTavern 聊天并在聊天输入栏中输入以下内容：</p>
+<p>要运行你的第一个脚本，打开任意 SillyTavern 聊天，在聊天输入栏中输入以下内容：</p>
 <div id="hello-world-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| ![Hello World](/static/scripts/hello-world.png) |
+|-------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -244,32 +245,47 @@
 </thead>
 </table>
 </div>
-<p>您应该会在屏幕顶部看到一条提示消息。现在让我们逐步分析。</p>
-<p>脚本是一批命令，每个命令都以斜杠开头，可以带有或不带有命名和未命名参数，并以命令分隔符结束：<code translate="no" v-pre>|</code>。</p>
-<p>命令按顺序依次执行，并在彼此之间传输数据。</p>
+</retype-table>
+<p>你应该会在屏幕顶部看到一条弹出消息。现在让我们逐步分析它。</p>
+<p>脚本是一批命令的集合，每条命令以斜杠开头，可带有或不带有具名参数和匿名参数，并以命令分隔符 <code translate="no" v-pre>|</code> 结尾。</p>
+<p>命令按顺序依次执行，并在彼此之间传递数据。</p>
 <ol>
-<li><code translate="no" v-pre>/pass</code> 命令接受一个常量值 &quot;Hello, World!&quot; 作为未命名参数并将其写入管道。</li>
-<li><code translate="no" v-pre>/echo</code> 命令通过管道从前一个命令接收值并将其显示为提示通知。</li>
+<li><code translate="no" v-pre>/pass</code> 命令接受常量值 &quot;Hello, World!&quot; 作为匿名参数，并将其写入管道。</li>
+<li><code translate="no" v-pre>/echo</code> 命令通过管道从上一条命令接收值，并以弹出通知的形式显示它。</li>
 </ol>
-<blockquote>
-<p><strong>提示：</strong> 要查看所有可用命令的列表，请在聊天中输入 <code translate="no" v-pre>/help slash</code>。</p>
-</blockquote>
-<p>由于常量未命名参数和管道是可互换的，我们可以简单地将这个脚本重写为：</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>**提示：**要查看所有可用命令的列表，请在聊天中输入 <code translate="no" v-pre>/help slash</code>。</p>
+        </div>
+    </div>
+</div>
+<p>由于常量匿名参数与管道可以互换，我们可以将这个脚本简写为：</p>
 <div id="hello-world-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
 </doc-codeblock></div>
 <h2 id="用户输入">用户输入</h2>
-<p>现在让我们为脚本添加一些交互性。我们将接受用户的输入值并在通知中显示它。</p>
+<p>现在让我们为脚本添加一点交互性。我们将接受用户的输入值并在通知中显示它。</p>
 <div id="用户输入-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/input Enter your name |
 /echo Hello, my name is {{pipe}}</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><code translate="no" v-pre>/input</code> 命令用于显示一个输入框，其中包含未命名参数中指定的提示，然后将输出写入管道。</li>
-<li>因为 <code translate="no" v-pre>/echo</code> 已经有一个设置输出模板的未命名参数，我们使用 <code translate="no" v-pre>{{pipe}}</code> 宏来指定管道值将被渲染的位置。</li>
+<li><code translate="no" v-pre>/input</code> 命令用于显示一个输入框，其提示文字由匿名参数指定，然后将输出写入管道。</li>
+<li>因为 <code translate="no" v-pre>/echo</code> 已经有一个设置输出模板的匿名参数，我们使用 <code translate="no" v-pre>{{pipe}}</code> 宏来指定管道值将被渲染的位置。</li>
 </ol>
+<retype-table copy-text="| ![Slim Shady Input](/static/scripts/slim-input.png) | ![Slim Shady Output](/static/scripts/slim-output.png) |
+|-----------------------------------------------------|-------------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -280,20 +296,25 @@
 </thead>
 </table>
 </div>
+</retype-table>
 <h3 id="其他输入输出命令">其他输入/输出命令</h3>
 <ul>
-<li><code translate="no" v-pre>/popup (text)</code> — 显示一个阻塞弹出窗口，支持简单的 HTML 格式，例如：<code translate="no" v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>。</li>
+<li><code translate="no" v-pre>/popup (text)</code> — 显示一个阻塞弹窗，支持精简 HTML 格式，例如：<code translate="no" v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>。</li>
 <li><code translate="no" v-pre>/setinput (text)</code> — 用提供的文本替换用户输入栏的内容。</li>
-<li><code translate="no" v-pre>/speak voice=&quot;name&quot; (text)</code> — 使用选定的 TTS 引擎和语音映射中的角色名称朗读文本，例如 <code translate="no" v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>。</li>
-<li><code translate="no" v-pre>/buttons labels=[&quot;a&quot;,&quot;b&quot;] (text)</code> — 显示一个带有指定文本和按钮标签的阻塞弹出窗口。<code translate="no" v-pre>labels</code> 必须是 JSON 序列化的字符串数组或包含此类数组的变量名。将点击的按钮标签返回到管道中，如果取消则返回空字符串。文本支持简单的 HTML 格式。</li>
+<li><code translate="no" v-pre>/speak voice=&quot;name&quot; (text)</code> — 使用所选 TTS 引擎和语音映射中的角色名称朗读文本，例如 <code translate="no" v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>。</li>
+<li><code translate="no" v-pre>/buttons labels=[&quot;a&quot;,&quot;b&quot;] (text)</code> — 显示一个带有指定文本和按钮标签的阻塞弹窗。<code translate="no" v-pre>labels</code> 必须是 JSON 序列化的字符串数组或包含此类数组的变量名。返回被点击的按钮标签到管道，若取消则返回空字符串。文本支持精简 HTML 格式。</li>
+<li><code translate="no" v-pre>/beep</code> — 播放消息通知音效。</li>
 </ul>
 <h4 id="popup-和-input-的参数"><code translate="no" v-pre>/popup</code> 和 <code translate="no" v-pre>/input</code> 的参数</h4>
-<p><code translate="no" v-pre>/popup</code> 和 <code translate="no" v-pre>/input</code> 支持以下附加命名参数：</p>
+<p><code translate="no" v-pre>/popup</code> 和 <code translate="no" v-pre>/input</code> 支持以下附加具名参数：</p>
 <ul>
-<li><code translate="no" v-pre>large=on/off</code> - 增加弹出窗口的垂直大小。默认：<code translate="no" v-pre>off</code>。</li>
-<li><code translate="no" v-pre>wide=on/off</code> - 增加弹出窗口的水平大小。默认：<code translate="no" v-pre>off</code>。</li>
-<li><code translate="no" v-pre>okButton=string</code> - 添加自定义&quot;确定&quot;按钮文本的功能。默认：<code translate="no" v-pre>Ok</code>。</li>
-<li><code translate="no" v-pre>rows=number</code> - (仅用于 <code translate="no" v-pre>/input</code>) 增加输入控件的大小。默认：1。</li>
+<li><code translate="no" v-pre>large=on/off</code> - 增加弹窗的垂直尺寸。默认值：<code translate="no" v-pre>off</code>。</li>
+<li><code translate="no" v-pre>wide=on/off</code> - 增加弹窗的水平尺寸。默认值：<code translate="no" v-pre>off</code>。</li>
+<li><code translate="no" v-pre>okButton=string</code> - 支持自定义&quot;确定&quot;按钮上的文字。默认值：<code translate="no" v-pre>Ok</code>。</li>
+<li><code translate="no" v-pre>rows=number</code> - （仅适用于 <code translate="no" v-pre>/input</code>）增加输入控件的尺寸。默认值：1。</li>
+<li><code translate="no" v-pre>placeholder=string</code> - 设置输入框中的占位文本。</li>
+<li><code translate="no" v-pre>tooltip=string</code> - 设置悬停时显示的工具提示。</li>
+<li><code translate="no" v-pre>icon=string</code> - 为弹窗设置 Font Awesome 图标类。</li>
 </ul>
 <p>示例：</p>
 <div id="popup-和-input-的参数-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -301,11 +322,11 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
 </doc-codeblock></div>
 <h4 id="echo-的参数"><code translate="no" v-pre>/echo</code> 的参数</h4>
-<p><code translate="no" v-pre>/echo</code> 支持以下 <code translate="no" v-pre>severity</code> 附加参数值，用于设置显示消息的样式。</p>
+<p><code translate="no" v-pre>/echo</code> 支持附加的 <code translate="no" v-pre>severity</code> 参数，用于设置显示消息的样式，可取以下值：</p>
 <ul>
 <li><code translate="no" v-pre>warning</code></li>
 <li><code translate="no" v-pre>error</code></li>
-<li><code translate="no" v-pre>info</code> (默认)</li>
+<li><code translate="no" v-pre>info</code>（默认）</li>
 <li><code translate="no" v-pre>success</code></li>
 </ul>
 <p>示例：</p>
@@ -314,33 +335,33 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
 </doc-codeblock></div>
 <h2 id="变量">变量</h2>
-<p>变量用于在脚本中存储和操作数据，可以使用命令或宏。变量可以是以下类型之一：</p>
+<p>变量用于在脚本中存储和操作数据，可通过命令或宏来使用。变量分为以下类型：</p>
 <ul>
-<li>本地变量 — 保存到当前聊天的元数据中，对其唯一。</li>
-<li>全局变量 — 保存到 settings.json 中，在整个应用程序中都存在。</li>
+<li>局部变量 — 保存到当前聊天的元数据中，仅对该聊天有效。</li>
+<li>全局变量 — 保存到 settings.json 中，在整个应用中都存在。</li>
 </ul>
 <ol>
-<li><code translate="no" v-pre>/getvar name</code> 或 <code translate="no" v-pre>{{getvar\:\:name}}</code> — 获取本地变量的值。</li>
-<li><code translate="no" v-pre>/setvar key=name value</code> 或 <code translate="no" v-pre>{{setvar::name::value}}</code> — 设置本地变量的值。</li>
-<li><code translate="no" v-pre>/addvar key=name increment</code> 或 <code translate="no" v-pre>{{addvar::name::increment}}</code> — 将 <code translate="no" v-pre>increment</code> 添加到本地变量的值中。</li>
-<li><code translate="no" v-pre>/incvar name</code> 或 <code translate="no" v-pre>{{incvar::name}}</code> — 将本地变量的值增加 1。</li>
-<li><code translate="no" v-pre>/decvar name</code> 或 <code translate="no" v-pre>{{decvar::name}}</code> — 将本地变量的值减少 1。</li>
+<li><code translate="no" v-pre>/getvar name</code> 或 <code translate="no" v-pre>{{getvar::name}}</code> — 获取局部变量的值。</li>
+<li><code translate="no" v-pre>/setvar key=name value</code> 或 <code translate="no" v-pre>{{setvar::name::value}}</code> — 设置局部变量的值。</li>
+<li><code translate="no" v-pre>/addvar key=name increment</code> 或 <code translate="no" v-pre>{{addvar::name::increment}}</code> — 将 <code translate="no" v-pre>increment</code> 加到局部变量的值上。</li>
+<li><code translate="no" v-pre>/incvar name</code> 或 <code translate="no" v-pre>{{incvar::name}}</code> — 将局部变量的值增加 1。</li>
+<li><code translate="no" v-pre>/decvar name</code> 或 <code translate="no" v-pre>{{decvar::name}}</code> — 将局部变量的值减少 1。</li>
 <li><code translate="no" v-pre>/getglobalvar name</code> 或 <code translate="no" v-pre>{{getglobalvar::name}}</code> — 获取全局变量的值。</li>
 <li><code translate="no" v-pre>/setglobalvar key=name</code> 或 <code translate="no" v-pre>{{setglobalvar::name::value}}</code> — 设置全局变量的值。</li>
-<li><code translate="no" v-pre>/addglobalvar key=name</code> 或 <code translate="no" v-pre>{{addglobalvar::name:increment}}</code> — 将 <code translate="no" v-pre>increment</code> 添加到全局变量的值中。</li>
+<li><code translate="no" v-pre>/addglobalvar key=name</code> 或 <code translate="no" v-pre>{{addglobalvar::name:increment}}</code> — 将 <code translate="no" v-pre>increment</code> 加到全局变量的值上。</li>
 <li><code translate="no" v-pre>/incglobalvar name</code> 或 <code translate="no" v-pre>{{incglobalvar::name}}</code> — 将全局变量的值增加 1。</li>
 <li><code translate="no" v-pre>/decglobalvar name</code> 或 <code translate="no" v-pre>{{decglobalvar::name}}</code> — 将全局变量的值减少 1。</li>
-<li><code translate="no" v-pre>/flushvar name</code> — 删除本地变量的值。</li>
+<li><code translate="no" v-pre>/flushvar name</code> — 删除局部变量的值。</li>
 <li><code translate="no" v-pre>/flushglobalvar name</code> — 删除全局变量的值。</li>
 </ol>
 <ul>
-<li>之前未定义的变量的默认值是空字符串，或者如果首次在 <code translate="no" v-pre>/addvar</code>、<code translate="no" v-pre>/incvar</code>、<code translate="no" v-pre>/decvar</code> 命令中使用，则为零。</li>
-<li><code translate="no" v-pre>/addvar</code> 命令中的增量如果增量和变量值都可以转换为数字，则执行加法或减法，否则执行字符串连接。</li>
-<li>如果命令参数接受变量名，并且同名的本地和全局变量都存在，则<em>本地变量</em>优先。</li>
-<li>所有用于变量操作的<em>斜杠命令</em>都将结果值写入管道供下一个命令使用。</li>
-<li>对于<em>宏</em>，只有 &quot;get&quot;、&quot;inc&quot; 和 &quot;dec&quot; 类型的宏返回值，&quot;add&quot; 和 &quot;set&quot; 则替换为空字符串。</li>
+<li>未定义变量的默认值为空字符串，或者当它首次在 <code translate="no" v-pre>/addvar</code>、<code translate="no" v-pre>/incvar</code>、<code translate="no" v-pre>/decvar</code> 命令中使用时默认为零。</li>
+<li><code translate="no" v-pre>/addvar</code> 命令中的增量，若增量和变量值都能转换为数字则执行加减运算，否则进行字符串拼接。</li>
+<li>若命令参数接受变量名，且同名的局部变量和全局变量都存在，则<em>局部变量</em>优先。</li>
+<li>所有用于变量操作的<em>斜杠命令</em>都会将结果值写入管道，供下一条命令使用。</li>
+<li>对于<em>宏</em>，只有&quot;get&quot;、&quot;inc&quot;和&quot;dec&quot;类型的宏会返回值，&quot;add&quot;和&quot;set&quot;则被替换为空字符串。</li>
 </ul>
-<p>现在，让我们考虑以下示例：</p>
+<p>现在，让我们看一下以下示例：</p>
 <div id="变量-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
@@ -350,12 +371,12 @@
 /imagine</code></pre>
 </doc-codeblock></div>
 <ol>
-<li>用户输入的值保存在名为 <code translate="no" v-pre>SDinput</code> 的本地变量中。</li>
-<li><code translate="no" v-pre>getvar</code> 宏用于在 <code translate="no" v-pre>/echo</code> 命令中显示值。</li>
+<li>用户输入的值被保存到名为 <code translate="no" v-pre>SDinput</code> 的局部变量中。</li>
+<li><code translate="no" v-pre>getvar</code> 宏用于在 <code translate="no" v-pre>/echo</code> 命令中显示该值。</li>
 <li><code translate="no" v-pre>getvar</code> 命令用于检索变量的值并通过管道传递。</li>
-<li>该值传递给 <code translate="no" v-pre>/imagine</code> 命令（由图像生成插件提供）作为其输入提示。</li>
+<li>该值被传递给 <code translate="no" v-pre>/imagine</code> 命令（由图像生成插件提供），作为其输入提示词。</li>
 </ol>
-<p>由于变量在脚本执行之间保存且不会被清除，您可以在其他脚本中和通过宏引用该变量，它将解析为与示例脚本执行期间相同的值。要确保值被丢弃，请在脚本中添加 <code translate="no" v-pre>/flushvar</code> 命令。</p>
+<p>由于变量在脚本执行之间会被保存而不会被清除，你可以在其他脚本中以及通过宏引用该变量，它将解析为示例脚本执行期间的相同值。若要确保值被丢弃，请在脚本中添加 <code translate="no" v-pre>/flushvar</code> 命令。</p>
 <h3 id="数组和对象">数组和对象</h3>
 <p>变量值可以包含 JSON 序列化的数组或键值对（对象）。</p>
 <p>示例：</p>
@@ -363,45 +384,54 @@
 <li>数组：<code translate="no" v-pre>[&quot;apple&quot;,&quot;banana&quot;,&quot;orange&quot;]</code></li>
 <li>对象：<code translate="no" v-pre>{&quot;fruits&quot;:[&quot;apple&quot;,&quot;banana&quot;,&quot;orange&quot;]}</code></li>
 </ul>
-<p>以下修改可以应用于命令以处理这些变量：</p>
+<p>可以对命令应用以下修改来操作这些变量：</p>
 <ul>
-<li><code translate="no" v-pre>/len</code> 命令获取数组中的项目数。</li>
-<li><code translate="no" v-pre>index=number/string</code> 命名参数可以添加到 <code translate="no" v-pre>/getvar</code> 或 <code translate="no" v-pre>/setvar</code> 及其全局对应项，以通过数组的从零开始的索引或对象的字符串键获取或设置子值。
+<li><code translate="no" v-pre>/len</code> 命令获取数组中的项目数量。</li>
+<li><code translate="no" v-pre>index=number/string</code> 具名参数可以添加到 <code translate="no" v-pre>/getvar</code> 或 <code translate="no" v-pre>/setvar</code> 及其全局对应命令中，通过数组的从零开始的索引或对象的字符串键来获取或设置子值。
 <ul>
-<li>如果在不存在的变量上使用数字索引，该变量将被创建为空数组 <code translate="no" v-pre>[]</code>。</li>
-<li>如果在不存在的变量上使用字符串索引，该变量将被创建为空对象 <code translate="no" v-pre>{}</code>。</li>
+<li>若对不存在的变量使用数字索引，该变量将被创建为空数组 <code translate="no" v-pre>[]</code>。</li>
+<li>若对不存在的变量使用字符串索引，该变量将被创建为空对象 <code translate="no" v-pre>{}</code>。</li>
 </ul>
 </li>
-<li><code translate="no" v-pre>/addvar</code> 和 <code translate="no" v-pre>/addglobalvar</code> 命令支持将新值推送到数组类型的变量。</li>
+<li><code translate="no" v-pre>/addvar</code> 和 <code translate="no" v-pre>/addglobalvar</code> 命令支持向数组类型的变量推入新值。</li>
 </ul>
-<h2 id="流程控制---条件语句">流程控制 - 条件语句</h2>
-<p>您可以使用 <code translate="no" v-pre>/if</code> 命令创建基于定义规则分支执行的条件表达式。</p>
-<p><code translate="no" v-pre>/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></p>
-<p>让我们看看以下示例：</p>
-<div id="流程控制---条件语句-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h2 id="流程控制---条件判断">流程控制 - 条件判断</h2>
+<p>你可以使用 <code translate="no" v-pre>/if</code> 命令创建条件表达式，根据定义的规则分支执行。</p>
+<div id="流程控制---条件判断-code-1" class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}</code></pre>
+</doc-codeblock></div>
+<p>注意，以下语法：</p>
+<div id="流程控制---条件判断-code-2" class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></pre>
+</doc-codeblock></div>
+<p>也是支持的，但使用 <code translate="no" v-pre>{: 闭包 :}</code> 能帮助你编写更整洁的脚本。</p>
+<p>让我们看一下以下示例：</p>
+<div id="流程控制---条件判断-code-3" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
-/if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
+/if left={{pipe}} right=&quot;black tea&quot; rule=eq else={: /echo You shall not pass | /abort :} {: /echo Welcome to the club, {{user}} :}</code></pre>
 </doc-codeblock></div>
-<p>这个脚本根据用户输入评估所需值，并根据输入值显示不同的消息。</p>
+<p>这个脚本将用户输入与一个必需值进行比较，并根据输入值显示不同的消息。</p>
 <h3 id="if-的参数"><code translate="no" v-pre>/if</code> 的参数</h3>
 <ol>
-<li><code translate="no" v-pre>left</code> 是第一个操作数。让我们称之为 A。</li>
-<li><code translate="no" v-pre>right</code> 是第二个操作数。让我们称之为 B。</li>
-<li><code translate="no" v-pre>rule</code> 是要应用于操作数的操作。</li>
-<li><code translate="no" v-pre>else</code> 是可选的子命令字符串，如果布尔比较结果为 false 则执行。</li>
-<li>未命名参数是如果布尔比较结果为 true 则执行的子命令。</li>
+<li><code translate="no" v-pre>left</code> 是第一个操作数，我们称之为 A。</li>
+<li><code translate="no" v-pre>right</code> 是第二个操作数，我们称之为 B。</li>
+<li><code translate="no" v-pre>rule</code> 是应用于操作数的运算。</li>
+<li><code translate="no" v-pre>else</code> 是可选的子命令字符串，当布尔比较结果为假时执行。</li>
+<li>匿名参数是当布尔比较结果为真时要执行的子命令。</li>
 </ol>
-<p>操作数值按以下顺序评估：</p>
+<p>操作数值按以下顺序求值：</p>
 <ol>
 <li>数字字面量</li>
-<li>本地变量名</li>
+<li>局部变量名</li>
 <li>全局变量名</li>
 <li>字符串字面量</li>
 </ol>
-<p>命名参数的字符串值可以用引号转义以允许多词字符串。然后丢弃引号。</p>
+<p>具名参数的字符串值可以用引号括起来以允许多词字符串，引号随后会被丢弃。</p>
 <h3 id="布尔运算">布尔运算</h3>
-<p>支持以下布尔比较规则。应用于操作数的操作结果为 true 或 false 值。</p>
+<p>支持的布尔比较规则如下。对操作数应用运算后得到真或假的结果。</p>
 <ol>
 <li><code translate="no" v-pre>eq</code>（等于）=&gt; A = B</li>
 <li><code translate="no" v-pre>neq</code>（不等于）=&gt; A != B</li>
@@ -409,41 +439,41 @@
 <li><code translate="no" v-pre>gt</code>（大于）=&gt; A &gt; B</li>
 <li><code translate="no" v-pre>lte</code>（小于或等于）=&gt; A &lt;= B</li>
 <li><code translate="no" v-pre>gte</code>（大于或等于）=&gt; A &gt;= B</li>
-<li><code translate="no" v-pre>not</code>（一元否定）=&gt; !A</li>
-<li><code translate="no" v-pre>in</code>（包含子字符串）=&gt; A 包含 B，不区分大小写</li>
-<li><code translate="no" v-pre>nin</code>（不包含子字符串）=&gt; A 不包含 B，不区分大小写</li>
+<li><code translate="no" v-pre>not</code>（一元取反）=&gt; !A</li>
+<li><code translate="no" v-pre>in</code>（包含子串）=&gt; A 包含 B，不区分大小写</li>
+<li><code translate="no" v-pre>nin</code>（不包含子串）=&gt; A 不包含 B，不区分大小写</li>
 </ol>
 <h3 id="子命令">子命令</h3>
-<p>子命令是包含要执行的斜杠命令列表的字符串。</p>
+<p>子命令是包含一系列斜杠命令的字符串。</p>
 <ol>
-<li>要在子命令中使用命令批处理，命令分隔符字符应该被转义（见下文）。</li>
-<li>由于宏值在进入条件时执行，而不是在执行子命令时执行，因此可以额外转义宏以延迟其评估到子命令执行时间。</li>
-<li>子命令执行的结果通过管道传递给 <code translate="no" v-pre>/if</code> 之后的命令。</li>
-<li>遇到 <code translate="no" v-pre>/abort</code> 命令时中断脚本执行。</li>
+<li>要在子命令中使用命令批处理，命令分隔符应被转义（见下文）。</li>
+<li>由于宏值在进入条件判断时就被执行，而非在子命令执行时，宏可以额外被转义以延迟其求值到子命令执行时。</li>
+<li>子命令执行的结果会通过管道传递给 <code translate="no" v-pre>/if</code> 之后的命令。</li>
+<li><code translate="no" v-pre>/abort</code> 命令在遇到时会中断脚本执行。</li>
 </ol>
 <p><code translate="no" v-pre>/if</code> 命令可以用作三元运算符。
-以下示例将在变量 <code translate="no" v-pre>a</code> 等于 5 时将 &quot;true&quot; 字符串传递给下一个命令，否则传递 &quot;false&quot; 字符串。</p>
+以下示例将在变量 <code translate="no" v-pre>a</code> 等于 5 时向下一条命令传递字符串 &quot;true&quot;，否则传递 &quot;false&quot;。</p>
 <div id="子命令-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else={: /pass false:} {: /pass true :} |
 /echo</code></pre>
 </doc-codeblock></div>
 <h2 id="转义序列">转义序列</h2>
 <h3 id="宏">宏</h3>
-<p>宏的转义工作方式与以前一样。但是，使用闭包时，您需要转义宏的频率会大大降低。可以转义两个开始的大括号，或者同时转义开始和结束的大括号对。</p>
+<p>宏的转义方式与之前相同。但使用闭包后，你需要转义宏的频率会大大降低。可以只转义两个开头的花括号，也可以同时转义开头和结尾的括号对。</p>
 <div id="宏-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
 /echo \{\{char\}\}</code></pre>
 </doc-codeblock></div>
 <h3 id="管道">管道</h3>
-<p>在闭包中不需要转义管道（当用作命令分隔符时）。在任何想要使用字面管道字符而不是命令分隔符的地方，都需要转义它。</p>
+<p>在闭包中，管道不需要转义（作为命令分隔符使用时）。在其他所有需要使用字面管道字符而非命令分隔符的地方，都需要对其进行转义。</p>
 <div id="管道-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
 /echo title=a\|b c\|d |</code></pre>
 </doc-codeblock></div>
-<p>使用解析器标志 <code translate="no" v-pre>STRICT_ESCAPING</code> 时，不需要在引用值中转义管道。</p>
+<p>使用解析器标志 <code translate="no" v-pre>STRICT_ESCAPING</code> 后，引号中的管道无需转义。</p>
 <div id="管道-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
@@ -451,32 +481,32 @@
 /echo title=a\|b c\|d |</code></pre>
 </doc-codeblock></div>
 <h3 id="引号">引号</h3>
-<p>要在引号值内使用字面引号字符，必须转义该字符。</p>
+<p>要在引号值内使用字面引号字符，该字符必须被转义。</p>
 <div id="引号-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
 </doc-codeblock></div>
 <h3 id="空格">空格</h3>
-<p>要在命名参数的值中使用空格，您必须用引号括起该值，或者转义空格字符。</p>
+<p>要在具名参数的值中使用空格，你需要将值用引号括起来，或者对空格字符进行转义。</p>
 <div id="空格-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
 /echo title=a\ b c d</code></pre>
 </doc-codeblock></div>
-<h3 id="闭包分隔符">闭包分隔符</h3>
-<p>如果要使用用于标记闭包开始或结束的字符组合，必须使用单个反斜杠转义该序列。</p>
-<div id="闭包分隔符-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="闭包定界符">闭包定界符</h3>
+<p>如果要使用标记闭包开头或结尾的字符组合，必须用单个反斜杠对序列进行转义。</p>
+<div id="闭包定界符-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo \{: |
 /echo \:}</code></pre>
 </doc-codeblock></div>
-<h2 id="管道中断符">管道中断符</h2>
-<div id="管道中断符-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h2 id="管道断路器">管道断路器</h2>
+<div id="管道断路器-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">||</code></pre>
 </doc-codeblock></div>
-<p>要防止前一个命令的输出自动注入到下一个命令的未命名参数中，请在两个命令之间放置双管道符。</p>
-<div id="管道中断符-code-2" class="codeblock-wrapper"><doc-codeblock>
+<p>为了防止上一条命令的输出被自动注入为下一条命令的匿名参数，请在两条命令之间放置双管道符。</p>
+<div id="管道断路器-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
 /world</code></pre>
@@ -486,9 +516,9 @@
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
 </doc-codeblock></div>
-<p>闭包（块语句、lambda、匿名函数，随你怎么称呼）是包装在 <code translate="no" v-pre>{:</code> 和 <code translate="no" v-pre>:}</code> 之间的一系列命令，只有在执行到代码的该部分时才会被评估。</p>
+<p>闭包（块语句、lambda、匿名函数，随你怎么称呼）是一系列包裹在 <code translate="no" v-pre>{:</code> 和 <code translate="no" v-pre>:}</code> 之间的命令，只有在代码的那部分被执行时才会被求值。</p>
 <h3 id="子命令-1">子命令</h3>
-<p>闭包使子命令的使用变得更加容易，并且不再需要转义管道符和宏。</p>
+<p>闭包使子命令的使用更加简便，无需转义管道和宏。</p>
 <div id="子命令-1-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// if without closures |
@@ -514,7 +544,7 @@
     :}</code></pre>
 </doc-codeblock></div>
 <h3 id="作用域">作用域</h3>
-<p>闭包有自己的作用域并支持作用域变量。作用域变量使用 <code translate="no" v-pre>/let</code> 声明，使用 <code translate="no" v-pre>/var</code> 设置和检索其值。获取作用域变量的另一种方法是使用 <code translate="no" v-pre>{{var::}}</code> 宏。</p>
+<p>闭包拥有自己的作用域并支持作用域变量。作用域变量使用 <code translate="no" v-pre>/let</code> 声明，使用 <code translate="no" v-pre>/var</code> 设置和获取其值。获取作用域变量的另一种方式是 <code translate="no" v-pre>{{var::}}</code> 宏。</p>
 <div id="作用域-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let x |
@@ -523,8 +553,8 @@
 /var y |
 /echo x is {{var::x}} and y is {{pipe}}.</code></pre>
 </doc-codeblock></div>
-<p>在闭包内，您可以访问在同一闭包或其祖先之一中声明的所有变量。您无法访问在闭包的后代中声明的变量。
-如果声明了与在闭包的祖先之一中声明的变量同名的变量，则在此闭包及其后代中无法访问祖先变量。</p>
+<p>在闭包内，你可以访问在该闭包或其任一祖先中声明的所有变量。你无法访问在闭包的后代中声明的变量。<br />
+若某个变量与闭包某个祖先中声明的变量同名，则在该闭包及其后代中无法访问祖先的变量。</p>
 <div id="作用域-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let x this is root x |
@@ -544,20 +574,20 @@
 :}() |
 /echo called from root: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot;</code></pre>
 </doc-codeblock></div>
-<h3 id="命名闭包">命名闭包</h3>
-<div id="命名闭包-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="具名闭包">具名闭包</h3>
+<div id="具名闭包-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
 </doc-codeblock></div>
-<p>闭包可以分配给变量（仅作用域变量），以便稍后调用或用作子命令。</p>
-<div id="命名闭包-code-2" class="codeblock-wrapper"><doc-codeblock>
+<p>闭包可以被赋值给变量（仅限作用域变量），以便在稍后调用或作为子命令使用。</p>
+<div id="具名闭包-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {:
     /echo this is my closure
 :} |
 /:myClosure</code></pre>
 </doc-codeblock></div>
-<div id="命名闭包-code-3" class="codeblock-wrapper"><doc-codeblock>
+<div id="具名闭包-code-3" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {:
     /echo this is my closure |
@@ -565,14 +595,14 @@
 :} |
 /times 3 {{var::myClosure}}</code></pre>
 </doc-codeblock></div>
-<p><code translate="no" v-pre>/:</code> 也可用于执行快速回复，因为它只是 <code translate="no" v-pre>/run</code> 的简写。</p>
-<div id="命名闭包-code-4" class="codeblock-wrapper"><doc-codeblock>
+<p><code translate="no" v-pre>/:</code> 也可以用于执行快速回复，它只是 <code translate="no" v-pre>/run</code> 的简写形式。</p>
+<div id="具名闭包-code-4" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
 /run QrSetName.QrButtonLabel</code></pre>
 </doc-codeblock></div>
 <h3 id="闭包参数">闭包参数</h3>
-<p>命名闭包可以接受命名参数，就像斜杠命令一样。参数可以有默认值。</p>
+<p>具名闭包可以接受具名参数，就像斜杠命令一样。参数可以有默认值。</p>
 <div id="闭包参数-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
@@ -580,10 +610,10 @@
 :} |
 /:myClosure b=10</code></pre>
 </doc-codeblock></div>
-<h3 id="闭包和管道参数">闭包和管道参数</h3>
-<p>父闭包的管道值不会自动注入到子闭包的第一个命令中。
-您仍然可以使用 <code translate="no" v-pre>{{pipe}}</code> 显式引用父闭包的管道值，但如果将闭包内第一个命令的未命名参数留空，该值将<em>不会</em>被自动注入。</p>
-<div id="闭包和管道参数-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="闭包与管道参数">闭包与管道参数</h3>
+<p>来自父闭包的管道值不会被自动注入到子闭包的第一条命令中。<br />
+你仍然可以通过 <code translate="no" v-pre>{{pipe}}</code> 显式引用父闭包的管道值，但如果闭包内第一条命令的匿名参数留空，该值将<em>不会</em>被自动注入。</p>
+<div id="闭包与管道参数-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/* This used to attempt to change the model to &quot;foo&quot;
    because the value &quot;foo&quot; from the /echo outside of
@@ -598,7 +628,7 @@
 	/echo |
 :} |</code></pre>
 </doc-codeblock></div>
-<div id="闭包和管道参数-code-2" class="codeblock-wrapper"><doc-codeblock>
+<div id="闭包与管道参数-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/* You can still recreate the old behavior by
    explicitly using the {{pipe}} macro.
@@ -609,13 +639,13 @@
 	/echo |
 :} |</code></pre>
 </doc-codeblock></div>
-<h3 id="立即执行的闭包">立即执行的闭包</h3>
-<div id="立即执行的闭包-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="立即执行闭包">立即执行闭包</h3>
+<div id="立即执行闭包-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
 </doc-codeblock></div>
-<p>闭包可以立即执行，这意味着它们将被替换为其返回值。这在没有明确支持闭包的地方很有用，并且可以缩短一些否则需要大量中间变量的命令。</p>
-<div id="立即执行的闭包-code-2" class="codeblock-wrapper"><doc-codeblock>
+<p>闭包可以立即执行，这意味着它们将被替换为其返回值。这在没有显式闭包支持的地方非常有用，也能简化一些原本需要大量中间变量的命令。</p>
+<div id="立即执行闭包-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
 /len foo |
@@ -624,13 +654,13 @@
 /var lenOfBar {{pipe}} |
 /if left={{var::lenOfFoo}} rule=eq right={{var:lenOfBar}} /echo yay!</code></pre>
 </doc-codeblock></div>
-<div id="立即执行的闭包-code-3" class="codeblock-wrapper"><doc-codeblock>
+<div id="立即执行闭包-code-3" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!</code></pre>
 </doc-codeblock></div>
-<p>除了运行保存在作用域变量中的命名闭包外，<code translate="no" v-pre>/run</code> 命令还可用于立即执行闭包。</p>
-<div id="立即执行的闭包-code-4" class="codeblock-wrapper"><doc-codeblock>
+<p>除了运行保存在作用域变量中的具名闭包外，<code translate="no" v-pre>/run</code> 命令也可以用于立即执行闭包。</p>
+<div id="立即执行闭包-code-4" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/run {:
 	/add 1 2 3 4 |
@@ -642,7 +672,7 @@
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
 </doc-codeblock></div>
-<p>注释是脚本代码中人类可读的解释或标注。注释不会中断管道。</p>
+<p>注释是脚本代码中供人阅读的解释或标注。注释不会中断管道。</p>
 <div id="注释-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// this is a comment |
@@ -650,7 +680,7 @@
 /# this is also a comment</code></pre>
 </doc-codeblock></div>
 <h3 id="块注释">块注释</h3>
-<p>块注释可用于快速注释掉多个命令。它们不会在管道符处终止。</p>
+<p>块注释可用于快速注释掉多条命令。它们不会在管道处终止。</p>
 <div id="块注释-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo foo |
@@ -662,17 +692,17 @@
 </doc-codeblock></div>
 <h2 id="流程控制">流程控制</h2>
 <h3 id="循环while-和-times">循环：<code translate="no" v-pre>/while</code> 和 <code translate="no" v-pre>/times</code></h3>
-<p>如果需要在循环中运行某些命令直到满足特定条件，请使用 <code translate="no" v-pre>/while</code> 命令。</p>
+<p>如果需要循环运行某些命令直到满足特定条件，请使用 <code translate="no" v-pre>/while</code> 命令。</p>
 <div id="循环while-和-times-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
 </doc-codeblock></div>
-<p>在循环的每一步中，它会将变量 A 的值与变量 B 的值进行比较，如果条件为真，则执行引号中的任何有效斜杠命令，否则退出循环。此命令不会向输出管道写入任何内容。</p>
+<p>循环的每一步都会将变量 A 的值与变量 B 的值进行比较，若条件为真则执行引号中的任意有效斜杠命令，否则退出循环。此命令不向输出管道写入任何内容。</p>
 <h4 id="while-的参数"><code translate="no" v-pre>/while</code> 的参数</h4>
-<p><strong>可用的布尔比较集、变量处理、字面值和子命令与 <code translate="no" v-pre>/if</code> 命令相同。</strong></p>
-<p>可选的 <code translate="no" v-pre>guard</code> 命名参数（默认为 <code translate="no" v-pre>on</code>）用于防止无限循环，将迭代次数限制为 100 次。
-要禁用并允许无限循环，请设置 <code translate="no" v-pre>guard=off</code>。</p>
-<p>此示例将 <code translate="no" v-pre>i</code> 的值加 1 直到达到 10，然后输出结果值（在这种情况下为 10）。</p>
+<p><strong>可用的布尔比较集合、变量处理、字面值和子命令与 <code translate="no" v-pre>/if</code> 命令相同。</strong></p>
+<p>可选的 <code translate="no" v-pre>guard</code> 具名参数（默认为 <code translate="no" v-pre>on</code>）用于防止无限循环，将迭代次数限制为 100 次。
+若要禁用保护并允许无限循环，请设置 <code translate="no" v-pre>guard=off</code>。</p>
+<p>以下示例将 <code translate="no" v-pre>i</code> 的值每次加 1 直到达到 10，然后输出结果值（本例中为 10）。</p>
 <div id="while-的参数-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
@@ -681,24 +711,24 @@
 /flushvar i</code></pre>
 </doc-codeblock></div>
 <h4 id="times-的参数"><code translate="no" v-pre>/times</code> 的参数</h4>
-<p>运行子命令指定的次数。</p>
-<p><code translate="no" v-pre>/times (repeats) &quot;(command)&quot;</code> — 引号中的任何有效斜杠命令重复多次，例如 <code translate="no" v-pre>/setvar key=i 1 | /times 5 &quot;/addvar key=i 1&quot;</code> 将 &quot;i&quot; 的值加 1 共 5 次。</p>
+<p>以指定次数运行子命令。</p>
+<p><code translate="no" v-pre>/times (repeats) &quot;(command)&quot;</code> — 将引号中的任意有效斜杠命令重复指定次数，例如 <code translate="no" v-pre>/setvar key=i 1 | /times 5 &quot;/addvar key=i 1&quot;</code> 将 &quot;i&quot; 的值加 1，共 5 次。</p>
 <ul>
-<li>{{timesIndex}} 被替换为迭代编号（从零开始），例如 <code translate="no" v-pre>/times 4 &quot;/echo {{timesIndex}}&quot;</code> 回显数字 0 到 4。</li>
-<li>循环默认限制为 100 次迭代，传递 <code translate="no" v-pre>guard=off</code> 以禁用。</li>
+<li><code translate="no" v-pre>{{timesIndex}}</code> 将被替换为迭代编号（从零开始），例如 <code translate="no" v-pre>/times 4 {:/echo {{timesIndex}}:}</code> 将依次输出数字 0 到 3。</li>
+<li>循环默认限制为 100 次迭代，传入 <code translate="no" v-pre>guard=off</code> 可禁用限制。</li>
 </ul>
 <h3 id="跳出循环和闭包">跳出循环和闭包</h3>
 <div id="跳出循环和闭包-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/break |</code></pre>
 </doc-codeblock></div>
-<p><code translate="no" v-pre>/break</code> 命令可用于提前跳出循环（<code translate="no" v-pre>/while</code> 或 <code translate="no" v-pre>/times</code>）或闭包。<code translate="no" v-pre>/break</code> 的未命名参数可用于传递与当前管道不同的值。
+<p><code translate="no" v-pre>/break</code> 命令可用于提前跳出循环（<code translate="no" v-pre>/while</code> 或 <code translate="no" v-pre>/times</code>）或闭包。<code translate="no" v-pre>/break</code> 的匿名参数可用于传递不同于当前管道的值。<br />
 <code translate="no" v-pre>/break</code> 目前在以下命令中实现：</p>
 <ul>
 <li><code translate="no" v-pre>/while</code> - 提前退出循环</li>
 <li><code translate="no" v-pre>/times</code> - 提前退出循环</li>
-<li><code translate="no" v-pre>/run</code>（带闭包或通过变量的闭包）- 提前退出闭包</li>
-<li><code translate="no" v-pre>/:</code>（带闭包）- 提前退出闭包</li>
+<li><code translate="no" v-pre>/run</code>（使用闭包或通过变量引用的闭包）- 提前退出闭包</li>
+<li><code translate="no" v-pre>/:</code>（使用闭包）- 提前退出闭包</li>
 </ul>
 <div id="跳出循环和闭包-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
@@ -744,31 +774,31 @@
 <h2 id="数学运算">数学运算</h2>
 <ul>
 <li>以下所有运算都接受一系列数字或变量名，并将结果输出到管道。</li>
-<li>无效运算（例如除以零）以及导致 NaN 值或无穷大的运算返回零。</li>
-<li>乘法、加法、最小值和最大值接受无限数量的参数，用空格分隔。</li>
-<li>减法、除法、指数运算和模运算接受用空格分隔的两个参数。</li>
-<li>正弦、余弦、自然对数、平方根、绝对值和四舍五入接受一个参数。</li>
+<li>无效运算（如除以零）以及结果为 NaN 或无穷大的运算将返回零。</li>
+<li>乘法、加法、最小值和最大值接受以空格分隔的无限数量的参数。</li>
+<li>减法、除法、幂运算和取模接受以空格分隔的两个参数。</li>
+<li>正弦、余弦、自然对数、平方根、绝对值和取整接受一个参数。</li>
 </ul>
 <p><strong>运算列表：</strong></p>
 <ol>
-<li><code translate="no" v-pre>/add (a b c d)</code> — 对值集进行加法运算，例如 <code translate="no" v-pre>/add 10 i 30 j</code></li>
-<li><code translate="no" v-pre>/mul (a b c d)</code> — 对值集进行乘法运算，例如 <code translate="no" v-pre>/mul 10 i 30 j</code></li>
-<li><code translate="no" v-pre>/max (a b c d)</code> — 从值集中返回最大值，例如 <code translate="no" v-pre>/max 1 0 4 k</code></li>
-<li><code translate="no" v-pre>/min (a b c d)</code> — 从值集中返回最小值，例如 <code translate="no" v-pre>/min 5 4 i 2</code></li>
-<li><code translate="no" v-pre>/sub (a b)</code> — 对两个值进行减法运算，例如 <code translate="no" v-pre>/sub i 5</code></li>
-<li><code translate="no" v-pre>/div (a b)</code> — 对两个值进行除法运算，例如 <code translate="no" v-pre>/div 10 i</code></li>
-<li><code translate="no" v-pre>/mod (a b)</code> — 对两个值进行模运算，例如 <code translate="no" v-pre>/mod i 2</code></li>
-<li><code translate="no" v-pre>/pow (a b)</code> — 对两个值进行幂运算，例如 <code translate="no" v-pre>/pow i 2</code></li>
-<li><code translate="no" v-pre>/sin (a)</code> — 对值进行正弦运算，例如 <code translate="no" v-pre>/sin i</code></li>
-<li><code translate="no" v-pre>/cos (a)</code> — 对值进行余弦运算，例如 <code translate="no" v-pre>/cos i</code></li>
-<li><code translate="no" v-pre>/log (a)</code> — 对值进行自然对数运算，例如 <code translate="no" v-pre>/log i</code></li>
-<li><code translate="no" v-pre>/abs (a)</code> — 对值进行绝对值运算，例如 <code translate="no" v-pre>/abs -10</code></li>
-<li><code translate="no" v-pre>/sqrt (a)</code> — 对值进行平方根运算，例如 <code translate="no" v-pre>/sqrt 9</code></li>
-<li><code translate="no" v-pre>/round (a)</code> — 对值进行四舍五入到最接近整数的运算，例如 <code translate="no" v-pre>/round 3.14</code></li>
-<li><code translate="no" v-pre>/rand (round=round|ceil|floor from=number=0 to=number=1)</code> — 返回介于 from 和 to 之间的随机数，例如 <code translate="no" v-pre>/rand</code> 或 <code translate="no" v-pre>/rand 10</code> 或 <code translate="no" v-pre>/rand from=5 to=10</code>。范围是包含的。返回的值将包含小数部分。使用 <code translate="no" v-pre>round</code> 命名参数获取整数值，例如 <code translate="no" v-pre>/rand round=ceil</code> 向上舍入，<code translate="no" v-pre>round=floor</code> 向下舍入，<code translate="no" v-pre>round=round</code> 舍入到最接近的值。</li>
+<li><code translate="no" v-pre>/add (a b c d)</code> — 对一组值执行加法，例如 <code translate="no" v-pre>/add 10 i 30 j</code></li>
+<li><code translate="no" v-pre>/mul (a b c d)</code> — 对一组值执行乘法，例如 <code translate="no" v-pre>/mul 10 i 30 j</code></li>
+<li><code translate="no" v-pre>/max (a b c d)</code> — 返回一组值中的最大值，例如 <code translate="no" v-pre>/max 1 0 4 k</code></li>
+<li><code translate="no" v-pre>/min (a b c d)</code> — 返回一组值中的最小值，例如 <code translate="no" v-pre>/min 5 4 i 2</code></li>
+<li><code translate="no" v-pre>/sub (a b)</code> — 对两个值执行减法，例如 <code translate="no" v-pre>/sub i 5</code></li>
+<li><code translate="no" v-pre>/div (a b)</code> — 对两个值执行除法，例如 <code translate="no" v-pre>/div 10 i</code></li>
+<li><code translate="no" v-pre>/mod (a b)</code> — 对两个值执行取模运算，例如 <code translate="no" v-pre>/mod i 2</code></li>
+<li><code translate="no" v-pre>/pow (a b)</code> — 对两个值执行幂运算，例如 <code translate="no" v-pre>/pow i 2</code></li>
+<li><code translate="no" v-pre>/sin (a)</code> — 对一个值执行正弦运算，例如 <code translate="no" v-pre>/sin i</code></li>
+<li><code translate="no" v-pre>/cos (a)</code> — 对一个值执行余弦运算，例如 <code translate="no" v-pre>/cos i</code></li>
+<li><code translate="no" v-pre>/log (a)</code> — 对一个值执行自然对数运算，例如 <code translate="no" v-pre>/log i</code></li>
+<li><code translate="no" v-pre>/abs (a)</code> — 对一个值执行绝对值运算，例如 <code translate="no" v-pre>/abs -10</code></li>
+<li><code translate="no" v-pre>/sqrt (a)</code> — 对一个值执行平方根运算，例如 <code translate="no" v-pre>/sqrt 9</code></li>
+<li><code translate="no" v-pre>/round (a)</code> — 对一个值执行四舍五入到最近整数的运算，例如 <code translate="no" v-pre>/round 3.14</code></li>
+<li><code translate="no" v-pre>/rand (round=round|ceil|floor from=number=0 to=number=1)</code> — 返回 from 和 to 之间的随机数，例如 <code translate="no" v-pre>/rand</code> 或 <code translate="no" v-pre>/rand 10</code> 或 <code translate="no" v-pre>/rand from=5 to=10</code>。范围为闭区间。返回值将包含小数部分。使用 <code translate="no" v-pre>round</code> 具名参数可获取整数值，例如 <code translate="no" v-pre>/rand round=ceil</code> 向上取整，<code translate="no" v-pre>round=floor</code> 向下取整，<code translate="no" v-pre>round=round</code> 四舍五入。</li>
 </ol>
-<h3 id="示例-1获取半径为-50-的圆的面积">示例 1：获取半径为 50 的圆的面积。</h3>
-<div id="示例-1获取半径为-50-的圆的面积-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="示例-1计算半径为-50-的圆的面积">示例 1：计算半径为 50 的圆的面积</h3>
+<div id="示例-1计算半径为-50-的圆的面积-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
 /setvar key=r 50 |
@@ -776,7 +806,7 @@
 /round |
 /echo Circle area: {{pipe}}</code></pre>
 </doc-codeblock></div>
-<h3 id="示例-2计算-5-的阶乘">示例 2：计算 5 的阶乘。</h3>
+<h3 id="示例-2计算-5-的阶乘">示例 2：计算 5 的阶乘</h3>
 <div id="示例-2计算-5-的阶乘-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
@@ -789,12 +819,15 @@
 /flushvar i |
 /flushvar product</code></pre>
 </doc-codeblock></div>
-<h2 id="使用-llm">使用 LLM</h2>
-<p>脚本可以使用以下命令向当前连接的 LLM API 发出请求：</p>
+<h2 id="使用大语言模型">使用大语言模型</h2>
+<p>脚本可以使用以下命令向当前连接的大语言模型 API 发送请求：</p>
 <ul>
 <li><code translate="no" v-pre>/gen (prompt)</code> — 使用提供的提示词为所选角色生成文本，并包含聊天消息。</li>
 <li><code translate="no" v-pre>/genraw (prompt)</code> — 仅使用提供的提示词生成文本，忽略当前角色和聊天。</li>
-<li><code translate="no" v-pre>/trigger</code> — 触发正常生成（相当于单击&quot;发送&quot;按钮）。如果在群组聊天中，您可以选择提供基于 1 的群组成员索引或角色名称让他们回复，否则根据群组设置触发群组回合。</li>
+<li><code translate="no" v-pre>/trigger</code> — 触发一次普通生成（等同于点击&quot;发送&quot;按钮）。在群聊中，可以选择提供从 1 开始的群成员索引或角色名称让其回复，否则将根据群组设置触发群组轮次。</li>
+<li><code translate="no" v-pre>/swipe</code> — 对最后一条角色消息触发滑动。</li>
+<li><code translate="no" v-pre>/regenerate</code> — 重新生成最后一条角色消息。</li>
+<li><code translate="no" v-pre>/continue</code> — 尝试续写最后一条消息。</li>
 </ul>
 <h3 id="gen-和-genraw-的参数"><code translate="no" v-pre>/gen</code> 和 <code translate="no" v-pre>/genraw</code> 的参数</h3>
 <div id="gen-和-genraw-的参数-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -802,17 +835,19 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><code translate="no" v-pre>lock</code> — 可以是 <code translate="no" v-pre>on</code> 或 <code translate="no" v-pre>off</code>。指定在生成进行时是否应阻止用户输入。默认值：<code translate="no" v-pre>off</code>。</li>
-<li><code translate="no" v-pre>stop</code> — JSON 序列化的字符串数组。仅为此生成添加自定义停止字符串（如果 API 支持）。默认值：无。</li>
-<li><code translate="no" v-pre>instruct</code>（仅 <code translate="no" v-pre>/genraw</code>）— 可以是 <code translate="no" v-pre>on</code> 或 <code translate="no" v-pre>off</code>。允许在输入提示词上使用指令格式（如果启用了指令模式并且 API 支持）。设置为 <code translate="no" v-pre>off</code> 以强制纯提示词。默认值：<code translate="no" v-pre>on</code>。</li>
-<li><code translate="no" v-pre>as</code>（用于文本补全 API）— 可以是 <code translate="no" v-pre>system</code>（默认）或 <code translate="no" v-pre>char</code>。定义最后一行提示词的格式。<code translate="no" v-pre>char</code> 将使用角色名称，<code translate="no" v-pre>system</code> 将不使用或使用中性名称。</li>
+<li><code translate="no" v-pre>lock</code> — 可以是 <code translate="no" v-pre>on</code> 或 <code translate="no" v-pre>off</code>。指定在生成过程中是否应阻止用户输入。默认值：<code translate="no" v-pre>off</code>。</li>
+<li><code translate="no" v-pre>stop</code> — JSON 序列化的字符串数组。仅针对本次生成添加自定义停止字符串（如果 API 支持）。默认值：无。</li>
+<li><code translate="no" v-pre>instruct</code>（仅适用于 <code translate="no" v-pre>/genraw</code>）— 可以是 <code translate="no" v-pre>on</code> 或 <code translate="no" v-pre>off</code>。允许对输入提示词使用指令格式（如果启用了指令模式且 API 支持）。设置为 <code translate="no" v-pre>off</code> 可强制使用纯提示词。默认值：<code translate="no" v-pre>on</code>。</li>
+<li><code translate="no" v-pre>as</code>（用于文本补全 API）— 可以是 <code translate="no" v-pre>system</code>（默认）或 <code translate="no" v-pre>char</code>。定义最后一行提示词的格式化方式。<code translate="no" v-pre>char</code> 将使用角色名称，<code translate="no" v-pre>system</code> 将不使用名称或使用中性名称。</li>
 </ul>
-<p>然后，生成的文本通过管道传递到下一个命令，并可以保存到变量或使用 I/O 功能显示：</p>
+<p>生成的文本随后通过管道传递给下一条命令，可以保存到变量或使用输入/输出功能显示：</p>
 <div id="gen-和-genraw-的参数-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
+|---------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -822,18 +857,37 @@
 </thead>
 </table>
 </div>
-<p>或将生成的消息作为角色的回应插入：</p>
+</retype-table>
+<p>或者将生成的消息作为角色的回复插入：</p>
 <div id="gen-和-genraw-的参数-code-3" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
 /sendas name={{char}} {{pipe}}</code></pre>
 </doc-codeblock></div>
-<h2 id="提示词注入">提示词注入</h2>
-<p>脚本可以添加自定义 LLM 提示词注入，使其本质上相当于无限的作者注释。</p>
+<h2 id="临时角色">临时角色</h2>
+<p>如果不在群聊中，脚本可以临时以不同角色的身份向当前连接的大语言模型发送请求。</p>
 <ul>
-<li><code translate="no" v-pre>/inject (text)</code> — 将任何文本插入到当前聊天的正常 LLM 提示词中，并需要唯一标识符。保存到聊天元数据。</li>
-<li><code translate="no" v-pre>/listinjects</code> — 在系统消息中显示脚本为当前聊天添加的所有提示词注入的列表。</li>
-<li><code translate="no" v-pre>/flushinjects</code> — 删除脚本为当前聊天添加的所有提示词注入。</li>
+<li><code translate="no" v-pre>/ask (prompt)</code> — 使用提供的提示词为指定角色生成文本，并包含聊天消息。请注意，对该角色回复的滑动操作将恢复为当前角色。</li>
+</ul>
+<div id="临时角色-code-1" class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/ask name=... (prompt)</code></pre>
+</doc-codeblock></div>
+<h3 id="ask-的参数"><code translate="no" v-pre>/ask</code> 的参数</h3>
+<ul>
+<li><code translate="no" v-pre>name</code> — <strong>必填</strong>。要询问的角色名称（或唯一的角色标识符，如头像键）。必须作为具名参数提供。</li>
+<li><code translate="no" v-pre>return</code> — 指定返回值的提供方式。默认为 <code translate="no" v-pre>pipe</code>（通过命令管道输出）。如果 API 支持，可以指定其他选项。</li>
+</ul>
+<div id="ask-的参数-code-1" class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/ask name=Alice What is your favorite color?</code></pre>
+</doc-codeblock></div>
+<h2 id="prompt-injections">提示词注入</h2>
+<p>脚本可以添加自定义的大语言模型提示词注入，本质上相当于无限量的作者注释。</p>
+<ul>
+<li><code translate="no" v-pre>/inject (text)</code> — 向当前聊天的普通大语言模型提示词插入任意文本，需要一个唯一标识符。保存到聊天元数据。</li>
+<li><code translate="no" v-pre>/listinjects</code> — 在系统消息中显示当前聊天中由脚本添加的所有提示词注入列表。</li>
+<li><code translate="no" v-pre>/flushinjects</code> — 删除当前聊天中由脚本添加的所有提示词注入。</li>
 <li><code translate="no" v-pre>/note (text)</code> — 设置当前聊天的作者注释值。保存到聊天元数据。</li>
 <li><code translate="no" v-pre>/interval</code> — 设置当前聊天的作者注释插入间隔。</li>
 <li><code translate="no" v-pre>/depth</code> — 设置聊天内位置的作者注释插入深度。</li>
@@ -845,33 +899,33 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><code translate="no" v-pre>id</code> — 标识符字符串或对变量的引用。使用相同 ID 的 <code translate="no" v-pre>/inject</code> 的后续调用将覆盖以前的文本注入。<strong>必需参数。</strong></li>
-<li><code translate="no" v-pre>position</code> — 设置注入的位置。默认值：<code translate="no" v-pre>after</code>。可能的值：
+<li><code translate="no" v-pre>id</code> — 标识符字符串或变量引用。使用相同 ID 连续调用 <code translate="no" v-pre>/inject</code> 将覆盖之前的文本注入。<strong>必填参数。</strong></li>
+<li><code translate="no" v-pre>position</code> — 设置注入位置。默认值：<code translate="no" v-pre>after</code>。可选值：
 <ul>
 <li><code translate="no" v-pre>after</code>：在主提示词之后。</li>
 <li><code translate="no" v-pre>before</code>：在主提示词之前。</li>
 <li><code translate="no" v-pre>chat</code>：聊天内。</li>
 </ul>
 </li>
-<li><code translate="no" v-pre>depth</code> — 设置聊天内位置的注入深度。0 表示在最后一条消息之后插入，1 - 在最后一条消息之前，等等。默认值：4。</li>
-<li>未命名参数是要注入的文本。空字符串将取消设置所提供标识符的先前值。</li>
+<li><code translate="no" v-pre>depth</code> — 设置聊天内位置的注入深度。0 表示在最后一条消息之后插入，1 表示在最后一条消息之前插入，以此类推。默认值：4。</li>
+<li>匿名参数是要注入的文本。空字符串将取消所提供标识符的之前的值。</li>
 </ul>
 <h2 id="访问聊天消息">访问聊天消息</h2>
 <h3 id="读取消息">读取消息</h3>
-<p>您可以使用 <code translate="no" v-pre>/messages</code> 命令访问当前选定聊天中的消息。</p>
+<p>你可以使用 <code translate="no" v-pre>/messages</code> 命令访问当前选中聊天中的消息。</p>
 <div id="读取消息-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
 </doc-codeblock></div>
 <ul>
-<li><code translate="no" v-pre>names</code> 参数用于指定是否要包含角色名称，默认值：<code translate="no" v-pre>on</code>。</li>
-<li>在未命名参数中，它接受 <code translate="no" v-pre>start-finish</code> 格式的消息索引或范围。范围是包含的！</li>
-<li>如果范围无法满足，即请求的索引无效或消息数量超过存在的消息数量，则返回空字符串。</li>
-<li>从提示词中隐藏的消息（由幽灵图标表示）将从输出中排除。</li>
-<li>如果您想知道最新消息的索引，请使用 <code translate="no" v-pre>{{lastMessageId}}</code> 宏，<code translate="no" v-pre>{{lastMessage}}</code> 将为您获取消息本身。</li>
+<li><code translate="no" v-pre>names</code> 参数用于指定是否包含角色名称，默认值：<code translate="no" v-pre>on</code>。</li>
+<li>在匿名参数中，它接受消息索引或 <code translate="no" v-pre>start-finish</code> 格式的范围。范围为闭区间！</li>
+<li>如果范围不可满足（即无效索引或请求的消息数量超过实际数量），则返回空字符串。</li>
+<li>从提示词中隐藏的消息（以幽灵图标标注）将从输出中排除。</li>
+<li>若要获取最新消息的索引，请使用 <code translate="no" v-pre>{{lastMessageId}}</code> 宏，而 <code translate="no" v-pre>{{lastMessage}}</code> 将获取消息本身。</li>
 </ul>
-<p>要计算范围的起始索引，例如，当您需要获取最后 N 条消息时，请使用变量减法。
-此示例将为您获取聊天中的最后 3 条消息：</p>
+<p>若要计算范围的起始索引，例如需要获取最后 N 条消息时，可以使用变量减法。
+以下示例将获取聊天中的最后 3 条消息：</p>
 <div id="读取消息-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
@@ -880,41 +934,91 @@
 /setinput</code></pre>
 </doc-codeblock></div>
 <h3 id="发送消息">发送消息</h3>
-<p>脚本可以以用户、角色、人设、中立叙述者的身份发送消息，或添加注释。</p>
+<p>脚本可以以用户、角色、角色扮演者、中立旁白者的身份发送消息，也可以添加注释。</p>
 <ol>
-<li><code translate="no" v-pre>/send (text)</code> — 以当前选定的人设添加消息。</li>
-<li><code translate="no" v-pre>/sendas name=charname (text)</code> — 以任何角色添加消息，按其名称匹配。<code translate="no" v-pre>name</code> 参数是必需的。使用 <code translate="no" v-pre>{{char}}</code> 宏以当前角色发送。</li>
-<li><code translate="no" v-pre>/sys (text)</code> — 添加来自中立叙述者的消息，该消息不属于用户或角色。显示的名称纯粹是装饰性的，可以使用 <code translate="no" v-pre>/sysname</code> 命令自定义。</li>
-<li><code translate="no" v-pre>/comment (text)</code> — 添加在聊天中显示但对提示词不可见的隐藏注释。</li>
-<li><code translate="no" v-pre>/addswipe (text)</code> — 向最后一条角色消息添加滑动。无法向用户或隐藏消息添加滑动。</li>
-<li><code translate="no" v-pre>/hide (message id or range)</code> — 根据提供的消息索引或 <code translate="no" v-pre>start-finish</code> 格式的包含范围从提示词中隐藏一条或多条消息。</li>
-<li><code translate="no" v-pre>/unhide (message id or range)</code> — 根据提供的消息索引或 <code translate="no" v-pre>start-finish</code> 格式的包含范围将一条或多条消息返回到提示词。</li>
+<li><code translate="no" v-pre>/send (text)</code> — 以当前选中的角色扮演者身份添加消息。</li>
+<li><code translate="no" v-pre>/sendas name=charname (text)</code> — 以任意角色的身份添加消息，通过名称匹配。<code translate="no" v-pre>name</code> 参数为必填。使用 <code translate="no" v-pre>{{char}}</code> 宏以当前角色身份发送。</li>
+<li><code translate="no" v-pre>/sys (text)</code> — 添加来自不属于用户或角色的中立旁白者的消息。显示的名称纯粹是装饰性的，可以使用 <code translate="no" v-pre>/sysname</code> 命令自定义。</li>
+<li><code translate="no" v-pre>/comment (text)</code> — 添加一条显示在聊天中但对提示词不可见的隐藏注释。</li>
+<li><code translate="no" v-pre>/addswipe (text)</code> — 向最后一条角色消息添加滑动选项。不能向用户消息或隐藏消息添加滑动选项。</li>
+<li><code translate="no" v-pre>/hide (message id or range)</code> — 根据提供的消息索引或 <code translate="no" v-pre>start-finish</code> 格式的闭区间范围，将一条或多条消息从提示词中隐藏。</li>
+<li><code translate="no" v-pre>/unhide (message id or range)</code> — 根据提供的消息索引或 <code translate="no" v-pre>start-finish</code> 格式的闭区间范围，将一条或多条消息恢复到提示词中。</li>
 </ol>
-<p><code translate="no" v-pre>/send</code>、<code translate="no" v-pre>/sendas</code>、<code translate="no" v-pre>/sys</code> 和 <code translate="no" v-pre>/comment</code> 命令可选择接受命名参数 <code translate="no" v-pre>at</code>，其值为从零开始的数值（或包含此类值的变量名），用于指定消息插入的确切位置。默认情况下，新消息插入到聊天日志的末尾。</p>
-<p>这将在对话历史的开头插入一条用户消息：</p>
+<p><code translate="no" v-pre>/send</code>、<code translate="no" v-pre>/sendas</code>、<code translate="no" v-pre>/sys</code> 和 <code translate="no" v-pre>/comment</code> 命令可选接受具名参数 <code translate="no" v-pre>at</code>，其值为从零开始的数字（或包含此类值的变量名），用于指定消息插入的确切位置。默认情况下，新消息插入到聊天记录的末尾。</p>
+<p>以下命令将在对话历史的开头插入一条用户消息：</p>
 <div id="发送消息-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
 </doc-codeblock></div>
 <h3 id="删除消息">删除消息</h3>
-<p><strong>这些命令具有潜在破坏性，并且没有&quot;撤消&quot;功能。如果您不小心删除了重要内容，请检查 /backups/ 文件夹。</strong></p>
+<p><strong>以下命令具有潜在破坏性且没有&quot;撤销&quot;功能。如果你不小心删除了重要内容，请检查 /backups/ 文件夹。</strong></p>
 <ol>
-<li><code translate="no" v-pre>/cut (message id or range)</code> — 根据提供的消息索引或 <code translate="no" v-pre>start-finish</code> 格式的包含范围从聊天中剪切一条或多条消息。</li>
+<li><code translate="no" v-pre>/cut (message id or range)</code> — 根据提供的消息索引或 <code translate="no" v-pre>start-finish</code> 格式的闭区间范围，从聊天中剪切一条或多条消息。</li>
 <li><code translate="no" v-pre>/del (number)</code> — 从聊天中删除最后 N 条消息。</li>
-<li><code translate="no" v-pre>/delswipe (1-based swipe id)</code> — 根据提供的基于 1 的滑动 ID 从最后一条角色消息中删除滑动。</li>
-<li><code translate="no" v-pre>/delname (character name)</code> — 删除当前聊天中属于具有指定名称的角色的所有消息。</li>
+<li><code translate="no" v-pre>/delswipe (1-based swipe id)</code> — 根据提供的从 1 开始的滑动 ID，从最后一条角色消息中删除一个滑动选项。</li>
+<li><code translate="no" v-pre>/delname (character name)</code> — 删除当前聊天中属于指定名称角色的所有消息。</li>
 <li><code translate="no" v-pre>/delchat</code> — 删除当前聊天。</li>
 </ol>
-<h2 id="world-info-命令">World Info 命令</h2>
-<p>World Info（也称为 Lorebook）是一个高度实用的工具，用于动态地将数据插入提示词中。有关更详细的说明，请参阅专用页面：<a href="../core-concepts/worldinfo/">World Info</a>。</p>
+<h2 id="角色管理命令">角色管理命令</h2>
 <ol>
-<li><code translate="no" v-pre>/getchatbook</code> — 获取聊天绑定的 World Info 文件的名称，如果未绑定则创建一个新文件，并将其传递到管道。</li>
-<li><code translate="no" v-pre>/findentry file=bookName field=fieldName [text]</code> — 使用字段值与提供的文本的模糊匹配从指定文件（或指向文件名的变量）中查找记录的 UID（默认字段：<code translate="no" v-pre>key</code>），并将 UID 传递到管道，例如 <code translate="no" v-pre>/findentry file=chatLore field=key Shadowfang</code>。</li>
-<li><code translate="no" v-pre>/getentryfield file=bookName field=field [UID]</code> — 从指定的 World Info 文件（或指向文件名的变量）中获取具有 UID 的记录的字段值（默认字段：<code translate="no" v-pre>content</code>），并将值传递到管道，例如 <code translate="no" v-pre>/getentryfield file=chatLore field=content 123</code>。</li>
-<li><code translate="no" v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> — 从指定的 World Info 文件（或指向文件名的变量）中设置具有 UID（或指向 UID 的变量）的记录的字段值（默认字段：<code translate="no" v-pre>content</code>）。要为关键字字段设置多个值，请使用逗号分隔的列表作为文本值，例如 <code translate="no" v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>。</li>
-<li><code translate="no" v-pre>/createentry file=bookName key=keyValue [content text]</code> — 在指定文件（或指向文件名的变量）中创建具有关键字和内容（这两个参数都是<em>可选的</em>）的新记录，并将 UID 传递到管道，例如 <code translate="no" v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>。</li>
+<li><code translate="no" v-pre>/char-create</code> — 使用具名参数提供的数据创建新角色。</li>
+<li><code translate="no" v-pre>/char-update</code> — 使用具名参数提供的数据更新当前角色。</li>
+<li><code translate="no" v-pre>/char-get</code> — 以 JSON 对象形式检索当前角色的数据并传递到管道。</li>
+<li><code translate="no" v-pre>/char-delete (name)</code> — 删除具有指定名称的角色。</li>
+<li><code translate="no" v-pre>/char-duplicate (name)</code> — 复制具有指定名称的角色。</li>
+<li><code translate="no" v-pre>/tag-import (name)</code> — 从角色卡文件导入标签。</li>
+</ol>
+<h2 id="加载器命令">加载器命令</h2>
+<p>加载器系统提供了一个可复用的覆盖层，用于耗时任务，可提供视觉反馈和/或临时阻止 UI 操作。</p>
+<ol>
+<li><code translate="no" v-pre>/loader-show (text)</code> — 显示带有指定文本的加载覆盖层。</li>
+<li><code translate="no" v-pre>/loader-hide</code> — 隐藏加载覆盖层。</li>
+<li><code translate="no" v-pre>/loader-wrap (closure)</code> — 显示加载覆盖层，执行提供的闭包，并在完成后隐藏覆盖层。</li>
+<li><code translate="no" v-pre>/loader-stop</code> — 停止并移除加载覆盖层。</li>
+</ol>
+<h2 id="世界信息命令">世界信息命令</h2>
+<p>世界信息（也称为 Lorebook）是一个高度实用的工具，用于将数据动态插入提示词。有关更详细的说明，请参阅专属页面：<a href="../core-concepts/worldinfo/">世界信息</a>。</p>
+<ol>
+<li><code translate="no" v-pre>/getchatbook</code> — 获取与聊天绑定的世界信息文件的名称，若未绑定则创建一个新文件，并将其传递到管道。</li>
+<li><code translate="no" v-pre>/findentry file=bookName field=fieldName [text]</code> — 使用提供文本对字段值进行模糊匹配，在指定文件（或指向文件名的变量）中查找记录的 UID（默认字段：<code translate="no" v-pre>key</code>），并将 UID 传递到管道，例如 <code translate="no" v-pre>/findentry file=chatLore field=key Shadowfang</code>。</li>
+<li><code translate="no" v-pre>/getentryfield file=bookName field=field [UID]</code> — 从指定世界信息文件（或指向文件名的变量）中获取具有该 UID 的记录的字段值（默认字段：<code translate="no" v-pre>content</code>），并将值传递到管道，例如 <code translate="no" v-pre>/getentryfield file=chatLore field=content 123</code>。</li>
+<li><code translate="no" v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> — 设置指定世界信息文件（或指向文件名的变量）中具有该 UID（或指向 UID 的变量）的记录的字段值（默认字段：<code translate="no" v-pre>content</code>）。若要为关键字字段设置多个值，请使用逗号分隔的列表作为文本值，例如 <code translate="no" v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>。</li>
+<li><code translate="no" v-pre>/createentry file=bookName key=keyValue [content text]</code> — 在指定文件（或指向文件名的变量）中创建一条新记录，带有关键字和内容（这两个参数均为<em>可选</em>），并将 UID 传递到管道，例如 <code translate="no" v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>。</li>
 </ol>
 <h3 id="有效的条目字段">有效的条目字段</h3>
+<retype-table copy-text="| 字段                          | UI 元素                        | 值类型          |
+|:------------------------------|:-------------------------------|:----------------|
+| `content`                     | 内容                           | 字符串          |
+| `comment`                     | 标题 / 备注                    | 字符串          |
+| `key`                         | 主要关键字                     | 字符串列表      |
+| `keysecondary`                | 可选过滤器                     | 字符串列表      |
+| `constant`                    | 常量状态                       | 布尔值 (1/0)    |
+| `disable`                     | 禁用状态                       | 布尔值 (1/0)    |
+| `order`                       | 顺序                           | 数字            |
+| `selectiveLogic`              | 逻辑                           | (见下文)        |
+| `excludeRecursion`            | 非递归                         | 布尔值 (1/0)    |
+| `probability`                 | 触发%                          | 数字 (0-100)    |
+| `depth`                       | 深度                           | 数字 (0-999)    |
+| `position`                    | 位置                           | (见下文)        |
+| `role`                        | 深度角色                       | (见下文)        |
+| `scanDepth`                   | 扫描深度                       | 数字 (0-100)    |
+| `caseSensitive`               | 区分大小写                     | 布尔值 (1/0)    |
+| `matchWholeWords`             | 匹配整个单词                   | 布尔值 (1/0)    |
+| `vectorized`                  | 向量化状态                     | 布尔值 (1/0)    |
+| `automationId`                | 自动化 ID                      | 字符串          |
+| `group`                       | 包含组                         | 字符串          |
+| `groupOverride`               | 包含组优先                     | 布尔值 (1/0)    |
+| `groupWeight`                 | 包含组权重                     | 数字 (0-100)    |
+| `useGroupScoring`             | 组评分                         | 布尔值 (1/0)    |
+| `characterFilterExclude`      | 角色过滤器排除模式             | 字符串列表      |
+| `characterFilterNames`        | 角色过滤器名称                 | 字符串列表      |
+| `characterFilterTags`         | 角色过滤器标签                 | 字符串列表      |
+| `matchCharacterDepthPrompt`   | 匹配角色深度提示词             | 布尔值 (1/0)    |
+| `matchCharacterDescription`   | 匹配角色描述                   | 布尔值 (1/0)    |
+| `matchCharacterPersonality`   | 匹配角色性格                   | 布尔值 (1/0)    |
+| `matchCreatorNotes`           | 匹配创作者注释                 | 布尔值 (1/0)    |
+| `matchPersonaDescription`     | 匹配人设描述                   | 布尔值 (1/0)    |
+| `matchScenario`               | 匹配场景                       | 布尔值 (1/0)    |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1005,9 +1109,85 @@
 <td style="text-align: left;">匹配整个单词</td>
 <td style="text-align: left;">布尔值 (1/0)</td>
 </tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>vectorized</code></td>
+<td style="text-align: left;">向量化状态</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>automationId</code></td>
+<td style="text-align: left;">自动化 ID</td>
+<td style="text-align: left;">字符串</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>group</code></td>
+<td style="text-align: left;">包含组</td>
+<td style="text-align: left;">字符串</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>groupOverride</code></td>
+<td style="text-align: left;">包含组优先</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>groupWeight</code></td>
+<td style="text-align: left;">包含组权重</td>
+<td style="text-align: left;">数字 (0-100)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>useGroupScoring</code></td>
+<td style="text-align: left;">组评分</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>characterFilterExclude</code></td>
+<td style="text-align: left;">角色过滤器排除模式</td>
+<td style="text-align: left;">字符串列表</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>characterFilterNames</code></td>
+<td style="text-align: left;">角色过滤器名称</td>
+<td style="text-align: left;">字符串列表</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>characterFilterTags</code></td>
+<td style="text-align: left;">角色过滤器标签</td>
+<td style="text-align: left;">字符串列表</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>matchCharacterDepthPrompt</code></td>
+<td style="text-align: left;">匹配角色深度提示词</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>matchCharacterDescription</code></td>
+<td style="text-align: left;">匹配角色描述</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>matchCharacterPersonality</code></td>
+<td style="text-align: left;">匹配角色性格</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>matchCreatorNotes</code></td>
+<td style="text-align: left;">匹配创作者注释</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>matchPersonaDescription</code></td>
+<td style="text-align: left;">匹配人设描述</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code translate="no" v-pre>matchScenario</code></td>
+<td style="text-align: left;">匹配场景</td>
+<td style="text-align: left;">布尔值 (1/0)</td>
+</tr>
 </tbody>
 </table>
 </div>
+</retype-table>
 <p><strong>逻辑值</strong></p>
 <ul>
 <li>0 = AND ANY（任一）</li>
@@ -1031,23 +1211,23 @@
 <li>1 = 用户</li>
 <li>2 = 助手</li>
 </ul>
-<h3 id="示例-1通过关键字从聊天-lorebook-中读取内容">示例 1：通过关键字从聊天 lorebook 中读取内容</h3>
-<div id="示例-1通过关键字从聊天-lorebook-中读取内容-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="示例-1通过关键字从聊天-lorebook-读取内容">示例 1：通过关键字从聊天 Lorebook 读取内容</h3>
+<div id="示例-1通过关键字从聊天-lorebook-读取内容-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file={{getvar::chatLore}} field=key Shadowfang |
 /getentryfield file={{getvar::chatLore}} field=key |
 /echo</code></pre>
 </doc-codeblock></div>
-<h3 id="示例-2创建带有关键字和内容的聊天-lorebook-条目">示例 2：创建带有关键字和内容的聊天 lorebook 条目</h3>
+<h3 id="示例-2创建带有关键字和内容的聊天-lorebook-条目">示例 2：创建带有关键字和内容的聊天 Lorebook 条目</h3>
 <div id="示例-2创建带有关键字和内容的聊天-lorebook-条目-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /createentry file={{getvar::chatLore}} key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo</code></pre>
 </doc-codeblock></div>
-<h3 id="示例-3使用聊天中的新信息扩展现有-lorebook-条目">示例 3：使用聊天中的新信息扩展现有 lorebook 条目</h3>
-<div id="示例-3使用聊天中的新信息扩展现有-lorebook-条目-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="示例-3用聊天中的新信息扩展现有-lorebook-条目">示例 3：用聊天中的新信息扩展现有 Lorebook 条目</h3>
+<div id="示例-3用聊天中的新信息扩展现有-lorebook-条目-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file={{getvar::chatLore}} field=key Milla |
@@ -1059,14 +1239,14 @@
 /echo New content: {{pipe}} |
 /setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}</code></pre>
 </doc-codeblock></div>
-<h2 id="文本操作">文本操作</h2>
-<p>有多种有用的文本操作实用命令可在各种脚本场景中使用。</p>
+<h2 id="文本处理">文本处理</h2>
+<p>在各种脚本场景中，有许多实用的文本处理工具命令可供使用。</p>
 <ol>
-<li><code translate="no" v-pre>/trimtokens</code> — 从开始或结束处将输入修剪为指定数量的文本 token，并将结果输出到管道。</li>
-<li><code translate="no" v-pre>/trimstart</code> — 将输入修剪到第一个完整句子的开始，并将结果输出到管道。</li>
-<li><code translate="no" v-pre>/trimend</code> — 将输入修剪到最后一个完整句子的结束，并将结果输出到管道。</li>
-<li><code translate="no" v-pre>/fuzzy</code> — 对输入文本与字符串列表执行模糊匹配，将最佳字符串匹配输出到管道。</li>
-<li><code translate="no" v-pre>/regex name=scriptName [text]</code> — 为指定文本执行 Regex 扩展中的正则表达式脚本。脚本必须启用。</li>
+<li><code translate="no" v-pre>/trimtokens</code> — 从开头或末尾将输入修剪到指定数量的文本标记，并将结果输出到管道。</li>
+<li><code translate="no" v-pre>/trimstart</code> — 将输入修剪到第一个完整句子的开头，并将结果输出到管道。</li>
+<li><code translate="no" v-pre>/trimend</code> — 将输入修剪到最后一个完整句子的末尾，并将结果输出到管道。</li>
+<li><code translate="no" v-pre>/fuzzy</code> — 对输入文本和字符串列表执行模糊匹配，将最佳匹配字符串输出到管道。</li>
+<li><code translate="no" v-pre>/regex name=scriptName [text]</code> — 为指定文本执行正则表达式扩展中的正则表达式脚本。脚本必须已启用。</li>
 </ol>
 <h3 id="trimtokens-的参数"><code translate="no" v-pre>/trimtokens</code> 的参数</h3>
 <div id="trimtokens-的参数-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1075,8 +1255,8 @@
 </doc-codeblock></div>
 <ol>
 <li><code translate="no" v-pre>direction</code> 设置修剪方向，可以是 <code translate="no" v-pre>start</code> 或 <code translate="no" v-pre>end</code>。默认值：<code translate="no" v-pre>end</code>。</li>
-<li><code translate="no" v-pre>limit</code> 设置输出中剩余的 token 数量。也可以指定包含数字的变量名。<strong>必需参数。</strong></li>
-<li>未命名参数是要修剪的输入文本。</li>
+<li><code translate="no" v-pre>limit</code> 设置输出中保留的标记数量。也可以指定包含该数字的变量名。<strong>必填参数。</strong></li>
+<li>匿名参数是要修剪的输入文本。</li>
 </ol>
 <h3 id="fuzzy-的参数"><code translate="no" v-pre>/fuzzy</code> 的参数</h3>
 <div id="fuzzy-的参数-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1084,50 +1264,50 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><code translate="no" v-pre>list</code> 是包含候选项的 JSON 序列化字符串数组。也可以指定包含列表的变量名。<strong>必需参数。</strong></li>
-<li>未命名参数是要匹配的输入文本。输出是与输入最匹配的候选项之一。</li>
+<li><code translate="no" v-pre>list</code> 是包含候选项的 JSON 序列化字符串数组。也可以指定包含该列表的变量名。<strong>必填参数。</strong></li>
+<li>匿名参数是要匹配的输入文本。输出是与输入最接近的候选项之一。</li>
 </ol>
-<h2 id="自动完成">自动完成</h2>
+<h2 id="自动补全">自动补全</h2>
 <ul>
-<li>自动完成在聊天输入和大型快速回复编辑器中都已启用。</li>
-<li>自动完成在您输入的任何地方都有效。即使使用多个管道命令和嵌套闭包也是如此。</li>
-<li>自动完成支持三种查找匹配命令的方式（<em>用户设置</em> -&gt; <em>STscript 匹配</em>）。</li>
+<li>自动补全在聊天输入栏和大型快速回复编辑器中均已启用。</li>
+<li>自动补全在输入的任何位置都有效，即使是多个管道连接的命令和嵌套闭包也支持。</li>
+<li>自动补全支持三种查找匹配命令的方式（<em>用户设置</em> -&gt; <em>STscript 匹配</em>）。</li>
 </ul>
 <ol>
-<li><strong>开头匹配</strong> &quot;旧&quot;方式。只有精确以键入值开头的命令才会显示。</li>
-<li><strong>包含匹配</strong> 所有<em>包含</em>键入值的命令都会显示。示例：输入 <code translate="no" v-pre>/delete</code> 时，命令 <code translate="no" v-pre>/qr-delete</code> 和 <code translate="no" v-pre>/qr-set-delete</code> 将显示在自动完成列表中（/qr-<strong>delete</strong>，/qr-set-<strong>delete</strong>）。</li>
-<li><strong>模糊匹配</strong> 所有可以与键入值进行模糊匹配的命令都会显示。示例：输入 <code translate="no" v-pre>/seas</code> 时，命令 <code translate="no" v-pre>/sendas</code> 将显示在自动完成列表中（/<strong>se</strong>nd<strong>as</strong>）。</li>
+<li><strong>以…开头</strong> 旧版方式。只有完全以输入值开头的命令才会显示。</li>
+<li><strong>包含</strong> 所有<em>包含</em>输入值的命令都会显示。示例：输入 <code translate="no" v-pre>/delete</code> 时，命令 <code translate="no" v-pre>/qr-delete</code> 和 <code translate="no" v-pre>/qr-set-delete</code> 将显示在自动补全列表中（/qr-<strong>delete</strong>、/qr-set-<strong>delete</strong>）。</li>
+<li><strong>模糊匹配</strong> 所有能与输入值进行模糊匹配的命令都会显示。示例：输入 <code translate="no" v-pre>/seas</code> 时，命令 <code translate="no" v-pre>/sendas</code> 将显示在自动补全列表中（/<strong>se</strong>nd<strong>as</strong>）。</li>
 </ol>
 <ul>
-<li>自动完成也支持命令参数。列表将自动显示必需参数。对于可选参数，按 <em>Ctrl</em>+<em>Space</em> 打开可用选项列表。</li>
-<li>输入 <code translate="no" v-pre>/:</code> 以执行闭包或 QR 时，自动完成将显示作用域变量和 QR 的列表。</li>
-<li>自动完成对宏（在斜杠命令中）的支持有限。输入 <code translate="no" v-pre>{{</code> 以获取可用宏的列表。</li>
-<li>使用<em>向上</em>和<em>向下</em>箭头键从自动完成选项列表中选择选项。</li>
-<li>按 <em>Enter</em> 或 <em>Tab</em> 或<em>单击</em>选项以将选项放置在光标处。</li>
-<li>按 <em>Escape</em> 关闭自动完成列表。</li>
-<li>按 <em>Ctrl</em>+<em>Space</em> 打开自动完成列表或切换所选选项的详细信息。</li>
+<li>命令参数也支持自动补全。必填参数的列表会自动显示。对于可选参数，按 <em>Ctrl</em>+<em>Space</em> 打开可用选项列表。</li>
+<li>输入 <code translate="no" v-pre>/:</code> 以执行闭包或快速回复时，自动补全将显示作用域变量和快速回复的列表。</li>
+<li>自动补全对宏（在斜杠命令中）有有限的支持。输入 <code translate="no" v-pre>{{</code> 可获取可用宏的列表。</li>
+<li>使用<em>上下方向键</em>从自动补全选项列表中选择一个选项。</li>
+<li>按 <em>Enter</em> 或 <em>Tab</em> 或<em>点击</em>选项将选项放置在光标处。</li>
+<li>按 <em>Escape</em> 关闭自动补全列表。</li>
+<li>按 <em>Ctrl</em>+<em>Space</em> 打开自动补全列表或切换所选选项的详细信息。</li>
 </ul>
-<h2 id="解析器标志">解析器标志</h2>
-<div id="解析器标志-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h2 id="parser-flags">解析器标志</h2>
+<div id="parser-flags-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
 </doc-codeblock></div>
-<p>解析器接受标志以修改其行为。这些标志可以在脚本中的任何时候打开和关闭，所有后续输入都将相应地进行评估。
-您可以在用户设置中设置默认标志。</p>
-<h3 id="严格转义">严格转义</h3>
-<div id="严格转义-code-1" class="codeblock-wrapper"><doc-codeblock>
+<p>解析器接受标志来修改其行为。这些标志可以在脚本中的任意位置打开或关闭，之后的所有输入都将按照相应的设置进行解析。<br />
+你可以在用户设置中设置默认标志。</p>
+<h3 id="strict-escaping">严格转义</h3>
+<div id="strict-escaping-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
 </doc-codeblock></div>
-<p>启用 <code translate="no" v-pre>STRICT_ESCAPING</code> 后的更改如下。</p>
-<h4 id="管道符">管道符</h4>
-<p>引号值中的管道符不需要转义。</p>
-<div id="管道符-code-1" class="codeblock-wrapper"><doc-codeblock>
+<p>启用 <code translate="no" v-pre>STRICT_ESCAPING</code> 后的变化如下。</p>
+<h4 id="管道-1">管道</h4>
+<p>引号值中的管道无需转义。</p>
+<div id="管道-1-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
 </doc-codeblock></div>
 <h4 id="反斜杠">反斜杠</h4>
-<p>符号前面的反斜杠可以被转义，以提供后跟功能符号的字面反斜杠。</p>
+<p>符号前的反斜杠可以被转义，以提供字面反斜杠后跟功能性符号。</p>
 <div id="反斜杠-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
@@ -1139,60 +1319,62 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/echo \\|
 /echo \\\|</code></pre>
 </doc-codeblock></div>
-<h3 id="替换变量宏">替换变量宏</h3>
-<div id="替换变量宏-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="replace-variable-macros">替换变量宏</h3>
+<div id="replace-variable-macros-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
 </doc-codeblock></div>
-<p>此标志有助于避免当变量值包含可以解释为宏的文本时的双重替换。<code translate="no" v-pre>{{var::}}</code> 宏最后被替换，并且不会对生成的文本/变量值进行进一步的替换。</p>
+<p>此标志有助于避免在变量值包含可能被解释为宏的文本时发生双重替换。<code translate="no" v-pre>{{var::}}</code> 宏最后被替换，且对结果文本/变量值不再进行进一步替换。</p>
 <p>将所有 <code translate="no" v-pre>{{getvar::}}</code> 和 <code translate="no" v-pre>{{getglobalvar::}}</code> 宏替换为 <code translate="no" v-pre>{{var::}}</code>。
-在幕后，解析器将在带有替换宏的命令之前插入一系列命令执行器：</p>
+在后台，解析器将在含有被替换宏的命令之前插入一系列命令执行器：</p>
 <ul>
 <li>调用 <code translate="no" v-pre>/let</code> 将当前 <code translate="no" v-pre>{{pipe}}</code> 保存到作用域变量</li>
 <li>调用 <code translate="no" v-pre>/getvar</code> 或 <code translate="no" v-pre>/getglobalvar</code> 获取宏中使用的变量</li>
 <li>调用 <code translate="no" v-pre>/let</code> 将检索到的变量保存到作用域变量</li>
-<li>使用保存的 <code translate="no" v-pre>{{pipe}}</code> 值调用 <code translate="no" v-pre>/return</code> 以恢复下一个命令的正确管道值</li>
+<li>调用 <code translate="no" v-pre>/return</code> 恢复正确的管道值，供下一条命令使用</li>
 </ul>
-<div id="替换变量宏-code-2" class="codeblock-wrapper"><doc-codeblock>
+<div id="replace-variable-macros-code-2" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
 /setvar key=x \{\{lastMessageId}} |
 /echo {{getvar::x}}</code></pre>
 </doc-codeblock></div>
-<div id="替换变量宏-code-3" class="codeblock-wrapper"><doc-codeblock>
+<div id="replace-variable-macros-code-3" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
 /parser-flag REPLACE_GETVAR |
 /setvar key=x \{\{lastMessageId}} |
 /echo {{getvar::x}}</code></pre>
 </doc-codeblock></div>
-<h2 id="quick-replies脚本库和自动执行">Quick Replies：脚本库和自动执行</h2>
-<p>Quick Replies 是 SillyTavern 的内置扩展，提供了一种简单的方法来存储和执行您的脚本。</p>
-<h3 id="配置-quick-replies">配置 Quick Replies</h3>
-<p>要开始使用，请打开扩展面板（堆叠方块图标），然后展开 Quick Replies 菜单。</p>
+<h2 id="quick-replies-script-library-and-auto-execution">快速回复：脚本库与自动执行</h2>
+<p>快速回复是 SillyTavern 的内置扩展，提供了一种简便的方式来存储和执行脚本。</p>
+<h3 id="配置快速回复">配置快速回复</h3>
+<p>若要开始使用，请启用并打开扩展面板（堆叠方块图标），然后展开快速回复菜单。</p>
 <div style="display:flex;justify-content:center">
 <figure class="content-center">
     <img src="../../static/scripts/quick-reply.png" alt="Quick Reply" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="630" height="1003" />
     <figcaption class="caption">Quick Reply</figcaption>
 </figure>
 </div>
-<p><strong>Quick Replies 默认是禁用的，您需要先启用它们。</strong> 然后您会看到聊天输入栏上方出现一个栏。</p>
-<p>您可以设置显示的按钮文本标签（我们建议使用表情符号以保持简洁）以及单击按钮时将执行的脚本。</p>
-<p>按钮数量由<strong>插槽数量</strong>设置控制（最大 = 100），根据您的需要进行调整，完成后单击&quot;应用&quot;。</p>
-<p><strong>自动注入用户输入</strong>在使用 STscript 时建议禁用，否则可能会干扰您的输入，请改用 <code translate="no" v-pre>{{input}}</code> 宏在脚本中获取输入栏的当前值。</p>
-<p><strong>Quick Reply 预设</strong>允许多组预定义的 Quick Replies，并可以手动切换或使用 <code translate="no" v-pre>/qrset (预设名称)</code> 命令切换。
-在切换到不同的预设之前，不要忘记单击&quot;更新&quot;以将您的更改写入当前使用的预设！</p>
+<p><strong>快速回复默认处于禁用状态，你需要先启用它。</strong> 启用后，你会看到聊天输入栏上方出现一个工具栏。</p>
+<p>你可以设置显示的按钮文字标签（建议使用表情符号以简洁为主）以及点击按钮时执行的脚本。</p>
+<p>按钮数量由<strong>插槽数量</strong>设置控制（最多 100 个），根据需要调整后点击&quot;应用&quot;。</p>
+<p><strong>自动注入用户输入</strong>建议在使用 STscript 时禁用，否则可能会干扰你的输入，改用 <code translate="no" v-pre>{{input}}</code> 宏在脚本中获取输入栏的当前值。</p>
+<p><strong>快速回复预设</strong>允许拥有多组预定义的快速回复，可以手动切换或使用 <code translate="no" v-pre>/qrset (set名称)</code> 命令切换。
+切换到不同预设之前，别忘了点击&quot;更新&quot;以将更改写入当前使用的预设！</p>
 <h3 id="手动执行">手动执行</h3>
-<p>现在您可以将第一个脚本添加到库中。选择任何空闲插槽（或创建一个），在左侧框中输入&quot;Click me&quot;以设置标签，然后将以下内容粘贴到右侧框中：</p>
+<p>现在你可以向库中添加第一个脚本。选择任意空闲插槽（或创建一个新的），在左侧框中输入&quot;Click me&quot;作为标签，然后将以下内容粘贴到右侧框中：</p>
 <div id="手动执行-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
 </doc-codeblock></div>
-<p>然后在聊天栏上方出现的按钮上单击 5 次。
-每次单击都会将变量 <code translate="no" v-pre>clicks</code> 加 1，当值等于 5 时显示不同的消息并重置变量。</p>
+<p>然后点击聊天栏上方出现的按钮 5 次。
+每次点击都会将变量 <code translate="no" v-pre>clicks</code> 增加 1，当值等于 5 时显示不同的消息并重置变量。</p>
 <h3 id="自动执行">自动执行</h3>
-<p>通过单击已创建命令的 <code translate="no" v-pre>⋮</code> 按钮打开模态菜单。</p>
+<p>点击已创建命令旁边的 <code translate="no" v-pre>⋮</code> 按钮打开模态菜单。</p>
+<retype-table copy-text="| ![Automatic execution](/static/scripts/autoexecute.png) |
+|---------------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1202,25 +1384,26 @@
 </thead>
 </table>
 </div>
-<p>在此菜单中，您可以执行以下操作：</p>
+</retype-table>
+<p>在此菜单中你可以：</p>
 <ul>
-<li>在方便的全屏编辑器中编辑脚本</li>
-<li>从聊天栏隐藏按钮，使其仅可用于自动执行。</li>
-<li>在以下一个或多个条件下启用自动执行：
+<li>在便捷的全屏编辑器中编辑脚本</li>
+<li>从聊天栏隐藏按钮，使其仅可用于自动执行</li>
+<li>启用在以下一个或多个条件下自动执行：
 <ul>
-<li>应用启动</li>
-<li>向聊天发送用户消息</li>
-<li>在聊天中接收 AI 消息</li>
-<li>打开角色或群组聊天</li>
-<li>触发群组成员的回复</li>
-<li>使用相同的自动化 ID 激活 World Info 条目</li>
+<li>应用启动时</li>
+<li>向聊天发送用户消息时</li>
+<li>在聊天中接收 AI 消息时</li>
+<li>打开角色或群聊时</li>
+<li>触发群组成员回复时</li>
+<li>使用相同自动化 ID 激活世界信息条目时</li>
 </ul>
 </li>
-<li>为快速回复提供自定义工具提示（在 UI 中将鼠标悬停在快速回复上时显示的文本）</li>
-<li>为测试目的执行脚本</li>
+<li>为快速回复提供自定义工具提示（鼠标悬停在 UI 中的快速回复上时显示的文本）</li>
+<li>执行脚本以进行测试</li>
 </ul>
-<p>只有在启用 Quick Replies 扩展时，命令才会自动执行。</p>
-<p>例如，您可以通过添加以下脚本并将其设置为在用户消息上自动执行，在发送五条用户消息后显示一条消息。</p>
+<p>只有在快速回复扩展启用时，命令才会自动执行。</p>
+<p>例如，你可以通过添加以下脚本并将其设置为在用户消息时自动执行，来在发送 5 条用户消息后显示一条消息。</p>
 <div id="自动执行-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
@@ -1228,7 +1411,7 @@
 /if left=usercounter right=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
 </doc-codeblock></div>
 <h3 id="调试器">调试器</h3>
-<p>扩展的 Quick Reply 编辑器中存在一个基本调试器。在脚本中的任何位置使用 <code translate="no" v-pre>/breakpoint |</code> 设置断点。从 QR 编辑器执行脚本时，执行将在该点中断，允许您检查当前可用的变量、管道、命令参数等，并逐步执行其余代码。</p>
+<p>在展开的快速回复编辑器中存在一个基本调试器。在脚本的任意位置使用 <code translate="no" v-pre>/breakpoint |</code> 设置断点。从 QR 编辑器执行脚本时，执行将在该点中断，让你能够查看当前可用的变量、管道、命令参数等，并逐步执行其余代码。</p>
 <div id="调试器-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: n=1
@@ -1239,6 +1422,8 @@
 /:x n=3 |
 /echo result is {{pipe}} |</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| ![QR Editor Debugger](/static/scripts/st-debugger.png) |
+|--------------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1248,13 +1433,14 @@
 </thead>
 </table>
 </div>
+</retype-table>
 <h3 id="调用过程">调用过程</h3>
-<p><code translate="no" v-pre>/run</code> 命令可以通过标签调用在 Quick Replies 中定义的脚本，基本上提供了定义过程并从中返回结果的能力。这允许拥有可重用的脚本块，其他脚本可以引用这些脚本块。过程的最后一个管道结果会传递给其后的下一个命令。</p>
+<p><code translate="no" v-pre>/run</code> 命令可以通过标签调用快速回复中定义的脚本，实质上提供了定义过程并从中返回结果的能力。这允许创建可复用的脚本块供其他脚本引用。过程管道的最后结果会传递给其后的下一条命令。</p>
 <div id="调用过程-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
 </doc-codeblock></div>
-<p>让我们创建两个 Quick Replies：</p>
+<p>让我们创建两个快速回复：</p>
 <hr>
 <p><strong>标签：</strong></p>
 <p><code translate="no" v-pre>GetRandom</code></p>
@@ -1272,57 +1458,57 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
 </doc-codeblock></div>
 <hr>
-<p>单击 <code translate="no" v-pre>GetMessage</code> 按钮将调用 <code translate="no" v-pre>GetRandom</code> 过程，该过程将解析 <code translate="no" v-pre>{{roll}}</code> 宏并将数字传递给调用者，向用户显示。</p>
+<p>点击 <code translate="no" v-pre>GetMessage</code> 按钮将调用 <code translate="no" v-pre>GetRandom</code> 过程，该过程会解析 <code translate="no" v-pre>{{roll}}</code> 宏并将数字传递给调用者，显示给用户。</p>
 <ul>
-<li>过程不接受命名或未命名参数，但可以引用与调用者相同的变量。</li>
-<li>调用过程时避免递归，因为如果处理不当，可能会产生&quot;调用堆栈超出&quot;错误。</li>
+<li>过程不接受具名或匿名参数，但可以引用与调用者相同的变量。</li>
+<li>调用过程时应避免递归，否则若处理不当可能会产生&quot;调用栈超出&quot;错误。</li>
 </ul>
-<h4 id="从不同的-quick-reply-预设调用过程">从不同的 Quick Reply 预设调用过程</h4>
-<p>您可以使用 <code translate="no" v-pre>a.b</code> 语法从不同的快速回复预设调用过程，其中 a = QR 预设名称，b = QR 标签名称</p>
-<div id="从不同的-quick-reply-预设调用过程-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h4 id="从不同的快速回复预设调用过程">从不同的快速回复预设调用过程</h4>
+<p>你可以使用 <code translate="no" v-pre>a.b</code> 语法从不同的快速回复预设调用过程，其中 a = QR 预设名称，b = QR 标签名称。</p>
+<div id="从不同的快速回复预设调用过程-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
 </doc-codeblock></div>
-<p>默认情况下，系统将首先查找快速回复标签 <code translate="no" v-pre>a.b</code>，因此如果您的标签之一是字面上的 &quot;QRpreset1.QRlabel1&quot;，它将尝试运行该标签。如果未找到此类标签，它将搜索名为 &quot;QRpreset1&quot; 的 QR 预设，其中包含标记为 &quot;QRlabel1&quot; 的 QR。</p>
-<h3 id="quick-replies-管理命令">Quick Replies 管理命令</h3>
-<h4 id="创建-quick-reply">创建 Quick Reply</h4>
+<p>默认情况下，系统会首先查找标签为 <code translate="no" v-pre>a.b</code> 的快速回复，因此如果你的某个标签字面上就是&quot;QRpreset1.QRlabel1&quot;，它将尝试运行该标签。如果未找到此类标签，则会搜索名为&quot;QRpreset1&quot;的 QR 预设中标签为&quot;QRlabel1&quot;的 QR。</p>
+<h3 id="快速回复管理命令">快速回复管理命令</h3>
+<h4 id="创建快速回复">创建快速回复</h4>
 <ul>
-<li><code translate="no" v-pre>/qr-create (arguments, [message])</code> – 创建新的 Quick Reply，示例：<code translate="no" v-pre>/qr-create set=MyPreset label=MyButton /echo 123</code></li>
+<li><code translate="no" v-pre>/qr-create (arguments, [message])</code> — 创建新的快速回复，示例：<code translate="no" v-pre>/qr-create set=MyPreset label=MyButton /echo 123</code></li>
 </ul>
 <p>参数：</p>
 <ul>
-<li><code translate="no" v-pre>label</code>    - string - 按钮上的文本，例如 <code translate="no" v-pre>label=MyButton</code></li>
-<li><code translate="no" v-pre>set</code>      - string - QR 集的名称，例如 <code translate="no" v-pre>set=PresetName1</code></li>
-<li><code translate="no" v-pre>hidden</code>   - bool   - 按钮是否应隐藏，例如 <code translate="no" v-pre>hidden=true</code></li>
-<li><code translate="no" v-pre>startup</code>  - bool   - 在应用启动时自动执行，例如 <code translate="no" v-pre>startup=true</code></li>
-<li><code translate="no" v-pre>user</code>     - bool   - 在用户消息时自动执行，例如 <code translate="no" v-pre>user=true</code></li>
-<li><code translate="no" v-pre>bot</code>      - bool   - 在 AI 消息时自动执行，例如 <code translate="no" v-pre>bot=true</code></li>
-<li><code translate="no" v-pre>load</code>     - bool   - 在聊天加载时自动执行，例如 <code translate="no" v-pre>load=true</code></li>
-<li><code translate="no" v-pre>title</code>    - bool   - 要在按钮上显示的标题/工具提示，例如 <code translate="no" v-pre>title=&quot;My Fancy Button&quot;</code></li>
+<li><code translate="no" v-pre>label</code>    - 字符串 - 按钮上的文字，例如 <code translate="no" v-pre>label=MyButton</code></li>
+<li><code translate="no" v-pre>set</code>      - 字符串 - QR 集合的名称，例如 <code translate="no" v-pre>set=PresetName1</code></li>
+<li><code translate="no" v-pre>hidden</code>   - 布尔值 - 按钮是否应隐藏，例如 <code translate="no" v-pre>hidden=true</code></li>
+<li><code translate="no" v-pre>startup</code>  - 布尔值 - 应用启动时自动执行，例如 <code translate="no" v-pre>startup=true</code></li>
+<li><code translate="no" v-pre>user</code>     - 布尔值 - 用户消息时自动执行，例如 <code translate="no" v-pre>user=true</code></li>
+<li><code translate="no" v-pre>bot</code>      - 布尔值 - AI 消息时自动执行，例如 <code translate="no" v-pre>bot=true</code></li>
+<li><code translate="no" v-pre>load</code>     - 布尔值 - 聊天加载时自动执行，例如 <code translate="no" v-pre>load=true</code></li>
+<li><code translate="no" v-pre>title</code>    - 布尔值 - 按钮上显示的标题/工具提示，例如 <code translate="no" v-pre>title=&quot;My Fancy Button&quot;</code></li>
 </ul>
-<h4 id="删除-quick-reply">删除 Quick Reply</h4>
+<h4 id="删除快速回复">删除快速回复</h4>
 <ul>
-<li><code translate="no" v-pre>/qr-delete (set=string [label])</code> – 删除 Quick Reply</li>
+<li><code translate="no" v-pre>/qr-delete (set=string [label])</code> — 删除快速回复</li>
 </ul>
-<h4 id="更新-quick-reply">更新 Quick Reply</h4>
+<h4 id="更新快速回复">更新快速回复</h4>
 <ul>
-<li><code translate="no" v-pre>/qr-update (arguments, [message])</code> – 更新 Quick Reply，示例：<code translate="no" v-pre>/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123</code></li>
+<li><code translate="no" v-pre>/qr-update (arguments, [message])</code> — 更新快速回复，示例：<code translate="no" v-pre>/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123</code></li>
 </ul>
 <p>参数：</p>
 <ul>
-<li><code translate="no" v-pre>newlabel</code> - string - 按钮的新文本，例如 <code translate="no" v-pre>newlabel=MyRenamedButton</code></li>
-<li><code translate="no" v-pre>label</code>    - string - 按钮上的文本，例如 <code translate="no" v-pre>label=MyButton</code></li>
-<li><code translate="no" v-pre>set</code>      - string - QR 集的名称，例如 <code translate="no" v-pre>set=PresetName1</code></li>
-<li><code translate="no" v-pre>hidden</code>   - bool   - 按钮是否应隐藏，例如 <code translate="no" v-pre>hidden=true</code></li>
-<li><code translate="no" v-pre>startup</code>  - bool   - 在应用启动时自动执行，例如 <code translate="no" v-pre>startup=true</code></li>
-<li><code translate="no" v-pre>user</code>     - bool   - 在用户消息时自动执行，例如 <code translate="no" v-pre>user=true</code></li>
-<li><code translate="no" v-pre>bot</code>      - bool   - 在 AI 消息时自动执行，例如 <code translate="no" v-pre>bot=true</code></li>
-<li><code translate="no" v-pre>load</code>     - bool   - 在聊天加载时自动执行，例如 <code translate="no" v-pre>load=true</code></li>
-<li><code translate="no" v-pre>title</code>    - bool   - 要在按钮上显示的标题/工具提示，例如 <code translate="no" v-pre>title=&quot;My Fancy Button&quot;</code></li>
+<li><code translate="no" v-pre>newlabel</code> - 字符串 - 按钮的新文字，例如 <code translate="no" v-pre>newlabel=MyRenamedButton</code></li>
+<li><code translate="no" v-pre>label</code>    - 字符串 - 按钮上的文字，例如 <code translate="no" v-pre>label=MyButton</code></li>
+<li><code translate="no" v-pre>set</code>      - 字符串 - QR 集合的名称，例如 <code translate="no" v-pre>set=PresetName1</code></li>
+<li><code translate="no" v-pre>hidden</code>   - 布尔值 - 按钮是否应隐藏，例如 <code translate="no" v-pre>hidden=true</code></li>
+<li><code translate="no" v-pre>startup</code>  - 布尔值 - 应用启动时自动执行，例如 <code translate="no" v-pre>startup=true</code></li>
+<li><code translate="no" v-pre>user</code>     - 布尔值 - 用户消息时自动执行，例如 <code translate="no" v-pre>user=true</code></li>
+<li><code translate="no" v-pre>bot</code>      - 布尔值 - AI 消息时自动执行，例如 <code translate="no" v-pre>bot=true</code></li>
+<li><code translate="no" v-pre>load</code>     - 布尔值 - 聊天加载时自动执行，例如 <code translate="no" v-pre>load=true</code></li>
+<li><code translate="no" v-pre>title</code>    - 布尔值 - 按钮上显示的标题/工具提示，例如 <code translate="no" v-pre>title=&quot;My Fancy Button&quot;</code></li>
 </ul>
-<h4 id="获取-quick-reply">获取 Quick Reply</h4>
+<h4 id="section"></h4>
 <ul>
-<li><code translate="no" v-pre>/qr-get</code> - 检索 Quick Reply 的所有属性，示例：<code translate="no" v-pre>/qr-get set=myQrSet id=42</code></li>
+<li><code translate="no" v-pre>qr-get</code> - 检索快速回复的所有属性，示例：<code translate="no" v-pre>/qr-get set=myQrSet id=42</code></li>
 </ul>
 <h4 id="创建或更新-qr-预设">创建或更新 QR 预设</h4>
 <ul>
@@ -1330,61 +1516,61 @@
 </ul>
 <p>参数：</p>
 <ul>
-<li><code translate="no" v-pre>enabled</code> - bool - 启用或禁用预设</li>
-<li><code translate="no" v-pre>nosend</code>  - bool - 禁用发送/插入到用户输入（对斜杠命令无效）</li>
-<li><code translate="no" v-pre>before</code>  - bool - 将 QR 放置在用户输入之前</li>
-<li><code translate="no" v-pre>slots</code>   - int  - 插槽数量</li>
-<li><code translate="no" v-pre>inject</code>  - bool - 自动注入用户输入（如果禁用，请使用 <code translate="no" v-pre>{{input}}</code>）</li>
+<li><code translate="no" v-pre>enabled</code> - 布尔值 - 启用或禁用预设</li>
+<li><code translate="no" v-pre>nosend</code>  - 布尔值 - 禁用发送/插入到用户输入（对斜杠命令无效）</li>
+<li><code translate="no" v-pre>before</code>  - 布尔值 - 将 QR 放置在用户输入之前</li>
+<li><code translate="no" v-pre>slots</code>   - 整数  - 插槽数量</li>
+<li><code translate="no" v-pre>inject</code>  - 布尔值 - 自动注入用户输入（若禁用请使用 <code translate="no" v-pre>{{input}}</code>）</li>
 </ul>
-<p>创建新预设（覆盖现有预设），示例：<code translate="no" v-pre>/qr-presetadd slots=3 MyNewPreset</code></p>
+<p>创建新预设（覆盖已有预设），示例：<code translate="no" v-pre>/qr-presetadd slots=3 MyNewPreset</code></p>
 <h4 id="添加-qr-上下文菜单">添加 QR 上下文菜单</h4>
 <ul>
-<li><code translate="no" v-pre>/qr-contextadd (set=string label=string chain=bool [preset name])</code> – 向 QR 添加上下文菜单预设，示例：<code translate="no" v-pre>/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset</code></li>
+<li><code translate="no" v-pre>/qr-contextadd (set=string label=string chain=bool [preset name])</code> — 向 QR 添加上下文菜单预设，示例：<code translate="no" v-pre>/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset</code></li>
 </ul>
-<h4 id="删除所有上下文菜单">删除所有上下文菜单</h4>
+<h4 id="移除所有上下文菜单">移除所有上下文菜单</h4>
 <ul>
-<li><code translate="no" v-pre>/qr-contextclear (set=string [label])</code> – 从 QR 中删除所有上下文菜单预设，示例：<code translate="no" v-pre>/qr-contextclear set=MyPreset MyButton</code></li>
+<li><code translate="no" v-pre>/qr-contextclear (set=string [label])</code> — 从 QR 移除所有上下文菜单预设，示例：<code translate="no" v-pre>/qr-contextclear set=MyPreset MyButton</code></li>
 </ul>
-<h4 id="删除一个上下文菜单">删除一个上下文菜单</h4>
+<h4 id="移除一个上下文菜单">移除一个上下文菜单</h4>
 <ul>
-<li><code translate="no" v-pre>/qr-contextdel (set=string label=string [preset name])</code> – 从 QR 中删除上下文菜单预设，示例：<code translate="no" v-pre>/qr-contextdel set=MyPreset label=MyButton MyOtherPreset</code></li>
+<li><code translate="no" v-pre>/qr-contextdel (set=string label=string [preset name])</code> — 从 QR 移除上下文菜单预设，示例：<code translate="no" v-pre>/qr-contextdel set=MyPreset label=MyButton MyOtherPreset</code></li>
 </ul>
-<h3 id="quick-reply-值转义">Quick Reply 值转义</h3>
+<h3 id="快速回复值转义">快速回复值转义</h3>
 <p>在 QR 消息/命令中，<code translate="no" v-pre>|{}</code> 可以用反斜杠转义。</p>
 <p>例如，使用 <code translate="no" v-pre>/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}</code> 创建一个调用 <code translate="no" v-pre>/getvar myvar | /echo {{pipe}}</code> 的 QR。</p>
-<h2 id="扩展命令">扩展命令</h2>
-<p>SillyTavern 扩展（内置、可下载和第三方）可以添加自己的斜杠命令。下面只是官方扩展功能的示例。该列表可能不完整，请确保检查 <code translate="no" v-pre>/help slash</code> 以获取最完整的可用命令列表。</p>
+<h2 id="extension-commands">扩展命令</h2>
+<p>SillyTavern 扩展（包括内置、可下载和第三方扩展）可以添加自己的斜杠命令。以下只是官方扩展中功能的示例。列表可能不完整，请通过 <code translate="no" v-pre>/help slash</code> 查看最完整的可用命令列表。</p>
 <ol>
-<li><code translate="no" v-pre>/websearch (query)</code> — 在线搜索网页片段以查找指定查询，并将结果返回到管道中。由 Web Search 扩展提供。</li>
-<li><code translate="no" v-pre>/imagine (prompt)</code> — 使用提供的提示词生成图像。由 Image Generation 扩展提供。</li>
-<li><code translate="no" v-pre>/emote (sprite)</code> — 通过模糊匹配名称为活动角色设置精灵。由 Character Expressions 扩展提供。</li>
-<li><code translate="no" v-pre>/costume (subfolder)</code> — 为活动角色设置精灵集覆盖。由 Character Expressions 扩展提供。</li>
-<li><code translate="no" v-pre>/music (name)</code> — 按名称强制更改正在播放的背景音乐文件。由 Dynamic Audio 扩展提供。</li>
-<li><code translate="no" v-pre>/ambient (name)</code> — 按名称强制更改正在播放的环境声音文件。由 Dynamic Audio 扩展提供。</li>
-<li><code translate="no" v-pre>/roll (dice formula)</code> — 向聊天添加一条隐藏消息，其中包含骰子掷骰的结果。由 D&amp;D Dice 扩展提供。</li>
+<li><code translate="no" v-pre>/websearch (query)</code> — 在线搜索指定查询的网页摘要，并将结果返回到管道。由网页搜索扩展提供。</li>
+<li><code translate="no" v-pre>/imagine (prompt)</code> — 使用提供的提示词生成图像。由图像生成扩展提供。</li>
+<li><code translate="no" v-pre>/emote (sprite)</code> — 通过模糊匹配名称为活动角色设置精灵。由角色表情扩展提供。</li>
+<li><code translate="no" v-pre>/costume (subfolder)</code> — 为活动角色设置精灵集覆盖。由角色表情扩展提供。</li>
+<li><code translate="no" v-pre>/music (name)</code> — 按名称强制切换播放的背景音乐文件。由动态音效扩展提供。</li>
+<li><code translate="no" v-pre>/ambient (name)</code> — 按名称强制切换播放的环境音效文件。由动态音效扩展提供。</li>
+<li><code translate="no" v-pre>/roll (dice formula)</code> — 向聊天添加一条带有骰子投掷结果的隐藏消息。由 D&amp;D 骰子扩展提供。</li>
 </ol>
 <h2 id="ui-交互">UI 交互</h2>
-<p>脚本还可以与 SillyTavern 的 UI 交互：在聊天之间导航或更改样式参数。</p>
+<p>脚本还可以与 SillyTavern 的 UI 交互：浏览聊天或更改样式参数。</p>
 <h3 id="角色导航">角色导航</h3>
 <ol>
 <li><code translate="no" v-pre>/random</code> — 打开与随机角色的聊天。</li>
-<li><code translate="no" v-pre>/go (name)</code> — 打开与指定名称角色的聊天。首先搜索精确名称匹配，然后按前缀，然后按子字符串。</li>
+<li><code translate="no" v-pre>/go (name)</code> — 打开与指定名称角色的聊天。先搜索完全匹配的名称，然后按前缀，再按子串。</li>
 </ol>
-<h3 id="ui-样式">UI 样式</h3>
+<h3 id="ui-styling">UI 样式</h3>
 <ol>
 <li><code translate="no" v-pre>/bubble</code> — 将消息样式设置为&quot;气泡聊天&quot;样式。</li>
-<li><code translate="no" v-pre>/flat</code> — 将消息样式设置为&quot;扁平聊天&quot;样式。</li>
-<li><code translate="no" v-pre>/single</code> — 将消息样式设置为&quot;单个文档&quot;样式。</li>
+<li><code translate="no" v-pre>/flat</code> — 将消息样式设置为&quot;平面聊天&quot;样式。</li>
+<li><code translate="no" v-pre>/single</code> — 将消息样式设置为&quot;单文档&quot;样式。</li>
 <li><code translate="no" v-pre>/movingui (name)</code> — 按名称激活 MovingUI 预设。</li>
-<li><code translate="no" v-pre>/resetui</code> — 将 MovingUI 面板状态重置为其原始位置。</li>
-<li><code translate="no" v-pre>/panels</code> — 切换 UI 面板的可见性：顶部栏、左侧和右侧抽屉。</li>
-<li><code translate="no" v-pre>/bg (name)</code> — 使用模糊名称匹配查找并设置背景。尊重聊天背景锁定状态。</li>
+<li><code translate="no" v-pre>/resetui</code> — 将 MovingUI 面板状态重置到其原始位置。</li>
+<li><code translate="no" v-pre>/panels</code> — 切换 UI 面板可见性：顶部栏、左右抽屉。</li>
+<li><code translate="no" v-pre>/bg (name)</code> — 使用模糊名称匹配查找并设置背景。遵守聊天背景锁定状态。</li>
 <li><code translate="no" v-pre>/lockbg</code> — 锁定当前聊天的背景图像。</li>
 <li><code translate="no" v-pre>/unlockbg</code> — 解锁当前聊天的背景图像。</li>
 </ol>
 <h2 id="更多示例">更多示例</h2>
-<h3 id="生成聊天摘要由-ikaridevgit-提供">生成聊天摘要（由 @IkariDevGIT 提供）</h3>
-<div id="生成聊天摘要由-ikaridevgit-提供-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="生成聊天摘要作者ikaridevgit">生成聊天摘要（作者：@IkariDevGIT）</h3>
+<div id="生成聊天摘要作者ikaridevgit-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
 /setvar key=tmp |
@@ -1399,18 +1585,30 @@
 /flushvar tmp |
 /flushvar s1</code></pre>
 </doc-codeblock></div>
-<h3 id="按钮弹出窗口用法">按钮弹出窗口用法</h3>
-<div id="按钮弹出窗口用法-code-1" class="codeblock-wrapper"><doc-codeblock>
+<h3 id="按钮弹窗用法">按钮弹窗用法</h3>
+<div id="按钮弹窗用法-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}</code></pre>
 </doc-codeblock></div>
-<h3 id="获取第-n-个斐波那契数使用-binet-公式">获取第 N 个斐波那契数（使用 Binet 公式）</h3>
-<blockquote>
+<h3 id="获取第-n-个斐波那契数使用比内公式">获取第 N 个斐波那契数（使用比内公式）</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
 <p><strong>提示</strong>：将 <code translate="no" v-pre>fib_no</code> 的值设置为所需的数字</p>
-</blockquote>
-<div id="获取第-n-个斐波那契数使用-binet-公式-code-1" class="codeblock-wrapper"><doc-codeblock>
+        </div>
+    </div>
+</div>
+<div id="获取第-n-个斐波那契数使用比内公式-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
 /pow 5 0.5 | /setglobalvar key=SQRT5 |
@@ -1458,7 +1656,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">开发和自动化</span>
+                                <span class="block mt-1">Development and Automation</span>
                             </span>
                         </a>
                     </div>

@@ -6,16 +6,16 @@
 - [安装指南](https://sillytavern.wiki/installation/index.md): 请根据您的平台选择相应的安装指南：
 - [使用指南](https://sillytavern.wiki/usage/index.md): 以您的方式与 AI 互动。构建您的世界、您的工作或您的梦想。
 - [扩展](https://sillytavern.wiki/extensions/index.md): SillyTavern 自带许多可以在扩展面板中启用或禁用的扩展。扩展可以添加新功能、改变现有功能的行为或为您的 AI 提供额外的内容。您可以从扩展面板中的"下载扩展和资源"菜单安装更多扩展。
-- [开发和自动化](https://sillytavern.wiki/for_contributors/index.md): SillyTavern 的默认包只提供了一个基础平台，可以通过多种方式进行扩展。
-- [管理](https://sillytavern.wiki/administration/index.md): 尽管遵循了许多安全最佳实践，SillyTavern 服务器的安全性仍不足以暴露在公共互联网上。
+- [开发与自动化](https://sillytavern.wiki/for_contributors/index.md): SillyTavern 的默认安装包仅提供一个基础平台，可通过多种方式进行扩展。
+- [管理](https://sillytavern.wiki/administration/index.md): 尽管遵循了许多安全最佳实践，SillyTavern 服务器仍不足以安全地暴露在公开的互联网上。
 - [License and credits](https://sillytavern.wiki/licensecredits.md): This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ## 安装指南
 
-- [Windows 安装指南](https://sillytavern.wiki/installation/windows.md): 不要安装在任何 Windows 控制的文件夹中（Program Files、System32 等）。
-- [Linux/MacOS 安装指南](https://sillytavern.wiki/installation/linuxmacos.md): 对于 MacOS / Linux，所有这些操作都将在终端（Terminal）中完成。
+- [Windows 安装](https://sillytavern.wiki/installation/windows.md): 请勿安装到任何 Windows 受控文件夹（Program Files、System32 等）。
+- [Linux/MacOS 安装](https://sillytavern.wiki/installation/linuxmacos.md): 在 MacOS / Linux 上，以下所有操作均在终端中完成。
 - [Android (Termux) 安装](https://sillytavern.wiki/installation/android.md): SillyTavern 可以使用 Termux 在 Android 设备上原生运行。
-- [Docker 安装指南](https://sillytavern.wiki/installation/docker.md): 本指南假设您在非 root（非管理员）文件夹中安装 SillyTavern。如果您在 root 文件夹中安装 SillyTavern，您可能需要使用管理员权限运行某些命令[sudo、doas、Command Prompt (Administrator)]。
+- [Docker 安装](https://sillytavern.wiki/installation/docker.md): 本说明假设你已安装 Docker，能够访问命令行来安装容器，并熟悉其基本操作。
 
 ### 如何更新 SillyTavern
 
@@ -27,112 +27,112 @@
 ## 使用指南
 
 - [快速入门](https://sillytavern.wiki/usage/quick-start.md): 我完全不知道从何下手。请告诉我使用 SillyTavern 最简单最快的方法。 -- 匿名用户
-- [常见问题](https://sillytavern.wiki/usage/faq.md): 现代 AI 语言模型（如 ChatGPT）已经变得如此强大，其中一些现在可以令人信服地模拟您创建的角色，您可以与之聊天、一起写小说等。例如，您可以让 AI 假装是一位来自中世纪日本的围棋教练 Jubei，它会相应地行动和回应。您可以与 Jubei
+- [常见问题](https://sillytavern.wiki/usage/faq.md): ChatGPT 等现代 AI 语言模型已经变得非常强大，其中一些能够令人信服地模拟你创造的角色，你可以与之聊天、一起写小说等。例如，你可以让 AI 扮演一位来自中世纪日本、名叫 Jubei 的围棋教练，它会相应地行动和回应。你可以与 Jubei
 
 ### 聊天
 
 - [聊天](https://sillytavern.wiki/usage/chatting/index.md): 当您连接到 API 后，可以通过在屏幕底部的聊天栏中输入消息来发送给 AI。然后点击 发送 或按回车键。 聊天栏
 - [斜杠命令](https://sillytavern.wiki/usage/chatting/slashcommands.md): 这不是一个完整的列表，因为它很少更新。
 - [快捷键](https://sillytavern.wiki/usage/chatting/hotkeys.md): 要获取您的 SillyTavern 实例中可用的最新快捷键列表，请在任何聊天中使用 /help hotkeys 斜杠命令。
-- [常用设置](https://sillytavern.wiki/usage/common-settings.md): 这些设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的后端都是通用的。
+- [通用设置](https://sillytavern.wiki/usage/common-settings.md): 这些设置控制使用语言模型生成文本时的采样过程。以下所有设置的含义对所有支持的后端均通用。
 
 ### API 连接
 
-- [API 连接](https://sillytavern.wiki/usage/api_connections/index.md): SillyTavern 可以连接到多种 LLM API。 以下是对它们各自的优势、劣势和使用场景的描述。
-- [连接配置文件](https://sillytavern.wiki/usage/api_connections/connection-profiles.md): 保存连接配置文件以快速切换不同的 API、模型和格式化模板。当您积极使用多个 API 连接或需要在不同配置之间切换而无需浏览菜单时，这很有用。
-- [自托管 AI 模型](https://sillytavern.wiki/usage/api_connections/self-hosted.md): 本指南基于作者的个人经验和知识，并不是绝对真理。所有陈述都应该谨慎对待。如果您有任何更正或建议，请在 Discord 上联系我们或向 SillyTavern 文档仓库发送 PR。
+- [API 连接](https://sillytavern.wiki/usage/api_connections/index.md): SillyTavern 可连接多种大语言模型 API。 以下是对各类 API 的优缺点与适用场景的介绍。
+- [连接配置](https://sillytavern.wiki/usage/api_connections/connection-profiles.md): 保存连接配置，以便快速在不同的 API、模型和格式化模板之间切换。当你需要同时使用多个 API 连接，或者需要在不同配置之间切换而不想反复翻找菜单时，此功能非常实用。
+- [自托管 AI 模型](https://sillytavern.wiki/usage/api_connections/self-hosted.md): 本指南基于作者的个人经验和知识，并不代表绝对真理。所有陈述均应保持审慎态度。如果您有任何更正或建议，请在 Discord 上联系我们，或向 SillyTavern 文档仓库 提交 PR。
 - [聊天补全](https://sillytavern.wiki/usage/api_connections/openai.md): 大多数 API 平台只允许你在创建时查看一次生成的 API key。如果你丢失了它，你需要生成一个新的 key。确保妥善保管！
 - [OpenRouter](https://sillytavern.wiki/usage/api_connections/openrouter.md): 由于地理限制或等待列表而无法访问 OpenAI / Claude API？使用 OpenRouter。
 - [AI Horde](https://sillytavern.wiki/usage/api_connections/horde.md): AI Horde 是一个完全由志愿者运行的众包分布式 GPU 集群。
-- [DreamGen](https://sillytavern.wiki/usage/api_connections/dreamgen.md): DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用程序和 API。他们提供免费套餐，以及付费订阅，允许无限制地每月访问他们专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型。创建账户开始使用:https://dreamgen.com/。
-- [Google Gemini](https://sillytavern.wiki/usage/api_connections/google.md): Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助您在 SillyTavern 中设置 Gemini API 连接。
+- [DreamGen](https://sillytavern.wiki/usage/api_connections/dreamgen.md): DreamGen 是一个由 AI 驱动的角色扮演和故事创作应用与 API。它提供免费套餐，以及允许每月无限制访问其专门为可控 AI 角色扮演和故事创作而设计的高质量内部文本生成模型的付费订阅。注册账户即可开始使用：https://dreamgen.com/
+- [Google Gemini](https://sillytavern.wiki/usage/api_connections/google.md): Gemini 是 Google 最先进的多模态大语言模型，可通过多个 API 访问，包括 Google Vertex AI 和 Google AI Studio（前身为 MakerSuite）。本指南将帮助你在 SillyTavern 中配置 Gemini API 连接。
 - [KoboldCpp](https://sillytavern.wiki/usage/api_connections/koboldcpp.md): KoboldCpp 是一个用于 GGML 和 GGUF 模型的独立 API。
 - [Mancer](https://sillytavern.wiki/usage/api_connections/mancer.md): Mancer 是一个大语言模型推理服务，让您可以运行任何您想要的提示词，并且不会审查响应。截至撰写时（2024-11-28），大多数模型需要预先充值余额才能开始聊天，但有一个免费模型。
-- [NovelAI](https://sillytavern.wiki/usage/api_connections/novelai.md): NovelAI 是一个付费订阅服务，允许每月无限制访问他们高质量的内部文本生成、图像生成和文本转语音模型。在此注册账户以开始使用：https://novelai.net/
+- [NovelAI](https://sillytavern.wiki/usage/api_connections/novelai.md): NovelAI 是一项付费订阅服务，提供每月无限次访问其高质量内部文本生成、图像生成和语音合成模型的权限。在此注册账号即可开始使用：https://novelai.net/
 - [Scale](https://sillytavern.wiki/usage/api_connections/scale.md): Scale 是一种通过部署充当 API 端点的"应用程序"来访问 GPT-4 和其他 LLM 的简单方法。
 - [TabbyAPI](https://sillytavern.wiki/usage/api_connections/tabbyapi.md): 一个基于 FastAPI 的应用程序，使用 Exllamav2 后端生成文本，支持 Exl2、GPTQ 和 FP16 模型。
 
 ### 提示词
 
-- [提示词](https://sillytavern.wiki/usage/prompts/index.md): 当您向 AI 发送消息时，您编写的文本会与其他文本结合形成发送给 AI 的单个请求。这种组合的文本称为"提示词"，有时也称为"请求"或"上下文"。
+- [提示词](https://sillytavern.wiki/usage/prompts/index.md): 当你向 AI 发送消息时，你编写的文本会与其他文本组合，形成一个发送给 AI 的完整请求。这段组合文本称为「提示词」，有时也叫「请求」或「上下文」。
 - [提示词](https://sillytavern.wiki/usage/prompts/prompts.md): 当您向 AI 发送消息时，您写的文本会与其他文本组合，形成发送给 AI 的单个请求。这个组合的文本被称为"提示词"，有时也称为"请求"或"上下文"。
 - [高级格式设置](https://sillytavern.wiki/usage/prompts/advancedformatting.md): 本节提供的设置允许对 提示词构建 策略进行更多控制，主要针对文本补全 API。
-- [上下文模板](https://sillytavern.wiki/usage/prompts/context-template.md): 对于聊天补全 API 中的等效设置，请使用提示词管理器。
+- [上下文模板](https://sillytavern.wiki/usage/prompts/context-template.md): 聊天补全 API 中的等效设置，请使用提示词管理器。
 - [指令模式](https://sillytavern.wiki/usage/prompts/instructmode.md): 指令模式允许您调整针对各种提示词格式训练的指令遵循模型的提示词，如 Alpaca、ChatML、Llama2 等。
+- [分词器](https://sillytavern.wiki/usage/prompts/tokenizer.md): 分词器是一种将文本拆分为更小单元（称为 token）的工具。这些 token 可以是单个词，也可以是词的一部分，例如前缀、后缀或标点符号。一个经验法则是：一个 token 通常对应约 3~4 个字符的文本。
+- [CFG](https://sillytavern.wiki/usage/prompts/cfg.md): 页面作者：kingbri
 - [提示词管理器](https://sillytavern.wiki/usage/prompts/prompt-manager.md): 提示词管理器是一个系统，允许对 Chat Completion API 的提示词构建策略进行更多控制。
-- [推理](https://sillytavern.wiki/usage/prompts/reasoning.md): 在语言模型中，推理（也称为模型思考）指的是一种思维链（CoT）技术，通过逐步分析来模拟人类解决问题的过程。SillyTavern 提供了多项功能，使推理模型在支持的后端上的使用更加高效和一致。
-- [分词器](https://sillytavern.wiki/usage/prompts/tokenizer.md): 分词器是一个将文本分解成更小单位（称为 token）的工具。这些 token 可以是单个词，甚至是词的部分，如前缀、后缀或标点符号。一个经验法则是，一个 token 通常对应 3~4 个字符的文本。
-- [CFG（无分类器引导）](https://sillytavern.wiki/usage/prompts/cfg.md): 页面作者：kingbri
-- [世界信息](https://sillytavern.wiki/usage/worldinfo.md): World Info(也称为 Lorebooks 或 Memory Books)是 ST 中的一个强大工具，可以动态地将 prompts 插入到你的聊天中，以帮助引导 AI 回复。
+- [推理](https://sillytavern.wiki/usage/prompts/reasoning.md): 在语言模型中，推理（也称为模型思考）是指一种思维链（CoT）技术，通过逐步分析来模拟人类解决问题的过程。SillyTavern 提供了多项功能，使推理模型的使用在支持的后端之间更加高效和一致。
+- [宏](https://sillytavern.wiki/usage/macros.md): 实验性宏引擎支持嵌套、稳定的替换顺序以及其他改进。新安装的 SillyTavern 默认启用此功能。已有安装可在用户设置 > 聊天/消息处理 > 实验性宏引擎中启用。
+- [世界信息](https://sillytavern.wiki/usage/worldinfo.md): 世界信息（又称为知识库或记忆书）是 ST 中一项强大的工具，可将提示词动态插入聊天记录，以引导 AI 的回复。
 
 ### 用户设置
 
-- [用户设置](https://sillytavern.wiki/usage/user_settings/index.md): UI 自定义
+- [用户设置](https://sillytavern.wiki/usage/user_settings/index.md): 界面自定义
 - [用户设置](https://sillytavern.wiki/usage/user_settings/user_settings.md): UI 自定义
-- [Uicustomization](https://sillytavern.wiki/usage/user_settings/uicustomization.md): To play your own custom sound on receiving a new message from bot, replace the following MP3 file in your SillyTavern folder:
-- [视觉小说（VN）模式](https://sillytavern.wiki/usage/user_settings/visual-novel.md): 视觉小说模式是 SillyTavern 中的一种特殊屏幕布局，允许您与带有精灵图（或其角色卡片图像）的角色聊天，类似于《心跳文学部》、《灰色的果实》、《Fate: Stay/night》等著名视觉小说游戏的风格。
-- [人格](https://sillytavern.wiki/usage/personas.md): SillyTavern 中的人格是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人格允许你轻松切换你所扮演的角色或"角色"，而无需每次都手动更新你的用户名/头像。
+- [界面自定义](https://sillytavern.wiki/usage/user_settings/uicustomization.md): 主题文件允许您保存、分享和重用界面自定义设置。您可以为不同的心情或用途维护多个主题，并在它们之间即时切换。
+- [视觉小说（VN）模式](https://sillytavern.wiki/usage/user_settings/visual-novel.md): 视觉小说模式是 SillyTavern 中的一种特殊屏幕布局，让你可以与带有立绘（或角色卡图片）的角色聊天，界面风格类似于《心跳文学部》、《灰色的果实》、《Fate: Stay/night》等著名视觉小说游戏。
+- [人设](https://sillytavern.wiki/usage/personas.md): SillyTavern 中的人设是你在聊天中使用的身份——本质上是你的显示名称、头像和可选描述文本的组合。人设让你能够轻松切换你所扮演的角色，而无需每次手动更新用户名/头像。
 
 ### 角色
 
-- [角色](https://sillytavern.wiki/usage/characters/index.md): 角色是您可以创建和管理的 AI 身份，用于塑造 AI 在对话中的角色。每个角色都有名字、个性和对话历史。您可以创建任意数量的角色，并随时在它们之间切换。
-- [角色设计](https://sillytavern.wiki/usage/characters/characterdesign.md): 用于添加 AI 应该知道的角色描述和其他信息。这将始终出现在提示词中，所以所有重要的事实都应该包含在这里。
-- [宏（替换标签）](https://sillytavern.wiki/usage/characters/macros.md): 此列表可能不完整或已过时。在任何 SillyTavern 聊天中使用 /help macros 斜杠命令来获取您的实例中可用的宏列表。
-- [聊天文件管理](https://sillytavern.wiki/usage/characters/chatfilemanagement.md): 本页描述了管理 AI 聊天文件的各种方法。
-- [群组聊天](https://sillytavern.wiki/usage/characters/groupchats.md): 决定群组聊天中的角色如何被选择进行回复。
+- [角色](https://sillytavern.wiki/usage/characters/index.md): 角色是您可以创建和管理的 AI 身份，用于塑造 AI 在对话中扮演的角色。每个角色都拥有名称、个性和对话历史。您可以创建任意数量的角色，并随时在它们之间切换。
+- [角色设计](https://sillytavern.wiki/usage/characters/characterdesign.md): 角色名称是唯一必填字段。其余字段均可留空，仍可在聊天中使用该角色。
+- [聊天文件管理](https://sillytavern.wiki/usage/characters/chatfilemanagement.md): 本页介绍管理 AI 聊天文件的各种方式。
+- [群组聊天](https://sillytavern.wiki/usage/characters/groupchats.md): 决定群组聊天中的角色如何被选定进行回复。
 - [标签](https://sillytavern.wiki/usage/characters/tags.md): 角色卡和群组可以分配零个或多个标签。它们对于按主题、质量、来源或您喜欢的任何方式快速组织不断增长的收藏非常有用。
-- [作者注释](https://sillytavern.wiki/usage/characters/authors-note.md): 作者注释是一个强大的工具，用于自定义 AI 回应，它可以在您想要的任何位置和频率将一段文本插入到提示词中。
-- [数据库（RAG）](https://sillytavern.wiki/usage/characters/data-bank.md): 检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据之外的信息来帮助提高 AI 回答的准确性。
+- [作者注释](https://sillytavern.wiki/usage/characters/authors-note.md): 作者注释是一个强大的自定义 AI 响应的工具，它可以在提示词的任意位置、以任意频率插入一段文本。
+- [数据库（RAG）](https://sillytavern.wiki/usage/characters/data-bank.md): 检索增强生成（RAG）是一种为 LLM 提供外部知识来源的技术。它通过访问模型训练数据以外的信息，帮助提升 AI 回答的准确性。
 - [欢迎页面助手](https://sillytavern.wiki/usage/welcome-assistants.md): SillyTavern 具有欢迎屏幕功能，可以使用指定的"助手"角色迎接您。此屏幕在您启动 SillyTavern 而没有活动聊天或关闭最后一个聊天会话后显示。
 
 ## 扩展
 
-- [Blip](https://sillytavern.wiki/extensions/blip.md): 本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。
-- [Character Expressions (角色表情)](https://sillytavern.wiki/extensions/expression-images.md): 表情图片是您的 AI 角色的图片（也称为"精灵图"），显示在聊天窗口旁边（或后面）。
+- [Blip](https://sillytavern.wiki/extensions/blip.md): 本指南将引导你完成 Blip 扩展的设置和自定义，以丰富你的 SillyTavern 体验。该扩展以可变速度为消息文本添加打字动画，并在动画过程中播放音效。你可以使用音频文件，也可以生成声音。
+- [Captioning（图像描述）](https://sillytavern.wiki/extensions/captioning.md): 图像描述功能允许 SillyTavern 自动为聊天中使用的图像生成文字描述。
 - [Chat Translation (聊天翻译)](https://sillytavern.wiki/extensions/translation.md): 聊天翻译扩展使用各种翻译提供商实现聊天消息在不同语言之间的实时翻译。它支持手动和自动翻译模式。
-- [Chat Vectorization (聊天向量化)](https://sillytavern.wiki/extensions/chat-vectorization.md): 使用此扩展不能保证更好的聊天体验或任何形式的改进记忆。仅在您完全理解向量数据库使用的所有含义时才使用。
-- [Dynamic Audio (动态音频)](https://sillytavern.wiki/extensions/dynamic-audio.md): 本指南将帮助您为 SillyTavern 设置和自定义动态音频资源。
-- [EmulatorJS](https://sillytavern.wiki/extensions/emulatorjs.md): 此扩展允许您直接在 SillyTavern 聊天中玩复古游戏机游戏。
-- [Image Captioning (图像描述生成)](https://sillytavern.wiki/extensions/captioning.md): 图像描述生成允许 SillyTavern 自动为聊天中使用的图像生成文本描述。
-- [Image Generatio (图像生成)](https://sillytavern.wiki/extensions/stable-diffusion.md): 使用本地或基于云的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。
-- [Live2D](https://sillytavern.wiki/extensions/live2d.md): 本指南将帮助您为 SillyTavern 设置和自定义 Live2D 扩展。此扩展允许您为角色使用 Live2D 动画模型，为您的虚拟角色添加动态和互动元素。
-- [Objective (目标扩展)](https://sillytavern.wiki/extensions/objective.md): 目标扩展让用户可以为 AI 指定一个在聊天过程中要努力达成的目标。这个目标被分解成逐步的任务。任务可以分支，子任务可以自动或手动创建。这使得可以创建复杂的任务树。系统会定期检查任务列表中每个任务的完成状态。
-- [Regex](https://sillytavern.wiki/extensions/regex.md): Regex 扩展允许用户自动检测文本字符串中的特定模式(称为"序列")并对其应用操作(替换)。当与其他 SillyTavern 功能(如快速回复或 STscript)结合使用时，它可以成为一个强大的工具，或者简单地作为从聊天中删除某些单词的方法。
-- [Retrieval-based Voice Conversion (RVC)（基于检索的语音转换）](https://sillytavern.wiki/extensions/rvc.md): 本指南将指导您使用 RVC，这是一种允许将语音特征从一个音频片段转移到另一个音频片段的技术，使声音能够以不同的音调和风格说话。
-- [Speech Recognition (语音识别)](https://sillytavern.wiki/extensions/speech-recognition.md): 本指南将帮助您在 SillyTavern 中设置语音识别以将您的语音转录为文本。
+- [Chat Vectorization（聊天向量化）](https://sillytavern.wiki/extensions/chat-vectorization.md): 使用此扩展并不保证能带来更好的聊天体验或提升任何形式的记忆效果。仅在充分理解向量数据库使用的所有含义后再使用。
+- [Dynamic Audio（动态音频）](https://sillytavern.wiki/extensions/dynamic-audio.md): 本指南将引导你完成动态音频资产的设置和自定义，以丰富你的 SillyTavern 体验。
+- [EmulatorJS](https://sillytavern.wiki/extensions/emulatorjs.md): 此扩展允许你直接在 SillyTavern 聊天界面中玩复古主机游戏。
+- [Expression Images（角色表情）](https://sillytavern.wiki/extensions/expression-images.md): 表情图片是你的 AI 角色的图片（也称为"精灵图"），显示在聊天窗口旁边（或后面）。
+- [Live2D](https://sillytavern.wiki/extensions/live2d.md): 本指南将引导你完成 Live2D 扩展的设置和自定义，以丰富你的 SillyTavern 体验。此扩展允许你为角色使用 Live2D 动画模型，为虚拟角色添加动态和互动元素。
+- [Objective（目标）](https://sillytavern.wiki/extensions/objective.md): 目标扩展让用户可以为 AI 指定一个在聊天过程中要努力达成的目标。这个目标被分解成逐步的任务。任务可以分支，子任务可以自动或手动创建，从而可以构建复杂的任务树。系统会定期检查任务列表中每个任务的完成状态。
+- [Regex（正则表达式）](https://sillytavern.wiki/extensions/regex.md): 正则表达式扩展允许用户自动检测文本字符串中的特定模式（称为"序列"）并对其应用操作（替换）。它可以与其他 SillyTavern 功能（如快速回复或 STscript）结合使用，成为一个强大的工具，或者简单地用于从聊天中删除某些词语。
+- [Speech Recognition（语音识别）](https://sillytavern.wiki/extensions/speech-recognition.md): 本指南将引导你在 SillyTavern 中设置语音识别，将语音转录为文本。
+- [Stable Diffusion（图像生成）](https://sillytavern.wiki/extensions/stable-diffusion.md): 使用本地或云端的 Stable Diffusion、FLUX 或 DALL-E API 生成图像。
 - [Summarize (摘要)](https://sillytavern.wiki/extensions/summarize.md): 此扩展允许您创建、存储和使用基于聊天中发生的事件自动生成的摘要。摘要可以帮助概述故事中发生的一般细节，这可能被解释为长期记忆，但请谨慎对待这种说法。由于摘要是由语言模型生成的，输出可能会丢失一些重要细节或包含幻觉，因此建议您始终跟踪摘要状态，并在需要时手动纠正。
-- [TTS](https://sillytavern.wiki/extensions/tts.md): SillyTavern 拥有广泛的 TTS(text-to-speech，文本转语音)选项，用于让语音朗读聊天的部分内容。本页面解释了设置和使用方法。
-- [AllTalk TTS V2](https://sillytavern.wiki/extensions/alltalk.md): Multi-engine Support: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.
+- [TTS](https://sillytavern.wiki/extensions/tts.md): SillyTavern 提供多种 TTS（文字转语音）选项，用于让语音朗读聊天的部分内容。本页介绍设置和使用方法。
+- [AllTalk TTS V2](https://sillytavern.wiki/extensions/alltalk.md): AllTalk 是一个基于 Coqui XTTS、F5-TTS、VITS、Piper 及其他 TTS 模型引擎的语音克隆系统，旨在生成高质量的语音复现（零样本语音克隆或内置语音）。AllTalk V2 带来了显著的功能更新和易用性改进，包括多 TTS 引擎支持、扩展的自定义选项以及性能优化。完整功能列表请参阅
 - [MiniMax TTS](https://sillytavern.wiki/extensions/minimaxtts.md): 本页将教您如何正确使用 MiniMax TTS 提供商。
 - [使用语音克隆的 XTTS](https://sillytavern.wiki/extensions/xtts.md): 您好！您是否被那些展示 AI 文本转语音技术发展程度的 Reddit 帖子震撼到了？
-- [VRM](https://sillytavern.wiki/extensions/vrm.md): 本指南将指导您为 SillyTavern 设置和自定义 VRM 扩展。此扩展允许您为角色使用 VRM 动画模型，为您的虚拟角色添加动态和互动元素。
-- [Web Search (网络搜索)](https://sillytavern.wiki/extensions/websearch.md): 为 LLM 提示添加网络搜索结果。
+- [VRM](https://sillytavern.wiki/extensions/vrm.md): 本指南将引导你完成为 SillyTavern 设置和自定义 VRM 扩展的过程。此扩展允许你为角色使用 VRM 动画模型，为虚拟角色提供动态和互动元素。
+- [Web Search（网络搜索）](https://sillytavern.wiki/extensions/websearch.md): 将网络搜索结果添加到 LLM 提示词中。
+- [基于检索的语音转换（RVC）](https://sillytavern.wiki/extensions/rvc.md): 本指南将引导你使用 RVC，这是一种允许将语音特征从一个音频片段转移到另一个音频片段的技术，使声音能够以不同的音调和风格说话。
 
 ### Extras
 
 - [Extras](https://sillytavern.wiki/extensions/extras/index.md): Extras 项目已于2024年4月停止维护，不会再收到任何新的更新或模块。绝大多数模块已在 SillyTavern 主应用程序中原生提供。您仍然可以安装和使用它，但如果遇到任何问题，请不要期望能得到及时的支持。
 - [在 Colab 中运行 Extras](https://sillytavern.wiki/extensions/extras/running-extras-in-colab.md): Extras 项目已于2024年4月停止维护，不会再收到任何新的更新或模块。绝大多数模块已在 SillyTavern 主应用程序中原生提供。您仍然可以安装和使用它，但如果遇到任何问题，请不要期望能得到及时的支持。
 
-#### 本地安装
+#### Local Installation
 
-- [Extras 安装](https://sillytavern.wiki/extensions/extras/installation.md): 本页包含在本地设备上安装 SillyTavern Extras 的说明。
+- [Extras 安装](https://sillytavern.wiki/extensions/extras/installation.md): 本页面包含在本地设备上安装 SillyTavern Extras 的说明。
 - [Extras 安装常见问题](https://sillytavern.wiki/extensions/extras/installation/common-problems.md): 本页面列出了安装 SillyTavern Extras 时遇到的常见问题和解决方案。
-- [会说话的头像](https://sillytavern.wiki/extensions/extras/talkinghead.md): 一个为 AITuber 实现的会说话的动漫头像 3 演示。它具有以下功能：
-- [智能上下文](https://sillytavern.wiki/extensions/extras/smart-context.md): 使用此扩展不能保证更好的聊天体验或任何形式的记忆改进。仅在您完全理解向量数据库使用的所有影响时才使用。
+- [Talkinghead](https://sillytavern.wiki/extensions/extras/talkinghead.md): SILLYTAVERN 1.12.13 版本已停止支持 TALKINGHEAD。本页面仅作历史记录保留。
+- [智能上下文](https://sillytavern.wiki/extensions/extras/smart-context.md): 使用此扩展并不能保证更好的聊天体验或任何形式的记忆改善。只有在您完全了解向量数据库使用的所有影响后，方可使用。
 
-## 开发和自动化
+## Development and Automation
 
-- [STscript 语言参考](https://sillytavern.wiki/for_contributors/st-script.md): 这是一个简单但功能强大的脚本语言，可用于在不需要严格编程的情况下扩展 SillyTavern 的功能，允许您：
-- [函数调用](https://sillytavern.wiki/for_contributors/function-calling.md): 函数调用允许通过让 LLM 使用结构化数据来为您的扩展添加动态功能，然后您可以使用这些数据触发扩展的特定功能。
-- [UI 扩展](https://sillytavern.wiki/for_contributors/writing-extensions.md): UI 扩展通过挂钩到 SillyTavern 的事件和 API 来扩展其功能。它们在浏览器环境中运行，几乎可以无限制地访问 DOM、JavaScript API 和 SillyTavern 上下文。扩展可以修改 UI、调用内部 API 并与聊天数据交互。本指南介绍如何创建您自己的扩展(需要
+- [STscript 语言参考](https://sillytavern.wiki/for_contributors/st-script.md): STscript 是一种简单而强大的脚本语言，无需编写复杂代码即可扩展 SillyTavern 的功能，让你能够：
+- [函数调用](https://sillytavern.wiki/for_contributors/function-calling.md): 函数调用允许通过让 LLM 使用结构化数据来为你的扩展添加动态功能，你可以利用这些数据触发扩展的特定功能。
+- [UI 扩展](https://sillytavern.wiki/for_contributors/writing-extensions.md): UI 扩展通过钩入 SillyTavern 的事件和 API 来扩展其功能。扩展运行在浏览器环境中，对 DOM、JavaScript API 和 SillyTavern 上下文拥有几乎不受限制的访问权限。扩展可以修改 UI、调用内部 API 并与聊天数据进行交互。本指南介绍如何创建自己的扩展（需要具备
 - [服务器插件](https://sillytavern.wiki/for_contributors/server-plugins.md): 服务器插件是一种扩展 SillyTavern 服务器功能的方式。它们可以添加新的 API 端点、处理程序和其他功能。
 - [国际化 (i18n)](https://sillytavern.wiki/for_contributors/i18n.md): SillyTavern 支持多种语言。本指南解释如何添加和管理翻译。
 
 ## 管理
 
-- [配置文件](https://sillytavern.wiki/administration/config-yaml.md): 此文档可能已过时、不完整或不正确。请参考您安装中的 默认 config.yaml 以获取最新的设置列表。
+- [配置文件](https://sillytavern.wiki/administration/config-yaml.md): 本文档可能已过时、不完整或存在错误。请参阅您安装目录中的 默认 config.yaml 以获取最新的设置列表。
 - [多用户模式](https://sillytavern.wiki/administration/multi-user.md): 多用户模式允许多人使用一个 SillyTavern 服务器。每个用户都有自己的设置、扩展和数据。用户账户也可以设置密码保护。
-- [单点登录 (SSO)](https://sillytavern.wiki/administration/sso.md): SSO 允许您创建用户并使用登录门户来保护您想要保护的多个网站。虽然设置比较复杂，但这是一个很好的方式来学习 SSO 并更好地保护您在互联网上的 ST 实例。
-- [远程连接](https://sillytavern.wiki/administration/remote-connections.md): 最常见的情况是人们想在同一个 WiFi 网络内通过手机使用 SillyTavern，而 PC 运行着 ST 服务器。
-- [VPN 和隧道](https://sillytavern.wiki/administration/tunneling.md): VPN 和隧道是一种从世界任何地方安全访问您的家庭网络的方式。本指南将向您展示如何使用 VPN 或隧道从任何地方访问您的 SillyTavern 实例。
-- [反向代理](https://sillytavern.wiki/administration/reverse-proxying.md): 本节不涉及 OpenAI/Claude 反向代理。这仅涉及 HTTP/HTTPS 反向代理。
+- [单点登录（SSO）](https://sillytavern.wiki/administration/sso.md): 尽管 SSO 有诸多优点，但它是一个配置和维护都较为复杂的系统。若配置不当，可能导致他人未经授权访问你的实例。请在启用 SSO 前务必正确配置并充分测试。如果你对其安全影响没有把握，建议保持 SSO 自动登录为禁用状态，转而使用其他身份验证方式。
+- [远程连接](https://sillytavern.wiki/administration/remote-connections.md): 大多数情况下，此功能适用于希望在手机上使用 SillyTavern、同时让 PC 在同一 WiFi 网络内运行 ST 服务器的用户。
+- [VPNs and Tunneling](https://sillytavern.wiki/administration/tunneling.md): VPN 和隧道是从世界任何地方安全访问家庭网络的方式。本指南将介绍如何使用 VPN 或隧道从任何地方访问你的 SillyTavern 实例。
+- [Reverse proxying](https://sillytavern.wiki/administration/reverse-proxying.md): 本节内容不涉及 OpenAI/Claude 反向代理。这里专指 HTTP/HTTPS 反向代理。

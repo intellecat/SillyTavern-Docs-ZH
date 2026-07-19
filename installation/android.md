@@ -70,7 +70,7 @@ git pull --rebase --autostash
 
 请参阅下面的[别名](#optional-create-aliases)部分以创建快捷方式来简化此过程。
 
-## 常见错误
+## 常见错误 {#common-errors}
 
 ### Unsupported platform: android arm LEtime-web
 
@@ -108,7 +108,7 @@ backups:
 使用 Termux 附带的 `nano` 文本编辑器来编辑 `config.yaml` 文件：`nano ~/SillyTavern/config.yaml`
 !!!
 
-## 可选：创建别名
+## 可选：创建别名 {#optional-create-aliases}
 
 您可以为常用命令创建快捷方式，以便更轻松地工作。
 

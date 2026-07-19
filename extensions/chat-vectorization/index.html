@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Chat Vectorization (聊天向量化) | SillyTavern傻酒馆中文文档</title>
-    <meta name="title" content="Chat Vectorization (聊天向量化) | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="使用此扩展不能保证更好的聊天体验或任何形式的改进记忆。仅在您完全理解向量数据库使用的所有含义时才使用。">
+    <title>Chat Vectorization（聊天向量化） | SillyTavern傻酒馆中文文档</title>
+    <meta name="title" content="Chat Vectorization（聊天向量化） | SillyTavern傻酒馆中文文档">
+    <meta name="description" content="使用此扩展并不保证能带来更好的聊天体验或提升任何形式的记忆效果。仅在充分理解向量数据库使用的所有含义后再使用。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/chat-vectorization/">
@@ -24,16 +24,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/chat-vectorization/">
-    <meta property="og:title" content="Chat Vectorization (聊天向量化) | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="使用此扩展不能保证更好的聊天体验或任何形式的改进记忆。仅在您完全理解向量数据库使用的所有含义时才使用。">
+    <meta property="og:title" content="Chat Vectorization（聊天向量化） | SillyTavern傻酒馆中文文档">
+    <meta property="og:description" content="使用此扩展并不保证能带来更好的聊天体验或提升任何形式的记忆效果。仅在充分理解向量数据库使用的所有含义后再使用。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/chat-vectorization/">
-    <meta name="twitter:title" content="Chat Vectorization (聊天向量化) | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="使用此扩展不能保证更好的聊天体验或任何形式的改进记忆。仅在您完全理解向量数据库使用的所有含义时才使用。">
+    <meta name="twitter:title" content="Chat Vectorization（聊天向量化） | SillyTavern傻酒馆中文文档">
+    <meta name="twitter:description" content="使用此扩展并不保证能带来更好的聊天体验或提升任何形式的记忆效果。仅在充分理解向量数据库使用的所有含义后再使用。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/chat-vectorization.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -211,44 +211,41 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="chat-vectorization-聊天向量化">Chat Vectorization (聊天向量化)</h1>
+<h1 id="chat-vectorization聊天向量化">Chat Vectorization（聊天向量化）</h1>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning 免责声明</h5>
-<p>使用此扩展不能保证更好的聊天体验或任何形式的改进记忆。仅在您完全理解向量数据库使用的所有含义时才使用。</p>
+            <h5>免责声明</h5>
+<p>使用此扩展并不保证能带来更好的聊天体验或提升任何形式的记忆效果。仅在充分理解向量数据库使用的所有含义后再使用。</p>
         </div>
     </div>
 </div>
-<p>聊天向量化会搜索当前聊天历史中与您最近消息相关的消息。
-它会暂时将最相关的消息移动到聊天历史的开头或结尾。
-这种移动发生在模型生成对您最后一条消息的回复时。</p>
-<p>聊天历史开头和结尾的消息往往对模型的回复影响最大。
-因此，将相关消息移动到这些位置可以帮助模型在回复中关注相关信息。</p>
-<p>特别是，聊天向量化可以找到在消息历史中太靠后而无法放入请求上下文的相关消息。
-将这些消息移入上下文为模型提供了原本无法获得的信息。</p>
-<p>聊天向量化是一种检索增强生成（RAG）。检索增强生成通过在提示中提供额外的相关信息，
-提高模型生成响应的质量。</p>
+<p>聊天向量化会在当前聊天历史中搜索与最新消息相关的消息。
+它会临时将最相关的消息移动到聊天历史的开头或结尾。
+这一过程发生在模型针对你最后一条消息生成回复时。</p>
+<p>聊天历史开头和结尾的消息通常对模型的回复影响最大。
+因此，将相关消息移动到这些位置有助于模型在回复中关注相关信息。</p>
+<p>特别是，聊天向量化可以找到那些在消息历史中过于靠前、无法纳入请求上下文的相关消息。将这些消息移入上下文，可以为模型提供它本来无法获取的信息。</p>
+<p>聊天向量化是一种检索增强生成（RAG）技术。检索增强生成通过在提示词中提供额外的相关信息来提升模型生成回复的质量。</p>
 <ul>
-<li>检索：使用最近的消息来检索相关的过去消息</li>
-<li>增强：通过以有用的方式插入过去的消息来增强模型的上下文</li>
-<li>生成：指导模型在生成响应时使用过去的消息</li>
+<li>检索（Retrieval）：使用最近的消息来检索相关的历史消息</li>
+<li>增强（Augmented）：通过以有效的方式插入历史消息来增强模型的上下文</li>
+<li>生成（Generation）：指示模型在生成回复时使用历史消息</li>
 </ul>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -257,38 +254,47 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>info 一些术语：</h5>
-<p><em>向量</em>是一组数字，可以表示一段文本的主题、内容、风格或其他特征。</p>
-<p><em>向量化</em>是计算表示一段文本的向量。这是由向量化模型完成的。
+            <h5>一些术语说明：</h5>
+<p><em>向量</em>是一组数字，可以代表一段文本的主题、内容、风格或其他特征。</p>
+<p><em>向量化</em>是计算代表一段文本的向量的过程，由向量化模型完成。
 就像文本生成模型从文本生成文本一样，向量化模型从文本生成向量。</p>
-<p><em>向量搜索</em>通过比较向量而不是关键词来找到相关结果。如果我们计算搜索查询的向量，
-我们可以将其与存储的文本集合的向量进行比较。这样可以找到我们集合中与搜索查询文本
-最相似的文本。在聊天向量化的情况下，&quot;搜索查询&quot;是最近的 2 条消息，而&quot;集合中的文本&quot;
-是聊天中的所有其他消息。</p>
+<p><em>向量搜索</em>通过比较向量而非关键词来查找相关结果。如果我们计算搜索查询的向量，就可以将其与文本集合中存储的向量进行比较，从而找到集合中与搜索查询最相似的文本。在聊天向量化中，&quot;搜索查询&quot;是最近的 2 条消息，&quot;文本集合&quot;是聊天中的所有其他消息。</p>
         </div>
     </div>
 </div>
 <h2 id="设置">设置</h2>
-<p>要启用聊天向量化，选择 &quot;Extensions&quot; &gt; &quot;Vector Storage&quot; &gt; &quot;Enabled for chat messages&quot;。</p>
-<p>配置向量化源和向量化模型。聊天向量化使用与 Data Bank 相同的向量源，
-因此您可能已经设置好了。向量化源和向量化模型的设置在 <a href="../../usage/core-concepts/data-bank/">Data Bank</a> 中有文档说明。</p>
-<p>聊天向量化使用与 Data Bank 相同的向量存储，但这不需要设置或配置。
-<a href="../../usage/core-concepts/data-bank/">Data Bank</a> 中也有关于向量存储的信息。</p>
-<p>聊天向量化不使用 Data Bank 来存储聊天消息。消息存储在聊天中。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>与提示词缓存的兼容性</h5>
+<p>与任何动态提示词来源（世界信息、摘要等）一样，聊天向量化会在 LLM 调用之间重构提示词前缀，这可能导致频繁的缓存未命中。与缓存一起使用时，向量化往往适得其反，因为修改后的提示词很少命中缓存——实际上使缓存失效。你必须二选一，不能两者同时使用。</p>
+        </div>
+    </div>
+</div>
+<p>要启用聊天向量化，请选择&quot;扩展&quot; &gt; &quot;向量存储&quot; &gt; &quot;为聊天消息启用&quot;。</p>
+<p>配置向量化来源和向量化模型。聊天向量化使用与数据库相同的向量来源，所以你可能已经完成了设置。向量化来源和向量化模型的设置记录在<a href="../../usage/core-concepts/data-bank/">数据库</a>中。</p>
+<p>聊天向量化使用与数据库相同的向量存储，但无需额外设置或配置。数据库中也有关于向量存储的信息，请参阅<a href="../../usage/core-concepts/data-bank/">数据库</a>。</p>
+<p>聊天向量化不使用数据库存储聊天消息，消息存储在聊天记录中。</p>
 <h2 id="准备聊天消息以供搜索向量存储">准备聊天消息以供搜索（向量存储）</h2>
-<p>为了使聊天消息可以被搜索，系统会为每条消息计算一个向量并存储。</p>
-<p>向量化在后台进行，每当您发送或接收消息时都会发生。</p>
-<p>每条消息都单独存储，这样在生成过程中可以单独找到和移动它们。</p>
-<p>大型消息会被分割成&quot;块&quot;，这样模型就可以获得长消息中最相关的部分。块大小为 400 个字符。
-您可以通过&quot;Chunk size (chars)&quot;更改这个值。</p>
-<p>消息通过寻找块边界（如段落分隔符、换行符或单词之间的空格）来分割。这是为了
-使所有块尽可能有意义。如果您的聊天消息有其他标记自然分割点的方式，比如 <code translate="no" v-pre>----</code>，
-您可以将其添加到&quot;Chunk boundary&quot;中。&quot;Chunk boundary&quot;的设置与 Data Bank 共享。</p>
+<p>为使聊天消息可被搜索，需要为每条消息计算并存储一个向量。</p>
+<p>每当你发送或接收消息时，向量化会在后台进行。</p>
+<p>每条消息单独存储，以便在生成过程中单独查找和移动。</p>
+<p>较长的消息会被分割成&quot;块&quot;，以便模型获取长消息中最相关的部分。块大小为 400 个字符。
+你可以通过&quot;块大小（字符数）&quot;来更改此设置。</p>
+<p>消息会通过查找段落分隔、换行符或单词间空格等块边界来分割，以使所有块尽可能有意义。如果你的聊天消息有其他自然分割点标记（例如 <code translate="no" v-pre>----</code>），你可以将其添加到&quot;块边界&quot;中。&quot;块边界&quot;设置与数据库共享。</p>
 <h3 id="向量存储控制">向量存储控制</h3>
-<p>要计算当前聊天中所有消息的向量，而不是等待它们在后台处理，从设置中选择&quot;Vectorize All&quot;。</p>
-<p>要查看当前聊天中有多少消息已被向量化，选择&quot;View Stats&quot;。这会显示存储的向量总数。
-它还会通过绿色圆点标记来指示已被向量化的特定聊天消息。</p>
-<p>要删除当前聊天中所有消息的向量，选择&quot;Purge Vectors&quot;。</p>
+<p>若要立即为当前聊天中的所有消息计算向量（无需等待后台处理），请在设置中选择&quot;全部向量化&quot;。</p>
+<p>若要查看当前聊天中有多少消息已被向量化，请选择&quot;查看统计&quot;。这会显示存储的向量总数，并通过绿色圆点标记已向量化的具体聊天消息。</p>
+<p>若要删除当前聊天消息的所有向量，请选择&quot;清除向量&quot;。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -302,55 +308,54 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><strong>聊天向量化</strong>中的&quot;Vectorize All&quot;和&quot;Purge Vectors&quot;控件只影响当前聊天的存储向量。
-然而，文件向量化中也有相同的按钮，它们会影响 Data Bank 中文件的向量。确保您要清除的是您想要清除的向量。</p>
+<p>聊天向量化中的&quot;全部向量化&quot;和&quot;清除向量&quot;控件<strong>仅影响</strong>当前聊天存储的向量。
+但是，文件向量化中有相同的按钮，影响的是数据库中文件的向量。请确保你清除的是你打算清除的向量。</p>
         </div>
     </div>
 </div>
-<h2 id="查找相关消息以移动向量检索">查找相关消息以移动（向量检索）</h2>
-<p>要在聊天历史中找到最相关的消息，最近的消息会被转换（向量化）成查询向量。默认情况下，使用最近的 2 条消息。要更改这一点，更改&quot;Query messages&quot;的值。这个值在查找 Data Bank 中的相关内容时也会使用。</p>
-<p>过去的消息必须至少有 25% 的相关性分数才会被包含。您可以通过&quot;Score threshold&quot;更改这一点。分数阈值的设置与 Data Bank 共享。</p>
-<p>聊天历史中最相关的 3 条消息会被移动。您可以通过&quot;Insert#&quot;更改这一点。</p>
-<p>为了避免打扰聊天中最近的事件，最近的 5 条消息不会被移动。要更改这一点，更改&quot;Retain#&quot;的值。</p>
+<h2 id="查找相关消息进行移动向量检索">查找相关消息进行移动（向量检索）</h2>
+<p>为找到聊天历史中最相关的消息，会将最近的消息转换（向量化）为查询向量。默认使用最近的 2 条消息。若要更改，请修改&quot;查询消息数&quot;的值。此值也用于从数据库查找相关内容。</p>
+<p>历史消息的相关性得分至少需要达到 25% 才会被纳入。你可以通过&quot;得分阈值&quot;更改此设置。得分阈值设置与数据库共享。</p>
+<p>聊天历史中最相关的 3 条消息会被移动。你可以通过&quot;插入数量&quot;更改此设置。</p>
+<p>为避免打扰聊天中最近发生的事件，最近的 5 条消息不会被移动。若要更改，请修改&quot;保留数量&quot;的值。</p>
 <h2 id="移动消息增强生成">移动消息（增强生成）</h2>
 <p>消息会被移动到以下 3 个位置之一：</p>
 <ul>
-<li>聊天顶部，在主提示/故事字符串之后（默认）</li>
-<li>聊天顶部，并且在主提示/故事字符串之前</li>
-<li>聊天结尾，在最后 2 条消息之前（&quot;In-chat @ Depth 2&quot;）。由于您刚刚发送了一条消息，这个位置通常就在模型的上一个回复之前。</li>
+<li>聊天顶部，位于主提示词/故事字符串之后（默认）</li>
+<li>聊天顶部，位于主提示词/故事字符串<em>之前</em></li>
+<li>聊天末尾，位于最后 2 条消息之前（&quot;聊天内 @ 深度 2&quot;）。由于你刚发送了一条消息，此位置通常就在模型上一次回复之前。</li>
 </ul>
-<p>您可以通过&quot;Injection Position&quot;和&quot;Depth&quot;更改这一点。</p>
-<p>消息按相关性顺序包含，相关性较高的消息显示在相关性较低的消息之后。</p>
-<p>包含了发送每条消息的人或角色的名字。</p>
-<p>这些消息作为&quot;过去的事件&quot;展示给模型。这有助于模型理解这些消息包含的信息来自聊天历史中不同于插入点的位置。您可以通过&quot;Injection Template&quot;更改这一点。</p>
-<p>您可以使用 Prompt Itemization 弹出窗口、终端日志或浏览器控制台日志查看最终的模型提示。浏览器控制台日志对于理解聊天向量化中所有步骤的作用很有帮助。</p>
+<p>你可以通过&quot;注入位置&quot;和&quot;深度&quot;更改此设置。</p>
+<p>消息按相关性排序显示，相关性更高的消息排在后面。</p>
+<p>每条消息的发送者姓名或角色名会一并显示。</p>
+<p>消息以&quot;过去事件&quot;的形式呈现给模型。这有助于模型理解这些消息包含来自聊天历史中不同时间点的信息，而不是当前插入位置的信息。你可以通过&quot;注入模板&quot;更改此设置。</p>
+<p>你可以通过提示词详情弹窗、终端日志或浏览器控制台日志查看发送给模型的最终提示词。浏览器控制台日志对于理解聊天向量化中所有步骤的执行过程非常有用。</p>
 <h2 id="向量摘要">向量摘要</h2>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>warning 警告</h5>
+            <h5>警告</h5>
 <p>向量摘要功能是实验性的。</p>
-<p><strong>向量摘要不会创建您的聊天摘要。它不会将检索到的消息转换为摘要。它不会使您的聊天历史变短。它不是&quot;像 <a href="../summarize/">Summarize</a> 但更好&quot;。</strong></p>
+<p><strong>向量摘要不会创建聊天摘要，不会将检索到的消息转换为摘要，也不会缩短聊天历史记录。它不是&quot;更好的<a href="../summarize/">摘要</a>&quot;。</strong></p>
         </div>
     </div>
 </div>
-<p>向量摘要旨在使聊天消息的向量搜索更有效。它通过在向量化之前引入摘要步骤来实现这一点。摘要步骤提取消息中最重要的部分，使得生成的向量能更好地指示消息的相关内容。</p>
-<p>向量摘要可能会使向量搜索变得不那么有效。</p>
-<p>要对聊天历史中的消息进行摘要，并为每个摘要消息生成向量，选择&quot;Summarize chat messages for vector generation&quot;。</p>
-<p>摘要消息不会替换聊天中的原始消息。如果向量搜索匹配了摘要消息的向量，原始消息会从聊天历史中检索并移动到上下文中。消息的摘要版本保留在向量存储中，这可能对调试有帮助。</p>
-<p>要对用于搜索聊天历史的消息内容（默认为最后 2 条消息）进行摘要，选择&quot;Summarize chat messages when sending&quot;。</p>
-<p>每次为向量化摘要消息时，都会向摘要模型发出单独的请求。您可以通过&quot;Summarize with&quot;选择使用哪个摘要源。选择&quot;Main API&quot;将使用与生成聊天或文本补全相同的模型和连接设置来生成摘要。</p>
-<p>请求包括原始消息内容和关于模型应如何生成摘要的指令。您可以通过&quot;Summary Prompt&quot;更改指令。</p>
+<p>向量摘要旨在提高聊天消息向量搜索的效果。它通过在向量化之前引入摘要步骤来实现这一目标。摘要步骤提取消息中最重要的部分，使生成的向量能更好地反映消息的主题。</p>
+<p>向量摘要也可能使向量搜索效果变差。</p>
+<p>若要对聊天历史中的消息进行摘要并为每条摘要消息生成向量，请选择&quot;为向量生成摘要聊天消息&quot;。</p>
+<p>摘要后的消息不会替换聊天中的原始消息。如果向量搜索匹配了摘要消息的向量，则会从聊天历史中检索原始消息并移入上下文。摘要版本的消息会保留在向量存储中，这对调试可能有所帮助。</p>
+<p>若要对用于搜索聊天历史的消息内容（默认为最后 2 条消息）进行摘要，请选择&quot;发送时摘要聊天消息&quot;。</p>
+<p>每次对消息进行摘要向量化时，都会向摘要模型发起单独的请求。你可以通过&quot;使用以下来源摘要&quot;选择摘要来源。选择&quot;主 API&quot;将使用与生成聊天或文本补全相同的模型和连接设置来生成摘要。</p>
+<p>请求由原始消息内容和关于模型如何生成摘要的指令组成。你可以通过&quot;摘要提示词&quot;更改该指令。</p>
 
                 <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">
                     <span>
@@ -408,7 +413,7 @@
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/dynamic-audio/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Dynamic Audio (动态音频)</span>
+                                <span class="block mt-1">Dynamic Audio（动态音频）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -452,6 +457,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Chat Vectorization (聊天向量化)", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/chat-vectorization.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Chat Vectorization（聊天向量化）", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/extensions/chat-vectorization.md" }</script>
 </body>
 </html>

@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832715202747">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837764144201">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Blip | SillyTavern傻酒馆中文文档</title>
     <meta name="title" content="Blip | SillyTavern傻酒馆中文文档">
-    <meta name="description" content="本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。">
+    <meta name="description" content="本指南将引导你完成 Blip 扩展的设置和自定义，以丰富你的 SillyTavern 体验。该扩展以可变速度为消息文本添加打字动画，并在动画过程中播放音效。你可以使用音频文件，也可以生成声音。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern.wiki/extensions/blip/">
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern.wiki/extensions/blip/">
     <meta property="og:title" content="Blip | SillyTavern傻酒馆中文文档">
-    <meta property="og:description" content="本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。">
+    <meta property="og:description" content="本指南将引导你完成 Blip 扩展的设置和自定义，以丰富你的 SillyTavern 体验。该扩展以可变速度为消息文本添加打字动画，并在动画过程中播放音效。你可以使用音频文件，也可以生成声音。">
     <meta property="og:site_name" content="SillyTavern中文文档">
     <meta property="og:locale" content="en_US">
 
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sillytavern.wiki/extensions/blip/">
     <meta name="twitter:title" content="Blip | SillyTavern傻酒馆中文文档">
-    <meta name="twitter:description" content="本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。">
+    <meta name="twitter:description" content="本指南将引导你完成 Blip 扩展的设置和自定义，以丰富你的 SillyTavern 体验。该扩展以可变速度为消息文本添加打字动画，并在动画过程中播放音效。你可以使用音频文件，也可以生成声音。">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://sillytavern.wiki/extensions/blip.md">
@@ -41,11 +41,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832715202747" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837764144201" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832715202747" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837764144201" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -212,92 +212,92 @@
 
                 <!-- Page content  -->
 <h1 id="blip">Blip</h1>
-<p>本指南将帮助您为 SillyTavern 设置和自定义 Blip 扩展。该扩展可以以可变速度为消息文本添加动画效果，并在动画播放时播放声音。您可以使用音频文件或生成声音。</p>
+<p>本指南将引导你完成 Blip 扩展的设置和自定义，以丰富你的 SillyTavern 体验。该扩展以可变速度为消息文本添加打字动画，并在动画过程中播放音效。你可以使用音频文件，也可以生成声音。</p>
 <h2 id="前提条件">前提条件</h2>
 <p>在开始之前，请确保满足以下前提条件：</p>
 <ul>
-<li>确保您使用的是最新版本的 SillyTavern。</li>
-<li>从扩展面板（堆叠块图标）的&quot;Download Extensions &amp; Assets&quot;菜单中安装&quot;Blip&quot;扩展。</li>
+<li>确保你使用的是最新版本的 SillyTavern。</li>
+<li>从扩展面板（堆叠方块图标）的&quot;下载扩展与资产&quot;菜单中安装&quot;Blip&quot;扩展。</li>
 </ul>
 <h2 id="blip-全局设置">Blip 全局设置</h2>
 <ol>
 <li>
-<p><strong>Blip user message</strong>：</p>
+<p><strong>Blip 用户消息</strong>：</p>
 <ul>
-<li>启用复选框以在用户消息上播放动画。</li>
-<li>为用户设置配置文件，或如果您想要用户的 blip 动画，则设置默认配置文件。</li>
+<li>勾选复选框以在用户消息上播放动画。</li>
+<li>为用户设置一个配置文件，或设置默认配置文件以启用用户的 Blip 动画。</li>
 </ul>
 </li>
 <li>
-<p><strong>Blip only for certain text</strong>：</p>
+<p><strong>仅对特定文本启用 Blip</strong>：</p>
 <ul>
-<li>启用复选框仅对引号内的文本进行 blip 处理。</li>
-<li>启用复选框以忽略星号内的所有内容。</li>
+<li>勾选复选框以仅对引号内的文本播放 Blip 效果。</li>
+<li>勾选复选框以忽略星号内的所有内容。</li>
 </ul>
 </li>
 <li>
-<p><strong>Automatic scroll down</strong>：</p>
+<p><strong>自动向下滚动</strong>：</p>
 <ul>
-<li>启用复选框使聊天窗口跟随文本动画向下滚动，如果您想在动画播放期间自由滚动，请禁用此选项。</li>
+<li>勾选复选框使聊天跟随文本动画向下滚动；如需在动画期间自由滚动，请取消勾选。</li>
 </ul>
 </li>
 <li>
-<p><strong>Audio volume</strong>：</p>
+<p><strong>音频音量</strong></p>
 <ul>
-<li>如果只需要文本动画效果，可以将音频静音。</li>
-<li>您可以调整 blip 音频的全局音量。</li>
+<li>如果只需要文字动画效果，可以将音频静音。</li>
+<li>可以调整 Blip 音频的全局音量。</li>
 </ul>
 </li>
 </ol>
 <h2 id="角色动画语音配置文件">角色动画/语音配置文件</h2>
-<p>您可以为每个角色保存配置文件：</p>
+<p>你可以为每个角色保存配置文件：</p>
 <ul>
-<li>包括用户和可选的默认配置文件（当角色没有配置文件时将使用）。</li>
-<li>如果列表中只显示当前聊天的角色，请点击复选框显示所有角色。</li>
+<li>包括用户及一个可选的默认配置文件（当角色没有配置文件时使用）。</li>
+<li>如果列表中只显示当前聊天的角色，点击复选框可显示所有角色。</li>
 </ul>
 <ol>
 <li>
 <p><strong>选择要分配/更新配置文件的角色</strong>：</p>
 <ul>
-<li>选择一个角色，如果他有配置文件，将会加载。</li>
-<li>如果还没有配置文件，当前参数将成为他的配置文件设置。</li>
-<li>任何配置文件都可以使用删除按钮删除。</li>
-<li>如果您的角色未出现在列表中，请使用刷新按钮。</li>
+<li>选择一个角色。如果该角色有配置文件，将自动加载。</li>
+<li>如果该角色尚无配置文件，当前参数将成为其配置文件设置。</li>
+<li>可以使用删除按钮删除任意配置文件。</li>
+<li>如果角色未出现在列表中，请使用刷新按钮。</li>
 </ul>
 </li>
 <li>
 <p><strong>文本动画设置</strong>：</p>
 <ul>
-<li>设置文本速度：每个字母打印之间的延迟（毫秒）。</li>
-<li>设置最小/最大速度乘数不为 1.0 以实现速度动画的随机性。</li>
-<li>设置逗号/短语延迟大于 0 以在打印特殊字符时添加暂停，可以为动画增加生动性。在这种情况下，音频也会暂停。</li>
+<li>设置文字速度：每个字母打印之间的毫秒延迟。</li>
+<li>设置与 1.0 不同的最小/最大速度倍数以产生随机速度动画效果。</li>
+<li>将逗号/句子延迟设置为大于 0 的值，可在打印特殊字符时添加暂停，使动画更生动。此时音频也会暂停。</li>
 </ul>
 </li>
 <li>
 <p><strong>音频参数</strong>：</p>
 <ul>
-<li>如果需要，设置音量乘数，这只会影响此语音配置文件。</li>
-<li>设置音频速度：每个 blip 声音之间的延迟，独立于文本速度。</li>
+<li>设置仅影响该语音配置文件的音量倍数（如需要）。</li>
+<li>设置音频速度：每个 Blip 音效之间的延迟，与文字速度无关。</li>
 </ul>
 </li>
 <li>
 <p><strong>Blip 来源：生成的声音</strong>：</p>
 <ul>
-<li>使用最小/最大频率滑块自定义播放的 blip 声音。</li>
-<li>如果最小/最大值不同，每次都会在此范围内播放随机声音。</li>
+<li>使用最小/最大频率滑块自定义播放的 Blip 声音。</li>
+<li>若最小/最大值不同，每次播放时会随机选择该范围内的声音。</li>
 </ul>
 </li>
 <li>
 <p><strong>Blip 来源：文件</strong>：</p>
 <ul>
-<li>从列表中选择文件。</li>
-<li>您可以从资源扩展菜单获取官方 ST blip 资源。</li>
+<li>从列表中选择一个文件。</li>
+<li>可以从资产扩展菜单获取官方 ST Blip 资产。</li>
 <li>或直接将文件放入：<code translate="no" v-pre>\SillyTavern\data\&lt;user-handle&gt;\assets\blip</code>。</li>
-<li>如果需要，启用复选框以强制等待整个文件播放完毕后再次播放。</li>
+<li>如需确保整个文件播放完毕再重新播放，请勾选对应复选框。</li>
 </ul>
 </li>
 </ol>
-<p>感谢您阅读本指南！您的 SillyTavern 体验现在已通过文本动画和 blip 语音得到增强。</p>
+<p>感谢你阅读本指南！你的 SillyTavern 体验现已通过文字动画和 Blip 语音得到丰富。</p>
 
                 
                 <!-- Required only on API pages -->
@@ -323,10 +323,10 @@
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/expression-images/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/captioning/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Character Expressions (角色表情)</span>
+                                <span class="block mt-1">Captioning（图像描述）</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
